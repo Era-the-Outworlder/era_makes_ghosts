@@ -5,8 +5,14 @@
 ///
 
 /* Image */
-
+.object-fit_fill { object-fit: fill }
+.object-fit_contain { object-fit: contain }
+.object-fit_cover { object-fit: cover }
+.object-fit_none { object-fit: none }
+.object-fit_scale-down { object-fit: scale-down }
 	.image {
+		max-width: 100%;
+		height: auto;
 		border: 0;
 		display: inline-block;
 		position: relative;
@@ -39,20 +45,20 @@
 		&.fit {
 			display: block;
 			margin: 0 0 _size(element-margin) 0;
-			width: 100%;
+			max-width: 100%;
 
 			img {
-				width: 100%;
+				max-width: 100%;
 			}
 		}
 
 		&.featured {
 			display: block;
 			margin: 0 0 _size(section-spacing) 0;
-			width: 100%;
+			max-width: 100%;
 
 			img {
-				width: 100%;
+				max-width: 100%;
 			}
 
 			@include breakpoint('<=small') {
@@ -63,10 +69,10 @@
 		&.main {
 			display: block;
 			margin: 0 0 (_size(element-margin) * 1.5) 0;
-			width: 100%;
+			max-width: 100%;
 
 			img {
-				width: 100%;
+				max-width: 100%;
 			}
 		}
 	}
