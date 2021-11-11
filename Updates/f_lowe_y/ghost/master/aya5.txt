@@ -27,7 +27,6 @@ dic, anchor.dic
 dic, teachcustompronoun.dic
 
 //---- Log Location -------------------------------------------------------------------------
-//I'm not entirely sure what this does, but basically don't touch it.
-
+//Location of log file. only uncomment if needed
 
 //log, ayame.log		
