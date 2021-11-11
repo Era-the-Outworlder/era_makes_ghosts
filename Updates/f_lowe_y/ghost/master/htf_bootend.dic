@@ -1,12 +1,14 @@
-﻿//---------------------------Booting and Ending--------------------------
+﻿//---------Booting and Ending--------
+//This .dic file contains booting and ending dialogue, as well as several other functions.
 
-//--OnFirstBoot--
+//----OnFirstBoot----
+//~~~~Runs after new installation of ghost, only if ghost was installed from .nar file. Also declares and initialises variables
+//~~~~I've used variables without declaring them first here,and it was a nightmare. <3Era~~~~
 
 
 OnFirstBoot
 {
-//OnFirstBoot begins with some code at first to define some values your ghost will be using. I'll briefly touch on what they are, but for the most part you should not need to edit any of these and you can safely ignore most of them (except nowshell if you've changed your shell folder's name from default_shell). Definitely don't delete them unless you know what you're doing.
-
+	//Not reccommended to remove any of these, but more can and should be added to declare variables if you're going to use any.
  	lastTalk = "" //This is part of how chained conversations work (see aitalk.dic).
 	passmin = 0 
 	passsec = 0 // These two keep track of the time.

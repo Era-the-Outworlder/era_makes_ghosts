@@ -62,7 +62,10 @@ OnNameTeach
 	elseif reference0 == username //checks against existing username
 	{
 
-		"\0\s[13]\_v[sound_FLOWEY.mp3] * %(username)... Title...?\w4\n\n[half]\![*]\q[Reject lables,titlenone]\n"
+		"\0\s[13]\_v[sound_FLOWEY.mp3] * %(username)... Title...?\w4\n\n[half]/
+		\![*]\q[Yes,titlechoose]\n/
+		\![*]\q[Reject lables,titlenone]\n"
+		
 		"\0\s[0]\_v[HELP_text.mp3] * (You do not change your name. Are you trying to change something else?) \w4\n\n[half]/
 		\![*]\q[Yes,titlechoose]\n/
 		\![*]\q[No,titlenone]\n"
