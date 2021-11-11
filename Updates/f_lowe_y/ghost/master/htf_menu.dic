@@ -51,9 +51,10 @@ MenuRun
 	"\![*] \q[FUNct_ons,dosomething]\n\n[half]"
 	
 	--
- 	"\![*] \q[Nevermind,CANCEL]\n\n\n[half]%(wd) %(nowhour):%(nowmin) %(ap), %(month)/%(day)/%(year)\nReset: %(resetcount)\e"
-	"\![*] \q[Shut up.,CANCEL]\n\n\n[half]%(wd) %(nowhour):%(nowmin) %(ap), %(month)/%(day)/%(year)\nReset: %(resetcount)\e"
-	"\![*] \q[N_V_RMIND,CANCEL]\n\n\n[half]%(wd) %(nowhour):%(nowmin) %(ap), %(month)/%(day)/%(year)\nReset: %(resetcount)\e"
+ 	"\![*] \q[Nevermind,CANCEL]\n\n\n[half]%(wd) %(nowhour):%(nowmin) %(ap), %(month)/%(day)/%(year)\nReset: %(resetcount)\n\n\nVersion %(OnGhostVer)\e"
+	"\![*] \q[Shut up.,CANCEL]\n\n\n[half]%(wd) %(nowhour):%(nowmin) %(ap), %(month)/%(day)/%(year)\nReset: %(resetcount)\n\n\nVersion %(OnGhostVer)\e"
+	"\![*] \q[N_V_RMIND,CANCEL]\n\n\n[half]%(wd) %(nowhour):%(nowmin) %(ap), %(month)/%(day)/%(year)\nReset: %(resetcount)\n\n\nVersion %(OnGhostVer)\e"
+	
 	
 	//These three lead to the Config Menu, the Function menu, and Cancel. 
 }
@@ -136,17 +137,17 @@ Select.BACKTOMENU
 		MenuRun
 	}
 
-//If someone selects configmenu, this will lead to TalkConfig.
+//If someone selects configmenu, this will lead to OnTalkConfig.
 Select.configmenu
 	{
-		TalkConfig
+		OnTalkConfig
 	}
 
 
-//--TalkConfig
-//This menu allows the user to change their name and other information, as well as put in their birthday and change how often the ghost speaks. You shouldn't need to touch any of what's under TalkConfig, although you can adjust dialogue in the following functions related to it.
+//--OnTalkConfig
+//This menu allows the user to change their name and other information, as well as put in their birthday and change how often the ghost speaks. You shouldn't need to touch any of what's under OnTalkConfig, although you can adjust dialogue in the following functions related to it.
 
-TalkConfig
+OnTalkConfig
 {
 	"\0\b[2]\_q\" 
 	//This bit of dialogue sets up a large balloon and a quick session, like above, so all the text will appear immediately. The rest is formatted to display the information and options to change it. 
@@ -241,13 +242,13 @@ Select.choicecustom //for people with less common pronouns
 Select.silenton
 {
 	silentmode = "ON"
-	TalkConfig
+	OnTalkConfig
 }
 
 Select.silentoff
 {
 	silentmode = "OFF"
-	TalkConfig
+	OnTalkConfig
 }
 
 //These two options toggle whether or not you can delete your ghost. Leave them alone.
@@ -255,13 +256,13 @@ Select.silentoff
 Select.deleteon
 {
 	deleteshitai = "ON"
-	TalkConfig
+	OnTalkConfig
 }
 
 Select.deleteoff
 {
 	deleteshitai = "OFF"
-	TalkConfig
+	OnTalkConfig
 }
 
 
@@ -558,6 +559,12 @@ Select.CANCEL
 
 Select.dosomething
 {
+	OnFunctionMenu
+}
+
+OnFunctionMenu
+{
+
  		"\0\s[0]\_v[sound_FLOWEY.mp3] *\b2 ...\n\n"
  		"\0\s[0]\_v[sound_FLOWEY.mp3] *\b2 ACC_SSING FUNCTION M_NU\n\n"
 		"\0\s[0]\_v[HELP_text.mp3] *\b2 (You ask F_lowe_y to do something for you.)\n\n"
@@ -569,7 +576,8 @@ Select.dosomething
 		\![*] \q[Open SSP Preferences,sspconfig]\n\n[half]/
 		\![*] \q[Empty Recycle Bin,ChoiceGarbagecan]\n\n[half]/
 		\![*] \q[System Information,ChoiceSystemInformation]\n\n[half]\n/
- 		\![*] \q[Back to main menu,BACKTOMENU]\s[0]\e"
+		\![*] \q[View Ghost Changelog,OnChangeLog,menu]\n\n[half]\n/
+ 		\![*] \q[Back to main menu,BACKTOMENU]\s[0]\e"	
 }
 
 //When the user clicks Open Calender. This will open the calender function of SSP, an in-built feature that you don't have to worry about in the least.

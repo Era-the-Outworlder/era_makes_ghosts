@@ -308,7 +308,34 @@ OnUpdateComplete
 	{
 		"\0\s[13]\_v[sound_FLOWEY.mp3] * SOMETHING CHANGED. \w8\w8\w8\e"
 		"\0\s[13]\_v[HELP_text.mp3] * SOMETHING CHANGED. \w8\w8\w8\e"
+		--
+		"\n\n\![*]\q[Yes,OnChangeLog]\n\![*]\q[No,NoChangelog]\e"
  	}
+}
+
+OnGhostVer
+{
+	"1.1.0"
+}
+
+OnChangeLog
+{
+	"\![set,autoscroll,disable]\_q\b2\_l[90]\n/-Version 1.1.0-\n\n/
+	-First major update.\nRename default shell\nRename dictionaries\nAdd Network Update\nAdd Changelog\nAdd Silent Mode \n\n\n/
+	-Version 1.0.0-\n\n/
+	-Initial release\n\n\n"
+	--
+	if reference0 == "menu" || reference1 == "menu" //Checks to see if the user came here from the functions menu
+	{
+		"\![*]\q[Back to Functions,OnFunctionMenu]\n"
+	}
+	--
+	"\![*]\q[Done,cancelnodialogue]\e"
+}
+
+Select.NoChangelog
+{
+	"\0\s[0]Ok,\w4 you can see it in the functions menu later if you want!\e"
 }
 
  //---- OnUpdateFailure -------------------------------------------------------------
