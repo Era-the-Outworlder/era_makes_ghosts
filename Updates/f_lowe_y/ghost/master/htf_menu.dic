@@ -160,6 +160,10 @@ TalkConfig
 	"\f[bold,1]TALK RATE:\f[bold,0] - every %(talktime) \n\f[height,10]\![*](\q[__-__-__ange?,talkinter])\f[height,default]\n\n[half]"
 	--		
 		{
+		"Enable SilentMode? (NOW : %(silentmode))\n\![*]\q[ON,silenton] --------------- \![*]\q[OFF,silentoff]\n\n[half]\n"
+		}
+	--
+		{
 		"Enable Uninstall? (NOW : %(deleteshitai))\n\![*]\q[ON,deleteon] --------------- \![*]\q[OFF,deleteoff]\n\n[half]\n"
 		}
 	--
@@ -232,6 +236,19 @@ Select.choicecustom //for people with less common pronouns
 	--
 	"\0\s[0]\_v[HELP_text.mp3] * (Enter the first of your pronouns, ex.'they')\![open,inputbox,OnHeSheTheyTeach,-1]\s[0]\e"
 }
+
+Select.silenton
+{
+	silentmode = "ON"
+	TalkConfig
+}
+
+Select.silentoff
+{
+	silentmode = "OFF"
+	TalkConfig
+}
+
 
 //These two options toggle whether or not you can delete your ghost. Leave them alone.
 
