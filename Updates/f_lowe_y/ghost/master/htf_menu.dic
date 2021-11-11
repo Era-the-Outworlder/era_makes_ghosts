@@ -237,6 +237,7 @@ Select.choicecustom //for people with less common pronouns
 	"\0\s[0]\_v[HELP_text.mp3] * (Enter the first of your pronouns, ex.'they')\![open,inputbox,OnHeSheTheyTeach,-1]\s[0]\e"
 }
 
+
 Select.silenton
 {
 	silentmode = "ON"
@@ -248,7 +249,6 @@ Select.silentoff
 	silentmode = "OFF"
 	TalkConfig
 }
-
 
 //These two options toggle whether or not you can delete your ghost. Leave them alone.
 

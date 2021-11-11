@@ -13,8 +13,49 @@ OnTranslate
  			
 		if silentmode == "ON"
 		{
-			_talk = REPLACE(_talk, "\_v[HELP_text.mp3]", "")
-			_talk = REPLACE(_talk, "\_v[sound_FLOWEY.mp3]", "")
+			
+			_talk = REPLACE(_talk, "\_v[", "\![sound,stop,")
+			--
+			
+			// _talk = REPLACE(_talk, "\_v[hee.mp3]", "")
+			// --
+			// _talk = REPLACE(_talk, "\_v[HELP_text.mp3]", "")
+			// --
+			// _talk = REPLACE(_talk, "\_v[HELP_toriel.mp3]", "")
+			// --			
+			// _talk = REPLACE(_talk, "\_v[sound_FLOWEY.mp3]", "")
+			// --
+			// _talk = REPLACE(_talk, "\_v[hahaha.mp3]", "")
+			
+			// --
+			
+			// _talk = REPLACE(_talk, "\_v[attack.wav]", "")
+			// --
+			// _talk = REPLACE(_talk, "\_v[battle_start.wav]", "")
+			// --
+			// _talk = REPLACE(_talk, "\_v[dust.wav]", "")
+			// --
+			// _talk = REPLACE(_talk, "\_v[encounter.wav]", "")
+			// --
+			// _talk = REPLACE(_talk, "\_v[flee.wav]", "")
+			// --
+			// _talk = REPLACE(_talk, "\_v[LV_increased.wav]", "")
+			// --
+			// _talk = REPLACE(_talk, "\_v[savestate_spam.wav]", "")
+			// --
+			// _talk = REPLACE(_talk, "\_v[r_ack.wav]", "")
+			// --
+			// _talk = REPLACE(_talk, "\_v[r_oh.wav]", "")
+			// --
+			// _talk = REPLACE(_talk, "\_v[r_screech.wav]", "")
+			// --
+			// _talk = REPLACE(_talk, "\_v[r_hey.wav]", "")
+			// --
+			// _talk = REPLACE(_talk, "\_v[hit.wav]", "")
+			// --
+			// --
+			
+			"%(_talk)"
 		}
 			
 		else	
