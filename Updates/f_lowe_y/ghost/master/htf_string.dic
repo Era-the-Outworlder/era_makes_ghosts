@@ -112,7 +112,10 @@ On_updatebutton.caption
 //----  Network Update URL  ------
 On_homeurl
 {
-	"https://github.com/Era-the-Outworlder/era_makes_ghosts/tree/main/Updates/f_lowe_y"
+	"https://raw.githubusercontent.com/Era-the-Outworlder/era_makes_ghosts/master/Updates/f_lowe_y/"
+
+	//"https://Era-the-Outworlder.github.io/era_makes_ghosts/Updates/f_lowe_y/"
+	//"https://github.com/Era-the-Outworlder/era_makes_ghosts/tree/main/Updates/f_lowe_y/"
 }
 
 

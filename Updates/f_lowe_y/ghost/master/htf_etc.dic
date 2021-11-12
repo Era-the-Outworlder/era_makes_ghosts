@@ -306,10 +306,9 @@ OnUpdateComplete
 	}
  	else //if the ghost has updated successfully
 	{
-		"\0\s[13]\_v[sound_FLOWEY.mp3] * SOMETHING CHANGED. \w8\w8\w8\e"
-		"\0\s[13]\_v[HELP_text.mp3] * SOMETHING CHANGED. \w8\w8\w8\e"
-		--
-		"\n\n\![*]\q[Yes,OnChangeLog]\n\![*]\q[No,NoChangelog]\e"
+		"\0\s[13]\_v[sound_FLOWEY.mp3] * SOMETHING CHANGED.   VIEW CHANGES?\n\n\![*]\q[Yes,OnChangeLog]\n\![*]\q[No,NoChangelog]\e\w8\w8\w8\e"
+		"\0\s[13]\_v[HELP_text.mp3] * SOMETHING CHANGED.   VIEW CHANGES? \n\n\![*]\q[Yes,OnChangeLog]\n\![*]\q[No,NoChangelog]\e\w8\w8\w8\e"
+		
  	}
 }
 

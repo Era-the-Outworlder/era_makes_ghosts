@@ -69,8 +69,9 @@ kero.seriko.alignmenttodesktop, free
 //----Balloon----
 balloon.dontmove, false
 balloon.defaultsurface,0
-// default.balloon.path, path
-// recommended.balloon, balloon name
+default.balloon.path, ..\..\..\..\balloon\undertrash
+//balloon.directory,undertrash
+recommended.balloon, undertrash
 // recommended.balloon.path, path
 
 //Do not receive SSTP with no ghost designation at 0. The default is 1.
