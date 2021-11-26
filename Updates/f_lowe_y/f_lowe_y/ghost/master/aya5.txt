@@ -1,0 +1,32 @@
+﻿//Character Set definitions. Do not change unless absolutely certain and necessary.
+
+charset, UTF-8
+charset.dic, UTF-8
+charset.output, UTF-8
+charset.file, UTF-8
+charset.save, UTF-8
+charset.extension, UTF-8
+
+
+
+//---- Dictionary Files ---------------------------------------------------------------------
+
+//The order of this list is important. add new dictionaries to bottom
+
+dic, htf_shiori3.dic		
+dic, htf_string.dic			
+dic, htf_aitalk.dic			
+dic, htf_bootend.dic		
+dic, htf_mouse.dic			
+dic, htf_etc.dic			
+dic, htf_menu.dic
+dic, htf_word.dic
+dic, htf_commu.dic
+dic, htf_nameteach.dic
+dic, htf_anchor.dic
+dic, htf_teachcustompronoun.dic
+
+//---- Log Location -------------------------------------------------------------------------
+//Location of log file. only uncomment if needed
+
+//log, ayame.log		

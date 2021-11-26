@@ -1,0 +1,158 @@
+﻿//---------------------------Mouse Functions--------------------------
+//As you've probably guessed, this .dic file has to do with mouse functions. 
+
+//--OnMouseMove
+//This is a bunch of code determining who the mouse is over. Don't touch any of it.
+
+OnMouseMove
+ {
+  	if nowmode != "QUIZ"
+ 	{
+		//---- reference3 determines the character in question
+		if reference3 == 0 //if the character is 0, aka the main character
+		{
+			//---- it will run the mouse functions for that character
+			MouseMoveSakura
+		}
+		else //if the character isn't 0, then it must be the side character.
+		{
+			"\0\s[0]\_v[HELP_text.mp3] * (Something is Wrong. Please report bug to era@outworlderaffairs.com)\w8\w8\s[0]\e"
+		}
+	}
+ }
+ 
+ 
+
+ //--MouseMoveSakura
+ //The petting function.
+ 
+MouseMoveSakura
+ {
+	if reference4 != "" //ignore
+ 	{
+ 		stroke++ //if you move the mouse over the right areas, the stroke count will go up.
+ 		if stroke >= 40 //if the stroke count is above a certain number, the petting dialogue will kick in.
+		{
+ 			stroke = 0 //resetting the stroke count
+			if reference4 == "Top" //collision as set in surfaces.txt
+ 			{
+				"\0\s[9]\_v[sound_FLOWEY.mp3] * Stop. sssssssssssstop. \w8\w8\s[0]\e"
+				"\0\s[6]\_v[sound_FLOWEY.mp3] * Pat. patpetpotpatpotpet. \w8\w8\s[0]\e"
+				"\0\s[9]\_v[HELP_text.mp3] * (You get the feeling he would appreciate it more if you'd stop.) \w8\w8\w8\s[0]\e"
+				"\0\s[6]\_v[HELP_text.mp3] * (He seems to be enjoying this.)\w8\w8\s[0]\e"
+				
+ 			}
+ 			elseif reference4 == "Chin" 
+ 			{
+ 				"\0\s[9]\_v[sound_FLOWEY.mp3] * Stop. sssssssssssstop. \w8\w8\s[0]\e"
+				"\0\s[0]\_v[sound_FLOWEY.mp3] * Pat. patpetpotpatpotpet. \w8\w8\s[0]\e"
+				"\0\s[9]\_v[HELP_text.mp3] * (You get the feeling he would appreciate it more if you'd stop.) \w8\w8\w8\s[0]\e"
+				"\0\s[0]\_v[HELP_text.mp3] * (He seems to be enjoying this.)\w8\w8\s[0]\e"
+				
+ 			}
+			
+ 		}
+	}
+ 	else
+	{
+ 		// If the mouse isn't over the ghost, it'll zero out the stroke value.
+		stroke = 0
+ 	}
+}
+
+//---- OnMouseDoubleClick -------------------------------------------------------
+//This is set up much like OnMouseMove above, except this is checking to see if the user is double clicking on the ghost.
+
+OnMouseDoubleClick
+ {
+	//---- like with the OnMouseMove function above, this determines who the user is clicking on.
+	
+ 	if reference3 == 0 //if the character is 0, the main (and only)
+	{
+		MouseDoubleClickSakura
+ 	}
+	else
+ 	{
+ 		"\0\s[0]\_v[HELP_text.mp3] * (Something is Wrong. Please report bug to era@outworlderaffairs.com)\w8\w8\s[0]\e"
+	}
+ }
+
+ //---- MouseDoubleClickSakura ----------------------------------------------------------
+ //Like the petting animation above, this is the reactions they have to being double clicked. These also rely on the collisions you set up in surfaces.txt! This set is specifically for the main character, as indicated by the Sakura in the name again.
+ 
+ 
+ //--- KNIFE TIME, Kill count, and RESETS-------- 
+ //I was working on a game-ish thing that involved killing F_lowe_y and resets and some dialogue and item stuff. I've quit (for now, anyway) but this hit action is all still here. Go ahead. Hit him. See what happens. (Though if you're here, all you've got to do is look at the code, huh?) <3 Era
+ 
+MouseDoubleClickSakura
+ {
+ 	if reference4 == "Head" || reference4 == "Face" || reference4 == "Top"//here, this is checking to see if the user is double clicking on specified hitboxes.
+	{
+		if knifetime >= 30
+		{
+			if killcount >= 5
+			{
+				knifetime = 0
+				killcount = 0
+				resetcount++
+				"\0\s[-1]\_v[dust.wav]\w8\w8\w8\_v[LV_increased.wav] * YOU WIN! \w8\e"
+			}
+			else
+			{
+				knifetime = 0
+				killcount++
+				"\0\s[-1]\w8\w8\w8\w8\s[0]\_v[savestate_spam.wav]\w8\w8\w8\w8\s[7]\e"
+			}
+			
+		}
+		
+		elseif knifetime == 29
+		{
+			knifetime++ 
+			"\0\s[8]\_v[hahaha.mp3] * (Flowey is considering a violence.) \w8\w8\s[0]\e"
+			"\0\s[8]\_v[sound_FLOWEY.mp3] \f[bold,true]Die.\w8\w8\s[0]\e"
+			
+		}
+		elseif knifetime >= 20
+		{
+			knifetime++
+			"\0\s[15]\_v[r_ack.wav] * ST_P IT!\w8\w8\s[0]\e"
+			"\0\s[9]\_v[r_oh.wav] * C_T TH_T __T!!\w8\w8\s[0]\e"
+			"\0\s[4]\_v[r_screech.wav] * (Scared noises)\w8\w8\s[0]\e"
+			"\0\s[9]\_v[r_hey.wav] * H_Y Y__! \w8\w8\s[0]\e"
+			"\0\s[4]\_v[HELP_text.mp3] \f[color,250,0,0]* ( %(knifetime) )\f[color,default]  \w8\w8\s[0]\e"
+			"\0\s[15]\_v[hit.wav]\w8\w8\s[0]\e"
+		}
+		elseif knifetime >= 10
+		{
+			knifetime++
+			
+			"\0\s[16]\_v[r_ack.wav] * Ack! Why-\w8\w8\s[0]\e"
+			"\0\s[15]\_v[r_oh.wav] * OW! You!\w8\w8\s[0]\e"
+			"\0\s[16]\_v[r_screech.wav] * (Angrier noises)\w8\w8\s[0]\e"
+			"\0\s[16]\_v[r_hey.wav] * Hey! Stop! \w8\w8\s[0]\e"
+			"\0\s[4]\_v[HELP_text.mp3] \f[color,250,0,0]* ( %(knifetime) )\f[color,default]   \w8\w8\s[0]\e"
+			"\0\s[15]\_v[hit.wav]\w8\w8\s[0]\e"
+		}
+		else
+		{
+			knifetime++
+			
+			"\0\s[15]\_v[r_ack.wav] * Ack!\w8\w8\s[0]\e"
+			"\0\s[2]\_v[r_oh.wav] * OW!\w8\w8\s[0]\e"
+			"\0\s[2]\_v[r_screech.wav] * (Angry noises)\w8\w8\s[0]\e"
+			"\0\s[2]\_v[r_hey.wav] * Hey! \w8\w8\s[0]\e"
+			"\0\s[4]\_v[HELP_text.mp3] \f[color,250,0,0]* ( %(knifetime) )\f[color,default]   \w8\w8\s[0]\e"
+			"\0\s[15]\_v[hit.wav]\w8\w8\s[0]\e"
+		}
+		
+		
+
+ 	}
+	else
+ 	{
+		//Otherwise, if the user doubleclicks somewhere else on the character, they will open their menu as detailed in menu.dic.
+ 		OpenSakuraMenu
+	}
+ }
+
