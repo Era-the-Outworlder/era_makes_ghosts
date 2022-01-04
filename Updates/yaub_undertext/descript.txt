@@ -13,7 +13,7 @@ craftman,Era
 craftmanw,Era
 craftmanurl,https://era-the-outworlder.github.io/era_makes_ghosts/
 
-homeurl,https://github.com/Era-the-Outworlder/era_makes_ghosts/tree/main/Updates/yaub_undertext
+homeurl,https://github.com/Era-the-Outworlder/era_makes_ghosts/tree/main/Updates/
 
 
 //-- Defining Text Areas
