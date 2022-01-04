@@ -1,6 +1,8 @@
 //--Descript.txt
 
 use_self_alpha,1
+use_input_alpha,1
+overlay_outside_balloon,1
 
 charset,UTF-8
 
@@ -11,7 +13,7 @@ craftman,Era
 craftmanw,Era
 craftmanurl,https://era-the-outworlder.github.io/era_makes_ghosts/
 
-
+homeurl,https://github.com/Era-the-Outworlder/era_makes_ghosts/tree/main/Updates/yaub_undertext
 
 
 //-- Defining Text Areas
@@ -119,12 +121,18 @@ number.y,172
 
 
 
-//-- Communication Box
+//-- Communication/Input Boxes
 
 
-communicatebox.x,13
-communicatebox.y,29
+communicatebox.x,11
+communicatebox.y,25
 
 
 communicatebox.width,333
-communicatebox.height,20
+communicatebox.height,26
+
+communicatebox.font.name,Determination Mono
+
+communicatebox.font.color.r,255
+communicatebox.font.color.g,255
+communicatebox.font.color.b,255
