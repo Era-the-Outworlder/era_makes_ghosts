@@ -1,0 +1,7 @@
+Charset,UTF-8
+install,691361255
+surfacecount,86
+update_result,NG(404)
+firstboot,691361255
+commitmemorysize,4603630
+lastboot,694598184

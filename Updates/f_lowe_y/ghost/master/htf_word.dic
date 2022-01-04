@@ -1,9 +1,75 @@
 ﻿//---------------------------Envelopes--------------------------
 
+//----System display related----
+ap
+{
+ 	if ampm
+ 		{"PM"}
+ 	else
+ 		{"AM"}
+}
+
+dishour
+{
+	if hour12 == 0; "12"
+	else; "%(hour12)"
+}
+
+dismin
+{
+	if minute >= 0 && minute <=9; "0%(minute)"
+	else; "%(minute)"
+}
+
+disTime
+{
+	"%(dishour):%(dismin) %(ap)"
+}
+
+disDate
+{
+	"%(dayShort) %(month)/%(day)/%(year)"
+}
+
+dayShort
+{
+	if weekday == 0
+	{"Sun"}
+	elseif weekday == 1
+	{"Mon"}
+	elseif weekday == 2
+	{"Tue"}
+	elseif weekday == 3
+	{"Wed"}
+	elseif weekday == 4
+	{"Thu"}
+	elseif weekday == 5
+	{"Fri"}
+	else
+	{"Sat"}
+}
+
+dayLong
+{
+	if dayShort == "Tue"
+	{"Tuesday"}
+	elseif dayShort == "Wed"
+	{"Wednesday"}
+	elseif dayShort == "Thur"
+	{"Thursday"}
+	elseif dayShort == "Sat"
+	{"Saturday"}
+	else
+	{"%(dayShort)day"}
+}
+
+
+
+//----Dialogue----
 
 floweyLaugh
 {
-	"\s[5]\_v[heeheehee.wav]HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA"
+	"\s[24]\_v[mus\heeheehee.wav]\b2\f[height,30]HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA\f[default]"
 }
 
 nonono
@@ -13,7 +79,8 @@ nonono
 
 HAPPY
 {
-	"Happy Happy Happy Happy Happy Happy Happy Happy Happy happy happy happy happy happy happy happy happy happy happy happy happy happy happy happy happy happy happy happy happy happy happy happy happy happy happy happy happy happy happy happy happy happy happy happy happy happy happy happy happy happy happy happy happyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHappyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPY"
+	_hap = GLITCH("happy")
+	"Happy Happy Happy Happy Happy Happy Happy happy happy happy happy happy happy happy happy happy happy happy happy happy happyhappy happy happy happy happy happy happy happy happy happy happy happy happy happyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPY%(_hap)%(_hap)%(_hap)%(_hap)%(_hap)%(_hap)%(_hap)%(_hap)%(_hap)%(_hap)%(_hap)%(_hap)%(_hap)%(_hap)%(_hap)%(_hap)%(_hap)%(_hap)%(_hap)%(_hap)%(_hap)%(_hap)%(_hap)%(_hap)%(_hap)%(_hap)%(_hap)%(_hap)%(_hap)%(_hap)%(_hap)%(_hap)%(_hap)%(_hap)%(_hap)%(_hap)%(_hap)%(_hap)%(_hap)%(_hap)%(_hap)%(_hap)"
 }
 
 usersfolder
@@ -26,8 +93,53 @@ usersfolder
 
 
 
+change
+{
+	if RAND(100)>=24{"%(c)%(h)%(a)%(n)%(g)%(e)"}
+	else{"Change"}	
+}
 
- //**** Don't touch this ***************************************************************
+lateearly
+{
+	"LATE. EARLY. %(l)ATE. %(e)ARLY. L%(a)%(t)E. EA%(r)L%(y). %(l)%(a)%(t)%(e). %(e)%(a)%(r)%(l)%(y)."
+}
+
+
+errorMsg
+{
+	"(Something is Wrong. Please report bug to era@outworlderaffairs.com or Era the Outworlder#8203 on Discord)\w8\w8"
+}
+
+referenceTest
+{
+	_display = ""
+	_num = 0
+	foreach reference; _ref //Each time the loop runs, _ref will store the next value in the array, until the array ends
+	{
+		_ref = SHIORI3FW.EscapeAllTags(_ref)
+		_display += "\n%(_num)- %(_ref)"
+		_num ++
+	}
+	--
+	"\_q\b2\![set,autoscroll,disable]%(_display)\x"
+}
+
+referenceTestOld
+{
+	_string = "0-%(reference0)\n 1-%(reference1)\n 2-%(reference2)\n 3-%(reference3)\n 4-%(reference4)\n 5-%(reference5)\n 6-%(reference6)\n 7-%(reference7)\n 8-%(reference8)\n 9-%(reference9)"
+	
+	_display = REPLACE("%(_string)","\e","")
+	_display = REPLACE("%(_display)","\c","")
+	_display = REPLACE("%(_display)","\x","")
+	
+	"\b2\![set,autoscroll,disable]\_q  %(_display)\x"
+	
+}
+
+
+
+
+ //**** Don't touch this ****
  //This is code stuff and nothing for you to worry about, just save the .dic and move on! You're done!
  
  On_\person

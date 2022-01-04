@@ -1,0 +1,213 @@
+//---------------------------Adding Custom Pronouns--------------------------
+//This .dic file has to do with setting the user's pronouns. I moved all parts of the function here for clarity.
+// <3 Era
+
+
+//--OnTeachPronoun
+//This is called from the config menu in the main character's double click menu when the user says they want to use alternative pronouns.
+
+OnTeachPronouns
+{
+	"\c\0\s[6]\_v[mus\sound_FLOWEY.mp3] * Do. _o. __.... Pronouns?\w5\n\n[half]\_q/
+		\![*] \q[He-His-Him,choicemasc]\n/
+		\![*] \q[She-Her-Her,choicefem]\n/	
+		\![*] \q[They-Their-Them,choiceneither]\n/
+		\![*] \q[Something else...,choicecustom]\s[0]"
+	
+	"\c\0\s[6]\_v[mus\HELP_text.mp3] * (You are offered a choice of pronouns.)\w5\n\n[half]\_q/
+		\![*] \q[He-His-Him,choicemasc]\n/
+		\![*] \q[She-Her-Her,choicefem]\n/	
+		\![*] \q[They-Their-Them,choiceneither]\n/
+		\![*] \q[Something else...,choicecustom]\s[0]"
+}
+
+Select.choicemasc
+{
+	
+	
+	himher = "him"
+	heshe = "he"
+	hisher = "his"
+	mrms = "mister"
+	--
+	"\0\s[6]%(displayPronouns)\n\n * (F_lowe_y will now call you by the correct pronouns.)\n\n * (You can always change this from f_low_ey's User Configuration Menu)"
+	--
+	if firstboot == 1
+	{
+		firstboot = 0
+		--
+		OnTeachName
+	}
+	else
+	{
+		"\e"
+	}
+	
+}
+
+Select.choicefem
+{
+
+	himher = "her"
+	heshe = "she"
+	hisher = "her"
+	mrms = "miss"
+	--
+	"\0\s[6]%(displayPronouns)\n\n * (F_lowe_y will now call you by the correct pronouns.)\n\n * (You can always change this from f_low_ey's User Configuration Menu)"
+	--
+	if firstboot == 1
+	{
+		firstboot = 0
+		--
+		OnTeachName
+	}
+	else
+	{
+		"\e"
+	}
+		
+}
+
+Select.choiceneither
+{
+	
+	himher = "them"
+	heshe = "they"
+	hisher = "their"
+	mrms = "friend"
+	--
+	"\0\s[6]%(displayPronouns)\n\n * (F_lowe_y will now call you by the correct pronouns.)\n\n * (You can always change this from \nf_low_ey's User Configuration Menu)"
+	--
+	if firstboot == 1
+	{
+		firstboot = 0
+		--
+		OnTeachName
+	}
+	else
+	{
+		"\e"
+	}
+	
+}
+
+Select.choicecustom //for people with neopronouns or mixed pronouns.
+{
+
+	--
+	"\0\s[6]\_v[mus\HELP_text.mp3] * (Enter the first of your pronouns, ex.'they')\![open,inputbox,OnHeSheTheyTeach,-1]"
+}
+
+displayPronouns
+{
+	"\0\s[6]\_v[mus\HELP_text.mp3] * Your pronouns are %(heshe), %(himher), and %(hisher)."
+}
+
+OnTeachCustomPronoun
+{
+	if reference0 == "TEACHCUSTOMPRONOUN" //event call came from
+		{
+		"\0\s[6]\_v[mus\HELP_text.mp3] * (Enter your nominative pronoun, ex.'they')\![open,inputbox,OnHeSheTheyTeach,-1]"
+
+		}
+	else
+		{
+
+		}
+}
+
+
+//--OnHeSheTheyTeach Checks and continuations
+
+OnHeSheTheyTeach
+{
+	tempnoun1 = reference0 //this stores the pronoun value temporarily in reference0
+
+		if reference0  == "" || reference0 == " " || reference0 == "   " //This is if the user doesn't put in a pronoun at all.
+			{"\0\s[6]\_v[mus\HELP_text.mp3] * (You didn't type anything into the box. Whoops!)\![open,inputbox,OnHeSheTheyTeach,-1]"
+			}
+		else //Continuing on
+			{
+			"\0\s[6]\_v[mus\HELP_text.mp3] * (Enter your oblique pronoun, ex.'them')\![open,inputbox,OnHimHerThemTeach,-1]"
+			
+			}
+	
+	
+}
+
+OnHimHerThemTeach
+{
+	tempnoun2 = reference0 //this stores the pronoun value temporarily in reference0
+
+		if reference0  == "" || reference0 == " " || reference0 == "   " //This is if the user doesn't put in a pronoun at all.
+			{"\0\s[6]\_v[mus\HELP_text.mp3] * (You didn't type anything into the box. Whoops!)\![open,inputbox,OnHimHerThemTeach,-1]"
+			}
+		else //Continuing on
+			{
+			"\0\s[6]\_v[mus\HELP_text.mp3] * (Enter your possessive pronoun, ex.'their')\![open,inputbox,OnHisHerTheirTeach,-1]"
+			
+			}
+}
+OnHisHerTheirTeach
+{
+	tempnoun3 = reference0 //this stores the pronoun value temporarily in reference0
+
+		if reference0  == "" || reference0 == " " || reference0 == "   " //This is if the user doesn't put in a pronoun at all.
+			{"\0\s[6]\_v[mus\HELP_text.mp3] * (You didn't type anything into the box. Whoops!)\![open,inputbox,OnHisHerTheirTeach,-1]"
+			}
+		else //Continuing on
+			{
+			"\0\s[6]\_v[mus\HELP_text.mp3] * Your pronouns are %(tempnoun1), %(tempnoun2), and %(tempnoun3).\n * Does that seem right? \w5\n\n[half]\_q/
+			\![*]\q[Looks good!,setpronouns]\n/
+			\![*]\q[Let's try that again...,choicecustom]"
+			
+			}
+	
+	
+}
+	
+	
+Select.setpronouns
+{
+
+	heshe = tempnoun1
+	himher = tempnoun2
+	hisher = tempnoun3
+	mrms = "friend"
+	--
+	"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * Good. %(mrms).\s[0]"
+	"\0\s[6]\_v[mus\HELP_text.mp3] * (F_lowe_y will now call you by the correct pronouns.)\n\n * (You can always change this later)\s[0]"
+	--
+	if firstboot == 1
+	{
+		firstboot = 0
+		--
+		OnTeachName
+	}
+	else
+	{
+		"\e"
+	}
+	
+}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

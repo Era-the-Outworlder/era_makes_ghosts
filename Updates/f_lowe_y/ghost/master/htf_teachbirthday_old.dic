@@ -1,0 +1,221 @@
+//--------User's Birthday--------
+//I moved OnGetBirthday and associated functions from menu.dic to a seperate .dic to make it more flexible.
+//At least I think it's better. It's certainly more appealing to me to do it this way. <3 Era
+
+OnGetBirthday	
+{
+	dayslot = GetDaySlot //This is setting up in case today is the user's birthday.
+		
+		"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * Birth month. \w8 [inputbox].\![open,inputbox,OnUserBornMonth,-1]"
+		"\0\s[6]\_v[mus\HELP_text.mp3] * (Enter your birth month.)\![open,inputbox,OnUserBornMonth,-1]"
+}
+	
+//----OnUserBornMonth----
+// Evaluates input, 
+
+OnUserBornMonth
+{
+	if ISINTSTR(_argv[0]) && _argv[0] >=1 && _argv[0] <=12
+	{
+		_tempmonth = TOINT(_argv[0])
+			
+		if _tempmonth == 1
+		{bornmonth = 1; bornmonthprint = "January"}
+		
+		elseif _tempmonth == 2
+		{bornmonth = 2; bornmonthprint = "February"}
+		
+		elseif _tempmonth == 3
+		{bornmonth = 3; bornmonthprint = "March"}
+		
+		elseif _tempmonth == 4 
+		{bornmonth = 4; bornmonthprint = "April"}
+		
+		elseif _tempmonth == 5
+		{bornmonth = 5; bornmonthprint = "May"}
+		
+		elseif _tempmonth == 6
+		{bornmonth = 6; bornmonthprint = "June"}
+		
+		elseif _tempmonth == 7
+		{bornmonth = 7; bornmonthprint = "July"}
+		
+		elseif _tempmonth == 8
+		{bornmonth = 8; bornmonthprint = "August"}
+		
+		elseif _tempmonth == 9
+		{bornmonth = 9; bornmonthprint = "September"}
+		
+		elseif _tempmonth == 10
+		{bornmonth = 10; bornmonthprint = "October"}
+		
+		elseif _tempmonth == 11
+		{bornmonth = 11; bornmonthprint = "November"}
+		
+		elseif _tempmonth == 12
+		{bornmonth = 12; bornmonthprint = "December"}
+		
+		else
+		{
+			"%(errorMsg)"
+		}
+
+	}
+	else
+	{
+		_tempmonth = TOSTR(reference0) //this stores what the user put in as a variable called _tempmonth
+		_tempmonth = TOLOWER(_tempmonth) //changes it to lowercase
+	
+	
+		//this is attaching the right value to the input from the user
+		if _tempmonth == "january" || _tempmonth == "1" 
+		{bornmonth = 1; bornmonthprint = "January"}
+		
+		elseif _tempmonth == "february" || _tempmonth == "2"
+		{bornmonth = 2; bornmonthprint = "February"}
+		
+		elseif _tempmonth == "march" || _tempmonth == "3" 
+		{bornmonth = 3; bornmonthprint = "March"}
+		
+		elseif _tempmonth == "april" || _tempmonth == "4" 
+		{bornmonth = 4; bornmonthprint = "April"}
+		
+		elseif _tempmonth == "may" || _tempmonth == "5" 
+		{bornmonth = 5; bornmonthprint = "May"}
+		
+		elseif _tempmonth == "june" || _tempmonth == "6" 
+		{bornmonth = 6; bornmonthprint = "June"}
+		
+		elseif _tempmonth == "july" || _tempmonth == "7" 
+		{bornmonth = 7; bornmonthprint = "July"}
+		
+		elseif _tempmonth == "august" || _tempmonth == "8" 
+		{bornmonth = 8; bornmonthprint = "August"}
+		
+		elseif _tempmonth == "september" || _tempmonth == "9" 
+		{bornmonth = 9; bornmonthprint = "September"}
+		
+		elseif _tempmonth == "october" || _tempmonth == "10" 
+		{bornmonth = 10; bornmonthprint = "October"}
+		
+		elseif _tempmonth == "november" || _tempmonth == "11" 
+		{bornmonth = 11; bornmonthprint = "November"}
+		
+		elseif _tempmonth == "december" || _tempmonth == "12" 
+		{bornmonth = 12; bornmonthprint = "December"}
+		
+		else
+		{
+			"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * _s th_s _ JOKOKO__ JOKE?? Are you [swap_status]?\![open,inputbox,OnUserBornMonth,-1]"
+			
+			"\0\s[6]\_v[mus\HELP_text.mp3] * (The number you gave F_lowe_y did not match up with a month.)\n\w8 * (Are you proud of yourself?)\![open,inputbox,OnUserBornMonth,-1]"
+		}
+	}
+	
+	--
+	
+	"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * %(bornmonthprint).%(bornmonthprint).%(bornmonthprint).%(bornmonthprint).%(bornmonthprint).\n\w8Day?\![open,inputbox,OnUserBornDay,-1]"
+			
+			
+	"\0\s[6]\_v[mus\HELP_text.mp3] * (You tell him you were born in %(bornmonthprint))\n\w8 * (What was the day?)\![open,inputbox,OnUserBornDay,-1]"
+			
+}
+
+
+//----OnUserBornDay----
+//This is much like the above function OnUserBornMonth. It'll take the value the user put in for the day and analyze it.
+
+OnUserBornDay
+{
+	if ISINTSTR(_argv[0])
+	{
+		_tempday = TOINT(_argv[0])
+	}
+
+
+
+	_tempday = reference0 //storing the input in _tempday
+	_tempday = TOLOWER(_tempday) //changes it to lowercase
+	_tempday = REPLACE(_tempday,"st","") //if the user types something like 2nd, 3rd, etc, this will make it just the number. It'll just add the suffix back later on the one that actually shows.
+	_tempday = REPLACE(_tempday,"nd","")
+	_tempday = REPLACE(_tempday,"rd","")
+	_tempday = REPLACE(_tempday,"th","")
+	_tempday = TOINT(_tempday) //Converts it to an integer
+	
+	if ((bornmonth == 1 || bornmonth == 3 || bornmonth == 5 || bornmonth == 7 || bornmonth == 8 || bornmonth == 10 || bornmonth == 12) && _tempday >= 1 && _tempday <= 31) || (bornmonth == 2 && _tempday >= 1 && _tempday <= 29) || ((bornmonth == 4 || bornmonth == 6 || bornmonth == 9 || bornmonth == 11) && _tempday >= 1 && _tempday <= 30) //This ugly function checks if the day falls into a valid range. If it does, we set some variables and continue down.
+	{
+		bornday = _tempday
+		borndayprint = Printday
+		userbirthday = "%(bornmonth)month %(bornday)day"
+		birthdayprint = "%(bornmonthprint) %(borndayprint)"
+		
+		"%(birthchecked)"
+		//Mostly defining envelopes and values in here. Eagle-eyed readers will notice the new envelope birthchecked on its own line like a tiny king.
+	}
+	else //If the day isn't valid, like the 10046th or something, this will open the input box again and have a \e so the dialogue below doesn't play.
+	{
+			"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * Do do do do do you like lilililike watching me suffer??\![open,inputbox,OnUserBornDay,-1]"
+			
+			"\0\s[6]\_v[mus\HELP_text.mp3] * (The number you gave F_lowe_y could not possily be a day of the month.)\n\w8 * (Try again.)\![open,inputbox,OnUserBornMonth,-1]"
+	}	
+}
+
+
+//This adds an appropriate suffix to the number for the day. No need to mess with this either.
+
+Printday
+{
+	if bornday == 1 || bornday == 21 || bornday == 31
+	{
+	"%(bornday)st"
+	}
+	elseif bornday == 2 || bornday == 22
+	{
+	"%(bornday)nd"
+	}
+	elseif bornday == 3 || bornday == 23
+	{
+	"%(bornday)rd"
+	}
+	else
+	{
+	"%(bornday)th"
+	}
+}	
+
+
+//----birthchecked----
+
+
+birthchecked
+{
+	//if today is the user's birthday
+	if userbirthday == dayslot 
+	{
+		
+			if userbirthday == "12month 25day"
+			{
+				"\0\s[6]\_v[mus\sound_FLOWEY.mp3] \w8\w8* Merry\w8\w8 Gyftmas\w8\c\_q * Merry Christmas.\w8\w8"
+				"\0\s[6]\_v[mus\HELP_text.mp3] * (It's your birthday today.)\n * (And it's Christmas, too?)\w8\w8\w8"
+			}
+			else
+			{
+			"\0\s[8]\_v[mus\sound_FLOWEY.mp3] * %(HAPPY) \c\_v[mus\sound_FLOWEY.mp3] *Happy birthday, %(username).\w8\w8\w8\w8\w8\w8"
+			
+			"\0\s[6]\_v[mus\HELP_text.mp3] * (It's your birthday today.)\w8\w8\w8"
+			}
+		
+	}
+	//Any number of these can be added to check birthdays against holidays
+	elseif userbirthday == "12month 25day"
+	{
+		"\0\s[6]\_v[mus\HELP_text.mp3] * (That's right, you were born on Christmas...)\w8\w8\w8"
+	}
+	//if the birthday is not listed above.
+	else 
+	{
+		"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * %(bornmonthprint) %(borndayprint)? Is _ha_... righ_..."
+		"\0\s[6]\_v[mus\HELP_text.mp3] * (%(bornmonthprint) %(borndayprint))\n * (F_lowe_y will remember that.)\w8\w8\w8"
+			
+	}
+}

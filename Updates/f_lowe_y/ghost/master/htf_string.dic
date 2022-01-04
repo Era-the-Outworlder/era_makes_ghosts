@@ -21,7 +21,8 @@ On_username
 
 On_recommendrootbutton.caption
 {
-	"&Recommendations"
+	CapGlitch("&Recommendations")
+	// "&R%(e)comm%(e)nd%(a)t%(i)ons"
 }
 //---- Top Menu Option ----
 
@@ -33,6 +34,7 @@ On_sakura.recommendsites
 	--
 	"%ASC(1)http://www.ashido.com/ukagaka/walkthrough.html%ASC(2)"
 	--
+	
 	"Ukagaka Webring Hub"
 	--
 	"%ASC(1)https://ukagakawebring.netlify.app/%ASC(2)"
@@ -64,7 +66,9 @@ On_sakura.recommendsites
 
 On_portalrootbutton.caption
 {
-	"Crea&tor Sites"
+	// "Crea&tor Sites"
+	CapGlitch("Crea&tor Sites")
+	// "C%(r)%(e)%(a)&t%(o)%(r) S%(i)%(t)%(e)%(s)"
 }
 
 //---- Websites in the Second Option ----
@@ -73,10 +77,9 @@ On_sakura.portalsites
 {
 	"GITHUB"
 	--
-	"%ASC(1)https://era-the-outworlder.github.io/era_makes_ghosts/f_lowe_y.html %ASC(2)"
+	"%ASC(1)https://era-the-outworlder.github.io/era_makes_ghosts/f_lowe_y.html/%ASC(2)"
 	--
  	"Tumblr"
-	"THAT ONE PLACE"
 	--
 	"%ASC(1)http://theoutworlder.tumblr.com %ASC(2)"
 	--
@@ -103,8 +106,8 @@ On_sakura.portalsites
  
 On_updatebutton.caption
 {
-	
-	"Check for Updates"
+	CapGlitch2("Update Ghost")
+	// "C%(h)e%(c)k f%(o)r Up%(d)%(a)t%(e)s"
 	
 	
 }
@@ -112,18 +115,15 @@ On_updatebutton.caption
 //----  Network Update URL  ------
 On_homeurl
 {
-	"https://raw.githubusercontent.com/Era-the-Outworlder/era_makes_ghosts/master/Updates/f_lowe_y/"
-
-	//"https://Era-the-Outworlder.github.io/era_makes_ghosts/Updates/f_lowe_y/"
-	//"https://github.com/Era-the-Outworlder/era_makes_ghosts/tree/main/Updates/f_lowe_y/"
+	"https://raw.githubusercontent.com/Era-The-Outworlder/era_makes_ghosts/main/Updates/f_lowe_y/"
 }
 
 
 //---- Uninstall Caption -----------------------------------------------------
  
 On_vanishbutton.caption
-{
-	"Uninstall"
+{	
+	GLITCH("uninstall")
 }
 
 
@@ -131,21 +131,25 @@ On_vanishbutton.caption
 
 On_headlinesenserootbutton.caption
 {
-	"Headlines + RSS"
+	CapGlitch("Headlines + RSS")
+	// "He%(a)d%(l)%(i)nes + RSS"
 
 }
 
 //----Plugins----
 On_pluginrootbutton.caption
 {
-	"&Plugins"
+	CapGlitch("&Plugins")
+	// "&P%(l)%(u)g%(i)ns"
 	
 }
 //----Check Mail (BIFF)----
 
 On_biffbutton.caption
 {
-	"Check &Mail"
+	CapGlitch2("Check &Mail")
+	CapGlitch("Check e&Mail")
+	// "Ch%(e)ck &M%(a)%(i)l"
 	//"Check e-&mail"
 }
 
@@ -153,59 +157,70 @@ On_biffbutton.caption
 
 On_shellscalerootbutton.caption
 {
-	"Sh&ell Scaling"
+	CapGlitch2("Sh&ell Scaling")
+	// "S%(h)&e%(l)l Sc%(a)li%(n)g"
 }
 
-//Additional Settings (Same as Ghost Preferences) Not Found
+// Additional Settings (Same as Ghost Preferences) Not Found
 
 On_shellscaleotherbutton.caption
 {
-	"&Other Percentage"
+	CapGlitch("&Other Percentage")
+	// "&Ot%(h)%(e)r Pe%(r)%(c)%(e)nta%(g)e"
 }
 //----Baloon Scaling
 
 On_balloonscalerootbutton.caption
 {
-	"Balloon Scaling (&D)"
+	CapGlitch2("Balloon Scaling (&D)")
+	// "Ba%(l)%(l)%(o)%(o)n Scal%(i)ng (&D)"
 }
 
 On_balloonscaleotherbutton.caption
 {
- ""
+	CapGlitch("&Other Percentage")
+	// "&Ot%(h)%(e)r Pe%(r)%(c)%(e)nta%(g)e..."
 }
 
 //----Utilities---------------------------------------------
 
 On_utilityrootbutton.caption
 {
-	"Utilities (&F)"
-	
+	CapGlitch3("Utilities (&F)")
+	// "U%(t)il%(i)%(t)ies (&F)"
 }
 
 On_calendarbutton.caption
 {
-	"&Calendar"
+	CapGlitch("&Calendar")
+	// "&Ca%(l)e%(n)%(d)ar"
 }
 
 On_messengerbutton.caption
 {
-	"SSP &Messenger"
+	CapGlitch("SSP &Messenger")
+	// "SSP &Me%(s)%(s)%(e)nger"
 }
 
 On_sntpbutton.caption
 {
-	"&NTP Time Sync"
+	CapGlitch("&NTP Time Sync")
+	// "&NTP T%(i)me S%(y)nc"
 }
 
 On_ghostexplorerbutton.caption
 {
-	"&Explorer"
-	//"Ghost &Explorer"
+	CapGlitch3("SSP &Explorer")
+	CapGlitch2("Ghost &Explorer")
+	// "&Ex%(p)l%(o)rer"
+	// "SSP &E%(x)plo%(r)er"
+	// "Gh%(o)st &Exp%(l)ore%(r)"
 }
 
 On_updateplatformbutton.caption
 {
-	"Check SSP &Updates"
+	CapGlitch3("Check SSP &Updates")
+	// "Ch%(e)ck SSP &U%(p)da%(t)es"
 }
 
 //Speech Recognition (&T)
@@ -213,23 +228,24 @@ On_updateplatformbutton.caption
 
 On_recognitionbutton.caption
 {
-	"Success"
+	CapGlitch("Speech Recognition (&T)")
 }
 
 //&Voice Synthesis
 On_texttospeechbutton.caption
 {
-	"Success"
+	CapGlitch("&Voice Synthesis")
 }
 On_addressbarbutton.caption
 {
-	"&Address Bar"
+	CapGlitch("&Address Bar")
 }
 
 //Open FIle (&I)
 On_openfilebutton.caption
 {
-	"Success"
+	CapGlitch("Open FIle (&I)")
+	
 }
 
 
@@ -237,62 +253,74 @@ On_openfilebutton.caption
 
 On_openfolderbutton.caption
 {
-	"Success"
+	CapGlitch("Open Folder (&F)")
+	
 }
 
 On_scriptlogbutton.caption
 {
-	"Script &Log"
+	CapGlitch3("Script &Log")
+	
 }
 
 On_duibutton.caption
 {
-	"&Development Interface"
+	CapGlitch3("&Development Interface")
+	
 }
 
 On_purgeghostcachebutton.caption
 {
-	"Purge &Ghost Cache"
+	CapGlitch("Purge &Ghost Cache")
+	
 }
 
 On_updatefmobutton.caption
 {
-	"&FMO Update"
+	CapGlitch("&FMO Update")
+	
 }
 
 On_reloadinfobutton.caption
 {
-	"&Reload Extension Folders"
+	CapGlitch("&Reload Extension Folders")
+	
 }
 
 On_switchreloadbutton.caption
 {
-	"Rel&oad Ghost"
+	CapGlitch3("Rel&oad Ghost")
+	
 }
 
 On_leavepassivebutton.caption
 {
-	"Reset &Passive Mode"
+	CapGlitch3("Reset &Passive Mode")
+	
 }
 
 On_switchreloadtempghostbutton.caption
 {
-	"&Keep Temporary Ghost"
+	CapGlitch("&Keep Temporary Ghost")
+	
 }
 
 On_switchmovetodefaultpositionbutton.caption
 {
+	CapGlitch2("Reset S&hell Position")
 	"Reset S&hell Position"
 }
 
 On_resetballoonpositionbutton.caption
 {
-	"Reset Balloo&n Position"
+	CapGlitch2("Reset Balloo&n Position")
+	
 }
 
 On_closeballoonbutton.caption
 {
-	"Hide All &Balloons"
+	CapGlitch("Hide All &Balloons")
+	
 }
 
 
@@ -302,58 +330,71 @@ On_closeballoonbutton.caption
 
 On_configurationrootbutton.caption
 {
-	"&Options"
+	CapGlitch2("&Options")
 }
 
 On_configurationbutton.caption
 {
-	"&Preferences...?"
+	CapGlitch3("&Preferences...?")
 }
 
 //Ghost Preferences...
 
 
 On_switchproxybutton.caption
-{"Enable Pro&xy"}
+{
+	CapGlitch("Enable Pro&xy")
+}
 
 On_charsetbutton.caption
-{"Set Default &Charset"}
+{
+	CapGlitch("Set Default &Charset")
+}
 
 
 
 On_switchtalkghostbutton.caption
-{"Raise AITalk from &SHIORI"}
+{
+	CapGlitch("Raise AITalk from &SHIORI")
+}
 
 On_switchcompatiblemodebutton.caption
-{"&Old Specification Support"}
+{
+	CapGlitch("&Old Specification Support")
+}
 
 
 On_ghostrootbutton.caption
 {
-	"Change Ghost"
+	CapGlitch2("Change Ghost")
+	
 }
  
  
 On_callghostrootbutton.caption
 {
-	"Call Ghost"
+	CapGlitch2("Call Ghost")
+	
 }
 
 
 On_shellrootbutton.caption
 {
-	"Change Shell"
+	CapGlitch2("Change Shell")
+	
 }
 
 
 On_dressuprootbutton.caption
 {
-	"&Clothes/Dress Up"
+	CapGlitch("&Clothes/Dress Up")
+	
 }
 
 On_balloonrootbutton.caption
 {
-	"&Balloon"
+	CapGlitch2("&Balloon")
+	
 }
 
 
@@ -361,32 +402,38 @@ On_balloonrootbutton.caption
 
 On_historyrootbutton.caption
 {
-	"History (&Y)"
+	CapGlitch3("History (&Y)")
+	
 }
 
 On_ghosthistorybutton.caption
 {
-	"Change &Ghost"
+	CapGlitch2("Changed &Ghosts")
+	
 }
 
 On_callghosthistorybutton.caption
 {
-	"Call Ghosts (&Z)"
+	CapGlitch2("Called Ghosts (&Z)")
+	
 }
 
 On_balloonhistorybutton.caption
 {
-	"&Balloon"
+	CapGlitch2("&Balloon")
+	
 }
 
 On_headlinesensehistorybutton.caption
 {
-	"&Headline"
+	CapGlitch("&Headline")
+	
 }
 
 On_pluginhistorybutton.caption
 {
-	"&Plugin"
+	CapGlitch("&Plugin")
+	
 }
 
 
@@ -396,40 +443,47 @@ On_pluginhistorybutton.caption
 
 On_inforootbutton.caption
 {
-	"Inform&ation"
+	CapGlitch3("Inform&ation")
+	
 }
 
 On_firststaffbutton.caption
 {
-	"&About SSP"
+	CapGlitch("&About SSP")
+	
 }
 
 On_readmebutton.caption
 {
-	"READ ME"
-	"readme.txt"
+	CapGlitch3("READ ME")
+	CapGlitch3("readme.txt")
+	
 }
 
 //"Terms of This Ghost" caption cannot be found
 
 On_helpbutton.caption
 {
-	"&Help"
+	CapGlitch2("&Help")
+	
 }
 
 On_aistatebutton.caption
 {
-	"&AI Graph"
+	CapGlitch("&AI Graph")
+	
 }
 
 On_rateofusebutton.caption
 {
-	"Ghost Usage Statistics(&R)"
+	CapGlitch("Ghost Usage Statistics(&R)")
+	
 }
 
 On_systeminfobutton.caption
 {
-	"Output &System Information"
+	CapGlitch("Output &System Information")
+	
 }
 
 
@@ -438,17 +492,20 @@ On_systeminfobutton.caption
 
 On_hidebutton.caption
 {
-	"&Iconify"
+	CapGlitch3("&Iconify")
+	
 }
 
 On_closebutton.caption
 {
-	"Close (&W)"
+	CapGlitch3("Close (&W)")
+	
 }
 
 On_quitbutton.caption
 {
-	"Quit"
+	CapGlitch3("Quit")
+	
 }
 
  
@@ -457,7 +514,8 @@ On_quitbutton.caption
 
 On_kero.recommendbuttoncaption
 {
-	"Recommended Sites"
+	CapGlitch("Recommended Sites")
+	
 }
 
 //---- Top Menu Websites for the Second Character ----
@@ -478,7 +536,8 @@ On_kero.recommendsites
 
 On_kero.testbuttoncaption
 {
-	"Testing"
+	CapGlitch("Testing")
+	
 }
 
 
@@ -486,7 +545,8 @@ On_kero.testbuttoncaption
 
 On_char3.recommendsitescaption
 {
-	"Reccomended Sites"
+	CapGlitch("Reccomended Sites")
+	
 }
 
 On_char3.recommendsites
@@ -494,7 +554,42 @@ On_char3.recommendsites
 	"Nothing"
 }
 
+// Caption Glitch Control
 
+CapGlitch
+{
+	_cap = _argv[0]
+	if ellVee >=20 
+	{_cap = GLITCH("help");"%(_cap)"}
+	elseif ellVee >= 7
+	{_cap = GLITCH("%(_cap)");"%(_cap)"}
+	elseif ellVee >=3
+	{_cap = glitchLite("%(_cap)");"%(_cap)"}
+	else
+	{"%(_cap)"}
+}	
+
+CapGlitch2
+{
+	_cap = _argv[0]
+	if ellVee >=20 
+	{_cap = GLITCH("help");"%(_cap)"}
+	elseif ellVee >= 10 
+	{_cap = GLITCH("%(_cap)");"%(_cap)"}
+	elseif ellVee >=5
+	{_cap = glitchLite("%(_cap)");"%(_cap)"}
+	else
+	{"%(_cap)"}
+}
+
+CapGlitch3
+{
+	_cap = _argv[0]
+	if ellVee >=2
+	{_cap = glitchLite("%(_cap)");"%(_cap)"}
+	else
+	{"%(_cap)"}
+}	
 
  //---- Uninstall Options visibility On/Off ----
 On_vanishbutton.visible

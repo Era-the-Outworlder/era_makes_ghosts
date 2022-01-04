@@ -1,57 +1,67 @@
 ﻿//---------------------------Mouse Functions--------------------------
-//As you've probably guessed, this .dic file has to do with mouse functions. 
+//As you've probably guessed, this .dic file has to do with mouse functions. This includes the petting feature and what happens when you double click your ghost.
+
 
 //--OnMouseMove
 //This is a bunch of code determining who the mouse is over. Don't touch any of it.
 
 OnMouseMove
- {
-  	if nowmode != "QUIZ"
- 	{
-		//---- reference3 determines the character in question
-		if reference3 == 0 //if the character is 0, aka the main character
-		{
-			//---- it will run the mouse functions for that character
-			MouseMoveSakura
-		}
-		else //if the character isn't 0, then it must be the side character.
-		{
-			"\0\s[0]\_v[HELP_text.mp3] * (Something is Wrong. Please report bug to era@outworlderaffairs.com)\w8\w8\s[0]\e"
-		}
+{
+	//---- reference3 determines the character in question
+	if reference3 == 0 //if the character is 0, aka the main character
+	{
+		//---- it will run the mouse functions for that character
+		MouseMoveSakura
 	}
- }
- 
- 
+	else //if the character isn't 0, then it must be the side character.
+	{
+		" * %(errorMsg)"
+	}
+}
 
  //--MouseMoveSakura
- //The petting function.
+ //The petting function for your main character.
  
 MouseMoveSakura
- {
+{
 	if reference4 != "" //ignore
  	{
- 		stroke++ //if you move the mouse over the right areas, the stroke count will go up.
- 		if stroke >= 40 //if the stroke count is above a certain number, the petting dialogue will kick in.
+ 		stroke++ 
+		if reference4 == "Petals" //collision as set in surfaces.txt
 		{
- 			stroke = 0 //resetting the stroke count
-			if reference4 == "Top" //collision as set in surfaces.txt
- 			{
-				"\0\s[9]\_v[sound_FLOWEY.mp3] * Stop. sssssssssssstop. \w8\w8\s[0]\e"
-				"\0\s[6]\_v[sound_FLOWEY.mp3] * Pat. patpetpotpatpotpet. \w8\w8\s[0]\e"
-				"\0\s[9]\_v[HELP_text.mp3] * (You get the feeling he would appreciate it more if you'd stop.) \w8\w8\w8\s[0]\e"
-				"\0\s[6]\_v[HELP_text.mp3] * (He seems to be enjoying this.)\w8\w8\s[0]\e"
-				
- 			}
- 			elseif reference4 == "Chin" 
- 			{
- 				"\0\s[9]\_v[sound_FLOWEY.mp3] * Stop. sssssssssssstop. \w8\w8\s[0]\e"
-				"\0\s[0]\_v[sound_FLOWEY.mp3] * Pat. patpetpotpatpotpet. \w8\w8\s[0]\e"
-				"\0\s[9]\_v[HELP_text.mp3] * (You get the feeling he would appreciate it more if you'd stop.) \w8\w8\w8\s[0]\e"
-				"\0\s[0]\_v[HELP_text.mp3] * (He seems to be enjoying this.)\w8\w8\s[0]\e"
-				
- 			}
-			
- 		}
+			if stroke >= 60
+			{
+				stroke = 0 //resetting the stroke count
+				petCount++
+				"\0\s[21]\_v[mus\sound_FLOWEY.mp3] * Stop. sssssssssssstop.  \w8\w8"
+				"\0\s[9]\_v[mus\sound_FLOWEY.mp3] * Pat. patpetpotpatpotpet.  \w8\w8"
+				"\0\s[21]\_v[mus\HELP_text.mp3] * (You get the feeling he would appreciate it more if you'd stop.) \w8\w8\w8"
+				"\0\s[9]\_v[mus\HELP_text.mp3] * (He seems to be enjoying this.) \w8\w8"
+			}
+		}
+		elseif reference4 == "Face" 
+		{
+			if petCountNeg <= 100
+			{
+				if stroke >= 120
+				{
+					stroke = 0 //resetting the stroke count
+					petCountNeg++
+					"\0\s[21]\_v[mus\sound_FLOWEY.mp3] * Stop. sssssssssssstop. Why. %(f)%(a)%(c)%(e)? \w8\w8"
+					"\0\s[21]\_v[mus\HELP_text.mp3] * (You get the feeling he would appreciate it more if you'd stop touching his face.) \w8\w8\w8"
+				}
+			}
+			else
+			{
+				if stroke >= 120
+				{
+					stroke = 0 //resetting the stroke count
+					petCountNeg++
+					"\0\s[17]\_v[mus\sound_FLOWEY.mp3]\f[height,20] * %(s)%(t)%(o)%(p).\f[default] \w8\w8"
+					"\0\s[17]\_v[mus\HELP_text.mp3] * (Does his anger amuse you?) \w8\w8\w8"
+				}
+			}
+		}
 	}
  	else
 	{
@@ -60,99 +70,213 @@ MouseMoveSakura
  	}
 }
 
+ 
 //---- OnMouseDoubleClick -------------------------------------------------------
 //This is set up much like OnMouseMove above, except this is checking to see if the user is double clicking on the ghost.
 
 OnMouseDoubleClick
  {
 	//---- like with the OnMouseMove function above, this determines who the user is clicking on.
-	
- 	if reference3 == 0 //if the character is 0, the main (and only)
+	if reference5 == 0 //checks which button is being used for the click
 	{
-		MouseDoubleClickSakura
- 	}
-	else
- 	{
- 		"\0\s[0]\_v[HELP_text.mp3] * (Something is Wrong. Please report bug to era@outworlderaffairs.com)\w8\w8\s[0]\e"
+	 	if reference3 == 0 //if the character is 0, aka your main character
+		{
+			MouseDoubleClickSakura
+		}
+		else
+		{
+			MouseDoubleClickKero
+		}
 	}
  }
 
  //---- MouseDoubleClickSakura ----------------------------------------------------------
- //Like the petting animation above, this is the reactions they have to being double clicked. These also rely on the collisions you set up in surfaces.txt! This set is specifically for the main character, as indicated by the Sakura in the name again.
+ //Like the petting animation above, this is the reactions they have to being double clicked.
  
- 
- //--- KNIFE TIME, Kill count, and RESETS-------- 
- //I was working on a game-ish thing that involved killing F_lowe_y and resets and some dialogue and item stuff. I've quit (for now, anyway) but this hit action is all still here. Go ahead. Hit him. See what happens. (Though if you're here, all you've got to do is look at the code, huh?) <3 Era
  
 MouseDoubleClickSakura
  {
- 	if reference4 == "Head" || reference4 == "Face" || reference4 == "Top"//here, this is checking to see if the user is double clicking on specified hitboxes.
+ 	if reference4 == "Face"
+	//here, this is checking to see if the user is double clicking on specified hitboxes.
 	{
-		if knifetime >= 30
+		if knifetime >= 19
 		{
 			if killcount >= 5
 			{
+				EXP = EXP+knifetime
 				knifetime = 0
 				killcount = 0
-				resetcount++
-				"\0\s[-1]\_v[dust.wav]\w8\w8\w8\_v[LV_increased.wav] * YOU WIN! \w8\e"
+				ellVee++
+				"\0\s[15]\_v[mus\hit.wav]\w8\w8\w8\n\n\n\s[-1]\_v[mus\dust.wav]\w8\w8\w8\_v[mus\LV_increased.wav] * YOU WIN! \w8\e"
 			}
 			else
 			{
+				EXP = EXP+knifetime
 				knifetime = 0
 				killcount++
-				"\0\s[-1]\w8\w8\w8\w8\s[0]\_v[savestate_spam.wav]\w8\w8\w8\w8\s[7]\e"
+				"\0\s[-1]\w8\w8\s[21]\_v[mus\savestate_spam.wav]\w8\w8\e"
 			}
 			
 		}
 		
-		elseif knifetime == 29
+		elseif knifetime == 18
 		{
 			knifetime++ 
-			"\0\s[8]\_v[hahaha.mp3] * (Flowey is considering a violence.) \w8\w8\s[0]\e"
-			"\0\s[8]\_v[sound_FLOWEY.mp3] \f[bold,true]Die.\w8\w8\s[0]\e"
+			"\0\s[18]\_v[mus\hahaha.mp3] * (Flowey is considering a violence.) \w8\w8"
+			"\0\s[18]\_v[mus\sound_FLOWEY.mp3] \f[height,30]Die.\f[default]\w8\w8"
 			
 		}
-		elseif knifetime >= 20
+		elseif knifetime >= 12
 		{
 			knifetime++
-			"\0\s[15]\_v[r_ack.wav] * ST_P IT!\w8\w8\s[0]\e"
-			"\0\s[9]\_v[r_oh.wav] * C_T TH_T __T!!\w8\w8\s[0]\e"
-			"\0\s[4]\_v[r_screech.wav] * (Scared noises)\w8\w8\s[0]\e"
-			"\0\s[9]\_v[r_hey.wav] * H_Y Y__! \w8\w8\s[0]\e"
-			"\0\s[4]\_v[HELP_text.mp3] \f[color,250,0,0]* ( %(knifetime) )\f[color,default]  \w8\w8\s[0]\e"
-			"\0\s[15]\_v[hit.wav]\w8\w8\s[0]\e"
+			"\0\s[15]\_v[mus\r_ack.wav] * ST_P IT!\w8\w8"
+			"\0\s[21]\_v[mus\r_oh.wav] * C_T TH_T __T!!\w8\w8"
+			"\0\s[14]\_v[mus\r_screech.wav] * (Scared noises)\w8\w8"
+			"\0\s[21]\_v[mus\r_hey.wav] * H_Y Y__! \w8\w8"
+			"\0\s[15]\_v[mus\hit.wav]\w8\w8"
 		}
-		elseif knifetime >= 10
+		elseif knifetime >= 6
 		{
 			knifetime++
 			
-			"\0\s[16]\_v[r_ack.wav] * Ack! Why-\w8\w8\s[0]\e"
-			"\0\s[15]\_v[r_oh.wav] * OW! You!\w8\w8\s[0]\e"
-			"\0\s[16]\_v[r_screech.wav] * (Angrier noises)\w8\w8\s[0]\e"
-			"\0\s[16]\_v[r_hey.wav] * Hey! Stop! \w8\w8\s[0]\e"
-			"\0\s[4]\_v[HELP_text.mp3] \f[color,250,0,0]* ( %(knifetime) )\f[color,default]   \w8\w8\s[0]\e"
-			"\0\s[15]\_v[hit.wav]\w8\w8\s[0]\e"
+			"\0\s[16]\_v[mus\r_ack.wav] * Ack! Why-\w8\w8"
+			"\0\s[15]\_v[mus\r_oh.wav] * OW! You!\w8\w8"
+			"\0\s[16]\_v[mus\r_screech.wav] * (Angrier noises)\w8\w8"
+			"\0\s[16]\_v[mus\r_hey.wav] * Hey! Stop! \w8\w8"
+			"\0\s[15]\_v[mus\hit.wav]\w8\w8"
 		}
 		else
 		{
 			knifetime++
 			
-			"\0\s[15]\_v[r_ack.wav] * Ack!\w8\w8\s[0]\e"
-			"\0\s[2]\_v[r_oh.wav] * OW!\w8\w8\s[0]\e"
-			"\0\s[2]\_v[r_screech.wav] * (Angry noises)\w8\w8\s[0]\e"
-			"\0\s[2]\_v[r_hey.wav] * Hey! \w8\w8\s[0]\e"
-			"\0\s[4]\_v[HELP_text.mp3] \f[color,250,0,0]* ( %(knifetime) )\f[color,default]   \w8\w8\s[0]\e"
-			"\0\s[15]\_v[hit.wav]\w8\w8\s[0]\e"
+			"\0\s[15]\_v[mus\r_ack.wav] * Ack!\w8\w8"
+			"\0\s[12]\_v[mus\r_oh.wav] * OW!\w8\w8"
+			"\0\s[12]\_v[mus\r_screech.wav] * (Angry noises)\w8\w8"
+			"\0\s[12]\_v[mus\r_hey.wav] * Hey! \w8\w8"
+			"\0\s[15]\_v[mus\hit.wav]\w8\w8"
+			
 		}
 		
-		
+		--
+			"\e"
+			"\n\n\n\n\n\n\w8\w8\_v[mus\HELP_text.mp3] \f[color,250,0,0]* ( %(knifetime) )\f[color,default]\w8\w8\e"
 
  	}
 	else
  	{
-		//Otherwise, if the user doubleclicks somewhere else on the character, they will open their menu as detailed in menu.dic.
  		OpenSakuraMenu
 	}
  }
+
+MouseDoubleClickKero
+{
+	"\0\s[6]\_v[mus\HELP_text.mp3] * %(errorMsg)\e"
+}
+
+// ----OnMouseWheel----
+// When the wheel of a mouse moves
+
+OnMouseWheel
+{
+	if reference4 == "Face"
+	{
+		"\0\s[27]\_v[mus\swipe.wav]\e" //\n\f[height,100]\f[color,255,0,0] MISS\f[default]
+	}
+}
+
+// ----OnMouseDragStart----
+// When dragging of ghost starts
+
+OnMouseDragStart
+{
+	"\0\s[0]\_v[mus\encounter.wav]\e"
+}
+
+
+// ----OnMouseDragEnd----
+// When dragging of ghost ends.
+
+OnMouseDragEnd
+{
+	"\0\s[0]\_v[mus\battle_start.wav]\e"
+}
+
+
+
+
+
+
+OnMouseDownEx
+{
+	if reference5 == "middle"
+	{
+		"\s[26]Mouse Wheel/Middle"
+	}
+	
+	elseif reference5 == "xbutton1"
+	{
+		"Extended Button 1"
+	}
+	elseif reference5 == "xbutton2"
+	{
+		"Extended Button 2"
+	}
+	// --
+	// "\n%(referenceTest)"
+}
+
+
+// Occurs when mouse buttons other than left and right are pressed.
+
+// Reference0
+// X coordinate (local coordinate) of the mouse cursor
+// Reference1
+// The y coordinate (local coordinate) of the mouse cursor
+// Reference2
+// Always 0.
+// Reference3
+// 0 for the main body, 1 for the companion. There are also 2 and later in SSP / CROW.
+// Reference4
+// Collision detection identifier.
+// Reference5
+// Wheel clicks (or 3 button mouse middle buttons) are middle, extended button 1 (usually assigned to "back") is xbutton1, and extended button 2 (usually assigned to "forward") is xbutton2.
+// Reference6
+// After windows7, input from the touch panel (* touch pad is not possible) in a multi-touch compatible environment is touch, input from the mouse etc. is mouse
+
+//----Some of these are questionable but being preserved <3 Era
+
+
+
+//----OnMouseEnter----
+// When the mouse enters any collision area of the ghost.
+
+// OnMouseEnter
+// {
+	// "\0\s[6]\_v[trill.wav]OnMouseEnter Test.\e"
+// }
+	
+//----OnMouseEnterAll----
+// When the mouse enters the outermost boundary of the ghost.
+
+// OnMouseEnterAll
+// {
+	// "\0\s[6]\_v[trill.wav]I am currently fuctional.\e"
+// }
+
+//----OnMouseLeave----
+// When the mouse leaves any collision area of the ghost.
+
+// OnMouseLeave
+// {
+	// "\0\s[6]\_v[trill.wav]OnMouseLeave Test.\e"
+// }
+
+//----OnMouseLeaveAll----
+//When the mouse leaves the outermost boundary of the ghost.
+
+// OnMouseLeaveAll
+// {
+	// "\0\s[6]\_v[trill.wav]OnMouseLeaveAll Test.\e"
+// }
+
 

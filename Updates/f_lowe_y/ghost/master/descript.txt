@@ -1,7 +1,6 @@
 ﻿//-----Character set-----
 charset,UTF-8
-shiori.encoding,0
-
+//shiori.encoding,0
 //-----Creater Info-----
 craftman, Era
 craftmanw, Era
@@ -9,8 +8,8 @@ craftmanurl, https://era-the-outworlder.github.io/era_makes_ghosts/index.html
 readme, readme.txt
 
 //-----Taskbar Icon-----
-icon, sspundertaleicon.ico
-icon.minimize, sspundertaleicon.ico
+icon, HTflowey.ico
+icon.minimize, HTflowey.ico
 
 //-----Custom Cursor-----
 //cursor,flowerycursor.cur
@@ -21,7 +20,7 @@ menu.font.height, font size
 
 //-----SHIORI-----
 //Name of SHIORI file
-shiori,aya5.dll
+shiori,yaya.dll
 shiori.cache,1
 
 //Specify SHIORI version, used for compatibility
@@ -67,11 +66,11 @@ kero.seriko.alignmenttodesktop, free
 // kero.defaulttop, Y coordinate
 
 //----Balloon----
+balloon,undertrash
 balloon.dontmove, false
 balloon.defaultsurface,0
-default.balloon.path, ..\..\..\..\balloon\undertrash
-//balloon.directory,undertrash
-recommended.balloon, undertrash
+// default.balloon.path, path
+// recommended.balloon, balloon name
 // recommended.balloon.path, path
 
 //Do not receive SSTP with no ghost designation at 0. The default is 1.
@@ -80,6 +79,4 @@ sstp.allowunspecifiedsend,1
 sstp.allowcommunicate,1
 //Force OnTranslate
 sstp.alwaystranslate,0
-
-
 

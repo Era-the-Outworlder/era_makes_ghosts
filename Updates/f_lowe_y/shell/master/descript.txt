@@ -1,7 +1,7 @@
 ﻿//Free or Bound
 
 seriko.alignmenttodesktop,free
-
+seriko.use_self_alpha,1
 
 //General Information
 
@@ -60,9 +60,10 @@ menu.separator.color.b,240
 
 //Menu Background Image Alignment
 
-menu.background.alignment,righttop
-menu.foreground.alignment,righttop
-menu.sidebar.alignment,bottom
+
+menu.background.alignment,leftbottom+repeat-x+repeat-y
+menu.foreground.alignment,leftbottom+repeat-x+repeat-y
+menu.sidebar.alignment,leftbottom
 
 
 //Menu Background Image Location

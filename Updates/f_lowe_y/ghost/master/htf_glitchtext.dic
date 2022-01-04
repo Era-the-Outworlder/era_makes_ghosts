@@ -1,0 +1,136 @@
+// THIS THING IS A MESSSSSSS
+
+GLITCH
+{
+
+	_text = TOLOWER(_argv[0])
+	_send = CHARSPLIT(_text)
+	_final = OnGlitchReplace(_send)
+	--
+	_final;
+}
+
+glitchLite
+{
+
+	_text = TOLOWER(_argv[0])
+	_send = CHARSPLIT(_text)
+	_final = OnGliteReplace(_send)
+	--
+	_final;
+}
+//USE:
+//CHARSPLIT('word') will return 'w,o,r,d'
+CHARSPLIT
+{
+    _char = IARRAY //declare an array
+    _strlen = STRLEN(_argv[0]) //get how many letters the word has
+    for _i=0;_i<_strlen;_i++
+    {
+        _char[_i] = SUBSTR(_argv[0],_i,1)//get the [_i] letter from the word and save it into an array
+    }
+    --
+    _char; //display the array
+}
+
+OnGlitchReplace
+{
+	_array = IARRAY
+	_array = _argv[0]
+	_display = ""
+	_num = 0
+	foreach _array; _ref //Each time the loop runs, _ref will store the next value in the array, until the array ends
+	{
+		if _ref == "a"{_ref = REPLACE(_ref,'a',a)}
+		elseif _ref == "b"{_ref = REPLACE(_ref,'b',b)}
+		elseif _ref == "c"{_ref = REPLACE(_ref,'c',c)}
+		elseif _ref == "d"{_ref = REPLACE(_ref,'d',d)}
+		elseif _ref == "e"{_ref = REPLACE(_ref,'e',e)}
+		elseif _ref == "f"{_ref = REPLACE(_ref,'f',f)}
+		elseif _ref == "g"{_ref = REPLACE(_ref,'g',g)}
+		elseif _ref == "h"{_ref = REPLACE(_ref,'h',h)}
+		elseif _ref == "i"{_ref = REPLACE(_ref,'i',i)}
+		elseif _ref == "j"{_ref = REPLACE(_ref,'j',j)}
+		elseif _ref == "k"{_ref = REPLACE(_ref,'k',k)}
+		elseif _ref == "l"{_ref = REPLACE(_ref,'l',l)}
+		elseif _ref == "m"{_ref = REPLACE(_ref,'m',m)}
+		elseif _ref == "n"{_ref = REPLACE(_ref,'n',n)}
+		elseif _ref == "o"{_ref = REPLACE(_ref,'o',o)}
+		elseif _ref == "p"{_ref = REPLACE(_ref,'p',p)}
+		elseif _ref == "q"{_ref = REPLACE(_ref,'q',q)}
+		elseif _ref == "r"{_ref = REPLACE(_ref,'r',r)}
+		elseif _ref == "s"{_ref = REPLACE(_ref,'s',s)}
+		elseif _ref == "t"{_ref = REPLACE(_ref,'t',t)}
+		elseif _ref == "u"{_ref = REPLACE(_ref,'u',u)}
+		elseif _ref == "v"{_ref = REPLACE(_ref,'v',v)}
+		elseif _ref == "w"{_ref = REPLACE(_ref,'w',w)}
+		elseif _ref == "x"{_ref = REPLACE(_ref,'x',x)}
+		elseif _ref == "y"{_ref = REPLACE(_ref,'y',y)}
+		elseif _ref == "z"{_ref = REPLACE(_ref,'z',z)}
+		--
+		_display += "%(_ref)"
+		_num ++
+	}
+	--
+	_display
+
+}
+
+
+//;"a̟ͦ";"b̳͑";"c̙̚";"d͉̀";"ȇ̹͉";"f̩͗̏";"g̘͕̅"
+//Letter glitch substitution
+
+a{if RAND(100)>=39{"a";"A"};else{"_";"-"}}
+b{if RAND(100)>=39{"b";"B"};else{"_";"-"}}
+c{if RAND(100)>=39{"c";"C"};else{"_";"-"}}
+d{if RAND(100)>=39{"d";"D"};else{"_";"-"}}
+e{if RAND(100)>=39{"e";"E"};else{"_";"-"}}
+f{if RAND(100)>=39{"f";"F"};else{"_";"-"}}
+g{if RAND(100)>=39{"g";"G"};else{"_";"-"}}
+h{if RAND(100)>=39{"h";"H"};else{"_";"-"}}
+i{if RAND(100)>=39{"i";"I"};else{"_";"-"}}
+j{if RAND(100)>=39{"j";"J"};else{"_";"-"}}
+k{if RAND(100)>=39{"k";"K"};else{"_";"-"}}
+l{if RAND(100)>=39{"l";"L"};else{"_";"-"}}
+m{if RAND(100)>=39{"m";"M"};else{"_";"-"}}
+n{if RAND(100)>=39{"n";"N"};else{"_";"-"}}
+o{if RAND(100)>=39{"o";"O"};else{"_";"-"}}
+p{if RAND(100)>=39{"p";"P"};else{"_";"-"}}
+q{if RAND(100)>=39{"q";"Q"};else{"_";"-"}}
+r{if RAND(100)>=39{"r";"R"};else{"_";"-"}}
+s{if RAND(100)>=39{"s";"S"};else{"_";"-"}}
+t{if RAND(100)>=39{"t";"T"};else{"_";"-"}}
+u{if RAND(100)>=39{"u";"U"};else{"_";"-"}}
+v{if RAND(100)>=39{"v";"V"};else{"_";"-"}}
+w{if RAND(100)>=39{"w";"W"};else{"_";"-"}}
+x{if RAND(100)>=39{"x";"X"};else{"_";"-"}}
+y{if RAND(100)>=39{"y";"Y"};else{"_";"-"}}
+z{if RAND(100)>=39{"z";"Z"};else{"_";"-"}}
+
+
+OnGliteReplace
+{
+	_array = IARRAY
+	_array = _argv[0]
+	_display = ""
+	_num = 0
+	foreach _array; _ref
+	{
+		if RAND(99) >= 49
+		{_ref = TOUPPER(_ref)}
+		--
+		_display += "%(_ref)"
+		_num ++
+	}
+	--
+	_display
+}
+// splitTest
+// {
+	// _test = TOSTR(_argv[0])
+	// _array = SPLIT(_test,"//",3)
+	
+	// _array;
+// }
+
+
