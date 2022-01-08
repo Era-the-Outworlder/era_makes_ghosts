@@ -10,8 +10,192 @@ OnTeach
 {
 	"OnTeach Test:\n\n%(referenceTest)"
 }
+//----Moved from other dics----
+
+//---- Username ----
+On_username
+{
+	username
+}
+
+//---- Get other active ghost names -------------------------------------------------------
+On_otherghostname
+{
+	// Create a list of currently active ghosts
+	ghostexlist = ""
+	_i = 0
+	while _i >= 0 
+	{
+		_ghostname = NAMETOVALUE("reference%_i")
+		if _ghostname != "" 
+		{
+			if _i > 0; ghostexlist += ","
+			ghostexlist += _ghostname[0]
+			_i++
+		}
+		else; _i = -1
+	}
+	ghostexcount = ARRAYSIZE(ghostexlist)
+}
+
+//---- SHIORI Information ------------------------------------------------------------------
+On_version
+{
+	GETSETTING(AYAINFO_VERSION)
+}
+
+On_craftman
+{
+	"umeici"
+}
+
+On_craftmanw
+{
+	"梅市"
+}
+
+On_name
+{
+	"AYA"
+}
+
+//---- Owned SSTP made with uniqueid ------------------------------------------------------
+On_uniqueid
+{
+	uniqueid = reference0
+}
+
+//----hwnd Get ------------------------------------------------------------------------
+On_hwnd
+{
+	sakurahwnd    = reference0[0]
+	kerohwnd      = reference0[1]
+	sakurablnhwnd = reference1[0]
+	keroblnhwnd   = reference1[1]
+}
+
+// -------- SAORI_CPUID --------
+// CPU related
+// 
+// / absence 
+// cpu.clockex High-precision clock frequency (unit: MHz, unit MHz) (Get up to 3 digits after the decimal point)
 
 
+
+
+OnRunCPUID
+{
+		// OS related
+	_platform = FUNCTIONEX("saori_cpuid.dll","platform")
+	_os_name = FUNCTIONEX("saori_cpuid.dll","os.name")
+	_os_version = FUNCTIONEX("saori_cpuid.dll","os.version")
+	_os_version_int = TOINT(_os_version)
+	_os_build = FUNCTIONEX("saori_cpuid.dll","os.build")
+	
+		//CPU related
+	_cpu_name = FUNCTIONEX("saori_cpuid.dll","cpu.name")
+	_cpu_num = FUNCTIONEX("saori_cpuid.dll","cpu.num")
+	_cpu_vender = FUNCTIONEX("saori_cpuid.dll","cpu.vender")
+	_cpu_ptype = FUNCTIONEX("saori_cpuid.dll","cpu.ptype")
+	_cpu_family = FUNCTIONEX("saori_cpuid.dll","cpu.family") 
+	_cpu_model = FUNCTIONEX("saori_cpuid.dll","cpu.model") 
+	_cpu_step = FUNCTIONEX("saori_cpuid.dll","cpu.stepping")
+	_cpu_mmx = FUNCTIONEX("saori_cpuid.dll","cpu.mmx")  
+	_cpu_sse = FUNCTIONEX("saori_cpuid.dll","cpu.sse")  
+	_cpu_sse2 = FUNCTIONEX("saori_cpuid.dll","cpu.sse2") 
+	_cpu_tdn = FUNCTIONEX("saori_cpuid.dll","cpu.tdn")
+	_cpu_htt = FUNCTIONEX("saori_cpuid.dll","cpu.htt")//hyperthreading
+	_cpu_clock = FUNCTIONEX("saori_cpuid.dll","cpu.clock")//(unit: MHz)
+	_cpu_clockex = FUNCTIONEX("saori_cpuid.dll","cpu.clockex")//(MHz)
+	
+		// Memory related [MB] t=total a=available
+	_mem_usage = FUNCTIONEX("saori_cpuid.dll","mem.os")
+	_mem_phyt = FUNCTIONEX("saori_cpuid.dll","mem.phyt")//physical
+	_mem_phya = FUNCTIONEX("saori_cpuid.dll","mem.phya")
+	_mem_pagt = FUNCTIONEX("saori_cpuid.dll","mem.pagt")//page file
+	_mem_paga = FUNCTIONEX("saori_cpuid.dll","mem.paga")
+	_mem_virt = FUNCTIONEX("saori_cpuid.dll","mem.virt")//virtual
+	_mem_vira = FUNCTIONEX("saori_cpuid.dll","mem.vira")
+	"\0\s[3]\b[2]\_q\![set,autoscroll,disable]"
+	--
+	"OS: %(_os_name) %(_os_version_int) \nBuild:%(_os_build) \n\n"
+	--
+	"CPU: %(cpu_name)\n%(cpu_clockex)MHz\n\n"
+	 // "Num:%(_cpu_num) Vendor:%(_cpu_vender) Ptype:%(_cpu_ptype) Fam:%(_cpu_family) Model:%(_cpu_model) Step:%(_cpu_step) MMX:%(_cpu_mmx) SSE:%(_cpu_sse) SSE2:%(_cpu_sse2) TDN:%(_cpu_tdn) HTT:%(_cpu_htt) Clock:%(_cpu_clock)MHz/"
+	--	
+	
+	 
+	"Memory:\n Usage:%(_mem_usage) PhysT%(_mem_phyt) PhysA%(_mem_phya) PageT%(_mem_pagt) PageA%(_mem_paga) VirT%(_mem_virt) VirA%(_mem_vira) "
+	--
+	"Memory Load: %(memoryload)\n Physical Memory: %(memoryavailphys) KB\n\n"
+	--
+	"Ukagaka: %property[system.year] %property[baseware.name]"
+	--
+	"%property[baseware.version]"
+	--
+	"\e"
+}
+
+// -------- Recycling Bin --------
+
+OnRecycleStart
+{
+	
+	_binNum = FUNCTIONEX("gomi.dll", "-n")
+	_binSizeB = TOINT(valueex[0])
+	_binSizeK = (_binSizeB / 1024); _binSizeM = (_binSizeK / 1024); _binSizeG = (_binSizeM / 1024)
+	_type = ""
+	_binDisplay = 0
+	if _binSizeG >= 5 {_binDisplay = _binSizeG; _type = "GB"}
+	elseif _binSizeM >= 100 {_binDisplay = _binSizeM; _type = "MB"}
+	elseif _binSizeK >= 100 {_binDisplay = _binSizeK; _type = "KB"}
+	else{_binDisplay = _binSizeB; _type = "bytes"}
+	--
+	if _binNum == 0 //If the recycle bin is empty.
+	{
+		"\0\s[-1]\w8\w8\w8\w8\s[3]\_v[mus\sound_FLOWEY.mp3]* IT IS EMPTY.\e"
+	}
+	elseif _binNum == 1 //If the recycle bin has 1 item
+	{
+		"\0\s[3]\_v[mus\HELP_text.mp3] There is %(_binNum) item, using %(_binDisplay)%(_type) of space. \w8\w8\n/
+		 \f[align,center]Proceed?\n	\![*] \f[align,left]\q[Yes,RecycleEmpty]\n \n[-100]\f[align,center]--------\n \n[-100]\f[align,right] \![*] \q[No,RecycleCancel]\n\n[half]\f[align,left]"
+	}
+	elseif _binNum >= 2 //If the recycle bin has anything in it.
+	{
+		"\0\s[3]\_v[mus\HELP_text.mp3] There are %(_binNum) items, using %(_binDisplay)%(_type) of space. \w8\w8\n/
+		 Proceed?\n/
+		\![*] \q[Yes,RecycleEmpty] \n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \![*] \q[No,RecycleCancel]\n\n[half]\f[align,left]"
+	}
+}
+	
+
+Select.RecycleEmpty
+{
+	_empty = GLITCH("emptying")
+	"\0\s[3]\_v[mus\sound_FLOWEY.mp3]\n * %(_empty)... \w8\w8\s[-1]\w[1000]\![raise,OnRecycleBinEmptied]"	
+}
+
+Select.RecycleCancel
+{	
+	_what = GLITCH("what")
+	"\0\s[21]\_v[mus\sound_FLOWEY.mp3]\n * Then what%(_what)WHAT%(_what)what did you do this for?\e"
+}
+
+OnRecycleBinEmptied
+{	
+	if verBalete == "OFF"
+	{
+		_gomi = FUNCTIONEX("gomi.dll", "-fq")
+	}
+	else
+	{
+		_gomi = FUNCTIONEX("gomi.dll", "-ev")
+	}
+	--
+	"\w9\w9\w9\s[6]\_v[mus\sound_FLOWEY.mp3]\n\n * Done."
+}
+
+// ----------------------------------------------------------------------------------------
 //--- Discord Plugin by steve
 //haven't sorted out how it works quite yet
 
@@ -64,7 +248,7 @@ OnFileDrop2
 		{
 			Wallpaperfile = reference0
 			
-			"\0\s[6]\_v[mus\sound_FLOWEY.mp3] *  FILE %(_filename)%(_fileext). Wallpaper?\n\n[half]/
+			"\0\s[3]\_v[mus\sound_FLOWEY.mp3] *  FILE %(_filename)%(_fileext). Wallpaper?\n\n[half]/
 			\q[Centered,SetWallpaper_0]\n/
 			\q[Tiled,SetWallpaper_1]\n/
 			\q[Stretched,SetWallpaper_2]\n\n[half]/
@@ -72,11 +256,11 @@ OnFileDrop2
 		}
 		when ".mid", ".wav", ".mp3", ".wma", ".au", ".ogg" //Audio file formats
 		{
-			"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * %(_filename)%(_fileext) is music.\e"
+			"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * %(_filename)%(_fileext) is music.\e"
 		}
 		others //Any other file format. 
 		{
-			"\0\s[6]\_v[mus\sound_FLOWEY.mp3] *  %(_filename)%(_fileext).\e"
+			"\0\s[3]\_v[mus\sound_FLOWEY.mp3] *  %(_filename)%(_fileext).\e"
 		}
 	}
 }
@@ -85,19 +269,19 @@ OnFileDrop2
 
 Select.SetWallpaper_0
 {
-	"\![set,wallpaper,%(Wallpaperfile),center]\0\s[6]\_v[mus\sound_FLOWEY.mp3] *  Centered.\e"
+	"\![set,wallpaper,%(Wallpaperfile),center]\0\s[3]\_v[mus\sound_FLOWEY.mp3] *  Centered.\e"
 }
 Select.SetWallpaper_1
 {
-	"\![set,wallpaper,%(Wallpaperfile),tile]\0\s[6]\_v[mus\sound_FLOWEY.mp3] *  Tiled.\e"
+	"\![set,wallpaper,%(Wallpaperfile),tile]\0\s[3]\_v[mus\sound_FLOWEY.mp3] *  Tiled.\e"
 }
 Select.SetWallpaper_2
 {
-	"\![set,wallpaper,%(Wallpaperfile),stretch]\0\s[6]\_v[mus\sound_FLOWEY.mp3] *  Stretched.\e"
+	"\![set,wallpaper,%(Wallpaperfile),stretch]\0\s[3]\_v[mus\sound_FLOWEY.mp3] *  Stretched.\e"
 }
 Select.SetWallpaper_Cancel
 {
-	"\0\s[6]\_v[mus\sound_FLOWEY.mp3] *  No. No. No wallpaper.\e"
+	"\0\s[3]\_v[mus\sound_FLOWEY.mp3] *  No. No. No wallpaper.\e"
 }
 
 
@@ -106,7 +290,7 @@ Select.SetWallpaper_Cancel
  
 OnInstallBegin
  {
-	"\0\s[6]\_v[mus\sound_FLOWEY.mp3] *  Contains an install.txt file. Installing.\e"
+	"\0\s[3]\_v[mus\sound_FLOWEY.mp3] *  Contains an install.txt file. Installing.\e"
  }
 
  //---- OnInstallComplete -------------------------------------------------------
@@ -120,28 +304,28 @@ OnInstallComplete
  	{	
 		if reference1 == "Flowey" //This is the name of the shell defined in descript.txt in the shell folder.
 		{
-		"\s[6]\_v[mus\HELP_text.mp3] * (You installed a new shell for a little yellow flower.)\e"
+		"\s[3]\_v[mus\HELP_text.mp3] * (You installed a new shell for a little yellow flower.)\e"
 		//Replace if needed.
 		}
 		else //For any other shell they may install.
 		{
-		"\s[6]\_v[mus\sound_FLOWEY.mp3] * New shell. New. New. New. New. \w8\0\s[6]Shell: %(reference1).\e"
+		"\s[3]\_v[mus\sound_FLOWEY.mp3] * New shell. New. New. New. New. \w8\0\s[3]Shell: %(reference1).\e"
 		//%(reference1) here would be the name of the shell they installed. Replace if needed.
 		}
  	}
 	elseif reference0 == "ghost" //if the type of the file they're installing is a ghost.
  	{
-		"\s[6]\_v[mus\sound_FLOWEY.mp3] * New Ghost.\w8 Installed %(reference1).\e"
+		"\s[3]\_v[mus\sound_FLOWEY.mp3] * New Ghost.\w8 Installed %(reference1).\e"
 		//Reference1 here would be the name of the ghost. Replace as needed.
  	}
 	elseif reference0 == "balloon" //if the type of file is a balloon
  	{
-		"\s[6]\_v[mus\sound_FLOWEY.mp3] * Balloon \w8 Name: %(reference1).\e"
+		"\s[3]\_v[mus\sound_FLOWEY.mp3] * Balloon \w8 Name: %(reference1).\e"
 		//Reference1 here would be the name of the balloon. Replace as needed.
  	}
 	elseif reference0 == "plugin" //if the type of file is a plug-in, like a saori of some kind.
  	{
-		"\s[6]\_v[mus\sound_FLOWEY.mp3] * Installed plug-in %(reference1).\e"
+		"\s[3]\_v[mus\sound_FLOWEY.mp3] * Installed plug-in %(reference1).\e"
 		//Reference1 here would be the name of the plug-in. Replace as needed.
  	}
 }
@@ -151,7 +335,7 @@ OnInstallComplete
 
 OnInstallFailure
 {
-	"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * Failed. Unable to install. \n\n[half]"
+	"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Failed. Unable to install. \n\n[half]"
 	
 	--
 	if reference0 == "unsupported" //This checks if the reason it failed is because it was unsupported.
@@ -172,8 +356,8 @@ OnInstallFailure
  
 OnInstallRefuse
  {
-	"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * %(nonono) \w8Can't can't can't. \w4Try %(reference0).\w8"
-	"\0\s[6]\_v[mus\HELP_text.mp3] * (Flowey refused to install the file. Maybe you should try giving it to %(reference0) instead?) \w5"
+	"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * %(nonono) \w8Can't can't can't. \w4Try %(reference0).\w8"
+	"\0\s[3]\_v[mus\HELP_text.mp3] * (Flowey refused to install the file. Maybe you should try giving it to %(reference0) instead?) \w5"
 	
 	//reference0 in this function refers to the ghost this file is associated with, probably the name of the ghost listed in its install.txt file. You would see this if you dropped a shell made for a different ghost on your current ghost, for example.
  }
@@ -187,8 +371,8 @@ OnInstallRefuse
 
 OnVanishSelecting
 {
-	"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * Whatever. \w8"
-	"\0\s[6]\_v[mus\HELP_text.mp3] * (Delete f_lowe_y.exe? Y/N?) \w5"
+	"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Whatever. \w8"
+	"\0\s[3]\_v[mus\HELP_text.mp3] * (Delete f_lowe_y.exe? Y/N?) \w5"
 }
 
 //OnVanishSelected
@@ -196,8 +380,8 @@ OnVanishSelecting
 
 OnVanishSelected
 {
-	"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * Goodbye %(username). \w8\s[-1]\e"
-	"\0\s[6]\_v[mus\HELP_text.mp3] * (Deleting f_lowe_y.exe) \w5\s[-1]\e"
+	"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Goodbye %(username). \w8\s[-1]\e"
+	"\0\s[3]\_v[mus\HELP_text.mp3] * (Deleting f_lowe_y.exe) \w5\s[-1]\e"
 }
 
 
@@ -206,8 +390,8 @@ OnVanishSelected
 
 OnVanishCancel
 {
-	"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * %(thank)\w8\w8\e"
-	"\0\s[6]\_v[mus\HELP_text.mp3] * (You did the right thing.) \w5\s[-1]\e"
+	"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * %(thank)\w8\w8\e"
+	"\0\s[3]\_v[mus\HELP_text.mp3] * (You did the right thing.) \w5\s[-1]\e"
 }
 
 //--OnVanishButtonHold
@@ -215,7 +399,7 @@ OnVanishCancel
 
 OnVanishButtonHold
 {
-	"\0\s[6] * ...\8\w8\8\w8\8\w8\e"
+	"\0\s[3] * ...\8\w8\8\w8\8\w8\e"
 }
 
 
@@ -325,8 +509,8 @@ OnBIFFFailure
  
 OnUpdateBegin
  {
-	"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * U_dating\w5.\w5.\w5. \w8\w8\w8\e"
-	"\0\s[6]\_v[mus\HELP_text.mp3] * (Flowey is checking for updates.) \w8\w8\w8\e"
+	"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * U_dating\w5.\w5.\w5. \w8\w8\w8\e"
+	"\0\s[3]\_v[mus\HELP_text.mp3] * (Flowey is checking for updates.) \w8\w8\w8\e"
  }
 
  //---- OnUpdateReady ---------------------------------------------------------
@@ -336,69 +520,25 @@ OnUpdateReady
  {
  
 	reference0++ //makes sure it starts at 1 instead of 0
+	if reference0 == 1
+	{
+		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * %(reference0) F_LE AVA_LABLE. \w8\w8\w8"
+		"\0\s[3]\_v[mus\HELP_text.mp3] * (%(reference0) new file available for update.) \w8\w8\w8"
 	
-    "\0\s[6]\_v[mus\sound_FLOWEY.mp3] * %(reference0) F_LES AVA_LABLE. \w8\w8\w8\e"
-	"\0\s[6]\_v[mus\HELP_text.mp3] * (%(reference0) new files available for update.) \w8\w8\w8\e"
+	}
+	else
+	{
+		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * %(reference0) F_LES AVA_LABLE. \w8\w8\w8"
+		"\0\s[3]\_v[mus\HELP_text.mp3] * (%(reference0) new files available for update.) \w8\w8\w8"
 	
+	}
+    --
+	"\c\0\s[26]\i[9]\_q * DOWNLOADING\w5.\w5.\w5.\n\n"
 	//reference0 here storing the number of new files. You don't have to use it if you don't want to.
  }
 
 
-//---- OnUpdateComplete -------------------------------------------------------------
-//When the ghost has finished the update process.
 
-OnUpdateComplete
- {
-	if reference0 == "none" //if the ghost had nothing to update with
- 	{
- 		"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * NOTHING CHANGED. \w8\w8\w8\e"
-		"\0\s[6]\_v[mus\HELP_text.mp3] * NOTHING CHANGED. \w8\w8\w8\e"
-		
-	}
- 	else //if the ghost has updated successfully
-	{
-		"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * SOMETHING CHANGED. VIEW CHANGELOG?\w8\w8\w8"
-		"\0\s[6]\_v[mus\HELP_text.mp3] * SOMETHING CHANGED. VIEW CHANGELOG?\w8\w8\w8"
-		--
-		"\n\n\![*]\q[Yes,YesChangeLog]\n\![*]\q[No,NoChangelog]"
- 	}
-}
-
-
-Select.YesChangelog
-{
-	OnChangeLog
-}
-
-Select.NoChangelog
-{
-	
-		"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * View from Menu. Change Any time \w8\w8\w8\e"
-		"\0\s[6]\_v[mus\HELP_text.mp3] * (The changelog may be viewed at any time from the functions menu.) \w8\w8\w8\e"
-}
-
-
- //---- OnUpdateFailure -------------------------------------------------------------
- //Error messages if the update process fails in some way.
- 
-OnUpdateFailure
-{
-	if reference0 == "timeout" //if the connection times out
- 	{
- 		"\0\s[21]\_v[mus\sound_FLOWEY.mp3] * f_AILED. C_onnection l_ost \w8\w8\w8\e"
-		"\0\s[21]\_v[mus\HELP_text.mp3] * (The update failed because the connection timed out.) \w8\w8\w8\e"
-	}
- 	elseif reference0 == "md5 miss" 
-	{
-		"\0\s[17]\_v[mus\sound_FLOWEY.mp3] * HASH HASH HASH ##### MD5 hash check failed. \w8\w8\w8\e"
-		"\0\s[17]\_v[mus\HELP_text.mp3] * NOTHING CHANGED. MD5 MISMATCH \w8\w8\w8\e"
- 	}
-	else //for other errors
- 	{
-		"\0\s[21]\_v[mus\sound_FLOWEY.mp3] * f_AILED. ERROR: %(reference0) \w8\w8\w8\e"
-		"\0\s[21]\_v[mus\HELP_text.mp3] * (Update failed. Looks like %(reference0).) \w8\w8\w8\e"
-	}
-}
 
 
  //---- OnUpdate.OnDownloadBegin ------------------------------------------------
@@ -415,10 +555,8 @@ OnUpdateFailure
 //---- Downloading the update ------------------------------------------------
 OnUpdate.OnDownloadBegin
  {
-	 "\_q\b[2]\s[6] * DOWNLOADING\w5.\w5.\w5.\n\n"
+		"\C"
 		 --
-		 //okay, you can use the %(reference) envelope here to display the value, but you can't actually DO anything with it as is. You have to convert it into an integer using TOINT, THEN you can use it in functions and such. I should get back to that one person trying to do that whack a mole game with this info, this was the exact same problem they ran into.
-		 //+ 1 because otherwise the count starts at 0 and it looks weird. Basic format is variablename = TOINT(target you're turning into an integer, in this case the references)
 		 
 		Update_Process = TOINT(reference1) + 1
 		Update_Total = TOINT(reference2) + 1
@@ -445,14 +583,14 @@ OnUpdate.OnDownloadBegin
 		}
 		--
 		//using the text buffers to display the correct number of boxes
-		"%(_txt)\n\n%(Update_Process) of %(Update_Total)"
+		"\c[line,2]%(_txt)\n\n%(Update_Process) of %(Update_Total)"
 		--
 		//flavortext - i don't want to lose this, i hope there's a way i can keep all of it
 		
 		 	if "aitalk" _in_ reference0 //this is checking to see what kind of files are being downloaded. In this case, it's looking for files called aitalk in the download queue.
 			{
-				"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * D_wnl_ading new w_rds. \w8\w8\w8\e"
-				"\0\s[6]\_v[mus\HELP_text.mp3] * (Flowey is downloading new dialogue.) \w8\w8\w8\e"
+				"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * D_wnl_ading new w_rds. \w8\w8\w8\e"
+				"\0\s[3]\_v[mus\HELP_text.mp3] * (Flowey is downloading new dialogue.) \w8\w8\w8\e"
 			}
 			else //for files not specified above
 			{
@@ -468,7 +606,7 @@ OnUpdate.OnDownloadBegin
  
 OnUpdate.OnMD5CompareBegin
  {
-	//"\0\s[6] * Checking the MD5 value.\e"
+	//"\0\s[3] * Checking the MD5 value.\e"
  }
 
  //---- OnUpdate.OnMD5CompareComplete --------------------------------------------------
@@ -476,7 +614,7 @@ OnUpdate.OnMD5CompareBegin
  
 OnUpdate.OnMD5CompareComplete
  {
-	//"\0\s[6] * MD5 check good.\e"
+	//"\0\s[3] * MD5 check good.\e"
 }
 
  //---- OnUpdate.OnMD5CompareFailure ---------------------------------------------------
@@ -484,9 +622,62 @@ OnUpdate.OnMD5CompareComplete
  
 OnUpdate.OnMD5CompareFailure
  {
-	"\0\s[6] * The MD5 values don't match.\w8\e"
+	_file = SPLITPATH(reference1)[2] + SPLITPATH(reference1)[3]
+	"\0\s[3] The MD5 values don't match. Source: %(_file)\w8\e"
  }
 
+
+//---- OnUpdateComplete -------------------------------------------------------------
+//When the ghost has finished the update process.
+
+OnUpdateComplete
+ {
+	if reference0 == "none" //if the ghost had nothing to update with
+ 	{
+ 		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * NOTHING CHANGED. \w8\w8\w8\e"
+		"\0\s[3]\_v[mus\HELP_text.mp3] * NOTHING CHANGED. \w8\w8\w8\e"
+		
+	}
+ 	else //if the ghost has updated successfully
+	{
+		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * SOMETHING CHANGED. VIEW CHANGELOG?\w8"
+		"\0\s[3]\_v[mus\HELP_text.mp3] * SOMETHING CHANGED. VIEW CHANGELOG?\w8"
+		--
+		"\n\n\f[align,left] \![*] \q[Yes,OnChangeLog,update]\n \n[-100]\f[align,right]\![*] \q[No,NoChangelog]"
+ 	}
+}
+
+
+Select.NoChangelog
+{
+	
+		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * View from Menu. Change Any time \w8\w8\w8\e"
+		"\0\s[3]\_v[mus\HELP_text.mp3] * (The changelog may be viewed at any time from the functions menu.) \w8\w8\w8\e"
+}
+
+
+ //---- OnUpdateFailure -------------------------------------------------------------
+ //Error messages if the update process fails in some way.
+ 
+OnUpdateFailure
+{
+	_file = SPLITPATH(reference1)[2] + SPLITPATH(reference1)[3]
+	if reference0 == "timeout" //if the connection times out
+ 	{
+ 		"\0\s[21]\_v[mus\sound_FLOWEY.mp3] * f_AILED. C_onnection l_ost \w8\w8\w8\e"
+		"\0\s[21]\_v[mus\HELP_text.mp3] The update failed because the connection timed out. \w8\w8\w8\e"
+	}
+ 	elseif reference0 == "md5 miss" 
+	{
+		"\0\s[17]\_v[mus\sound_FLOWEY.mp3] * HASH HASH HASH ##### MD5 hash check failed. \w8\w8\w8\e"
+		"\0\s[17]\_v[mus\HELP_text.mp3] NOTHING CHANGED. MD5 MISMATCH IN FILE %(_file) \w8\w8\w8\e"
+ 	}
+	else //for other errors
+ 	{
+		"\0\s[21]\_v[mus\sound_FLOWEY.mp3] * f_AILED. ERROR: %(reference0) SOURCE: %(_file) \w8\w8\w8\e"
+		"\0\s[21]\_v[mus\HELP_text.mp3] Update failed. Looks like ERROR:%(reference0).\n Source: %(_file). \w8\w8\w8\e"
+	}
+}
  
  
  //**** Headlines and RSS Feeds *********************************************************
@@ -499,7 +690,7 @@ OnUpdate.OnMD5CompareFailure
  
 OnHeadlinesenseBegin
  {
-	"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * Selected %(reference0).\e"
+	"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Selected %(reference0).\e"
  }
 
  //---- OnHeadlinesense.OnFind --------------------------------------------------------
@@ -511,17 +702,17 @@ OnHeadlinesense.OnFind
  	if reference2 == "First" || reference2 == "First and Last"
 	{
  		//---- First page
-		"\0\b2\s[6]%(reference0):"
+		"\0\b2\s[3]%(reference0):"
  	}
 	elseif reference2 == "Next"
  	{
 		//---- Second page
- 		"\0\b2\s[6]%(reference0):"
+ 		"\0\b2\s[3]%(reference0):"
 	}
  	elseif reference2 == "Last"
 	{
  		//---- Last page
-		"\0\b2\s[6]%(reference0):"
+		"\0\b2\s[3]%(reference0):"
  	}
 	--
  	//---- Headlines
@@ -531,12 +722,12 @@ OnHeadlinesense.OnFind
  	if reference2 == "First" || reference2 == "Next"
 	{
  		//---- Bottom buttons
-		"\![*]\q[Next,] - \![*]\q[Stop,Headline_Cancel]\e"
+		"\![*] \q[Next,] - \![*] \q[Stop,Headline_Cancel]\e"
  	}
 	else
  	{
 		//---- Bottom buttons
- 		"\![*]\q[Stop,Headline_Cancel]\e"
+ 		"\![*] \q[Stop,Headline_Cancel]\e"
  	}
 	
 }
@@ -544,8 +735,8 @@ OnHeadlinesense.OnFind
 
 Select.Headline_Cancel
 {
-	"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * DONE. \w8\w8\w8\e"
-	"\0\s[6]\_v[mus\HELP_text.mp3] * (Flowey closed the feed) \w8\w8\w8\e"
+	"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * DONE. \w8\w8\w8\e"
+	"\0\s[3]\_v[mus\HELP_text.mp3] * (Flowey closed the feed) \w8\w8\w8\e"
 }
 
  //---- OnHeadlinesenseComplete -------------------------------------------------------
@@ -553,8 +744,8 @@ Select.Headline_Cancel
  
 OnHeadlinesenseComplete
  {
-	"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * DONE. %(reference0)\w8\w8\w8\e"
-	"\0\s[6]\_v[mus\HELP_text.mp3] * (%(reference0)) \w8\w8\w8\e"
+	"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * DONE. %(reference0)\w8\w8\w8\e"
+	"\0\s[3]\_v[mus\HELP_text.mp3] * (%(reference0)) \w8\w8\w8\e"
  }
 
  //---- OnHeadlinesenseFailure ---------------------------------------------------------
@@ -569,15 +760,15 @@ if RAND(100) <51
  	--
 		if reference0 == "can't download" //if they can't download the rss feed for some reason
 		{
-			"\_v[mus\sound_FLOWEY.mp3] * C_NNOT DOWNLO_D \w8\w8\s[6]"
+			"\_v[mus\sound_FLOWEY.mp3] * C_NNOT DOWNLO_D \w8\w8\s[3]"
 		}
 		elseif reference0 == "can't analyze" //if they can't read the file for some reason
 		{
-			"\_v[mus\sound_FLOWEY.mp3] * ANA_YSIS FAI_ED \w8\s[6]"
+			"\_v[mus\sound_FLOWEY.mp3] * ANA_YSIS FAI_ED \w8\s[3]"
 		}
 		else //other errors
 		{
-			"\_v[mus\sound_FLOWEY.mp3] * HEADLINESENSE ERROR %(errorMsg)\w8\s[6]"
+			"\_v[mus\sound_FLOWEY.mp3] * HEADLINESENSE ERROR %(errorMsg)\w8\s[3]"
 		}
 	--
 		"\e" //And here is the final /e, so you don't need to include it in the if statements above. Another one of the very rare cases this occurs.
@@ -589,15 +780,15 @@ if RAND(100) <51
 	--
 		if reference0 == "can't download" //if they can't download the rss feed for some reason
 		{
-			"\_v[mus\HELP_text.mp3] * (Flowey could not download the feed... Strange.)\w8\s[6]"
+			"\_v[mus\HELP_text.mp3] * (Flowey could not download the feed... Strange.)\w8\s[3]"
 		}
 		elseif reference0 == "can't analyze" //if they can't read the file for some reason
 		{
-			"\_v[mus\HELP_text.mp3] * (Flowey couldn't read the files. Weird...)\w8\s[6]"
+			"\_v[mus\HELP_text.mp3] * (Flowey couldn't read the files. Weird...)\w8\s[3]"
 		}
 		else //other errors
 		{
-			"\_v[mus\HELP_text.mp3] * Unknown error. %(errorMsg)\w8\s[6]"
+			"\_v[mus\HELP_text.mp3] * Unknown error. %(errorMsg)\w8\s[3]"
 		}
 	--
 		"\e"
@@ -614,8 +805,8 @@ if RAND(100) <51
  
 OnUpdatedataCreating
  {
-	"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * Updates... dau dau dau...\w8\w8\w8\e"
-	"\0\s[6]\_v[mus\HELP_text.mp3] * (The updates2.dau file is being generated) \w8\w8\w8\e"
+	"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Updates... dau dau dau...\w8\w8\w8\e"
+	"\0\s[3]\_v[mus\HELP_text.mp3] * (The updates2.dau file is being generated) \w8\w8\w8\e"
  }
 
  //---- OnUpdatedataCreated -------------------------------------------------------------
@@ -623,8 +814,8 @@ OnUpdatedataCreating
  
 OnUpdatedataCreated
  {
-	"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * Done.\w8\w8\w8\e"
-	"\0\s[6]\_v[mus\HELP_text.mp3] * (The deed is done.) \w8\w8\w8\e"
+	"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Done.\w8\w8\w8\e"
+	"\0\s[3]\_v[mus\HELP_text.mp3] * (The deed is done.) \w8\w8\w8\e"
  }
 
  //---- OnNarCreating ------------------------------------------------------------------
@@ -632,8 +823,8 @@ OnUpdatedataCreated
  
 OnNarCreating
  {
-	"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * .NAR RAN.\w8\w8\w8\e"
-	"\0\s[6]\_v[mus\HELP_text.mp3] * (Creating .nar file.) \w8\w8\w8\e"
+	"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * .NAR RAN.\w8\w8\w8\e"
+	"\0\s[3]\_v[mus\HELP_text.mp3] * (Creating .nar file.) \w8\w8\w8\e"
  }
 
  //---- OnNarCreated -------------------------------------------------------------------
@@ -641,8 +832,8 @@ OnNarCreating
  
 OnNarCreated
  {
-	"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * %(reference0).Do_e.\w8\w8\w8\e"
-	"\0\s[6]\_v[mus\HELP_text.mp3] * (%(reference0) created.) \w8\w8\w8\e"
+	"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * %(reference0).Do_e.\w8\w8\w8\e"
+	"\0\s[3]\_v[mus\HELP_text.mp3] * (%(reference0) created.) \w8\w8\w8\e"
  }
 
  //****　Clock Synchronization　**********************************************************
@@ -657,8 +848,8 @@ OnNarCreated
  
 OnSNTPBegin
  {
-	"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * TIME. time.\w8\e"
-	"\0\s[6]\_v[mus\HELP_text.mp3] * (Flowey is checking the time.) \w8\e"
+	"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * TIME. time.\w8\e"
+	"\0\s[3]\_v[mus\HELP_text.mp3] * (Flowey is checking the time.) \w8\e"
 	//%(reference0) here is the site they'll be using to check your clock.
  }
 
@@ -674,18 +865,14 @@ OnSNTPCompare
 	--
  	if reference3 == 0 //if your clock is already accurate.
 	{
- 		"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * TIME. CORRECT. \w8\e"
-		"\0\s[6]\_v[mus\HELP_text.mp3] * (The time is correct.) \w8\e"
+ 		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * TIME. CORRECT. \w8\e"
+		"\0\s[3]\_v[mus\HELP_text.mp3] * (The time is correct.) \w8\e"
 	}
  	else //if your clock doesn't match
 	{
- 		"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * WRONG. \w6\s[6]\n * FIX?\n\n[half]/
-		\![*] \q[Yes,OnSNTPEXECUTE]\n/
- 		\![*] \q[No,OnSNTPCANCEL]\e"
+ 		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * WRONG. \w6\s[3]\n * FIX?\n\n[half] \![*] \q[Yes,OnSNTPEXECUTE]\n \n[-100]\f[align,right]\![*] \q[No,OnSNTPCANCEL]\e"
 		
-		"\0\s[6]\_v[mus\HELP_text.mp3] * (Your clock is wrong.}\w6\s[6]\n * (You are given the option of correcting it.)\n\n[half]/
-		\![*] \q[Correct it,OnSNTPEXECUTE]\n/
- 		\![*] \q[Leave it,OnSNTPCANCEL]\e"
+		"\0\s[3]\_v[mus\HELP_text.mp3] * (Your clock is wrong.}\w6\s[3]\n * (You are given the option of correcting it.)\n\n[half] \![*] \q[Correct it,OnSNTPEXECUTE]\n \n[-100]\f[align,right]\![*] \q[Leave it,OnSNTPCANCEL]\e"
 	}
  }
 
@@ -694,8 +881,8 @@ OnSNTPCompare
  
 OnSNTPEXECUTE
  {
-	"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * Corrected. \w8\e"
-	"\0\s[6]\_v[mus\HELP_text.mp3] * (The time is now correct.) \w8\e"
+	"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Corrected. \w8\e"
+	"\0\s[3]\_v[mus\HELP_text.mp3] * (The time is now correct.) \w8\e"
  }
 
  //----　OnSNTPCANCEL ------------------------------------------------------------------
@@ -703,8 +890,8 @@ OnSNTPEXECUTE
  
 OnSNTPCANCEL
  {
-	"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * I-i-i-i-idi- Moron. \w8\e"
-	"\0\s[6]\_v[mus\HELP_text.mp3] * (You decide that you like being wrong.) \w8\e"
+	"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * I-i-i-i-idi- Moron. \w8\e"
+	"\0\s[3]\_v[mus\HELP_text.mp3] * (You decide that you like being wrong.) \w8\e"
  }
 
  //----　OnSNTPFailure ------------------------------------------------------------------
@@ -771,8 +958,8 @@ OnApplicationClose
  
 OnApplicationFileOpen
  {
-	"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * O_ening %(reference0). \w8\e"
-	"\0\s[6]\_v[mus\HELP_text.mp3] * (%(reference0) is being opened.) \w8\e"
+	"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * O_ening %(reference0). \w8\e"
+	"\0\s[3]\_v[mus\HELP_text.mp3] * (%(reference0) is being opened.) \w8\e"
  }
 
 
@@ -804,17 +991,17 @@ OnShellScaling
 {
 	if reference0 >= 150 //this number is the percentage that you're scaling the ghost up to. In this case, it's 150%.
 	{
-		"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * %(hahaha)\e"
+		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * %(hahaha)\e"
 		"\0\s[16]\_v[mus\HELP_text.mp3] * (Making Flowey larger... was that a good idea?) \w8\e"
 	}
 	elseif reference0 == 100 //this is 100%
 	{
-		"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * Normality.\e"
+		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Normality.\e"
 		"\0\s[16]\_v[mus\HELP_text.mp3] * (Better this way.) \w8\e"
 	}
 	elseif reference0 == 50 //this is 50%. You can add any percentage that's listed under shell scaling if you want using more elseifs.
 	{
-		"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * Pat pat pat patpatpatpathetic.\w8\w8"
+		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Pat pat pat patpatpatpathetic.\w8\w8"
 		"\0\s[16]\_v[mus\HELP_text.mp3] * (Smol and cute.) \w8\e"
 	}
 }

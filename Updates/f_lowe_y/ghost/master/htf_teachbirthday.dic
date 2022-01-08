@@ -1,4 +1,12 @@
-//--------User's Birthday--------
+
+//  '||'''|,                ||    '||         ||`                  
+//   ||   ||   ''           ||     ||         ||                   
+//   ||;;;;    ||  '||''| ''||''   ||''|, .|''||   '''|.  '||  ||` 
+//   ||   ||   ||   ||      ||     ||  || ||  ||  .|''||   `|..||  
+//  .||...|'  .||. .||.     `|..' .||  || `|..||. `|..||.      ||  
+//                                                          ,  |'  
+//                                                           ''    
+
 //I moved all birthdate related functions together for clarity, merged duplicates, etc.
 //At least I think it's better. It's certainly more appealing to me to do it this way. <3 Era
 
@@ -14,10 +22,13 @@ OnNotifyUserInfo
 	menuBDay = TOSTR(SHIORI3FW.UserBirthday[2])	
 }
 
-// The function called to have the user input their birthday
+// Function called to have the user input their birthday. 
+// Name retained for compatibility w/GT Template ghosts.
 OnGetBirthday	
 {
-	dayslot = GetDaySlot //This is setting up in case today is the user's birthday.
+	// This is setting up in case today is the user's birthday.
+	// Format retained for compatibility w/GT Template ghosts.
+	dayslot = GetDaySlot 
 	
 	"\0\s[0] Enter Birthdate. \n/
 	\![open,dateinput,OnInputBirthdate,,%(menuBYear),%(menuBMonth),%(menuBDay)]\x\n"
@@ -32,7 +43,8 @@ OnInputBirthdate
 	_tempmonth  = TOINT(_a[1])
 	_tempday  = TOINT(_a[2])
 	
-	{	//assigning year # and print version to global vars
+	{	
+		//assigning year # and print version to global vars
 		bornyear = _tempyear
 		bornyearprint = ""
 		_cent = ""
@@ -42,12 +54,13 @@ OnInputBirthdate
 		
 		_num = IARRAY 
 		 
+		// Separates digits of year to be evaluated separately
 		for _i=0;_i<4;_i++
 		{
 			_num[_i] = SUBSTR(_tempyear,_i,1)
 		}
 		--
-		if _num[0] == 1
+		if _num[0] == 1 // Year is 1XXX
 		{
 			if _num[1] == 6 && _num[2] == 0 {_cent = "Sixteen hundred and "}
 			elseif _num[1] == 6 {_cent ="Sixteen "}
@@ -59,9 +72,11 @@ OnInputBirthdate
 			elseif _num[1] == 9 {_cent ="Nineteen "}
 			else{"%(errorMsg)"}	
 		}
-		elseif _num[0] == 2
+		elseif _num[0] == 2 // Year is 2XXX
 		{
+			// Year is 200X
 			if _num[1] == 0 && _num[2] == 0 {_cent = "Two thousand "}
+			// Year is 20XX
 			elseif _num[1] == 0 {_cent ="Twenty "}
 			else
 			{
@@ -69,17 +84,17 @@ OnInputBirthdate
 				"\![set,autoscroll,disable]The Developer considered the likelihood of anyone continuing to use this software into the 21st century or beyond to be highly unlikely. They would like to apologise to any time-travellers, historians or collectors of ancient technology this may inconvinence.\x"
 			}
 		}	
-		else
+		else // Year is 3000+
 		{
 			_error = "The far-flung future "
 			"\![set,autoscroll,disable]The Developer considered the likelihood of anyone continuing to use this software into the 30th century or beyond to be unlikely to the extreme. They would like to apologise to any time-travellers, historians or collectors of ancient technology this may inconvinence.\x"
 		}
 		--		
-		if _num[2] == 0
+		if _num[2] == 0 // Year is XX0X
 		{
 			_dec = ""
 		}
-		elseif _num[2] == 1
+		elseif _num[2] == 1 // Year is XX1X
 		{
 			_dec = "teen"
 			if _num[3] == 1 {_yr = "eleven"}
@@ -148,7 +163,8 @@ OnInputBirthdate
 		
 	}
 	--
-	"%(birthchecked)" //checks birthday against 
+	// Checks birthday against conditionals for finishing dialogue
+	"%(birthchecked)" 
 }
 
 //This adds an appropriate ordinal suffix to the day.
@@ -184,27 +200,27 @@ birthchecked
 		
 			if userbirthday == "12month 25day"
 			{
-				"\0\s[6]\_v[mus\sound_FLOWEY.mp3] \w8\w8* Merry\w8\w8 Gyftmas\w8\c\_q * Merry Christmas.\w8\w8"
-				"\0\s[6]\_v[mus\HELP_text.mp3] * (It's your birthday today.)\n * (And it's Christmas, too?)\w8\w8\w8"
+				"\0\s[3]\_v[mus\sound_FLOWEY.mp3] \w8\w8* Merry\w8\w8 Gyftmas.\w8\w8"
+				"\0\s[3]\_v[mus\HELP_text.mp3] It's your birthday today.\n And it's Gyftmas, too?\w8\w8\w8"
 			}
 			else
 			{
 			"\0\s[8]\_v[mus\sound_FLOWEY.mp3] * %(HAPPY) \c\_v[mus\sound_FLOWEY.mp3] *Happy birthday, %(username).\w8\w8\w8\w8\w8\w8"
 			
-			"\0\s[6]\_v[mus\HELP_text.mp3] * (It's your birthday today.)\w8\w8\w8"
+			"\0\s[3]\_v[mus\HELP_text.mp3] It's your birthday today.\w8\w8\w8"
 			}
 		
 	}
-	//Any number of these can be added to check birthdays against holidays
+	//Any number of these can be added to check birthdays against holidays or other significate dates
 	elseif userbirthday == "12month 25day"
 	{
-		"\0\s[6]\_v[mus\HELP_text.mp3] * (That's right, you were born on Christmas...)\w8\w8\w8"
+		"\0\s[3]\_v[mus\HELP_text.mp3] That's right, you were born on Gyftmas...\w8\w8\w8"
 	}
 	//if the birthday is not listed above.
 	else 
 	{
-		"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * %(bornmonthprint) %(borndayprint), %(bornyear)? Is _ha_... righ_..."
-		"\0\s[6]\_v[mus\HELP_text.mp3] * (%(bornmonthprint) %(borndayprint), %(bornyear))\n * (F_lowe_y will remember that.)\w8\w8\w8"
+		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * %(bornmonthprint) %(borndayprint), %(bornyear)? Is _ha_... righ_..."
+		"\0\s[3]\_v[mus\HELP_text.mp3] %(bornmonthprint) %(borndayprint), %(bornyear)\n F_lowe_y will remember that.\w8\w8\w8"
 			
 	}
 }

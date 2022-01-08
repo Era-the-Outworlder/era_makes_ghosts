@@ -11,13 +11,13 @@ OpenSakuraMenu
 		
 		"\![set,autoscroll,disable]%(menuIntro)"
 		--
-		MenuRun
+		OnMenuRun
 }
 
-//--MenuRun
+//--OnMenuRun
 //As you just saw above. This actually fills out the rest of the menu.
 
-MenuRun
+OnMenuRun
 {	
 	"\n\n\_q\b2" 
 	--
@@ -30,13 +30,13 @@ MenuRun
 	--
  	"\![*] \q[Chat,OnTalkToGhost]\n"
 	--
-	"\![*] \q[%(userMenu),configmenu1]\n"
+	"\![*] \q[%(userMenu),OnUserConfig]\n"
 	--
-	"\![*] \q[%(configMenu),configmenu2]\n"
+	"\![*] \q[%(configMenu),OnConfigMenu]\n"
 	--
-	"\![*] \q[%(funMenu),dosomething]\n\n[half]"
+	"\![*] \q[%(funMenu),OnFunctionMenu]\n\n[half]"
 	--
-	"\![*] \q[%(statsMenu),statmenu]\n\n[half]"
+	"\![*] \q[%(statsMenu),OnStatMenu]\n\n[half]"
 	--
 	"LV: %(ellVee)\n"
 	--
@@ -49,7 +49,7 @@ MenuRun
 	--
 	if username == "Era"
 		{
-			"\![*]\q[Test variable,testvariable]\n\e"
+			"\![*] \q[Test variable,testvariable]\n\e"
 		}
 		else
 		{
@@ -61,85 +61,89 @@ MenuRun
 //Leave this alone
 OnLastTalk 
 {
-"%(lastTalk)\e"
+	"%(lastTalk)\e"
 }
 
 
+//---- OnUserConfig ----
+//This menu allows the user to change their name and other information
 
-//If someone selects an option linked to BACKTOMENU, it will go back to MenuRun.
-Select.BACKTOMENU
+OnUserConfig
 {
-	MenuRun
-}
-Select.configmenu1
-{
-	UserConfig
-}
-Select.configmenu2
-{
-	TalkConfig
-}
-
-//--TalkConfig
-//This menu allows the user to change their name and other information, as well as put in their birthday and change how often the ghost speaks.
-
-UserConfig
-{
-	"\0\b[2]\![set,autoscroll,disable]\_q" 
+	"\0\b[2]\![set,autoscroll,disable]\_q\n" 
 	--
-	"\f[height,17]NAME:\f[height,default] %(username) \n\f[height,12]\![*](\q[%(change)?,TEACHNAME])\f[height,default]\n"
+	"\f[height,17]NAME:\f[height,default] %(username) \n\f[height,12]\![*](\q[%(change)?,OnTeachName,menu])\f[height,default]\n"
 	--
-	"\f[height,17]PRONOUNS:\f[height,default]\n%(heshe)/%(himher)/%(hisher) \n\f[height,12]\![*](\q[%(change)?,TEACHPRONOUN])\f[height,default]\n"
+	"\f[height,17]PRONOUNS:\f[height,default]\n%(nomPro)/%(oblPro)/%(posPro) \n\f[height,12]\![*](\q[%(change)?,OnTeachPronouns,menu])\f[height,default]\n"
 	--
-	"\f[height,17]BIRTHDAY:\f[height,default]\n%(birthdayprint), %(menuBDay) \n\f[height,12]\![*](\q[%(change)?,TEACHBDAY])\f[height,default]\n"
+	"\f[height,17]BIRTHDAY:\f[height,default]\n%(birthdayprint), %(menuBDay) \n\f[height,12]\![*](\q[%(change)?,OnGetBirthday,menu])\f[height,default]\n"
 	--
-	if username == "Era" {"Set Debug?\n(NOW : %(eraDebug))\n\![*]\q[ON,eDBon] -- \![*]\q[OFF,eDBoff]\n\n[half]"}
+	if username == "Era" {"Set Debug?\n(NOW : %(eraDebug))\n\![*] \q[ON,eDBon]\n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \![*] \q[OFF,eDBoff]\n\n[half]\f[align,left]"}
 	--
-	"\![*] \q[%(configMenu),configmenu2]\n"
+	"\![*] \q[%(configMenu),OnConfigMenu]\n"
 	--	
-	"\![*] \q[%(backMenu),BACKTOMENU]\n"
+	"\![*] \q[%(backMenu),OnMenuRun]\n"
 	--
  	"\![*] \q[%(closeMenu),CANCEL]\e"
 }
 
-TalkConfig
+// ---- OnConfigMenu ----
+// Allows user to change various ghost settings
+OnConfigMenu
 {
-	"\0\b[2]\![set,autoscroll,disable]\_q" 
+	"\0\b[2]\![set,autoscroll,disable]\_q\n" 
 	--
-	"\f[height,17]TALK RATE:\f[height,default] \nevery %(talktime) \n\f[height,12]\![*](\q[%(change),talkinter])\f[height,default]\n\n[half]"
+	"TALK RATE: \nevery %(talktime) \n\f[height,14]\![*] (\q[%(change),talkinter])\f[height,default]\n\n[half]"
+	--
+	"Enable Silent Mode?\n"
+	--
+	if silentMode == "ON"
+	{
+		"\![*] \q[ON,silenton] \n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \f[color,#fb0300]\![*] \q[OFF,silentoff]\f[color,default]\n\n[half]\f[align,left]"
+	}
+	else
+	{
+		"\f[color,#fb0300]\![*] \q[ON,silenton] \f[color,default]\n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \![*] \q[OFF,silentoff] \n\n[half]\f[align,left]"
+	}
+	--
+	"Confirm Recycle Bin?\n"
+	--
+	if verBalete == "ON"
+	{
+		"\f[color,#fb0300]\![*] \q[ON,verBinOn] \f[color,default]\n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \![*] \q[OFF,verBinOff]\n\n[half]\f[align,left]"
+	}
+	else
+	{
+		"\![*] \q[ON,verBinOn] \n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \f[color,#fb0300]\![*] \q[OFF,verBinOff]\f[color,default]\n\n[half]\f[align,left]"
+	}
 	--		
-	"Program Commentary?\n(NOW : %(canDesktopEye))\n\![*]\q[ON,cDEon] -- \![*]\q[OFF,cDEoff]\n\n[half]"
+	"Program Commentary?\n"
 	--
-	"Enable SilentMode?\n(NOW : %(silentmode))\n/
-	\![*]\q[ON,silenton] ----\![*]\q[OFF,silentoff]\n\n[half]"
+	if canDesktopEye == "ON"
+	{
+		"\f[color,#fb0300]\![*] \q[ON,cDEon] \f[color,default]\n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \![*] \q[OFF,cDEoff]\n\n[half]\f[align,left]"
+	}
+	else
+	{
+		"\![*] \q[ON,cDEon] \n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \f[color,#fb0300]\![*] \q[OFF,cDEoff]\f[color,default]\n\n[half]\f[align,left]"
+	}
 	--
-	"Enable Uninstall?\n(NOW : %(deleteshitai))\n/
-	\![*]\q[ON,deleteon] ---- \![*]\q[OFF,deleteoff]\n\n[half]"
+	"Enable Uninstall?\n"
 	--
-	"\![*] \q[%(userMenu),configmenu1]\n"
+	if deleteshitai == "ON"
+	{
+		"\f[color,#fb0300]\![*] \q[ON,deleteon] \f[color,default]\n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \![*] \q[OFF,deleteoff]\n\n[half]\f[align,left]"
+	}
+	else
+	{
+		"\![*] \q[ON,deleteon] \n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \f[color,#fb0300]\![*] \q[OFF,deleteoff]\f[color,default]\n\n[half]\f[align,left]"
+	}
 	--
-	"\![*] \q[%(backMenu),BACKTOMENU]\n"
+	"\![*] \q[%(userMenu),OnUserConfig]\n"
+	--
+	"\![*] \q[%(backMenu),OnMenuRun]\n"
 	--
 	"\![*] \q[%(closeMenu),CANCEL]\e"
-}
-//This is when the user chooses to change their name. It's linked to the functions outlined in nameteach.dic. Nothing to touch here.
-Select.TEACHNAME
-{
-	OnTeachName	
-}
-
-//Setting Pronouns
-
-Select.TEACHPRONOUN
-{
-	OnTeachPronouns
-}
-
-//This next one handles inputting the user's birthday.
-
-Select.TEACHBDAY
-{
-	OnGetBirthday		
 }
 
 
@@ -147,52 +151,65 @@ Select.TEACHBDAY
 Select.eDBon
 {
 	eraDebug = "ON"
-	UserConfig
+	OnUserConfig
 }
 
 Select.eDBoff
 {
 	eraDebug = "OFF"
-	UserConfig
+	OnUserConfig
 }
 
-//Enable/Disable Desktop Program Commentary
+// Enable/Disable Desktop Program Commentary
 Select.cDEon
 {
 	canDesktopEye = "ON"
-	TalkConfig
+	OnConfigMenu
 }
 
 Select.cDEoff
 {
 	canDesktopEye = "OFF"
-	TalkConfig
+	OnConfigMenu
 }
 
-//Enable/Disable Silent Mode
+// Enable/Disable Verbose emptying recycle bin
+Select.verBinOn
+{
+	verBalete = "ON"
+	OnConfigMenu
+}
+
+Select.verBinOff
+{
+	verBalete = "OFF"
+	OnConfigMenu
+}
+
+// Enable/Disable Silent Mode
 Select.silenton
 {
-	silentmode = "ON"
-	OnTalkConfig
+	silentMode = "ON"
+	OnConfigMenu
 }
 
 Select.silentoff
 {
-	silentmode = "OFF"
-	OnTalkConfig
+	silentMode = "OFF"
+	OnConfigMenu
 }
 
 //Enable/Disable Uninstall
 Select.deleteon
 {
 	deleteshitai = "ON"
-	TalkConfig
+	OnConfigMenu
 }
 
 Select.deleteoff
 {
 	deleteshitai = "OFF"
-	TalkConfig
+	OnConfigMenu
 }
 
 
@@ -203,27 +220,26 @@ Select.deleteoff
 
 Select.talkinter
  	{
- 		
- 		"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * \b2 Change [talktime]? \w8\0\s[6] talktime is currently %(talktime)."
+ 		"\b2\0\s[3]"
+		--
+ 		"\_v[mus\sound_FLOWEY.mp3]* Change [talktime]?\w8\0\s[3]\n talktime == %(talktime)."
 		
-		"\0\s[6]\_v[mus\HELP_text.mp3] * \b2 You can change how often F_lowe_y speaks.\w8\0\s[6] The current rate is every %(talktime)."
-		
+		"\_v[mus\HELP_text.mp3] You can change how often F_lowe_y speaks.\w8\0\s[3] The current rate is every %(talktime)."
 		--
 		
-		
  		"\0\n\n[half]/
- 		\![*]\q[ Every 30 seconds,TALKMAX]\n/
-		\![*]\q[ Every minute,TALKHIGH]\n/
- 		\![*]\q[ Every 3 minutes,TALKNORMAL]\n/
-		\![*]\q[ Every 5 minutes,TALKPOOR]\n/
-		\![*]\q[ Every 30 minutes,TALKRARE]\n/
- 		\![*]\q[ Don't speak,TALKNONE]\n\n[half]/
-		\![*]\q[ Don't change,TalksTill]"
+ 		\![*] \q[ Every 30 seconds,TALKMAX]\n/
+		\![*] \q[ Every minute,TALKHIGH]\n/
+ 		\![*] \q[ Every 3 minutes,TALKNORMAL]\n/
+		\![*] \q[ Every 5 minutes,TALKPOOR]\n/
+		\![*] \q[ Every 30 minutes,TALKRARE]\n/
+ 		\![*] \q[ Don't speak,TALKNONE]\n\n[half]/
+		\![*] \q[ Don't change,TalksTill]"
 	}
 
 Select.TalksTill
 	{
-		"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * No change."
+		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * No change."
 	}
 
 //If the user chooses every 30 seconds.
@@ -232,7 +248,7 @@ Select.TALKMAX
  		talktime = "30 seconds" //this sets up the envelope properly
 		aitalkinterval = 30 //this changes the actual rate
 		
- 		"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * 30 seconds."
+ 		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * 30 seconds."
 	}
 
 //If the user chooses every minute.
@@ -241,7 +257,7 @@ Select.TALKHIGH
  		talktime = "minute"
 		aitalkinterval = 60
 		
- 		"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * 1 minute."
+ 		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * 1 minute."
 	}
 
 //If the user chooses every three minutes.
@@ -250,7 +266,7 @@ Select.TALKNORMAL
  		talktime = "3 minutes"
 		aitalkinterval = 180
 		
- 		"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * 3 minutes."
+ 		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * 3 minutes."
 	}
 
 //If the user chooses every five minutes. This is the default rate the ghost will start up in, as seen in bootend.dic.
@@ -259,7 +275,7 @@ Select.TALKPOOR
  		talktime = "5 minutes"
 		aitalkinterval = 300
 		
- 		"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * 5 minutes."
+ 		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * 5 minutes."
 	}
 	
 //15 Minutes seems to be the longest stable interval I can achieve
@@ -268,7 +284,7 @@ Select.TALKRARE
  		talktime = "30 minutes"
 		aitalkinterval = 1800
 		
- 		"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * 30 minutes."
+ 		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * 30 minutes."
 	}
 	
 	
@@ -279,58 +295,47 @@ Select.TALKNONE
  		talktime = "never"
 		aitalkinterval = 0
 		
-		"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * ..."
+		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * ..."
 	}
 	
 	
 //If the user selects cancel in a menu.
 Select.CANCEL
-	{
-		"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * Nevermind. "
-		
-		"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * Whatever. "
- 	}
-
-	
-//Going back to the MenuRun function we finished above, this is if someone selects the Functions option, linked to dosomething. As you can see, it ends up as Select.dosomething.
-
-Select.dosomething
 {
-	OnFunctionMenu
+	"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Nevermind. "
+	
+	"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Whatever. "
 }
 
+	
 OnFunctionMenu
 {
 
- 		"\0\s[6]\_v[mus\sound_FLOWEY.mp3] *\b2 ...\n\n"
- 		"\0\s[6]\_v[mus\sound_FLOWEY.mp3] *\b2 ACC_SSING FUNCTION M_NU\n\n"
-		"\0\s[6]\_v[mus\HELP_text.mp3] *\b2 (You ask F_lowe_y to do something for you.)\n\n"
-		
-		
-		--
- 		"\![*] \q[Open Calendar,CALENDAR]\n\n[half]/
-		\![*] \q[Check Email,MailCheck]\n\n[half]/
-		\![*] \q[Open SSP Preferences,sspconfig]\n\n[half]/
-		\![*] \q[Empty Recycle Bin,ChoiceGarbagecan]\n\n[half]/
-		\![*] \q[System Information,ChoiceSystemInformation]\n\n[half]\n/
-		\![*] \q[View Ghost Changelog,OnChangeLog,menu]\n\n[half]\n/
- 		\![*] \q[%(backMenu),BACKTOMENU]\n"
-		--
-		"\n\n\![*] \q[Test variable,testvariable]\n"
-		// if username == "Era"
-		// {
-			// "\n\n\![*] \q[Test variable,testvariable]\n"
-		// }
-		// else
-		// {
-			// "\e"
-		// }
+	"\0\s[3]\_v[mus\sound_FLOWEY.mp3]\b2 * ...\n\n"
+	"\0\s[3]\_v[mus\sound_FLOWEY.mp3]\b2 * ACC_SSING FUNCTION M_NU\n\n"
+	"\0\s[3]\_v[mus\HELP_text.mp3]\b2 (You ask F_lowe_y to do something for you.)\n\n"
+	
+	
+	--
+	"\![*] \q[Open Calendar,CALENDAR]\n\n[half]/
+	\![*] \q[Check Email,MailCheck]\n\n[half]/
+	\![*] \q[Open SSP Preferences,sspconfig]\n\n[half]/
+	\![*] \q[Empty Recycle Bin,OnRecycleStart]\n\n[half]/
+	\![*] \q[System Information,OnRunCPUID]\n\n[half]\n/
+	\![*] \q[View Ghost Changelog,OnChangeLog,menu]\n\n[half]\n/
+	\![*] \q[%(backMenu),OnMenuRun]\n"
+	--
+	"\n\n\![*] \q[Test variable,testvariable]\n"
+	// if username == "Era"
+	// {
+		// "\n\n\![*] \q[Test variable,testvariable]\n"
+	// }
+	// else
+	// {
+		// "\e"
+	// }
 }
 
-Select.statmenu
-{
-	OnStatMenu
-}
 
 OnStatMenu
 {
@@ -344,23 +349,23 @@ OnStatMenu
 	--
 	"LV %(ellVee)\n/
 	HP %(HP)/%(HP)\n\n/
-	AT NaN(NaN) EXP %(knifetime)\n/
+	AT NaN(NaN) EXP %(knifeTime)\n/
 	DF NaN(NaN) Next %(toNextLV)\n\n/
 	WEAPON: weapon_id_%(_wID) \n/
 	ARMOR: equip_id_%(_aID) \n\n\n"
 	--
 	"\![*] \q[RESET STATS?,resetSTATS]\n\n"
 	--
-	"\![*] \q[%(backMenu),BACKTOMENU]\n"
+	"\![*] \q[%(backMenu),OnMenuRun]\n"
 	
 	
 }
 
 toNextLV
 {
-	_killsLeft = 5-killcount
+	_killsLeft = 5-killCount
 	_knifeleft = 20*_killsLeft
-	_next = _knifeleft-knifetime
+	_next = _knifeleft-knifeTime
 	"%(_next)"
 }
 
@@ -385,31 +390,30 @@ Select.resetSTATS
 	EXP = 0
 	HP = 20
 	ellVee = 1
-	knifetime = 0
-	killcount = 0
+	knifeTime = 0
+	killCount = 0
 	resetCount++
 	--
 	OnStatMenu
 }
 
 
-
+//------ This is a whole bunch of testing stuff shhhhh ------
 Select.testvariable
 {
-	"\0\s[6]\_v[mus\HELP_text.mp3]Testing!\n\n"
+	"\0\s[3]\_v[mus\HELP_text.mp3]%(p_)Testing!\n\n"
 	--
 	"\![*] \q[Set LV,setLV]\n"
 	--
-	"\![*] \q[Test OnFirstBoot?,newBoot]\n"
+	"\![*] \q[Test OnfirstBoot?,newBoot]\n"
 	--
 	"\![*] \q[Test function?,funkTest]\n"
+	
 	
 	// "%(ellVee)"
 	// "%(year) %(month) %(day) %(weekday) %(hour) %(ampm) %(hour12) %(minute) %(second)\e"
 	
 }
-
-
 
 Select.setLV
 {
@@ -420,14 +424,12 @@ OnManualLV
 	ellVee = reference0
 }
 
-
-
 Select.funkTest
 {
-		
+	OnRecycleStart
 	// "\![open,teachbox]Teachbox\x\n/
 	// \![open,communicatebox]Communicatebox\x\n/
-	// \![open,inputbox,OnTestInput]Inputbox\x\n/
+	// "\![open,inputbox,OnTestInput,--reference=a,--reference=b,--reference=c]Inputbox\x\n"
 	// \![open,passwordinput,OnTestInput]Passwordbox\x\n/
 	// \![open,dateinput,OnTestInput,,1900,1,1]Dateinput\x\n/
 	// \![open,sliderinput,OnTestInput,,1,1,21]Sliderinput\x\n/
@@ -440,72 +442,33 @@ OnTestInput
 }
 Select.newBoot
 {
-	"\![raise,OnFirstBoot,0]"
+	"\![raise,OnfirstBoot,0]"
 }
+
+// ---- Weird testing stuff end ----
+
 
 //When the user clicks Open Calender. This will open the calender function of SSP, an in-built feature that you don't have to worry about in the least.
 Select.CALENDAR
 {
-	"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * Op_ning th_ cal_nder.\![open,calendar]"
+	"\0\s[3]\_v[mus\sound_FLOWEY.mp3]* Op_ning th_ cal_nder.\![open,calendar]"
 }
 
 //When the user chooses SSP preferences.
 Select.sspconfig
 {
-	"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * _pening the SSP c_nfig menu.\![open,configurationdialog]"
-}
-
-//If the user chooses to empty the recycle bin.
-Select.ChoiceGarbagecan
-{
-	_gomicheck = FUNCTIONEX("gomi.dll", "-n")	//for those curious, it's referencing a SAORI, which are optional user-made plug-in dlls you can download to enable different functions on your ghost. gomi.dll is one included with this template.
-	
-	if _gomicheck == 0 //If the recycle bin is empty.
-	{
-		"\0\s[-1]\w8\w8\w8\w8\s[6]\_v[mus\sound_FLOWEY.mp3] * IT IS EMPTY.\e"
-	}
-	elseif _gomicheck >= 1 //If the recycle bin is full.
-	{
-		
-		"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * Emptying... \w8\w8\s[-1]\w8\w8\w8\w8\w8\![raise,OnGarbagecanEmpty]\w9\w9\w9\c\s[6] * Done.\e"
-		
-		//Somewhat similar to the above, but notice the \![raise],OnGarbagecanEmpty] tag in there. That's what actually empties the recycle bin, so make sure you don't delete that tag.
-	}
-}
-
-
-//This is for the SAORI, don't touch it.
-OnGarbagecanEmpty
-{
-	_gomi = FUNCTIONEX("gomi.dll", "-f")
-}
-
-//This is when the user chooses System Information. Don't touch any of this either. For those curious though, note that this is done using another SAORI, this time saori_cpuid.dll.
-Select.ChoiceSystemInformation
-{
-	os_name = FUNCTIONEX("saori_cpuid.dll","os.name")
-	os_version = FUNCTIONEX("saori_cpuid.dll","os.version")
-	cpu_name = FUNCTIONEX("saori_cpuid.dll","cpu.name")
-	cpu_clockex = FUNCTIONEX("saori_cpuid.dll","cpu.clockex")
-	"/
-	\0\s[6]\b[2]/
-	\_q\f[bold,1]OS:\f[bold,0]  %(os_name)  %(os_version)\n\n/
-	\f[bold,1]Memory Load:\f[bold,0] %(memoryload)%\n\n/
-	\f[bold,1]Physical Memory:\f[bold,0] %(memoryavailphys) KB\n\n/
-	\f[bold,1]CPU:\f[bold,0] %(cpu_name) %(cpu_clockex)MHz\n\n/
-	\f[bold,1]Ukagaka:\f[bold,0] %property[baseware.version]/
-	\e"
+	"\0\s[3]\_v[mus\sound_FLOWEY.mp3]* _pening the SSP c_nfig menu.\![open,configurationdialog]"
 }
 	
 //This is when the user chooses to check their email. The rest of this function plays out in etc.dic.
 Select.MailCheck
-	{
-		"\![biff]\e"
-	}
+{
+	"\![biff]\e"
+}
 
 
 
-//----Menu Caption Envelopes----
+//-------- Menu Caption Envelopes --------
 
 // These are the envelopes containing all the multi-version menu options used
 
@@ -513,31 +476,32 @@ Select.MailCheck
 menuIntro
 {
 	{
-		option = 0
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3]\b2 * oooooooooOOOOOOOOO\nOpe_ Me_u.\w8\w8\w8\c\_q * Howdy!!"
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3]\b2 * What-%(GLITCH(what))-do you want?"
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3]\b2 * NEED?"
+		menuOption = 0
+		"\0\s[3]\_v[mus\sound_FLOWEY.mp3]\b2* oooooooooOOOOOOOOO\nOpe_ Me_u.\w8\w8\w8\c\_q* Howdy!!"
+		"\0\s[3]\_v[mus\sound_FLOWEY.mp3]\b2* What-%(GLITCH(what))-do you want?"
+		"\0\s[3]\_v[mus\sound_FLOWEY.mp3]\b2* NEED?"
 	}
 	{
-		option = 1
-		_a = ("f_lowe_y","the flower","him")
+		menuOption = 1
+		_a = ("F_lowe_y","the flower","him")
 		_him = ANY(_a)
-		"\0\s[3]\_v[mus\HELP_text.mp3]\b2 * (You ask %(_him) to...)"
+		"\0\s[3]\_v[mus\HELP_text.mp3]\b2 (You ask %(_him) to...)"
 	}
 }
 
-// Choice captions
+//---- Conditional Choice captions ----
 
 rlTalk
 {
 	if ellVee <= 3
 	{
-		if option == 0
+		if menuOption == 0
 		{
 			"RE-RE-REPE_T"
 		}
 		else
 		{
+			"select.ONLASTTALK"
 			"Repeat Last Dialogue"
 			"Say that again..."
 		}
@@ -545,9 +509,9 @@ rlTalk
 	}
 	elseif ellVee <= 7
 	{
-			if option == 0
+			if menuOption == 0
 		{
-			"AGAIN"
+			"AGAIN?"
 		}
 		else
 		{
@@ -560,6 +524,7 @@ rlTalk
 
 newTalk
 {
+	"select.ONAITALK"
 	"Say something."
 	"Talk to me."
 	"SA_ _NYTHING"
@@ -567,6 +532,7 @@ newTalk
 
 userMenu
 {
+	"select.USERMENU"
 	"User Menu"
 	"User Settings"
 	"Us_r _onf_gurat_on_"
@@ -574,6 +540,7 @@ userMenu
 
 configMenu
 {
+	"select.CONFIGMENU"
 	"Config Menu"
 	"Configuration"
 	"C_NFIGURATI_N"
@@ -581,6 +548,7 @@ configMenu
 
 funMenu
 {
+	"select.ONFUNMENU"
 	"Functions"
 	"Tools"
 	"FUNct_ons"
@@ -588,8 +556,10 @@ funMenu
 
 statsMenu
 {
+	"select.ONSTATMENU"
 	"Check Stats"
 }
+
 backMenu
 {
 	"Backbackbackback."
@@ -618,10 +588,10 @@ closeMenu
 }
 
 	
-//---- OnChoiceTimeout ---------------------------------------------------------
+//---- OnChoiceTimeout ----
 //If the user is given a menu with choices, but doesn't pick one of the choices, it will eventually time out.
 
 OnChoiceTimeout
  {
-	"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * Come back when-when-when you actually want something."
+	"\0\s[3]\_v[mus\sound_FLOWEY.mp3]* Come back when-when-when you actually want something."
  }

@@ -136,13 +136,32 @@ referenceTestOld
 	
 }
 
-
-
-
- //**** Don't touch this ****
- //This is code stuff and nothing for you to worry about, just save the .dic and move on! You're done!
- 
- On_\person
+// A whole bunch of word swaps
+happy
 {
- 	person
+	"delighted" 
+	"glad"
+	"pleased" 
+	"satisfied" 
+	"thankful" 
+	"happy"
+}
+unhappy
+{
+	"unhappy"
+	"displeased"
+	"unsatisfied"
+}
+
+sure
+{
+	"sure"
+	"certain"
+	"confident"
+}
+
+unsure
+{
+	"unsure"
+	"uncertain"
 }

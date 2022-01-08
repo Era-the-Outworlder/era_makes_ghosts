@@ -9,10 +9,10 @@ communicatebox.left,474
 Char8.center,824
 Char7.balloon.isleft,1
 passwordinput.top,565
-balloon0.offset,54.-206
+balloon0.offset,527.-238
 scriptbox.left,977
 Char9.center,559
-Char0.centery,890
+Char0.centery,900
 Char8.centery,900
 Char2.centery,900
 Char4.centery,900
@@ -36,7 +36,7 @@ dateinput.left,1196
 teachbox.top,725
 timeinput.top,648
 Char2.center,896
-Char0.center,1423
+Char0.center,1024
 scriptbox.top,376
 Char10.balloon.isleft,1
 passwordinput.left,810

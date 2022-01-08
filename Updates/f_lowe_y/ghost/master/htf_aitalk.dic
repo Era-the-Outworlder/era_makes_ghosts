@@ -61,76 +61,140 @@ AiTalk
 RandomTalk : nonoverlap
 {	
 	
-	//----Standard Dialogue----
+	//----Dialogue Valid for all moods/ conditions----
 	
 	
 	
-	"\0\s[3]\_v[mus\HELP_text.mp3] * (Smells like herbicide.)\w8\w8"
-	
-	"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * You you you how how how\w8\w8\c\s[3]Howdy, %(username)!\w8\w8"
-	
-	"\0\s[3]\_v[mus\HELP_text.mp3] * (F_lowe_y asks if you remember something.) \w8\w8\w8\c\s[11] * (It seems he's mistaken you for someone else.)\w8\w8"
-	
-	"\0\s[21]\_v[mus\sound_FLOWEY.mp3] * Don't.Don't.Don't.Don't.Don't.\w8\w8\w8 h_ve _nything bette_ to do?\w8\w8"
-	
-	"\0\_v[mus\flee.wav]\s[-1]\w8\w8\w8\w8\w8\w8 * Flowey ran away.\w8\w8\w8\w8\b4\_v[mus\hee.mp3]\f[height,100] Die.\w8\w8\w8\w8\f[height,default]\e"
-	
-	"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * It's all a nightmare... \w8\w8\c\w8\s[16]AND WE'RE NEVER WAKING UP!!!!!!\w8\w8\w8\w8\w8\c%(floweyLaugh)\w8"
-	
-	"\![raise,OnTalkToGhost]"
-	
-	//testing all surfaces
-	"\0\s[3]\_v[mus\HELP_text.mp3] * (You say hello. He doesn't seem to be listening)\w8\w8"
-	
-	"\0\s[4]\_v[mus\sound_FLOWEY.mp3] * (You wonder what caught his attention.) \w8\w8\n\n * (There are no answers.)\w8\w8"
-	
-	"\0\s[5]\_v[mus\HELP_text.mp3] * (F_lowe_y is looking at something.)\w8\w8\n\n * (It's not you.) \w8\w8"
-	
-	"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * .... you you you... friend. \w8\w8"
-	
-	"\0\s[7]\_v[mus\sound_FLOWEY.mp3] * (Is there something over there?)\w8\w8"
-	
-	"\0\s[8]\_v[mus\HELP_text.mp3] * (F_lowe_y is looking at something.) \w8\w8"
-	
-	"\0\s[9]\_v[mus\HELP_text.mp3] * (You give the flower a hug.) \w8\w8"
-	
-	"\0\s[11]\_v[mus\sound_FLOWEY.mp3] * Howdy! \w8\w8"
-	
-	"\0\s[12]\_v[mus\HELP_text.mp3] * (You caught the flower by surprise.)\w8\w8"
-	
-	"\0\s[13]\_v[mus\sound_FLOWEY.mp3] * You... are...? \w8\w8"
-	
-	"\0\s[14]\_v[mus\HELP_text.mp3] * (Something seems to be wrong.) \w8\w8"
-	
-	"\0\s[15]\_v[mus\sound_FLOWEY.mp3] * What?! No. \w8\w8"
-	
-	"\0\s[16]\_v[mus\HELP_text.mp3] * (You hit the flower. Since you didn't do it on purpose, it doesnt hurt him.)\w8\w8"
-	
-	"\0\s[17]\_v[mus\sound_FLOWEY.mp3] * YOU! STOP!\w8\w8\w8"
-	
-	"\0\s[18]\_v[mus\HELP_text.mp3] * (You feel him judging you.) \w8\w8"
+	// "\0\s[3]\_v[mus\HELP_text.mp3] * (Smells like herbicide.)\w8\w8"
 	
 	// "\0\s[21]\_v[mus\sound_FLOWEY.mp3] * Don't.Don't.Don't.Don't.Don't.\w8\w8\w8 h_ve _nything bette_ to do?\w8\w8"
 	
-	"\0\s[21]\_v[mus\HELP_text.mp3] * (He's clearly annoyed.)\w8\w8\n\n\n * (Was it something you did?)"
+	// "\0\_v[mus\flee.wav]\s[-1]\w8\w8\w8\w8\w8\w8 * Flowey ran away.\w8\w8\w8\w8\b4\_v[mus\hee.mp3]\f[height,100] Die.\w8\w8\w8\w8\f[height,default]\e"
 	
-	"\0\s[22]\_v[mus\sound_FLOWEY.mp3] * WHY WHY WHY WHYWHYWHY _HY _ON'T YOU LET ME _IN?!\w8\w8"
+	// "\0\s[3]\_v[mus\sound_FLOWEY.mp3] * You you you how how how\w8\w8\c\s[3]Howdy, %(username)!\w8\w8"
 	
-	"\0\s[23]\_v[mus\sound_FLOWEY.mp3] * Howdy! \w8\w8"
+	// "\0\s[3]\_v[mus\sound_FLOWEY.mp3] * It's all a nightmare... \w8\w8\c\w8\s[16]AND WE'RE NEVER WAKING UP!!!!!!\w8\w8\w8\w8\w8\c%(floweyLaugh)\w8"
 	
-	"\0\s[24]\_v[mus\sound_FLOWEY.mp3] * HAHAHAHAHAHAHAHA"
+	"\![raise,OnTalkToGhost]"
 	
-	"\0\s[26]"
+	if ellVee == 1 && resetCount == 0
+	{
+		//----User has never harmed him
+		if knifeTime == 0 && killCount == 0
+		{
+			_confi = ""
+			_happi = ""
+			
+			
+			if nice >=2 && notnice == 0 //user has only been nice
+			{
+				_confi = "confidently "
+				_happi = ANY("%(happy) ","%(sure)")
+			}
+			if notnice >=2
+			{
+				_confi = "hesitantly "
+				_happi = "%(unsure)"
+			}
+			
+			--
+			
+			"\0\s[3]\_v[mus\HELP_text.mp3] * (Smells like herbicide.)\w8\w8"
 	
-	"\0\s[26]"
+			"\0\s[21]\_v[mus\sound_FLOWEY.mp3] * Don't.Don't.Don't.Don't.Don't.\w8\w8\w8 h_ve _nything bette_ to do?\w8\w8"
+			
+			"\0\_v[mus\flee.wav]\s[-1]\w8\w8\w8\w8\w8\w8 * Flowey ran away.\w8\w8\w8\w8\b4\_v[mus\hee.mp3]\f[height,100] Die.\w8\w8\w8\w8\f[height,default]\e"
 	
-	"\0\s[27]\_v[mus\HELP_text.mp3] * Miss. "
+			"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * You you you how how how\w8\w8\c\s[3]Howdy, %(username)!\w8\w8"
 	
-	"\0\s[27]\_v[mus\sound_FLOWEY.mp3]"
+			"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * It's all a nightmare... \w8\w8\c\w8\s[16]AND WE'RE NEVER WAKING UP!!!!!!\w8\w8\w8\w8\w8\c%(floweyLaugh)\w8"
 	
-	"\0\s[28]\_v[mus\HELP_text.mp3]"
+			t//-------
+			"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * .... you you you... \w8\w8\s[23]friend! \w8\w8\n/
+			\n\n\_v[mus\HELP_text.mp3] * (He seems very %(_happi) about that.)"
+			
+			"\0\s[3]\_v[mus\HELP_text.mp3] * (F_lowe_y %(_confi)asks if you remember something.) \w8\w8\w8\c\s[11] * (It seems he's mistaken you for someone else.)\w8\w8"
+			
+			"\0\s[27]\_v[mus\sound_FLOWEY.mp3] * Howdy! \w8\w8"
+			
+			"\0\s[3]\_v[mus\HELP_text.mp3] * (You say hello. He doesn't seem to be listening)\w8\w8"
+	
+			"\0\s[4]\_v[mus\sound_FLOWEY.mp3] * (You wonder what caught his attention.) \w8\w8\n\n * (There are no answers.)\w8\w8"
+	
+			"\0\s[5]\_v[mus\HELP_text.mp3] * (F_lowe_y is looking at something.)\w8\w8\n\n * (It's not you.) \w8\w8"
+			
+			"\0\s[12]\_v[mus\HELP_text.mp3] * (You caught the flower by surprise.)\w8\w8"
+	
+			"\0\s[13]\_v[mus\sound_FLOWEY.mp3] * You... are...? \w8\w8"
+			
+				"\0\s[7]\_v[mus\sound_FLOWEY.mp3] * (Is there something over there?)\w8\w8"
+	
+			"\0\s[8]\_v[mus\HELP_text.mp3] * (F_lowe_y is looking at something.) \w8\w8"
+	
+			"\0\s[9]\_v[mus\HELP_text.mp3] * (You give the flower a hug.) \w8\w8"
+			
+		}
+	}
+	
+	if ellVee == 1 && resetCount != 0 //User has reset stats in the past and has not killed him this time
+	{
+		//----User has not harmed him this time----
+		if knifeTime == 0 && killCount == 0
+		{
+		
 
-	"\0\s[29]\_v[mus\intermission.wav]"
+		//----User has been good to him----
+		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * .... you you you... friend. \w8\w8"
+		
+		
+		
+		"\0\s[23]\_v[mus\sound_FLOWEY.mp3] * Howdy! \w8\w8"
+		
+		"\0\s[21]\_v[mus\HELP_text.mp3] * (He's clearly annoyed.)\w8\w8\n\n\n * (Was it something you did?)"
+		}
+		
+		//----User has been mean but never killed him----
+		
+		"\0\s[21]\_v[mus\HELP_text.mp3] * (He's clearly annoyed.)\w8\w8\n\n\n * (Was it something you did?)"
+	}
+	
+	
+	if ellVee != 1
+	{
+		"\0\s[14]\_v[mus\HELP_text.mp3] * (Something seems to be wrong.) \w8\w8"
+		
+		"\0\s[15]\_v[mus\sound_FLOWEY.mp3] * What?! No. \w8\w8"
+		
+		"\0\s[16]\_v[mus\HELP_text.mp3] * (You hit the flower. Since you didn't do it on purpose this time, it doesn't hurt him.)\w8\w8"
+		
+		"\0\s[18]\_v[mus\HELP_text.mp3] * (You feel him judging you.) \w8\w8"
+		
+		"\0\s[22]\_v[mus\sound_FLOWEY.mp3] * WHY WHY WHY WHYWHYWHY _HY _ON'T YOU LET ME _IN?!\w8\w8"
+		
+		"\0\s[17]\_v[mus\sound_FLOWEY.mp3] * YOU! STOP!\w8\w8\w8"
+		
+		//--------
+		
+		"\0\s[24]\_v[mus\sound_FLOWEY.mp3] * HAHAHAHAHAHAHAHA"
+	
+		"\0\s[26]\i[9]\f[align,center]EVERYONE"
+		
+		{
+		_EV = GLITCH("EVERYONE")
+		"\0\s[26]\i[10]\f[align,center]%(_EV)"
+		}
+		
+		"\0\s[27]\_v[mus\HELP_text.mp3] * Miss. "
+		
+		"\0\s[27]\_v[mus\sound_FLOWEY.mp3]"
+		
+		"\0\s[28]\_v[mus\HELP_text.mp3]"
+
+		"\0\s[29]\_v[mus\intermission.wav]"
+	}
+
+	
+	
 	
 	//----Autonomous inter-Ghost chatting
 	
@@ -141,7 +205,7 @@ RandomTalk : nonoverlap
 	
 	
 	
-//----All Conditionals----
+//----All Other Conditionals----
 
 	//Program Commentary
 	if canDesktopEye = "ON"
@@ -497,7 +561,7 @@ OnOtherGhostTalk
 		if "flowey" _in_ _spokenWord || "f_lowe_y" _in_ _spokenWord
 		{
 			// "%(_spokenWord)"
-			"\s[6]\_v[mus\HELP_text.mp3] * (The flower seems to be smiling at the sound of his name.)"
+			"\s[3]\_v[mus\HELP_text.mp3] * (The flower seems to be smiling at the sound of his name.)"
 		}
 		elseif "asriel" _in_ _spokenWord
 		{

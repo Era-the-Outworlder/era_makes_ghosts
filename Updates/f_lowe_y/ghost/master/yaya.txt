@@ -12,21 +12,24 @@ charset.extension, UTF-8
 
 
 include, system_config.txt		
-dic, htf_string.dic			
-dic, htf_aitalk.dic			
-dic, htf_bootend.dic		
-dic, htf_mouse.dic			
-dic, htf_etc.dic			
-dic, htf_menu.dic
-dic, htf_word.dic
+			
+dic, htf_aitalk.dic	
+dic, htf_anchor.dic		
+dic, htf_bootend.dic
+dic, htf_changelog.dic
 dic, htf_commu.dic
-dic, htf_anchor.dic
+dic, htf_drawmenu.dic	
+dic, htf_etc.dic
+dic, htf_findwin.dic
+dic, htf_glitchtext.dic		
+dic, htf_menu.dic
+dic, htf_mouse.dic
+dic, htf_teachbirthday.dic
 dic, htf_teachname.dic
 dic, htf_teachpronoun.dic
-dic, htf_teachbirthday.dic
-dic, htf_findwin.dic
-dic, htf_changelog.dic
-dic, htf_glitchtext.dic
+dic, htf_word.dic
+
+
 
 //---- Log Location -------------------------------------------------------------------------
 //Sets the file path of the event log. Seems to be duplicated in other parts of the program

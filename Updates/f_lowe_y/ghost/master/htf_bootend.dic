@@ -1,12 +1,12 @@
 ﻿//---------Booting and Ending--------
 //This .dic file contains booting and ending dialogue, as well as several other functions.
 
-//----OnFirstBoot----
+//----OnfirstBoot----
 //~~~~Runs after new installation of ghost, only if ghost was installed from .nar file. Also declares and initialises variables
 //~~~~I've used variables without declaring them first here and it was a nightmare at the time. <3Era~~~~
 
 
-OnFirstBoot
+OnfirstBoot
 {
 	OnNotifyUserInfo
 	--
@@ -26,23 +26,24 @@ OnFirstBoot
 	//wisott
 	installinfo = ("%(year)","%(month)","%(day)","%(hour)","%(minute)","%(second)","%(OnGhostVer)")
 	
-	silentmode = "OFF" //does not start in silent mode
+	silentMode = "OFF" //does not start in silent mode
 	canDesktopEye = "OFF" //does not start off commenting on open programs
-	
+	verBalete = "ON" //DOES start with recycle bin confirmation on
+
 	//The following are global variables for F_lowe_y's interactions.
 	stroke = 0	// Sets being-pet state to zero.
 	ellVee = 1
 	HP = 20
 	EXP = 0
-	knifetime = 0
-	killcount = 0
+	knifeTime = 0
+	killCount = 0
 	resetCount = 0
 	
 	--
 	if reference0 == 0 //Don't touch this line.
  	{
-		firstboot = 1
-		"\0\s[6]\_v[mus\HELP_text.mp3]\t * (Flowey is attempting to introduce you to the SSP Ghost system.)\w8\w8\n\s[6]\_v[mus\sound_FLOWEY.mp3] * Howdy!\n\n[half]"
+		firstBoot = 1
+		"\0\s[3]\_v[mus\HELP_text.mp3]\t * (Flowey is attempting to introduce you to the SSP Ghost system.)\w8\w8\n\s[3]\_v[mus\sound_FLOWEY.mp3] * Howdy!\n\n[half]"
 		--
 		OnTeachPronouns
  	}
@@ -50,7 +51,7 @@ OnFirstBoot
  	{
  		// "\0\s[21]\_v[mus\sound_FLOWEY.mp3] * Returned. Why?"
 		
-		"\0\s[21]\_v[mus\HELP_text.mp3] * (f_lowe_y does not remember being uninstalled. But you remember doing it, don't you %(menuNName)?"
+		"\0\s[21]\_v[mus\HELP_text.mp3] F_lowe_y does not remember being uninstalled. \n (But you remember doing it, don't you %(menuNName)?"
 		--
 		OnTeachPronouns
  	}
@@ -140,7 +141,7 @@ OnBoot
 	if dayslot == userbirthday 
 	
 	{
-				"\s[6]\_v[mus\sound_FLOWEY.mp3] * It's %(bornmonthprint) %(borndayprint).\w8\n * Happy birthday, %(username)." 
+				"\s[3]\_v[mus\sound_FLOWEY.mp3] * It's %(bornmonthprint) %(borndayprint).\w8\n * Happy birthday, %(username)." 
 				--
 				"\s[0]\e"
 				
@@ -149,13 +150,13 @@ OnBoot
 	elseif dayslot == "6month 6day" 
 	
 	{
-				"\s[6]\_v[mus\sound_FLOWEY.mp3] * Today. June 6th."
+				"\s[3]\_v[mus\sound_FLOWEY.mp3] * Today. June 6th."
 				--
 				"\s[0]\e"
 	}
 	elseif dayslot == "7month 4day"
 	{
-				"\s[6]\_v[mus\sound_FLOWEY.mp3] * Fourth. 4th. Fourth. July."
+				"\s[3]\_v[mus\sound_FLOWEY.mp3] * Fourth. 4th. Fourth. July."
 				--
 				"\s[0]\e"
 				
@@ -175,11 +176,11 @@ normalboottalk
 {
 	if weekday == 6 && hour >= 19 
 		{
-		"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * It's Saturday night."
+		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * It's Saturday night."
 		}
 	elseif RAND(100) < 40 
 		{
-		"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * (Gurgling noises)"
+		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * (Gurgling noises)"
 	
 		}
  	else
@@ -187,34 +188,34 @@ normalboottalk
 		timeslot = "%(GetTimeSlot)"
 		if timeslot == "earlymorning" 
 		{
-		"\0\s[6] * Early. "
+		"\0\s[3] * Early. "
 		
 		}
 		elseif timeslot == "morning"
 		{
-		"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * Bleah. "
+		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Bleah. "
 		
 		}
 		elseif timeslot == "lunch"
 		{
-		"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * Eat."
+		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Eat."
 		}
 		elseif timeslot == "afternoon"
 		{
-		"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * Afternoon. "
+		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Afternoon. "
 		}
 		elseif timeslot == "evening"
 		{
- 		"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * Late. "
+ 		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Late. "
 		}
 		elseif timeslot == "latenight"
 		{
- 		"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * Laaaaaaate."
+ 		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Laaaaaaate."
 		
 		}
 		else //the last timeslot we haven't done is weehours, which is what's under here.
 		{
-		"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * %(lateearly)\w8"
+		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * %(lateearly)\w8"
 		
 		}
 	}
@@ -231,13 +232,13 @@ OnClose
 {
 	if passmin >= 5	
 		{
-		"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * Bye\w8\w8"	
-		"\0\s[6]\_v[mus\HELP_text.mp3] * (You tell Flowey you'll see him later.)\w8\w8"	
+		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Bye\w8\w8"	
+		"\0\s[3]\_v[mus\HELP_text.mp3] * (You tell Flowey you'll see him later.)\w8\w8"	
  		
  		}
  	else 
  	{
- 		"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * [flowey_greeting_string] BYE\w8\w8"
+ 		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * [flowey_greeting_string] BYE\w8\w8"
 		
  	}
  	--
@@ -246,8 +247,8 @@ OnClose
 
 OnCloseAll
 {
-	"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * G%(o)%(o)%(d)-%(b)%(y)%(e)\w8\w8"	
-	"\0\s[6]\_v[mus\HELP_text.mp3] * (You tell Flowey you'll see everyone later.)\w8\w8"	
+	"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * G%(o)%(o)%(d)-%(b)%(y)%(e)\w8\w8"	
+	"\0\s[3]\_v[mus\HELP_text.mp3] * (You tell Flowey you'll see everyone later.)\w8\w8"	
 	--
 	"\-" 
 
@@ -263,8 +264,8 @@ OnCloseAll
 
  OnWindowStateMinimize
  {
-	"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * Tiny\w8\w8"
-	"\0\s[6]\_v[mus\HELP_text.mp3] * (Flowey will hide for now.)\w8\w8"
+	"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Tiny\w8\w8"
+	"\0\s[3]\_v[mus\HELP_text.mp3] * (Flowey will hide for now.)\w8\w8"
 	--
 	"\s[0]\e"
 }
@@ -273,8 +274,8 @@ OnCloseAll
 
 OnWindowStateRestore
  {
-	"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * Back\w8\w8"
-	"\0\s[6]\_v[mus\HELP_text.mp3] * (Flowey has returned.)\w8\w8"
+	"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Back\w8\w8"
+	"\0\s[3]\_v[mus\HELP_text.mp3] * (Flowey has returned.)\w8\w8"
 	--
 	"\s[0]\e"
 }
@@ -286,13 +287,13 @@ OnGhostChanging
  {
 	if reference0 == "f_lowe_y" 
 	{
-		"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * Re-re-re-re-re-re-re\w8\w8 LOADING\w3.\w3.\w3."
-		"\0\s[6]\_v[mus\HELP_text.mp3] * (The ghost of Flowey is reloading.)"
+		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Re-re-re-re-re-re-re\w8\w8 LOADING\w3.\w3.\w3."
+		"\0\s[3]\_v[mus\HELP_text.mp3] * (The ghost of Flowey is reloading.)"
 	}
  	else //If you're switching to another Ghost.
 	{
-		"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * LOADING %(reference0). \w8Bye.\w8\w8"
-		"\0\s[6]\_v[mus\HELP_text.mp3] * (You decide to switch to someone else.)"	
+		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * LOADING %(reference0). \w8Bye.\w8\w8"
+		"\0\s[3]\_v[mus\HELP_text.mp3] * (You decide to switch to someone else.)"	
 	}
 	--
 	"\s[0]\e"
@@ -305,17 +306,17 @@ OnGhostChanging
 
 OnGhostChanged
 {
-	"\0\s[6]\![set,otherghosttalk,true]" //this sets up their default poses
+	"\0\s[3]\![set,otherghosttalk,true]" //this sets up their default poses
 	--
 	if reference0 == "f_lowe_y" //As above, this should be the name of your ghost as in install.txt or descript.txt.
 	{
-		"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * LOADED"
-		"\0\s[6]\_v[mus\HELP_text.mp3] * (Ghost %(reference0) reloaded.)"
+		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * LOADED"
+		"\0\s[3]\_v[mus\HELP_text.mp3] * (Ghost %(reference0) reloaded.)"
 	}
 	else //If you're switching to them from another ghost...
 	{
-		"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * %(reference0)..."
-		"\0\s[6]\_v[mus\HELP_text.mp3] * (Ghost '%(reference0)' unloaded.)"
+		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * %(reference0)..."
+		"\0\s[3]\_v[mus\HELP_text.mp3] * (Ghost '%(reference0)' unloaded.)"
 	}
 	--
 	"\s[0]\e"
@@ -326,16 +327,16 @@ OnGhostCalled
 {
 	{
 		reference0 = TOUPPER(reference0)
-		"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * HELLO %(reference0). "
+		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * HELLO %(reference0). "
 	}
-	"\0\s[6]\_v[mus\HELP_text.mp3] * (Ghost %(reference0) is already open.)"
+	"\0\s[3]\_v[mus\HELP_text.mp3] * (Ghost %(reference0) is already open.)"
 }
 
 // When another ghost is BEING called from THIS ghost's r-click menu (happens before new ghost loads)
 // ref0 = body of called ghost, ref1 = call method, ref2 = name of called ghost, ref3 = path of called ghost
 OnGhostCalling
 {
-	"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * HELLO %(reference0). "
+	"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * HELLO %(reference0). "
 }
 
 // When another ghost is called from THIS ghost's r-click menu (happens after new ghost completes boot function)
@@ -346,12 +347,12 @@ OnGhostCallComplete
 	
 	if "Hapax" _in_ reference7
 	{
-		"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * HELLO HAPAX LEGOMENOM. "
+		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * HELLO HAPAX LEGOMENOM. "
 	}
 	else
 	{
 		reference0 = TOUPPER(reference0)
-		"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * HELLO %(reference0). "
+		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * HELLO %(reference0). "
 	}
 }
 
@@ -362,12 +363,12 @@ OnOtherGhostBooted
 {
 	if "Hapax" _in_ reference7
 	{
-		"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * HELLO HAPAX LEGOMENOM. "
+		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * HELLO HAPAX LEGOMENOM. "
 	}
 	else
 	{
 		reference0 = TOUPPER(reference0)
-		"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * HELLO %(reference0). "
+		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * HELLO %(reference0). "
 	}
 }
 
@@ -383,17 +384,17 @@ OnOtherGhostChanged
 	// if "Hapax" _in_ reference15
 	// {
 		// reference0 = TOUPPER(reference0)
-		// "\0\s[6]\_v[mus\sound_FLOWEY.mp3] * GOOD-BYE %(reference0). \n\n   HELLO HAPAX LEGOMENOM. "
+		// "\0\s[3]\_v[mus\sound_FLOWEY.mp3] * GOOD-BYE %(reference0). \n\n   HELLO HAPAX LEGOMENOM. "
 	// }
 	// elseif "Hapax" _in_ reference14
 	// {
 		// reference0 = TOUPPER(reference0)
-		// "\0\s[6]\_v[mus\sound_FLOWEY.mp3] * GOOD-BYE HAPAX LEGOMENOM. \n\n   HELLO %(reference1). "
+		// "\0\s[3]\_v[mus\sound_FLOWEY.mp3] * GOOD-BYE HAPAX LEGOMENOM. \n\n   HELLO %(reference1). "
 	// }
 	// else
 	// {
 		// reference0 = TOUPPER(reference0)
-		// "\0\s[6]\_v[mus\sound_FLOWEY.mp3]  * GOOD-BYE %(reference0). \n\n   HELLO %(reference1). "
+		// "\0\s[3]\_v[mus\sound_FLOWEY.mp3]  * GOOD-BYE %(reference0). \n\n   HELLO %(reference1). "
 	// }
 }
 
@@ -405,12 +406,12 @@ OnOtherGhostClosed
 {
 	if "Hapax" _in_ reference7
 	{
-		"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * GOODE-BYE HAPAX LEGOMENOM. "
+		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * GOODE-BYE HAPAX LEGOMENOM. "
 	}
 	else
 	{
 		reference0 = TOUPPER(reference0)
-		"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * GOOD-BYE %(reference0). "
+		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * GOOD-BYE %(reference0). "
 	}
 }
 // "%(referenceTest)"
@@ -428,7 +429,7 @@ OnShellChanging
 	}
 	else //if you don't have any specific dialogue for a specific shell
 	{
-		"\0\s[6] * (It seems someone out there has made a new skin for the flower to wear.)\n\n\n\f[color255,0,0]* (Interesting.)\e"
+		"\0\s[3] * (It seems someone out there has made a new skin for the flower to wear.)\n\n\n\f[color255,0,0]* (Interesting.)\e"
 	}
  }
  

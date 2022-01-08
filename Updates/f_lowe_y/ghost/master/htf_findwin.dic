@@ -20,8 +20,8 @@ OnDesktopEyeball
 	}
 	else
 	{
-		"\0\s[6]\_v[mus\HELP_text.mp3] * (Flowey looks at your computer.)\n\n"
-		"\0\s[6]\_v[mus\sound_FLOWEY.mp3] * Strange. \n\n"
+		"\0\s[3]\_v[mus\HELP_text.mp3] * (Flowey looks at your computer.)\n\n"
+		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Strange. \n\n"
 		--
 		//calls commentary
 		AppView

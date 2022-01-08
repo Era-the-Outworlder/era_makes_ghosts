@@ -24,8 +24,8 @@ dateinput.left,1196
 teachbox.top,725
 timeinput.top,648
 Char2.center,896
-Update.TestMode,1
-Char0.center,1423
+Update.TestMode,0
+Char0.center,1024
 scriptbox.top,376
 shell,shell\master\
 FirstBoot,booted
@@ -36,6 +36,7 @@ shiori.log,0
 shell.ischanged.2,1
 inputbox.top,659
 timeinput.left,846
-update.lastexec,693893081
+update.lastexec,694599320
 communicatebox.top,724
+DeveloperPalette.visible,1
 __system_written_flag_do_not_remove__,written

@@ -378,28 +378,60 @@ collisionex1,Petals,polygon,151,279,101,295,41,201,50,175,94,133,180,123,282,164
 
 element0,overlay,surface1.png,0,0
 
-animation9.interval,runonce
+animation9.interval,never
 animation9.pattern0,overlayfast,1500,0,0,0
-animation9.pattern1,overlay,1501,100,0,0
-animation9.pattern2,overlay,1502,100,0,0
-animation9.pattern3,overlay,1503,100,0,0
-animation9.pattern4,overlay,1504,100,0,0
-animation9.pattern5,overlay,1505,100,0,0
-animation9.pattern6,overlay,1506,100,0,0
-animation9.pattern7,overlay,1507,100,0,0
-animation9.pattern8,overlay,1508,100,0,0
-animation9.pattern9,overlay,1509,100,0,0
-animation9.pattern10,overlay,1510,100,0,0
-animation9.pattern11,overlay,1511,100,0,0
-animation9.pattern12,overlay,1512,100,0,0
-animation9.pattern13,overlay,1513,100,0,0
-animation9.pattern14,overlay,1514,100,0,0
-animation9.pattern15,overlay,1503,100,0,0
-animation9.pattern16,overlay,1502,100,0,0
-animation9.pattern17,overlay,1501,100,0,0
-animation9.pattern18,overlay,1500,100,0,0
+animation9.pattern1,overlayfast,1501,100,0,0
+animation9.pattern2,overlayfast,1502,100,0,0
+animation9.pattern3,overlayfast,1503,100,0,0
+animation9.pattern4,overlayfast,1504,100,0,0
+animation9.pattern5,overlayfast,1505,100,0,0
+animation9.pattern6,overlayfast,1506,100,0,0
+animation9.pattern7,overlayfast,1507,100,0,0
+animation9.pattern8,overlayfast,1508,100,0,0
+animation9.pattern9,overlayfast,1509,100,0,0
+animation9.pattern10,overlayfast,1510,100,0,0
+animation9.pattern11,overlayfast,1511,100,0,0
+animation9.pattern12,overlayfast,1512,100,0,0
+animation9.pattern13,overlayfast,1513,100,0,0
+animation9.pattern14,overlayfast,1514,100,0,0
+animation9.pattern15,overlayfast,1503,100,0,0
+animation9.pattern16,overlayfast,1502,100,0,0
+animation9.pattern17,overlayfast,1501,100,0,0
+animation9.pattern18,overlayfast,1500,100,0,0
+
+//whyyy
+animation10.interval,never
+animation10.pattern0,base,-1,0,0,0
+animation10.pattern1,overlayfast,1500,0,0,0
+animation10.pattern2,overlayfast,1501,100,0,0
+animation10.pattern3,overlayfast,1502,100,0,0
+animation10.pattern4,overlayfast,-1,100,0,0
+animation10.pattern5,start,11
+
+//11
+animation11.interval,never
+animation11.pattern0,overlay,2,0,0,0
+animation11.pattern1,overlayfast,1503,0,0,0
+animation11.pattern2,overlayfast,1504,100,0,0
+animation11.pattern3,overlayfast,1505,100,0,0
+animation11.pattern4,overlayfast,1506,100,0,0
+animation11.pattern5,overlayfast,1507,100,0,0
+animation11.pattern6,overlayfast,1508,100,0,0
+animation11.pattern7,overlayfast,1509,100,0,0
+animation11.pattern8,overlayfast,1510,100,0,0
+animation11.pattern9,overlayfast,1511,100,0,0
+animation11.pattern10,overlayfast,1512,100,0,0
+animation11.pattern11,overlayfast,1513,100,0,0
+animation11.pattern12,overlayfast,1514,100,0,0
+animation11.pattern13,start,11
 
 
+animation12.interval,never
+animation12.pattern0,overlay,1514,0,0,0
+animation12.pattern1,overlay,1503,100,0,0
+animation12.pattern2,overlay,1502,100,0,0
+animation12.pattern3,overlay,1501,100,0,0
+animation12.pattern4,overlay,1500,0,0,0
 
 }
 
@@ -414,16 +446,16 @@ collisionex1,Petals,polygon,151,279,101,295,41,201,50,175,94,133,180,123,282,164
 element0,overlay,surface1.png,0,0
 element1,overlay,surface1000.png,0,0
 
-animation10.interval,runonce
-animation10.pattern0,overlay,1401,0,0,0
-animation10.pattern1,overlay,1402,150,0,1
-animation10.pattern2,overlay,1403,150,0,0
-animation10.pattern3,overlay,1402,150,0,1
-animation10.pattern4,overlay,1401,150,0,0
-animation10.pattern5,overlay,1403,150,0,1
-animation10.pattern6,overlay,1402,150,0,0
-animation10.pattern7,overlay,1401,150,0,1
-animation10.pattern8,overlay,-1,150,0,0
+animation13.interval,runonce
+animation13.pattern0,overlay,1401,0,0,0
+animation13.pattern1,overlay,1402,150,0,1
+animation13.pattern2,overlay,1403,150,0,0
+animation13.pattern3,overlay,1402,150,0,1
+animation13.pattern4,overlay,1401,150,0,0
+animation13.pattern5,overlay,1403,150,0,1
+animation13.pattern6,overlay,1402,150,0,0
+animation13.pattern7,overlay,1401,150,0,1
+animation13.pattern8,overlay,-1,150,0,0
 }
 
 // Wink
@@ -434,20 +466,20 @@ collisionex1,Petals,polygon,151,279,101,295,41,201,50,175,94,133,180,123,282,164
 
 element0,overlay,surface1.png,0,0
 
-animation11.interval,runonce
-animation11.pattern1,overlay,1600,0,0,0
-animation11.pattern2,overlay,1601,100,0,0
-animation11.pattern3,overlay,1602,100,0,0
-animation11.pattern4,base,1603,100,0,0
-animation11.pattern5,overlay,1610,100,0,0
-animation11.pattern6,overlay,1611,100,0,0
-animation11.pattern7,overlay,1612,100,0,0
-animation11.pattern8,overlay,1613,100,0,0
-animation11.pattern9,overlay,1614,100,0,0
-animation11.pattern10,overlay,1615,100,0,0
-animation11.pattern11,overlay,1616,100,0,0
-animation11.pattern12,overlay,1617,100,0,0
-animation11.pattern13,overlay,-1,100,0,0
+animation14.interval,runonce
+animation14.pattern1,overlay,1600,0,0,0
+animation14.pattern2,overlay,1601,100,0,0
+animation14.pattern3,overlay,1602,100,0,0
+animation14.pattern4,base,1603,100,0,0
+animation14.pattern5,overlay,1610,100,0,0
+animation14.pattern6,overlay,1611,100,0,0
+animation14.pattern7,overlay,1612,100,0,0
+animation14.pattern8,overlay,1613,100,0,0
+animation14.pattern9,overlay,1614,100,0,0
+animation14.pattern10,overlay,1615,100,0,0
+animation14.pattern11,overlay,1616,100,0,0
+animation14.pattern12,overlay,1617,100,0,0
+animation14.pattern13,overlay,-1,100,0,0
 }
 
 // Skull
@@ -459,13 +491,13 @@ collisionex1,Petals,polygon,151,279,101,295,41,201,50,175,94,133,180,123,282,164
 element0,overlay,surface1700.png,0,0
 
 //Randomised glitch
-animation12.interval,random,10
-animation12.pattern0,replace,1701,0,0,0
-animation12.pattern1,replace,1702,30,0,0
-animation12.pattern2,replace,1703,30,0,0
-animation12.pattern3,replace,1702,150,0,0
-animation12.pattern4,replace,1701,30,0,0
-animation12.pattern5,replace,-1,30,0,0
+animation15.interval,random,10
+animation15.pattern0,replace,1701,0,0,0
+animation15.pattern1,replace,1702,30,0,0
+animation15.pattern2,replace,1703,30,0,0
+animation15.pattern3,replace,1702,150,0,0
+animation15.pattern4,replace,1701,30,0,0
+animation15.pattern5,replace,-1,30,0,0
 }
 
 
