@@ -1,0 +1,489 @@
+﻿//---------Booting and Ending--------
+//This .dic file contains booting and ending dialogue, as well as several other functions.
+
+//----OnfirstBoot----
+//~~~~Runs after new installation of ghost, only if ghost was installed from .nar file. Also declares and initialises variables
+//~~~~I've used variables without declaring them first here and it was a nightmare at the time. <3Era~~~~
+
+
+OnfirstBoot
+{
+	OnNotifyUserInfo
+	--
+ 	lastTalk = "" //This is part of how chained conversations work (see aitalk.dic).
+	passmin = 0 
+	passsec = 0 // These two keep track of the time.
+ 	mikireflag       = 0	// mikireflag tracks if character is cut off my screen border
+ 	aitalkinterval = 300 //Their default talk rate in seconds.
+ 	talktime = "5 minutes" //How the value aitalkinterval will display in the config menu.
+	nowshell = "master" //init as default shell
+	
+	deleteshitai = "OFF" //Sets whether or not the user can uninstall the ghost to "OFF".
+	
+	username         = "USER" //This sets a temporary name for the user.
+	birthdayprint = "????" //A temporary value for the user's birthday.
+	
+	//wisott
+	installinfo = ("%(year)","%(month)","%(day)","%(hour)","%(minute)","%(second)","%(OnGhostVer)")
+	// Custom options
+	silentMode = "OFF" //does not start in silent mode
+	canDesktopEye = "OFF" //does not start off commenting on open programs
+	verBalete = "ON" //DOES start with recycle bin confirmation on
+
+	//The following are global variables for f_lowe_y's ghost interactions.
+	gazeTalk = 0
+	//The following are global variables for f_lowe_y's user interactions.
+	stroke = 0	// Sets being-pet state to zero.
+	petCount = 0
+	petCountNeg = 0
+	flickCount = 0
+	knifeTime = 0
+	killCount = 0
+	resetCount = 0
+	HP = 20
+	EXP = 0
+	ellVee = 1
+	nicevariable = 0
+	meanvariable = 0
+	--
+	"\![set,sticky-window,1,0]\![set,otherghosttalk,true]"
+	
+	--
+	if reference0 == 0 //Don't touch this line.
+ 	{
+		firstBoot = 1
+		"\t"
+		--
+		"\0\s[3]%(Narrator) * You have opened a ghost and I'm not sure how to introduce him. \_w[1000]\n/
+		\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Howdy!\_w[500]"
+		--
+		OnTeachPronouns
+ 	}
+	else
+ 	{
+ 		// "\0\s[21]\_v[mus\sound_FLOWEY.mp3] * Returned. Why?"
+		
+		"\0\s[21]%(Narrator) * f_lowe_y does not remember being uninstalled. \n But you remember doing it, don't you %(menuNName)?\_w[500]\n Let's go over some things."
+		--
+		OnTeachPronouns
+ 	}
+}
+
+
+
+
+
+//--timeslot
+
+//This is another unique function to tell what time of day it is. This is used for specialized dialogue related to the day.
+
+GetTimeSlot
+{
+	case hour
+	{
+		when 0-4
+		{
+			"weehours"
+		}
+		when 5-8
+		{
+			"earlymorning"
+		}
+		when 9-11
+		{
+			"morning"
+		}
+		when 12-14
+		{
+			"lunch"
+		}
+		when 15-17
+		{
+			"afternoon"
+		}
+		when 18-20
+		{
+			"evening"
+		}
+		when 21-23
+		{
+			"latenight"
+		}
+	}
+}
+
+//--dayslot
+
+//Like the above, but to find out what day it is. You can primarily use this for specialized dialogue on certain days, like the user's birthday.
+
+GetDaySlot
+{
+	"%(month)month %(day)day"
+}
+
+
+//-----------------------Normal Booting----------------------------
+
+//From this point on, the dialogue will be for any normal boot of your ghost. You can specialize this for certain days or times if you like, or if you're uninterested, leave it very simple.
+
+
+//--OnBoot
+
+//As you can probably guess, OnBoot runs when you boot your ghost.
+//*********************Advanced User Info*******************************
+//You can also stick any values you want to reset on boot into their own function, like "BootReset", then run BootReset instead during boot so it's a bit less unwieldy.
+//***********************************************************************
+
+OnBoot
+ {
+	OnNotifyUserInfo
+	lastTalk = "" 
+	passhour = 0
+	passmin = 0
+	passsec = 0
+	dayslot = GetDaySlot
+	timeslot = GetTimeSlot
+	
+	//turns on detection of other ghosts' speech
+	//Neutral pose.
+ 	"\![set,sticky-window,1,0]\![set,otherghosttalk,true]\1\s[-1]\0\s[0]" 
+	--
+	
+	if dayslot == userbirthday 
+	
+	{
+				"\0\s[3]%(Narrator) * It's %(bornmonthprint) %(borndayprint).\_w[500]\n * Happy birthday, %(username)." 
+				--
+				"\0\s[0]\e"
+				
+	}
+	
+	elseif dayslot == "6month 6day" 
+	
+	{
+				"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Today. June 6th."
+				--
+				"\0\s[0]\e"
+	}
+	elseif dayslot == "7month 4day"
+	{
+				"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Fourth. 4th. Fourth. July."
+				--
+				"\0\s[0]\e"
+				
+	}
+	else
+	{
+		"%(normalboottalk)" //If none of the days above match the current date, the ghost instead will go down to the next function, normalboottalk.
+	}
+}
+
+
+//--normalboottalk
+
+//normalboottalk will vary their dialogue in a few different ways depending on the time and weekday.
+
+normalboottalk
+{
+	if weekday == 6 && hour >= 19 
+	{
+		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * It's Saturday night."
+	}
+	elseif RAND(100) < 40 
+	{
+		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * (Gurgling noises)"
+	
+	}
+ 	else
+ 	{
+		timeslot = "%(GetTimeSlot)"
+		if timeslot == "earlymorning" 
+		{
+		"\0\s[3] * Early. "
+		
+		}
+		elseif timeslot == "morning"
+		{
+		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Bleah. "
+		
+		}
+		elseif timeslot == "lunch"
+		{
+		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Eat."
+		}
+		elseif timeslot == "afternoon"
+		{
+		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Afternoon. "
+		}
+		elseif timeslot == "evening"
+		{
+ 		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Late. "
+		}
+		elseif timeslot == "latenight"
+		{
+ 		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Laaaaaaate."
+		
+		}
+		else //the last timeslot we haven't done is weehours, which is what's under here.
+		{
+		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * %(lateearly)\_w[500]"
+		
+		}
+	}
+	--
+	"\0\s[0]\e"
+}
+
+
+//----OnClose
+
+//OnClose runs when you close your ghost. 
+
+OnClose
+{
+	if passmin >= 5	
+	{
+		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Bye.\_w[500]"	
+		"\0\s[3]%(Narrator) * (You tell f_lowe_y you'll see him later.)\_w[500]"	
+ 		
+ 	}
+ 	else 
+ 	{
+ 		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * [f_lowe_y_greeting_string] BYE\_w[500]"
+		
+ 	}
+ 	--
+	"\-" 
+}
+
+OnCloseAll
+{
+	if ghostexcount > 0
+	{
+
+		"\0\s[3]%(Narrator) * (You say goodbye to everyone.)\_w[500]"
+		case hour
+		{
+		when 0-4
+		{
+			"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Goodnight. Or good morning"
+		}
+		when 5-11
+		{
+			"\0\s[3]%(Narrator) * (You say you'll see everyone later.)"
+			"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Good morning."
+		}
+		when 12-16
+		{
+			"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * G%(o_)%(o_)%(d_)-%(b_)%(y_)%(e_)\_w[500]"	
+			"\0\s[3]%(Narrator) * (You say you'll see everyone later.)\_w[500]"
+			"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Good afternoon."
+		}
+		when 17-20
+		{
+			"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Good evening."
+			"\0\s[3]%(Narrator) * (You say you'll see everyone another time.)"
+		}
+		when 21-23
+		{
+			"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Goodnight."
+			"\0\s[3]%(Narrator) * (You say you'll see everyone another time.)"
+		}
+		}
+	--
+	"\-"
+	}
+
+}
+
+ //--------State Changing--------
+ //From here on, most of the dialogue will have to do with changing shells, ghosts, or states in some way.
+ 
+ 
+ //----OnWindowStateMinimize
+
+//This will run when you minimize them.
+
+ OnWindowStateMinimize
+ {
+	"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Tiny\_w[500]"
+	"\0\s[3]%(Narrator) * (f_lowe_y will hide for now.)\_w[500]"
+	--
+	"\0\s[0]\e"
+}
+
+//--OnWindowStateRestore
+
+OnWindowStateRestore
+ {
+	"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Back\_w[500]"
+	"\0\s[3]%(Narrator) * (f_lowe_y has returned.)\_w[500]"
+	--
+	"\0\s[0]\e"
+}
+
+
+//--OnGhostChanging
+
+OnGhostChanging
+ {
+	if reference0 == "f_lowe_y" 
+	{
+		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Re-re-re-re-re-re-re\_w[1000] LOADING\_w[200].\_w[200].\_w[200]."
+		"\0\s[3]%(Narrator) * The ghost of f_lowe_y is reloading."
+	}
+ 	else //If you're switching to another Ghost.
+	{
+		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * LOADING %(reference0). \_w[500]Bye.\_w[500]"
+		"\0\s[3]%(Narrator) * (You decide to switch to someone else.)"	
+	}
+	--
+	"\0\s[0]\e"
+}
+
+
+//--OnGhostChanged
+
+//A sibling to the above, this runs after the ghost has either reloaded itself, or when you switch from another ghost to this ghost.
+
+OnGhostChanged
+{
+	"\![set,sticky-window,1,0]\![set,otherghosttalk,true]\0\s[0]\1\s[-1]" //this sets up their default poses
+	--
+	if reference0 == "f_lowe_y" //As above, this should be the name of your ghost as in install.txt or descript.txt.
+	{
+		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * LOADED.\_w[500]"
+		"\0\s[3]%(Narrator) * (Ghost %(reference0) reloaded.)\_w[500]"
+	}
+	else //If you're switching to them from another ghost...
+	{
+		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * %(reference0)...\_w[500]"
+		"\0\s[3]%(Narrator) * (Ghost '%(reference0)' unloaded.)\_w[500]"
+	}
+	--
+	"\0\s[0]\e"
+}
+
+// When THIS ghost is called. ref0 = body/sakura/kero of calling ghost, ref2 name of calling ghost, ref3 path of call, ref 7 name of called ghost.
+
+
+OnGhostCalled
+{
+	_glNam = GLITCH(reference0)
+	{
+		reference0 = TOUPPER(reference0)
+		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * HELLO %(reference0).\_w[500]\e"
+	}
+	"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * HELLO %(_glNam).\_w[500]\e"
+	
+	"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * IT'S IT'S IT'S %(reference2)! HELLO %(_glNam).\_w[500]\e"
+	
+	"\0\s[3]%(Narrator) * (%(reference0) is already here, but you called f_lowe_y anyway.)\_w[500]"
+}
+
+// When another ghost is BEING called from THIS ghost's r-click menu (happens before new ghost loads)
+// ref0 = body of called ghost, ref1 = call method, ref2 = name of called ghost, ref3 = path of called ghost
+OnGhostCalling
+{
+	_glNam = GLITCH(reference0)
+	
+	"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * HELLO %(reference0).\_w[500]\e"
+	
+	"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * IT'S IT'S IT'S %(reference2)! HELLO %(_glNam).\_w[500]\e"
+	
+	"\0\s[3]%(Narrator) * f_lowe_y is already here, but you called %(reference0) anyway.\n\_w[300] Was it to keep him company?\_w[500]\e"
+}
+
+// When another ghost is called from THIS ghost's r-click menu (happens after new ghost completes boot function)
+// ref0 = body of called ghost, ref1 = boot script, ref2 = name of called ghost, ref7 = name of loaded shell
+
+OnGhostCallComplete
+{
+	
+	if "Hapax" _in_ reference7
+	{
+		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * HELLO HAPAX LEGOMENOM.\_w[500]"
+	}
+	else
+	{
+		reference0 = TOUPPER(reference0)
+		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * HELLO %(reference0).\_w[500]"
+	}
+}
+
+// When another ghost is called from a DIFFERENT ghost's r-click menu (happens after new ghost completes boot function)
+// ref0 = body of called ghost, ref1 = boot script, ref2 = name of called ghost, ref7 = name of loaded shell
+
+OnOtherGhostBooted
+{
+	if "Hapax" _in_ reference7
+	{
+		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * HELLO HAPAX LEGOMENOM.\_w[500]"
+	}
+	else
+	{
+		reference0 = TOUPPER(reference0)
+		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * HELLO %(reference0).\_w[500]"
+	}
+}
+
+// This fucker just had to be different...
+// Occurs when switching between other ghosts.
+
+// Ref0 = main body of closed ghost. Ref1 = main body of opened ghost. Ref2 = end Script closed ghost. Ref3 = boot Script opened ghost. Ref4 = closed ghost name. Ref5 = opened ghost name. Ref14 = shell name of closed ghost. Ref15 = shell name of opened ghost.
+
+OnOtherGhostChanged
+{
+	_refer0 = TOUPPER(reference0)
+	_refer1 = TOUPPER(reference1)
+	
+	if "Hapax" _in_ reference15
+	{
+		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * GOOD-BYE %(_refer0). \n\n   HELLO HAPAX LEGOMENOM.\_w[500]"
+	}
+	elseif "Hapax" _in_ reference14
+	{
+		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * GOOD-BYE HAPAX LEGOMENOM. \n\n   HELLO %(_refer1).\_w[500]"
+	}
+	else
+	{
+		"\0\s[3]\_v[mus\sound_FLOWEY.mp3]  * GOOD-BYE %(_refer0). \n\n   HELLO %(_refer1).\_w[500]"
+	}
+}
+
+
+// When another ghost is called from a DIFFERENT ghost's r-click menu (happens after new ghost completes boot function)
+// ref0 = body of closed ghost, ref1 = last script, ref2 = name of closed ghost, ref7 = name of loaded shell
+
+OnOtherGhostClosed
+{
+	_refer0 = TOUPPER(reference0)
+	if "Hapax" _in_ reference7
+	{
+		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * GOODE-BYE HAPAX LEGOMENOM.\_w[500]"
+	}
+	else
+	{
+		
+		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * GOOD-BYE %(_refer0).\_w[500]"
+	}
+}
+// "%(referenceTest)"
+
+
+//--OnShellChanging
+
+//This will run when you change your ghost's shell.
+
+OnShellChanging
+ {
+	if reference0 == "Hypothetical Shell that doesn't actually exist" //reference0 in OnShellChanging is the name of the shell you're swapping to. 
+	{
+		"\0\s[12] * %(errorMsg)\_w[500]\e"
+	}
+	else //if you don't have any specific dialogue for a specific shell
+	{
+		"\0\s[3]%(Narrator) * It seems someone out there has made a new skin for the flower to wear.\_w[500]\n\n\n\f[color255,0,0] * Interesting.\_w[500]\e"
+	}
+ }
+ 
