@@ -1,0 +1,191 @@
+﻿
+//                )    (      (       (     
+//   (  (      ( /(    )\ )   )\ )    )\ )  
+//   )\))(   ' )\())  (()/(  (()/(   (()/(  
+//  ((_)()\ ) ((_)\    /(_))  /(_))   /(_)) 
+//  _(())\_)()  ((_)  (_))   (_))_   (_))   
+//  \ \((_)/ / / _ \  | _ \   |   \  / __|  
+//   \ \/\/ / | (_) | |   /   | |) | \__ \  
+//    \_/\_/   \___/  |_|_\   |___/  |___/  
+//                                          
+
+//  A Series of Unfortunate Envelopes 
+
+// ---- Narrator ----
+Narrator
+{
+	"\1\s[-1]\_v[mus\HELP_text.mp3]"
+}
+
+// ----System display related----
+ap
+{
+ 	if ampm
+ 		{"PM"}
+ 	else
+ 		{"AM"}
+}
+
+dishour
+{
+	if hour12 == 0; "12"
+	else; "%(hour12)"
+}
+
+dismin
+{
+	if minute >= 0 && minute <=9; "0%(minute)"
+	else; "%(minute)"
+}
+
+disTime
+{
+	"%(dishour):%(dismin) %(ap)"
+}
+
+disDate
+{
+	"%(dayShort) %(month)/%(day)/%(year)"
+}
+
+dayShort
+{
+	if weekday == 0
+	{"Sun"}
+	elseif weekday == 1
+	{"Mon"}
+	elseif weekday == 2
+	{"Tue"}
+	elseif weekday == 3
+	{"Wed"}
+	elseif weekday == 4
+	{"Thu"}
+	elseif weekday == 5
+	{"Fri"}
+	else
+	{"Sat"}
+}
+
+dayLong
+{
+	if dayShort == "Tue"
+	{"Tuesday"}
+	elseif dayShort == "Wed"
+	{"Wednesday"}
+	elseif dayShort == "Thur"
+	{"Thursday"}
+	elseif dayShort == "Sat"
+	{"Saturday"}
+	else
+	{"%(dayShort)day"}
+}
+
+
+
+// ----Dialogue----
+
+floweyLaugh
+{
+	"\s[24]\_v[mus\heeheehee.wav]\b2\f[height,32]HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA\f[default]"
+}
+
+nonono
+{
+	"\s[15]No no no nononononononononononononononononono\_w[500]"
+}
+
+HAPPY
+{
+	_hap = GLITCH("happy")
+	"Happy Happy Happy Happy Happy Happy Happy happy happy happy happy happy happy happy happy happy happy happy happy happy happyhappy happy happy happy happy happy happy happy happy happy happy happy happy happyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPY%(_hap)%(_hap)%(_hap)%(_hap)%(_hap)%(_hap)%(_hap)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)"
+}
+
+usersfolder
+{
+	"%(username)'s Recycle Bin"
+	"%(username)'s Documents folder"
+	"%(username)'s secret folder... embarrassing"
+}
+
+
+
+
+change
+{
+	if RAND(100)>=74{_change = GLITCH("change");"%(_change)"}
+	elseif RAND(100)>=24{_change = glitchLite("change");"%(_change)"}
+	else{"Change"}	
+}
+
+lateearly
+{
+	_late = GLITCH("late")
+	_early = GLITCH("early")
+	"LATE. EARLY. %(l_)ATE. %(e_)ARLY. L%(a_)%(t_)E. EA%(r_)L%(y_). %(l_)%(a_)%(t_)%(e_). %(e_)%(a_)%(r_)%(l_)%(y_). %(_late). %(_early)."
+}
+
+
+errorMsg
+{
+	"( Something is Wrong. Please report bug to bugreport@outworlderaffairs.com )\_w[500]"
+}
+
+referenceTest
+{
+	_display = ""
+	_num = 0
+	foreach reference; _ref //Each time the loop runs, _ref will store the next value in the array, until the array ends
+	{
+		_ref = SHIORI3FW.EscapeAllTags(_ref)
+		_display += "\n%(_num)- %(_ref)"
+		_num ++
+	}
+	--
+	"\_q\b2\![set,autoscroll,disable]%(_display)\x"
+}
+
+
+
+// A whole bunch of word swaps
+happy
+{
+	"delighted" 
+	"glad"
+	"pleased" 
+	"satisfied" 
+	"thankful" 
+	"happy"
+}
+unhappy
+{
+	"unhappy"
+	"displeased"
+	"unsatisfied"
+}
+
+sure
+{
+	"sure"
+	"certain"
+	"confident"
+}
+
+unsure
+{
+	"unsure"
+	"uncertain"
+}
+
+callHe
+{
+	"f_lowe_y"
+	"the flower"
+	"he"
+}
+
+callHim
+{
+	"f_lowe_y"
+	"the flower"
+	"him"
+}

@@ -1,0 +1,251 @@
+﻿
+//     __  __                                                        
+//    / / / /   _____  ___    _____   ____   ____ _   ____ ___   ___ 
+//   / / / /   / ___/ / _ \  / ___/  / __ \ / __ `/  / __ `__ \ / _ \
+//  / /_/ /   (__  ) /  __/ / /     / / / // /_/ /  / / / / / //  __/
+//  \____/   /____/  \___/ /_/     /_/ /_/ \__,_/  /_/ /_/ /_/ \___/ 
+//                                                                   
+
+
+//-------- OnTeachName --------
+//This is called from the config menu in the main character's double click menu when the user says they want to change their name.
+
+OnTeachName	
+{
+	if reference0 == "menu" //function was called from User Config
+		{	
+			"\c"
+			--
+			"\0\s[3]%(Narrator) * (Change var_player_name?) \![open,inputbox,OnNameTeach,-1]\0\s[7]"
+			
+			"\0\s[8]\_v[mus\sound_FLOWEY.mp3] * RE-RE-RE-RE-RE-\_w[500]\c\_v[mus\sound_FLOWEY.mp3] * Name the Fallen Human \![open,inputbox,OnNameTeach,-1]\0\s[7]"
+			
+			"\0\s[16]\_v[mus\sound_FLOWEY.mp3] * Human name name name fallen human fallen fallen... name? \![open,inputbox,OnNameTeach,-1]"
+		}
+	else
+		{
+			"\c"
+			--
+			"\0\s[3]\_v[mus\sound_FLOWEY.mp3]* Name. Name. \n\_w[500]\s[7] * Name. Fallen Human. Fallen... name? \![open,inputbox,OnNameTeach,-1]\x\s[0]"
+			
+			"\0\s[3]%(Narrator)\f[align,center] Name the Fallen Human\_w[500]\0\s[8]\![open,inputbox,OnNameTeach,-1]\x\s[0]"
+		}
+}
+
+
+//--OnNameTeach
+//This is where the user inputs their name and the ghost analyzes it.
+
+OnNameTeach
+{
+	_tempname = reference0 //this stores the name value from reference0 in tempname
+	if reference0 == "flowey" || reference0 == "Flowey" || reference0 == "FLOWEY"
+	{
+		"\0\s[21]\_v[mus\sound_FLOWEY.mp3] * Chose... already...\![open,inputbox,OnNameTeach,-1]"
+		
+	}
+	elseif reference0 == "FlOwEy" || reference0 == "fLoWeY"
+	{
+		"\0\s[23]\_v[mus\sound_FLOWEY.mp3] * Clevvvvvvvver Vvve ver very clever.\![open,inputbox,OnNameTeach,-1]"
+		"\0\s[18]%(Narrator) * (You decide that may have been a bad idea.)\![open,inputbox,OnNameTeach,-1]"
+	}
+	else
+	{
+		reference0 = TOLOWER(reference0) //changes it to lowercase
+		reference0 = REPLACE(reference0," ","") //removes spaces
+		reference0 = REPLACE(reference0,".","") //removes periods
+		reference0 = REPLACE(reference0,"-","") //removes dashes
+		reference0 = REPLACE(reference0,"_","") //removes underscores
+		
+		
+		if reference0 == "flowey" 
+		{
+			"\0\s[21]\_v[mus\sound_FLOWEY.mp3] * Chose... already...\![open,inputbox,OnTeachName,-1]"
+		}
+		elseif reference0 == "" //This is if the user doesn't put in a name at all, since that'd also get awkward in dialogue.
+		{
+			username = "NULL" //this sets the user's name.
+		
+			"\0\s[5]\_v[mus\sound_FLOWEY.mp3] * var_player_name = %(username)\0\s[3]"
+			"\0\s[5]%(Narrator) * var_player_name = %(username) Is this correct? \n"
+			--
+			
+			"\![*] \q[Change it.,OnTeachName]\n \n[-100]\f[align,right]\![*] \q[It's fine.,OnRisk]\n\0\s[3]"
+		}
+		elseif reference0 == "sans"
+		{
+			if month == 2 && day == 15
+			{
+				username = "Sanstrosity"
+				"\0\s[29]\_v[mus\sound_FLOWEY.mp3] * IT-IT-IT-IT-IT-IT-IT-IT-IT-\n%(Narrator) * (Perhaps another name?)"
+			}
+			else
+			{
+			username = "Smiley Trashbag" //this sets the user's name to something insulting
+		
+			"\0\s[21]\_v[mus\sound_FLOWEY.mp3] * Trash_bag_ \0\s[3]\n"
+			"\0\s[21]%(Narrator) * f_lowe_y isn't a fan of that name. \n (You get the feeling he may decide to call you something rude instead.) \n"
+			}
+			--
+			"\![*] \q[Change it.,OnTeachName]\n \n[-100]\f[align,right]\![*] \q[Risk it.,OnRisk]\0\s[3]"
+		}
+		elseif reference0 == "papyrus"
+		{
+			if month == 2 && day == 15
+			{
+				username = "Papalgamate"
+				"\0\s[29]\_v[mus\sound_FLOWEY.mp3] * %(HAPPY)\n\n/
+				\c%(Narrator) * IT... May be a bad idea to use that name. \n"
+				--
+				"\![*] \q[Change it.,OnTeachName]\n \n[-100]\f[align,right]\![*] \q[Risk it.,OnRisk]\0\s[3]"
+			}
+			else
+			{
+				username = _tempname //this sets the user's name to what they entered
+				_temp = GLITCH(username)
+				"\0\s[23]\_v[mus\sound_FLOWEY.mp3] * %(_temp) \0\s[0]\n"
+				"\0\s[23]%(Narrator) * It appears he has... fond? ...memories of someone. \n"
+			}
+		}
+		elseif reference0 == "help" //template for referencing HELP_tale names
+		{
+			if month == 2 && day == 15
+			{
+				username = "THANK"
+				"\0\s[29]\_v[mus\sound_FLOWEY.mp3] * %(HAPPY)\n\n/
+				\c%(Narrator) * IT... May be a bad idea to use that name. \n"
+				--
+				"\![*] \q[Change it.,OnTeachName]\n \n[-100]\f[align,right]\![*] \q[Risk it.,OnRisk]\0\s[3]"
+			}
+			else
+			{
+				username = _tempname //this sets the user's name to what they entered
+				_temp = GLITCH(username)
+				"\0\s[23]\_v[mus\sound_FLOWEY.mp3] * %(_temp) \0\s[0]\n"
+				"\0\s[23]%(Narrator) * It appears he has... [var_sentiment] ...memories of someone. \n"
+			}
+		}
+		elseif reference0 == "name" //some character
+		{
+			username = "reference" 
+		
+			"\0\s[5]\_v[mus\sound_FLOWEY.mp3] * var_player_name = %(username)\0\s[3]"
+			
+			"\0\s[5]%(Narrator) * var_player_name = %(username) Is this correct? \n"
+			--
+			
+			"\![*] \q[Change it.,OnTeachName]\n \n[-100]\f[align,right]\![*] \q[It's fine.,OnRisk]\n\0\s[3]"
+		}
+		elseif _tempname == username //checks against existing username
+		{
+			"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * %(username)... Again... Title...?\_w[500]\n\n[half]"
+			
+			"\0\s[3]%(Narrator) * That is already your username. Are you trying to change something else? \_w[500]\n\n[half]"
+			--
+			
+			"\![*] \q[Yes,titlechoose]\n \n[-100]\f[align,right]\![*] \q[No,titlenone]\n"
+		}
+		else //if the user put in something not specified above, ie a proper name the ghost can use. 
+		{
+			username = _tempname
+			"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Title...?\_w[500]\n\n[half]"
+			
+			"\0\s[3]%(Narrator) * Do you want to be called by a title? \_w[500]\n\n[half]"
+			--
+			
+			"\![*] \q[Yes,titlechoose]\n \n[-100]\f[align,right]\![*] \q[No,titlenone]\n"
+		}
+	}
+}
+
+// If the user chooses to risk a FUN name
+OnRisk
+{
+	if firstBoot == 1 //this checks for the flag that was set during the firstBoot sequence
+	{
+		firstBoot = 0 //this turns the flag off
+		
+		"\0\s[9]%(Narrator) * f_lowe_y has learned to call you... something.\0\s[3]"
+		--
+		OnTeachPronouns
+	}
+	else
+	{
+		"\0\s[24]\_v[mus\heeheehee.wav] * HA HA HA HA HA HA HA-\e"
+	}	
+
+}
+	
+Select.titlechoose
+{		
+	
+	"\![*] \q[Mr.,titlemr]\n/
+	\![*] \q[Ms.,titlems]\n/
+	\![*] \q[Mrs.,titlemrs]\n/
+	\![*] \q[Mx.,titlemx]\n/
+	\![*] \q[-ssi,titlessi]\n/
+	\![*] \q[-san,titlesan]\n/
+	\![*] \q[No title,titlenone]"
+}
+	
+Select.titlenone
+{
+		username = username
+		NameDone
+}
+
+Select.titlemr
+{
+		username = "Mr. " + username
+		NameDone
+}
+		
+Select.titlems
+{
+		username = "Ms. " + username
+		NameDone
+}
+
+Select.titlemrs
+{
+		username = "Mrs. " + username
+		NameDone
+}
+
+Select.titlemx
+{
+		username = "Mx. " + username
+		NameDone
+}
+
+Select.titlessi
+{
+		username = username + "-ssi"
+		NameDone
+}
+
+Select.titlesan
+{
+		username = username + "-san"
+		NameDone
+}
+
+//--NameDone
+//Signifies that it's done, moves on to wherever else
+
+
+NameDone
+{
+	if firstBoot == 1 //this checks for the flag that was set during the firstBoot sequence
+	{
+		firstBoot = 0 //this turns the flag off
+		
+		"\0\s[9]%(Narrator) * f_lowe_y has learned your name, \_w[500]%(username).\0\s[3]"
+		--
+		OnTeachPronouns
+	}
+	else
+	{
+		"\0\s[9]\_v[mus\sound_FLOWEY.mp3] * \_w[500]%(username) \_w[500]%(username) \_w[500]%(username) \_w[500]%(username) \_w[500]%(username)!"
+	}	
+}
