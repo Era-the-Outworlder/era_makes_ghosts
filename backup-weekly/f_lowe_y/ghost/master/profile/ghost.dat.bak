@@ -25,12 +25,12 @@ teachbox.top,725
 timeinput.top,648
 Char2.center,896
 Update.TestMode,0
-Char0.center,1095
+Char0.center,1151
 scriptbox.top,226
 shell,shell\master\
 FirstBoot,booted
 passwordinput.left,810
-Char1.center,987
+Char1.center,1326
 sliderinput.top,382
 shiori.log,1
 shell.ischanged.2,1

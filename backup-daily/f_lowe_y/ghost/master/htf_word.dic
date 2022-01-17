@@ -127,21 +127,7 @@ lateearly
 
 errorMsg
 {
-	"( Something is Wrong. Please report bug to bugreport@outworlderaffairs.com )\_w[500]"
-}
-
-referenceTest
-{
-	_display = ""
-	_num = 0
-	foreach reference; _ref //Each time the loop runs, _ref will store the next value in the array, until the array ends
-	{
-		_ref = SHIORI3FW.EscapeAllTags(_ref)
-		_display += "\n%(_num)- %(_ref)"
-		_num ++
-	}
-	--
-	"\_q\b2\![set,autoscroll,disable]%(_display)\x"
+	"( Something is Wrong. Please report bug to bugreport(at)outworlderaffairs.com )\_w[500]"
 }
 
 

@@ -13,7 +13,7 @@
 OnTranslate
 {
 	_talk = reference0
-	_talk = REPLACE(_talk, "bugreport@outworlderaffairs.com", "\_a[bugmail]bugreport@outworlderaffairs.com\_a")		
+	_talk = REPLACE(_talk, "bugreport(at)outworlderaffairs.com", "\_a[bugmail]bugreport@outworlderaffairs.com\_a")		
 	if silentMode == "ON"
 	{
 		_talk = REPLACE(_talk, "\_v[", "\![sound,stop,")
@@ -43,7 +43,7 @@ OnAnchorSelectEx
 		{
 			when "bugmail" //if the anchor ID is this value
 			{
-				"\j[mailto:bugreport@outworlderaffairs]\e"
+				"\j[mailto:bugreport@outworlderaffairs.com]\e"
 			}
 			when "anchor2" //if the link is this value
 			{

@@ -296,6 +296,15 @@ OnCloseAll
 
 }
 
+OnBasewareUpdating
+{
+	"Updating Baseware"
+}
+
+OnBasewareUpdated
+{
+	""
+}
  //--------State Changing--------
  //From here on, most of the dialogue will have to do with changing shells, ghosts, or states in some way.
  
@@ -468,7 +477,7 @@ OnOtherGhostClosed
 		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * GOOD-BYE %(_refer0).\_w[500]"
 	}
 }
-// "%(referenceTest)"
+// "%(refTest)"
 
 
 //--OnShellChanging

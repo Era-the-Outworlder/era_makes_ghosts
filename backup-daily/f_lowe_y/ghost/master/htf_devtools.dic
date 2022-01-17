@@ -1,0 +1,35 @@
+// DEV TOOLS FUCK YEAH
+
+reqCheck
+{   
+    _display = ""
+    _sz = ARRAYSIZE(var.req.key)
+    for _i = 0; _i < _sz; _i++ 
+    {
+        _keyname = var.req.key[_i]
+        _value = var.req.value[_i]
+        _display += "%(_keyname): %(_value)\n\n[half]"
+    }
+    --
+    "\_q\b6\![set,autoscroll,disable]%(_display)\x"
+}
+
+refTest
+{
+	_display = ""
+	_num = 0
+	foreach reference; _ref //Each time the loop runs, _ref will store the next value in the array, until the array ends
+	{
+		_ref = SHIORI3FW.EscapeAllTags(_ref)
+		_display += "\n%(_num)- %(_ref)"
+		_num ++
+	}
+	--
+	"\_q\b2\![set,autoscroll,disable]%(_display)\x"
+}
+
+
+OnTeach
+{
+	"OnTeach Test:\n\n%(refTest)"
+}

@@ -477,7 +477,7 @@ Select.funkTest
 }
 OnTestInput
 {
-	"%(referenceTest)"
+	"%(refTest)"
 }
 Select.newBoot
 {

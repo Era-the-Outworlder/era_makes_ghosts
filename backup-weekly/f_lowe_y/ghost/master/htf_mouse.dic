@@ -35,7 +35,7 @@ OnMouseMove
 		}
 		others 
 		{
-			"CHAR* Error: * %(errorMsg)"
+			" * CHAR* Error: * %(errorMsg)"
 		}
     }
 }
@@ -52,7 +52,7 @@ MouseMoveSakura
 	{
 	when "Petals"
 	{
-		if stroke >= 60
+		if stroke >= 90
 		{
 			
 			_pat1 = GLITCH("pat")
@@ -145,7 +145,7 @@ OnMouseDoubleClick
 		}
 		others 
 		{
-			"OnMouseDoubleClick: * %(errorMsg)"
+			" * OnMouseDoubleClick: %(errorMsg)"
 		}
 		}
     }
@@ -237,7 +237,7 @@ MouseDoubleClickSakura
 MouseDoubleClickKero
 {
 	
-	"MouseDoubleClickKero: %(errorMsg)\e"
+	" * MouseDoubleClickKero: %(errorMsg)\e"
 }
 
 // ----OnMouseWheel----
@@ -252,12 +252,14 @@ OnMouseWheel
 	}
 }
 
+
 // ----OnMouseDragStart----
 // When dragging of ghost starts
 
 OnMouseDragStart
 {
-	"\0\s[0]\_v[mus\encounter.wav]\e"
+	if !talkCheck
+	{"\_v[mus\encounter.wav]"}
 }
 
 
@@ -266,7 +268,8 @@ OnMouseDragStart
 
 OnMouseDragEnd
 {
-	"\0\s[0]\_v[mus\battle_start.wav]\e"
+	if !talkCheck
+	{"\_v[mus\battle_start.wav]"}
 }
 
 

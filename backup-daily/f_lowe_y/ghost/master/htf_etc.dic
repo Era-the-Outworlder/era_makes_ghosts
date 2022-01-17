@@ -1,15 +1,36 @@
-﻿//---------------------------Miscellaneous Functions--------------------------
+﻿// -------- Miscellaneous Functions --------
 
 
 
 
 
-//----Things specifically added by Era----
+// -------- Things specifically added by Era --------
 
-OnTeach
+//As the name implies, this checks if the balloon is currently open or not. This was written by Levidre, and modified a bit by Zi.
+
+balloonCheck
 {
-	"OnTeach Test:\n\n%(referenceTest)"
+    if ASEARCH("Status",var.req.key) != -1
+    {
+        _currentstatus = var.req.value[ASEARCH("Status",var.req.key)]
+        if "balloon" _in_ _currentstatus; 1
+        else; 0
+    }
+    else; 0
 }
+
+//Modified from above
+talkCheck
+{
+    if ASEARCH("Status",var.req.key) != -1
+    {
+        _currentstatus = var.req.value[ASEARCH("Status",var.req.key)]
+        if "talking" _in_ _currentstatus || "choosing" _in_ _currentstatus; 1
+        else; 0
+    }
+    else; 0
+}
+
 
 // ---- OnOtherGhostTalk ----
 // Activates after another ghost completes a script. 
@@ -20,18 +41,28 @@ OnOtherGhostTalk
 {
 	case reference2
 	{
+	
 	when "communicate"
 	{
 		if "f_lowe_y" _in_ reference4 || "f_lowe_y" _in_ reference5 {}
+		else
+		{
+		_refT = REPLACE(refTest, "\_v[", "\![sound,stop,")
+		_refT = REPLACE(_refT, "\e", "")
+		"Communicate: %(_refT)\x"
+		}
 	}
-	when "break" {"Break: %(referenceTest)\x"}
-	when "notranslate" {"No Translate: %(referenceTest)\x"}
-	when "owned" {"SSTP- Owned: %(referenceTest)\x"}; when "remote" {"SSTP- Remote: %(referenceTest)\x"}
-	when "sstp-send" {"SSTP- Send: %(referenceTest)\x"}
-	when "plugin-script" {"Plugin Script: %(referenceTest)\x"}; when "plugin-event" {"Plugin Event: %(referenceTest)\x"}
+	when "break" {
+		_refT = REPLACE(refTest, "\_v[", "\![sound,stop,")
+		_refT = REPLACE(_refT, "\e", "")
+		"Break: %(_refT)\x"}
+	when "notranslate" {"No Translate: %(_refT)\x"}
+	when "owned" {"SSTP- Owned: %(_refT)\x"}; when "remote" {"SSTP- Remote: %(_refT)\x"}
+	when "sstp-send" {"SSTP- Send: %(_refT)\x"}
+	when "plugin-script" {"Plugin Script: %(_refT)\x"}; when "plugin-event" {"Plugin Event: %(_refT)\x"}
 	others
 	{
-		// "%(referenceTest)\x"
+		// "%(refTest)\x"
 		--
 		if reference3 == "OnSurfaceRestore" {}
 		else
@@ -55,7 +86,7 @@ OnOtherGhostTalk
 			}
 			elseif "toriel" _in_ _spokenWord
 			{
-				"\s[14]\_v[mus\sound_FLOWEY.mp3] * ...\_w[500]"
+				"\s[14]\_v[mus\sound_FLOWEY.mp3] * HER...\_w[500]"
 			}
 			elseif "asgore" _in_ _spokenWord
 			{
@@ -63,10 +94,10 @@ OnOtherGhostTalk
 			}
 			else
 			{
-				// "%(referenceTest)"
+				// "%(refTest)"
 			}
 			--
-			"\e"
+			// "\e"
 		}
 	}
 	}

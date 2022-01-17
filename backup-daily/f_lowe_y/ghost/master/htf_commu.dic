@@ -193,6 +193,6 @@ ReplyToGhost
 ReplyToUser
 {
 	_test = TOSTR(_argv[0])
-	"Test start:%(_test):test end\n\n%(referenceTest)"
+	"Test start:%(_test):test end\n\n%(refTest)"
 
 }

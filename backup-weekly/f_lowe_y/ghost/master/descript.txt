@@ -27,7 +27,7 @@ icon.minimize, HTflowey.ico
 //Name of SHIORI file
 shiori,yaya.dll
 shiori.cache,0
-shiori.version,3.0
+// shiori.version,3.0
 // shiori.encoding,UTF-8
 // shiori.forceencoding,UTF-8
 
@@ -110,7 +110,7 @@ sstp.allowunspecifiedsend,1
 sstp.allowcommunicate,1
 
 // Force OnTranslate
-sstp.alwaystranslate,0
+sstp.alwaystranslate,1
 
 // Ignore OnMouseMove if 1
 don't need onmousemove,0
@@ -118,5 +118,5 @@ don't need onmousemove,0
 // Ignore dressup if 1
 don't need bind,1
 
-// Ignore serkio Talk if 1
+// Ignore SERIKO Talk if 1
 don't need seriko talk,0
