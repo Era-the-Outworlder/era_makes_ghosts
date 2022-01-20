@@ -427,7 +427,7 @@ On_systeminfobutton.caption
 
 On_hidebutton.caption
 {
-	CapGlitch3("&Iconify")
+	CapGlitch3("&Minimise")
 }
 
 On_closebutton.caption

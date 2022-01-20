@@ -1,14 +1,9 @@
 Charset,UTF-8
 install,691361255
 homeurl_found,1
-surfacecount,86
+surfacecount,88
 homeurl,https://raw.githubusercontent.com/Era-The-Outworlder/era_makes_ghosts/main/Updates/f_lowe_y/
 update_result,NG(md5 miss:developer_options.txt)
 firstboot,691361255
-<<<<<<< HEAD
 commitmemorysize,4645757
 lastboot,695962373
-=======
-commitmemorysize,4600378
-lastboot,695725624
->>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)

@@ -48,14 +48,13 @@ OnfirstBoot
 	meanvariable = 0
 	--
 	"\![set,sticky-window,1,0]\![set,otherghosttalk,true]"
-	
 	--
 	if reference0 == 0 //Don't touch this line.
  	{
 		firstBoot = 1
 		"\t"
 		--
-		"\0\s[3]%(Narrator) * You have opened a ghost and I'm not sure how to introduce him. \_w[1000]\n/
+		"\0\s[3]%(Narrator) * Despite everything, IT's still Flowey. \_w[1000]\n/
 		\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Howdy!\_w[500]"
 		--
 		OnTeachPronouns
@@ -139,11 +138,8 @@ OnBoot
  {
 	OnNotifyUserInfo
 	lastTalk = "" 
-<<<<<<< HEAD
 	hourlyArray = IARRAY
 	cumuhour = (cumuhour + passhour)
-=======
->>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 	passhour = 0
 	passmin = 0
 	passsec = 0
@@ -247,6 +243,15 @@ normalboottalk
 
 OnClose
 {
+	if passhour > 1
+	{
+	cumuhour = (cumuhour + passhour)
+	passhour = 0
+	}
+	--
+	passmin = 0
+	passsec = 0
+	--
 	if passmin >= 5	
 	{
 		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Bye.\_w[500]"	
@@ -264,6 +269,15 @@ OnClose
 
 OnCloseAll
 {
+	if passhour > 1
+	{
+		cumuhour = (cumuhour + passhour)
+		passhour = 0
+	}
+	--
+	passmin = 0
+	passsec = 0
+	--
 	if ghostexcount > 0
 	{
 
@@ -349,6 +363,15 @@ OnGhostChanging
 	}
  	else //If you're switching to another Ghost.
 	{
+		if passhour > 1
+		{
+			cumuhour = (cumuhour + passhour)
+			passhour = 0
+		}
+		--
+		passmin = 0
+		passsec = 0
+		--
 		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * LOADING %(reference0). \_w[500]Bye.\_w[500]"
 		"\0\s[3]%(Narrator) * (You decide to switch to someone else.)"	
 	}

@@ -3,17 +3,13 @@ __system_settings_version__,2
 seriko.scaling.balloonlink,0
 balloon,D:\SSP\balloon\undertrash\
 Char1.balloon.isleft,1
-inputbox.left,952
+inputbox.left,940
 Char4.balloon.isleft,1
 communicatebox.left,474
 Char8.center,824
 Char7.balloon.isleft,1
 passwordinput.top,565
-<<<<<<< HEAD
 balloon0.offset,191.-318
-=======
-balloon0.offset,200.-80
->>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 scriptbox.left,968
 Char9.center,559
 Char0.centery,900
@@ -22,11 +18,7 @@ Char2.centery,900
 Char4.centery,900
 Char6.centery,900
 sliderinput.left,620
-<<<<<<< HEAD
 balloon1.offset,-121.-502
-=======
-balloon1.offset,-189.-458
->>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 Char7.center,1247
 Char9.balloon.isleft,1
 Char5.center,364
@@ -44,26 +36,15 @@ dateinput.left,1196
 teachbox.top,725
 timeinput.top,648
 Char2.center,896
-<<<<<<< HEAD
 Char0.center,1453
-=======
-Char0.center,1151
->>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 scriptbox.top,226
 Char10.balloon.isleft,1
 passwordinput.left,810
 Char8.balloon.isleft,1
-<<<<<<< HEAD
 Char1.centery,868
 seriko.ignoremove,0
 Char3.centery,900
 Char1.center,1590
-=======
-Char1.centery,803
-seriko.ignoremove,0
-Char3.centery,900
-Char1.center,1326
->>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 seriko.scaling.percent.x,100
 forceAlignFree,true
 seriko.scaling.balloon.percent.x,100
@@ -72,7 +53,7 @@ seriko.scaling.balloon.percent.y,100
 sliderinput.top,382
 Char2.balloon.isleft,1
 Char5.balloon.isleft,1
-inputbox.top,393
+inputbox.top,442
 Char10.centery,900
 timeinput.left,846
 Char5.centery,900

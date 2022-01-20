@@ -41,25 +41,13 @@ OnOtherGhostTalk
 {
 	case reference2
 	{
-	
 	when "communicate"
 	{
 		if "f_lowe_y" _in_ reference4 || "f_lowe_y" _in_ reference5 {}
-		else
-		{
-		_refT = REPLACE(refTest, "\_v[", "\![sound,stop,")
-		_refT = REPLACE(_refT, "\e", "")
-		"Communicate: %(_refT)\x"
-		}
+		else {}
 	}
-	when "break" {
-		_refT = REPLACE(refTest, "\_v[", "\![sound,stop,")
-		_refT = REPLACE(_refT, "\e", "")
-		"Break: %(_refT)\x"}
-	when "notranslate" {"No Translate: %(_refT)\x"}
-	when "owned" {"SSTP- Owned: %(_refT)\x"}; when "remote" {"SSTP- Remote: %(_refT)\x"}
-	when "sstp-send" {"SSTP- Send: %(_refT)\x"}
-	when "plugin-script" {"Plugin Script: %(_refT)\x"}; when "plugin-event" {"Plugin Event: %(_refT)\x"}
+	when "break" {}; when "notranslate" {}; when "owned" {}; when "remote" {}
+	when "sstp-send" {}; when "plugin-script" {}; when "plugin-event" {}
 	others
 	{
 		// "%(refTest)\x"
@@ -652,7 +640,7 @@ OnUpdateReady
 	
 	}
     --
-	"\c\0\s[26]\i[9]\_q * DOWNLOADING\_w[500].\_w[500].\_w[500].\n\n"
+	"\c\0\s[26]\i[0]\_q * DOWNLOADING\_w[500].\_w[500].\_w[500].\n\n"
 }
 
 

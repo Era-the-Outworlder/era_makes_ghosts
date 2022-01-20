@@ -279,7 +279,7 @@ OnMouseDownEx
 	{
 	when "middle"
 	{
-		"\s[26]\i[9]"
+		"\s[26]\i[0]"
 		// "Mouse Wheel/Middle"
 	}
 	when "xbutton1"
