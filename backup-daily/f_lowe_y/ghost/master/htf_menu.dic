@@ -9,7 +9,7 @@
 OpenSakuraMenu
 {
 		
-		"\![set,autoscroll,disable]%(menuIntro)"
+		"\b2\![set,autoscroll,disable]%(menuIntro)"
 		--
 		OnMenuRun
 }
@@ -19,34 +19,47 @@ OpenSakuraMenu
 
 OnMenuRun
 {	
-	"\n\n\_q\b2" 
+	"\n\n\_q" 
 	--
 	if lastTalk != ""
 	{
 		"\![*] \q[%(rlTalk),OnLastTalk]\n"
 	}
+	else
+	{
+		"\n"
+	}
 	--
  	"\![*] \q[%(newTalk),OnAiTalk]\n"
 	--
- 	"\![*] \q[Chat,OnTalkToGhost]\n"
+ 	"\![*] \q[%(ghostChat),OnTalkToGhost]\n"
 	--
 	"\![*] \q[%(userMenu),OnUserConfig]\n"
 	--
 	"\![*] \q[%(configMenu),OnConfigMenu]\n"
 	--
-	"\![*] \q[%(funMenu),OnFunctionMenu]\n\n[half]"
+	"\![*] \q[%(funMenu),OnFunctionMenu]\n\n"
 	--
-	"\![*] \q[%(statsMenu),OnStatMenu]\n\n[half]"
+	"\![*] \q[%(statsMenu),OnStatMenu]\n"
 	--
-	"LV: %(ellVee)\n"
+	"LV: %(ellVee)\n\n"
+	--
+	"%(disDate) %(disTime)\n"
+	--
+	"v%(OnGhostVer)\n"
+	--
+	if lastUpDate
+	{
+		"Last Updated: %(lastUpDate)\n\n"
+	}
+	else
+	{
+		"\n\n"
+	}
 	--
  	"\![*] \q[%(closeMenu),CANCEL]\n\n[half]"
 	--
-	"%(disTime)\n%(disDate)\n"
 	
-	--
-	"Version %(OnGhostVer)\nLast Updated:\n%(lastUpDate)"
-	--
 	if eraDebug == "ON"
 	{
 		"\![*] \q[Test variable,testvariable]\n\e"
@@ -65,7 +78,7 @@ OnLastTalk
 }
 
 
-// ---- OnUserConfig ----
+// -------- OnUserConfig --------
 // This menu allows the user to change their name and other information
 
 OnUserConfig
@@ -516,14 +529,14 @@ menuIntro
 {
 	{
 		menuOption = 0
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3]\b2* oooooooooOOOOOOOOO\nOpe_ Me_u.\_w[1500]\c\_q* Howdy!!"
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3]\b2* What-%(GLITCH(what))-do you want?"
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3]\b2* NEED?"
+		"\0\s[3]\_v[mus\sound_FLOWEY.mp3]* oooooooooOOOOOOOOO\nOpe_ Me_u.\_w[1500]\c\_q* Howdy!!"
+		"\0\s[3]\_v[mus\sound_FLOWEY.mp3]* What-%(GLITCH(what))-do you want?"
+		"\0\s[3]\_v[mus\sound_FLOWEY.mp3]* NEED?"
 	}
 	{
 		menuOption = 1
 		_him = "%(callHim)"
-		"\0\s[3]\_v[mus\HELP_text.mp3]\b2 (You ask %(_him) to...)"
+		"\0\s[3]\_v[mus\HELP_text.mp3]* (You ask %(_him) to...)"
 	}
 }
 

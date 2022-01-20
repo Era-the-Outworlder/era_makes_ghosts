@@ -25,12 +25,20 @@ teachbox.top,725
 timeinput.top,648
 Char2.center,896
 Update.TestMode,0
+<<<<<<< HEAD
+Char0.center,1453
+=======
 Char0.center,1151
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 scriptbox.top,226
 shell,shell\master\
 FirstBoot,booted
 passwordinput.left,810
+<<<<<<< HEAD
+Char1.center,1590
+=======
 Char1.center,1326
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 sliderinput.top,382
 shiori.log,1
 shell.ischanged.2,1
@@ -38,5 +46,4 @@ inputbox.top,393
 timeinput.left,846
 update.lastexec,694922426
 communicatebox.top,724
-DeveloperPalette.visible,1
 __system_written_flag_do_not_remove__,written

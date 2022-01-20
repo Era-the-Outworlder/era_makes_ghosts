@@ -213,34 +213,34 @@ OnRunCPUID
 	
 		//CPU related
 	_cpu_name = FUNCTIONEX("saori_cpuid.dll","cpu.name")
-	_cpu_num = FUNCTIONEX("saori_cpuid.dll","cpu.num")
-	_cpu_vender = FUNCTIONEX("saori_cpuid.dll","cpu.vender")
-	_cpu_ptype = FUNCTIONEX("saori_cpuid.dll","cpu.ptype")
-	_cpu_family = FUNCTIONEX("saori_cpuid.dll","cpu.family") 
-	_cpu_model = FUNCTIONEX("saori_cpuid.dll","cpu.model") 
-	_cpu_step = FUNCTIONEX("saori_cpuid.dll","cpu.stepping")
-	_cpu_mmx = FUNCTIONEX("saori_cpuid.dll","cpu.mmx")  
-	_cpu_sse = FUNCTIONEX("saori_cpuid.dll","cpu.sse")  
-	_cpu_sse2 = FUNCTIONEX("saori_cpuid.dll","cpu.sse2") 
-	_cpu_tdn = FUNCTIONEX("saori_cpuid.dll","cpu.tdn")
-	_cpu_htt = FUNCTIONEX("saori_cpuid.dll","cpu.htt")//hyperthreading
-	_cpu_clock = FUNCTIONEX("saori_cpuid.dll","cpu.clock")//(unit: MHz)
+	// _cpu_num = FUNCTIONEX("saori_cpuid.dll","cpu.num")
+	// _cpu_vender = FUNCTIONEX("saori_cpuid.dll","cpu.vender")
+	// _cpu_ptype = FUNCTIONEX("saori_cpuid.dll","cpu.ptype")
+	// _cpu_family = FUNCTIONEX("saori_cpuid.dll","cpu.family") 
+	// _cpu_model = FUNCTIONEX("saori_cpuid.dll","cpu.model") 
+	// _cpu_step = FUNCTIONEX("saori_cpuid.dll","cpu.stepping")
+	// _cpu_mmx = FUNCTIONEX("saori_cpuid.dll","cpu.mmx")  
+	// _cpu_sse = FUNCTIONEX("saori_cpuid.dll","cpu.sse")  
+	// _cpu_sse2 = FUNCTIONEX("saori_cpuid.dll","cpu.sse2") 
+	// _cpu_tdn = FUNCTIONEX("saori_cpuid.dll","cpu.tdn")
+	// _cpu_htt = FUNCTIONEX("saori_cpuid.dll","cpu.htt")//hyperthreading
+	// _cpu_clock = FUNCTIONEX("saori_cpuid.dll","cpu.clock")//(unit: MHz)
 	_cpu_clockex = FUNCTIONEX("saori_cpuid.dll","cpu.clockex")//(MHz)
 	
 		// Memory related [MB] t=total a=available
 	_mem_usage = FUNCTIONEX("saori_cpuid.dll","mem.os")
-	_mem_phyt = FUNCTIONEX("saori_cpuid.dll","mem.phyt")//physical
-	_mem_phya = FUNCTIONEX("saori_cpuid.dll","mem.phya")
-	_mem_pagt = FUNCTIONEX("saori_cpuid.dll","mem.pagt")//page file
-	_mem_paga = FUNCTIONEX("saori_cpuid.dll","mem.paga")
-	_mem_virt = FUNCTIONEX("saori_cpuid.dll","mem.virt")//virtual
-	_mem_vira = FUNCTIONEX("saori_cpuid.dll","mem.vira")
+	// _mem_phyt = FUNCTIONEX("saori_cpuid.dll","mem.phyt")//physical
+	// _mem_phya = FUNCTIONEX("saori_cpuid.dll","mem.phya")
+	// _mem_pagt = FUNCTIONEX("saori_cpuid.dll","mem.pagt")//page file
+	// _mem_paga = FUNCTIONEX("saori_cpuid.dll","mem.paga")
+	// _mem_virt = FUNCTIONEX("saori_cpuid.dll","mem.virt")//virtual
+	// _mem_vira = FUNCTIONEX("saori_cpuid.dll","mem.vira")
 	"\0\s[3]\b[2]\_q\![set,autoscroll,disable]"
 	--
 	"OS: %(_os_name) %(_os_version_int) \nBuild:%(_os_build) \n\n"
 	--
-	"CPU: %(cpu_name)\n%(cpu_clockex)MHz\n\n"
-	 // "Num:%(_cpu_num) Vendor:%(_cpu_vender) Ptype:%(_cpu_ptype) Fam:%(_cpu_family) Model:%(_cpu_model) Step:%(_cpu_step) MMX:%(_cpu_mmx) SSE:%(_cpu_sse) SSE2:%(_cpu_sse2) TDN:%(_cpu_tdn) HTT:%(_cpu_htt) Clock:%(_cpu_clock)MHz/"
+	"CPU: %(cpu_name)\nClock Rate: %(cpu_clockex)MHz\n\n"
+
 	--	
 	
 	 
@@ -248,7 +248,7 @@ OnRunCPUID
 	--
 	"Memory Load: %(memoryload)\n Physical Memory: %(memoryavailphys) KB\n\n"
 	--
-	"Ukagaka: %property[system.year] %property[baseware.name]"
+	"Ukagaka: %property[baseware.name]\n"
 	--
 	"%property[baseware.version]"
 	--
@@ -757,6 +757,7 @@ OnUpdateComplete
 	}
  	else //if the ghost has updated successfully
 	{
+		lastUpDate = disDate
 		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * SOMETHING CHANGED. VIEW CHANGELOG?\_w[500]"
 		"\0\s[3]%(Narrator) * SOMETHING CHANGED. VIEW CHANGELOG?\_w[500]"
 		--

@@ -1,5 +1,9 @@
 // AYA request log
+<<<<<<< HEAD
+// load time: 2022/01/19 18:52:50
+=======
 // load time: 2022/01/17 01:07:04
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 // Loading of dictionary file
 // - D:\SSP\ghost\f_lowe_y\ghost\master\yaya_config.txt
@@ -35,7 +39,7 @@ D:\SSP\ghost\f_lowe_y\ghost\master\
 "警告：関数/イベント On_version はシステム辞書で上書きされます"
 "警告：関数/イベント On_craftman はシステム辞書で上書きされます"
 "警告：関数/イベント On_craftmanw はシステム辞書で上書きされます"
-// response (Execution time : 0[ms])
+// response (Execution time : 16[ms])
 
 // request
 GET Version SHIORI/2.6
@@ -105,7 +109,7 @@ ID: ownerghostname
 Reference0: f_lowe_y
 
 
-// response (Execution time : 0[ms])
+// response (Execution time : 15[ms])
 SHIORI/3.0 204 No Content
 Charset: UTF-8
 
@@ -166,7 +170,11 @@ ID: OnNotifyOSInfo
 Reference0: WindowsNT,10.0,Windows 10 20H2.1466 (Ver.20H2) Wow64@x64
 Reference1: Intel,2594,0.6.10.9,bfebfbff
 Reference2: 8263208,4194176
+<<<<<<< HEAD
+Reference3: 11439
+=======
 Reference3: 7494
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 0[ms])
@@ -1291,9 +1299,15 @@ Sender: SSP
 SenderType: internal
 SecurityLevel: local
 ID: OnOSUpdateInfo
+<<<<<<< HEAD
+Reference0: 2022,1,19,18,45,42
+Reference1: 2022,1,19,6,37,23
+Reference2: success000000002022,1,19,6,37,23Security Intelligence Update for Microsoft Defender Antivirus - KB2267602 (Version 1.355.2169.0)
+=======
 Reference0: 2022,1,17,0,55,11
 Reference1: 2022,1,16,13,24,32
 Reference2: success000000002022,1,16,13,24,32Security Intelligence Update for Microsoft Defender Antivirus - KB2267602 (Version 1.355.2020.0)
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 Reference3: success000000002022,1,11,18,59,362022-01 Cumulative Update for Windows 10 Version 20H2 for x64-based Systems (KB5009543)
 Reference4: success000000002022,1,11,18,48,442022-01 Cumulative Update for .NET Framework 3.5 and 4.8 for Windows 10 Version 20H2 for x64 (KB5008876)
 Reference5: success000000002022,1,11,18,48,3Windows Malicious Software Removal Tool x64 - v5.97 (KB890830)
@@ -1477,7 +1491,7 @@ SecurityLevel: local
 ID: menu.foreground.bitmap.filename
 
 
-// response (Execution time : 0[ms])
+// response (Execution time : 31[ms])
 SHIORI/3.0 204 No Content
 Charset: UTF-8
 
@@ -1588,6 +1602,8 @@ Charset: UTF-8
 Sender: SSP
 SenderType: internal
 SecurityLevel: local
+<<<<<<< HEAD
+=======
 ID: rateofusegraph
 Reference0: f_lowe_yf_lowe_yThe Locket11304035327.247866install
 Reference1: GazeTestGazeVoid4933806025.699546boot
@@ -1646,6 +1662,7 @@ Charset: UTF-8
 Sender: SSP
 SenderType: internal
 SecurityLevel: local
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 ID: OnDisplayHandover
 Reference0: init
 Reference1: 0
@@ -1671,7 +1688,7 @@ Reference2:
 Reference3: 0,0,1600,900,32,1
 
 
-// response (Execution time : 0[ms])
+// response (Execution time : 16[ms])
 SHIORI/3.0 204 No Content
 Charset: UTF-8
 
@@ -1778,7 +1795,7 @@ SecurityLevel: local
 ID: sakura.recommendsites
 
 
-// response (Execution time : 0[ms])
+// response (Execution time : 15[ms])
 SHIORI/3.0 200 OK
 Sender: AYA
 Charset: UTF-8
@@ -1839,7 +1856,11 @@ Sender: SSP
 SenderType: internal
 SecurityLevel: local
 ID: uniqueid
+<<<<<<< HEAD
+Reference0: ssp_fmo_header_00003524_002d1190
+=======
 Reference0: ssp_fmo_header_00001c58_00e70cc8
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 0[ms])
@@ -1854,11 +1875,16 @@ Sender: SSP
 SenderType: internal
 SecurityLevel: local
 ID: hwnd
+<<<<<<< HEAD
+Reference0: 29536161118598
+Reference1: 1380748725380
+=======
 Reference0: 151420882689424
 Reference1: 57711125509474
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
-// response (Execution time : 0[ms])
+// response (Execution time : 16[ms])
 SHIORI/3.0 200 OK
 Charset: UTF-8
 
@@ -1891,7 +1917,7 @@ Reference2: online
 Reference3: high
 
 
-// response (Execution time : 0[ms])
+// response (Execution time : 15[ms])
 SHIORI/3.0 204 No Content
 Charset: UTF-8
 
@@ -1930,20 +1956,26 @@ Charset: UTF-8
 Sender: SSP
 SenderType: internal
 SecurityLevel: local
-ID: OnGhostChanged
-BaseID: OnBoot
+ID: OnBoot
 Reference0: f_lowe_y
+<<<<<<< HEAD
+=======
 Reference1: \0\s[3]\1\s[-1]\_v[mus\HELP_text.mp3] * The ghost of f_lowe_y is reloading.\0\s[0]\e
 Reference2: f_lowe_y
 Reference3: D:/SSP/ghost/f_lowe_y/
 Reference7: f_lowe_y
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 0[ms])
 SHIORI/3.0 200 OK
 Sender: AYA
 Charset: UTF-8
+<<<<<<< HEAD
+Value: \![set,sticky-window,1,0]\![set,otherghosttalk,true]\1\s[-1]\0\s[0]\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Late. \0\s[0]\e
+=======
 Value: \![set,sticky-window,1,0]\![set,otherghosttalk,true]\0\s[0]\1\s[-1]\0\s[3]\_v[mus\sound_FLOWEY.mp3] * LOADED.\_w[500]\0\s[0]\e
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // request
@@ -1953,17 +1985,28 @@ Charset: UTF-8
 Sender: SSP
 SenderType: internal
 SecurityLevel: local
+<<<<<<< HEAD
+Reference0: \![set,sticky-window,1,0]\![set,otherghosttalk,true]\1\s[-1]\0\s[0]\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Late. \0\s[0]\e
+Reference1: 
+Reference2: OnBoot
+Reference3: f_lowe_y
+=======
 Reference0: \![set,sticky-window,1,0]\![set,otherghosttalk,true]\0\s[0]\1\s[-1]\0\s[3]\_v[mus\sound_FLOWEY.mp3] * LOADED.\_w[500]\0\s[0]\e
 Reference1: 
 Reference2: OnGhostChanged
 Reference3: f_lowe_y\0\s[3]\1\s[-1]\_v[mus\HELP_text.mp3] * The ghost of f_lowe_y is reloading.\0\s[0]\ef_lowe_yD:/SSP/ghost/f_lowe_y/f_lowe_y
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 0[ms])
 SHIORI/3.0 200 OK
 Sender: AYA
 Charset: UTF-8
+<<<<<<< HEAD
+Value: \![set,sticky-window,1,0]\![set,otherghosttalk,true]\1\s[-1]\0\s[0]\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Late. \0\s[0]\e
+=======
 Value: \![set,sticky-window,1,0]\![set,otherghosttalk,true]\0\s[0]\1\s[-1]\0\s[3]\_v[mus\sound_FLOWEY.mp3] * LOADED.\_w[500]\0\s[0]\e
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // request
@@ -2008,6 +2051,36 @@ SenderType: internal
 SecurityLevel: local
 Status: talking
 ID: rateofusegraph
+<<<<<<< HEAD
+Reference0: f_lowe_yf_lowe_yThe Locket11304035326.665918install
+Reference1: GazeTestGazeVoid4933875725.611255install
+Reference2: FLUXFLUXMusic892722817.992705install
+Reference3: Dr. W.D. GasterGasterBrothers781517610.028547install
+Reference4: SPAMTON G. SPAMTON!!SPAMTON!![FriendRequestDenied]45147099.719946install
+Reference5: f_lowe_yf_lowe_yThe Narrator23950703.350338boot
+Reference6: HydrateHydrateYou being healthier1136312.399424install
+Reference7: Radio NowhereRadio SakuraRadio Kero2321471.418772install
+Reference8: GazeGazeForm513620.900032install
+Reference9: SebastianSebastianGhost96990.461911install
+Reference10: S the SkeletonRYS-0825None86180.408384install
+Reference11: The Wretched ScientistWilsonKero33960.261683install
+Reference12: Ghost Jam TemmieTemmieNO ONE!!!103850.254414install
+Reference13: MiniDevMiniDev-182120.140093install
+Reference14: f_lowe_y_quietf_lowe_y_quietThe Locket32040.134807install
+Reference15: Ship of TheseusRadio SakuraRadio Kero91340.088549install
+Reference16: Dreamtale SansDreamtale Sans14550.036345install
+Reference17: Multiverse SansMVSansphone6540.035684install
+Reference18: どくでんぱ。どくでんぱ。none2520.034362install
+Reference19: f_lowe_y-oldf_lowe_yThe Locket3290.019164install
+Reference20: Emily/Phase4.5EmilyTeddy5280.018503install
+Reference21: The HandHandDummy3120.007930install
+Reference22: Mettaton EXMettatonTriangle2100.006608install
+Reference23: PLANETSPLANETS220.001322install
+Reference24: VitusVitusTriangle120.001322install
+Reference25: GazeGazeVoid210.000661install
+Reference26: GT Template - Y CleanGirlTriangle110.000661install
+Reference27: Gaze_YAYAGazeVoid110.000661install
+=======
 Reference0: f_lowe_yf_lowe_yThe Locket11304035327.247866install
 Reference1: GazeTestGazeVoid4933806025.699546boot
 Reference2: FLUXFLUXMusic892722818.385372install
@@ -2036,6 +2109,7 @@ Reference24: VitusVitusTriangle120.001350install
 Reference25: GazeGazeVoid210.000675install
 Reference26: GT Template - Y CleanGirlTriangle110.000675install
 Reference27: Gaze_YAYAGazeVoid110.000675install
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 0[ms])
@@ -2050,15 +2124,25 @@ Sender: SSP
 SenderType: internal
 SecurityLevel: local
 Status: talking,balloon(0=0)
+<<<<<<< HEAD
+ID: OnSurfaceChange
+Reference0: 0
+=======
 ID: OnBatteryNotify
 Reference0: 100
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 Reference1: -1
 Reference2: online
 Reference3: high
 
 
+<<<<<<< HEAD
+// response (Execution time : 15[ms])
+SHIORI/3.0 200 OK
+=======
 // response (Execution time : 0[ms])
 SHIORI/3.0 204 No Content
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 Charset: UTF-8
 
 
@@ -2069,6 +2153,16 @@ Sender: SSP
 SenderType: internal
 SecurityLevel: local
 Status: talking,balloon(0=0)
+<<<<<<< HEAD
+ID: OnSurfaceChange
+Reference0: 3
+Reference1: -1
+Reference2: 0,0,353,457
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+=======
 ID: rateofusegraph
 Reference0: f_lowe_yf_lowe_yThe Locket11304035327.247314install
 Reference1: GazeTestGazeVoid4933806125.699701boot
@@ -2102,6 +2196,7 @@ Reference27: Gaze_YAYAGazeVoid110.000675install
 
 // response (Execution time : 0[ms])
 SHIORI/3.0 204 No Content
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 Charset: UTF-8
 
 
@@ -2142,6 +2237,8 @@ Charset: UTF-8
 
 
 // request
+<<<<<<< HEAD
+=======
 NOTIFY SHIORI/3.0
 Charset: UTF-8
 Sender: SSP
@@ -2160,12 +2257,17 @@ Charset: UTF-8
 
 
 // request
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 NOTIFY SHIORI/3.0
 Charset: UTF-8
 Sender: SSP
 SenderType: internal
 SecurityLevel: local
+<<<<<<< HEAD
+Status: balloon(0=0)
+=======
 Status: talking,balloon(0=0)
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 ID: OnSurfaceChange
 Reference0: 3
 Reference1: -1
@@ -2184,10 +2286,19 @@ Sender: SSP
 SenderType: internal
 SecurityLevel: local
 Status: balloon(0=0)
+<<<<<<< HEAD
+ID: OnNetworkStatusChange
+Reference0: online
+Reference1: 192.168.1.19
+Reference2: wifi
+Reference3: 300
+Reference4: 300
+=======
 ID: OnSurfaceChange
 Reference0: 0
 Reference1: -1
 Reference2: 0,0,353,457
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 16[ms])
@@ -2212,15 +2323,19 @@ Charset: UTF-8
 
 
 // request
-GET SHIORI/3.0
+NOTIFY SHIORI/3.0
 Charset: UTF-8
 Sender: SSP
-SenderType: internal
+SenderType: internal,plugin
 SecurityLevel: local
 Status: balloon(0=0)
+<<<<<<< HEAD
+ID: OnDiscordPluginCustom
+=======
 ID: OnOtherOverlap
 Reference0: Gaze/1-f_lowe_y/0SPAMTON!!/1-f_lowe_y/0
 Reference1: 
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 0[ms])
@@ -2235,6 +2350,14 @@ Sender: 澰聙鶔ϰ
 SenderType: internal
 SecurityLevel: local
 Status: balloon(0=0)
+<<<<<<< HEAD
+ID: OnNetworkStatusChange
+Reference0: online
+Reference1: 192.168.1.19
+Reference2: wifi
+Reference3: 300
+Reference4: 300
+=======
 ID: OnOtherGhostTalk
 Reference0: GazeTest
 Reference1: Gaze
@@ -2242,6 +2365,7 @@ Reference2:
 Reference3: OnSurfaceRestore
 Reference4: \0\s[0]\1\s[10]\e
 Reference5: 010
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 16[ms])
@@ -2257,6 +2381,14 @@ Sender: 澰聙鶔ϰ
 SenderType: internal
 SecurityLevel: local
 Status: balloon(0=0)
+<<<<<<< HEAD
+ID: OnMinuteChange
+Reference0: 190
+Reference1: 0
+Reference2: 0
+Reference3: 1
+Reference4: 0
+=======
 ID: OnOtherGhostTalk
 Reference0: SPAMTON G. SPAMTON!!
 Reference1: SPAMTON!!
@@ -2264,6 +2396,7 @@ Reference2:
 Reference3: OnSurfaceRestore
 Reference4: \0\s[0]\i[87]\i[7]
 Reference5: 010
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 16[ms])
@@ -2279,6 +2412,18 @@ Sender: SSP
 SenderType: internal
 SecurityLevel: local
 Status: balloon(0=0)
+<<<<<<< HEAD
+ID: OnBatteryNotify
+Reference0: 100
+Reference1: -1
+Reference2: online
+Reference3: high
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+=======
 ID: OnKeyPress
 Reference0: t
 Reference1: 84
@@ -2292,17 +2437,58 @@ Reference4:
 GET Version SAORI/1.0
 Charset: UTF-8
 Sender: AYA
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 0[ms])
 SAORI/1.0 200 OK
 Charset: UTF-8
+<<<<<<< HEAD
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+Status: balloon(0=0)
+ID: rateofusegraph
+Reference0: f_lowe_yf_lowe_yThe Locket11304035326.665742install
+Reference1: GazeTestGazeVoid4933875725.611086install
+Reference2: FLUXFLUXMusic892722817.992586install
+Reference3: Dr. W.D. GasterGasterBrothers781517610.028481install
+Reference4: SPAMTON G. SPAMTON!!SPAMTON!![FriendRequestDenied]45147099.719882install
+Reference5: f_lowe_yf_lowe_yThe Narrator23950713.350977boot
+Reference6: HydrateHydrateYou being healthier1136312.399408install
+Reference7: Radio NowhereRadio SakuraRadio Kero2321471.418763install
+Reference8: GazeGazeForm513620.900026install
+Reference9: SebastianSebastianGhost96990.461907install
+Reference10: S the SkeletonRYS-0825None86180.408382install
+Reference11: The Wretched ScientistWilsonKero33960.261682install
+Reference12: Ghost Jam TemmieTemmieNO ONE!!!103850.254413install
+Reference13: MiniDevMiniDev-182120.140092install
+Reference14: f_lowe_y_quietf_lowe_y_quietThe Locket32040.134806install
+Reference15: Ship of TheseusRadio SakuraRadio Kero91340.088549install
+Reference16: Dreamtale SansDreamtale Sans14550.036345install
+Reference17: Multiverse SansMVSansphone6540.035684install
+Reference18: どくでんぱ。どくでんぱ。none2520.034362install
+Reference19: f_lowe_y-oldf_lowe_yThe Locket3290.019164install
+Reference20: Emily/Phase4.5EmilyTeddy5280.018503install
+Reference21: The HandHandDummy3120.007930install
+Reference22: Mettaton EXMettatonTriangle2100.006608install
+Reference23: PLANETSPLANETS220.001322install
+Reference24: VitusVitusTriangle120.001322install
+Reference25: GazeGazeVoid210.000661install
+Reference26: GT Template - Y CleanGirlTriangle110.000661install
+Reference27: Gaze_YAYAGazeVoid110.000661install
+
+
+// response (Execution time : 15[ms])
+SHIORI/3.0 204 No Content
+=======
 Result: 
 
 
 // request to library
 // name : D:\SSP\ghost\f_lowe_y\ghost\master\window_info.dll
 EXECUTE SAORI/1.0
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 Charset: UTF-8
 Sender: AYA
 SecurityLevel: Local
@@ -2311,6 +2497,14 @@ SecurityLevel: Local
 // response (Execution time : 0[ms])
 SAORI/1.0 200 OK
 Charset: UTF-8
+<<<<<<< HEAD
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+Status: balloon(0=0)
+ID: OnBalloonTimeout
+Reference0: \![set,sticky-window,1,0]\![set,otherghosttalk,true]\1\s[-1]\0\s[0]\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Late. \0\s[0]\e
+=======
 Result: 9
 Value0: f_lowe_y "the HELP_tale Flowey"
 Value1: SPAMTON G. SPAMTON!!
@@ -2321,6 +2515,7 @@ Value5: Era-the-Outworlder/era_makes_ghosts: Repository for Ukagaka ghosts and s
 Value6: master
 Value7: era_makes_ghosts
 Value8: GitHub Desktop
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 16[ms])
@@ -2337,17 +2532,27 @@ Charset: UTF-8
 Sender: SSP
 SenderType: internal
 SecurityLevel: local
+<<<<<<< HEAD
+ID: OnSurfaceRestore
+Reference0: 0
+Reference1: -1
+=======
 Reference0: \0\_v[mus\flee.wav]\s[-1]\_w[3000] * Flowey ran away.\_w[2000]\b4\_v[mus\hee.mp3]\f[height,100] Die.\_w[2000]\f[height,default]\_w[1000]\1\s[-1]\_v[mus\HELP_text.mp3]\f[align,center]\n\n\n * But nobody came.\f[align,default]\e\e
 Reference1: 
 Reference2: OnKeyPress
 Reference3: t8410
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 0[ms])
 SHIORI/3.0 200 OK
 Sender: AYA
 Charset: UTF-8
+<<<<<<< HEAD
+Value: \0\s[0]\1\s[-1]\e
+=======
 Value: \0\_v[mus\flee.wav]\s[-1]\_w[3000] * Flowey ran away.\_w[2000]\b4\_v[mus\hee.mp3]\f[height,100] Die.\_w[2000]\f[height,default]\_w[1000]\1\s[-1]\_v[mus\HELP_text.mp3]\f[align,center]\n\n\n * But nobody came.\f[align,default]\e\e
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // request
@@ -2356,11 +2561,45 @@ Charset: UTF-8
 Sender: SSP
 SenderType: internal
 SecurityLevel: local
+<<<<<<< HEAD
+Reference0: \0\s[0]\1\s[-1]\e
+Reference1: 
+Reference2: OnSurfaceRestore
+Reference3: 0-1
+=======
 Status: talking,balloon(0=0)
 ID: OnSurfaceChange
 Reference0: -1
 Reference1: -1
 Reference2: 0,-1,0,0
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Charset: UTF-8
+<<<<<<< HEAD
+Value: \0\s[0]\1\s[-1]\e
+=======
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
+
+
+// request
+NOTIFY SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: OnSurfaceChange
+<<<<<<< HEAD
+Reference0: 0
+Reference1: -1
+Reference2: 1,-1,0,0
+=======
+Reference0: -1
+Reference1: -1
+Reference2: 0,-1,0,0
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 0[ms])
@@ -2374,32 +2613,21 @@ Charset: UTF-8
 Sender: SSP
 SenderType: internal
 SecurityLevel: local
-Status: talking,balloon(0=0)
+<<<<<<< HEAD
 ID: OnSurfaceChange
-Reference0: -1
+Reference0: 0
 Reference1: -1
-Reference2: 0,-1,0,0
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 200 OK
-Charset: UTF-8
-
-
-// request
-GET SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
+Reference2: 1,-1,0,0
+=======
 Status: talking,balloon(0=0)
 ID: OnOtherOverlap
 Reference0: 
 Reference1: Gaze/1-f_lowe_y/0SPAMTON!!/1-f_lowe_y/0
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 0[ms])
-SHIORI/3.0 204 No Content
+SHIORI/3.0 200 OK
 Charset: UTF-8
 
 
@@ -2409,9 +2637,18 @@ Charset: UTF-8
 Sender: SSP
 SenderType: internal
 SecurityLevel: local
+<<<<<<< HEAD
+ID: OnNetworkStatusChange
+Reference0: online
+Reference1: 192.168.1.19
+Reference2: wifi
+Reference3: 300
+Reference4: 300
+=======
 Status: talking,balloon(0=0)
 ID: OnSoundStop
 Reference0: mus\flee.wav
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 0[ms])
@@ -2425,6 +2662,14 @@ Charset: UTF-8
 Sender: SSP
 SenderType: internal
 SecurityLevel: local
+<<<<<<< HEAD
+ID: OnMinuteChange
+Reference0: 190
+Reference1: 0
+Reference2: 0
+Reference3: 1
+Reference4: 10
+=======
 Status: talking,balloon(0=0)
 ID: OnKeyPress
 Reference0: t
@@ -2455,33 +2700,46 @@ Value5: Era-the-Outworlder/era_makes_ghosts: Repository for Ukagaka ghosts and s
 Value6: master
 Value7: era_makes_ghosts
 Value8: GitHub Desktop
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 0[ms])
-SHIORI/3.0 200 OK
-Sender: AYA
+SHIORI/3.0 204 No Content
 Charset: UTF-8
+<<<<<<< HEAD
+
+=======
 Value: \0\s[3]\_v[mus\sound_FLOWEY.mp3] * LATE. EARLY. l_ATE. .ARLY. La_E. EA-Ly_. -a_.-. E_-R_Ly. -.T_e_. -_RL..\e
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // request
 GET SHIORI/3.0
-ID: OnTranslate
 Charset: UTF-8
 Sender: SSP
 SenderType: internal
 SecurityLevel: local
+<<<<<<< HEAD
+ID: OnBatteryNotify
+Reference0: 100
+Reference1: -1
+Reference2: online
+Reference3: high
+=======
 Reference0: \0\s[3]\_v[mus\sound_FLOWEY.mp3] * LATE. EARLY. l_ATE. .ARLY. La_E. EA-Ly_. -a_.-. E_-R_Ly. -.T_e_. -_RL..\e
 Reference1: 
 Reference2: OnKeyPress
 Reference3: t8410
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 0[ms])
-SHIORI/3.0 200 OK
-Sender: AYA
+SHIORI/3.0 204 No Content
 Charset: UTF-8
+<<<<<<< HEAD
+=======
 Value: \0\s[3]\_v[mus\sound_FLOWEY.mp3] * LATE. EARLY. l_ATE. .ARLY. La_E. EA-Ly_. -a_.-. E_-R_Ly. -.T_e_. -_RL..\e
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // request
@@ -2490,28 +2748,35 @@ Charset: UTF-8
 Sender: SSP
 SenderType: internal
 SecurityLevel: local
-Status: talking,balloon(0=0)
-ID: OnSurfaceChange
-Reference0: 3
-Reference1: -1
-Reference2: 0,3,353,457
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 200 OK
-Charset: UTF-8
-
-
-// request
-GET SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-Status: talking,balloon(0=0)
-ID: OnOtherOverlap
-Reference0: Gaze/1-f_lowe_y/0SPAMTON!!/1-f_lowe_y/0
-Reference1: 
+ID: rateofusegraph
+Reference0: f_lowe_yf_lowe_yThe Locket11304035326.665565install
+Reference1: GazeTestGazeVoid4933875725.610917install
+Reference2: FLUXFLUXMusic892722817.992467install
+Reference3: Dr. W.D. GasterGasterBrothers781517610.028415install
+Reference4: SPAMTON G. SPAMTON!!SPAMTON!![FriendRequestDenied]45147099.719818install
+Reference5: f_lowe_yf_lowe_yThe Narrator23950723.351616boot
+Reference6: HydrateHydrateYou being healthier1136312.399392install
+Reference7: Radio NowhereRadio SakuraRadio Kero2321471.418754install
+Reference8: GazeGazeForm513620.900020install
+Reference9: SebastianSebastianGhost96990.461904install
+Reference10: S the SkeletonRYS-0825None86180.408379install
+Reference11: The Wretched ScientistWilsonKero33960.261680install
+Reference12: Ghost Jam TemmieTemmieNO ONE!!!103850.254411install
+Reference13: MiniDevMiniDev-182120.140091install
+Reference14: f_lowe_y_quietf_lowe_y_quietThe Locket32040.134805install
+Reference15: Ship of TheseusRadio SakuraRadio Kero91340.088548install
+Reference16: Dreamtale SansDreamtale Sans14550.036344install
+Reference17: Multiverse SansMVSansphone6540.035684install
+Reference18: どくでんぱ。どくでんぱ。none2520.034362install
+Reference19: f_lowe_y-oldf_lowe_yThe Locket3290.019163install
+Reference20: Emily/Phase4.5EmilyTeddy5280.018503install
+Reference21: The HandHandDummy3120.007930install
+Reference22: Mettaton EXMettatonTriangle2100.006608install
+Reference23: PLANETSPLANETS220.001322install
+Reference24: VitusVitusTriangle120.001322install
+Reference25: GazeGazeVoid210.000661install
+Reference26: GT Template - Y CleanGirlTriangle110.000661install
+Reference27: Gaze_YAYAGazeVoid110.000661install
 
 
 // response (Execution time : 0[ms])
@@ -2525,9 +2790,61 @@ Charset: UTF-8
 Sender: SSP
 SenderType: internal
 SecurityLevel: local
+<<<<<<< HEAD
+ID: OnOSUpdateInfo
+Reference0: 2022,1,19,18,42,34
+Reference1: 2022,1,19,6,37,23
+Reference2: success000000002022,1,19,6,37,23Security Intelligence Update for Microsoft Defender Antivirus - KB2267602 (Version 1.355.2169.0)
+Reference3: success000000002022,1,11,18,59,362022-01 Cumulative Update for Windows 10 Version 20H2 for x64-based Systems (KB5009543)
+Reference4: success000000002022,1,11,18,48,442022-01 Cumulative Update for .NET Framework 3.5 and 4.8 for Windows 10 Version 20H2 for x64 (KB5008876)
+Reference5: success000000002022,1,11,18,48,3Windows Malicious Software Removal Tool x64 - v5.97 (KB890830)
+Reference6: success000000002021,12,14,13,28,422021-12 Cumulative Update for Windows 10 Version 20H2 for x64-based Systems (KB5008212)
+Reference7: success000000002021,12,14,13,8,38Windows Malicious Software Removal Tool x64 - v5.96 (KB890830)
+Reference8: success000000002021,12,3,19,25,532021-11 Cumulative Update for Windows 10 Version 20H2 for x64-based Systems (KB5007186)
+Reference9: fail802400342021,11,27,3,52,369NBLGGH4RV3K-Microsoft.VCLibs.140.00.UWPDesktop
+Reference10: fail802400342021,11,27,0,52,179NBLGGH4RV3K-Microsoft.VCLibs.140.00.UWPDesktop
+Reference11: fail802400342021,11,26,20,42,99NBLGGH4RV3K-Microsoft.VCLibs.140.00.UWPDesktop
+Reference12: fail802400342021,11,17,7,40,09NG1H8B3ZC7M-Microsoft.MixedReality.Portal
+Reference13: success000000002021,11,13,3,57,272021-11 Cumulative Update for Windows 10 Version 20H2 for x64-based Systems (KB5007186)
+Reference14: success000000002021,11,13,1,46,12021-11 Cumulative Update for Windows 10 Version 20H2 for x64-based Systems (KB5007186)
+Reference15: success000000002021,11,11,9,55,53SAMSUNG Electronics Co., Ltd.  - USB - 2.17.16.0
+Reference16: success000000002021,11,10,6,53,222021-11 Cumulative Update for Windows 10 Version 20H2 for x64-based Systems (KB5007186)
+Reference17: success000000002021,11,10,6,42,492021-11 Cumulative Update for .NET Framework 3.5 and 4.8 for Windows 10 Version 20H2 for x64 (KB5006365)
+Reference18: success000000002021,11,10,6,42,20Windows Malicious Software Removal Tool x64 - v5.95 (KB890830)
+Reference19: success000000002021,11,4,19,22,302021-10 Update for Windows 10 Version 20H2 for x64-based Systems (KB5005463)
+Reference20: success000000002021,10,13,4,46,112021-10 Cumulative Update for Windows 10 Version 20H2 for x64-based Systems (KB5006670)
+Reference21: success000000002021,10,13,4,33,372021-10 Cumulative Update for .NET Framework 3.5 and 4.8 for Windows 10 Version 20H2 for x64 (KB5005539)
+=======
+Status: talking,balloon(0=0)
+ID: OnOtherOverlap
+Reference0: Gaze/1-f_lowe_y/0SPAMTON!!/1-f_lowe_y/0
+Reference1: 
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+<<<<<<< HEAD
+ID: OnNetworkStatusChange
+Reference0: online
+Reference1: 192.168.1.19
+Reference2: wifi
+Reference3: 300
+Reference4: 300
+=======
 Status: talking,balloon(0=0)
 ID: OnSoundStop
 Reference0: mus\sound_FLOWEY.mp3
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 0[ms])
@@ -2541,6 +2858,14 @@ Charset: UTF-8
 Sender: 澰聙鶔ϰ
 SenderType: internal
 SecurityLevel: local
+<<<<<<< HEAD
+ID: OnMinuteChange
+Reference0: 190
+Reference1: 0
+Reference2: 0
+Reference3: 1
+Reference4: 13
+=======
 Status: talking,balloon(0=0)
 ID: OnOtherGhostTalk
 Reference0: SPAMTON G. SPAMTON!!
@@ -2549,6 +2874,7 @@ Reference2: break
 Reference3: OnKeyPress
 Reference4: \s[22]KRIS!!!\w8 \s[22]\i[82]\i[2]THANKS FOR LETTING ME \i[55][[Live in Luxery!!]] \s[22]\i[2]AT YOUR \w3\s[13]\i[45][[computerparts.com]]\w5\s[22]\i[2]!!!!!\w8\n\n\w2\s[22]\i[82]\i[4]IT'S SO GOOD,\w8 \i[26]\i[55][[I can't feel my arms.]]\w4\s[22]\i[82]\i[4]!!!!!!!!\e
 Reference5: t8410
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 0[ms])
@@ -2556,6 +2882,7 @@ SHIORI/3.0 200 OK
 Sender: AYA
 Charset: UTF-8
 Value: Break: \_q\b2\![set,autoscroll,disable]\n0- SPAMTON G. SPAMTON!!\n1- SPAMTON!!\n2- break\n3- OnKeyPress\n4- \\s[22]KRIS!!!\\w8 \\s[22]\\i[82]\\i[2]THANKS FOR LETTING ME \\i[55][[Live in Luxery!!]] \\s[22]\\i[2]AT YOUR \\w3\\s[13]\\i[45][[computerparts.com]]\\w5\\s[22]\\i[2]!!!!!\\w8\\n\\n\\w2\\s[22]\\i[82]\\i[4]IT'S SO GOOD,\\w8 \\i[26]\\i[55][[I can't feel my arms.]]\\w4\\s[22]\\i[82]\\i[4]!!!!!!!!\\n5- t,84,1,0,\x\x
+
 
 
 // request
@@ -2565,10 +2892,18 @@ Charset: UTF-8
 Sender: SSP
 SenderType: internal
 SecurityLevel: local
+<<<<<<< HEAD
+ID: OnBatteryNotify
+Reference0: 100
+Reference1: -1
+Reference2: online
+Reference3: high
+=======
 Reference0: Break: \_q\b2\![set,autoscroll,disable]\n0- SPAMTON G. SPAMTON!!\n1- SPAMTON!!\n2- break\n3- OnKeyPress\n4- \\s[22]KRIS!!!\\w8 \\s[22]\\i[82]\\i[2]THANKS FOR LETTING ME \\i[55][[Live in Luxery!!]] \\s[22]\\i[2]AT YOUR \\w3\\s[13]\\i[45][[computerparts.com]]\\w5\\s[22]\\i[2]!!!!!\\w8\\n\\n\\w2\\s[22]\\i[82]\\i[4]IT'S SO GOOD,\\w8 \\i[26]\\i[55][[I can't feel my arms.]]\\w4\\s[22]\\i[82]\\i[4]!!!!!!!!\\n5- t,84,1,0,\x\x
 Reference1: 
 Reference2: OnOtherGhostTalk
 Reference3: SPAMTON G. SPAMTON!!SPAMTON!!breakOnKeyPress\s[22]KRIS!!!\w8 \s[22]\i[82]\i[2]THANKS FOR LETTING ME \i[55][[Live in Luxery!!]] \s[22]\i[2]AT YOUR \w3\s[13]\i[45][[computerparts.com]]\w5\s[22]\i[2]!!!!!\w8\n\n\w2\s[22]\i[82]\i[4]IT'S SO GOOD,\w8 \i[26]\i[55][[I can't feel my arms.]]\w4\s[22]\i[82]\i[4]!!!!!!!!\et8410
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 0[ms])
@@ -2579,11 +2914,46 @@ Value: Break: \_q\b2\![set,autoscroll,disable]\n0- SPAMTON G. SPAMTON!!\n1- SPAM
 
 
 // request
+<<<<<<< HEAD
+NOTIFY SHIORI/3.0
+=======
 GET SHIORI/3.0
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 Charset: UTF-8
 Sender: 澰聙鶔ϰ
 SenderType: internal
 SecurityLevel: local
+<<<<<<< HEAD
+ID: rateofusegraph
+Reference0: f_lowe_yf_lowe_yThe Locket11304035326.665389install
+Reference1: GazeTestGazeVoid4933875725.610747install
+Reference2: FLUXFLUXMusic892722817.992348install
+Reference3: Dr. W.D. GasterGasterBrothers781517610.028348install
+Reference4: SPAMTON G. SPAMTON!!SPAMTON!![FriendRequestDenied]45147099.719753install
+Reference5: f_lowe_yf_lowe_yThe Narrator23950733.352254boot
+Reference6: HydrateHydrateYou being healthier1136312.399376install
+Reference7: Radio NowhereRadio SakuraRadio Kero2321471.418744install
+Reference8: GazeGazeForm513620.900014install
+Reference9: SebastianSebastianGhost96990.461901install
+Reference10: S the SkeletonRYS-0825None86180.408376install
+Reference11: The Wretched ScientistWilsonKero33960.261678install
+Reference12: Ghost Jam TemmieTemmieNO ONE!!!103850.254409install
+Reference13: MiniDevMiniDev-182120.140090install
+Reference14: f_lowe_y_quietf_lowe_y_quietThe Locket32040.134804install
+Reference15: Ship of TheseusRadio SakuraRadio Kero91340.088548install
+Reference16: Dreamtale SansDreamtale Sans14550.036344install
+Reference17: Multiverse SansMVSansphone6540.035683install
+Reference18: どくでんぱ。どくでんぱ。none2520.034362install
+Reference19: f_lowe_y-oldf_lowe_yThe Locket3290.019163install
+Reference20: Emily/Phase4.5EmilyTeddy5280.018502install
+Reference21: The HandHandDummy3120.007930install
+Reference22: Mettaton EXMettatonTriangle2100.006608install
+Reference23: PLANETSPLANETS220.001322install
+Reference24: VitusVitusTriangle120.001322install
+Reference25: GazeGazeVoid210.000661install
+Reference26: GT Template - Y CleanGirlTriangle110.000661install
+Reference27: Gaze_YAYAGazeVoid110.000661install
+=======
 Status: talking,balloon(0=2)
 ID: OnOtherGhostTalk
 Reference0: SPAMTON G. SPAMTON!!
@@ -2592,12 +2962,16 @@ Reference2:
 Reference3: OnMouseDoubleClick
 Reference4: \b2\f[size,16]\f[align,center]SPAM\w4\c\f[size,16]\f[align,center]SPAMTON G. SPAMTON\_q\n\f[size,14]$$$$$-----------$$$$$\n\n\f[size,default]\f[align,left]  \![*]\q[PLAY AD,OnAiTalk]              \![*]\q[REPEAT AD,OnLastTalk]\n\n\n[half]  \![*]\q[BUY,OnShop]                  \![*]\q[BUYMORE,OnShop]\n  \![*]\q[TALK,talkstuff]                 \![*]\q[ITEM,OnLookInventory]\n\n\n\f[align,center]!!!$$$$$$$$$$!!!\n\n\f[align,default]  \![*]\q[Stats,seestats]                \![*]\q[Settings,configmenu]\n\n\f[align,center]\![*]\q[Talk to another ghost?!,OnStartTalking]\n\n\f[size,16]\![*]\q[Escape,CANCEL]\_b[pipis.png,50,50]\_b[pipis.png,263,50]\_b[pipis.png,50,173]\_b[pipis.png,263,173]\_b[pipis2.png,303,293]\e
 Reference5: 129159000mouse
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 0[ms])
 SHIORI/3.0 204 No Content
 Charset: UTF-8
+<<<<<<< HEAD
+=======
 
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // request
@@ -2606,6 +2980,8 @@ Charset: UTF-8
 Sender: 澰聙鶔ϰ
 SenderType: internal
 SecurityLevel: local
+<<<<<<< HEAD
+=======
 Status: talking,balloon(0=2)
 ID: OnOtherGhostTalk
 Reference0: SPAMTON G. SPAMTON!!
@@ -2753,6 +3129,7 @@ Sender: SSP
 SenderType: internal
 SecurityLevel: local
 Status: talking,balloon(0=2)
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 ID: OnNetworkStatusChange
 Reference0: online
 Reference1: 192.168.1.19
@@ -2772,6 +3149,14 @@ Charset: UTF-8
 Sender: SSP
 SenderType: internal
 SecurityLevel: local
+<<<<<<< HEAD
+ID: OnMinuteChange
+Reference0: 190
+Reference1: 0
+Reference2: 0
+Reference3: 1
+Reference4: 0
+=======
 Status: talking,balloon(0=2)
 ID: OnMinuteChange
 Reference0: 124
@@ -2779,6 +3164,7 @@ Reference1: 0
 Reference2: 0
 Reference3: 0
 Reference4: 74
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 0[ms])
@@ -2792,7 +3178,10 @@ Charset: UTF-8
 Sender: SSP
 SenderType: internal
 SecurityLevel: local
+<<<<<<< HEAD
+=======
 Status: talking,balloon(0=2)
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 ID: OnBatteryNotify
 Reference0: 100
 Reference1: -1
@@ -2811,6 +3200,37 @@ Charset: UTF-8
 Sender: SSP
 SenderType: internal
 SecurityLevel: local
+<<<<<<< HEAD
+ID: rateofusegraph
+Reference0: f_lowe_yf_lowe_yThe Locket11304035326.665213install
+Reference1: GazeTestGazeVoid4933875725.610578install
+Reference2: FLUXFLUXMusic892722817.992229install
+Reference3: Dr. W.D. GasterGasterBrothers781517610.028282install
+Reference4: SPAMTON G. SPAMTON!!SPAMTON!![FriendRequestDenied]45147099.719689install
+Reference5: f_lowe_yf_lowe_yThe Narrator23950743.352893boot
+Reference6: HydrateHydrateYou being healthier1136312.399360install
+Reference7: Radio NowhereRadio SakuraRadio Kero2321471.418735install
+Reference8: GazeGazeForm513620.900008install
+Reference9: SebastianSebastianGhost96990.461898install
+Reference10: S the SkeletonRYS-0825None86180.408374install
+Reference11: The Wretched ScientistWilsonKero33960.261676install
+Reference12: Ghost Jam TemmieTemmieNO ONE!!!103850.254408install
+Reference13: MiniDevMiniDev-182120.140089install
+Reference14: f_lowe_y_quietf_lowe_y_quietThe Locket32040.134803install
+Reference15: Ship of TheseusRadio SakuraRadio Kero91340.088547install
+Reference16: Dreamtale SansDreamtale Sans14550.036344install
+Reference17: Multiverse SansMVSansphone6540.035683install
+Reference18: どくでんぱ。どくでんぱ。none2520.034362install
+Reference19: f_lowe_y-oldf_lowe_yThe Locket3290.019163install
+Reference20: Emily/Phase4.5EmilyTeddy5280.018502install
+Reference21: The HandHandDummy3120.007930install
+Reference22: Mettaton EXMettatonTriangle2100.006608install
+Reference23: PLANETSPLANETS220.001322install
+Reference24: VitusVitusTriangle120.001322install
+Reference25: GazeGazeVoid210.000661install
+Reference26: GT Template - Y CleanGirlTriangle110.000661install
+Reference27: Gaze_YAYAGazeVoid110.000661install
+=======
 Status: talking,balloon(0=2)
 ID: rateofusegraph
 Reference0: f_lowe_yf_lowe_yThe Locket11304035327.246210install
@@ -2841,6 +3261,7 @@ Reference24: VitusVitusTriangle120.001350install
 Reference25: GazeGazeVoid210.000675install
 Reference26: GT Template - Y CleanGirlTriangle110.000675install
 Reference27: Gaze_YAYAGazeVoid110.000675install
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 0[ms])
@@ -2854,11 +3275,18 @@ Charset: UTF-8
 Sender: SSP
 SenderType: internal
 SecurityLevel: local
+<<<<<<< HEAD
+ID: OnOSUpdateInfo
+Reference0: 2022,1,19,18,56,3
+Reference1: 2022,1,19,6,37,23
+Reference2: success000000002022,1,19,6,37,23Security Intelligence Update for Microsoft Defender Antivirus - KB2267602 (Version 1.355.2169.0)
+=======
 Status: talking,balloon(0=2)
 ID: OnOSUpdateInfo
 Reference0: 2022,1,16,12,1,0
 Reference1: 2022,1,16,13,24,32
 Reference2: success000000002022,1,16,13,24,32Security Intelligence Update for Microsoft Defender Antivirus - KB2267602 (Version 1.355.2020.0)
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 Reference3: success000000002022,1,11,18,59,362022-01 Cumulative Update for Windows 10 Version 20H2 for x64-based Systems (KB5009543)
 Reference4: success000000002022,1,11,18,48,442022-01 Cumulative Update for .NET Framework 3.5 and 4.8 for Windows 10 Version 20H2 for x64 (KB5008876)
 Reference5: success000000002022,1,11,18,48,3Windows Malicious Software Removal Tool x64 - v5.97 (KB890830)
@@ -2891,6 +3319,14 @@ Charset: UTF-8
 Sender: 澰聙鶔ϰ
 SenderType: internal
 SecurityLevel: local
+<<<<<<< HEAD
+ID: OnNetworkStatusChange
+Reference0: online
+Reference1: 192.168.1.19
+Reference2: wifi
+Reference3: 300
+Reference4: 300
+=======
 Status: talking,balloon(0=2)
 ID: OnOtherGhostTalk
 Reference0: SPAMTON G. SPAMTON!!
@@ -2899,12 +3335,16 @@ Reference2:
 Reference3: OnSecondChange
 Reference4: \s[0]KRIS DO YOU THINK OTHER LIGHTNRS WILL WANT [Real Rooted Hair Brushing] ACCESS\e
 Reference5: 12400111
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 0[ms])
 SHIORI/3.0 204 No Content
 Charset: UTF-8
+<<<<<<< HEAD
+=======
 
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // request
@@ -2913,6 +3353,14 @@ Charset: UTF-8
 Sender: SSP
 SenderType: internal
 SecurityLevel: local
+<<<<<<< HEAD
+ID: OnMinuteChange
+Reference0: 190
+Reference1: 0
+Reference2: 0
+Reference3: 1
+Reference4: 1
+=======
 Status: talking,balloon(0=2)
 ID: OnNetworkStatusChange
 Reference0: online
@@ -2920,6 +3368,7 @@ Reference1: 192.168.1.19
 Reference2: wifi
 Reference3: 300
 Reference4: 300
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 0[ms])
@@ -2927,6 +3376,8 @@ SHIORI/3.0 204 No Content
 Charset: UTF-8
 
 
+<<<<<<< HEAD
+=======
 // request
 NOTIFY SHIORI/3.0
 Charset: UTF-8
@@ -2946,6 +3397,7 @@ Reference4: 3
 SHIORI/3.0 200 OK
 Charset: UTF-8
 
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 // request
 GET SHIORI/3.0
@@ -2953,7 +3405,10 @@ Charset: UTF-8
 Sender: SSP
 SenderType: internal
 SecurityLevel: local
+<<<<<<< HEAD
+=======
 Status: talking,balloon(0=2)
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 ID: OnBatteryNotify
 Reference0: 100
 Reference1: -1
@@ -2968,6 +3423,8 @@ Charset: UTF-8
 
 // request
 NOTIFY SHIORI/3.0
+<<<<<<< HEAD
+=======
 Charset: UTF-8
 Sender: SSP
 SenderType: internal
@@ -3011,10 +3468,42 @@ Charset: UTF-8
 
 // request
 GET SHIORI/3.0
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 Charset: UTF-8
 Sender: 澰聙鶔ϰ
 SenderType: internal
 SecurityLevel: local
+<<<<<<< HEAD
+ID: rateofusegraph
+Reference0: f_lowe_yf_lowe_yThe Locket11304035326.665037install
+Reference1: GazeTestGazeVoid4933875725.610409install
+Reference2: FLUXFLUXMusic892722817.992110install
+Reference3: Dr. W.D. GasterGasterBrothers781517610.028216install
+Reference4: SPAMTON G. SPAMTON!!SPAMTON!![FriendRequestDenied]45147099.719625install
+Reference5: f_lowe_yf_lowe_yThe Narrator23950753.353532boot
+Reference6: HydrateHydrateYou being healthier1136312.399344install
+Reference7: Radio NowhereRadio SakuraRadio Kero2321471.418726install
+Reference8: GazeGazeForm513620.900002install
+Reference9: SebastianSebastianGhost96990.461895install
+Reference10: S the SkeletonRYS-0825None86180.408371install
+Reference11: The Wretched ScientistWilsonKero33960.261675install
+Reference12: Ghost Jam TemmieTemmieNO ONE!!!103850.254406install
+Reference13: MiniDevMiniDev-182120.140088install
+Reference14: f_lowe_y_quietf_lowe_y_quietThe Locket32040.134802install
+Reference15: Ship of TheseusRadio SakuraRadio Kero91340.088546install
+Reference16: Dreamtale SansDreamtale Sans14550.036344install
+Reference17: Multiverse SansMVSansphone6540.035683install
+Reference18: どくでんぱ。どくでんぱ。none2520.034361install
+Reference19: f_lowe_y-oldf_lowe_yThe Locket3290.019163install
+Reference20: Emily/Phase4.5EmilyTeddy5280.018502install
+Reference21: The HandHandDummy3120.007930install
+Reference22: Mettaton EXMettatonTriangle2100.006608install
+Reference23: PLANETSPLANETS220.001322install
+Reference24: VitusVitusTriangle120.001322install
+Reference25: GazeGazeVoid210.000661install
+Reference26: GT Template - Y CleanGirlTriangle110.000661install
+Reference27: Gaze_YAYAGazeVoid110.000661install
+=======
 Status: talking,balloon(0=2)
 ID: OnOtherGhostTalk
 Reference0: SPAMTON G. SPAMTON!!
@@ -3023,6 +3512,7 @@ Reference2:
 Reference3: OnSurfaceRestore
 Reference4: \0\s[0]\i[87]\i[7]
 Reference5: 010
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 16[ms])
@@ -3037,6 +3527,12 @@ Charset: UTF-8
 Sender: SSP
 SenderType: internal
 SecurityLevel: local
+<<<<<<< HEAD
+Reference0: \0\s[3]\_v[mus\sound_FLOWEY.mp3] * Evening.
+Reference1: 
+Reference2: OnSecondChange
+Reference3: 1900010
+=======
 Status: talking,balloon(0=2)
 ID: OnNetworkStatusChange
 Reference0: online
@@ -3044,11 +3540,15 @@ Reference1: 192.168.1.19
 Reference2: wifi
 Reference3: 300
 Reference4: 300
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 0[ms])
 SHIORI/3.0 204 No Content
 Charset: UTF-8
+<<<<<<< HEAD
+Value: \0\s[3]\_v[mus\sound_FLOWEY.mp3] * Evening.
+=======
 
 
 // request
@@ -3069,6 +3569,7 @@ Reference4: 63
 // response (Execution time : 0[ms])
 SHIORI/3.0 200 OK
 Charset: UTF-8
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // request
@@ -3077,12 +3578,20 @@ Charset: UTF-8
 Sender: SSP
 SenderType: internal
 SecurityLevel: local
+<<<<<<< HEAD
+Status: talking,balloon(0=0)
+ID: OnSurfaceChange
+Reference0: 3
+Reference1: -1
+Reference2: 0,3,353,457
+=======
 Status: talking,balloon(0=2)
 ID: OnBatteryNotify
 Reference0: 100
 Reference1: -1
 Reference2: online
 Reference3: high
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 0[ms])
@@ -3096,6 +3605,11 @@ Charset: UTF-8
 Sender: SSP
 SenderType: internal
 SecurityLevel: local
+<<<<<<< HEAD
+Status: balloon(0=0)
+ID: OnSoundStop
+Reference0: mus\sound_FLOWEY.mp3
+=======
 Status: talking,balloon(0=2)
 ID: rateofusegraph
 Reference0: f_lowe_yf_lowe_yThe Locket11304035327.245107install
@@ -3126,6 +3640,7 @@ Reference24: VitusVitusTriangle120.001350install
 Reference25: GazeGazeVoid210.000675install
 Reference26: GT Template - Y CleanGirlTriangle110.000675install
 Reference27: Gaze_YAYAGazeVoid110.000675install
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 0[ms])
@@ -3139,7 +3654,11 @@ Charset: UTF-8
 Sender: SSP
 SenderType: internal
 SecurityLevel: local
+<<<<<<< HEAD
+Status: balloon(0=0)
+=======
 Status: talking,balloon(0=2)
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 ID: OnNetworkStatusChange
 Reference0: online
 Reference1: 192.168.1.19
@@ -3148,7 +3667,7 @@ Reference3: 300
 Reference4: 300
 
 
-// response (Execution time : 0[ms])
+// response (Execution time : 15[ms])
 SHIORI/3.0 204 No Content
 Charset: UTF-8
 
@@ -3159,9 +3678,15 @@ Charset: UTF-8
 Sender: SSP
 SenderType: internal
 SecurityLevel: local
+<<<<<<< HEAD
+Status: balloon(0=0)
+ID: OnMinuteChange
+Reference0: 190
+=======
 Status: talking,balloon(0=2)
 ID: OnMinuteChange
 Reference0: 124
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 Reference1: 0
 Reference2: 0
 Reference3: 0
@@ -3179,6 +3704,11 @@ Charset: UTF-8
 Sender: SSP
 SenderType: internal
 SecurityLevel: local
+<<<<<<< HEAD
+Status: balloon(0=0)
+ID: OnBalloonClose
+Reference0: \0\s[3]\_v[mus\sound_FLOWEY.mp3] * Evening.
+=======
 Status: talking,balloon(0=2)
 ID: OnBatteryNotify
 Reference0: 100
@@ -30514,6 +31044,7 @@ Reference1: 0
 Reference2: 0
 Reference3: 1
 Reference4: 5699
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 0[ms])
@@ -30547,6 +31078,36 @@ Sender: SSP
 SenderType: internal
 SecurityLevel: local
 ID: rateofusegraph
+<<<<<<< HEAD
+Reference0: f_lowe_yf_lowe_yThe Locket11304035326.664861install
+Reference1: GazeTestGazeVoid4933875725.610240install
+Reference2: FLUXFLUXMusic892722817.991991install
+Reference3: Dr. W.D. GasterGasterBrothers781517610.028150install
+Reference4: SPAMTON G. SPAMTON!!SPAMTON!![FriendRequestDenied]45147099.719561install
+Reference5: f_lowe_yf_lowe_yThe Narrator23950763.354170boot
+Reference6: HydrateHydrateYou being healthier1136312.399329install
+Reference7: Radio NowhereRadio SakuraRadio Kero2321471.418716install
+Reference8: GazeGazeForm513620.899996install
+Reference9: SebastianSebastianGhost96990.461892install
+Reference10: S the SkeletonRYS-0825None86180.408368install
+Reference11: The Wretched ScientistWilsonKero33960.261673install
+Reference12: Ghost Jam TemmieTemmieNO ONE!!!103850.254404install
+Reference13: MiniDevMiniDev-182120.140087install
+Reference14: f_lowe_y_quietf_lowe_y_quietThe Locket32040.134801install
+Reference15: Ship of TheseusRadio SakuraRadio Kero91340.088546install
+Reference16: Dreamtale SansDreamtale Sans14550.036343install
+Reference17: Multiverse SansMVSansphone6540.035683install
+Reference18: どくでんぱ。どくでんぱ。none2520.034361install
+Reference19: f_lowe_y-oldf_lowe_yThe Locket3290.019163install
+Reference20: Emily/Phase4.5EmilyTeddy5280.018502install
+Reference21: The HandHandDummy3120.007929install
+Reference22: Mettaton EXMettatonTriangle2100.006608install
+Reference23: PLANETSPLANETS220.001322install
+Reference24: VitusVitusTriangle120.001322install
+Reference25: GazeGazeVoid210.000661install
+Reference26: GT Template - Y CleanGirlTriangle110.000661install
+Reference27: Gaze_YAYAGazeVoid110.000661install
+=======
 Reference0: f_lowe_yf_lowe_yThe Locket11304035327.186003install
 Reference1: GazeTestGazeVoid4933822325.751012boot
 Reference2: FLUXFLUXMusic892722818.343630install
@@ -30575,6 +31136,7 @@ Reference24: VitusVitusTriangle120.001347install
 Reference25: GazeGazeVoid210.000674install
 Reference26: GT Template - Y CleanGirlTriangle110.000674install
 Reference27: Gaze_YAYAGazeVoid110.000674install
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 0[ms])
@@ -30589,9 +31151,15 @@ Sender: SSP
 SenderType: internal
 SecurityLevel: local
 ID: OnOSUpdateInfo
+<<<<<<< HEAD
+Reference0: 2022,1,19,18,42,34
+Reference1: 2022,1,19,6,37,23
+Reference2: success000000002022,1,19,6,37,23Security Intelligence Update for Microsoft Defender Antivirus - KB2267602 (Version 1.355.2169.0)
+=======
 Reference0: 2022,1,17,3,48,41
 Reference1: 2022,1,16,13,24,32
 Reference2: success000000002022,1,16,13,24,32Security Intelligence Update for Microsoft Defender Antivirus - KB2267602 (Version 1.355.2020.0)
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 Reference3: success000000002022,1,11,18,59,362022-01 Cumulative Update for Windows 10 Version 20H2 for x64-based Systems (KB5009543)
 Reference4: success000000002022,1,11,18,48,442022-01 Cumulative Update for .NET Framework 3.5 and 4.8 for Windows 10 Version 20H2 for x64 (KB5008876)
 Reference5: success000000002022,1,11,18,48,3Windows Malicious Software Removal Tool x64 - v5.97 (KB890830)
@@ -30625,7 +31193,11 @@ Sender: SSP
 SenderType: internal
 SecurityLevel: local
 ID: OnSurfaceRestore
+<<<<<<< HEAD
+Reference0: 3
+=======
 Reference0: 24
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 Reference1: -1
 
 
@@ -30646,7 +31218,11 @@ SecurityLevel: local
 Reference0: \0\s[0]\1\s[-1]\e
 Reference1: 
 Reference2: OnSurfaceRestore
+<<<<<<< HEAD
+Reference3: 3-1
+=======
 Reference3: 24-1
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 0[ms])
@@ -30733,11 +31309,19 @@ Sender: SSP
 SenderType: internal
 SecurityLevel: local
 ID: OnMinuteChange
+<<<<<<< HEAD
+Reference0: 190
+Reference1: 0
+Reference2: 0
+Reference3: 1
+Reference4: 13
+=======
 Reference0: 127
 Reference1: 0
 Reference2: 0
 Reference3: 1
 Reference4: 5759
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 16[ms])
@@ -30771,6 +31355,36 @@ Sender: SSP
 SenderType: internal
 SecurityLevel: local
 ID: rateofusegraph
+<<<<<<< HEAD
+Reference0: f_lowe_yf_lowe_yThe Locket11304035326.664684install
+Reference1: GazeTestGazeVoid4933875725.610070install
+Reference2: FLUXFLUXMusic892722817.991872install
+Reference3: Dr. W.D. GasterGasterBrothers781517610.028083install
+Reference4: SPAMTON G. SPAMTON!!SPAMTON!![FriendRequestDenied]45147099.719496install
+Reference5: f_lowe_yf_lowe_yThe Narrator23950773.354809boot
+Reference6: HydrateHydrateYou being healthier1136312.399313install
+Reference7: Radio NowhereRadio SakuraRadio Kero2321471.418707install
+Reference8: GazeGazeForm513620.899990install
+Reference9: SebastianSebastianGhost96990.461889install
+Reference10: S the SkeletonRYS-0825None86180.408366install
+Reference11: The Wretched ScientistWilsonKero33960.261671install
+Reference12: Ghost Jam TemmieTemmieNO ONE!!!103850.254402install
+Reference13: MiniDevMiniDev-182120.140087install
+Reference14: f_lowe_y_quietf_lowe_y_quietThe Locket32040.134800install
+Reference15: Ship of TheseusRadio SakuraRadio Kero91340.088545install
+Reference16: Dreamtale SansDreamtale Sans14550.036343install
+Reference17: Multiverse SansMVSansphone6540.035682install
+Reference18: どくでんぱ。どくでんぱ。none2520.034361install
+Reference19: f_lowe_y-oldf_lowe_yThe Locket3290.019163install
+Reference20: Emily/Phase4.5EmilyTeddy5280.018502install
+Reference21: The HandHandDummy3120.007929install
+Reference22: Mettaton EXMettatonTriangle2100.006608install
+Reference23: PLANETSPLANETS220.001322install
+Reference24: VitusVitusTriangle120.001322install
+Reference25: GazeGazeVoid210.000661install
+Reference26: GT Template - Y CleanGirlTriangle110.000661install
+Reference27: Gaze_YAYAGazeVoid110.000661install
+=======
 Reference0: f_lowe_yf_lowe_yThe Locket11304035327.185637install
 Reference1: GazeTestGazeVoid4933822425.751339boot
 Reference2: FLUXFLUXMusic892722818.343383install
@@ -30799,6 +31413,7 @@ Reference24: VitusVitusTriangle120.001347install
 Reference25: GazeGazeVoid210.000674install
 Reference26: GT Template - Y CleanGirlTriangle110.000674install
 Reference27: Gaze_YAYAGazeVoid110.000674install
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 0[ms])
@@ -30818,6 +31433,8 @@ Reference1: 192.168.1.19
 Reference2: wifi
 Reference3: 300
 Reference4: 300
+<<<<<<< HEAD
+=======
 
 
 // response (Execution time : 0[ms])
@@ -30938,6 +31555,7 @@ Reference0: \0\s[3]\_v[mus\sound_FLOWEY.mp3] * You you you how how how\_w[1000]\
 Reference1: 
 Reference2: OnSecondChange
 Reference3: 1270015826
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 0[ms])
@@ -30953,6 +31571,59 @@ Charset: UTF-8
 Sender: SSP
 SenderType: internal
 SecurityLevel: local
+<<<<<<< HEAD
+ID: OnMinuteChange
+Reference0: 190
+Reference1: 0
+Reference2: 0
+Reference3: 1
+Reference4: 3
+=======
+Status: talking,balloon(0=0)
+ID: OnSurfaceChange
+Reference0: 3
+Reference1: -1
+Reference2: 0,3,353,457
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+<<<<<<< HEAD
+Sender: AYA
+=======
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
+Charset: UTF-8
+Value: \0\s[3]It's 7 o'clock.\e
+
+
+// request
+GET SHIORI/3.0
+ID: OnTranslate
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+<<<<<<< HEAD
+Reference0: \0\s[3]It's 7 o'clock.\e
+Reference1: 
+Reference2: OnMinuteChange
+Reference3: 1900013
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: \0\s[3]It's 7 o'clock.\e
+
+
+// request
+NOTIFY SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
 Status: talking,balloon(0=0)
 ID: OnSurfaceChange
 Reference0: 3
@@ -30960,7 +31631,7 @@ Reference1: -1
 Reference2: 0,3,353,457
 
 
-// response (Execution time : 0[ms])
+// response (Execution time : 16[ms])
 SHIORI/3.0 200 OK
 Charset: UTF-8
 
@@ -30971,9 +31642,18 @@ Charset: UTF-8
 Sender: SSP
 SenderType: internal
 SecurityLevel: local
+Status: balloon(0=0)
+ID: OnHourTimeSignal
+Reference0: 190
+Reference1: 0
+Reference2: 0
+Reference3: 1
+Reference4: 4
+=======
 Status: talking,balloon(0=0)
 ID: OnSoundStop
 Reference0: mus\sound_FLOWEY.mp3
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 0[ms])
@@ -30988,8 +31668,16 @@ Sender: SSP
 SenderType: internal
 SecurityLevel: local
 Status: balloon(0=0)
+<<<<<<< HEAD
+ID: OnBatteryNotify
+Reference0: 100
+Reference1: -1
+Reference2: online
+Reference3: high
+=======
 ID: OnBalloonTimeout
 Reference0: \0\s[3]\_v[mus\sound_FLOWEY.mp3] * You you you how how how\_w[1000]\c\s[3]Howdy, Era!\_w[500]\e
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 0[ms])
@@ -31003,6 +31691,54 @@ Charset: UTF-8
 Sender: 澰聙鶔ϰ
 SenderType: internal
 SecurityLevel: local
+<<<<<<< HEAD
+Status: balloon(0=0)
+ID: rateofusegraph
+Reference0: f_lowe_yf_lowe_yThe Locket11304035326.664508install
+Reference1: GazeTestGazeVoid4933875725.609901install
+Reference2: FLUXFLUXMusic892722817.991753install
+Reference3: Dr. W.D. GasterGasterBrothers781517610.028017install
+Reference4: SPAMTON G. SPAMTON!!SPAMTON!![FriendRequestDenied]45147099.719432install
+Reference5: f_lowe_yf_lowe_yThe Narrator23950783.355447boot
+Reference6: HydrateHydrateYou being healthier1136312.399297install
+Reference7: Radio NowhereRadio SakuraRadio Kero2321471.418697install
+Reference8: GazeGazeForm513620.899984install
+Reference9: SebastianSebastianGhost96990.461886install
+Reference10: S the SkeletonRYS-0825None86180.408363install
+Reference11: The Wretched ScientistWilsonKero33960.261669install
+Reference12: Ghost Jam TemmieTemmieNO ONE!!!103850.254401install
+Reference13: MiniDevMiniDev-182120.140086install
+Reference14: f_lowe_y_quietf_lowe_y_quietThe Locket32040.134799install
+Reference15: Ship of TheseusRadio SakuraRadio Kero91340.088545install
+Reference16: Dreamtale SansDreamtale Sans14550.036343install
+Reference17: Multiverse SansMVSansphone6540.035682install
+Reference18: どくでんぱ。どくでんぱ。none2520.034361install
+Reference19: f_lowe_y-oldf_lowe_yThe Locket3290.019163install
+Reference20: Emily/Phase4.5EmilyTeddy5280.018502install
+Reference21: The HandHandDummy3120.007929install
+Reference22: Mettaton EXMettatonTriangle2100.006608install
+Reference23: PLANETSPLANETS220.001322install
+Reference24: VitusVitusTriangle120.001322install
+Reference25: GazeGazeVoid210.000661install
+Reference26: GT Template - Y CleanGirlTriangle110.000661install
+Reference27: Gaze_YAYAGazeVoid110.000661install
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+Status: balloon(0=0)
+ID: OnBalloonClose
+Reference0: \0\s[3]It's 7 o'clock.\e
+=======
 ID: OnOtherGhostTalk
 Reference0: GazeTest
 Reference1: Gaze
@@ -31010,6 +31746,7 @@ Reference2:
 Reference3: OnSecondChange
 Reference4: \0\s[0]\_v[trill.wav]Oh, I've found Era's Recycle Bin. \n\w8What's inside...? \n Hm..\e
 Reference5: 1270015842
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 0[ms])
@@ -31027,6 +31764,7 @@ SecurityLevel: local
 ID: OnSurfaceRestore
 Reference0: 3
 Reference1: -1
+<<<<<<< HEAD
 
 
 // response (Execution time : 0[ms])
@@ -31119,6 +31857,167 @@ Reference1: 192.168.1.19
 Reference2: wifi
 Reference3: 300
 Reference4: 300
+=======
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: \0\s[0]\1\s[-1]\e
+
+
+// request
+GET SHIORI/3.0
+ID: OnTranslate
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+<<<<<<< HEAD
+ID: OnMinuteChange
+Reference0: 190
+Reference1: 0
+Reference2: 0
+Reference3: 1
+Reference4: 13
+=======
+Reference0: \0\s[0]\1\s[-1]\e
+Reference1: 
+Reference2: OnSurfaceRestore
+Reference3: 3-1
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: \0\s[0]\1\s[-1]\e
+
+
+// request
+NOTIFY SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: OnSurfaceChange
+Reference0: 0
+Reference1: -1
+Reference2: 1,-1,0,0
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Charset: UTF-8
+
+
+// request
+NOTIFY SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+<<<<<<< HEAD
+ID: rateofusegraph
+Reference0: f_lowe_yf_lowe_yThe Locket11304035326.664332install
+Reference1: GazeTestGazeVoid4933875725.609732install
+Reference2: FLUXFLUXMusic892722817.991635install
+Reference3: Dr. W.D. GasterGasterBrothers781517610.027951install
+Reference4: SPAMTON G. SPAMTON!!SPAMTON!![FriendRequestDenied]45147099.719368install
+Reference5: f_lowe_yf_lowe_yThe Narrator23950793.356086boot
+Reference6: HydrateHydrateYou being healthier1136312.399281install
+Reference7: Radio NowhereRadio SakuraRadio Kero2321471.418688install
+Reference8: GazeGazeForm513620.899978install
+Reference9: SebastianSebastianGhost96990.461883install
+Reference10: S the SkeletonRYS-0825None86180.408360install
+Reference11: The Wretched ScientistWilsonKero33960.261668install
+Reference12: Ghost Jam TemmieTemmieNO ONE!!!103850.254399install
+Reference13: MiniDevMiniDev-182120.140085install
+Reference14: f_lowe_y_quietf_lowe_y_quietThe Locket32040.134798install
+Reference15: Ship of TheseusRadio SakuraRadio Kero91340.088544install
+Reference16: Dreamtale SansDreamtale Sans14550.036343install
+Reference17: Multiverse SansMVSansphone6540.035682install
+Reference18: どくでんぱ。どくでんぱ。none2520.034360install
+Reference19: f_lowe_y-oldf_lowe_yThe Locket3290.019163install
+Reference20: Emily/Phase4.5EmilyTeddy5280.018502install
+Reference21: The HandHandDummy3120.007929install
+Reference22: Mettaton EXMettatonTriangle2100.006608install
+Reference23: PLANETSPLANETS220.001322install
+Reference24: VitusVitusTriangle120.001322install
+Reference25: GazeGazeVoid210.000661install
+Reference26: GT Template - Y CleanGirlTriangle110.000661install
+Reference27: Gaze_YAYAGazeVoid110.000661install
+=======
+ID: OnSurfaceChange
+Reference0: 0
+Reference1: -1
+Reference2: 0,0,353,457
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Charset: UTF-8
+
+
+// request
+NOTIFY SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+<<<<<<< HEAD
+ID: OnOSUpdateInfo
+Reference0: 2022,1,19,19,0,50
+Reference1: 2022,1,19,6,37,23
+Reference2: success000000002022,1,19,6,37,23Security Intelligence Update for Microsoft Defender Antivirus - KB2267602 (Version 1.355.2169.0)
+Reference3: success000000002022,1,11,18,59,362022-01 Cumulative Update for Windows 10 Version 20H2 for x64-based Systems (KB5009543)
+Reference4: success000000002022,1,11,18,48,442022-01 Cumulative Update for .NET Framework 3.5 and 4.8 for Windows 10 Version 20H2 for x64 (KB5008876)
+Reference5: success000000002022,1,11,18,48,3Windows Malicious Software Removal Tool x64 - v5.97 (KB890830)
+Reference6: success000000002021,12,14,13,28,422021-12 Cumulative Update for Windows 10 Version 20H2 for x64-based Systems (KB5008212)
+Reference7: success000000002021,12,14,13,8,38Windows Malicious Software Removal Tool x64 - v5.96 (KB890830)
+Reference8: success000000002021,12,3,19,25,532021-11 Cumulative Update for Windows 10 Version 20H2 for x64-based Systems (KB5007186)
+Reference9: fail802400342021,11,27,3,52,369NBLGGH4RV3K-Microsoft.VCLibs.140.00.UWPDesktop
+Reference10: fail802400342021,11,27,0,52,179NBLGGH4RV3K-Microsoft.VCLibs.140.00.UWPDesktop
+Reference11: fail802400342021,11,26,20,42,99NBLGGH4RV3K-Microsoft.VCLibs.140.00.UWPDesktop
+Reference12: fail802400342021,11,17,7,40,09NG1H8B3ZC7M-Microsoft.MixedReality.Portal
+Reference13: success000000002021,11,13,3,57,272021-11 Cumulative Update for Windows 10 Version 20H2 for x64-based Systems (KB5007186)
+Reference14: success000000002021,11,13,1,46,12021-11 Cumulative Update for Windows 10 Version 20H2 for x64-based Systems (KB5007186)
+Reference15: success000000002021,11,11,9,55,53SAMSUNG Electronics Co., Ltd.  - USB - 2.17.16.0
+Reference16: success000000002021,11,10,6,53,222021-11 Cumulative Update for Windows 10 Version 20H2 for x64-based Systems (KB5007186)
+Reference17: success000000002021,11,10,6,42,492021-11 Cumulative Update for .NET Framework 3.5 and 4.8 for Windows 10 Version 20H2 for x64 (KB5006365)
+Reference18: success000000002021,11,10,6,42,20Windows Malicious Software Removal Tool x64 - v5.95 (KB890830)
+Reference19: success000000002021,11,4,19,22,302021-10 Update for Windows 10 Version 20H2 for x64-based Systems (KB5005463)
+Reference20: success000000002021,10,13,4,46,112021-10 Cumulative Update for Windows 10 Version 20H2 for x64-based Systems (KB5006670)
+Reference21: success000000002021,10,13,4,33,372021-10 Cumulative Update for .NET Framework 3.5 and 4.8 for Windows 10 Version 20H2 for x64 (KB5005539)
+=======
+ID: OnSurfaceChange
+Reference0: 0
+Reference1: -1
+Reference2: 1,-1,0,0
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: OnNetworkStatusChange
+Reference0: online
+Reference1: 192.168.1.19
+Reference2: wifi
+Reference3: 300
+Reference4: 300
 
 
 // response (Execution time : 0[ms])
@@ -31133,11 +32032,19 @@ Sender: SSP
 SenderType: internal
 SecurityLevel: local
 ID: OnMinuteChange
+<<<<<<< HEAD
+Reference0: 190
+Reference1: 0
+Reference2: 0
+Reference3: 1
+Reference4: 0
+=======
 Reference0: 127
 Reference1: 0
 Reference2: 0
 Reference3: 1
 Reference4: 5879
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 16[ms])
@@ -31171,6 +32078,36 @@ Sender: SSP
 SenderType: internal
 SecurityLevel: local
 ID: rateofusegraph
+<<<<<<< HEAD
+Reference0: f_lowe_yf_lowe_yThe Locket11304035326.664156install
+Reference1: GazeTestGazeVoid4933875725.609563install
+Reference2: FLUXFLUXMusic892722817.991516install
+Reference3: Dr. W.D. GasterGasterBrothers781517610.027885install
+Reference4: SPAMTON G. SPAMTON!!SPAMTON!![FriendRequestDenied]45147099.719304install
+Reference5: f_lowe_yf_lowe_yThe Narrator23950803.356725boot
+Reference6: HydrateHydrateYou being healthier1136312.399265install
+Reference7: Radio NowhereRadio SakuraRadio Kero2321471.418679install
+Reference8: GazeGazeForm513620.899972install
+Reference9: SebastianSebastianGhost96990.461880install
+Reference10: S the SkeletonRYS-0825None86180.408357install
+Reference11: The Wretched ScientistWilsonKero33960.261666install
+Reference12: Ghost Jam TemmieTemmieNO ONE!!!103850.254397install
+Reference13: MiniDevMiniDev-182120.140084install
+Reference14: f_lowe_y_quietf_lowe_y_quietThe Locket32040.134798install
+Reference15: Ship of TheseusRadio SakuraRadio Kero91340.088544install
+Reference16: Dreamtale SansDreamtale Sans14550.036342install
+Reference17: Multiverse SansMVSansphone6540.035682install
+Reference18: どくでんぱ。どくでんぱ。none2520.034360install
+Reference19: f_lowe_y-oldf_lowe_yThe Locket3290.019162install
+Reference20: Emily/Phase4.5EmilyTeddy5280.018502install
+Reference21: The HandHandDummy3120.007929install
+Reference22: Mettaton EXMettatonTriangle2100.006608install
+Reference23: PLANETSPLANETS220.001322install
+Reference24: VitusVitusTriangle120.001322install
+Reference25: GazeGazeVoid210.000661install
+Reference26: GT Template - Y CleanGirlTriangle110.000661install
+Reference27: Gaze_YAYAGazeVoid110.000661install
+=======
 Reference0: f_lowe_yf_lowe_yThe Locket11304035327.184904install
 Reference1: GazeTestGazeVoid4933822625.751992boot
 Reference2: FLUXFLUXMusic892722818.342888install
@@ -31199,6 +32136,7 @@ Reference24: VitusVitusTriangle120.001347install
 Reference25: GazeGazeVoid210.000674install
 Reference26: GT Template - Y CleanGirlTriangle110.000674install
 Reference27: Gaze_YAYAGazeVoid110.000674install
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 0[ms])
@@ -31208,10 +32146,56 @@ Charset: UTF-8
 
 // request
 GET SHIORI/3.0
+<<<<<<< HEAD
+ID: OnTranslate
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+Reference0: \0\s[21]\_v[mus\sound_FLOWEY.mp3] * Don't.Don't.Don't.Don't.Don't.\_w[1500] h_ve _nything bette_ to do?\_w[500]
+Reference1: 
+Reference2: OnSecondChange
+Reference3: 1900010
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: \0\s[21]\_v[mus\sound_FLOWEY.mp3] * Don't.Don't.Don't.Don't.Don't.\_w[1500] h_ve _nything bette_ to do?\_w[500]
+
+
+// request
+NOTIFY SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+Status: talking,balloon(0=0)
+ID: OnSurfaceChange
+Reference0: 21
+Reference1: -1
+Reference2: 0,21,353,457
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+=======
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 Charset: UTF-8
 Sender: 澰聙鶔ϰ
 SenderType: internal
 SecurityLevel: local
+<<<<<<< HEAD
+Status: talking,balloon(0=0)
+ID: OnSoundStop
+Reference0: mus\sound_FLOWEY.mp3
+=======
 ID: OnOtherGhostTalk
 Reference0: GazeTest
 Reference1: Gaze
@@ -31219,6 +32203,7 @@ Reference2:
 Reference3: OnSurfaceRestore
 Reference4: \0\s[0]\1\s[10]\e
 Reference5: 010
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 0[ms])
@@ -31253,11 +32238,19 @@ Sender: SSP
 SenderType: internal
 SecurityLevel: local
 ID: OnMinuteChange
+<<<<<<< HEAD
+Reference0: 190
+Reference1: 0
+Reference2: 0
+Reference3: 1
+Reference4: 0
+=======
 Reference0: 127
 Reference1: 0
 Reference2: 0
 Reference3: 1
 Reference4: 5939
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 16[ms])
@@ -31291,6 +32284,36 @@ Sender: SSP
 SenderType: internal
 SecurityLevel: local
 ID: rateofusegraph
+<<<<<<< HEAD
+Reference0: f_lowe_yf_lowe_yThe Locket11304035326.663980install
+Reference1: GazeTestGazeVoid4933875725.609393install
+Reference2: FLUXFLUXMusic892722817.991397install
+Reference3: Dr. W.D. GasterGasterBrothers781517610.027818install
+Reference4: SPAMTON G. SPAMTON!!SPAMTON!![FriendRequestDenied]45147099.719240install
+Reference5: f_lowe_yf_lowe_yThe Narrator23950813.357363boot
+Reference6: HydrateHydrateYou being healthier1136312.399249install
+Reference7: Radio NowhereRadio SakuraRadio Kero2321471.418669install
+Reference8: GazeGazeForm513620.899966install
+Reference9: SebastianSebastianGhost96990.461877install
+Reference10: S the SkeletonRYS-0825None86180.408355install
+Reference11: The Wretched ScientistWilsonKero33960.261664install
+Reference12: Ghost Jam TemmieTemmieNO ONE!!!103850.254396install
+Reference13: MiniDevMiniDev-182120.140083install
+Reference14: f_lowe_y_quietf_lowe_y_quietThe Locket32040.134797install
+Reference15: Ship of TheseusRadio SakuraRadio Kero91340.088543install
+Reference16: Dreamtale SansDreamtale Sans14550.036342install
+Reference17: Multiverse SansMVSansphone6540.035681install
+Reference18: どくでんぱ。どくでんぱ。none2520.034360install
+Reference19: f_lowe_y-oldf_lowe_yThe Locket3290.019162install
+Reference20: Emily/Phase4.5EmilyTeddy5280.018502install
+Reference21: The HandHandDummy3120.007929install
+Reference22: Mettaton EXMettatonTriangle2100.006608install
+Reference23: PLANETSPLANETS220.001322install
+Reference24: VitusVitusTriangle120.001322install
+Reference25: GazeGazeVoid210.000661install
+Reference26: GT Template - Y CleanGirlTriangle110.000661install
+Reference27: Gaze_YAYAGazeVoid110.000661install
+=======
 Reference0: f_lowe_yf_lowe_yThe Locket11304035327.184538install
 Reference1: GazeTestGazeVoid4933822725.752319boot
 Reference2: FLUXFLUXMusic892722818.342641install
@@ -31319,6 +32342,7 @@ Reference24: VitusVitusTriangle120.001347install
 Reference25: GazeGazeVoid210.000674install
 Reference26: GT Template - Y CleanGirlTriangle110.000674install
 Reference27: Gaze_YAYAGazeVoid110.000674install
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 0[ms])
@@ -31332,12 +32356,18 @@ Charset: UTF-8
 Sender: SSP
 SenderType: internal
 SecurityLevel: local
+<<<<<<< HEAD
+Status: balloon(0=0)
+ID: OnBalloonTimeout
+Reference0: \0\s[21]\_v[mus\sound_FLOWEY.mp3] * Don't.Don't.Don't.Don't.Don't.\_w[1500] h_ve _nything bette_ to do?\_w[500]
+=======
 ID: OnNetworkStatusChange
 Reference0: online
 Reference1: 192.168.1.19
 Reference2: wifi
 Reference3: 300
 Reference4: 300
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 0[ms])
@@ -31351,12 +32381,18 @@ Charset: UTF-8
 Sender: SSP
 SenderType: internal
 SecurityLevel: local
+<<<<<<< HEAD
+ID: OnSurfaceRestore
+Reference0: 21
+Reference1: -1
+=======
 ID: OnMinuteChange
 Reference0: 127
 Reference1: 0
 Reference2: 0
 Reference3: 1
 Reference4: 5999
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 0[ms])
@@ -31371,11 +32407,18 @@ Charset: UTF-8
 Sender: SSP
 SenderType: internal
 SecurityLevel: local
+<<<<<<< HEAD
+Reference0: \0\s[0]\1\s[-1]\e
+Reference1: 
+Reference2: OnSurfaceRestore
+Reference3: 21-1
+=======
 ID: OnBatteryNotify
 Reference0: 100
 Reference1: -1
 Reference2: online
 Reference3: high
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 0[ms])
@@ -31491,9 +32534,37 @@ Charset: UTF-8
 Sender: SSP
 SenderType: internal
 SecurityLevel: local
+<<<<<<< HEAD
+ID: OnNetworkStatusChange
+Reference0: online
+Reference1: 192.168.1.19
+Reference2: wifi
+Reference3: 300
+Reference4: 300
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: OnMinuteChange
+Reference0: 190
+Reference1: 0
+Reference2: 0
+Reference3: 1
+Reference4: 1
+=======
 Status: talking,balloon(0=0)
 ID: OnSoundStop
 Reference0: mus\sound_FLOWEY.mp3
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 0[ms])
@@ -31523,9 +32594,77 @@ Charset: UTF-8
 Sender: SSP
 SenderType: internal
 SecurityLevel: local
+<<<<<<< HEAD
+ID: rateofusegraph
+Reference0: f_lowe_yf_lowe_yThe Locket11304035326.663803install
+Reference1: GazeTestGazeVoid4933875725.609224install
+Reference2: FLUXFLUXMusic892722817.991278install
+Reference3: Dr. W.D. GasterGasterBrothers781517610.027752install
+Reference4: SPAMTON G. SPAMTON!!SPAMTON!![FriendRequestDenied]45147099.719175install
+Reference5: f_lowe_yf_lowe_yThe Narrator23950823.358002boot
+Reference6: HydrateHydrateYou being healthier1136312.399234install
+Reference7: Radio NowhereRadio SakuraRadio Kero2321471.418660install
+Reference8: GazeGazeForm513620.899960install
+Reference9: SebastianSebastianGhost96990.461874install
+Reference10: S the SkeletonRYS-0825None86180.408352install
+Reference11: The Wretched ScientistWilsonKero33960.261662install
+Reference12: Ghost Jam TemmieTemmieNO ONE!!!103850.254394install
+Reference13: MiniDevMiniDev-182120.140082install
+Reference14: f_lowe_y_quietf_lowe_y_quietThe Locket32040.134796install
+Reference15: Ship of TheseusRadio SakuraRadio Kero91340.088542install
+Reference16: Dreamtale SansDreamtale Sans14550.036342install
+Reference17: Multiverse SansMVSansphone6540.035681install
+Reference18: どくでんぱ。どくでんぱ。none2520.034360install
+Reference19: f_lowe_y-oldf_lowe_yThe Locket3290.019162install
+Reference20: Emily/Phase4.5EmilyTeddy5280.018501install
+Reference21: The HandHandDummy3120.007929install
+Reference22: Mettaton EXMettatonTriangle2100.006608install
+Reference23: PLANETSPLANETS220.001322install
+Reference24: VitusVitusTriangle120.001322install
+Reference25: GazeGazeVoid210.000661install
+Reference26: GT Template - Y CleanGirlTriangle110.000661install
+Reference27: Gaze_YAYAGazeVoid110.000661install
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: OnOSUpdateInfo
+Reference0: 2022,1,19,18,42,34
+Reference1: 2022,1,19,6,37,23
+Reference2: success000000002022,1,19,6,37,23Security Intelligence Update for Microsoft Defender Antivirus - KB2267602 (Version 1.355.2169.0)
+Reference3: success000000002022,1,11,18,59,362022-01 Cumulative Update for Windows 10 Version 20H2 for x64-based Systems (KB5009543)
+Reference4: success000000002022,1,11,18,48,442022-01 Cumulative Update for .NET Framework 3.5 and 4.8 for Windows 10 Version 20H2 for x64 (KB5008876)
+Reference5: success000000002022,1,11,18,48,3Windows Malicious Software Removal Tool x64 - v5.97 (KB890830)
+Reference6: success000000002021,12,14,13,28,422021-12 Cumulative Update for Windows 10 Version 20H2 for x64-based Systems (KB5008212)
+Reference7: success000000002021,12,14,13,8,38Windows Malicious Software Removal Tool x64 - v5.96 (KB890830)
+Reference8: success000000002021,12,3,19,25,532021-11 Cumulative Update for Windows 10 Version 20H2 for x64-based Systems (KB5007186)
+Reference9: fail802400342021,11,27,3,52,369NBLGGH4RV3K-Microsoft.VCLibs.140.00.UWPDesktop
+Reference10: fail802400342021,11,27,0,52,179NBLGGH4RV3K-Microsoft.VCLibs.140.00.UWPDesktop
+Reference11: fail802400342021,11,26,20,42,99NBLGGH4RV3K-Microsoft.VCLibs.140.00.UWPDesktop
+Reference12: fail802400342021,11,17,7,40,09NG1H8B3ZC7M-Microsoft.MixedReality.Portal
+Reference13: success000000002021,11,13,3,57,272021-11 Cumulative Update for Windows 10 Version 20H2 for x64-based Systems (KB5007186)
+Reference14: success000000002021,11,13,1,46,12021-11 Cumulative Update for Windows 10 Version 20H2 for x64-based Systems (KB5007186)
+Reference15: success000000002021,11,11,9,55,53SAMSUNG Electronics Co., Ltd.  - USB - 2.17.16.0
+Reference16: success000000002021,11,10,6,53,222021-11 Cumulative Update for Windows 10 Version 20H2 for x64-based Systems (KB5007186)
+Reference17: success000000002021,11,10,6,42,492021-11 Cumulative Update for .NET Framework 3.5 and 4.8 for Windows 10 Version 20H2 for x64 (KB5006365)
+Reference18: success000000002021,11,10,6,42,20Windows Malicious Software Removal Tool x64 - v5.95 (KB890830)
+Reference19: success000000002021,11,4,19,22,302021-10 Update for Windows 10 Version 20H2 for x64-based Systems (KB5005463)
+Reference20: success000000002021,10,13,4,46,112021-10 Cumulative Update for Windows 10 Version 20H2 for x64-based Systems (KB5006670)
+Reference21: success000000002021,10,13,4,33,372021-10 Cumulative Update for .NET Framework 3.5 and 4.8 for Windows 10 Version 20H2 for x64 (KB5005539)
+=======
 ID: OnSurfaceRestore
 Reference0: 21
 Reference1: -1
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 0[ms])
@@ -31542,10 +32681,19 @@ Charset: UTF-8
 Sender: SSP
 SenderType: internal
 SecurityLevel: local
+<<<<<<< HEAD
+ID: OnNetworkStatusChange
+Reference0: online
+Reference1: 192.168.1.19
+Reference2: wifi
+Reference3: 300
+Reference4: 300
+=======
 Reference0: \0\s[0]\1\s[-1]\e
 Reference1: 
 Reference2: OnSurfaceRestore
 Reference3: 21-1
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 0[ms])
@@ -31561,10 +32709,19 @@ Charset: UTF-8
 Sender: SSP
 SenderType: internal
 SecurityLevel: local
+<<<<<<< HEAD
+ID: OnMinuteChange
+Reference0: 190
+Reference1: 0
+Reference2: 0
+Reference3: 1
+Reference4: 1
+=======
 ID: OnSurfaceChange
 Reference0: 0
 Reference1: -1
 Reference2: 1,-1,0,0
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 0[ms])
@@ -31595,10 +32752,42 @@ Charset: UTF-8
 Sender: SSP
 SenderType: internal
 SecurityLevel: local
+<<<<<<< HEAD
+ID: rateofusegraph
+Reference0: f_lowe_yf_lowe_yThe Locket11304035326.663627install
+Reference1: GazeTestGazeVoid4933875725.609055install
+Reference2: FLUXFLUXMusic892722817.991159install
+Reference3: Dr. W.D. GasterGasterBrothers781517610.027686install
+Reference4: SPAMTON G. SPAMTON!!SPAMTON!![FriendRequestDenied]45147099.719111install
+Reference5: f_lowe_yf_lowe_yThe Narrator23950833.358640boot
+Reference6: HydrateHydrateYou being healthier1136312.399218install
+Reference7: Radio NowhereRadio SakuraRadio Kero2321471.418651install
+Reference8: GazeGazeForm513620.899954install
+Reference9: SebastianSebastianGhost96990.461871install
+Reference10: S the SkeletonRYS-0825None86180.408349install
+Reference11: The Wretched ScientistWilsonKero33960.261661install
+Reference12: Ghost Jam TemmieTemmieNO ONE!!!103850.254392install
+Reference13: MiniDevMiniDev-182120.140081install
+Reference14: f_lowe_y_quietf_lowe_y_quietThe Locket32040.134795install
+Reference15: Ship of TheseusRadio SakuraRadio Kero91340.088542install
+Reference16: Dreamtale SansDreamtale Sans14550.036342install
+Reference17: Multiverse SansMVSansphone6540.035681install
+Reference18: どくでんぱ。どくでんぱ。none2520.034359install
+Reference19: f_lowe_y-oldf_lowe_yThe Locket3290.019162install
+Reference20: Emily/Phase4.5EmilyTeddy5280.018501install
+Reference21: The HandHandDummy3120.007929install
+Reference22: Mettaton EXMettatonTriangle2100.006608install
+Reference23: PLANETSPLANETS220.001322install
+Reference24: VitusVitusTriangle120.001322install
+Reference25: GazeGazeVoid210.000661install
+Reference26: GT Template - Y CleanGirlTriangle110.000661install
+Reference27: Gaze_YAYAGazeVoid110.000661install
+=======
 ID: OnSurfaceChange
 Reference0: 0
 Reference1: -1
 Reference2: 1,-1,0,0
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 0[ms])
@@ -31632,11 +32821,19 @@ Sender: SSP
 SenderType: internal
 SecurityLevel: local
 ID: OnMinuteChange
+<<<<<<< HEAD
+Reference0: 190
+Reference1: 0
+Reference2: 0
+Reference3: 1
+Reference4: 3
+=======
 Reference0: 127
 Reference1: 0
 Reference2: 0
 Reference3: 1
 Reference4: 6059
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 0[ms])
@@ -31670,6 +32867,36 @@ Sender: SSP
 SenderType: internal
 SecurityLevel: local
 ID: rateofusegraph
+<<<<<<< HEAD
+Reference0: f_lowe_yf_lowe_yThe Locket11304035326.663451install
+Reference1: GazeTestGazeVoid4933875725.608886install
+Reference2: FLUXFLUXMusic892722817.991040install
+Reference3: Dr. W.D. GasterGasterBrothers781517610.027620install
+Reference4: SPAMTON G. SPAMTON!!SPAMTON!![FriendRequestDenied]45147099.719047install
+Reference5: f_lowe_yf_lowe_yThe Narrator23950843.359279boot
+Reference6: HydrateHydrateYou being healthier1136312.399202install
+Reference7: Radio NowhereRadio SakuraRadio Kero2321471.418641install
+Reference8: GazeGazeForm513620.899948install
+Reference9: SebastianSebastianGhost96990.461868install
+Reference10: S the SkeletonRYS-0825None86180.408347install
+Reference11: The Wretched ScientistWilsonKero33960.261659install
+Reference12: Ghost Jam TemmieTemmieNO ONE!!!103850.254391install
+Reference13: MiniDevMiniDev-182120.140080install
+Reference14: f_lowe_y_quietf_lowe_y_quietThe Locket32040.134794install
+Reference15: Ship of TheseusRadio SakuraRadio Kero91340.088541install
+Reference16: Dreamtale SansDreamtale Sans14550.036342install
+Reference17: Multiverse SansMVSansphone6540.035681install
+Reference18: どくでんぱ。どくでんぱ。none2520.034359install
+Reference19: f_lowe_y-oldf_lowe_yThe Locket3290.019162install
+Reference20: Emily/Phase4.5EmilyTeddy5280.018501install
+Reference21: The HandHandDummy3120.007929install
+Reference22: Mettaton EXMettatonTriangle2100.006608install
+Reference23: PLANETSPLANETS220.001322install
+Reference24: VitusVitusTriangle120.001322install
+Reference25: GazeGazeVoid210.000661install
+Reference26: GT Template - Y CleanGirlTriangle110.000661install
+Reference27: Gaze_YAYAGazeVoid110.000661install
+=======
 Reference0: f_lowe_yf_lowe_yThe Locket11304035327.183805install
 Reference1: GazeTestGazeVoid4933822925.752972boot
 Reference2: FLUXFLUXMusic892722818.342147install
@@ -31698,6 +32925,7 @@ Reference24: VitusVitusTriangle120.001347install
 Reference25: GazeGazeVoid210.000674install
 Reference26: GT Template - Y CleanGirlTriangle110.000674install
 Reference27: Gaze_YAYAGazeVoid110.000674install
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 0[ms])
@@ -31705,6 +32933,45 @@ SHIORI/3.0 204 No Content
 Charset: UTF-8
 
 
+<<<<<<< HEAD
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: OnOSUpdateInfo
+Reference0: 2022,1,19,19,5,48
+Reference1: 2022,1,19,6,37,23
+Reference2: success000000002022,1,19,6,37,23Security Intelligence Update for Microsoft Defender Antivirus - KB2267602 (Version 1.355.2169.0)
+Reference3: success000000002022,1,11,18,59,362022-01 Cumulative Update for Windows 10 Version 20H2 for x64-based Systems (KB5009543)
+Reference4: success000000002022,1,11,18,48,442022-01 Cumulative Update for .NET Framework 3.5 and 4.8 for Windows 10 Version 20H2 for x64 (KB5008876)
+Reference5: success000000002022,1,11,18,48,3Windows Malicious Software Removal Tool x64 - v5.97 (KB890830)
+Reference6: success000000002021,12,14,13,28,422021-12 Cumulative Update for Windows 10 Version 20H2 for x64-based Systems (KB5008212)
+Reference7: success000000002021,12,14,13,8,38Windows Malicious Software Removal Tool x64 - v5.96 (KB890830)
+Reference8: success000000002021,12,3,19,25,532021-11 Cumulative Update for Windows 10 Version 20H2 for x64-based Systems (KB5007186)
+Reference9: fail802400342021,11,27,3,52,369NBLGGH4RV3K-Microsoft.VCLibs.140.00.UWPDesktop
+Reference10: fail802400342021,11,27,0,52,179NBLGGH4RV3K-Microsoft.VCLibs.140.00.UWPDesktop
+Reference11: fail802400342021,11,26,20,42,99NBLGGH4RV3K-Microsoft.VCLibs.140.00.UWPDesktop
+Reference12: fail802400342021,11,17,7,40,09NG1H8B3ZC7M-Microsoft.MixedReality.Portal
+Reference13: success000000002021,11,13,3,57,272021-11 Cumulative Update for Windows 10 Version 20H2 for x64-based Systems (KB5007186)
+Reference14: success000000002021,11,13,1,46,12021-11 Cumulative Update for Windows 10 Version 20H2 for x64-based Systems (KB5007186)
+Reference15: success000000002021,11,11,9,55,53SAMSUNG Electronics Co., Ltd.  - USB - 2.17.16.0
+Reference16: success000000002021,11,10,6,53,222021-11 Cumulative Update for Windows 10 Version 20H2 for x64-based Systems (KB5007186)
+Reference17: success000000002021,11,10,6,42,492021-11 Cumulative Update for .NET Framework 3.5 and 4.8 for Windows 10 Version 20H2 for x64 (KB5006365)
+Reference18: success000000002021,11,10,6,42,20Windows Malicious Software Removal Tool x64 - v5.95 (KB890830)
+Reference19: success000000002021,11,4,19,22,302021-10 Update for Windows 10 Version 20H2 for x64-based Systems (KB5005463)
+Reference20: success000000002021,10,13,4,46,112021-10 Cumulative Update for Windows 10 Version 20H2 for x64-based Systems (KB5006670)
+Reference21: success000000002021,10,13,4,33,372021-10 Cumulative Update for .NET Framework 3.5 and 4.8 for Windows 10 Version 20H2 for x64 (KB5005539)
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+=======
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 // request
 GET SHIORI/3.0
 Charset: UTF-8
@@ -31731,11 +32998,19 @@ Sender: SSP
 SenderType: internal
 SecurityLevel: local
 ID: OnMinuteChange
+<<<<<<< HEAD
+Reference0: 190
+Reference1: 0
+Reference2: 0
+Reference3: 1
+Reference4: 3
+=======
 Reference0: 127
 Reference1: 0
 Reference2: 0
 Reference3: 1
 Reference4: 6119
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 16[ms])
@@ -31769,6 +33044,126 @@ Sender: SSP
 SenderType: internal
 SecurityLevel: local
 ID: rateofusegraph
+<<<<<<< HEAD
+Reference0: f_lowe_yf_lowe_yThe Locket11304035326.663275install
+Reference1: GazeTestGazeVoid4933875725.608717install
+Reference2: FLUXFLUXMusic892722817.990921install
+Reference3: Dr. W.D. GasterGasterBrothers781517610.027553install
+Reference4: SPAMTON G. SPAMTON!!SPAMTON!![FriendRequestDenied]45147099.718983install
+Reference5: f_lowe_yf_lowe_yThe Narrator23950853.359918boot
+Reference6: HydrateHydrateYou being healthier1136312.399186install
+Reference7: Radio NowhereRadio SakuraRadio Kero2321471.418632install
+Reference8: GazeGazeForm513620.899943install
+Reference9: SebastianSebastianGhost96990.461865install
+Reference10: S the SkeletonRYS-0825None86180.408344install
+Reference11: The Wretched ScientistWilsonKero33960.261657install
+Reference12: Ghost Jam TemmieTemmieNO ONE!!!103850.254389install
+Reference13: MiniDevMiniDev-182120.140079install
+Reference14: f_lowe_y_quietf_lowe_y_quietThe Locket32040.134793install
+Reference15: Ship of TheseusRadio SakuraRadio Kero91340.088541install
+Reference16: Dreamtale SansDreamtale Sans14550.036341install
+Reference17: Multiverse SansMVSansphone6540.035681install
+Reference18: どくでんぱ。どくでんぱ。none2520.034359install
+Reference19: f_lowe_y-oldf_lowe_yThe Locket3290.019162install
+Reference20: Emily/Phase4.5EmilyTeddy5280.018501install
+Reference21: The HandHandDummy3120.007929install
+Reference22: Mettaton EXMettatonTriangle2100.006608install
+Reference23: PLANETSPLANETS220.001322install
+Reference24: VitusVitusTriangle120.001322install
+Reference25: GazeGazeVoid210.000661install
+Reference26: GT Template - Y CleanGirlTriangle110.000661install
+Reference27: Gaze_YAYAGazeVoid110.000661install
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+ID: OnTranslate
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+Reference0: \0\s[3]\1\s[-1]\_v[mus\HELP_text.mp3] * (Smells like herbicide.)\_w[500]
+Reference1: 
+Reference2: OnSecondChange
+Reference3: 1900010
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: \0\s[3]\1\s[-1]\_v[mus\HELP_text.mp3] * (Smells like herbicide.)\_w[500]
+
+
+// request
+NOTIFY SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+Status: talking,balloon(1=0)
+ID: OnSurfaceChange
+Reference0: 3
+Reference1: -1
+Reference2: 1,-1,0,0
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Charset: UTF-8
+
+
+// request
+NOTIFY SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+Status: talking,balloon(1=0)
+ID: OnSurfaceChange
+Reference0: 3
+Reference1: -1
+Reference2: 0,3,353,457
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Charset: UTF-8
+
+
+// request
+NOTIFY SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+Status: talking,balloon(1=0)
+ID: OnSurfaceChange
+Reference0: 3
+Reference1: -1
+Reference2: 1,-1,0,0
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+Status: talking,balloon(1=0)
+ID: OnSoundStop
+Reference0: mus\HELP_text.mp3
+=======
 Reference0: f_lowe_yf_lowe_yThe Locket11304035327.183439install
 Reference1: GazeTestGazeVoid4933823025.753299boot
 Reference2: FLUXFLUXMusic892722818.341900install
@@ -31797,6 +33192,7 @@ Reference24: VitusVitusTriangle120.001347install
 Reference25: GazeGazeVoid210.000674install
 Reference26: GT Template - Y CleanGirlTriangle110.000674install
 Reference27: Gaze_YAYAGazeVoid110.000674install
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 0[ms])
@@ -31810,6 +33206,10 @@ Charset: UTF-8
 Sender: SSP
 SenderType: internal
 SecurityLevel: local
+<<<<<<< HEAD
+Status: balloon(1=0)
+=======
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 ID: OnNetworkStatusChange
 Reference0: online
 Reference1: 192.168.1.19
@@ -31829,12 +33229,22 @@ Charset: UTF-8
 Sender: SSP
 SenderType: internal
 SecurityLevel: local
+<<<<<<< HEAD
+Status: balloon(1=0)
+ID: OnMinuteChange
+Reference0: 190
+Reference1: 0
+Reference2: 0
+Reference3: 1
+Reference4: 1
+=======
 ID: OnMinuteChange
 Reference0: 127
 Reference1: 0
 Reference2: 0
 Reference3: 1
 Reference4: 6179
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 0[ms])
@@ -31849,6 +33259,10 @@ Charset: UTF-8
 Sender: SSP
 SenderType: internal
 SecurityLevel: local
+<<<<<<< HEAD
+Status: balloon(1=0)
+=======
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 ID: OnBatteryNotify
 Reference0: 100
 Reference1: -1
@@ -31867,6 +33281,38 @@ Charset: UTF-8
 Sender: SSP
 SenderType: internal
 SecurityLevel: local
+<<<<<<< HEAD
+Status: balloon(1=0)
+ID: rateofusegraph
+Reference0: f_lowe_yf_lowe_yThe Locket11304035326.663099install
+Reference1: GazeTestGazeVoid4933875725.608547install
+Reference2: FLUXFLUXMusic892722817.990802install
+Reference3: Dr. W.D. GasterGasterBrothers781517610.027487install
+Reference4: SPAMTON G. SPAMTON!!SPAMTON!![FriendRequestDenied]45147099.718918install
+Reference5: f_lowe_yf_lowe_yThe Narrator23950863.360556boot
+Reference6: HydrateHydrateYou being healthier1136312.399170install
+Reference7: Radio NowhereRadio SakuraRadio Kero2321471.418622install
+Reference8: GazeGazeForm513620.899937install
+Reference9: SebastianSebastianGhost96990.461862install
+Reference10: S the SkeletonRYS-0825None86180.408341install
+Reference11: The Wretched ScientistWilsonKero33960.261656install
+Reference12: Ghost Jam TemmieTemmieNO ONE!!!103850.254387install
+Reference13: MiniDevMiniDev-182120.140078install
+Reference14: f_lowe_y_quietf_lowe_y_quietThe Locket32040.134792install
+Reference15: Ship of TheseusRadio SakuraRadio Kero91340.088540install
+Reference16: Dreamtale SansDreamtale Sans14550.036341install
+Reference17: Multiverse SansMVSansphone6540.035680install
+Reference18: どくでんぱ。どくでんぱ。none2520.034359install
+Reference19: f_lowe_y-oldf_lowe_yThe Locket3290.019162install
+Reference20: Emily/Phase4.5EmilyTeddy5280.018501install
+Reference21: The HandHandDummy3120.007929install
+Reference22: Mettaton EXMettatonTriangle2100.006607install
+Reference23: PLANETSPLANETS220.001321install
+Reference24: VitusVitusTriangle120.001321install
+Reference25: GazeGazeVoid210.000661install
+Reference26: GT Template - Y CleanGirlTriangle110.000661install
+Reference27: Gaze_YAYAGazeVoid110.000661install
+=======
 ID: rateofusegraph
 Reference0: f_lowe_yf_lowe_yThe Locket11304035327.183073install
 Reference1: GazeTestGazeVoid4933823125.753626boot
@@ -31896,6 +33342,7 @@ Reference24: VitusVitusTriangle120.001347install
 Reference25: GazeGazeVoid210.000674install
 Reference26: GT Template - Y CleanGirlTriangle110.000674install
 Reference27: Gaze_YAYAGazeVoid110.000674install
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 0[ms])
@@ -31903,12 +33350,24 @@ SHIORI/3.0 204 No Content
 Charset: UTF-8
 
 
+<<<<<<< HEAD
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+Status: balloon(1=0)
+ID: OnBalloonTimeout
+Reference0: \0\s[3]\1\s[-1]\_v[mus\HELP_text.mp3] * (Smells like herbicide.)\_w[500]
+=======
 // request to library
 // name : D:\SSP\ghost\f_lowe_y\ghost\master\window_info.dll
 EXECUTE SAORI/1.0
 Charset: UTF-8
 Sender: AYA
 SecurityLevel: Local
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 0[ms])
@@ -31932,10 +33391,16 @@ Charset: UTF-8
 Sender: SSP
 SenderType: internal
 SecurityLevel: local
+<<<<<<< HEAD
+ID: OnSurfaceRestore
+Reference0: 3
+Reference1: -1
+=======
 Reference0: \_q\b2f_lowe_y "the HELP_tale Flowey"\n\n[half]Gaze "the Development Version"\n\n[half]D:\SSP\ghost\f_lowe_y\ghost\master\htf_etc.dic - Notepad++\n\n[half]linkdumps_and_memes - Discord\n\n[half]Era-the-Outworlder/era_makes_ghosts: Repository for Ukagaka ghosts and shells - Brave\n\n[half]master\n\n[half]era_makes_ghosts\n\n[half]GitHub Desktop\n\n[half]GitHub Desktop\n\n\e\e
 Reference1: 
 Reference2: OnSecondChange
 Reference3: 1270016186
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 16[ms])
@@ -31951,9 +33416,16 @@ Charset: UTF-8
 Sender: SSP
 SenderType: internal
 SecurityLevel: local
+<<<<<<< HEAD
+Reference0: \0\s[0]\1\s[-1]\e
+Reference1: 
+Reference2: OnSurfaceRestore
+Reference3: 3-1
+=======
 Status: balloon(0=2)
 ID: OnBalloonTimeout
 Reference0: \_q\b2f_lowe_y "the HELP_tale Flowey"\n\n[half]Gaze "the Development Version"\n\n[half]D:\SSP\ghost\f_lowe_y\ghost\master\htf_etc.dic - Notepad++\n\n[half]linkdumps_and_memes - Discord\n\n[half]Era-the-Outworlder/era_makes_ghosts: Repository for Ukagaka ghosts and shells - Brave\n\n[half]master\n\n[half]era_makes_ghosts\n\n[half]GitHub Desktop\n\n[half]GitHub Desktop\n\n\e\e
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 0[ms])
@@ -32042,11 +33514,19 @@ Sender: SSP
 SenderType: internal
 SecurityLevel: local
 ID: OnMinuteChange
+<<<<<<< HEAD
+Reference0: 190
+Reference1: 0
+Reference2: 0
+Reference3: 1
+Reference4: 9
+=======
 Reference0: 127
 Reference1: 0
 Reference2: 0
 Reference3: 1
 Reference4: 6239
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 16[ms])
@@ -32080,6 +33560,36 @@ Sender: SSP
 SenderType: internal
 SecurityLevel: local
 ID: rateofusegraph
+<<<<<<< HEAD
+Reference0: f_lowe_yf_lowe_yThe Locket11304035326.662922install
+Reference1: GazeTestGazeVoid4933875725.608378install
+Reference2: FLUXFLUXMusic892722817.990684install
+Reference3: Dr. W.D. GasterGasterBrothers781517610.027421install
+Reference4: SPAMTON G. SPAMTON!!SPAMTON!![FriendRequestDenied]45147099.718854install
+Reference5: f_lowe_yf_lowe_yThe Narrator23950873.361195boot
+Reference6: HydrateHydrateYou being healthier1136312.399154install
+Reference7: Radio NowhereRadio SakuraRadio Kero2321471.418613install
+Reference8: GazeGazeForm513620.899931install
+Reference9: SebastianSebastianGhost96990.461859install
+Reference10: S the SkeletonRYS-0825None86180.408339install
+Reference11: The Wretched ScientistWilsonKero33960.261654install
+Reference12: Ghost Jam TemmieTemmieNO ONE!!!103850.254386install
+Reference13: MiniDevMiniDev-182120.140077install
+Reference14: f_lowe_y_quietf_lowe_y_quietThe Locket32040.134791install
+Reference15: Ship of TheseusRadio SakuraRadio Kero91340.088539install
+Reference16: Dreamtale SansDreamtale Sans14550.036341install
+Reference17: Multiverse SansMVSansphone6540.035680install
+Reference18: どくでんぱ。どくでんぱ。none2520.034359install
+Reference19: f_lowe_y-oldf_lowe_yThe Locket3290.019162install
+Reference20: Emily/Phase4.5EmilyTeddy5280.018501install
+Reference21: The HandHandDummy3120.007929install
+Reference22: Mettaton EXMettatonTriangle2100.006607install
+Reference23: PLANETSPLANETS220.001321install
+Reference24: VitusVitusTriangle120.001321install
+Reference25: GazeGazeVoid210.000661install
+Reference26: GT Template - Y CleanGirlTriangle110.000661install
+Reference27: Gaze_YAYAGazeVoid110.000661install
+=======
 Reference0: f_lowe_yf_lowe_yThe Locket11304035327.182707install
 Reference1: GazeTestGazeVoid4933823225.753952boot
 Reference2: FLUXFLUXMusic892722818.341406install
@@ -32108,6 +33618,7 @@ Reference24: VitusVitusTriangle120.001347install
 Reference25: GazeGazeVoid210.000674install
 Reference26: GT Template - Y CleanGirlTriangle110.000674install
 Reference27: Gaze_YAYAGazeVoid110.000674install
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 0[ms])
@@ -32141,11 +33652,19 @@ Sender: SSP
 SenderType: internal
 SecurityLevel: local
 ID: OnMinuteChange
+<<<<<<< HEAD
+Reference0: 190
+Reference1: 0
+Reference2: 0
+Reference3: 1
+Reference4: 3
+=======
 Reference0: 127
 Reference1: 0
 Reference2: 0
 Reference3: 1
 Reference4: 6299
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 16[ms])
@@ -32179,6 +33698,36 @@ Sender: SSP
 SenderType: internal
 SecurityLevel: local
 ID: rateofusegraph
+<<<<<<< HEAD
+Reference0: f_lowe_yf_lowe_yThe Locket11304035326.662746install
+Reference1: GazeTestGazeVoid4933875725.608209install
+Reference2: FLUXFLUXMusic892722817.990565install
+Reference3: Dr. W.D. GasterGasterBrothers781517610.027355install
+Reference4: SPAMTON G. SPAMTON!!SPAMTON!![FriendRequestDenied]45147099.718790install
+Reference5: f_lowe_yf_lowe_yThe Narrator23950883.361833boot
+Reference6: HydrateHydrateYou being healthier1136312.399138install
+Reference7: Radio NowhereRadio SakuraRadio Kero2321471.418604install
+Reference8: GazeGazeForm513620.899925install
+Reference9: SebastianSebastianGhost96990.461856install
+Reference10: S the SkeletonRYS-0825None86180.408336install
+Reference11: The Wretched ScientistWilsonKero33960.261652install
+Reference12: Ghost Jam TemmieTemmieNO ONE!!!103850.254384install
+Reference13: MiniDevMiniDev-182120.140076install
+Reference14: f_lowe_y_quietf_lowe_y_quietThe Locket32040.134790install
+Reference15: Ship of TheseusRadio SakuraRadio Kero91340.088539install
+Reference16: Dreamtale SansDreamtale Sans14550.036341install
+Reference17: Multiverse SansMVSansphone6540.035680install
+Reference18: どくでんぱ。どくでんぱ。none2520.034358install
+Reference19: f_lowe_y-oldf_lowe_yThe Locket3290.019161install
+Reference20: Emily/Phase4.5EmilyTeddy5280.018501install
+Reference21: The HandHandDummy3120.007929install
+Reference22: Mettaton EXMettatonTriangle2100.006607install
+Reference23: PLANETSPLANETS220.001321install
+Reference24: VitusVitusTriangle120.001321install
+Reference25: GazeGazeVoid210.000661install
+Reference26: GT Template - Y CleanGirlTriangle110.000661install
+Reference27: Gaze_YAYAGazeVoid110.000661install
+=======
 Reference0: f_lowe_yf_lowe_yThe Locket11304035327.182341install
 Reference1: GazeTestGazeVoid4933823325.754279boot
 Reference2: FLUXFLUXMusic892722818.341158install
@@ -32327,6 +33876,7 @@ Reference1: 0
 Reference2: 0
 Reference3: 1
 Reference4: 6360
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 
 
 // response (Execution time : 0[ms])

@@ -29,7 +29,8 @@ OnfirstBoot
 	silentMode = "OFF" //does not start in silent mode
 	canDesktopEye = "OFF" //does not start off commenting on open programs
 	verBalete = "ON" //DOES start with recycle bin confirmation on
-
+	// A couple of flag arrays
+	hourlyArray = IARRAY
 	//The following are global variables for f_lowe_y's ghost interactions.
 	gazeTalk = 0
 	//The following are global variables for f_lowe_y's user interactions.
@@ -138,6 +139,11 @@ OnBoot
  {
 	OnNotifyUserInfo
 	lastTalk = "" 
+<<<<<<< HEAD
+	hourlyArray = IARRAY
+	cumuhour = (cumuhour + passhour)
+=======
+>>>>>>> parent of 5d51d4d (Auto Backup MAIN daily)
 	passhour = 0
 	passmin = 0
 	passsec = 0
