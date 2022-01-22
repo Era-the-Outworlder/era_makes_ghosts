@@ -51,9 +51,9 @@ MenuRun
 	"\![*] \q[FUNct_ons,dosomething]\n\n[half]"
 	
 	--
- 	"\![*] \q[Nevermind,CANCEL]\n\n\n[half]%(wd) %(nowhour):%(nowmin) %(ap), %(month)/%(day)/%(year)\nReset: %(resetcount)\e"
-	"\![*] \q[Shut up.,CANCEL]\n\n\n[half]%(wd) %(nowhour):%(nowmin) %(ap), %(month)/%(day)/%(year)\nReset: %(resetcount)\e"
-	"\![*] \q[N_V_RMIND,CANCEL]\n\n\n[half]%(wd) %(nowhour):%(nowmin) %(ap), %(month)/%(day)/%(year)\nReset: %(resetcount)\e"
+ 	"\![*] \q[Nevermind,CANCEL]\n\n\n[half]%(wd) %(nowhour):%(nowmin) %(ap),\n %(month)/%(day)/%(year)\nReset: %(resetcount)\e"
+	"\![*] \q[Shut up.,CANCEL]\n\n\n[half]%(wd) %(nowhour):%(nowmin) %(ap),\n %(month)/%(day)/%(year)\nReset: %(resetcount)\e"
+	"\![*] \q[N_V_RMIND,CANCEL]\n\n\n[half]%(wd) %(nowhour):%(nowmin) %(ap),\n %(month)/%(day)/%(year)\nReset: %(resetcount)\e"
 	
 	//These three lead to the Config Menu, the Function menu, and Cancel. 
 }
@@ -265,6 +265,18 @@ Select.deleteoff
 	TalkConfig
 }
 
+// Enable/Disable Silent Mode
+Select.silenton
+{
+	silentMode = "ON"
+	TalkConfig
+}
+
+Select.silentoff
+{
+	silentMode = "OFF"
+	TalkConfig
+}
 
 //This next set of functions handles inputting the user's birthday.
 
