@@ -5,21 +5,19 @@
 //Sorry?
 
 //--Flowey's Poses---------------------------------------------------------
-surface.append1000-1099 //this is appending this code to Surface1000 through Surface1299.
-//There are actually a few special ways you can refine this! For example, surface.append500-590,205 would append the code to Surface500 to Surface590, as well as Surface205. 
-//surface.append500-590,205,!507-509 it would do the same, except it would skip Surfaces507 through 509.
-{
-collision0,116,162,224,254,Face
-collision1,100,133,221,153,Top
-collision3,156,267,201,279,Chin
-}
 
+
+sakura.tooltips 
+{
+	Face,Double-click to hit him
+	Top,Pet the flower
+}
 
 surface0
 {
-collision0,116,162,224,254,Face
-collision1,100,133,221,153,Top
-collision3,156,267,201,279,Chin
+collisionex0,Face,polygon,148,259,103,214,130,157,175,149,224,169,231,233,175,263
+collisionex1,Top,polygon,151,279,101,295,41,201,50,175,94,133,180,123,282,164,298,196,271,255,223,289
+
 
 element0,overlay,surface0.png,0,0
 
@@ -110,54 +108,72 @@ element0,overlay,surface0.png,0,0
 //Embarrassed
 surface1
 {
+collisionex0,Face,polygon,148,259,103,214,130,157,175,149,224,169,231,233,175,263
+collisionex1,Top,polygon,151,279,101,295,41,201,50,175,94,133,180,123,282,164,298,196,271,255,223,289
 element0,overlay,surface1001.png,0,0
 }
 
 //Surprise
 surface2
 {
+collisionex0,Face,polygon,148,259,103,214,130,157,175,149,224,169,231,233,175,263
+collisionex1,Top,polygon,151,279,101,295,41,201,50,175,94,133,180,123,282,164,298,196,271,255,223,289
 element0,overlay,surface1002.png,0,0
 }
 
 //Anxiety
 surface3
 {
+collisionex0,Face,polygon,148,259,103,214,130,157,175,149,224,169,231,233,175,263
+collisionex1,Top,polygon,151,279,101,295,41,201,50,175,94,133,180,123,282,164,298,196,271,255,223,289
 element0,overlay,surface1003.png,0,0
 }
 
 //Discourage
 surface4
 {
+collisionex0,Face,polygon,148,259,103,214,130,157,175,149,224,169,231,233,175,263
+collisionex1,Top,polygon,151,279,101,295,41,201,50,175,94,133,180,123,282,164,298,196,271,255,223,289
 element0,overlay,surface1004.png,0,0
 }
 
 //Big Smile
 surface5
 {
+collisionex0,Face,polygon,148,259,103,214,130,157,175,149,224,169,231,233,175,263
+collisionex1,Top,polygon,151,279,101,295,41,201,50,175,94,133,180,123,282,164,298,196,271,255,223,289
 element0,overlay,surface1005.png,0,0
 }
 
 //Closing Eyes
 surface6
 {
+collisionex0,Face,polygon,148,259,103,214,130,157,175,149,224,169,231,233,175,263
+collisionex1,Top,polygon,151,279,101,295,41,201,50,175,94,133,180,123,282,164,298,196,271,255,223,289
 element0,overlay,surface1006.png,0,0
 }
 
 //Anger
 surface7
 {
+collisionex0,Face,polygon,148,259,103,214,130,157,175,149,224,169,231,233,175,263
+collisionex1,Top,polygon,151,279,101,295,41,201,50,175,94,133,180,123,282,164,298,196,271,255,223,289
 element0,overlay,surface1007.png,0,0
 }
 
 //Sneer
 surface8
 {
+collisionex0,Face,polygon,148,259,103,214,130,157,175,149,224,169,231,233,175,263
+collisionex1,Top,polygon,151,279,101,295,41,201,50,175,94,133,180,123,282,164,298,196,271,255,223,289
 element0,overlay,surface1008.png,0,0
 }
 
 //Annoyed
 surface9
 {
+collisionex0,Face,polygon,148,259,103,214,130,157,175,149,224,169,231,233,175,263
+collisionex1,Top,polygon,151,279,101,295,41,201,50,175,94,133,180,123,282,164,298,196,271,255,223,289
 element0,overlay,surface1009.png,0,0
 }
 
@@ -165,6 +181,8 @@ element0,overlay,surface1009.png,0,0
 //blank for Kero
 surface10
 {
+collisionex0,Face,polygon,148,259,103,214,130,157,175,149,224,169,231,233,175,263
+collisionex1,Top,polygon,151,279,101,295,41,201,50,175,94,133,180,123,282,164,298,196,271,255,223,289
 element0,overlay,surface10.png,0,0
 }
 
@@ -172,36 +190,48 @@ element0,overlay,surface10.png,0,0
 //Looking "right"
 surface12
 {
+collisionex0,Face,polygon,148,259,103,214,130,157,175,149,224,169,231,233,175,263
+collisionex1,Top,polygon,151,279,101,295,41,201,50,175,94,133,180,123,282,164,298,196,271,255,223,289
 element0,overlay,surface1012.png,0,0
 }
 
 //Closed Mouth
 surface13
 {
+collisionex0,Face,polygon,148,259,103,214,130,157,175,149,224,169,231,233,175,263
+collisionex1,Top,polygon,151,279,101,295,41,201,50,175,94,133,180,123,282,164,298,196,271,255,223,289
 element0,overlay,surface1013.png,0,0
 }
 
 //Closed Mouth Looking "right"
 surface14
 {
+collisionex0,Face,polygon,148,259,103,214,130,157,175,149,224,169,231,233,175,263
+collisionex1,Top,polygon,151,279,101,295,41,201,50,175,94,133,180,123,282,164,298,196,271,255,223,289
 element0,overlay,surface1014.png,0,0
 }
 
 //Shocked
 surface15
 {
+collisionex0,Face,polygon,148,259,103,214,130,157,175,149,224,169,231,233,175,263
+collisionex1,Top,polygon,151,279,101,295,41,201,50,175,94,133,180,123,282,164,298,196,271,255,223,289
 element0,overlay,surface1015.png,0,0
 }
 
 //Scared/Hit
 surface16
 {
+collisionex0,Face,polygon,148,259,103,214,130,157,175,149,224,169,231,233,175,263
+collisionex1,Top,polygon,151,279,101,295,41,201,50,175,94,133,180,123,282,164,298,196,271,255,223,289
 element0,overlay,surface1016.png,0,0
 }
 
 //Ugly Crying
 surface17
 {
+collisionex0,Face,polygon,148,259,103,214,130,157,175,149,224,169,231,233,175,263
+collisionex1,Top,polygon,151,279,101,295,41,201,50,175,94,133,180,123,282,164,298,196,271,255,223,289
 element0,overlay,surface1017.png,0,0
 }
 

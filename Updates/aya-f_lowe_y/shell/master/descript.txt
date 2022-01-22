@@ -8,8 +8,8 @@ seriko.alignmenttodesktop,free
 charset,UTF-8
 type,shell
 name,f_lowe_y
-craftman,Era
-craftmanurl,http://theoutworlder.tumblr.com
+craftman,Era the Outworlder
+craftmanurl,https://era-the-outworlder.github.io/era_makes_ghosts/index.html
 
 
 //Balloon Co-ordinates
@@ -60,9 +60,10 @@ menu.separator.color.b,240
 
 //Menu Background Image Alignment
 
-menu.background.alignment,righttop
-menu.foreground.alignment,righttop
-menu.sidebar.alignment,bottom
+
+menu.background.alignment,leftbottom+repeat-x+repeat-y
+menu.foreground.alignment,leftbottom+repeat-x+repeat-y
+menu.sidebar.alignment,leftbottom
 
 
 //Menu Background Image Location
