@@ -296,8 +296,8 @@ OnCloseAll
 		when 12-16
 		{
 			"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * G%(o_)%(o_)%(d_)-%(b_)%(y_)%(e_)\_w[500]"	
-			"\0\s[3]%(Narrator) * (You say you'll see everyone later.)\_w[500]"
 			"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Good afternoon."
+			"\0\s[3]%(Narrator) * (You say you'll see everyone later.)\_w[500]"
 		}
 		when 17-20
 		{

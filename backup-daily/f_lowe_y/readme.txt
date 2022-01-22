@@ -10,7 +10,7 @@
        ██    ██   ██ ██   ██ ██   ████ ██   ██ 
 	   
 
-Heya! I'm Era the Outworlder, thanks for stopping by! Hope you enjoy this, I enjoyed making it. You can pester me, ask for help, or submit bugs in the Ukagaka Dream Team Discord server to Era the Outworlder#8203 on Discord or email bug reports to bugreport@outworlderaffairs.com
+Heya! I'm Era the Outworlder, thanks for stopping by! Hope you enjoy this, I enjoyed making it. You can pester me, ask for help, or submit bugs in the Ukagaka Dream Team Discord server or at Era the Outworlder#8203 on Discord.
 
 I owe an unending amount of gratitude to Zarla (take a look at those links in the r-click menu) for her English template and tutorial site, without which this never would have been possible. Check her out, she does some awesome stuff.
 
@@ -20,8 +20,8 @@ Feel free to modify for your own use, and if you've done extensive modifications
 
 
 Anyway, have a nice day!
-~~~~~~~~~~Update: 01/21/2021 
-Version 2.0
+~~~~~~~~~~Update: 11/11/2021 
+Version 1.1.0
 5 years later I'm finally doing more (documented) updates and officially giving this a version number. Change log available in ghost.
 
 ~~~~~~~~~~Update: Oct 5 2016
