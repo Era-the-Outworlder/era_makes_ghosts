@@ -30,7 +30,7 @@ OnGetBirthday
 	// Format retained for compatibility w/GT Template ghosts.
 	dayslot = GetDaySlot 
 	
-	"\0\s[0] Enter Birthdate. \n/
+	"\0\s[0]%(Narrator)\n\n\n * Enter Birthdate. \n/
 	\![open,dateinput,OnInputBirthdate,,%(menuBYear),%(menuBMonth),%(menuBDay)]\x\n"
 	
 }
@@ -165,6 +165,17 @@ OnInputBirthdate
 	--
 	// Checks birthday against conditionals for finishing dialogue
 	"%(birthchecked)" 
+	--
+	if firstBoot == 1 || firstBoot == 2
+	{
+		"\_w[500]\_s\b[-1]\c\_s"
+		--
+		"\![timerraise,1000,1,OnFBContinue]"
+	}
+	else
+	{
+		"\e"
+	}
 }
 
 //This adds an appropriate ordinal suffix to the day.

@@ -11,11 +11,15 @@
 
 OnTeachPronouns
 {
-	"\c\0\s[3]\b2\_v[mus\sound_FLOWEY.mp3] * Do. %(d_)o. %(d_)%(o_).... Pronouns?\_w[500]\n\n\n[half]\_q"
-	"\c\0\s[3]\b2%(Narrator) * You are offered a choice of pronouns.\_w[500]\n\n\n[half]\_q"
-	--
+	"\t\c\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Do. %(d_)o. %(d_)%(o_).... Pronouns?\_w[500]\n\n\n[half]\_q/
+	\1\s[-1]\n\n\n/
+	\![*] \q[He-His-Him,OnSetPronouns,1]\n/
+	\![*] \q[She-Her-Her,OnSetPronouns,2]\n/	
+	\![*] \q[They-Their-Them,OnSetPronouns,3]\n/
+	\![*] \q[Something else...,OnTeachCustomPronoun]\0\s[0]"
 	
-	"\![*] \q[He-His-Him,OnSetPronouns,1]\n/
+	"\t\c\0\s[3]%(Narrator)\n\n\n * You are offered a choice of pronouns.\_w[500]\n\n\n[half]\_q/
+	\![*] \q[He-His-Him,OnSetPronouns,1]\n/
 	\![*] \q[She-Her-Her,OnSetPronouns,2]\n/	
 	\![*] \q[They-Their-Them,OnSetPronouns,3]\n/
 	\![*] \q[Something else...,OnTeachCustomPronoun]\0\s[0]"
@@ -50,19 +54,22 @@ OnSetPronouns
 		posPro = reference3
 	}
 	--
-
-	"\0\s[3]%(Narrator) * Your pronouns are %(nomPro), %(oblPro), and %(posPro).\n\n f_lowe_y will now call you by the correct pronouns.\n\n You can always change this from F_low_ey's User Configuration Menu."
-	--
 	
 	if firstBoot == 1
 	{
-		firstBoot = 0
+		"\0\s[3]%(Narrator) * You say that your pronouns are %(nomPro), %(oblPro), and %(posPro).\n\n f_lowe_y will now call you by the correct pronouns.\n\n You can always change this from f_low_ey's User Configuration Menu.\_w[500]\_s\b[-1]\c\_s"
 		--
-		OnTeachName
+		"\![timerraise,1000,1,OnGetBirthday]"	
+	}
+	elseif firstBoot == 2
+	{
+		"\0\s[3]%(Narrator) * You say that your pronouns are %(nomPro), %(oblPro), and %(posPro).\n\n f_lowe_y will now call you by the correct pronouns.\n\n You can always change this from f_low_ey's User Configuration Menu.\_w[500]\_s\b[-1]\c\_s"
+		--
+		"\![timerraise,1000,1,OnGetBirthday]"	
 	}
 	else
 	{
-		"\e"
+		"\0\s[3]%(Narrator) * Your pronouns are %(nomPro), %(oblPro), and %(posPro).\n\n f_lowe_y will now call you by the correct pronouns.\n\n You can always change this again later.\e"
 	}
 
 }

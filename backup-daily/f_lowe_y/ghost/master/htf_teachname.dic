@@ -14,9 +14,9 @@ OnTeachName
 {
 	if reference0 == "menu" //function was called from User Config
 		{	
-			"\c"
+			"\c\t"
 			--
-			"\0\s[3]%(Narrator) * (Change var_player_name?) \![open,inputbox,OnNameTeach,-1]\0\s[7]"
+			"\0\s[3]%(Narrator)\n\n\n * (Change var_player_name?) \![open,inputbox,OnNameTeach,-1]\0\s[7]"
 			
 			"\0\s[8]\_v[mus\sound_FLOWEY.mp3] * RE-RE-RE-RE-RE-\_w[500]\c\_v[mus\sound_FLOWEY.mp3] * Name the Fallen Human \![open,inputbox,OnNameTeach,-1]\0\s[7]"
 			
@@ -24,11 +24,11 @@ OnTeachName
 		}
 	else
 		{
-			"\c"
+			"\c\t"
 			--
 			"\0\s[3]\_v[mus\sound_FLOWEY.mp3]* Name. Name. \n\_w[500]\s[7] * Name. Fallen Human. Fallen... name? \![open,inputbox,OnNameTeach,-1]\x\s[0]"
 			
-			"\0\s[3]%(Narrator)\f[align,center] Name the Fallen Human\_w[500]\0\s[8]\![open,inputbox,OnNameTeach,-1]\x\s[0]"
+			"\0\s[3]%(Narrator)\n\n\n\f[align,center] Name the Fallen Human\_w[500]\0\s[8]\![open,inputbox,OnNameTeach,-1]\x\s[0]"
 		}
 }
 
@@ -161,10 +161,9 @@ OnNameTeach
 // If the user chooses to risk a FUN name
 OnRisk
 {
+	
 	if firstBoot == 1 //this checks for the flag that was set during the firstBoot sequence
 	{
-		firstBoot = 0 //this turns the flag off
-		
 		"\0\s[9]%(Narrator) * f_lowe_y has learned to call you... something.\0\s[3]"
 		--
 		OnTeachPronouns
@@ -238,14 +237,18 @@ NameDone
 {
 	if firstBoot == 1 //this checks for the flag that was set during the firstBoot sequence
 	{
-		firstBoot = 0 //this turns the flag off
-		
-		"\0\s[9]%(Narrator) * f_lowe_y has learned your name, \_w[500]%(username).\0\s[3]"
+		"\0\s[9]%(Narrator) * f_lowe_y has learned your name, \_w[500]%(username).\0\s[3]\_w[500]\_s\b[-1]\c\_s"
 		--
-		OnTeachPronouns
+		"\![timerraise,1000,1,OnTeachPronouns]"
+	}
+	elseif firstBoot == 2
+	{
+		"\0\s[9]%(Narrator) * Your name has been recorded as \_w[500]%(username).\0\s[3]\_w[500]\_s\b[-1]\c\_s"
+		--
+		"\![timerraise,1000,1,OnTeachPronouns]"
 	}
 	else
 	{
-		"\0\s[9]\_v[mus\sound_FLOWEY.mp3] * \_w[500]%(username) \_w[500]%(username) \_w[500]%(username) \_w[500]%(username) \_w[500]%(username)!"
+		"\0\s[9]\_v[mus\sound_FLOWEY.mp3] * \_w[500]%(username) \_w[500]%(username) \_w[500]%(username) \_w[500]%(username) \_w[500]%(username)!\e"
 	}	
 }

@@ -146,25 +146,25 @@ On_otherghostname
 }
 
 //---- SHIORI Information ------------------------------------------------------------------
-On_version
-{
-	GETSETTING(AYAINFO_VERSION)
-}
+// On_version
+// {
+	// GETSETTING(AYAINFO_VERSION)
+// }
 
-On_craftman
-{
-	"umeici"
-}
+// On_craftman
+// {
+	// "umeici"
+// }
 
-On_craftmanw
-{
-	"梅市"
-}
+// On_craftmanw
+// {
+	// "梅市"
+// }
 
-On_name
-{
-	"AYA"
-}
+// On_name
+// {
+	// "AYA"
+// }
 
 //---- Owned SSTP made with uniqueid ------------------------------------------------------
 On_uniqueid
