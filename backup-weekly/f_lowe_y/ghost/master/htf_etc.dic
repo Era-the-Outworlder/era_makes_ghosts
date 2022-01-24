@@ -146,25 +146,25 @@ On_otherghostname
 }
 
 //---- SHIORI Information ------------------------------------------------------------------
-On_version
-{
-	GETSETTING(AYAINFO_VERSION)
-}
+// On_version
+// {
+	// GETSETTING(AYAINFO_VERSION)
+// }
 
-On_craftman
-{
-	"umeici"
-}
+// On_craftman
+// {
+	// "umeici"
+// }
 
-On_craftmanw
-{
-	"梅市"
-}
+// On_craftmanw
+// {
+	// "梅市"
+// }
 
-On_name
-{
-	"AYA"
-}
+// On_name
+// {
+	// "AYA"
+// }
 
 //---- Owned SSTP made with uniqueid ------------------------------------------------------
 On_uniqueid
@@ -184,8 +184,6 @@ On_hwnd
 // -------- SAORI_CPUID --------
 // CPU related
 // 
-// / absence 
-// cpu.clockex High-precision clock frequency (unit: MHz, unit MHz) (Get up to 3 digits after the decimal point)
 
 
 
@@ -227,7 +225,7 @@ OnRunCPUID
 	--
 	"OS: %(_os_name) %(_os_version_int) \nBuild:%(_os_build) \n\n"
 	--
-	"CPU: %(cpu_name)\nClock Rate: %(cpu_clockex)MHz\n\n"
+	"CPU: %(_cpu_name)\nClock Rate: %(_cpu_clockex)MHz\n\n"
 
 	--	
 	
@@ -236,9 +234,7 @@ OnRunCPUID
 	--
 	"Memory Load: %(memoryload)\n Physical Memory: %(memoryavailphys) KB\n\n"
 	--
-	"Ukagaka: %property[baseware.name]\n"
-	--
-	"%property[baseware.version]"
+	"Ukagaka: %(basewarename)|%(basewarenameex)|%property[baseware.name] ver,%property[baseware.version]"
 	--
 	"\e"
 }

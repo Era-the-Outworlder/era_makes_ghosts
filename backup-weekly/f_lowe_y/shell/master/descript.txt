@@ -10,8 +10,8 @@ seriko.zorder,1,0
 charset,UTF-8
 type,shell
 name,f_lowe_y
-craftman,Era
-craftmanurl,http://theoutworlder.tumblr.com
+craftman,Era the Outworlder
+craftmanurl,https://era-the-outworlder.github.io/era_makes_ghosts/index.html
 
 
 //Balloon Co-ordinates

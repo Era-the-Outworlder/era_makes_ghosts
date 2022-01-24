@@ -1,5 +1,9 @@
 //--Balloonk4s.txt
 
+clickwaitmarker.filename,clickwaitmarker2
+clickwaitmarker.x,-165
+clickwaitmarker.y,-14
+
 use_self_alpha,1
 
 origin.x,0

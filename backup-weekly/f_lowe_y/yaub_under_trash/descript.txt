@@ -15,6 +15,9 @@ craftmanurl,https://era-the-outworlder.github.io/era_makes_ghosts/
 
 homeurl,https://github.com/Era-the-Outworlder/era_makes_ghosts/tree/main/Updates/yaub_under_trash
 
+clickwaitmarker.filename,clickwaitmarker
+clickwaitmarker.x,-130
+clickwaitmarker.y,-20
 
 //-- Defining Text Areas
 

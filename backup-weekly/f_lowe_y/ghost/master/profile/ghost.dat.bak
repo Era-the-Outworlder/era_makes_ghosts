@@ -23,14 +23,15 @@ Char4.center,629
 dateinput.left,1196
 teachbox.top,725
 timeinput.top,648
+seriko.waitmultiplier,100
 Char2.center,896
 Update.TestMode,0
-Char0.center,1453
+Char0.center,280
 scriptbox.top,226
 shell,shell\master\
 FirstBoot,booted
 passwordinput.left,810
-Char1.center,1590
+Char1.center,293
 sliderinput.top,382
 shiori.log,1
 shell.ischanged.2,1
@@ -38,4 +39,5 @@ inputbox.top,442
 timeinput.left,846
 update.lastexec,694922426
 communicatebox.top,724
+DeveloperPalette.visible,1
 __system_written_flag_do_not_remove__,written
