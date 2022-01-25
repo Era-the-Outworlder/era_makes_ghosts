@@ -53,16 +53,7 @@ MouseMoveSakura
 	when "Petals"
 	{
 		if stroke >= 90
-		{
-			
-			_pat1 = GLITCH("pat")
-			_pet1 = GLITCH("pet")
-			_pot1 = GLITCH("pot")
-			_pat2 = glitchLite("pat")
-			_pet2 = glitchLite("pet")
-			_pot2 = glitchLite("pot")
-			
-			
+		{			
 			stroke = 0 //resetting the stroke count
 			petCount++
 			case petCount
@@ -71,18 +62,18 @@ MouseMoveSakura
 			{
 				
 				"\0\s[21]\_v[mus\sound_FLOWEY.mp3] * Stop. sssssssssssstop.  \_w[500]"
-				"\0\s[9]\_v[mus\sound_FLOWEY.mp3] * Pat. Pet. %(_pat1)%(_pet1)%(_pot1)%(_pat1)%(_pot1)%(_pet1).  \_w[500]"
+				"\0\s[9]\_v[mus\sound_FLOWEY.mp3] * Pat. Pet. \![embed,OnGLITCH,pat]\![embed,OnGLITCH,pet]\![embed,OnGLITCH,pot]\![embed,OnGLITCH,pat]\![embed,OnGLITCH,pot]\![embed,OnGLITCH,pet].  \_w[500]"
 				"\0\s[21]%(Narrator) * (You get the feeling he might appreciate it more if you'd stop.) \_w[1500]"
 				"\0\s[9]%(Narrator) * He seems to be enjoying this.\_w[500]"
 			}
 			when 11-50
 			{
-				"\0\s[9]\_v[mus\sound_FLOWEY.mp3] * Pat. Pet. %(_pat1)%(_pet2)%(_pot1)%(_pat2)%(_pot2)%(_pet1).  \_w[500]"
+				"\0\s[9]\_v[mus\sound_FLOWEY.mp3] * Pat. Pet. \![embed,OnGLITCH,pat]\![embed,OnGlitchLite,pet]\![embed,OnGLITCH,pot]\![embed,OnGlitchLite,pat]\![embed,OnGlitchLite,pot]\![embed,OnGlitchLite,pet].  \_w[500]"
 				"\0\s[9]%(Narrator) * He seems to be enjoying this.\_w[500]"
 			}
 			when 50-100
 			{
-				"\0\s[9]\_v[mus\sound_FLOWEY.mp3] * Pat. %(_pat2)%(_pet2)%(_pot2)%(_pat2)%(_pot2)%(_pet2).  \_w[500]"
+				"\0\s[9]\_v[mus\sound_FLOWEY.mp3] * Pat. \![embed,OnGlitchLite,pat]\![embed,OnGlitchLite,pet]\![embed,OnGlitchLite,pot]\![embed,OnGlitchLite,pat]\![embed,OnGlitchLite,pot]\![embed,OnGlitchLite,pet].  \_w[500]"
 				"\0\s[9]%(Narrator) * He seems to be enjoying this.\_w[500]"
 			}
 			others
@@ -95,9 +86,9 @@ MouseMoveSakura
 	}
 	when "Face" 
 	{
-		_stop = glitchLite("stop")
-		_face = GLITCH("face")
 		
+		_face = OnGLITCH("face")
+
 		if stroke >= 120
 		{
 			stroke = 0 //resetting the stroke count
@@ -107,11 +98,11 @@ MouseMoveSakura
 			when 0-100
 			{
 				"\0\s[21]\_v[mus\sound_FLOWEY.mp3] * Stop. sssssssssssstop. Why. %(_face)? \_w[500]"
-				"\0\s[21]%(Narrator) * (You get the feeling he would appreciate it more if you'd %(_stop) touching his face.) \_w[1500]"
+				"\0\s[21]%(Narrator) * (You get the feeling he would appreciate it more if you'd \![embed,OnGlitchLite,stop] touching his face.) \_w[1500]"
 			}
 			others
 			{
-				"\0\s[17]\_v[mus\sound_FLOWEY.mp3]\f[height,25] * %(_stop).%(_stop).%(_stop).%(_stop)\f[default] \_w[500]"
+				"\0\s[17]\_v[mus\sound_FLOWEY.mp3]\f[height,25] * \![embed,OnGlitchLite,stop].\![embed,OnGlitchLite,stop].\![embed,OnGlitchLite,stop].\![embed,OnGlitchLite,stop]\f[default] \_w[500]"
 				"\0\s[17]%(Narrator) * Does his anger amuse you? \_w[1500]"
 			}
 			}
@@ -192,9 +183,9 @@ MouseDoubleClickSakura
 		elseif knifeTime >= 12
 		{
 			knifeTime++
-			_stop = GLITCH("stop it")
-			_cut = GLITCH("cut that out")
-			_hey = GLITCH("hey you")
+			_stop = OnGLITCH("stop it")
+			_cut = OnGLITCH("cut that out")
+			_hey = OnGLITCH("hey you")
 			"\0\s[15]\_v[mus\r_ack.wav] * %(_stop)!\_w[500]"
 			"\0\s[21]\_v[mus\r_oh.wav] * %(_cut)!!\_w[500]"
 			"\0\s[14]\1\s[-1]\_v[mus\r_screech.wav] * (Scared noises)\_w[500]"

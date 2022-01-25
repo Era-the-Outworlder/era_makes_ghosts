@@ -452,7 +452,7 @@ menuIntro
 	{
 		menuOption = 0
 		"\0\s[3]\_v[mus\sound_FLOWEY.mp3]* oooooooooOOOOOOOOO\nOpe_ Me_u.\_w[1500]\c\_q* Howdy!!"
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3]* What-%(GLITCH(what))-do you want?"
+		"\0\s[3]\_v[mus\sound_FLOWEY.mp3]* What-\![embed,OnGLITCH,what]-do you want?"
 		"\0\s[3]\_v[mus\sound_FLOWEY.mp3]* NEED?"
 	}
 	{

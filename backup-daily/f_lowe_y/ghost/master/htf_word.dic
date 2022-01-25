@@ -95,9 +95,9 @@ nonono
 }
 
 HAPPY
-{
-	_hap = GLITCH("happy")
-	"Happy Happy Happy Happy Happy Happy Happy happy happy happy happy happy happy happy happy happy happy happy happy happy happyhappy happy happy happy happy happy happy happy happy happy happy happy happy happyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAppyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPpyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPyHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPYHAPPY%(_hap)%(_hap)%(_hap)%(_hap)%(_hap)%(_hap)%(_hap)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)%(h_)%(a_)%(p_)%(p_)%(y_)"
+{	
+	_hap = OnGLITCH("happy")
+	"Happy Happy Happy Happy Happy Happy Happy happy happy happy happy happy happy happy happy happy happy happy happy happy happyhappy happy happy happy happy happy happy happy happy happy happy happy happy happyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappyhappy\![embed,OnGlitchLite,happy]\![embed,OnGlitchLite,happy]\![embed,OnGlitchLite,happy]\![embed,OnGlitchLite,happy]\![embed,OnGlitchLite,happy]\![embed,OnGlitchLite,happy]\![embed,OnGlitchLite,happy]\![embed,OnGlitchLite,happy]\![embed,OnGlitchLite,happy]\![embed,OnGlitchLite,happy]\![embed,OnGlitchLite,happy]\![embed,OnGlitchLite,happy]\![embed,OnGlitchLite,happy]\![embed,OnGlitchLite,happy]\![embed,OnGlitchLite,happy]\![embed,OnGLITCH,happy]\![embed,OnGLITCH,happy]\![embed,OnGLITCH,happy]\![embed,OnGLITCH,happy]\![embed,OnGLITCH,happy]\![embed,OnGLITCH,happy]\![embed,OnGLITCH,happy]\![embed,OnGLITCH,happy]\![embed,OnGLITCH,happy]\![embed,OnGLITCH,happy]\![embed,OnGLITCH,happy]\![embed,OnGLITCH,happy]\![embed,OnGLITCH,happy]\![embed,OnGLITCH,happy]\![embed,OnGLITCH,happy]\![embed,OnGLITCH,happy]\![embed,OnGLITCH,happy]\![embed,OnGLITCH,happy]\![embed,OnGLITCH,happy]\![embed,OnGLITCH,happy]"
 }
 
 usersfolder
@@ -112,16 +112,14 @@ usersfolder
 
 change
 {
-	if RAND(100)>=74{_change = GLITCH("change");"%(_change)"}
-	elseif RAND(100)>=24{_change = glitchLite("change");"%(_change)"}
+	if RAND(100)>=74{"\![embed,OnGLITCH,change]"}
+	elseif RAND(100)>=24{"\![embed,OnGlitchLite,change]"}
 	else{"Change"}	
 }
 
 lateearly
-{
-	_late = GLITCH("late")
-	_early = GLITCH("early")
-	"LATE. EARLY. %(l_)ATE. %(e_)ARLY. L%(a_)%(t_)E. EA%(r_)L%(y_). %(l_)%(a_)%(t_)%(e_). %(e_)%(a_)%(r_)%(l_)%(y_). %(_late). %(_early)."
+{	
+	"LATE. EARLY. %(l_)ATE. %(e_)ARLY. L%(a_)%(t_)E. EA%(r_)L%(y_). \![embed,OnGLITCH,late]. \![embed,OnGLITCH,early]). \![embed,OnGLITCH,late]. \![embed,OnGLITCH,early]."
 }
 
 

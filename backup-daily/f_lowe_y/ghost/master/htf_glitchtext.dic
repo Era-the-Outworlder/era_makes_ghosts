@@ -10,24 +10,42 @@
 //               ▀                                                    
 
 // THIS THING IS A MESSSSSSS. But I love it.
-
+			
+			// \![embed,OnGLITCH,happy]
+			// \![embed,OnGlitchLite,happy]
 
 // separates strings into characters, sends to glitch converter
-GLITCH 
+OnGLITCH 
 {
-
-	_text = TOLOWER(_argv[0])
+	_text = ""
+	if !_argv
+	{
+		_text = TOLOWER(reference0)
+	}
+	else
+	{
+		_text = TOLOWER(_argv[0])
+	}
 	_send = CHARSPLIT(_text)
 	_final = OnGlitchReplace(_send)
 	--
 	_final;
 }
 
-// separates strings into characters, sends to glitchLite converter
-glitchLite	
-{
 
-	_text = TOLOWER(_argv[0])
+// separates strings into characters, sends to OnGlitchLite converter
+
+OnGlitchLite	
+{
+	_text = ""
+	if reference0
+	{
+		_text = TOLOWER(reference0)
+	}
+	else
+	{
+		_text = TOLOWER(_argv[0])
+	}
 	_send = CHARSPLIT(_text)
 	_final = OnGliteReplace(_send)
 	--

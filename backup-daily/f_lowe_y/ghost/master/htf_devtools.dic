@@ -116,6 +116,10 @@ refTest
 	"\_q\b2\![set,autoscroll,disable]%(_display)\x"
 }
 
+OnEmbedTest
+{
+	"Argument:\n%(_argv)\nReference:\n%(refTest)\x"
+}
 
 OnTeach
 {

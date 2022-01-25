@@ -16,7 +16,7 @@ OnTeachName
 		{	
 			"\c\t"
 			--
-			"\0\s[3]%(Narrator)\n\n\n * (Change var_player_name?) \![open,inputbox,OnNameTeach,-1]\0\s[7]"
+			"\0\s[3]%(Narrator)\n\n\n * Change var_player_name? \![open,inputbox,OnNameTeach,-1]\0\s[7]"
 			
 			"\0\s[8]\_v[mus\sound_FLOWEY.mp3] * RE-RE-RE-RE-RE-\_w[500]\c\_v[mus\sound_FLOWEY.mp3] * Name the Fallen Human \![open,inputbox,OnNameTeach,-1]\0\s[7]"
 			
@@ -102,7 +102,7 @@ OnNameTeach
 			else
 			{
 				username = _tempname //this sets the user's name to what they entered
-				_temp = GLITCH(username)
+				_temp = OnGLITCH(username)
 				"\0\s[23]\_v[mus\sound_FLOWEY.mp3] * %(_temp) \0\s[0]\n"
 				"\0\s[23]%(Narrator) * It appears he has... fond? ...memories of someone. \n"
 			}
@@ -120,7 +120,7 @@ OnNameTeach
 			else
 			{
 				username = _tempname //this sets the user's name to what they entered
-				_temp = GLITCH(username)
+				_temp = OnGLITCH(username)
 				"\0\s[23]\_v[mus\sound_FLOWEY.mp3] * %(_temp) \0\s[0]\n"
 				"\0\s[23]%(Narrator) * It appears he has... [var_sentiment] ...memories of someone. \n"
 			}
