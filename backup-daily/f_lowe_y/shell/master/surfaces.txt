@@ -320,13 +320,20 @@ element0,overlay,surface1.png,0,0
 
 
 animation0.interval,runonce
-animation0.pattern0,overlayfast,1000,0,0,0
+animation0.pattern0,overlayfast,1017,0,0,0
 
 
-animation1.interval,talk,2
+animation1.interval,talk,8
 animation1.pattern0,stop,(0)
-animation1.pattern1,overlay,1017,100,0,0
-animation1.pattern2,overlay,1005,100,0,0
+animation1.pattern1,overlay,1901,100,0,0
+animation1.pattern2,overlay,1902,100,0,0
+animation1.pattern3,overlay,1903,100,0,0
+animation1.pattern4,overlay,1904,100,0,0
+animation1.pattern5,overlay,1905,100,0,0
+
+animation2.interval,yen-e
+animation2.pattern0,stop,(1)
+animation2.pattern1,overlay,1001,0,0,0
 }
 
 // Toothy Smile

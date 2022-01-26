@@ -58,9 +58,6 @@ OnFBStart
 	silentMode = reference1
 	if reference0 == 0 //Don't touch this line.
  	{
-		username = "Era"
-		
-		
 		firstBoot = 1
 		_flow1 = OnGlitchLite("flowey")
 		_flow1 = "\f[color,#FFFF00]" + _flow1 + "\f[color,default]"
@@ -76,14 +73,15 @@ OnFBStart
 		--
 		"\0\s[-1]\1\s[-1]\f[align,center]\n\n\n * CONNECTED.\_w[100]\n\f[align,center]Initiating Transfer\_w[100].\_w[100].\_w[100].\_w[500]\c/
 		%(Narrator)\n\n * Transfer %(CHR(37))(_transferStatus).\_w[500]\n\n/
-		S O M E T H I N G  H A S\_w[50].\_w[50].\_w[50]?\_w[500]\_w[1500]\c/
+		S O M E T H I N G  H A S \_w[50].\_w[50].\_w[50].\_w[50].\_w[50]?\_w[1500]\c/
 		\0\s[0]%(Narrator)\n\n * Despite everything... \n\n          IT's still f_lowe_y. \_w[2000]\n/
 		\0\s[0]\_v[mus\sound_FLOWEY.mp3] * Howdy!\_w[500]\n/
 		\_v[mus\sound_FLOWEY.mp3] * I\_w[80]'\_w[200]m\_w[40] %(_flow1)\_w[120].\n * %(_flow2)\_w[180] t\_w[160]h\_w[180]e\_w[200] %(_flow3)\_w[500]!\_w[1000]\_s\b[-1]\c\_s/
 		\_v[mus\sound_FLOWEY.mp3] * 're new to new to NEWNEWNEWNEWNEWNEW NEW TO %(CHR(37))(var_locale)\_w[2000]\n/
-		\c\_v[mus\sound_FLOWEY.mp3] * G O L L Y\n * so confused so confused so confused confused confused \![embed,OnGLITCH,confused]\![embed,OnGLITCH,confused]\![embed,OnGLITCH,confused]\![embed,OnGLITCH,confused]\![embed,OnGLITCH,confused]\![embed,OnGLITCH,confused]"
-		
-		// "\![timerraise,1000,1,OnTeachName]"
+		\c\_v[mus\sound_FLOWEY.mp3] * G O L L Y\n * so confused so confused so confused confused confused \![embed,OnGLITCH,confused]\![embed,OnGLITCH,confused]\![embed,OnGLITCH,confused]\![embed,OnGLITCH,confused]\![embed,OnGLITCH,confused]\![embed,OnGLITCH,confused]\_w[2000]\c\n\n * ���̂������̃��[�������Ȃ��ł���H\_w[2000]\_s\b[-1]\c\_s/
+		%(Narrator)\n\n\n * Please record PlayerData "
+		--		
+		"\![timerraise,1000,1,OnTeachName]"
  	}
 	else
  	{
