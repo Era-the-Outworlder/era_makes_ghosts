@@ -104,7 +104,7 @@ RandomTalk : nonoverlap
 	
 			"\0\s[13]\_v[mus\sound_FLOWEY.mp3] * You... are...? \_w[500]"
 			
-			"\0\s[7]\_v[mus\sound_FLOWEY.mp3] * (Is there something over there?)\_w[500]"
+			"\0\s[7]%(Narrator) * Is there something over there?\_w[500]"
 			
 			// ---- Narrator ----
 			
