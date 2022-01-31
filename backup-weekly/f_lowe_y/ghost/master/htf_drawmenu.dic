@@ -111,7 +111,7 @@ On_homeurl
  
 On_vanishbutton.caption
 {	
-	GLITCH("uninstall")
+	OnGLITCH("uninstall")
 }
 
 
@@ -492,11 +492,11 @@ CapGlitch
 {
 	_cap = _argv[0]
 	if ellVee >=20 
-	{_cap = GLITCH("help");"%(_cap)"}
+	{_cap = OnGLITCH("help");"%(_cap)"}
 	elseif ellVee >= 7
-	{_cap = GLITCH("%(_cap)");"%(_cap)"}
+	{_cap = OnGLITCH("%(_cap)");"%(_cap)"}
 	elseif ellVee >=3
-	{_cap = glitchLite("%(_cap)");"%(_cap)"}
+	{_cap = OnGlitchLite("%(_cap)");"%(_cap)"}
 	else
 	{"%(_cap)"}
 }	
@@ -505,11 +505,11 @@ CapGlitch2
 {
 	_cap = _argv[0]
 	if ellVee >=20 
-	{_cap = GLITCH("help");"%(_cap)"}
+	{_cap = OnGLITCH("help");"%(_cap)"}
 	elseif ellVee >= 10 
-	{_cap = GLITCH("%(_cap)");"%(_cap)"}
+	{_cap = OnGLITCH("%(_cap)");"%(_cap)"}
 	elseif ellVee >=5
-	{_cap = glitchLite("%(_cap)");"%(_cap)"}
+	{_cap = OnGlitchLite("%(_cap)");"%(_cap)"}
 	else
 	{"%(_cap)"}
 }
@@ -518,7 +518,7 @@ CapGlitch3
 {
 	_cap = _argv[0]
 	if ellVee >=2
-	{_cap = glitchLite("%(_cap)");"%(_cap)"}
+	{_cap = OnGlitchLite("%(_cap)");"%(_cap)"}
 	else
 	{"%(_cap)"}
 }	

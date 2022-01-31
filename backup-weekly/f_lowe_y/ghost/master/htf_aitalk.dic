@@ -104,7 +104,7 @@ RandomTalk : nonoverlap
 	
 			"\0\s[13]\_v[mus\sound_FLOWEY.mp3] * You... are...? \_w[500]"
 			
-			"\0\s[7]\_v[mus\sound_FLOWEY.mp3] * (Is there something over there?)\_w[500]"
+			"\0\s[7]%(Narrator) * Is there something over there?\_w[500]"
 			
 			// ---- Narrator ----
 			
@@ -167,10 +167,9 @@ RandomTalk : nonoverlap
 		
 			"\0\s[26]\i[0]\_v[mus\sound_FLOWEY.mp3]\f[align,center]EVERYONE"
 			
-			{
-				_EV = GLITCH("EVERYONE")
-				"\0\s[26]\i[1]\_v[mus\sound_FLOWEY.mp3]\f[align,center]%(_EV)"
-			}
+
+			"\0\s[26]\i[1]\_v[mus\sound_FLOWEY.mp3]\f[align,center]\![embed,OnGLITCH,EVERYONE]"
+
 			
 			"\0\s[27]%(Narrator) * Swing and miss. "
 			
@@ -189,7 +188,7 @@ RandomTalk : nonoverlap
 		"\0\s[23]\_v[mus\sound_FLOWEY.mp3] * Howdy! \_w[500]"
 		
 		{
-			_nm = GLITCH("nightmare")
+			_nm = OnGLITCH("nightmare")
 			"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * It's all a %(_nm)... \_w[1000]\c\_w[500]\s[16]AND WE'RE NEVER WAKING UP!!!!!!\_w[2500]\c%(floweyLaugh)\_w[500]"
 		}
 		
@@ -295,7 +294,7 @@ RandomTalk : nonoverlap
 			"\0\s[26]\i[0]\_v[mus\sound_FLOWEY.mp3]\f[align,center]EVERYONE"
 			
 			{
-				_EV = GLITCH("EVERYONE")
+				_EV = OnGLITCH("EVERYONE")
 				"\0\s[26]\i[1]\_v[mus\sound_FLOWEY.mp3]\f[align,center]%(_EV)"
 			}
 			

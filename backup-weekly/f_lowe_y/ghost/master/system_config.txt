@@ -22,6 +22,8 @@ dic, system/yaya_compatible.dic
 //------------------------------------------------------------------------------
 
 log, ayame.log	
+maxlognum,1000
+messagetxt,system/messagetxt/english.txt
 
 // Do not log these events
 ignoreiolog, ID: OnSecondChange 

@@ -41,7 +41,8 @@ shiori.cache,0
 // shiori.logo.align, location information
 
 
-// -----Ghost Identification-----
+// ----- Ghost Identification -----
+
 name,f_lowe_y
 type,ghost
 id,f_lowe_y
@@ -64,10 +65,10 @@ sakura.seriko.alignmenttodesktop,free
 
 sakura.seriko.defaultsurface, 0
 
-// sakura.defaultx,0
-// sakura.defaulty,0
-// sakura.defaultleft,0
-// sakura.defaulttop,0
+// sakura.defaultx,50
+// sakura.defaulty,-457
+sakura.defaultleft,50
+sakura.defaulttop,600
 
 // ---- Kero ----
 kero.seriko.alignmenttodesktop, free
@@ -88,18 +89,18 @@ kero.seriko.defaultsurface,10
 // char3.defaultleft,0
 // char3.defaulttop,0
 
-//----Balloon----
+// ---- Balloon ----
 balloon.defaultsurface,0
 sakura.balloon.defaultsurface,0
 kero.balloon.defaultsurface,0
 char3.balloon.defaultsurface,0
 
-balloon.dontmove, false
-balloon,undertrash
-default.balloon.path,\undertrash\
+balloon.dontmove,false
+balloon,underTRASH
+default.balloon.path,\yaub_under_trash\
 
-recommended.balloon,undertrash
-recommended.balloon.path,\undertrash\
+recommended.balloon,underTRASH
+recommended.balloon.path,\yaub_under_trash\
 
 
 // ---- Additional Settings ----

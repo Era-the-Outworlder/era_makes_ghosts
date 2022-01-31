@@ -45,7 +45,7 @@ OnStartCommunicate
 			{
 				res_reference0 = "Gaze"
 				gazeTalk ++
-				_gz = GLITCH("Gaze")
+				_gz = OnGLITCH("Gaze")
 				case gazeTalk
 				{
 				when 1-5
@@ -131,7 +131,7 @@ ReplyToGhost
 	{
 		responseTimes++
 		_speaker = TOLOWER(reference0) //changes it to lowercase
-		_glSpeaker = GLITCH(reference0)
+		_glSpeaker = OnGLITCH(reference0)
 		if "gaze" _in_ _speaker
 		{
 			gazeTalk++
@@ -150,7 +150,7 @@ ReplyToGhost
 			
 			"\0\s[16]\1\s[-1]\_v[mus\garbage_noise.wav] * The flower produces a stream of garbage noise.\e"
 			
-			{_hey = glitchLite("HEY EVERY       ! IT'S");"\0\s[23]\_v[mus\sound_FLOWEY.mp3]%(_hey)%(_glSpeaker)\e"}
+			{_hey = OnGlitchLite("HEY EVERY       ! IT'S");"\0\s[23]\_v[mus\sound_FLOWEY.mp3]%(_hey)%(_glSpeaker)\e"}
 		}
 		elseif "gaster" _in_ _speaker
 		{	
@@ -158,7 +158,7 @@ ReplyToGhost
 			res_reference0 = reference0
 			if "teeheegooglied" _in_ reference1
 			{
-				_googlymoogly = glitchLite("Dr. W.D. Gaster")
+				_googlymoogly = OnGlitchLite("Dr. W.D. Gaster")
 				"%(floweyLaugh)\e"
 				"\0\s[3]%(Narrator) * The Great %(_googlymoogly)."
 			}
@@ -173,7 +173,7 @@ ReplyToGhost
 		else
 		{	
 			res_reference0 = reference0
-			_glitchComm = GLITCH("test")
+			_glitchComm = OnGLITCH("test")
 			"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * '%(_glSpeaker)'.\_w[500]\0\s[3]YOU.\e"
 		
 			"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * wait Wait wa i t, '%(_glSpeaker)'. no\e"
