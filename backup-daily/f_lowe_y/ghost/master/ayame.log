@@ -1,5 +1,5 @@
 // AYA request log
-// load time: 2022/01/30 21:01:52
+// load time: 2022/02/02 23:26:51
 
 // Loading of dictionary file
 // - D:\SSP\ghost\f_lowe_y\ghost\master\yaya_config.txt
@@ -52,7 +52,7 @@ SecurityLevel: local
 Sender: SSP
 
 
-// response (Execution time : 0[ms])
+// response (Execution time : 16[ms])
 SHIORI/3.0 200 OK
 Sender: AYA
 Charset: UTF-8
@@ -69,5 +69,5 @@ ID: enable_log
 Reference0: 1
 
 
-// unload time: 2022/01/30 21:01:52
+// unload time: 2022/02/02 23:26:51
 

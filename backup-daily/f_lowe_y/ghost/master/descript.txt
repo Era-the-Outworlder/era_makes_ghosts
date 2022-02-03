@@ -55,6 +55,7 @@ kero.name,The Narrator
 //Shell allowed to override sakura/kero/char{*} names when 1
 name.allowoverride,0
 
+
 //----- Default Surfaces and Positions -----
 
 seriko.alignmenttodesktop, free
@@ -68,7 +69,7 @@ sakura.seriko.defaultsurface, 0
 // sakura.defaultx,50
 // sakura.defaulty,-457
 sakura.defaultleft,50
-sakura.defaulttop,600
+// sakura.defaulttop,600
 
 // ---- Kero ----
 kero.seriko.alignmenttodesktop, free
@@ -77,7 +78,7 @@ kero.seriko.defaultsurface,10
 
 // kero.defaultx,0
 // kero.defaulty,0
-// kero.defaultleft,0
+kero.defaultleft,225
 // kero.defaulttop,0
 
 // ---- Char3 ----

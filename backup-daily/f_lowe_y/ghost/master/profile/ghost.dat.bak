@@ -31,7 +31,7 @@ scriptbox.top,145
 shell,shell\master\
 FirstBoot,booted
 passwordinput.left,810
-Char1.center,238
+Char1.center,235
 sliderinput.top,382
 shiori.log,1
 shell.ischanged.2,1
