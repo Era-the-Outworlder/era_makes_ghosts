@@ -96,6 +96,15 @@ sakura.balloon.defaultsurface,0
 kero.balloon.defaultsurface,0
 char3.balloon.defaultsurface,0
 
+
+sakura.balloon.offsetx,-10
+sakura.balloon.offsety,-100
+
+
+kero.balloon.offsetx,-170
+kero.balloon.offsety,-350
+
+
 balloon.dontmove,false
 balloon,underTRASH
 default.balloon.path,\yaub_under_trash\

@@ -44,7 +44,7 @@ font.color.b,255
 
 
 
-windowposition.x,100
+// windowposition.x,100
 // windowposition.y,0
 windowposition.limit,1
 
