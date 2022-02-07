@@ -10,6 +10,8 @@ OnfirstBoot
 {
 	OnNotifyUserInfo
 	--
+	On_basewareversion
+	--
  	lastTalk = "" //This is part of how chained conversations work (see aitalk.dic).
 	passmin = 0 
 	passsec = 0 // These two keep track of the time.
@@ -25,6 +27,7 @@ OnfirstBoot
 	
 	//wisott
 	installinfo = ("%(year)","%(month)","%(day)","%(hour)","%(minute)","%(second)","%(OnGhostVer)")
+	
 	// Custom options
 	silentMode = "OFF" //does not start in silent mode
 	canDesktopEye = "OFF" //does not start off commenting on open programs

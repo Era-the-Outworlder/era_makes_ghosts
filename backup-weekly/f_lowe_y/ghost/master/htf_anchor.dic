@@ -10,22 +10,39 @@
 //                                                                 
 
 
+// OnTranslate
+// {
+	// _talk = reference0
+	// _talk = REPLACE(_talk, "bugreport(at)outworlderaffairs.com", "\_a[bugmail]bugreport@outworlderaffairs.com\_a")		
+	// if silentMode == "ON"
+	// {
+		// _talk = REPLACE(_talk, "\_v[", "\![sound,stop,")
+		// --
+		// "%(_talk)"
+	// }
+	// else	
+	// {
+		// "%(_talk)"
+	// }	
+// }
 OnTranslate
 {
-	_talk = reference0
-	_talk = REPLACE(_talk, "bugreport(at)outworlderaffairs.com", "\_a[bugmail]bugreport@outworlderaffairs.com\_a")		
-	if silentMode == "ON"
-	{
-		_talk = REPLACE(_talk, "\_v[", "\![sound,stop,")
-		--
-		"%(_talk)"
-	}
-	else	
-	{
-		"%(_talk)"
-	}	
+    _talk = reference0
+    _talk = REPLACE(_talk, "bugreport(at)outworlderaffairs.com","\_a[bugmail]bugreport@outworlderaffairs.com\_a")        
+    if silentMode == "ON"
+    {
+        _talk = REPLACE(_talk, "\_v[", "\![sound,stop,")
+    }
+    
+    if reference1 == "" && reference2 == ""
+    { //send input box : no event (ref2) , no special flag (ref1)
+        EVAL('"' + REPLACE(_talk,'"','" + CHR(0x22) + "') + '"')
+    }
+    else
+    { //event result from ghost
+        TOSTR(_talk)
+    }
 }
-
 	
 // ---- OnAnchorSelectEx ----
 //\ _a Occurs the moment the link is clicked. Reference0 = Link text. Reference1 = Link ID

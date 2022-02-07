@@ -19,7 +19,7 @@ OpenSakuraMenu
 
 OnMenuRun
 {	
-	"\n\n\_q" 
+	"\b2\n\n[half]\_q" 
 	--
 	if lastTalk != ""
 	{
@@ -50,11 +50,11 @@ OnMenuRun
 	--
 	if lastUpDate
 	{
-		"Last Updated: %(lastUpDate)\n\n"
+		"Last Updated: %(lastUpDate)\n\n[half]"
 	}
 	else
 	{
-		"\n\n"
+		"\n\n[half]"
 	}
 	--
  	"\![*] \q[%(closeMenu),CANCEL]\n\n[half]"
@@ -344,15 +344,14 @@ OnFunctionMenu
 	\![*] \q[View Ghost Changelog,OnChangeLog,menu]\n\n[half]\n/
 	\![*] \q[%(backMenu),OnMenuRun]\n"
 	--
-	"\n\n\![*] \q[Test variable,OnTestVariable]\n"
-	// if username == "Era"
-	// {
-		// "\n\n\![*] \q[Test variable,OnTestVariable]\n"
-	// }
-	// else
-	// {
-		// "\e"
-	// }
+	if username == "Era" || username == "BugTest"
+	{
+		"\n\n\![*] \q[Test variable,OnTestVariable]\n"
+	}
+	else
+	{
+		"\e"
+	}
 }
 
 
@@ -417,8 +416,6 @@ Select.resetSTATS
 }
 
 
-
-
 // ---- Weird testing stuff end ----
 
 
@@ -451,14 +448,31 @@ menuIntro
 {
 	{
 		menuOption = 0
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3]* oooooooooOOOOOOOOO\nOpe_ Me_u.\_w[1500]\c\_q* Howdy!!"
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3]* What-\![embed,OnGLITCH,what]-do you want?"
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3]* NEED?"
+		if ellVee >=2
+		{
+			"\0\s[3]\_v[mus\sound_FLOWEY.mp3]* \![embed,OnGLITCH,oooooooooOOOOOOOOOoooooooooOOOOOOOOO]\n\![embed,OnGLITCH,open menu.]\_w[1500]\c\_q* Howdy!!"
+			"\0\s[3]\_v[mus\sound_FLOWEY.mp3]* What-\![embed,OnGLITCH,what]-\![embed,OnGLITCH,what]- do you want?"
+			"\0\s[3]\_v[mus\sound_FLOWEY.mp3]* \![embed,OnGLITCH,need]\![embed,OnGLITCH,need]NEED?"
+		}
+		else
+		{
+			"\0\s[3]\_v[mus\sound_FLOWEY.mp3]* oooooooooOOOOOOOOO\nOpe_ Me_u.\_w[1500]\c\_q* Howdy!!"
+			"\0\s[3]\_v[mus\sound_FLOWEY.mp3]* What-\![embed,OnGLITCH,what]-do you want?"
+			"\0\s[3]\_v[mus\sound_FLOWEY.mp3]* NEED?"
+		}
 	}
 	{
 		menuOption = 1
-		_him = "%(callHim)"
-		"\0\s[3]\_v[mus\HELP_text.mp3]* (You ask %(_him) to...)"
+		if ellVee >= 2
+		{
+			"\0\s[3]\_v[mus\HELP_text.mp3]* (You tell him...)"
+			"\0\s[3]\_v[mus\HELP_text.mp3]* (You tell f_lowe_y...)"
+		}
+		else
+		{
+			"\0\s[3]\_v[mus\HELP_text.mp3]* (You ask him to...)"
+			"\0\s[3]\_v[mus\HELP_text.mp3]* (You ask f_lowe_y to...)"
+		}
 	}
 }
 
@@ -474,9 +488,9 @@ rlTalk
 		}
 		else
 		{
-			"select.ONLASTTALK"
-			"Repeat Last Dialogue"
 			"Say that again..."
+			"Repeat Last Dialogue"
+			"select.ONLASTTALK"
 		}
 		
 	}
@@ -503,6 +517,10 @@ newTalk
 	"SA_ _NYTHING"
 }
 
+ghostChat
+{
+	"Chat with Others"
+}
 userMenu
 {
 	"select.USERMENU"

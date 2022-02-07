@@ -143,6 +143,13 @@ On_otherghostname
 	ghostexcount = ARRAYSIZE(ghostexlist)
 }
 
+On_basewareversion
+{
+	bwVersion = reference0
+	bodyVersion = reference1
+	bwVersionEX = reference2
+}
+
 //---- SHIORI Information ------------------------------------------------------------------
 // On_version
 // {
@@ -183,9 +190,6 @@ On_hwnd
 // CPU related
 // 
 
-
-
-
 OnRunCPUID
 {
 		// OS related
@@ -197,44 +201,38 @@ OnRunCPUID
 	
 		//CPU related
 	_cpu_name = FUNCTIONEX("saori_cpuid.dll","cpu.name")
-	// _cpu_num = FUNCTIONEX("saori_cpuid.dll","cpu.num")
-	// _cpu_vender = FUNCTIONEX("saori_cpuid.dll","cpu.vender")
-	// _cpu_ptype = FUNCTIONEX("saori_cpuid.dll","cpu.ptype")
-	// _cpu_family = FUNCTIONEX("saori_cpuid.dll","cpu.family") 
-	// _cpu_model = FUNCTIONEX("saori_cpuid.dll","cpu.model") 
-	// _cpu_step = FUNCTIONEX("saori_cpuid.dll","cpu.stepping")
-	// _cpu_mmx = FUNCTIONEX("saori_cpuid.dll","cpu.mmx")  
-	// _cpu_sse = FUNCTIONEX("saori_cpuid.dll","cpu.sse")  
-	// _cpu_sse2 = FUNCTIONEX("saori_cpuid.dll","cpu.sse2") 
-	// _cpu_tdn = FUNCTIONEX("saori_cpuid.dll","cpu.tdn")
-	// _cpu_htt = FUNCTIONEX("saori_cpuid.dll","cpu.htt")//hyperthreading
-	// _cpu_clock = FUNCTIONEX("saori_cpuid.dll","cpu.clock")//(unit: MHz)
+
 	_cpu_clockex = FUNCTIONEX("saori_cpuid.dll","cpu.clockex")//(MHz)
 	
-		// Memory related [MB] t=total a=available
-	_mem_usage = FUNCTIONEX("saori_cpuid.dll","mem.os")
-	// _mem_phyt = FUNCTIONEX("saori_cpuid.dll","mem.phyt")//physical
-	// _mem_phya = FUNCTIONEX("saori_cpuid.dll","mem.phya")
-	// _mem_pagt = FUNCTIONEX("saori_cpuid.dll","mem.pagt")//page file
-	// _mem_paga = FUNCTIONEX("saori_cpuid.dll","mem.paga")
-	// _mem_virt = FUNCTIONEX("saori_cpuid.dll","mem.virt")//virtual
-	// _mem_vira = FUNCTIONEX("saori_cpuid.dll","mem.vira")
+	
 	"\0\s[3]\b[2]\_q\![set,autoscroll,disable]"
 	--
-	"OS: %(_os_name) %(_os_version_int) \nBuild:%(_os_build) \n\n"
+	"\f[color,#FFFF00]OS:\f[default] %(_os_name) v.%(_os_version_int) \n\f[color,#FFFF00]Build #:\f[default]%(_os_build) \n\n[half]"
 	--
-	"CPU: %(_cpu_name)\nClock Rate: %(_cpu_clockex)MHz\n\n"
-
-	--	
+	"\f[color,#FFFF00]CPU:\f[default] %(_cpu_name) \n\f[color,#FFFF00]Clock Rate:\f[default] %(_cpu_clockex)MHz\n\n[half]"
+	--
+	_memTP = TOREAL(memorytotalphys)
+	_memTPKB = _memTP/1024
+	_memTPMB = _memTPKB/1024
+	_memTPGB = _memTPMB/1024
+	_memTPGB = TOSTR(_memTPGB)
+	_totalPhysMemGB = SUBSTR(_memTPGB,0,4)
 	
-	 
-	"Memory:\n Usage:%(_mem_usage) PhysT%(_mem_phyt) PhysA%(_mem_phya) PageT%(_mem_pagt) PageA%(_mem_paga) VirT%(_mem_virt) VirA%(_mem_vira) "
+	_memAP = TOREAL(memoryavailphys)
+	_memAPKB = _memAP/1024
+	_memAPMB = _memAPKB/1024
+	_memAPGB = _memAPMB/1024
+	_memAPGB = TOSTR(_memAPGB)
+	_availablePhysMemGB = SUBSTR(_memAPGB,0,4)
+
+	"\f[color,#FFFF00]Memory Load:\f[default] %(memoryload)% \n\f[color,#FFFF00]Total PhysMemory:\f[default] \n%(memorytotalphys) Bytes \n%(_totalPhysMemGB) GiB \n\f[color,#FFFF00]Available PhysMemory:\f[default] \n%(memoryavailphys) Bytes \n%(_availablePhysMemGB) GiB\n\n[half]"
 	--
-	"Memory Load: %(memoryload)\n Physical Memory: %(memoryavailphys) KB\n\n"
+	"\f[color,#FFFF00]Ukagaka:\f[default] \n%(basewarename): %(bwVersionEX)"
 	--
-	"Ukagaka: %(basewarename)|%(basewarenameex)|%property[baseware.name] ver,%property[baseware.version]"
+	if eraDebug == "ON"
+	{"\n%property[baseware.version]"}
 	--
-	"\e"
+	"\x\e"
 }
 
 // -------- Recycling Bin --------
