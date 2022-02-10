@@ -10,7 +10,7 @@ Char8.center,824
 Char7.balloon.isleft,1
 passwordinput.top,565
 scriptbox.left,931
-balloon0.offset,314.36
+balloon0.offset,-954.363
 Char9.center,559
 Char0.centery,900
 Char8.centery,900
@@ -28,7 +28,7 @@ teachbox.left,837
 Char6.center,1512
 dateinput.top,444
 Char3.balloon.isleft,1
-Char.VirtualDesktop,44c194d7-c180-4d4f-8b00-a8eaaf3bbe11
+Char.VirtualDesktop,055decba-29dd-43ac-a135-f55307581065
 Char4.center,629
 Char6.balloon.isleft,1
 dateinput.left,745

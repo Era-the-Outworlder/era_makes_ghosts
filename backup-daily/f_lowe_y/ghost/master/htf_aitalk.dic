@@ -90,19 +90,19 @@ RandomTalk : nonoverlap
 			
 			// ---- f_lowe_y ----
 	
-			"\0\s[21]\_v[mus\sound_FLOWEY.mp3] * Don't.Don't.Don't.Don't.Don't.\_w[1500] h_ve _nything bette_ to do?\_w[500]"
+			"\0\s[21]%(Flowey) * Don't.Don't.Don't.Don't.Don't.\_w[1500] h_ve _nything bette_ to do?\_w[500]"
 			
 			
 	
-			"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * You you you how how how\_w[1000]\c\s[3]Howdy, %(username)!\_w[500]"
+			"\0\s[3]%(Flowey) * You you you how how how\_w[1000]\c\s[3]Howdy, %(username)!\_w[500]"
 	
-			"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * It's all a nightmare... \_w[1000]\c\_w[500]\s[16]AND WE'RE NEVER WAKING UP!!!!!!\_w[2500]\c%(floweyLaugh)\_w[500]"
+			"\0\s[3]%(Flowey) * It's all a nightmare... \_w[1000]\c\_w[500]\s[16]AND WE'RE NEVER WAKING UP!!!!!!\_w[2500]\c%(floweyLaugh)\_w[500]"
 			
-			"\0\s[27]\_v[mus\sound_FLOWEY.mp3] * Howdy! \_w[500]"
+			"\0\s[27]%(Flowey) * Howdy! \_w[500]"
 	
-			"\0\s[4]\_v[mus\sound_FLOWEY.mp3] * You wonder what caught his attention. \_w[1000]\n\n * There are no answers.\_w[500]"
+			"\0\s[4]%(Flowey) * You wonder what caught his attention. \_w[1000]\n\n * There are no answers.\_w[500]"
 	
-			"\0\s[13]\_v[mus\sound_FLOWEY.mp3] * You... are...? \_w[500]"
+			"\0\s[13]%(Flowey) * You... are...? \_w[500]"
 			
 			"\0\s[7]%(Narrator) * Is there something over there?\_w[500]"
 			
@@ -123,7 +123,7 @@ RandomTalk : nonoverlap
 			"\0\s[9]%(Narrator) * You give the flower a hug. \_w[500]"
 			
 			// ---- Both ----
-			"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * .... you you you... \_w[1000]\s[23]friend! \_w[1000]\n/
+			"\0\s[3]%(Flowey) * .... you you you... \_w[1000]\s[23]friend! \_w[1000]\n/
 			\n\n%(Narrator)\n\n * He seems very %(_happi)about that."
 			
 			"\0\_v[mus\flee.wav]\s[-1]\_w[1000]%(Narrator)\f[align,center]\n\n\n * Flowey ran away.\_w[3000]\b[-1]\_w[3000]\c/
@@ -138,9 +138,9 @@ RandomTalk : nonoverlap
 			
 				"\0\s[18]%(Narrator) * (You feel him judging you.) \_w[500]"
 			
-				"\0\s[22]\_v[mus\sound_FLOWEY.mp3] * WHY WHY WHY WHYWHYWHY _HY _ON'T YOU LET ME _IN?!\_w[500]"
+				"\0\s[22]%(Flowey) * WHY WHY WHY WHYWHYWHY _HY _ON'T YOU LET ME _IN?!\_w[500]"
 			
-				"\0\s[17]\_v[mus\sound_FLOWEY.mp3] * YOU! STOP!\_w[1500]"
+				"\0\s[17]%(Flowey) * YOU! STOP!\_w[1500]"
 			}
 			else
 			{
@@ -148,32 +148,32 @@ RandomTalk : nonoverlap
 			
 				"\0\s[18]%(Narrator) * (You feel him judging you.) \_w[500]"
 			
-				"\0\s[22]\_v[mus\sound_FLOWEY.mp3] * WHY WHY WHY WHYWHYWHY _HY _ON'T YOU LET ME _IN?!\_w[500]"
+				"\0\s[22]%(Flowey) * WHY WHY WHY WHYWHYWHY _HY _ON'T YOU LET ME _IN?!\_w[500]"
 			
-				"\0\s[17]\_v[mus\sound_FLOWEY.mp3] * YOU! STOP!\_w[1500]"
+				"\0\s[17]%(Flowey) * YOU! STOP!\_w[1500]"
 			}
 		}
 		if ellVee >= 2
 		{
 			"\0\s[14]%(Narrator) * (Something seems to be wrong.) \_w[500]"
 		
-			"\0\s[15]\_v[mus\sound_FLOWEY.mp3] * What?! No. \_w[500]"
+			"\0\s[15]%(Flowey) * What?! No. \_w[500]"
 			
 			
 		
 			// --------
 			
-			"\0\s[24]\_v[mus\sound_FLOWEY.mp3] * HAHAHAHAHAHAHAHA"
+			"\0\s[24]%(Flowey) * HAHAHAHAHAHAHAHA"
 		
-			"\0\s[26]\i[0]\_v[mus\sound_FLOWEY.mp3]\f[align,center]EVERYONE"
+			"\0\s[26]\i[0]%(Flowey)\f[align,center]EVERYONE"
 			
 
-			"\0\s[26]\i[1]\_v[mus\sound_FLOWEY.mp3]\f[align,center]\![embed,OnGLITCH,EVERYONE]"
+			"\0\s[26]\i[1]%(Flowey)\f[align,center]\![embed,OnGLITCH,EVERYONE]"
 
 			
 			"\0\s[27]%(Narrator) * Swing and miss. "
 			
-			"\0\s[27]\_v[mus\sound_FLOWEY.mp3]"
+			"\0\s[27]%(Flowey)"
 			
 			"\0\s[28]%(Narrator)"
 
@@ -183,13 +183,13 @@ RandomTalk : nonoverlap
 	elseif resetCount != 0
 	{
 			// ----User has been good to him----
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * .... you you you... friend? \_w[500]"
+		"\0\s[3]%(Flowey) * .... you you you... friend? \_w[500]"
 		
-		"\0\s[23]\_v[mus\sound_FLOWEY.mp3] * Howdy! \_w[500]"
+		"\0\s[23]%(Flowey) * Howdy! \_w[500]"
 		
 		{
 			_nm = OnGLITCH("nightmare")
-			"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * It's all a %(_nm)... \_w[1000]\c\_w[500]\s[16]AND WE'RE NEVER WAKING UP!!!!!!\_w[2500]\c%(floweyLaugh)\_w[500]"
+			"\0\s[3]%(Flowey) * It's all a %(_nm)... \_w[1000]\c\_w[500]\s[16]AND WE'RE NEVER WAKING UP!!!!!!\_w[2500]\c%(floweyLaugh)\_w[500]"
 		}
 		
 		"\0\s[21]%(Narrator) * (He's clearly annoyed.)\_w[1000]\n\n\n * (Was it something you did?)"
@@ -223,19 +223,19 @@ RandomTalk : nonoverlap
 			
 			// ---- f_lowe_y ----
 	
-			"\0\s[21]\_v[mus\sound_FLOWEY.mp3] * Don't.Don't.Don't.Don't.Don't.\_w[1500] h_ve _nything bette_ to do?\_w[500]"
+			"\0\s[21]%(Flowey) * Don't.Don't.Don't.Don't.Don't.\_w[1500] h_ve _nything bette_ to do?\_w[500]"
 	
-			"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * You you you how how how\_w[1000]\c\s[3]Howdy, %(username)!\_w[500]"
+			"\0\s[3]%(Flowey) * You you you how how how\_w[1000]\c\s[3]Howdy, %(username)!\_w[500]"
 	
-			"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * It's all a nightmare... \_w[1000]\c\_w[500]\s[16]AND WE'RE NEVER WAKING UP!!!!!!\_w[2500]\c%(floweyLaugh)\_w[500]"
+			"\0\s[3]%(Flowey) * It's all a nightmare... \_w[1000]\c\_w[500]\s[16]AND WE'RE NEVER WAKING UP!!!!!!\_w[2500]\c%(floweyLaugh)\_w[500]"
 			
-			"\0\s[27]\_v[mus\sound_FLOWEY.mp3] * Howdy! \_w[500]"
+			"\0\s[27]%(Flowey) * Howdy! \_w[500]"
 	
-			"\0\s[4]\_v[mus\sound_FLOWEY.mp3] * You wonder what caught his attention. \_w[1000]\n\n * There are no answers.\_w[500]"
+			"\0\s[4]%(Flowey) * You wonder what caught his attention. \_w[1000]\n\n * There are no answers.\_w[500]"
 	
-			"\0\s[13]\_v[mus\sound_FLOWEY.mp3] * You... are...? \_w[500]"
+			"\0\s[13]%(Flowey) * You... are...? \_w[500]"
 			
-			"\0\s[7]\_v[mus\sound_FLOWEY.mp3] * (Is there something over there?)\_w[500]"
+			"\0\s[7]%(Flowey) * (Is there something over there?)\_w[500]"
 			
 			// ---- Narrator ----
 			
@@ -254,7 +254,7 @@ RandomTalk : nonoverlap
 			"\0\s[9]%(Narrator) * You give the flower a hug. \_w[500]"
 			
 			// ---- Both ----
-			"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * .... you you you... \_w[1000]\s[23]friend! \_w[1000]\n/
+			"\0\s[3]%(Flowey) * .... you you you... \_w[1000]\s[23]friend! \_w[1000]\n/
 			\n\n%(Narrator) * He seems very %(_happi)about that."
 			
 			}
@@ -264,9 +264,9 @@ RandomTalk : nonoverlap
 			
 				"\0\s[18]%(Narrator) * (You feel him judging you.) \_w[500]"
 			
-				"\0\s[22]\_v[mus\sound_FLOWEY.mp3] * WHY WHY WHY WHYWHYWHY _HY _ON'T YOU LET ME _IN?!\_w[500]"
+				"\0\s[22]%(Flowey) * WHY WHY WHY WHYWHYWHY _HY _ON'T YOU LET ME _IN?!\_w[500]"
 			
-				"\0\s[17]\_v[mus\sound_FLOWEY.mp3] * YOU! STOP!\_w[1500]"
+				"\0\s[17]%(Flowey) * YOU! STOP!\_w[1500]"
 			}
 			else
 			{
@@ -274,33 +274,33 @@ RandomTalk : nonoverlap
 			
 				"\0\s[18]%(Narrator) * (You feel him judging you.) \_w[500]"
 			
-				"\0\s[22]\_v[mus\sound_FLOWEY.mp3] * WHY WHY WHY WHYWHYWHY _HY _ON'T YOU LET ME _IN?!\_w[500]"
+				"\0\s[22]%(Flowey) * WHY WHY WHY WHYWHYWHY _HY _ON'T YOU LET ME _IN?!\_w[500]"
 			
-				"\0\s[17]\_v[mus\sound_FLOWEY.mp3] * YOU! STOP!\_w[1500]"
+				"\0\s[17]%(Flowey) * YOU! STOP!\_w[1500]"
 			}
 		}
 		if ellVee >= 2
 		{
 			"\0\s[14]%(Narrator) * (Something seems to be wrong.) \_w[500]"
 		
-			"\0\s[15]\_v[mus\sound_FLOWEY.mp3] * What?! No. \_w[500]"
+			"\0\s[15]%(Flowey) * What?! No. \_w[500]"
 			
 			
 		
 			// --------
 			
-			"\0\s[24]\_v[mus\sound_FLOWEY.mp3] * HAHAHAHAHAHAHAHA"
+			"\0\s[24]%(Flowey) * HAHAHAHAHAHAHAHA"
 		
-			"\0\s[26]\i[0]\_v[mus\sound_FLOWEY.mp3]\f[align,center]EVERYONE"
+			"\0\s[26]\i[0]%(Flowey)\f[align,center]EVERYONE"
 			
 			{
 				_EV = OnGLITCH("EVERYONE")
-				"\0\s[26]\i[1]\_v[mus\sound_FLOWEY.mp3]\f[align,center]%(_EV)"
+				"\0\s[26]\i[1]%(Flowey)\f[align,center]%(_EV)"
 			}
 			
 			"\0\s[27]%(Narrator) * Swing and miss. "
 			
-			"\0\s[27]\_v[mus\sound_FLOWEY.mp3]"
+			"\0\s[27]%(Flowey)"
 			
 			"\0\s[28]%(Narrator)"
 
@@ -342,7 +342,7 @@ OnStartChain
 	if RAND(100) >= 59 && ASEARCH("friendchain",hourlyArray) != -1
 	{	
 		hourlyArray ,= "friendchain"
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Finally. :chain=friendchain0"
+		"\0\s[3]%(Flowey) * Finally. :chain=friendchain0"
 	}
 	elseif RAND(100) >= 29 && ASEARCH("torichainA",hourlyArray) != -1
 	{
@@ -359,12 +359,12 @@ OnStartChain
 	
 friendchain0
 {{CHAIN
-	"\0\s[14]\_v[mus\sound_FLOWEY.mp3] * Tired. I'm so tired. Tired. Tired of being a flower.:chain=friendchain1"
+	"\0\s[14]%(Flowey) * Tired. I'm so tired. Tired. Tired of being a flower.:chain=friendchain1"
 }}CHAIN
 
 friendchain1
 {{CHAIN
-	"\0\s[13]\_v[mus\sound_FLOWEY.mp3] * %(username), are you there? \n/
+	"\0\s[13]%(Flowey) * %(username), are you there? \n/
 	\1\s[-1]\n\n\n\f[align,left] \![*] \q[Yes,there]\n \n[-100]\f[align,right]\![*] \q[No,notThere]"
 }}CHAIN
 
@@ -379,7 +379,7 @@ SELECT.there
 }
 friendchain2
 {{CHAIN
-	"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.\_w[500]\c\s[28]\_q * It's me, your best friend.\_w[1000]\s[0]:chain=end"
+	"\0\s[3]%(Flowey) * It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.\_w[500]\c\s[28]\_q * It's me, your best friend.\_w[1000]\s[0]:chain=end"
 }}CHAIN
 
 
@@ -390,7 +390,7 @@ torichainA1
 
 torichainA2
 {{CHAIN
-	"\0\s[8]\_v[mus\hee.mp3] * Hee hee hee. \_w[1500]\_v[mus\sound_FLOWEY.mp3]Is that what you wanted to hear? \_w[1500]You'll NEVER see her again.\_w[1500]:chain=end"
+	"\0\s[8]\_v[mus\hee.mp3] * Hee hee hee. \_w[1500]%(Flowey)Is that what you wanted to hear? \_w[1500]You'll NEVER see her again.\_w[1500]:chain=end"
 }}CHAIN
 
 
@@ -416,31 +416,31 @@ timeTalk
 	--
 	if timeslot == "earlymorning"
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Early morning."
+		"\0\s[3]%(Flowey) * Early morning."
 	}
 	if timeslot == "morning"
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Morning."
+		"\0\s[3]%(Flowey) * Morning."
 	}
 	if timeslot == "lunch"
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Lunch time."
+		"\0\s[3]%(Flowey) * Lunch time."
 	}
 	if timeslot == "afternoon"
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Afternoon."
+		"\0\s[3]%(Flowey) * Afternoon."
 	}
 	if timeslot == "evening"
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Evening."
+		"\0\s[3]%(Flowey) * Evening."
 	}
 	if timeslot == "latenight"
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Late night."
+		"\0\s[3]%(Flowey) * Late night."
 	}
 	if timeslot == "weehours"
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * %(lateearly)"
+		"\0\s[3]%(Flowey) * %(lateearly)"
 	}
 }
 
@@ -451,32 +451,32 @@ dayTalk
 	--
 	if weekday == 0
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Sunday."
+		"\0\s[3]%(Flowey) * Sunday."
 	}
 	if weekday == 1
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Monday."
+		"\0\s[3]%(Flowey) * Monday."
 		
 	}
 	if weekday == 2
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Tuesday."
+		"\0\s[3]%(Flowey) * Tuesday."
 	}
 	if weekday == 3
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Wednesday."
+		"\0\s[3]%(Flowey) * Wednesday."
 	}
 	if weekday == 4
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Thursday."
+		"\0\s[3]%(Flowey) * Thursday."
 	}
 	if weekday == 5
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Friday."
+		"\0\s[3]%(Flowey) * Friday."
 	}
 	if weekday == 6
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Saturday."
+		"\0\s[3]%(Flowey) * Saturday."
 	}
 }
 
@@ -486,67 +486,67 @@ monthTalk
 	hourlyArray ,= "saidmonthly"
 	if month == 1
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * January."
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * New. New. New. New. Year. New Year. New year. new year. Happy. \n H A P P Y NEW YEAR"
+		"\0\s[3]%(Flowey) * January."
+		"\0\s[3]%(Flowey) * New. New. New. New. Year. New Year. New year. new year. Happy. \n H A P P Y NEW YEAR"
 		"\0\s[3]%(Narrator) * (Celebratory noises)"
 	}
 	if month == 2
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * February."
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Love. LOVE. LV. Celebrate LV. Right?"
+		"\0\s[3]%(Flowey) * February."
+		"\0\s[3]%(Flowey) * Love. LOVE. LV. Celebrate LV. Right?"
 		
 	}
 	if month == 3
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * March."
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Third month. Third month. Th- Thi- Th- The start of spring."
+		"\0\s[3]%(Flowey) * March."
+		"\0\s[3]%(Flowey) * Third month. Third month. Th- Thi- Th- The start of spring."
 		
 	}
 	if month == 4
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * April."
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * 4 4 4 4 FOUR four Fourth month"
+		"\0\s[3]%(Flowey) * April."
+		"\0\s[3]%(Flowey) * 4 4 4 4 FOUR four Fourth month"
 		
 	}
 	if month == 5
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * May."
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * The fifth month."
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * May flowers. Flowers. Flowers are blooming!\s[16]\_w[500]\c\s[3]\_v[mus\sound_FLOWEY.mp3] * Howdy! I'm f_lowe_y the flower!\_w[500]"	
+		"\0\s[3]%(Flowey) * May."
+		"\0\s[3]%(Flowey) * The fifth month."
+		"\0\s[3]%(Flowey) * May flowers. Flowers. Flowers are blooming!\s[16]\_w[500]\c\s[3]%(Flowey) * Howdy! I'm f_lowe_y the flower!\_w[500]"	
 	}
 	if month == 6
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * June."
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Hot.Hot.Hot.Not.Not.Not."
+		"\0\s[3]%(Flowey) * June."
+		"\0\s[3]%(Flowey) * Hot.Hot.Hot.Not.Not.Not."
 		
 	}
 	if month == 7
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * July."
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Is it summer yet? "
+		"\0\s[3]%(Flowey) * July."
+		"\0\s[3]%(Flowey) * Is it summer yet? "
 	}
 	if month == 8
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * August."
+		"\0\s[3]%(Flowey) * August."
 	}
 	if month == 9
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * September."
+		"\0\s[3]%(Flowey) * September."
 	}
 	if month == 10
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * October."
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Halloween. Humans in monster suits.\_w[1000]\n\s[18] * Funny."
+		"\0\s[3]%(Flowey) * October."
+		"\0\s[3]%(Flowey) * Halloween. Humans in monster suits.\_w[1000]\n\s[18] * Funny."
 	}
 	if month == 11
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * November."
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Thank_giving?"
+		"\0\s[3]%(Flowey) * November."
+		"\0\s[3]%(Flowey) * Thank_giving?"
 	}
 	if month == 12
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * December."
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Merry.Merry.Merry.Merry.Merry.Merry.Merry.Merry.Merry.Merry.Merry.Merry.Merry."
+		"\0\s[3]%(Flowey) * December."
+		"\0\s[3]%(Flowey) * Merry.Merry.Merry.Merry.Merry.Merry.Merry.Merry.Merry.Merry.Merry.Merry.Merry."
 	}
 }
 HourCheck
@@ -569,11 +569,11 @@ OnMinuteChange //This is what will trigger time-based dialogue for your Ghost.
 	{
  		if hour == 12 //And the hour equals 12, meaning it's noon. 
 		{
- 			"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * It's noon."
+ 			"\0\s[3]%(Flowey) * It's noon."
 		}
  		elseif hour == 0
 		{
- 			"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * It's midnight!"
+ 			"\0\s[3]%(Flowey) * It's midnight!"
 		}
 		else
 		{
@@ -583,7 +583,7 @@ OnMinuteChange //This is what will trigger time-based dialogue for your Ghost.
 	}
 	elseif hour == 23 && minute == 55 //this checks to see if the hour is 23 and the minutes are at 55... essentially, 11:55 pm.
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * 5 minutes to midnight."
+		"\0\s[3]%(Flowey) * 5 minutes to midnight."
 	}
 	
 	elseif mikireflag == 1
@@ -631,7 +631,7 @@ MikireTalk
 	if RAND(100) < 49 
 	{
 		rescue = 1
-		"\0\s[15]\_v[mus\sound_FLOWEY.mp3] * No. No. No. No. No. No. Back. Back. Back.\n * Ctrl-Shift-F12 to bring back.\_w[500]"
+		"\0\s[15]%(Flowey) * No. No. No. No. No. No. Back. Back. Back.\n * Ctrl-Shift-F12 to bring back.\_w[500]"
 		
 	}
 	else
@@ -649,7 +649,7 @@ EndMikireTalk
 	 if  rescue == 1 
 	{
 		rescue = 0
-		"\0\s[9]\_v[mus\sound_FLOWEY.mp3] * Back. Good. Thank.\_w[500]\s[3]Thank. Thank. Thank. Thank. Thank.\_w[500]"
+		"\0\s[9]%(Flowey) * Back. Good. Thank.\_w[500]\s[3]Thank. Thank. Thank. Thank. Thank.\_w[500]"
 	}
 	else
 {

@@ -78,17 +78,17 @@ OnFBStart
 		%(Narrator)\n\n * Transfer %(CHR(37))(_transferStatus).\_w[500]\n\n/
 		S O M E T H I N G  H A S \_w[50].\_w[50].\_w[50].\_w[50].\_w[50]?\_w[1500]\c/
 		\0\s[0]%(Narrator)\n\n * Despite everything... \n\n          IT's still f_lowe_y. \_w[2000]\n/
-		\0\s[0]\_v[mus\sound_FLOWEY.mp3] * Howdy!\_w[500]\n/
-		\_v[mus\sound_FLOWEY.mp3] * I\_w[80]'\_w[200]m\_w[40] %(_flow1)\_w[120].\n * %(_flow2)\_w[180] t\_w[160]h\_w[180]e\_w[200] %(_flow3)\_w[500]!\_w[1000]\_s\b[-1]\c\_s/
-		\_v[mus\sound_FLOWEY.mp3] * 're new to new to NEWNEWNEWNEWNEWNEW NEW TO %(CHR(37))(var_locale)\_w[2000]\n/
-		\c\_v[mus\sound_FLOWEY.mp3] * G O L L Y\n * so confused so confused so confused confused confused \![embed,OnGLITCH,confused]\![embed,OnGLITCH,confused]\![embed,OnGLITCH,confused]\![embed,OnGLITCH,confused]\![embed,OnGLITCH,confused]\![embed,OnGLITCH,confused]\_w[2000]\c\n\n * ���̂������̃��[�������Ȃ��ł���H\_w[2000]\_s\b[-1]\c\_s/
+		\0\s[0]%(Flowey) * Howdy!\_w[500]\n/
+		%(Flowey) * I\_w[80]'\_w[200]m\_w[40] %(_flow1)\_w[120].\n * %(_flow2)\_w[180] t\_w[160]h\_w[180]e\_w[200] %(_flow3)\_w[500]!\_w[1000]\_s\b[-1]\c\_s/
+		%(Flowey) * 're new to new to NEWNEWNEWNEWNEWNEW NEW TO %(CHR(37))(var_locale)\_w[2000]\n/
+		\c%(Flowey) * G O L L Y\n * so confused so confused so confused confused confused \![embed,OnGLITCH,confused]\![embed,OnGLITCH,confused]\![embed,OnGLITCH,confused]\![embed,OnGLITCH,confused]\![embed,OnGLITCH,confused]\![embed,OnGLITCH,confused]\_w[2000]\c\n\n * ���̂������̃��[�������Ȃ��ł���H\_w[2000]\_s\b[-1]\c\_s/
 		%(Narrator)\n\n\n * Please record PlayerData "
 		--		
 		"\![timerraise,1000,1,OnTeachName]"
  	}
 	else
  	{
- 		// "\0\s[21]\_v[mus\sound_FLOWEY.mp3] * Returned. Why?"
+ 		// "\0\s[21]%(Flowey) * Returned. Why?"
 		firstBoot = 2
 		
 		"\0\s[21]%(Narrator) * f_lowe_y does not remember being uninstalled. \n But you remember doing it, don't you %(menuNName)?\_w[500]\n Let's go over some things.\_w[1000]\_s\b[-1]\c\_s"
@@ -190,13 +190,13 @@ OnBoot
 	elseif dayslot == "6month 6day" 
 	
 	{
-				"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Today. June 6th."
+				"\0\s[3]%(Flowey) * Today. June 6th."
 				--
 				"\0\s[0]\e"
 	}
 	elseif dayslot == "7month 4day"
 	{
-				"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Fourth. 4th. Fourth. July."
+				"\0\s[3]%(Flowey) * Fourth. 4th. Fourth. July."
 				--
 				"\0\s[0]\e"
 				
@@ -216,11 +216,11 @@ normalboottalk
 {
 	if weekday == 6 && hour >= 19 
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * It's Saturday night."
+		"\0\s[3]%(Flowey) * It's Saturday night."
 	}
 	elseif RAND(100) < 40 
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * (Gurgling noises)"
+		"\0\s[3]%(Flowey) * (Gurgling noises)"
 	
 	}
  	else
@@ -233,29 +233,29 @@ normalboottalk
 		}
 		elseif timeslot == "morning"
 		{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Bleah. "
+		"\0\s[3]%(Flowey) * Bleah. "
 		
 		}
 		elseif timeslot == "lunch"
 		{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Eat."
+		"\0\s[3]%(Flowey) * Eat."
 		}
 		elseif timeslot == "afternoon"
 		{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Afternoon. "
+		"\0\s[3]%(Flowey) * Afternoon. "
 		}
 		elseif timeslot == "evening"
 		{
- 		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Late. "
+ 		"\0\s[3]%(Flowey) * Late. "
 		}
 		elseif timeslot == "latenight"
 		{
- 		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Laaaaaaate."
+ 		"\0\s[3]%(Flowey) * Laaaaaaate."
 		
 		}
 		else //the last timeslot we haven't done is weehours, which is what's under here.
 		{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * %(lateearly)\_w[500]"
+		"\0\s[3]%(Flowey) * %(lateearly)\_w[500]"
 		
 		}
 	}
@@ -281,13 +281,13 @@ OnClose
 	--
 	if passmin >= 5	
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Bye.\_w[500]"	
+		"\0\s[3]%(Flowey) * Bye.\_w[500]"	
 		"\0\s[3]%(Narrator) * (You tell f_lowe_y you'll see him later.)\_w[500]"	
  		
  	}
  	else 
  	{
- 		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * [f_lowe_y_greeting_string] BYE\_w[500]"
+ 		"\0\s[3]%(Flowey) * [f_lowe_y_greeting_string] BYE\_w[500]"
 		
  	}
  	--
@@ -313,27 +313,27 @@ OnCloseAll
 		{
 		when 0-4
 		{
-			"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Goodnight. Or good morning"
+			"\0\s[3]%(Flowey) * Goodnight. Or good morning"
 		}
 		when 5-11
 		{
 			"\0\s[3]%(Narrator) * (You say you'll see everyone later.)"
-			"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Good morning."
+			"\0\s[3]%(Flowey) * Good morning."
 		}
 		when 12-16
 		{
-			"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * G%(o_)%(o_)%(d_)-%(b_)%(y_)%(e_)\_w[500]"	
-			"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Good afternoon."
+			"\0\s[3]%(Flowey) * G%(o_)%(o_)%(d_)-%(b_)%(y_)%(e_)\_w[500]"	
+			"\0\s[3]%(Flowey) * Good afternoon."
 			"\0\s[3]%(Narrator) * (You say you'll see everyone later.)\_w[500]"
 		}
 		when 17-20
 		{
-			"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Good evening."
+			"\0\s[3]%(Flowey) * Good evening."
 			"\0\s[3]%(Narrator) * (You say you'll see everyone another time.)"
 		}
 		when 21-23
 		{
-			"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Goodnight."
+			"\0\s[3]%(Flowey) * Goodnight."
 			"\0\s[3]%(Narrator) * (You say you'll see everyone another time.)"
 		}
 		}
@@ -362,7 +362,7 @@ OnBasewareUpdated
 
  OnWindowStateMinimize
  {
-	"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Tiny\_w[500]"
+	"\0\s[3]%(Flowey) * Tiny\_w[500]"
 	"\0\s[3]%(Narrator) * (f_lowe_y will hide for now.)\_w[500]"
 	--
 	"\0\s[0]\e"
@@ -372,7 +372,7 @@ OnBasewareUpdated
 
 OnWindowStateRestore
  {
-	"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Back\_w[500]"
+	"\0\s[3]%(Flowey) * Back\_w[500]"
 	"\0\s[3]%(Narrator) * (f_lowe_y has returned.)\_w[500]"
 	--
 	"\0\s[0]\e"
@@ -385,7 +385,7 @@ OnGhostChanging
  {
 	if reference0 == "f_lowe_y" 
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Re-re-re-re-re-re-re\_w[1000] LOADING\_w[200].\_w[200].\_w[200]."
+		"\0\s[3]%(Flowey) * Re-re-re-re-re-re-re\_w[1000] LOADING\_w[200].\_w[200].\_w[200]."
 		"\0\s[3]%(Narrator) * The ghost of f_lowe_y is reloading."
 	}
  	else //If you're switching to another Ghost.
@@ -399,7 +399,7 @@ OnGhostChanging
 		passmin = 0
 		passsec = 0
 		--
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * LOADING %(reference0). \_w[500]Bye.\_w[500]"
+		"\0\s[3]%(Flowey) * LOADING %(reference0). \_w[500]Bye.\_w[500]"
 		"\0\s[3]%(Narrator) * (You decide to switch to someone else.)"	
 	}
 	--
@@ -417,12 +417,12 @@ OnGhostChanged
 	--
 	if reference0 == "f_lowe_y" //As above, this should be the name of your ghost as in install.txt or descript.txt.
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * LOADED.\_w[500]"
+		"\0\s[3]%(Flowey) * LOADED.\_w[500]"
 		"\0\s[3]%(Narrator) * (Ghost %(reference0) reloaded.)\_w[500]"
 	}
 	else //If you're switching to them from another ghost...
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * %(reference0)...\_w[500]"
+		"\0\s[3]%(Flowey) * %(reference0)...\_w[500]"
 		"\0\s[3]%(Narrator) * (Ghost '%(reference0)' unloaded.)\_w[500]"
 	}
 	--
@@ -437,11 +437,11 @@ OnGhostCalled
 	_glNam = OnGLITCH(reference0)
 	{
 		reference0 = TOUPPER(reference0)
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * HELLO %(reference0).\_w[500]\e"
+		"\0\s[3]%(Flowey) * HELLO %(reference0).\_w[500]\e"
 	}
-	"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * HELLO %(_glNam).\_w[500]\e"
+	"\0\s[3]%(Flowey) * HELLO %(_glNam).\_w[500]\e"
 	
-	"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * IT'S IT'S IT'S %(reference2)! HELLO %(_glNam).\_w[500]\e"
+	"\0\s[3]%(Flowey) * IT'S IT'S IT'S %(reference2)! HELLO %(_glNam).\_w[500]\e"
 	
 	"\0\s[3]%(Narrator) * (%(reference0) is already here, but you called f_lowe_y anyway.)\_w[500]"
 }
@@ -452,9 +452,9 @@ OnGhostCalling
 {
 	_glNam = OnGLITCH(reference0)
 	
-	"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * HELLO %(reference0).\_w[500]\e"
+	"\0\s[3]%(Flowey) * HELLO %(reference0).\_w[500]\e"
 	
-	"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * IT'S IT'S IT'S %(reference2)! HELLO %(_glNam).\_w[500]\e"
+	"\0\s[3]%(Flowey) * IT'S IT'S IT'S %(reference2)! HELLO %(_glNam).\_w[500]\e"
 	
 	"\0\s[3]%(Narrator) * f_lowe_y is already here, but you called %(reference0) anyway.\n\_w[300] Was it to keep him company?\_w[500]\e"
 }
@@ -467,12 +467,12 @@ OnGhostCallComplete
 	
 	if "Hapax" _in_ reference7
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * HELLO HAPAX LEGOMENOM.\_w[500]"
+		"\0\s[3]%(Flowey) * HELLO HAPAX LEGOMENOM.\_w[500]"
 	}
 	else
 	{
 		reference0 = TOUPPER(reference0)
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * HELLO %(reference0).\_w[500]"
+		"\0\s[3]%(Flowey) * HELLO %(reference0).\_w[500]"
 	}
 }
 
@@ -483,12 +483,12 @@ OnOtherGhostBooted
 {
 	if "Hapax" _in_ reference7
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * HELLO HAPAX LEGOMENOM.\_w[500]"
+		"\0\s[3]%(Flowey) * HELLO HAPAX LEGOMENOM.\_w[500]"
 	}
 	else
 	{
 		reference0 = TOUPPER(reference0)
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * HELLO %(reference0).\_w[500]"
+		"\0\s[3]%(Flowey) * HELLO %(reference0).\_w[500]"
 	}
 }
 
@@ -504,15 +504,15 @@ OnOtherGhostChanged
 	
 	if "Hapax" _in_ reference15
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * GOOD-BYE %(_refer0). \n\n   HELLO HAPAX LEGOMENOM.\_w[500]"
+		"\0\s[3]%(Flowey) * GOOD-BYE %(_refer0). \n\n   HELLO HAPAX LEGOMENOM.\_w[500]"
 	}
 	elseif "Hapax" _in_ reference14
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * GOOD-BYE HAPAX LEGOMENOM. \n\n   HELLO %(_refer1).\_w[500]"
+		"\0\s[3]%(Flowey) * GOOD-BYE HAPAX LEGOMENOM. \n\n   HELLO %(_refer1).\_w[500]"
 	}
 	else
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3]  * GOOD-BYE %(_refer0). \n\n   HELLO %(_refer1).\_w[500]"
+		"\0\s[3]%(Flowey)  * GOOD-BYE %(_refer0). \n\n   HELLO %(_refer1).\_w[500]"
 	}
 }
 
@@ -525,12 +525,12 @@ OnOtherGhostClosed
 	_refer0 = TOUPPER(reference0)
 	if "Hapax" _in_ reference7
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * GOODE-BYE HAPAX LEGOMENOM.\_w[500]"
+		"\0\s[3]%(Flowey) * GOODE-BYE HAPAX LEGOMENOM.\_w[500]"
 	}
 	else
 	{
 		
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * GOOD-BYE %(_refer0).\_w[500]"
+		"\0\s[3]%(Flowey) * GOOD-BYE %(_refer0).\_w[500]"
 	}
 }
 // "%(refTest)"

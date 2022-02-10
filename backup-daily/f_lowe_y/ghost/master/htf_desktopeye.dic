@@ -1,7 +1,7 @@
-//----Open Program Commentary----
-//----<3 Era 11/23/2021----
+// ---- Open Program Commentary ----
+// ----<3 Era 11/23/2021----
 //Inspired by code by Zarla-s and Zichqec, with direct assistance from the latter in figuring out how to make this do what I wanted. 
-//It's probably not nearly as neat as it could be, but it hasn't crashed my computer yet ;-)
+//It's a work in progress, doesn't work the way I want, and may very well be replaced entirely later
 
 
 	
@@ -21,7 +21,7 @@ OnDesktopEyeball
 	else
 	{
 		"\0\s[3]%(Narrator) * (f_lowe_y looks at your computer.)\n\n"
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Strange. \n\n"
+		"\0\s[3]%(Flowey) * Strange. \n\n"
 		--
 		//calls commentary
 		AppView

@@ -211,12 +211,12 @@ birthchecked
 		
 			if userbirthday == "12month 25day"
 			{
-				"\0\s[3]\_v[mus\sound_FLOWEY.mp3] \_w[1000]* Merry\_w[1000] Gyftmas.\_w[500]"
+				"\0\s[3]%(Flowey) \_w[1000]* Merry\_w[1000] Gyftmas.\_w[500]"
 				"\0\s[3]%(Narrator) * It's your birthday today.\n And it's Gyftmas, too?\_w[1500]"
 			}
 			else
 			{
-			"\0\s[8]\_v[mus\sound_FLOWEY.mp3] * %(HAPPY) \c\_v[mus\sound_FLOWEY.mp3] * Happy birthday, %(username).\_w[1000]\_w[1000]\_w[500]"
+			"\0\s[8]%(Flowey) * %(HAPPY) \c%(Flowey) * Happy birthday, %(username).\_w[1000]\_w[1000]\_w[500]"
 			
 			"\0\s[3]%(Narrator) * It's your birthday today.\_w[1500]"
 			}
@@ -230,7 +230,7 @@ birthchecked
 	//if the birthday is not listed above.
 	else 
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * %(bornmonthprint) %(borndayprint), %(bornyear)? Is _ha_... righ_..."
+		"\0\s[3]%(Flowey) * %(bornmonthprint) %(borndayprint), %(bornyear)? Is _ha_... righ_..."
 		"\0\s[3]%(Narrator) * %(bornmonthprint) %(borndayprint), %(bornyear).\n f_lowe_y will remember that.\_w[1500]"
 			
 	}

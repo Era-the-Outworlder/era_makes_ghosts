@@ -61,24 +61,24 @@ MouseMoveSakura
 			when 1-10
 			{
 				
-				"\0\s[21]\_v[mus\sound_FLOWEY.mp3] * Stop. sssssssssssstop.  \_w[500]"
-				"\0\s[9]\_v[mus\sound_FLOWEY.mp3] * Pat. Pet. \![embed,OnGLITCH,pat]\![embed,OnGLITCH,pet]\![embed,OnGLITCH,pot]\![embed,OnGLITCH,pat]\![embed,OnGLITCH,pot]\![embed,OnGLITCH,pet].  \_w[500]"
+				"\0\s[21]%(Flowey) * Stop. sssssssssssstop.  \_w[500]"
+				"\0\s[9]%(Flowey) * Pat. Pet. \![embed,OnGLITCH,pat]\![embed,OnGLITCH,pet]\![embed,OnGLITCH,pot]\![embed,OnGLITCH,pat]\![embed,OnGLITCH,pot]\![embed,OnGLITCH,pet].  \_w[500]"
 				"\0\s[21]%(Narrator) * (You get the feeling he might appreciate it more if you'd stop.) \_w[1500]"
 				"\0\s[9]%(Narrator) * He seems to be enjoying this.\_w[500]"
 			}
 			when 11-50
 			{
-				"\0\s[9]\_v[mus\sound_FLOWEY.mp3] * Pat. Pet. \![embed,OnGLITCH,pat]\![embed,OnGlitchLite,pet]\![embed,OnGLITCH,pot]\![embed,OnGlitchLite,pat]\![embed,OnGlitchLite,pot]\![embed,OnGlitchLite,pet].  \_w[500]"
+				"\0\s[9]%(Flowey) * Pat. Pet. \![embed,OnGLITCH,pat]\![embed,OnGlitchLite,pet]\![embed,OnGLITCH,pot]\![embed,OnGlitchLite,pat]\![embed,OnGlitchLite,pot]\![embed,OnGlitchLite,pet].  \_w[500]"
 				"\0\s[9]%(Narrator) * He seems to be enjoying this.\_w[500]"
 			}
 			when 50-100
 			{
-				"\0\s[9]\_v[mus\sound_FLOWEY.mp3] * Pat. \![embed,OnGlitchLite,pat]\![embed,OnGlitchLite,pet]\![embed,OnGlitchLite,pot]\![embed,OnGlitchLite,pat]\![embed,OnGlitchLite,pot]\![embed,OnGlitchLite,pet].  \_w[500]"
+				"\0\s[9]%(Flowey) * Pat. \![embed,OnGlitchLite,pat]\![embed,OnGlitchLite,pet]\![embed,OnGlitchLite,pot]\![embed,OnGlitchLite,pat]\![embed,OnGlitchLite,pot]\![embed,OnGlitchLite,pet].  \_w[500]"
 				"\0\s[9]%(Narrator) * He seems to be enjoying this.\_w[500]"
 			}
 			others
 			{
-				"\0\s[9]\_v[mus\sound_FLOWEY.mp3] * Pat. patpetpotpatpotpet.  \_w[500]"
+				"\0\s[9]%(Flowey) * Pat. patpetpotpatpotpet.  \_w[500]"
 				"\0\s[9]%(Narrator) * He seems to be enjoying this.\_w[500]"
 			}
 			}
@@ -97,12 +97,12 @@ MouseMoveSakura
 			{
 			when 0-100
 			{
-				"\0\s[21]\_v[mus\sound_FLOWEY.mp3] * Stop. sssssssssssstop. Why. %(_face)? \_w[500]"
+				"\0\s[21]%(Flowey) * Stop. sssssssssssstop. Why. %(_face)? \_w[500]"
 				"\0\s[21]%(Narrator) * (You get the feeling he would appreciate it more if you'd \![embed,OnGlitchLite,stop] touching his face.) \_w[1500]"
 			}
 			others
 			{
-				"\0\s[17]\_v[mus\sound_FLOWEY.mp3]\f[height,25] * \![embed,OnGlitchLite,stop].\![embed,OnGlitchLite,stop].\![embed,OnGlitchLite,stop].\![embed,OnGlitchLite,stop]\f[default] \_w[500]"
+				"\0\s[17]%(Flowey)\f[height,25] * \![embed,OnGlitchLite,stop].\![embed,OnGlitchLite,stop].\![embed,OnGlitchLite,stop].\![embed,OnGlitchLite,stop]\f[default] \_w[500]"
 				"\0\s[17]%(Narrator) * Does his anger amuse you? \_w[1500]"
 			}
 			}
@@ -177,7 +177,7 @@ MouseDoubleClickSakura
 		{
 			knifeTime++ 
 			"\0\s[18]\1\s[-1]\_v[mus\hahaha.mp3] * Flowey is considering a violence. \_w[500]"
-			"\0\s[18]\_v[mus\sound_FLOWEY.mp3] \f[height,30]Die.\f[default]\_w[500]"
+			"\0\s[18]%(Flowey) \f[height,30]Die.\f[default]\_w[500]"
 			
 		}
 		elseif knifeTime >= 12
@@ -304,7 +304,9 @@ OnMouseDownEx
 // Reference6
 // After windows7, input from the touch panel (* touch pad is not possible) in a multi-touch compatible environment is touch, input from the mouse etc. is mouse
 
-//----Some of these are questionable but being preserved <3 Era
+
+
+// ---- Some of these are questionable but being preserved <3 Era
 
 
 

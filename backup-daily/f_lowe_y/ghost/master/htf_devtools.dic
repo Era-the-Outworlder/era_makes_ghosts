@@ -1,10 +1,13 @@
+
 // DEV TOOLS FUCK YEAH
 // ------ This is a whole bunch of testing stuff shhhhh ------
 OnTestVariable
 {
-	"\0\s[3]\_v[mus\help_TEXT.mp3] * Testing! %(errorMsg)\n\n"
+	"\0\s[3]\b6%(Narrator) * Testing! \n\n"
 	--
 	"\![*] \q[Set PETS+,setSTAT]\n"
+	--
+	"\![*] \q[Set PETS-,setSTAT]\n"
 	--
 	"\![*] \q[Set commRatio,setSTAT2]\n"
 	--
@@ -125,3 +128,5 @@ OnTeach
 {
 	"OnTeach Test:\n\n%(refTest)"
 }
+
+// ---- Weird testing stuff end ----
