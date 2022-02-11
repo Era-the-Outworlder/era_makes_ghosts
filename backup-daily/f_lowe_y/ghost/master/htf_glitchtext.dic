@@ -104,6 +104,7 @@ OnGlitchReplace
 		--
 		_display += "%(_ref)"
 		_num ++
+		
 	}
 	--
 	_display

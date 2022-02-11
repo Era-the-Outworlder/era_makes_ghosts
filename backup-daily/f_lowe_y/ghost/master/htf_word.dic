@@ -113,8 +113,8 @@ usersfolder
 
 change
 {
-	if RAND(100)>=74{_text = OnGLITCH(change);"%(_text)"}
-	elseif RAND(100)>=24{_text = OnGlitchLite(change);"%(_text)"}
+	if RAND(100)>=74{_text = OnGLITCH("change");"%(_text)"}
+	elseif RAND(100)>=24{_text = OnGlitchLite("change");"%(_text)"}
 	else{"Change"}	
 }
 

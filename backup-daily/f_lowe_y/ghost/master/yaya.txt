@@ -7,6 +7,7 @@ charset.file, UTF-8
 charset.save, UTF-8
 charset.extension, UTF-8
 
+fncdepth,[0]
 
 //---- Dictionary Files ---------------------------------------------------------------------
 

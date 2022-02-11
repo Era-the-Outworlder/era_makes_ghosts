@@ -5,13 +5,15 @@ OnTestVariable
 {
 	"\0\s[3]\b6%(Narrator) * Testing! \n\n"
 	--
-	"\![*] \q[Set PETS+,setSTAT]\n"
+	"\![*] \q[Set PETS+,setPET1]\n"
 	--
-	"\![*] \q[Set PETS-,setSTAT]\n"
+	"\![*] \q[Set PETS-,setPET2]\n"
 	--
-	"\![*] \q[Set commRatio,setSTAT2]\n"
+	"\![*] \q[Set LV,setSTAT]\n"
 	--
-	"\![*] \q[Set LV,setSTAT3]\n"
+	"\![*] \q[Set EXP,setSTAT2]\n"
+	--
+	"\![*] \q[Set commRatio,setRATE]\n"
 	--
 	"\![*] \q[Test OnfirstBoot?,newBoot]\n"
 	--
@@ -23,30 +25,46 @@ OnTestVariable
 	
 }
 
-Select.setSTAT
+Select.setPET1
 {
-	"\![open,sliderinput,OnStat,,%(petCount),0,50]"
+	"\![open,sliderinput,OnPet1,,%(petCount),0,50]"
 }
-OnStat
+OnPet1
 {
 	petCount = reference0
 }
+Select.setPET2
+{
+	"\![open,sliderinput,OnPet2,,%(petCountNeg),0,100]"
+}
+OnPet2
+{
+	petCountNeg = reference0
+}
+
+Select.setSTAT
+{
+	"\![open,sliderinput,OnStat,,%(ellVee),1,20]"
+}
+OnStat
+{
+	ellVee = reference0
+}
 Select.setSTAT2
 {
-	"\![open,sliderinput,OnStat2,,%(communicateratio),0,100]"
+	"\![open,sliderinput,OnStat2,,%(EXP),0,500]"
 }
 OnStat2
 {
+	EXP = reference0
+}
+Select.setRATE
+{
+	"\![open,sliderinput,OnCOMMRATE,,%(communicateratio),0,100]"
+}
+OnCOMMRATE
+{
 	communicateratio = reference0
-}
-
-Select.setSTAT3
-{
-	"\![open,sliderinput,OnStat3,,%(ellVee),1,20]"
-}
-OnStat3
-{
-	ellVee = reference0
 }
 Select.funkTest
 {
