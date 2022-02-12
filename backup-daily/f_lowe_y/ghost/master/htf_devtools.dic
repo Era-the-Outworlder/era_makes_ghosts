@@ -1,6 +1,9 @@
 
 // DEV TOOLS FUCK YEAH
 // ------ This is a whole bunch of testing stuff shhhhh ------
+// ---- An Important Tool
+//		LOGGING("What Am I Doing Here")
+
 OnTestVariable
 {
 	"\0\s[3]\b6%(Narrator) * Testing! \n\n"
@@ -70,7 +73,9 @@ Select.funkTest
 {
 	
 	DUMPVAR()
-	"\n\n\n%(Narrator) * Dumping Variables to ayame.log."
+	"\n\n\n%(Narrator) * Dumping Variables to ayame.log.\n"
+	--
+	OnGLITCH("This is a test string. Let's go!")
 	// --
 
 	// _display = ""

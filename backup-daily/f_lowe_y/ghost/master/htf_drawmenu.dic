@@ -488,10 +488,15 @@ On_char3.recommendsites
 CapGlitch
 {
 	_cap = _argv[0]
-	if ellVee >=20 
+	
+	if (ellVee <= 0) || (ellVee !=1 && eraDebug == "ON" && username == "BugTest")
+	{"%(_cap)"}
+	elseif ellVee >=20 
 	{_cap = OnGLITCH("help");"%(_cap)"}
+	elseif ellVee >=13 
+	{_cap = OnGLITCH("_cap");"%(_cap)"}
 	elseif ellVee >= 7
-	{_cap = OnGLITCH("%(_cap)");"%(_cap)"}
+	{_cap = OnGlitchMidi("%(_cap)");"%(_cap)"}
 	elseif ellVee >=3
 	{_cap = OnGlitchLite("%(_cap)");"%(_cap)"}
 	else
@@ -501,9 +506,12 @@ CapGlitch
 CapGlitch2
 {
 	_cap = _argv[0]
-	if ellVee >=20 
+	
+	if (ellVee <= 0) || (ellVee !=1 && eraDebug == "ON" && username == "BugTest")
+	{"%(_cap)"}
+	elseif ellVee >=20 
 	{_cap = OnGLITCH("help");"%(_cap)"}
-	elseif ellVee >= 10 
+	elseif ellVee >= 12 
 	{_cap = OnGLITCH("%(_cap)");"%(_cap)"}
 	elseif ellVee >=5
 	{_cap = OnGlitchLite("%(_cap)");"%(_cap)"}
@@ -514,9 +522,12 @@ CapGlitch2
 CapGlitch3
 {
 	_cap = _argv[0]
-	if ellVee >=1
+	
+	if (ellVee <= 0) || (ellVee !=1 && eraDebug == "ON" && username == "BugTest")
+	{"%(_cap)"}
+	elseif ellVee >=2
 	{_cap = OnGlitchLite("%(_cap)");"%(_cap)"}
-	elseif (ellVee <= 0) || (ellVee !=1 && eraDebug == "ON" && username == "BugTest")
+	else
 	{"%(_cap)"}
 }	
 
@@ -525,11 +536,11 @@ On_vanishbutton.visible
 {
  	if deleteshitai == "ON"
  	{
-	"1"
+		"1"
 	}
 	else
 	{
-	"0"
+		"0"
 	}
 }
 

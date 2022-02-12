@@ -9,8 +9,8 @@ communicatebox.left,474
 Char8.center,824
 Char7.balloon.isleft,1
 passwordinput.top,565
-scriptbox.left,350
-balloon0.offset,104.82
+scriptbox.left,917
+balloon0.offset,75.324
 Char9.center,559
 Char0.centery,900
 Char8.centery,900
@@ -28,7 +28,7 @@ teachbox.left,837
 Char6.center,1512
 dateinput.top,444
 Char3.balloon.isleft,1
-Char.VirtualDesktop,055decba-29dd-43ac-a135-f55307581065
+Char.VirtualDesktop,a0b0084c-35dc-405f-979b-b075de108451
 Char4.center,629
 Char6.balloon.isleft,1
 dateinput.left,745
@@ -36,7 +36,7 @@ teachbox.top,725
 timeinput.top,648
 Char2.center,896
 Char0.center,1407
-scriptbox.top,514
+scriptbox.top,193
 Char10.balloon.isleft,1
 passwordinput.left,810
 Char8.balloon.isleft,1
