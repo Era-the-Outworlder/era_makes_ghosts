@@ -241,7 +241,7 @@ Select.talkinter
  	{
  		"\b2\0\s[3]"
 		--
- 		"\_v[mus\sound_FLOWEY.mp3]* Change [talktime]?\_w[500]\0\s[3]\n talktime == %(talktime)."
+ 		"%(Flowey)* Change [talktime]?\_w[500]\0\s[3]\n talktime == %(talktime)."
 		
 		"\_v[mus\help_TEXT.mp3] You can change how often f_lowe_y speaks.\_w[500]\0\s[3] The current rate is every %(talktime)."
 		--
@@ -258,7 +258,7 @@ Select.talkinter
 
 Select.TalksTill
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * No change."
+		"\0\s[3]%(Flowey) * No change."
 	}
 
 	// If the user chooses every 30 seconds.
@@ -267,7 +267,7 @@ Select.TALKMAX
  		talktime = "30 seconds" // this sets up the envelope properly
 		aitalkinterval = 30 // this changes the actual rate
 		
- 		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * 30 seconds."
+ 		"\0\s[3]%(Flowey) * 30 seconds."
 	}
 
 // If the user chooses every minute.
@@ -276,7 +276,7 @@ Select.TALKHIGH
  		talktime = "minute"
 		aitalkinterval = 60
 		
- 		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * 1 minute."
+ 		"\0\s[3]%(Flowey) * 1 minute."
 	}
 
 // If the user chooses every three minutes.
@@ -285,7 +285,7 @@ Select.TALKNORMAL
  		talktime = "3 minutes"
 		aitalkinterval = 180
 		
- 		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * 3 minutes."
+ 		"\0\s[3]%(Flowey) * 3 minutes."
 	}
 
 // If the user chooses every five minutes. This is the default rate the ghost will start up in, as seen in bootend.dic.
@@ -294,7 +294,7 @@ Select.TALKPOOR
  		talktime = "5 minutes"
 		aitalkinterval = 300
 		
- 		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * 5 minutes."
+ 		"\0\s[3]%(Flowey) * 5 minutes."
 	}
 	
 
@@ -303,7 +303,7 @@ Select.TALKRARE
  		talktime = "30 minutes"
 		aitalkinterval = 1800
 		
- 		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * 30 minutes."
+ 		"\0\s[3]%(Flowey) * 30 minutes."
 	}
 	
 	
@@ -314,24 +314,24 @@ Select.TALKNONE
  		talktime = "never"
 		aitalkinterval = 0
 		
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * ..."
+		"\0\s[3]%(Flowey) * ..."
 	}
 	
 	
 // If the user selects cancel in a menu.
 Select.CANCEL
 {
-	"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Nevermind. "
+	"\0\s[3]%(Flowey) * Nevermind. "
 	
-	"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Whatever. "
+	"\0\s[3]%(Flowey) * Whatever. "
 }
 
 	
 OnFunctionMenu
 {
 
-	"\0\s[3]\_v[mus\sound_FLOWEY.mp3]\b2 * ...\n\n"
-	"\0\s[3]\_v[mus\sound_FLOWEY.mp3]\b2 * ACC_SSING FUNCTION M_NU\n\n"
+	"\0\s[3]%(Flowey)\b2 * ...\n\n"
+	"\0\s[3]%(Flowey)\b2 * ACC_SSING FUNCTION M_NU\n\n"
 	"\0\s[3]\_v[mus\help_TEXT.mp3]\b2 * (You ask f_lowe_y to do something for you.)\n\n"
 	
 	
@@ -416,19 +416,19 @@ Select.resetSTATS
 }
 
 
-// ---- Weird testing stuff end ----
+
 
 
 //When the user clicks Open Calender. This will open the calender function of SSP, an in-built feature that you don't have to worry about in the least.
 Select.CALENDAR
 {
-	"\0\s[3]\_v[mus\sound_FLOWEY.mp3]* Op_ning th_ cal_nder.\![open,calendar]"
+	"\0\s[3]%(Flowey)* Op_ning th_ cal_nder.\![open,calendar]"
 }
 
 //When the user chooses SSP preferences.
 Select.sspconfig
 {
-	"\0\s[3]\_v[mus\sound_FLOWEY.mp3]* _pening the SSP c_nfig menu.\![open,configurationdialog]"
+	"\0\s[3]%(Flowey)* _pening the SSP c_nfig menu.\![open,configurationdialog]"
 }
 	
 //This is when the user chooses to check their email. The rest of this function plays out in etc.dic.
@@ -450,15 +450,15 @@ menuIntro
 		menuOption = 0
 		if ellVee >=2
 		{
-			"\0\s[3]\_v[mus\sound_FLOWEY.mp3]* \![embed,OnGLITCH,oooooooooOOOOOOOOOoooooooooOOOOOOOOO]\n\![embed,OnGLITCH,open menu.]\_w[1500]\c\_q* Howdy!!"
-			"\0\s[3]\_v[mus\sound_FLOWEY.mp3]* What-\![embed,OnGLITCH,what]-\![embed,OnGLITCH,what]- do you want?"
-			"\0\s[3]\_v[mus\sound_FLOWEY.mp3]* \![embed,OnGLITCH,need]\![embed,OnGLITCH,need]NEED?"
+			"\0\s[3]%(Flowey)* \![embed,OnGLITCH,oooooooooOOOOOOOOOoooooooooOOOOOOOOO]\n\![embed,OnGLITCH,open menu.]\_w[1500]\c\_q* Howdy!!"
+			"\0\s[3]%(Flowey)* What-\![embed,OnGLITCH,what]-\![embed,OnGLITCH,what]- do you want?"
+			"\0\s[3]%(Flowey)* \![embed,OnGLITCH,need]\![embed,OnGLITCH,need]NEED?"
 		}
 		else
 		{
-			"\0\s[3]\_v[mus\sound_FLOWEY.mp3]* oooooooooOOOOOOOOO\nOpe_ Me_u.\_w[1500]\c\_q* Howdy!!"
-			"\0\s[3]\_v[mus\sound_FLOWEY.mp3]* What-\![embed,OnGLITCH,what]-do you want?"
-			"\0\s[3]\_v[mus\sound_FLOWEY.mp3]* NEED?"
+			"\0\s[3]%(Flowey)* oooooooooOOOOOOOOO\nOpe_ Me_u.\_w[1500]\c\_q* Howdy!!"
+			"\0\s[3]%(Flowey)* What-\![embed,OnGLITCH,what]-do you want?"
+			"\0\s[3]%(Flowey)* NEED?"
 		}
 	}
 	{
@@ -584,5 +584,5 @@ closeMenu
 
 OnChoiceTimeout
  {
-	"\0\s[3]\_v[mus\sound_FLOWEY.mp3]* Come back when-when-when you actually want something."
+	"\0\s[3]%(Flowey)* Come back when-when-when you actually want something."
  }

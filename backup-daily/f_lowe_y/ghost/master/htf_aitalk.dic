@@ -155,15 +155,15 @@ RandomTalk : nonoverlap
 		}
 		if ellVee >= 2
 		{
-			"\0\s[14]%(Narrator) * (Something seems to be wrong.) \_w[500]"
+			// "\0\s[14]%(Narrator) * (Something seems to be wrong.) \_w[500]"
 		
-			"\0\s[15]%(Flowey) * What?! No. \_w[500]"
+			// "\0\s[15]%(Flowey) * What?! No. \_w[500]"
 			
 			
 		
 			// --------
 			
-			"\0\s[24]%(Flowey) * HAHAHAHAHAHAHAHA"
+			// "\0\s[24]%(Flowey) * HAHAHAHAHAHAHAHA"
 		
 			"\0\s[26]\i[0]%(Flowey)\f[align,center]EVERYONE"
 			
@@ -171,13 +171,13 @@ RandomTalk : nonoverlap
 			"\0\s[26]\i[1]%(Flowey)\f[align,center]\![embed,OnGLITCH,EVERYONE]"
 
 			
-			"\0\s[27]%(Narrator) * Swing and miss. "
+			// "\0\s[27]%(Narrator) * Swing and miss. "
 			
 			"\0\s[27]%(Flowey)"
 			
 			"\0\s[28]%(Narrator)"
 
-			"\0\s[29]\_v[mus\intermission.wav]"
+			// "\0\s[29]\_v[mus\intermission.wav]"
 		}
 	}
 	elseif resetCount != 0
@@ -318,6 +318,7 @@ RandomTalk : nonoverlap
 	{
 		OnDesktopEyeball
 	}
+
 	if ASEARCH("friendchain",hourlyArray) == -1 || ASEARCH("torichainA",hourlyArray) == -1 || ASEARCH("torichainB",hourlyArray) == -1
 	{OnStartChain}
 	

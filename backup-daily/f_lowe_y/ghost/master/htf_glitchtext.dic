@@ -122,11 +122,9 @@ OnGlitchReplace
 		
 			if _ref _in_ alpha
 			{
-				_seedA = RAND(100) 
+			
 				if RAND(100) >= 29
 				{
-					_seedB = RAND(100) 
-					_seedC = RAND(100) 
 					
 					if RAND(100) <= 49
 					{_ref = TOUPPER(_ref)}
@@ -136,15 +134,11 @@ OnGlitchReplace
 					--
 					
 					if RAND(100) <= 19
-					
 					{_ref += "_"}
-					// elseif RAND(100)>=66
-					// {_ref += ""}
 					else{}
 				}
 				else
 				{
-					_seedD = RAND(100)
 					
 					if RAND(100) <= 9
 					{_ref = "."}

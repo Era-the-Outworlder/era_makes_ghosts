@@ -22,7 +22,7 @@ On_recommendrootbutton.caption
 On_sakura.recommendsites
 {
 	
-	"Ghost Template Walkthrough"
+	"Zarla's Ghost Template Walkthrough"
 	--
 	"%ASC(1)http://www.ashido.com/ukagaka/walkthrough.html%ASC(2)"
 	--
@@ -37,14 +37,14 @@ On_sakura.recommendsites
 	"%ASC(1)http://ssp.shillest.net/%ASC(2)"
 	--
 	
-	"Crow + SSP Reference (J)"
+	"UKADOC (J)"
 	--
-	"%ASC(1)http://crow.aqrs.jp/reference/all/index.html%ASC(2)"
+	"%ASC(1)http://ssp.shillest.net/ukadoc/manual/index.html%ASC(2)"
 	--
 	
-	"Ghost Documentation (J)"
+	"AYAYA/03 YAYA Information Wiki (J)"
 	--
-	"%ASC(1)http://usada.sakura.vg/contents/specification.html%ASC(2)"
+	"%ASC(1)http://emily.shillest.net/ayaya/?FrontPage%ASC(2)"
 	--
 	
 	"Disc-2 (J)"
@@ -68,24 +68,21 @@ On_sakura.portalsites
 {
 	"GITHUB"
 	--
-	"%ASC(1)https://era-the-outworlder.github.io/era_makes_ghosts/f_lowe_y.html/%ASC(2)"
+	"%ASC(1)https://era-the-outworlder.github.io/era_makes_ghosts/f_lowe_y.html/ %ASC(2)"
 	--
  	"Tumblr"
 	--
 	"%ASC(1)http://theoutworlder.tumblr.com %ASC(2)"
 	--
-	
 	"Twitter"
 	--
 	"%ASC(1) https://twitter.com/theoutworlder %ASC(2)"
 	--	
-	
 	"Deviantart"
 	--
 	"%ASC(1) http://baobhan-sith.deviantart.com %ASC(2)"
 	--
-	
-	"Outworlderaffairs.com"
+	"Outworlder Affairs"
 	--
 	"%ASC(1) http://www.outworlderaffairs.com %ASC(2)"
 	
@@ -491,10 +488,15 @@ On_char3.recommendsites
 CapGlitch
 {
 	_cap = _argv[0]
-	if ellVee >=20 
+	
+	if (ellVee <= 0) || (ellVee !=1 && eraDebug == "ON" && username == "BugTest")
+	{"%(_cap)"}
+	elseif ellVee >=20 
 	{_cap = OnGLITCH("help");"%(_cap)"}
+	elseif ellVee >=13 
+	{_cap = OnGLITCH("_cap");"%(_cap)"}
 	elseif ellVee >= 7
-	{_cap = OnGLITCH("%(_cap)");"%(_cap)"}
+	{_cap = OnGlitchMidi("%(_cap)");"%(_cap)"}
 	elseif ellVee >=3
 	{_cap = OnGlitchLite("%(_cap)");"%(_cap)"}
 	else
@@ -504,9 +506,12 @@ CapGlitch
 CapGlitch2
 {
 	_cap = _argv[0]
-	if ellVee >=20 
+	
+	if (ellVee <= 0) || (ellVee !=1 && eraDebug == "ON" && username == "BugTest")
+	{"%(_cap)"}
+	elseif ellVee >=20 
 	{_cap = OnGLITCH("help");"%(_cap)"}
-	elseif ellVee >= 10 
+	elseif ellVee >= 12 
 	{_cap = OnGLITCH("%(_cap)");"%(_cap)"}
 	elseif ellVee >=5
 	{_cap = OnGlitchLite("%(_cap)");"%(_cap)"}
@@ -517,7 +522,10 @@ CapGlitch2
 CapGlitch3
 {
 	_cap = _argv[0]
-	if ellVee >=2
+	
+	if (ellVee <= 0) || (ellVee !=1 && eraDebug == "ON" && username == "BugTest")
+	{"%(_cap)"}
+	elseif ellVee >=2
 	{_cap = OnGlitchLite("%(_cap)");"%(_cap)"}
 	else
 	{"%(_cap)"}
@@ -528,11 +536,11 @@ On_vanishbutton.visible
 {
  	if deleteshitai == "ON"
  	{
-	"1"
+		"1"
 	}
 	else
 	{
-	"0"
+		"0"
 	}
 }
 

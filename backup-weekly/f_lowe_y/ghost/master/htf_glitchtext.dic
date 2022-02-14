@@ -52,6 +52,24 @@ OnGlitchLite
 	_final;
 }
 
+// separates strings into characters, sends to OnGlitchMidi converter
+
+OnGlitchMidi	
+{
+	_text = ""
+	if reference0
+	{
+		_text = TOLOWER(reference0)
+	}
+	else
+	{
+		_text = TOLOWER(_argv[0])
+	}
+	_send = CHARSPLIT(_text)
+	_final = OnGMidiReplace(_send)
+	--
+	_final;
+}
 //USE:
 //CHARSPLIT('word') will return 'w,o,r,d'
 CHARSPLIT
@@ -75,35 +93,69 @@ OnGlitchReplace
 	_num = 0
 	foreach _array; _ref //Each time the loop runs, _ref will store the next value in the array, until the array ends
 	{
-		if _ref == "a"{_ref = REPLACE(_ref,'a',a_)}
-		elseif _ref == "b"{_ref = REPLACE(_ref,'b',b_)}
-		elseif _ref == "c"{_ref = REPLACE(_ref,'c',c_)}
-		elseif _ref == "d"{_ref = REPLACE(_ref,'d',d_)}
-		elseif _ref == "e"{_ref = REPLACE(_ref,'e',e_)}
-		elseif _ref == "f"{_ref = REPLACE(_ref,'f',f_)}
-		elseif _ref == "g"{_ref = REPLACE(_ref,'g',g_)}
-		elseif _ref == "h"{_ref = REPLACE(_ref,'h',h_)}
-		elseif _ref == "i"{_ref = REPLACE(_ref,'i',i_)}
-		elseif _ref == "j"{_ref = REPLACE(_ref,'j',j_)}
-		elseif _ref == "k"{_ref = REPLACE(_ref,'k',k_)}
-		elseif _ref == "l"{_ref = REPLACE(_ref,'l',l_)}
-		elseif _ref == "m"{_ref = REPLACE(_ref,'m',m_)}
-		elseif _ref == "n"{_ref = REPLACE(_ref,'n',n_)}
-		elseif _ref == "o"{_ref = REPLACE(_ref,'o',o_)}
-		elseif _ref == "p"{_ref = REPLACE(_ref,'p',p_)}
-		elseif _ref == "q"{_ref = REPLACE(_ref,'q',q_)}
-		elseif _ref == "r"{_ref = REPLACE(_ref,'r',r_)}
-		elseif _ref == "s"{_ref = REPLACE(_ref,'s',s_)}
-		elseif _ref == "t"{_ref = REPLACE(_ref,'t',t_)}
-		elseif _ref == "u"{_ref = REPLACE(_ref,'u',u_)}
-		elseif _ref == "v"{_ref = REPLACE(_ref,'v',v_)}
-		elseif _ref == "w"{_ref = REPLACE(_ref,'w',w_)}
-		elseif _ref == "x"{_ref = REPLACE(_ref,'x',x_)}
-		elseif _ref == "y"{_ref = REPLACE(_ref,'y',y_)}
-		elseif _ref == "z"{_ref = REPLACE(_ref,'z',z_)}
+		// if _ref == "a"{_ref = REPLACE(_ref,'a',a_)}
+		// elseif _ref == "b"{_ref = REPLACE(_ref,'b',b_)}
+		// elseif _ref == "c"{_ref = REPLACE(_ref,'c',c_)}
+		// elseif _ref == "d"{_ref = REPLACE(_ref,'d',d_)}
+		// elseif _ref == "e"{_ref = REPLACE(_ref,'e',e_)}
+		// elseif _ref == "f"{_ref = REPLACE(_ref,'f',f_)}
+		// elseif _ref == "g"{_ref = REPLACE(_ref,'g',g_)}
+		// elseif _ref == "h"{_ref = REPLACE(_ref,'h',h_)}
+		// elseif _ref == "i"{_ref = REPLACE(_ref,'i',i_)}
+		// elseif _ref == "j"{_ref = REPLACE(_ref,'j',j_)}
+		// elseif _ref == "k"{_ref = REPLACE(_ref,'k',k_)}
+		// elseif _ref == "l"{_ref = REPLACE(_ref,'l',l_)}
+		// elseif _ref == "m"{_ref = REPLACE(_ref,'m',m_)}
+		// elseif _ref == "n"{_ref = REPLACE(_ref,'n',n_)}
+		// elseif _ref == "o"{_ref = REPLACE(_ref,'o',o_)}
+		// elseif _ref == "p"{_ref = REPLACE(_ref,'p',p_)}
+		// elseif _ref == "q"{_ref = REPLACE(_ref,'q',q_)}
+		// elseif _ref == "r"{_ref = REPLACE(_ref,'r',r_)}
+		// elseif _ref == "s"{_ref = REPLACE(_ref,'s',s_)}
+		// elseif _ref == "t"{_ref = REPLACE(_ref,'t',t_)}
+		// elseif _ref == "u"{_ref = REPLACE(_ref,'u',u_)}
+		// elseif _ref == "v"{_ref = REPLACE(_ref,'v',v_)}
+		// elseif _ref == "w"{_ref = REPLACE(_ref,'w',w_)}
+		// elseif _ref == "x"{_ref = REPLACE(_ref,'x',x_)}
+		// elseif _ref == "y"{_ref = REPLACE(_ref,'y',y_)}
+		// elseif _ref == "z"{_ref = REPLACE(_ref,'z',z_)}
+		
+			if _ref _in_ alpha
+			{
+			
+				if RAND(100) >= 29
+				{
+					
+					if RAND(100) <= 49
+					{_ref = TOUPPER(_ref)}
+					elseif RAND(100) >= 50
+					{_ref = TOLOWER(_ref)}
+					
+					--
+					
+					if RAND(100) <= 19
+					{_ref += "_"}
+					else{}
+				}
+				else
+				{
+					
+					if RAND(100) <= 9
+					{_ref = "."}
+					elseif RAND(100) >= 49
+					{_ref = "_"}
+					else
+					{_ref = "-"}
+						
+				}
+			}
+			else
+			{}
+	
 		--
 		_display += "%(_ref)"
 		_num ++
+		
 	}
 	--
 	_display
@@ -141,6 +193,9 @@ x_{if RAND(100)>=39{"x";"X";"x_";"X_"};else{"_";"-";"."}}
 y_{if RAND(100)>=39{"y";"Y";"y_";"Y_"};else{"_";"-";"."}}
 z_{if RAND(100)>=39{"z";"Z";"z_";"Z_"};else{"_";"-";"."}}
 
+alpha
+{"abcdefghijklmnopqrstuvwxyz"}
+
 // "randomly" turns letters upper or lowercase
 OnGliteReplace 
 {
@@ -153,7 +208,7 @@ OnGliteReplace
 		if RAND(100) >= 49 {_ref = TOUPPER(_ref)}
 		else {_ref = TOLOWER(_ref)}
 		--
-		if RAND(100) <= 24 {_ref += "_"}
+		if RAND(100) <= 14 {_ref += "_"}
 		else{}
 		--
 		_display += "%(_ref)"
@@ -163,6 +218,27 @@ OnGliteReplace
 	_display
 }
 
+OnGMidiReplace
+{
+	_array = IARRAY
+	_array = _argv[0]
+	_display = ""
+	_num = 0
+	foreach _array; _ref
+	{
+		if RAND(100) >= 49 {_ref = TOUPPER(_ref)}
+		else {_ref = TOLOWER(_ref)}
+		--
+		if RAND(100) <= 24 {_ref += "_"}
+		elseif RAND(100) >= 50 {_ref += " "}
+		else{}
+		--
+		_display += "%(_ref)"
+		_num ++
+	}
+	--
+	_display
+}
 
 // splitTest
 // {

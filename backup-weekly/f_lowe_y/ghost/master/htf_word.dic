@@ -11,11 +11,12 @@
 
 //  A Series of Unfortunate Envelopes 
 
-// ---- Narrator ----
+// ---- Voices ----
 Narrator
-{
-	"\1\s[-1]\_v[mus\HELP_text.mp3]"
-}
+{"\1\s[-1]\_v[mus\HELP_text.mp3]"}
+
+Flowey
+{"\_v[mus\sound_FLOWEY.mp3]"}
 
 // ----System display related----
 ap
@@ -112,14 +113,14 @@ usersfolder
 
 change
 {
-	if RAND(100)>=74{"\![embed,OnGLITCH,change]"}
-	elseif RAND(100)>=24{"\![embed,OnGlitchLite,change]"}
+	if RAND(100)>=74{_text = OnGLITCH("change");"%(_text)"}
+	elseif RAND(100)>=24{_text = OnGlitchLite("change");"%(_text)"}
 	else{"Change"}	
 }
 
 lateearly
 {	
-	"LATE. EARLY. %(l_)ATE. %(e_)ARLY. L%(a_)%(t_)E. EA%(r_)L%(y_). \![embed,OnGLITCH,late]. \![embed,OnGLITCH,early]). \![embed,OnGLITCH,late]. \![embed,OnGLITCH,early]."
+	"LATE. EARLY. %(l_)ATE. %(e_)ARLY. L%(a_)%(t_)E. EA%(r_)L%(y_). \![embed,OnGLITCH,late]. \![embed,OnGLITCH,early]. \![embed,OnGLITCH,late]. \![embed,OnGLITCH,early]."
 }
 
 
