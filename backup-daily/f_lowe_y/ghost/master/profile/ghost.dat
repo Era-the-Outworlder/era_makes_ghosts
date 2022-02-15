@@ -6,7 +6,7 @@ GroupFlagOverride,noupdateauto,nocheck,
 communicatebox.left,474
 Char8.center,824
 passwordinput.top,565
-scriptbox.left,917
+scriptbox.left,1192
 Char9.center,559
 shiori.lognotify,0
 sliderinput.left,620
@@ -26,12 +26,12 @@ timeinput.top,648
 seriko.waitmultiplier,100
 Char2.center,896
 Update.TestMode,0
-Char0.center,1261
-scriptbox.top,193
+Char0.center,800
+scriptbox.top,481
 shell,shell\master\
 FirstBoot,booted
 passwordinput.left,810
-Char1.center,1264
+Char1.center,800
 sliderinput.top,382
 shiori.log,1
 shell.ischanged.2,1
