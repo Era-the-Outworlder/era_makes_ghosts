@@ -12,13 +12,13 @@ OnDesktopEyeball
 	//A string containing the names of all open windows separated by commas will be stored in OpenWindows
 	OpenWindows = valueex
 	--
-	if eraDebug == "ON"
-	{
-				//Displays open windows, for debug
-				_display = REPLACE("%(OpenWindows)",",","\n\n[half]")
-				"\_q\b2%(_display)\n\n"
-	}
-	else
+	// if eraDebug == "ON"
+	// {
+				// Displays open windows, for debug
+				// _display = REPLACE("%(OpenWindows)",",","\n\n[half]")
+				// "\_q\b2%(_display)\n\n"
+	// }
+	// else
 	{
 		"\0\s[3]%(Narrator) * (f_lowe_y looks at your computer.)\n\n"
 		"\0\s[3]%(Flowey) * Strange. \n\n"
@@ -89,8 +89,9 @@ fileExplorer
 // ---- ChromeWidgetWin1 ----
 webBrowser
 {
-	
+	""
 }
+
 Brave
 {
 	if RE_ASEARCH("Brave",OpenWindows) != -1
