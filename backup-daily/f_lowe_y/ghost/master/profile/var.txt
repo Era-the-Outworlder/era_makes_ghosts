@@ -6,4 +6,4 @@ homeurl,https://raw.githubusercontent.com/Era-The-Outworlder/era_makes_ghosts/ma
 update_result,NG(md5 miss:developer_options.txt)
 firstboot,691361255
 commitmemorysize,4632277
-lastboot,698314235
+lastboot,698563816
