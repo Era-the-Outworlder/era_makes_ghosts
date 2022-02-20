@@ -26,6 +26,8 @@ OnNotifyUserInfo
 // Name retained for compatibility w/GT Template ghosts.
 OnGetBirthday	
 {
+	OnNotifyUserInfo
+	--
 	// This is setting up in case today is the user's birthday.
 	// Format retained for compatibility w/GT Template ghosts.
 	dayslot = GetDaySlot 
@@ -205,33 +207,204 @@ Printday
 
 birthchecked
 {
-	//if today is the user's birthday
-	if userbirthday == dayslot 
+	if bornmonth == month && bornday == day
 	{
-		
-			if userbirthday == "12month 25day"
+		if bornmonth == 1
+		{
+			if bornday == 1
+			{
+				"\0\s[3]%(Flowey) \_w[1000]* Merry\_w[1000] Gyftmas.\_w[500]"
+				"\0\s[3]%(Narrator) * It's your birthday today.\n And it's Gyftmas, too?\_w[1500]"
+			}
+			elseif bornday == 14
+			{
+			
+			}			
+			else
+			{
+				"\0\s[8]%(Flowey) * %(HAPPY) \c%(Flowey) * Happy birthday, %(username).\_w[1000]\_w[1000]\_w[500]"
+				"\0\s[3]%(Narrator) * It's your birthday today. Stay warm, _user. \_w[1500]"
+			}
+		}
+		elseif bornmonth == 2
+		{
+			if bornday == 2
 			{
 				"\0\s[3]%(Flowey) \_w[1000]* Merry\_w[1000] Gyftmas.\_w[500]"
 				"\0\s[3]%(Narrator) * It's your birthday today.\n And it's Gyftmas, too?\_w[1500]"
 			}
 			else
 			{
-			"\0\s[8]%(Flowey) * %(HAPPY) \c%(Flowey) * Happy birthday, %(username).\_w[1000]\_w[1000]\_w[500]"
-			
-			"\0\s[3]%(Narrator) * It's your birthday today.\_w[1500]"
+				"\0\s[8]%(Flowey) * %(HAPPY) \c%(Flowey) * Happy birthday, %(username).\_w[1000]\_w[1000]\_w[500]"
+				"\0\s[3]%(Narrator) * It's your birthday today.\_w[1500]"
 			}
-		
+		}
+		elseif bornmonth == 3
+		{
+			if bornday == 25
+			{
+				"\0\s[3]%(Flowey) \_w[1000]* Merry\_w[1000] Gyftmas.\_w[500]"
+				"\0\s[3]%(Narrator) * It's your birthday today.\n And it's Gyftmas, too?\_w[1500]"
+			}
+			else
+			{
+				"\0\s[8]%(Flowey) * %(HAPPY) \c%(Flowey) * Happy birthday, %(username).\_w[1000]\_w[1000]\_w[500]"
+				"\0\s[3]%(Narrator) * It's your birthday today.\_w[1500]"
+			}
+		}
+		elseif bornmonth == 4
+		{
+			if bornday == 25
+			{
+				"\0\s[3]%(Flowey) \_w[1000]* Merry\_w[1000] Gyftmas.\_w[500]"
+				"\0\s[3]%(Narrator) * It's your birthday today.\n And it's Gyftmas, too?\_w[1500]"
+			}
+			else
+			{
+				"\0\s[8]%(Flowey) * %(HAPPY) \c%(Flowey) * Happy birthday, %(username).\_w[1000]\_w[1000]\_w[500]"
+				"\0\s[3]%(Narrator) * It's your birthday today.\_w[1500]"
+			}
+		}
+		elseif bornmonth == 5
+		{
+			if bornday == 25
+			{
+				"\0\s[3]%(Flowey) \_w[1000]* Merry\_w[1000] Gyftmas.\_w[500]"
+				"\0\s[3]%(Narrator) * It's your birthday today.\n And it's Gyftmas, too?\_w[1500]"
+			}
+			else
+			{
+				"\0\s[8]%(Flowey) * %(HAPPY) \c%(Flowey) * Happy birthday, %(username).\_w[1000]\_w[1000]\_w[500]"
+				"\0\s[3]%(Narrator) * It's your birthday today.\_w[1500]"
+			}
+		}
+		elseif bornmonth == 6
+		{
+			if bornday == 25
+			{
+				"\0\s[3]%(Flowey) \_w[1000]* Merry\_w[1000] Gyftmas.\_w[500]"
+				"\0\s[3]%(Narrator) * It's your birthday today.\n And it's Gyftmas, too?\_w[1500]"
+			}
+			else
+			{
+				"\0\s[8]%(Flowey) * %(HAPPY) \c%(Flowey) * Happy birthday, %(username).\_w[1000]\_w[1000]\_w[500]"
+				"\0\s[3]%(Narrator) * It's your birthday today.\_w[1500]"
+			}
+		}
+		elseif bornmonth == 7
+		{
+			if bornday == 25
+			{
+				"\0\s[3]%(Flowey) \_w[1000]* Merry\_w[1000] Gyftmas.\_w[500]"
+				"\0\s[3]%(Narrator) * It's your birthday today.\n And it's Gyftmas, too?\_w[1500]"
+			}
+			else
+			{
+				"\0\s[8]%(Flowey) * %(HAPPY) \c%(Flowey) * Happy birthday, %(username).\_w[1000]\_w[1000]\_w[500]"
+				"\0\s[3]%(Narrator) * It's your birthday today.\_w[1500]"
+			}
+		}
+		elseif bornmonth == 8
+		{
+			if bornday == 25
+			{
+				"\0\s[3]%(Flowey) \_w[1000]* Merry\_w[1000] Gyftmas.\_w[500]"
+				"\0\s[3]%(Narrator) * It's your birthday today.\n And it's Gyftmas, too?\_w[1500]"
+			}
+			else
+			{
+				"\0\s[8]%(Flowey) * %(HAPPY) \c%(Flowey) * Happy birthday, %(username).\_w[1000]\_w[1000]\_w[500]"
+				"\0\s[3]%(Narrator) * It's your birthday today.\_w[1500]"
+			}
+		}
+		elseif bornmonth == 9
+		{
+			if bornday == 25
+			{
+				"\0\s[3]%(Flowey) \_w[1000]* Merry\_w[1000] Gyftmas.\_w[500]"
+				"\0\s[3]%(Narrator) * It's your birthday today.\n And it's Gyftmas, too?\_w[1500]"
+			}
+			else
+			{
+				"\0\s[8]%(Flowey) * %(HAPPY) \c%(Flowey) * Happy birthday, %(username).\_w[1000]\_w[1000]\_w[500]"
+				"\0\s[3]%(Narrator) * It's your birthday today.\_w[1500]"
+			}
+		}
+		elseif bornmonth == 10
+		{
+			if bornday == 25
+			{
+				"\0\s[3]%(Flowey) \_w[1000]* Merry\_w[1000] Gyftmas.\_w[500]"
+				"\0\s[3]%(Narrator) * It's your birthday today.\n And it's Gyftmas, too?\_w[1500]"
+			}
+			else
+			{
+				"\0\s[8]%(Flowey) * %(HAPPY) \c%(Flowey) * Happy birthday, %(username).\_w[1000]\_w[1000]\_w[500]"
+				"\0\s[3]%(Narrator) * It's your birthday today.\_w[1500]"
+			}
+		}
+		elseif bornmonth == 11
+		{
+			if bornday == 25
+			{
+				"\0\s[3]%(Flowey) \_w[1000]* Merry\_w[1000] Gyftmas.\_w[500]"
+				"\0\s[3]%(Narrator) * It's your birthday today.\n And it's Gyftmas, too?\_w[1500]"
+			}
+			else
+			{
+				"\0\s[8]%(Flowey) * %(HAPPY) \c%(Flowey) * Happy birthday, %(username).\_w[1000]\_w[1000]\_w[500]"
+				"\0\s[3]%(Narrator) * It's your birthday today.\_w[1500]"
+			}
+		}
+		elseif bornmonth == 12
+		{
+			if bornday == 25
+			{
+				"\0\s[3]%(Flowey) \_w[1000]* Merry\_w[1000] Gyftmas.\_w[500]"
+				"\0\s[3]%(Narrator) * It's your birthday today.\n And it's Gyftmas, too?\_w[1500]"
+			}
+			else
+			{
+				"\0\s[8]%(Flowey) * %(HAPPY) \c%(Flowey) * Happy birthday, %(username).\_w[1000]\_w[1000]\_w[500]"
+				"\0\s[3]%(Narrator) * It's your birthday today.\_w[1500]"
+			}
+		}
 	}
-	//Any number of these can be added to check birthdays against holidays or other significate dates
-	elseif userbirthday == "12month 25day"
+	else
 	{
-		"\0\s[3]%(Narrator) * That's right, you were born on Gyftmas...\_w[1500]"
-	}
-	//if the birthday is not listed above.
-	else 
-	{
-		"\0\s[3]%(Flowey) * %(bornmonthprint) %(borndayprint), %(bornyear)? Is _ha_... righ_..."
-		"\0\s[3]%(Narrator) * %(bornmonthprint) %(borndayprint), %(bornyear).\n f_lowe_y will remember that.\_w[1500]"
-			
+		if bornmonth == 1
+		{}
+		elseif bornmonth == 2
+		{}
+		elseif bornmonth == 3
+		{}
+		elseif bornmonth == 4
+		{}
+		elseif bornmonth == 5
+		{}
+		elseif bornmonth == 6
+		{}
+		elseif bornmonth == 7
+		{}
+		elseif bornmonth == 8
+		{}
+		elseif bornmonth == 9
+		{}
+		elseif bornmonth == 10
+		{}
+		elseif bornmonth == 11
+		{}
+		elseif bornmonth == 12
+		{
+			if bornday == 25
+			{
+				"\0\s[3]%(Narrator) * That's right, you were born on insert_holiday...\_w[1500]"
+			}
+			else
+			{
+				"\0\s[3]%(Flowey) * %(bornmonthprint) %(borndayprint), %(bornyear)? Is _ha_... righ_..."
+				"\0\s[3]%(Narrator) * %(bornmonthprint) %(borndayprint), %(bornyear).\n f_lowe_y will remember that.\_w[1500]"
+			}
+		}
 	}
 }

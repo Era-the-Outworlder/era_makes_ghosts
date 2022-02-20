@@ -161,8 +161,6 @@ GetDaySlot
 
 //--OnBoot
 
-
-
 OnBoot
  {
 	OnNotifyUserInfo
@@ -181,16 +179,13 @@ OnBoot
 	--
 	
 	if dayslot == userbirthday 
-	
 	{
 				"\0\s[3]%(Narrator) * It's %(bornmonthprint) %(borndayprint).\_w[500]\n * Happy birthday, %(username)." 
 				--
 				"\0\s[0]\e"
 				
 	}
-	
 	elseif dayslot == "6month 6day" 
-	
 	{
 				"\0\s[3]%(Flowey) * Today. June 6th."
 				--
