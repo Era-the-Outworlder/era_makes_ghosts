@@ -34,10 +34,12 @@ OnfirstBoot
 	verBalete = "ON" //DOES start with recycle bin confirmation on
 	// A couple of flag arrays
 	hourlyArray = IARRAY
+	agreedToConsequences = IARRAY
 	//The following are global variables for f_lowe_y's ghost interactions.
 	gazeTalk = 0
 	//The following are global variables for f_lowe_y's user interactions.
 	stroke = 0	// Sets being-pet state to zero.
+	rub = 0 // being-pet state for face rubbing
 	petCount = 0
 	petCountNeg = 0
 	flickCount = 0
@@ -159,8 +161,6 @@ GetDaySlot
 
 //--OnBoot
 
-
-
 OnBoot
  {
 	OnNotifyUserInfo
@@ -179,16 +179,13 @@ OnBoot
 	--
 	
 	if dayslot == userbirthday 
-	
 	{
 				"\0\s[3]%(Narrator) * It's %(bornmonthprint) %(borndayprint).\_w[500]\n * Happy birthday, %(username)." 
 				--
 				"\0\s[0]\e"
 				
 	}
-	
 	elseif dayslot == "6month 6day" 
-	
 	{
 				"\0\s[3]%(Flowey) * Today. June 6th."
 				--

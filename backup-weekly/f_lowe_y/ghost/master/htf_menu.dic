@@ -411,6 +411,7 @@ Select.resetSTATS
 	knifeTime = 0
 	killCount = 0
 	resetCount++
+	agreedToConsequences = IARRAY
 	--
 	OnStatMenu
 }

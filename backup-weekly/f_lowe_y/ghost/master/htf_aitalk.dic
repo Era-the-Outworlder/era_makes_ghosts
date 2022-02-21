@@ -60,7 +60,7 @@ AiTalk
 
 RandomTalk : nonoverlap
 {	
-	
+	meanvariable = (petCountNeg + flickCount)
 	
 	// User has not reset this installation
 	if resetCount == 0
