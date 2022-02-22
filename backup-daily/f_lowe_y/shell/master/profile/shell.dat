@@ -9,8 +9,8 @@ communicatebox.left,474
 Char8.center,824
 Char7.balloon.isleft,1
 passwordinput.top,565
-scriptbox.left,1192
-balloon0.offset,-670.554
+scriptbox.left,1173
+balloon0.offset,348.52
 Char9.center,559
 Char0.centery,900
 Char8.centery,900
@@ -37,7 +37,7 @@ teachbox.top,725
 timeinput.top,648
 Char2.center,896
 Char0.center,176
-scriptbox.top,481
+scriptbox.top,195
 Char10.balloon.isleft,1
 passwordinput.left,810
 Char8.balloon.isleft,1

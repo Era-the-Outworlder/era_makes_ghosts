@@ -360,7 +360,7 @@ OnBasewareUpdated
  OnWindowStateMinimize
  {
 	"\0\s[3]%(Flowey) * Tiny\_w[500]"
-	"\0\s[3]%(Narrator) * (f_lowe_y will hide for now.)\_w[500]"
+	"\0\s[3]%(Narrator) * f_lowe_y will hide for now.\_w[500]"
 	--
 	"\0\s[0]\e"
 }
@@ -449,11 +449,10 @@ OnGhostCalling
 {
 	_glNam = OnGLITCH(reference0)
 	
-	"\0\s[3]%(Flowey) * HELLO %(reference0).\_w[500]\e"
 	
 	"\0\s[3]%(Flowey) * IT'S IT'S IT'S %(reference2)! HELLO %(_glNam).\_w[500]\e"
 	
-	"\0\s[3]%(Narrator) * f_lowe_y is already here, but you called %(reference0) anyway.\n\_w[300] Was it to keep him company?\_w[500]\e"
+	"\0\s[3]%(Narrator) * f_lowe_y is already here, but you're calling %(reference0) anyway.\n\_w[300] Is it to keep him company?\_w[500]\e"
 }
 
 // When another ghost is called from THIS ghost's r-click menu (happens after new ghost completes boot function)

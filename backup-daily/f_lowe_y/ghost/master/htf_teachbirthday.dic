@@ -213,12 +213,12 @@ birthchecked
 		{
 			if bornday == 1
 			{
-				"\0\s[3]%(Flowey) \_w[1000]* Merry\_w[1000] Gyftmas.\_w[500]"
-				"\0\s[3]%(Narrator) * It's your birthday today.\n And it's Gyftmas, too?\_w[1500]"
+				"\0\s[3]%(Flowey) * New. New. New. New. Year. New Year. New year. new year. Happy. \n H A P P Y \![embed,OnGLITCH,birthday]"
+				"\0\s[3]%(Narrator) * It's your birthday today.\n The first day of a new year.\_w[1500]"
 			}
 			elseif bornday == 14
 			{
-			
+				"\0\s[3]%(Narrator) * It's your birthday today.\n The first day of a \![embed,OnGlitchMidi,new year], by some accounts. Make it a good one, %(username)\_w[1500]"
 			}			
 			else
 			{
@@ -230,8 +230,16 @@ birthchecked
 		{
 			if bornday == 2
 			{
-				"\0\s[3]%(Flowey) \_w[1000]* Merry\_w[1000] Gyftmas.\_w[500]"
-				"\0\s[3]%(Narrator) * It's your birthday today.\n And it's Gyftmas, too?\_w[1500]"
+				"\0\s[3]%(Flowey) * \![embed,OnGLITCH,happy birthday].\_w[500]\n * \![embed,OnGLITCH,happy birthday].\_w[500]\n * \![embed,OnGLITCH,happy birthday].\_w[500]\n"
+				"\0\s[3]%(Narrator) * Have you ever gotten the feeling you've done this before?\_w[500]\0\s[3]%(Flowey) * HAPPY \![embed,OnGLITCH,birthday] "
+			}
+			elseif bornday == 14
+			{
+				"\0\s[3]%(Flowey) * Love. LOVE. LV. Celebrate. Celebrate. \![embed,OnGLITCH,celebrate].\n YOU."
+			}
+			elseif bornday == 15
+			{
+				"\0\s[29]%(Narrator) * What a strange coincidence, the collapse of a multiverse occurring on the anniversary of one's birth. "
 			}
 			else
 			{
@@ -241,10 +249,9 @@ birthchecked
 		}
 		elseif bornmonth == 3
 		{
-			if bornday == 25
+			if bornday == 14
 			{
-				"\0\s[3]%(Flowey) \_w[1000]* Merry\_w[1000] Gyftmas.\_w[500]"
-				"\0\s[3]%(Narrator) * It's your birthday today.\n And it's Gyftmas, too?\_w[1500]"
+				"\0\s[3]%(Flowey) * %(piDay)"
 			}
 			else
 			{
@@ -254,9 +261,9 @@ birthchecked
 		}
 		elseif bornmonth == 4
 		{
-			if bornday == 25
+			if bornday == 1
 			{
-				"\0\s[3]%(Flowey) \_w[1000]* Merry\_w[1000] Gyftmas.\_w[500]"
+				"\0\s[3]%(Flowey) "
 				"\0\s[3]%(Narrator) * It's your birthday today.\n And it's Gyftmas, too?\_w[1500]"
 			}
 			else

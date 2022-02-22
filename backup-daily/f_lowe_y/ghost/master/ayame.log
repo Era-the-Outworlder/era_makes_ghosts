@@ -1,5 +1,5 @@
 // AYA request log
-// load time: 2022/02/19 20:22:41
+// load time: 2022/02/21 14:53:59
 
 // Loading of dictionary file
 // - D:\SSP\ghost\f_lowe_y\ghost\master\yaya_config.txt
@@ -32,7 +32,7 @@
 
 // request
 D:\SSP\ghost\f_lowe_y\ghost\master\
-// response (Execution time : 16[ms])
+// response (Execution time : 0[ms])
 
 // request
 GET Version SHIORI/2.6
@@ -69,5 +69,5 @@ ID: enable_log
 Reference0: 0
 
 
-// unload time: 2022/02/19 20:22:41
+// unload time: 2022/02/21 14:54:36
 
