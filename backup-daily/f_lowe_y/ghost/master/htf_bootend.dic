@@ -51,6 +51,7 @@ OnfirstBoot
 	ellVee = 1
 	nicevariable = 0
 	meanvariable = 0
+	OnDiscordPluginCustom
 	--
 	"\t\0\s[-1]\1\s[-1]\![set,sticky-window,1,0]\![set,otherghosttalk,true]"
 	--
@@ -163,6 +164,7 @@ GetDaySlot
 
 OnBoot
  {
+	OnDiscordPluginCustom
 	OnNotifyUserInfo
 	lastTalk = "" 
 	hourlyArray = IARRAY
@@ -347,6 +349,8 @@ OnBasewareUpdating
 
 OnBasewareUpdated
 {
+	OnDiscordPluginCustom
+	--
 	""
 }
  //--------State Changing--------
@@ -359,8 +363,10 @@ OnBasewareUpdated
 
  OnWindowStateMinimize
  {
-	"\0\s[3]%(Flowey) * Tiny\_w[500]"
+	"\0\s[3]%(Flowey) * \![embed,OnGLITCH,Tiny]. \_w[500]"
 	"\0\s[3]%(Narrator) * f_lowe_y will hide for now.\_w[500]"
+	--
+	DiscordCustom.MinimiseSet
 	--
 	"\0\s[0]\e"
 }
@@ -371,6 +377,8 @@ OnWindowStateRestore
  {
 	"\0\s[3]%(Flowey) * Back\_w[500]"
 	"\0\s[3]%(Narrator) * (f_lowe_y has returned.)\_w[500]"
+	--
+	OnDiscordPluginCustom
 	--
 	"\0\s[0]\e"
 }
@@ -412,6 +420,8 @@ OnGhostChanged
 {
 	"\![set,sticky-window,1,0]\![set,otherghosttalk,true]\0\s[0]\1\s[-1]" //this sets up their default poses
 	--
+	OnDiscordPluginCustom
+	--
 	if reference0 == "f_lowe_y" //As above, this should be the name of your ghost as in install.txt or descript.txt.
 	{
 		"\0\s[3]%(Flowey) * LOADED.\_w[500]"
@@ -431,6 +441,8 @@ OnGhostChanged
 
 OnGhostCalled
 {
+	OnDiscordPluginCustom
+	--
 	_glNam = OnGLITCH(reference0)
 	{
 		reference0 = TOUPPER(reference0)
