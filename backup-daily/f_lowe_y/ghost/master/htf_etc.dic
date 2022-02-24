@@ -207,17 +207,17 @@ OnDiscordPluginCustom
 	--
 	"943046097276923914,"//Appid
 	--
-	"Test,"//CustomDetail
+	","//CustomDetail
 	--
-	"TESTING,"//CustomState
+	","//CustomState
 	--
 	"base_img,"//LargeImageKey
 	--
-	"f_lowe_y the flower,"//LargeImageText
+	"f_lowe_y,"//LargeImageText
 	--
-	"dev_img,"//SmallImageKey
+	","//SmallImageKey
 	--
-	"Developer"//SmallImageText
+	""//SmallImageText
 	--
 	"]"
 	--
@@ -277,7 +277,7 @@ DiscordCustom.DeveloperSet
 	{
 		DiscordCustomSet.SmallImageKey("dev_img")
 		--
-		DiscordCustomSet.SmallImageText("Developer")
+		DiscordCustomSet.SmallImageText(smallImageCaption)
 	}
 	else
 	{
@@ -285,6 +285,16 @@ DiscordCustom.DeveloperSet
 		--
 		DiscordCustomSet.SmallImageText("")
 	}
+}
+
+devMTEST
+{
+	"\![open,inputbox,OnDevSet]"
+}
+
+OnDevSet
+{
+	smallImageCaption = reference0
 }
 
 DiscordCustom.MinimiseSet
@@ -295,15 +305,14 @@ DiscordCustom.MinimiseSet
 	}
 	else
 	{
-		DiscordCustomSet.SmallImageKey("")
-		--
 		DiscordCustomSet.CustomState("Minimised")
+		--
 		DiscordCustomSet.LargeImageKey("minimise_img")
-		DiscordCustomSet.LargeImageText(minied)
+		--
+		DiscordCustomSet.LargeImageText("Minimised")
 	}
 }
 
-minied{_a = OnGLITCH("minimised"); _a}
 // -------- SAORI_CPUID --------
 // CPU related
 // 

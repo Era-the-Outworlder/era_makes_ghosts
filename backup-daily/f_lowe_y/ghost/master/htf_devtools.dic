@@ -160,7 +160,7 @@ OnEmbedTest
 
 OnTeach
 {
-	"OnTeach Test:\n\n%(refTest)"
+	reference0
 }
 
 // ---- Weird testing stuff end ----

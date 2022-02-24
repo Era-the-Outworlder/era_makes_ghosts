@@ -164,6 +164,9 @@ GetDaySlot
 
 OnBoot
  {
+	if username =="Era"
+	{"%(Narrator)\n\n\nSet Development Status:\![open,inputbox,OnDevSet]"}
+	--
 	OnDiscordPluginCustom
 	OnNotifyUserInfo
 	lastTalk = "" 
@@ -361,12 +364,12 @@ OnBasewareUpdated
 
 //This will run when you minimize them.
 
- OnWindowStateMinimize
- {
+OnWindowStateMinimize
+{
+	DiscordCustom.MinimiseSet
+	--
 	"\0\s[3]%(Flowey) * \![embed,OnGLITCH,Tiny]. \_w[500]"
 	"\0\s[3]%(Narrator) * f_lowe_y will hide for now.\_w[500]"
-	--
-	DiscordCustom.MinimiseSet
 	--
 	"\0\s[0]\e"
 }
@@ -374,11 +377,11 @@ OnBasewareUpdated
 //--OnWindowStateRestore
 
 OnWindowStateRestore
- {
+{
+	OnDiscordPluginCustom
+	--
 	"\0\s[3]%(Flowey) * Back\_w[500]"
 	"\0\s[3]%(Narrator) * (f_lowe_y has returned.)\_w[500]"
-	--
-	OnDiscordPluginCustom
 	--
 	"\0\s[0]\e"
 }
@@ -387,7 +390,7 @@ OnWindowStateRestore
 //--OnGhostChanging
 
 OnGhostChanging
- {
+{
 	if reference0 == "f_lowe_y" 
 	{
 		"\0\s[3]%(Flowey) * Re-re-re-re-re-re-re\_w[1000] LOADING\_w[200].\_w[200].\_w[200]."
