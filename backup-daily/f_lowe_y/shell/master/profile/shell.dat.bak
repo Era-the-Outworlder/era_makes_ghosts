@@ -10,7 +10,7 @@ Char8.center,824
 Char7.balloon.isleft,1
 passwordinput.top,565
 scriptbox.left,1136
-balloon0.offset,-660.-155
+balloon0.offset,-461.333
 Char9.center,559
 Char0.centery,900
 Char8.centery,900
@@ -18,7 +18,7 @@ Char2.centery,900
 Char4.centery,900
 Char6.centery,900
 sliderinput.left,620
-balloon1.offset,3.64
+balloon1.offset,-3.487
 Char7.center,1247
 Char9.balloon.isleft,1
 Char5.center,364
@@ -36,7 +36,7 @@ dateinput.left,745
 teachbox.top,725
 timeinput.top,648
 Char2.center,896
-Char0.center,141
+Char0.center,198
 scriptbox.top,439
 Char10.balloon.isleft,1
 passwordinput.left,810
@@ -44,7 +44,7 @@ Char8.balloon.isleft,1
 Char1.centery,900
 seriko.ignoremove,0
 Char3.centery,900
-Char1.center,137
+Char1.center,195
 seriko.scaling.percent.x,100
 forceAlignFree,true
 seriko.scaling.balloon.percent.x,100

@@ -51,6 +51,10 @@ OnfirstBoot
 	ellVee = 1
 	nicevariable = 0
 	meanvariable = 0
+	
+	smallImageCaption = ""
+	drpstatus = ""
+	
 	OnDiscordPluginCustom
 	--
 	"\t\0\s[-1]\1\s[-1]\![set,sticky-window,1,0]\![set,otherghosttalk,true]"
@@ -167,6 +171,7 @@ OnBoot
 	if username =="Era"
 	{"%(Narrator)\n\n\nSet Development Status:\![open,inputbox,OnDevSet]"}
 	--
+	drpstatus = ""
 	OnDiscordPluginCustom
 	OnNotifyUserInfo
 	lastTalk = "" 

@@ -213,7 +213,7 @@ OnDiscordPluginCustom
 	--
 	"base_img,"//LargeImageKey
 	--
-	"f_lowe_y,"//LargeImageText
+	"https://era-the-outworlder.github.io/era_makes_ghosts/f_lowe_y,"//LargeImageText
 	--
 	","//SmallImageKey
 	--
@@ -223,9 +223,12 @@ OnDiscordPluginCustom
 	--
 	DiscordCustom.DeveloperSet
 	--
+	if drpstatus != ""
+	{DiscordCustom.UserDetail}
+	// --
 	// DiscordCustom.LoggingSet
-	--
-	"\0\s[0]DISCORD UPDATED\n"
+	// --
+	// "\0\s[0]DISCORD UPDATED\n"
 }
 
 OnDiscordPluginCustomEnd
@@ -269,6 +272,28 @@ DiscordCustomSet.CustomState
 	DiscordCustomSet.base("OnDiscordPluginCustomState",_argv[0])
 }
 
+// ---- Setting Minimised Status ----
+DiscordCustom.MinimiseSet
+{
+	if !InDiscordPluginCustom
+	{
+		return
+	}
+	else
+	{
+		DiscordCustomSet.CustomState("Minimised")
+		--
+		DiscordCustomSet.LargeImageKey("minimise_img")
+	}
+}
+
+// ---- Setting Dev Information ----
+
+OnDevSet
+{
+	smallImageCaption = reference0
+}
+
 DiscordCustom.DeveloperSet
 {
 	if !InDiscordPluginCustom
@@ -287,17 +312,15 @@ DiscordCustom.DeveloperSet
 	}
 }
 
-devMTEST
+
+
+// ---- Setting CustomDetail ----
+OnDRPSet
 {
-	"\![open,inputbox,OnDevSet]"
+	drpstatus = reference0
 }
 
-OnDevSet
-{
-	smallImageCaption = reference0
-}
-
-DiscordCustom.MinimiseSet
+DiscordCustom.UserDetail
 {
 	if !InDiscordPluginCustom
 	{
@@ -305,13 +328,20 @@ DiscordCustom.MinimiseSet
 	}
 	else
 	{
-		DiscordCustomSet.CustomState("Minimised")
+		DiscordCustomSet.CustomDetail(drpstatus)
 		--
-		DiscordCustomSet.LargeImageKey("minimise_img")
-		--
-		DiscordCustomSet.LargeImageText("Minimised")
+		OnDiscordPluginCustom
 	}
 }
+
+devMTEST
+{
+	"\![open,inputbox,OnDevSet]"
+}
+
+
+
+
 
 // -------- SAORI_CPUID --------
 // CPU related

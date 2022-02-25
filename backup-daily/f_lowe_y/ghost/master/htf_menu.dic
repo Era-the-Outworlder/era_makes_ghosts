@@ -125,6 +125,19 @@ OnConfigMenu
 		"\![*] \q[ON,silenton] \n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \f[color,#fb0300]\![*] \q[OFF,silentoff]\f[color,default]\n\n[half]\f[align,left]"
 	}
 	--
+	"Discord Rich Presence?\n"
+	--
+	if InDiscordPluginCustom == 1
+	{
+		"\f[color,#fb0300]\![*] \q[ON,OnDiscordPluginCustom] \f[color,default]\n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \![*] \q[OFF,OnDiscordPluginCustomEnd]\n\n[half]\f[align,left]"
+	}
+	else
+	{
+		"\![*] \q[ON,OnDiscordPluginCustom] \n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \f[color,#fb0300]\![*] \q[OFF,OnDiscordPluginCustomEnd]\f[color,default]\n\f[align,left]"
+	}
+	--
+	'\q[Change Status,"script:\![open,inputbox,OnDRPSet]"]\n\n[half]'
+	--
 	"Confirm Recycle Bin?\n"
 	--
 	if verBalete == "ON"
@@ -136,16 +149,16 @@ OnConfigMenu
 		"\![*] \q[ON,verBinOn] \n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \f[color,#fb0300]\![*] \q[OFF,verBinOff]\f[color,default]\n\n[half]\f[align,left]"
 	}
 	--		
-	"Program Commentary?\n"
-	--
-	if canDesktopEye == "ON"
-	{
-		"\f[color,#fb0300]\![*] \q[ON,cDEon] \f[color,default]\n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \![*] \q[OFF,cDEoff]\n\n[half]\f[align,left]"
-	}
-	else
-	{
-		"\![*] \q[ON,cDEon] \n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \f[color,#fb0300]\![*] \q[OFF,cDEoff]\f[color,default]\n\n[half]\f[align,left]"
-	}
+	// "Program Commentary?\n"
+	// --
+	// if canDesktopEye == "ON"
+	// {
+		// "\f[color,#fb0300]\![*] \q[ON,cDEon] \f[color,default]\n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \![*] \q[OFF,cDEoff]\n\n[half]\f[align,left]"
+	// }
+	// else
+	// {
+		// "\![*] \q[ON,cDEon] \n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \f[color,#fb0300]\![*] \q[OFF,cDEoff]\f[color,default]\n\n[half]\f[align,left]"
+	// }
 	--
 	"Enable Uninstall?\n"
 	--
