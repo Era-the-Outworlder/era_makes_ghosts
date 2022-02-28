@@ -51,6 +51,11 @@ OnfirstBoot
 	ellVee = 1
 	nicevariable = 0
 	meanvariable = 0
+	
+	smallImageCaption = ""
+	drpstatus = ""
+	
+	OnDiscordPluginCustom
 	--
 	"\t\0\s[-1]\1\s[-1]\![set,sticky-window,1,0]\![set,otherghosttalk,true]"
 	--
@@ -163,6 +168,11 @@ GetDaySlot
 
 OnBoot
  {
+	if username =="Era"
+	{"%(Narrator)\n\n\nSet Development Status:\![open,inputbox,OnDevSet]"}
+	--
+	drpstatus = ""
+	OnDiscordPluginCustom
 	OnNotifyUserInfo
 	lastTalk = "" 
 	hourlyArray = IARRAY
@@ -347,6 +357,8 @@ OnBasewareUpdating
 
 OnBasewareUpdated
 {
+	OnDiscordPluginCustom
+	--
 	""
 }
  //--------State Changing--------
@@ -357,10 +369,12 @@ OnBasewareUpdated
 
 //This will run when you minimize them.
 
- OnWindowStateMinimize
- {
-	"\0\s[3]%(Flowey) * Tiny\_w[500]"
-	"\0\s[3]%(Narrator) * (f_lowe_y will hide for now.)\_w[500]"
+OnWindowStateMinimize
+{
+	DiscordCustom.MinimiseSet
+	--
+	"\0\s[3]%(Flowey) * \![embed,OnGLITCH,Tiny]. \_w[500]"
+	"\0\s[3]%(Narrator) * f_lowe_y will hide for now.\_w[500]"
 	--
 	"\0\s[0]\e"
 }
@@ -368,7 +382,9 @@ OnBasewareUpdated
 //--OnWindowStateRestore
 
 OnWindowStateRestore
- {
+{
+	OnDiscordPluginCustom
+	--
 	"\0\s[3]%(Flowey) * Back\_w[500]"
 	"\0\s[3]%(Narrator) * (f_lowe_y has returned.)\_w[500]"
 	--
@@ -379,7 +395,7 @@ OnWindowStateRestore
 //--OnGhostChanging
 
 OnGhostChanging
- {
+{
 	if reference0 == "f_lowe_y" 
 	{
 		"\0\s[3]%(Flowey) * Re-re-re-re-re-re-re\_w[1000] LOADING\_w[200].\_w[200].\_w[200]."
@@ -412,6 +428,8 @@ OnGhostChanged
 {
 	"\![set,sticky-window,1,0]\![set,otherghosttalk,true]\0\s[0]\1\s[-1]" //this sets up their default poses
 	--
+	OnDiscordPluginCustom
+	--
 	if reference0 == "f_lowe_y" //As above, this should be the name of your ghost as in install.txt or descript.txt.
 	{
 		"\0\s[3]%(Flowey) * LOADED.\_w[500]"
@@ -431,6 +449,8 @@ OnGhostChanged
 
 OnGhostCalled
 {
+	OnDiscordPluginCustom
+	--
 	_glNam = OnGLITCH(reference0)
 	{
 		reference0 = TOUPPER(reference0)
@@ -449,11 +469,10 @@ OnGhostCalling
 {
 	_glNam = OnGLITCH(reference0)
 	
-	"\0\s[3]%(Flowey) * HELLO %(reference0).\_w[500]\e"
 	
 	"\0\s[3]%(Flowey) * IT'S IT'S IT'S %(reference2)! HELLO %(_glNam).\_w[500]\e"
 	
-	"\0\s[3]%(Narrator) * f_lowe_y is already here, but you called %(reference0) anyway.\n\_w[300] Was it to keep him company?\_w[500]\e"
+	"\0\s[3]%(Narrator) * f_lowe_y is already here, but you're calling %(reference0) anyway.\n\_w[300] Is it to keep him company?\_w[500]\e"
 }
 
 // When another ghost is called from THIS ghost's r-click menu (happens after new ghost completes boot function)

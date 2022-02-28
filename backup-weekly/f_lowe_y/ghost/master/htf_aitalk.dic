@@ -665,6 +665,8 @@ EndMikireTalk
 
 OnSurfaceRestore
 {	
+	OnDiscordPluginCustom
+	--
 	"\0\s[0]\1\s[-1]\e"	
 }
 

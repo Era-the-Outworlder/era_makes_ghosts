@@ -1,7 +1,7 @@
 Charset,UTF-8
 __system_settings_version__,2
 balloon,D:\SSP\balloon\undertrash\
-inputbox.left,903
+inputbox.left,569
 GroupFlagOverride,noupdateauto,nocheck,
 communicatebox.left,474
 Char8.center,824
@@ -35,7 +35,7 @@ Char1.center,195
 sliderinput.top,382
 shiori.log,1
 shell.ischanged.2,1
-inputbox.top,581
+inputbox.top,553
 timeinput.left,846
 update.lastexec,694922426
 communicatebox.top,724

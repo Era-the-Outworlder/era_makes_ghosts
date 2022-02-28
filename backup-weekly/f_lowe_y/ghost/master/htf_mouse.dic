@@ -117,6 +117,7 @@ MouseMoveSakura
 	others 
 	{
 		stroke = 0
+		rub = 0
 	}
     }
 }

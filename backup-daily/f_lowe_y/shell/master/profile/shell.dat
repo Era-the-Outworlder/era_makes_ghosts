@@ -3,14 +3,14 @@ __system_settings_version__,2
 seriko.scaling.balloonlink,0
 balloon,D:\SSP\balloon\undertrash\
 Char1.balloon.isleft,0
-inputbox.left,903
+inputbox.left,569
 Char4.balloon.isleft,1
 communicatebox.left,474
 Char8.center,824
 Char7.balloon.isleft,1
 passwordinput.top,565
 scriptbox.left,1136
-balloon0.offset,-461.333
+balloon0.offset,-481.32
 Char9.center,559
 Char0.centery,900
 Char8.centery,900
@@ -53,7 +53,7 @@ seriko.scaling.balloon.percent.y,100
 sliderinput.top,382
 Char2.balloon.isleft,1
 Char5.balloon.isleft,1
-inputbox.top,581
+inputbox.top,553
 Char10.centery,900
 timeinput.left,846
 Char5.centery,900
