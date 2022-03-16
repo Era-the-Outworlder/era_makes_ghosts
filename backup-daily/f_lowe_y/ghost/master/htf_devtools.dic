@@ -16,6 +16,8 @@ OnTestVariable
 {
 	"\0\s[3]\b6%(Narrator) * Testing! \n\n"
 	--
+	"\![*] \q[Erase Variable,seteVar]\n"
+	--
 	"\![*] \q[Set PETS+,setPET1]\n"
 	--
 	"\![*] \q[Set PETS-,setPET2]\n"
@@ -36,6 +38,14 @@ OnTestVariable
 	
 }
 
+Select.seteVar
+{
+	"\![open,input,OnEVar,]"
+}
+OnEVar
+{
+	
+}
 Select.setPET1
 {
 	"\![open,sliderinput,OnPet1,,%(petCount),0,500]"
