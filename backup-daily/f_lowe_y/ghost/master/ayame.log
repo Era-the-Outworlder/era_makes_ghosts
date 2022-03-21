@@ -1,5 +1,5 @@
 // AYA request log
-// load time: 2022/02/27 11:30:22
+// load time: 2022/02/20 23:16:30
 
 // Loading of dictionary file
 // - D:\SSP\ghost\f_lowe_y\ghost\master\yaya_config.txt
@@ -32,7 +32,7 @@
 
 // request
 D:\SSP\ghost\f_lowe_y\ghost\master\
-// response (Execution time : 15[ms])
+// response (Execution time : 16[ms])
 
 // request
 GET Version SHIORI/2.6
@@ -129,9 +129,9 @@ Sender: SSP
 SenderType: internal
 SecurityLevel: local
 ID: basewareversion
-Reference0: 2.5.76
+Reference0: 2.5.83
 Reference1: SSP
-Reference2: 2.5.76.3000
+Reference2: 2.5.83.3000
 
 
 // response (Execution time : 0[ms])
@@ -175,10 +175,10 @@ Sender: SSP
 SenderType: internal
 SecurityLevel: local
 ID: OnNotifyOSInfo
-Reference0: WindowsNT,10.0,Windows 10 20H2.1526 (Ver.20H2) Wow64@x64
+Reference0: WindowsNT,10.0,Windows 10 21H2.1586 (Ver.21H2) Wow64@x64
 Reference1: Intel,2594,0.6.10.9,bfebfbff
 Reference2: 8263208,4194176
-Reference3: 8
+Reference3: 9945
 
 
 // response (Execution time : 0[ms])
@@ -1026,6 +1026,7 @@ Reference829: ZWAdobeF
 Reference830: Comic Sans UT
 Reference831: Papyrus UT
 Reference832: Belisa plumilla manual plus
+Reference833: Fixedsys Excelsior
 
 
 // response (Execution time : 0[ms])
@@ -1143,7 +1144,7 @@ SecurityLevel: local
 ID: craftman
 
 
-// response (Execution time : 16[ms])
+// response (Execution time : 0[ms])
 SHIORI/3.0 200 OK
 Sender: AYA
 Charset: UTF-8
@@ -1190,7 +1191,6 @@ ID: otherghostname
 SecurityLevel: local
 Charset: UTF-8
 Sender: SSP
-Reference0: FLUX0-1
 
 
 // response (Execution time : 0[ms])
@@ -1240,7 +1240,7 @@ Reference1: 1600
 Reference2: 900
 
 
-// response (Execution time : 15[ms])
+// response (Execution time : 0[ms])
 SHIORI/3.0 204 No Content
 Charset: UTF-8
 
@@ -1254,7 +1254,7 @@ SenderType: internal
 SecurityLevel: local
 ID: OnNetworkStatusChange
 Reference0: online
-Reference1: 192.168.1.3
+Reference1: 192.168.1.12
 Reference2: wifi
 Reference3: 144
 Reference4: 144
@@ -1290,7 +1290,7 @@ ID: OnDarkTheme
 Reference0: 1
 
 
-// response (Execution time : 0[ms])
+// response (Execution time : 16[ms])
 SHIORI/3.0 204 No Content
 Charset: UTF-8
 
@@ -1302,24 +1302,23 @@ Sender: SSP
 SenderType: internal
 SecurityLevel: local
 ID: OnOSUpdateInfo
-Reference0: 2022,2,27,11,28,20
-Reference1: 2022,2,27,11,26,48
-Reference2: success000000002022,2,27,11,26,48Security Intelligence Update for Microsoft Defender Antivirus - KB2267602 (Version 1.359.1039.0)
-Reference3: success000000002022,2,17,12,48,342022-01 Update for Windows 10 Version 20H2 for x64-based Systems (KB4023057)
-Reference4: success000000002022,2,15,14,2,292022-02 Update for Windows 10 Version 20H2 for x64-based Systems (KB5001716)
-Reference5: success000000002022,2,9,3,32,37Windows Malicious Software Removal Tool x64 - v5.98 (KB890830)
-Reference6: success000000002022,2,8,12,9,292022-02 Cumulative Update for Windows 10 Version 20H2 for x64-based Systems (KB5010342)
-Reference7: success000000002022,2,8,11,51,402022-02 Cumulative Update for .NET Framework 3.5 and 4.8 for Windows 10 Version 20H2 for x64 (KB5009467)
-Reference8: success000000002022,2,3,5,9,44SAMSUNG Electronics Co., Ltd.  - Modem - 2.17.16.0
-Reference9: success000000002022,1,11,18,59,362022-01 Cumulative Update for Windows 10 Version 20H2 for x64-based Systems (KB5009543)
-Reference10: success000000002022,1,11,18,48,442022-01 Cumulative Update for .NET Framework 3.5 and 4.8 for Windows 10 Version 20H2 for x64 (KB5008876)
-Reference11: success000000002022,1,11,18,48,3Windows Malicious Software Removal Tool x64 - v5.97 (KB890830)
-Reference12: success000000002021,12,14,13,28,422021-12 Cumulative Update for Windows 10 Version 20H2 for x64-based Systems (KB5008212)
-Reference13: success000000002021,12,14,13,8,38Windows Malicious Software Removal Tool x64 - v5.96 (KB890830)
-Reference14: success000000002021,12,3,19,25,532021-11 Cumulative Update for Windows 10 Version 20H2 for x64-based Systems (KB5007186)
-Reference15: fail802400342021,11,27,3,52,369NBLGGH4RV3K-Microsoft.VCLibs.140.00.UWPDesktop
-Reference16: fail802400342021,11,27,0,52,179NBLGGH4RV3K-Microsoft.VCLibs.140.00.UWPDesktop
-Reference17: fail802400342021,11,26,20,42,99NBLGGH4RV3K-Microsoft.VCLibs.140.00.UWPDesktop
+Reference0: 2022,3,20,14,33,53
+Reference1: 2022,3,20,18,48,24
+Reference2: success000000002022,3,20,18,48,24Security Intelligence Update for Microsoft Defender Antivirus - KB2267602 (Version 1.361.374.0)
+Reference3: success000000002022,3,14,2,6,36Feature update to Windows 10, version 21H2
+Reference4: success000000002022,3,10,21,26,292022-03 Update for Windows 10 Version 20H2 for x64-based Systems (KB4023057)
+Reference5: success000000002022,3,10,21,26,222022-03 Cumulative Update for Windows 10 Version 20H2 for x64-based Systems (KB5011487)
+Reference6: success000000002022,3,10,21,8,57Windows Malicious Software Removal Tool x64 - v5.99 (KB890830)
+Reference7: success000000002022,3,1,19,26,57Razer Inc - HIDClass - 6.2.9200.16516
+Reference8: success000000002022,2,17,13,48,342022-01 Update for Windows 10 Version 20H2 for x64-based Systems (KB4023057)
+Reference9: success000000002022,2,15,15,2,292022-02 Update for Windows 10 Version 20H2 for x64-based Systems (KB5001716)
+Reference10: success000000002022,2,9,4,32,37Windows Malicious Software Removal Tool x64 - v5.98 (KB890830)
+Reference11: success000000002022,2,8,13,9,292022-02 Cumulative Update for Windows 10 Version 20H2 for x64-based Systems (KB5010342)
+Reference12: success000000002022,2,8,12,51,402022-02 Cumulative Update for .NET Framework 3.5 and 4.8 for Windows 10 Version 20H2 for x64 (KB5009467)
+Reference13: success000000002022,2,3,6,9,44SAMSUNG Electronics Co., Ltd.  - Modem - 2.17.16.0
+Reference14: success000000002022,1,11,19,59,362022-01 Cumulative Update for Windows 10 Version 20H2 for x64-based Systems (KB5009543)
+Reference15: success000000002022,1,11,19,48,442022-01 Cumulative Update for .NET Framework 3.5 and 4.8 for Windows 10 Version 20H2 for x64 (KB5008876)
+Reference16: success000000002022,1,11,19,48,3Windows Malicious Software Removal Tool x64 - v5.97 (KB890830)
 
 
 // response (Execution time : 0[ms])
@@ -1367,7 +1366,7 @@ ID: headlinepathlist
 Reference0: D:\SSP\headline\
 
 
-// response (Execution time : 0[ms])
+// response (Execution time : 16[ms])
 SHIORI/3.0 204 No Content
 Charset: UTF-8
 
@@ -1659,7 +1658,7 @@ Reference23: ごーすとじてん
 Reference24: どくでんぱ。
 
 
-// response (Execution time : 16[ms])
+// response (Execution time : 0[ms])
 SHIORI/3.0 200 OK
 Charset: UTF-8
 
@@ -1673,24 +1672,25 @@ SecurityLevel: local
 ID: installedballoonname
 Reference0: Balloon for Emily/P4
 Reference1: broadcast
-Reference2: Deltarune
-Reference3: DG - Don't Starve
-Reference4: DG - Don't Starve Alt
-Reference5: Disrupted Reality
-Reference6: Disrupted Reality 2
-Reference7: Disturbed Pen
-Reference8: Don't Starve
-Reference9: Dream Cloud
-Reference10: H2O
-Reference11: Notes
-Reference12: Pixel
-Reference13: Purple Soul
-Reference14: Seb_Balloon
-Reference15: SSPデフォルト+
-Reference16: Undertext
-Reference17: underTRASH
-Reference18: Z - Undertale
-Reference19: 小さめのバルーン。
+Reference2: CRT Heart
+Reference3: Deltarune
+Reference4: DG - Don't Starve
+Reference5: DG - Don't Starve Alt
+Reference6: Disrupted Reality
+Reference7: Disrupted Reality 2
+Reference8: Disturbed Pen
+Reference9: Don't Starve
+Reference10: Dream Cloud
+Reference11: H2O
+Reference12: Notes
+Reference13: Pixel
+Reference14: Purple Soul
+Reference15: Seb_Balloon
+Reference16: SSPデフォルト+
+Reference17: Undertext
+Reference18: underTRASH
+Reference19: Z - Undertale
+Reference20: 小さめのバルーン。
 
 
 // response (Execution time : 0[ms])
@@ -1789,10 +1789,10 @@ Sender: SSP
 SenderType: internal
 SecurityLevel: local
 ID: uniqueid
-Reference0: ssp_fmo_header_00001a6c_00050544
+Reference0: ssp_fmo_header_00005860_00130ac6
 
 
-// response (Execution time : 0[ms])
+// response (Execution time : 15[ms])
 SHIORI/3.0 200 OK
 Charset: UTF-8
 
@@ -1804,8 +1804,8 @@ Sender: SSP
 SenderType: internal
 SecurityLevel: local
 ID: hwnd
-Reference0: 329028132104
-Reference1: 132096132180
+Reference0: 12479429307634
+Reference1: 46556363408744
 
 
 // response (Execution time : 0[ms])
@@ -1880,20 +1880,15 @@ Charset: UTF-8
 Sender: SSP
 SenderType: internal
 SecurityLevel: local
-ID: OnGhostCalled
-BaseID: OnGhostChanged,OnBoot
-Reference0: FLUX
-Reference1: 
-Reference2: FLUX
-Reference3: D:/SSP/ghost/flux/
-Reference7: f_lowe_y
+ID: OnBoot
+Reference0: f_lowe_y
 
 
 // response (Execution time : 0[ms])
 SHIORI/3.0 200 OK
 Sender: AYA
 Charset: UTF-8
-Value: \![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomALL,943046097276923914,,,base_img,https://era-the-outworlder.github.io/era_makes_ghosts/f_lowe_y,,]\![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomSmallImageKey,"dev_img"]\![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomSmallImageText,"frustrated"]\0\s[3]\_v[mus\sound_FLOWEY.mp3] * IT'S IT'S IT'S FLUX! HELLO Fl_x.\_w[500]\e
+Value: \1\s[-1]\_v[mus\HELP_text.mp3]\n\n\nSet Development Status:\![open,inputbox,OnDevSet]\![set,sticky-window,1,0]\![set,otherghosttalk,true]\1\s[-1]\0\s[0]\0\s[3]\_v[mus\sound_FLOWEY.mp3] * (Gurgling noises)\0\s[0]\e
 
 
 // request
@@ -1903,17 +1898,17 @@ Charset: UTF-8
 Sender: SSP
 SenderType: internal
 SecurityLevel: local
-Reference0: \![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomALL,943046097276923914,,,base_img,https://era-the-outworlder.github.io/era_makes_ghosts/f_lowe_y,,]\![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomSmallImageKey,"dev_img"]\![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomSmallImageText,"frustrated"]\0\s[3]\_v[mus\sound_FLOWEY.mp3] * IT'S IT'S IT'S FLUX! HELLO Fl_x.\_w[500]\e
+Reference0: \1\s[-1]\_v[mus\HELP_text.mp3]\n\n\nSet Development Status:\![open,inputbox,OnDevSet]\![set,sticky-window,1,0]\![set,otherghosttalk,true]\1\s[-1]\0\s[0]\0\s[3]\_v[mus\sound_FLOWEY.mp3] * (Gurgling noises)\0\s[0]\e
 Reference1: 
-Reference2: OnGhostCalled
-Reference3: FLUXFLUXD:/SSP/ghost/flux/f_lowe_y
+Reference2: OnBoot
+Reference3: f_lowe_y
 
 
-// response (Execution time : 16[ms])
+// response (Execution time : 15[ms])
 SHIORI/3.0 200 OK
 Sender: AYA
 Charset: UTF-8
-Value: \![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomALL,943046097276923914,,,base_img,https://era-the-outworlder.github.io/era_makes_ghosts/f_lowe_y,,]\![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomSmallImageKey,"dev_img"]\![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomSmallImageText,"frustrated"]\0\s[3]\![sound,stop,mus\sound_FLOWEY.mp3] * IT'S IT'S IT'S FLUX! HELLO Fl_x.\_w[500]\e
+Value: \1\s[-1]\![sound,stop,mus\HELP_text.mp3]\n\n\nSet Development Status:\![open,inputbox,OnDevSet]\![set,sticky-window,1,0]\![set,otherghosttalk,true]\1\s[-1]\0\s[0]\0\s[3]\![sound,stop,mus\sound_FLOWEY.mp3] * (Gurgling noises)\0\s[0]\e
 
 
 // request
@@ -1942,7 +1937,6 @@ ID: otherghostname
 SecurityLevel: local
 Charset: UTF-8
 Sender: SSP
-Reference0: FLUX0-1
 
 
 // response (Execution time : 0[ms])
@@ -1956,38 +1950,145 @@ Charset: UTF-8
 Sender: SSP
 SenderType: internal
 SecurityLevel: local
-Status: talking
+Status: talking,balloon(1=0)
 ID: rateofusegraph
-Reference0: GazeTestGazeVoid5014406823.438680install
-Reference1: f_lowe_yf_lowe_yThe Locket11304035321.462763install
-Reference2: f_lowe_yf_lowe_yThe Narrator6013561818.944334boot
-Reference3: FLUXFLUXMusic952736314.553703boot
-Reference4: Dr. W.D. GasterGasterBrothers78151768.071739install
-Reference5: SPAMTON G. SPAMTON!!SPAMTON!![FriendRequestDenied]45147097.823354install
-Reference6: HydrateHydrateYou being healthier1136311.931239install
-Reference7: Radio NowhereRadio SakuraRadio Kero2422161.178636install
-Reference8: GazeGazeForm513620.724414install
-Reference9: SebastianSebastianGhost96990.371781install
-Reference10: S the SkeletonRYS-0825None86180.328699install
-Reference11: statusBOTstatusBOT135400.287213install
-Reference12: The Wretched ScientistWilsonKero33960.210623install
-Reference13: Ghost Jam TemmieTemmieNO ONE!!!103850.204772install
-Reference14: MiniDevMiniDev-182120.112758install
-Reference15: f_lowe_y_quietf_lowe_y_quietThe Locket42040.108503install
-Reference16: Ship of TheseusRadio SakuraRadio Kero91340.071271install
-Reference17: f_lowe_y 1.1f_lowe_yThe Locket8820.043614install
-Reference18: Dreamtale SansDreamtale Sans14550.029253install
-Reference19: Multiverse SansMVSansphone6540.028721install
-Reference20: どくでんぱ。どくでんぱ。none2520.027658install
-Reference21: f_lowe_y-oldf_lowe_yThe Locket4300.015956install
-Reference22: Emily/Phase4.5EmilyTeddy5280.014893install
-Reference23: The HandHandDummy3120.006383install
-Reference24: Mettaton EXMettatonTriangle2100.005319install
-Reference25: PLANETSPLANETS220.001064install
-Reference26: VitusVitusTriangle120.001064install
-Reference27: GazeGazeVoid210.000532install
-Reference28: GT Template - Y CleanGirlTriangle110.000532install
-Reference29: Gaze_YAYAGazeVoid110.000532install
+Reference0: GazeTestGazeVoid5014406822.151625install
+Reference1: f_lowe_yf_lowe_yThe Locket11304035320.284209install
+Reference2: f_lowe_yf_lowe_yThe Narrator6033562817.909097boot
+Reference3: FLUXFLUXMusic952736313.754537install
+Reference4: Dr. W.D. GasterGasterBrothers78151767.628507install
+Reference5: SPAMTON G. SPAMTON!!SPAMTON!![FriendRequestDenied]45147097.393761install
+Reference6: statusBOTstatusBOT168114545.757573install
+Reference7: HydrateHydrateYou being healthier1136311.825192install
+Reference8: Radio NowhereRadio SakuraRadio Kero2422161.113915install
+Reference9: GazeGazeForm513620.684635install
+Reference10: SebastianSebastianGhost96990.351366install
+Reference11: S the SkeletonRYS-0825None86180.310650install
+Reference12: The Wretched ScientistWilsonKero33960.199057install
+Reference13: Ghost Jam TemmieTemmieNO ONE!!!103850.193528install
+Reference14: MiniDevMiniDev-182120.106566install
+Reference15: f_lowe_y_quietf_lowe_y_quietThe Locket42040.102545install
+Reference16: Ship of TheseusRadio SakuraRadio Kero91340.067358install
+Reference17: f_lowe_y 1.1f_lowe_yThe Locket8820.041219install
+Reference18: Dreamtale SansDreamtale Sans14550.027647install
+Reference19: Multiverse SansMVSansphone6540.027144install
+Reference20: どくでんぱ。どくでんぱ。none2520.026139install
+Reference21: f_lowe_y-oldf_lowe_yThe Locket4300.015080install
+Reference22: Emily/Phase4.5EmilyTeddy5280.014075install
+Reference23: The HandHandDummy3120.006032install
+Reference24: Mettaton EXMettatonTriangle2100.005027install
+Reference25: PLANETSPLANETS220.001005install
+Reference26: VitusVitusTriangle120.001005install
+Reference27: GazeGazeVoid210.000503install
+Reference28: GT Template - Y CleanGirlTriangle110.000503install
+Reference29: Gaze_YAYAGazeVoid110.000503install
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+NOTIFY SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+Status: talking,balloon(1=0)
+ID: OnSurfaceChange
+Reference0: -1
+Reference1: -1
+Reference2: 1,-1,0,0
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Charset: UTF-8
+
+
+// request
+NOTIFY SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+Status: talking,balloon(1=0)
+ID: OnSurfaceChange
+Reference0: -1
+Reference1: -1
+Reference2: 1,-1,0,0
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+Status: talking,balloon(1=0)
+ID: OnNetworkStatusChange
+Reference0: online
+Reference1: 192.168.1.12
+Reference2: wifi
+Reference3: 144
+Reference4: 144
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal,plugin
+SecurityLevel: local
+Status: talking,balloon(1=0)
+ID: OnWeatherStation.Weather
+Reference0: Light rain
+Reference1: //cdn.weatherapi.com/weather/64x64/night/296.png
+Reference2: 1183
+Reference3: 0
+Reference4: 43
+Reference5: 6.1
+Reference6: 39.8
+Reference7: 4.4
+Reference8: 97
+Reference9: 6.9
+Reference10: 11.2
+Reference11: SE
+Reference12: 140
+Reference13: 6.9
+Reference14: 11.2
+Reference15: 0.04
+Reference16: 1.1
+Reference17: 100
+Reference18: 1
+Reference19: 96
+Reference20: 0
+Reference21: 0
+Reference22: 6
+Reference23: 9.7
+Reference24: 30.3
+Reference25: 1026
+Reference26: 1
+Reference27: 240.3000030517578
+Reference28: 0.5
+Reference29: 86.5999984741211
+Reference30: 0.20000000298023224
+Reference31: 0.5
+Reference32: 0.5
+Reference33: 1
+Reference34: 1
+Reference35: Imperial
 
 
 // response (Execution time : 0[ms])
@@ -2001,7 +2102,477 @@ Charset: UTF-8
 Sender: SSP
 SenderType: internal
 SecurityLevel: local
-Status: talking
+Status: talking,balloon(1=0)
+ID: inputbox.autocomplete
+Reference0: inputbox
+Reference1: OnDevSet
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+NOTIFY SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+Status: talking,balloon(0=0/1=0)
+ID: OnSurfaceChange
+Reference0: 0
+Reference1: -1
+Reference2: 1,-1,0,0
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Charset: UTF-8
+
+
+// request
+NOTIFY SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+Status: talking,balloon(0=0/1=0)
+ID: OnSurfaceChange
+Reference0: 3
+Reference1: -1
+Reference2: 0,0,353,457
+
+
+// response (Execution time : 15[ms])
+SHIORI/3.0 200 OK
+Charset: UTF-8
+
+
+// request
+NOTIFY SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+Status: talking,balloon(0=0/1=0)
+ID: OnSurfaceChange
+Reference0: 3
+Reference1: -1
+Reference2: 0,3,353,457
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Charset: UTF-8
+
+
+// request
+NOTIFY SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal,plugin
+SecurityLevel: local
+Status: talking,balloon(0=0/1=0)
+ID: OnDiscordPluginCustom
+
+
+// response (Execution time : 15[ms])
+SHIORI/3.0 200 OK
+Charset: UTF-8
+
+
+// request
+NOTIFY SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+Status: balloon(0=0/1=0)
+ID: OnSurfaceChange
+Reference0: 0
+Reference1: -1
+Reference2: 0,0,353,457
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+Status: balloon(0=0/1=0)
+ID: OnTrayBalloonTimeout
+Reference0: SSP Developer Mode
+Reference1: "Hook Current Time API (Timemachine)" function is activated. Please use developer palette to resume normal operation.
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+ID: OnTranslate
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+Reference0: \0\s[3]\_v[mus\sound_FLOWEY.mp3] * March.
+Reference1: 
+Reference2: OnSecondChange
+Reference3: 1650010
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: \0\s[3]\![sound,stop,mus\sound_FLOWEY.mp3] * March.
+
+
+// request
+NOTIFY SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+Status: talking,balloon(0=0)
+ID: OnSurfaceChange
+Reference0: 3
+Reference1: -1
+Reference2: 0,3,353,457
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+Status: balloon(0=0)
+ID: OnMemoryLoadHigh
+Reference0: 81
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+Status: balloon(0=0)
+ID: OnBalloonClose
+Reference0: \0\s[3]\![sound,stop,mus\sound_FLOWEY.mp3] * March.
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: OnDevSet
+Reference0: what
+Reference1: 
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: OnNetworkStatusChange
+Reference0: online
+Reference1: 192.168.1.12
+Reference2: wifi
+Reference3: 144
+Reference4: 144
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: OnMinuteChange
+Reference0: 165
+Reference1: 0
+Reference2: 0
+Reference3: 1
+Reference4: 0
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+Status: minimizing
+ID: OnWindowStateMinimize
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: \![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomState,"Minimised"]\![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomLargeImageKey,"minimise_img"]\0\s[3]\_v[mus\sound_FLOWEY.mp3] * \![embed,OnGLITCH,Tiny]. \_w[500]\0\s[0]\e
+
+
+// request
+GET SHIORI/3.0
+ID: OnTranslate
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+Reference0: \![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomState,"Minimised"]\![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomLargeImageKey,"minimise_img"]\0\s[3]\_v[mus\sound_FLOWEY.mp3] * \![embed,OnGLITCH,Tiny]. \_w[500]\0\s[0]\e
+Reference1: 
+Reference2: OnWindowStateMinimize
+Reference3: 
+
+
+// response (Execution time : 15[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: \![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomState,"Minimised"]\![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomLargeImageKey,"minimise_img"]\0\s[3]\![sound,stop,mus\sound_FLOWEY.mp3] * \![embed,OnGLITCH,Tiny]. \_w[500]\0\s[0]\e
+
+
+// request
+NOTIFY SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+Status: talking,minimizing,balloon(0=0)
+ID: OnRaisePluginFailure
+Reference0: 204
+Reference1: Discord Rich Presence
+Reference2: OnDiscordPluginCustomState
+Reference3: Minimised
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+NOTIFY SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+Status: talking,minimizing,balloon(0=0)
+ID: OnRaisePluginFailure
+Reference0: 204
+Reference1: Discord Rich Presence
+Reference2: OnDiscordPluginCustomLargeImageKey
+Reference3: minimise_img
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+NOTIFY SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal,embed
+SecurityLevel: local
+Status: talking,minimizing,balloon(0=0)
+ID: OnGLITCH
+Reference0: Tiny
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Charset: UTF-8
+
+
+// request
+NOTIFY SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+Status: minimizing
+ID: OnBatteryNotify
+Reference0: 100
+Reference1: -1
+Reference2: online
+Reference3: high
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+NOTIFY SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+Status: minimizing
+ID: rateofusegraph
+Reference0: GazeTestGazeVoid5014406822.151514install
+Reference1: f_lowe_yf_lowe_yThe Locket11304035320.284107install
+Reference2: f_lowe_yf_lowe_yThe Narrator6033562917.909510boot
+Reference3: FLUXFLUXMusic952736313.754467install
+Reference4: Dr. W.D. GasterGasterBrothers78151767.628469install
+Reference5: SPAMTON G. SPAMTON!!SPAMTON!![FriendRequestDenied]45147097.393724install
+Reference6: statusBOTstatusBOT168114545.757544install
+Reference7: HydrateHydrateYou being healthier1136311.825183install
+Reference8: Radio NowhereRadio SakuraRadio Kero2422161.113909install
+Reference9: GazeGazeForm513620.684632install
+Reference10: SebastianSebastianGhost96990.351364install
+Reference11: S the SkeletonRYS-0825None86180.310648install
+Reference12: The Wretched ScientistWilsonKero33960.199056install
+Reference13: Ghost Jam TemmieTemmieNO ONE!!!103850.193527install
+Reference14: MiniDevMiniDev-182120.106565install
+Reference15: f_lowe_y_quietf_lowe_y_quietThe Locket42040.102544install
+Reference16: Ship of TheseusRadio SakuraRadio Kero91340.067357install
+Reference17: f_lowe_y 1.1f_lowe_yThe Locket8820.041219install
+Reference18: Dreamtale SansDreamtale Sans14550.027647install
+Reference19: Multiverse SansMVSansphone6540.027144install
+Reference20: どくでんぱ。どくでんぱ。none2520.026139install
+Reference21: f_lowe_y-oldf_lowe_yThe Locket4300.015080install
+Reference22: Emily/Phase4.5EmilyTeddy5280.014075install
+Reference23: The HandHandDummy3120.006032install
+Reference24: Mettaton EXMettatonTriangle2100.005027install
+Reference25: PLANETSPLANETS220.001005install
+Reference26: VitusVitusTriangle120.001005install
+Reference27: GazeGazeVoid210.000503install
+Reference28: GT Template - Y CleanGirlTriangle110.000503install
+Reference29: Gaze_YAYAGazeVoid110.000503install
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+NOTIFY SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+Status: minimizing
+ID: OnOSUpdateInfo
+Reference0: 2022,3,21,0,16,37
+Reference1: 2022,3,20,18,48,24
+Reference2: success000000002022,3,20,18,48,24Security Intelligence Update for Microsoft Defender Antivirus - KB2267602 (Version 1.361.374.0)
+Reference3: success000000002022,3,14,2,6,36Feature update to Windows 10, version 21H2
+Reference4: success000000002022,3,10,21,26,292022-03 Update for Windows 10 Version 20H2 for x64-based Systems (KB4023057)
+Reference5: success000000002022,3,10,21,26,222022-03 Cumulative Update for Windows 10 Version 20H2 for x64-based Systems (KB5011487)
+Reference6: success000000002022,3,10,21,8,57Windows Malicious Software Removal Tool x64 - v5.99 (KB890830)
+Reference7: success000000002022,3,1,19,26,57Razer Inc - HIDClass - 6.2.9200.16516
+Reference8: success000000002022,2,17,13,48,342022-01 Update for Windows 10 Version 20H2 for x64-based Systems (KB4023057)
+Reference9: success000000002022,2,15,15,2,292022-02 Update for Windows 10 Version 20H2 for x64-based Systems (KB5001716)
+Reference10: success000000002022,2,9,4,32,37Windows Malicious Software Removal Tool x64 - v5.98 (KB890830)
+Reference11: success000000002022,2,8,13,9,292022-02 Cumulative Update for Windows 10 Version 20H2 for x64-based Systems (KB5010342)
+Reference12: success000000002022,2,8,12,51,402022-02 Cumulative Update for .NET Framework 3.5 and 4.8 for Windows 10 Version 20H2 for x64 (KB5009467)
+Reference13: success000000002022,2,3,6,9,44SAMSUNG Electronics Co., Ltd.  - Modem - 2.17.16.0
+Reference14: success000000002022,1,11,19,59,362022-01 Cumulative Update for Windows 10 Version 20H2 for x64-based Systems (KB5009543)
+Reference15: success000000002022,1,11,19,48,442022-01 Cumulative Update for .NET Framework 3.5 and 4.8 for Windows 10 Version 20H2 for x64 (KB5008876)
+Reference16: success000000002022,1,11,19,48,3Windows Malicious Software Removal Tool x64 - v5.97 (KB890830)
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: OnWindowStateRestore
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: \![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomALL,943046097276923914,,,base_img,https://era-the-outworlder.github.io/era_makes_ghosts/f_lowe_y,,]\![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomSmallImageKey,"dev_img"]\![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomSmallImageText,"what"]\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Back\_w[500]\0\s[0]\e
+
+
+// request
+GET SHIORI/3.0
+ID: OnTranslate
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+Reference0: \![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomALL,943046097276923914,,,base_img,https://era-the-outworlder.github.io/era_makes_ghosts/f_lowe_y,,]\![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomSmallImageKey,"dev_img"]\![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomSmallImageText,"what"]\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Back\_w[500]\0\s[0]\e
+Reference1: 
+Reference2: OnWindowStateRestore
+Reference3: 
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: \![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomALL,943046097276923914,,,base_img,https://era-the-outworlder.github.io/era_makes_ghosts/f_lowe_y,,]\![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomSmallImageKey,"dev_img"]\![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomSmallImageText,"what"]\0\s[3]\![sound,stop,mus\sound_FLOWEY.mp3] * Back\_w[500]\0\s[0]\e
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+Status: talking,balloon(0=0)
 ID: OnRaisePluginFailure
 Reference0: 204
 Reference1: Discord Rich Presence
@@ -2025,7 +2596,7 @@ Charset: UTF-8
 Sender: SSP
 SenderType: internal
 SecurityLevel: local
-Status: talking
+Status: talking,balloon(0=0)
 ID: OnRaisePluginFailure
 Reference0: 204
 Reference1: Discord Rich Presence
@@ -2044,12 +2615,12 @@ Charset: UTF-8
 Sender: SSP
 SenderType: internal
 SecurityLevel: local
-Status: talking
+Status: talking,balloon(0=0)
 ID: OnRaisePluginFailure
 Reference0: 204
 Reference1: Discord Rich Presence
 Reference2: OnDiscordPluginCustomSmallImageText
-Reference3: frustrated
+Reference3: what
 
 
 // response (Execution time : 0[ms])
@@ -2058,53 +2629,20 @@ Charset: UTF-8
 
 
 // request
-GET SHIORI/3.0
+NOTIFY SHIORI/3.0
 Charset: UTF-8
 Sender: SSP
-SenderType: internal,plugin
+SenderType: internal
 SecurityLevel: local
-Status: talking
-ID: OnWeatherStation.Weather
-Reference0: Light rain
-Reference1: //cdn.weatherapi.com/weather/64x64/day/296.png
-Reference2: 1183
-Reference3: 1
-Reference4: 51.1
-Reference5: 10.6
-Reference6: 49.4
-Reference7: 9.7
-Reference8: 86
-Reference9: 17.4
-Reference10: 28.1
-Reference11: SSW
-Reference12: 200
-Reference13: 7.4
-Reference14: 11.9
-Reference15: 0.02
-Reference16: 0.5
-Reference17: 100
-Reference18: 1
-Reference19: 99
-Reference20: 0
-Reference21: 0
-Reference22: 8
-Reference23: 14
-Reference24: 30.16
-Reference25: 1021
-Reference26: 2
-Reference27: 243.6999969482422
-Reference28: 1.7000000476837158
-Reference29: 68.69999694824219
-Reference30: 0.20000000298023224
-Reference31: 0.8999999761581421
-Reference32: 0.8999999761581421
-Reference33: 1
-Reference34: 1
-Reference35: Imperial
+Status: talking,balloon(0=0)
+ID: OnSurfaceChange
+Reference0: 3
+Reference1: -1
+Reference2: 0,0,353,457
 
 
 // response (Execution time : 0[ms])
-SHIORI/3.0 204 No Content
+SHIORI/3.0 200 OK
 Charset: UTF-8
 
 
@@ -2134,7 +2672,7 @@ SenderType: internal
 SecurityLevel: local
 Status: balloon(0=0)
 ID: OnSurfaceChange
-Reference0: 3
+Reference0: 0
 Reference1: 10
 Reference2: 1,10,20,20
 
@@ -2145,416 +2683,15 @@ Charset: UTF-8
 
 
 // request
-GET SHIORI/3.0
+NOTIFY SHIORI/3.0
 Charset: UTF-8
 Sender: SSP
 SenderType: internal
 SecurityLevel: local
 Status: balloon(0=0)
-ID: OnBalloonClose
-Reference0: \![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomALL,943046097276923914,,,base_img,https://era-the-outworlder.github.io/era_makes_ghosts/f_lowe_y,,]\![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomSmallImageKey,"dev_img"]\![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomSmallImageText,"frustrated"]\0\s[3]\![sound,stop,mus\sound_FLOWEY.mp3] * IT'S IT'S IT'S FLUX! HELLO Fl_x.\_w[500]\e
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 204 No Content
-Charset: UTF-8
-
-
-// request
-NOTIFY SHIORI/3.0
-Charset: UTF-8
-Sender: FLUX
-SenderType: internal
-SecurityLevel: local
-ID: OnFLUXSongInfo
-Reference0: 
-Reference1: 
-Reference2: 6
-Reference3: 
-Reference4: 100
-Reference5: 100
-Reference6: 0
-Reference7: 0
-Reference8: 
-Reference9: 32
-Reference10: 241
-Reference11: 47
-Reference12: 22
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 204 No Content
-Charset: UTF-8
-
-
-// request
-GET SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-ID: OnOtherGhostClosed
-Reference0: FLUX
-Reference1: \![sound,stop]\![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomState, ]\![notifyother,__SYSTEM_ALL_GHOST__,OnFLUXSongInfo,,"",6,"",100,100,0,0,,32,241,47,22]\0\b[0]\s[8][Closing FLUX player.]\n\n\w8\w8[Have a nice day!]\w8\w8\-\e
-Reference2: FLUX
-Reference7: FLUX
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 200 OK
-Sender: AYA
-Charset: UTF-8
-Value: \0\s[3]\_v[mus\sound_FLOWEY.mp3] * GOOD-BYE FLUX.\_w[500]
-
-
-// request
-GET SHIORI/3.0
-ID: OnTranslate
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-Reference0: \0\s[3]\_v[mus\sound_FLOWEY.mp3] * GOOD-BYE FLUX.\_w[500]
-Reference1: 
-Reference2: OnOtherGhostClosed
-Reference3: FLUX\![sound,stop]\![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomState, ]\![notifyother,__SYSTEM_ALL_GHOST__,OnFLUXSongInfo,,"",6,"",100,100,0,0,,32,241,47,22]\0\b[0]\s[8][Closing FLUX player.]\n\n\w8\w8[Have a nice day!]\w8\w8\-\eFLUXFLUX
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 200 OK
-Sender: AYA
-Charset: UTF-8
-Value: \0\s[3]\![sound,stop,mus\sound_FLOWEY.mp3] * GOOD-BYE FLUX.\_w[500]
-
-
-// request
-NOTIFY SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-Status: talking
-ID: rateofusegraph
-Reference0: GazeTestGazeVoid5014406823.438680install
-Reference1: f_lowe_yf_lowe_yThe Locket11304035321.462763install
-Reference2: f_lowe_yf_lowe_yThe Narrator6013561818.944334boot
-Reference3: FLUXFLUXMusic952736314.553703install
-Reference4: Dr. W.D. GasterGasterBrothers78151768.071739install
-Reference5: SPAMTON G. SPAMTON!!SPAMTON!![FriendRequestDenied]45147097.823354install
-Reference6: HydrateHydrateYou being healthier1136311.931239install
-Reference7: Radio NowhereRadio SakuraRadio Kero2422161.178636install
-Reference8: GazeGazeForm513620.724414install
-Reference9: SebastianSebastianGhost96990.371781install
-Reference10: S the SkeletonRYS-0825None86180.328699install
-Reference11: statusBOTstatusBOT135400.287213install
-Reference12: The Wretched ScientistWilsonKero33960.210623install
-Reference13: Ghost Jam TemmieTemmieNO ONE!!!103850.204772install
-Reference14: MiniDevMiniDev-182120.112758install
-Reference15: f_lowe_y_quietf_lowe_y_quietThe Locket42040.108503install
-Reference16: Ship of TheseusRadio SakuraRadio Kero91340.071271install
-Reference17: f_lowe_y 1.1f_lowe_yThe Locket8820.043614install
-Reference18: Dreamtale SansDreamtale Sans14550.029253install
-Reference19: Multiverse SansMVSansphone6540.028721install
-Reference20: どくでんぱ。どくでんぱ。none2520.027658install
-Reference21: f_lowe_y-oldf_lowe_yThe Locket4300.015956install
-Reference22: Emily/Phase4.5EmilyTeddy5280.014893install
-Reference23: The HandHandDummy3120.006383install
-Reference24: Mettaton EXMettatonTriangle2100.005319install
-Reference25: PLANETSPLANETS220.001064install
-Reference26: VitusVitusTriangle120.001064install
-Reference27: GazeGazeVoid210.000532install
-Reference28: GT Template - Y CleanGirlTriangle110.000532install
-Reference29: Gaze_YAYAGazeVoid110.000532install
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 204 No Content
-Charset: UTF-8
-
-
-// request
-NOTIFY SHIORI/3.0
-ID: otherghostname
-SecurityLevel: local
-Charset: UTF-8
-Sender: SSP
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 200 OK
-Charset: UTF-8
-
-
-// request
-NOTIFY SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal,plugin
-SecurityLevel: local
-Status: balloon(0=0)
-ID: OnDiscordPluginCustomEnd
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 200 OK
-Charset: UTF-8
-
-
-// request
-NOTIFY SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal,plugin
-SecurityLevel: local
-Status: balloon(0=0)
-ID: OnDiscordPluginCustom
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 200 OK
-Charset: UTF-8
-
-
-// request
-GET SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-Status: balloon(0=0)
-ID: OnBalloonClose
-Reference0: \0\s[3]\![sound,stop,mus\sound_FLOWEY.mp3] * GOOD-BYE FLUX.\_w[500]
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 204 No Content
-Charset: UTF-8
-
-
-// request
-GET SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-ID: OnNetworkStatusChange
-Reference0: online
-Reference1: 192.168.1.3
-Reference2: wifi
-Reference3: 144
-Reference4: 144
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 204 No Content
-Charset: UTF-8
-
-
-// request
-GET SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-ID: OnMinuteChange
+ID: OnSurfaceChange
 Reference0: 0
-Reference1: 0
-Reference2: 0
-Reference3: 1
-Reference4: 5
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 204 No Content
-Charset: UTF-8
-
-
-
-// request
-GET SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-ID: OnBatteryNotify
-Reference0: 100
-Reference1: -1
-Reference2: online
-Reference3: high
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 204 No Content
-Charset: UTF-8
-
-
-// request
-NOTIFY SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-ID: rateofusegraph
-Reference0: GazeTestGazeVoid5014406823.438555install
-Reference1: f_lowe_yf_lowe_yThe Locket11304035321.462649install
-Reference2: f_lowe_yf_lowe_yThe Narrator6013561918.944765boot
-Reference3: FLUXFLUXMusic952736314.553626install
-Reference4: Dr. W.D. GasterGasterBrothers78151768.071696install
-Reference5: SPAMTON G. SPAMTON!!SPAMTON!![FriendRequestDenied]45147097.823312install
-Reference6: HydrateHydrateYou being healthier1136311.931229install
-Reference7: Radio NowhereRadio SakuraRadio Kero2422161.178629install
-Reference8: GazeGazeForm513620.724410install
-Reference9: SebastianSebastianGhost96990.371779install
-Reference10: S the SkeletonRYS-0825None86180.328697install
-Reference11: statusBOTstatusBOT135400.287211install
-Reference12: The Wretched ScientistWilsonKero33960.210621install
-Reference13: Ghost Jam TemmieTemmieNO ONE!!!103850.204771install
-Reference14: MiniDevMiniDev-182120.112757install
-Reference15: f_lowe_y_quietf_lowe_y_quietThe Locket42040.108502install
-Reference16: Ship of TheseusRadio SakuraRadio Kero91340.071271install
-Reference17: f_lowe_y 1.1f_lowe_yThe Locket8820.043614install
-Reference18: Dreamtale SansDreamtale Sans14550.029253install
-Reference19: Multiverse SansMVSansphone6540.028721install
-Reference20: どくでんぱ。どくでんぱ。none2520.027657install
-Reference21: f_lowe_y-oldf_lowe_yThe Locket4300.015956install
-Reference22: Emily/Phase4.5EmilyTeddy5280.014892install
-Reference23: The HandHandDummy3120.006382install
-Reference24: Mettaton EXMettatonTriangle2100.005319install
-Reference25: PLANETSPLANETS220.001064install
-Reference26: VitusVitusTriangle120.001064install
-Reference27: GazeGazeVoid210.000532install
-Reference28: GT Template - Y CleanGirlTriangle110.000532install
-Reference29: Gaze_YAYAGazeVoid110.000532install
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 204 No Content
-Charset: UTF-8
-
-
-// request
-GET SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-ID: OnSurfaceRestore
-Reference0: 3
 Reference1: 10
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 200 OK
-Sender: AYA
-Charset: UTF-8
-Value: \![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomALL,943046097276923914,,,base_img,https://era-the-outworlder.github.io/era_makes_ghosts/f_lowe_y,,]\![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomSmallImageKey,"dev_img"]\![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomSmallImageText,"frustrated"]\0\s[0]\1\s[-1]\e
-
-
-// request
-GET SHIORI/3.0
-ID: OnTranslate
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-Reference0: \![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomALL,943046097276923914,,,base_img,https://era-the-outworlder.github.io/era_makes_ghosts/f_lowe_y,,]\![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomSmallImageKey,"dev_img"]\![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomSmallImageText,"frustrated"]\0\s[0]\1\s[-1]\e
-Reference1: 
-Reference2: OnSurfaceRestore
-Reference3: 310
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 200 OK
-Sender: AYA
-Charset: UTF-8
-Value: \![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomALL,943046097276923914,,,base_img,https://era-the-outworlder.github.io/era_makes_ghosts/f_lowe_y,,]\![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomSmallImageKey,"dev_img"]\![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomSmallImageText,"frustrated"]\0\s[0]\1\s[-1]\e
-
-
-// request
-GET SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-ID: OnRaisePluginFailure
-Reference0: 204
-Reference1: Discord Rich Presence
-Reference2: OnDiscordPluginCustomALL
-Reference3: 943046097276923914
-Reference4: 
-Reference5: 
-Reference6: base_img
-Reference7: https://era-the-outworlder.github.io/era_makes_ghosts/f_lowe_y
-Reference8: 
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 204 No Content
-Charset: UTF-8
-
-
-// request
-GET SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-ID: OnRaisePluginFailure
-Reference0: 204
-Reference1: Discord Rich Presence
-Reference2: OnDiscordPluginCustomSmallImageKey
-Reference3: dev_img
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 204 No Content
-Charset: UTF-8
-
-
-// request
-GET SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-ID: OnRaisePluginFailure
-Reference0: 204
-Reference1: Discord Rich Presence
-Reference2: OnDiscordPluginCustomSmallImageText
-Reference3: frustrated
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 204 No Content
-Charset: UTF-8
-
-
-// request
-NOTIFY SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-ID: OnSurfaceChange
-Reference0: 0
-Reference1: -1
-Reference2: 1,-1,0,0
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 200 OK
-Charset: UTF-8
-
-
-// request
-NOTIFY SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-ID: OnSurfaceChange
-Reference0: 0
-Reference1: -1
 Reference2: 0,0,353,457
 
 
@@ -2569,12 +2706,9 @@ Charset: UTF-8
 Sender: SSP
 SenderType: internal
 SecurityLevel: local
-ID: OnNetworkStatusChange
-Reference0: online
-Reference1: 192.168.1.3
-Reference2: wifi
-Reference3: 144
-Reference4: 144
+Status: balloon(0=0)
+ID: OnBalloonClose
+Reference0: \![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomALL,943046097276923914,,,base_img,https://era-the-outworlder.github.io/era_makes_ghosts/f_lowe_y,,]\![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomSmallImageKey,"dev_img"]\![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomSmallImageText,"what"]\0\s[3]\![sound,stop,mus\sound_FLOWEY.mp3] * Back\_w[500]\0\s[0]\e
 
 
 // response (Execution time : 0[ms])
@@ -2588,178 +2722,7 @@ Charset: UTF-8
 Sender: SSP
 SenderType: internal
 SecurityLevel: local
-ID: OnMinuteChange
-Reference0: 0
-Reference1: 0
-Reference2: 0
-Reference3: 1
-Reference4: 0
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 204 No Content
-Charset: UTF-8
-
-
-
-// request
-NOTIFY SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-ID: rateofusegraph
-Reference0: GazeTestGazeVoid5014406823.438555install
-Reference1: f_lowe_yf_lowe_yThe Locket11304035321.462649install
-Reference2: f_lowe_yf_lowe_yThe Narrator6013561918.944765boot
-Reference3: FLUXFLUXMusic952736314.553626install
-Reference4: Dr. W.D. GasterGasterBrothers78151768.071696install
-Reference5: SPAMTON G. SPAMTON!!SPAMTON!![FriendRequestDenied]45147097.823312install
-Reference6: HydrateHydrateYou being healthier1136311.931229install
-Reference7: Radio NowhereRadio SakuraRadio Kero2422161.178629install
-Reference8: GazeGazeForm513620.724410install
-Reference9: SebastianSebastianGhost96990.371779install
-Reference10: S the SkeletonRYS-0825None86180.328697install
-Reference11: statusBOTstatusBOT135400.287211install
-Reference12: The Wretched ScientistWilsonKero33960.210621install
-Reference13: Ghost Jam TemmieTemmieNO ONE!!!103850.204771install
-Reference14: MiniDevMiniDev-182120.112757install
-Reference15: f_lowe_y_quietf_lowe_y_quietThe Locket42040.108502install
-Reference16: Ship of TheseusRadio SakuraRadio Kero91340.071271install
-Reference17: f_lowe_y 1.1f_lowe_yThe Locket8820.043614install
-Reference18: Dreamtale SansDreamtale Sans14550.029253install
-Reference19: Multiverse SansMVSansphone6540.028721install
-Reference20: どくでんぱ。どくでんぱ。none2520.027657install
-Reference21: f_lowe_y-oldf_lowe_yThe Locket4300.015956install
-Reference22: Emily/Phase4.5EmilyTeddy5280.014892install
-Reference23: The HandHandDummy3120.006382install
-Reference24: Mettaton EXMettatonTriangle2100.005319install
-Reference25: PLANETSPLANETS220.001064install
-Reference26: VitusVitusTriangle120.001064install
-Reference27: GazeGazeVoid210.000532install
-Reference28: GT Template - Y CleanGirlTriangle110.000532install
-Reference29: Gaze_YAYAGazeVoid110.000532install
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 204 No Content
-Charset: UTF-8
-
-
-// request
-NOTIFY SHIORI/3.0
-ID: otherghostname
-SecurityLevel: local
-Charset: UTF-8
-Sender: SSP
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 200 OK
-Charset: UTF-8
-
-
-// request
-NOTIFY SHIORI/3.0
-ID: otherghostname
-SecurityLevel: local
-Charset: UTF-8
-Sender: SSP
-Reference0: statusBOT-1-1
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 200 OK
-Charset: UTF-8
-
-
-// request
-NOTIFY SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-ID: rateofusegraph
-Reference0: GazeTestGazeVoid5014406823.438555install
-Reference1: f_lowe_yf_lowe_yThe Locket11304035321.462649install
-Reference2: f_lowe_yf_lowe_yThe Narrator6013561918.944765boot
-Reference3: FLUXFLUXMusic952736314.553626install
-Reference4: Dr. W.D. GasterGasterBrothers78151768.071696install
-Reference5: SPAMTON G. SPAMTON!!SPAMTON!![FriendRequestDenied]45147097.823312install
-Reference6: HydrateHydrateYou being healthier1136311.931229install
-Reference7: Radio NowhereRadio SakuraRadio Kero2422161.178629install
-Reference8: GazeGazeForm513620.724410install
-Reference9: SebastianSebastianGhost96990.371779install
-Reference10: S the SkeletonRYS-0825None86180.328697install
-Reference11: statusBOTstatusBOT145400.287211boot
-Reference12: The Wretched ScientistWilsonKero33960.210621install
-Reference13: Ghost Jam TemmieTemmieNO ONE!!!103850.204771install
-Reference14: MiniDevMiniDev-182120.112757install
-Reference15: f_lowe_y_quietf_lowe_y_quietThe Locket42040.108502install
-Reference16: Ship of TheseusRadio SakuraRadio Kero91340.071271install
-Reference17: f_lowe_y 1.1f_lowe_yThe Locket8820.043614install
-Reference18: Dreamtale SansDreamtale Sans14550.029253install
-Reference19: Multiverse SansMVSansphone6540.028721install
-Reference20: どくでんぱ。どくでんぱ。none2520.027657install
-Reference21: f_lowe_y-oldf_lowe_yThe Locket4300.015956install
-Reference22: Emily/Phase4.5EmilyTeddy5280.014892install
-Reference23: The HandHandDummy3120.006382install
-Reference24: Mettaton EXMettatonTriangle2100.005319install
-Reference25: PLANETSPLANETS220.001064install
-Reference26: VitusVitusTriangle120.001064install
-Reference27: GazeGazeVoid210.000532install
-Reference28: GT Template - Y CleanGirlTriangle110.000532install
-Reference29: Gaze_YAYAGazeVoid110.000532install
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 204 No Content
-Charset: UTF-8
-
-
-// request
-GET SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal,plugin
-SecurityLevel: local
-ID: OnWeatherStation.Weather
-Reference0: Light rain
-Reference1: //cdn.weatherapi.com/weather/64x64/day/296.png
-Reference2: 1183
-Reference3: 1
-Reference4: 51.1
-Reference5: 10.6
-Reference6: 49.4
-Reference7: 9.7
-Reference8: 86
-Reference9: 17.4
-Reference10: 28.1
-Reference11: SSW
-Reference12: 200
-Reference13: 7.4
-Reference14: 11.9
-Reference15: 0.02
-Reference16: 0.5
-Reference17: 100
-Reference18: 1
-Reference19: 99
-Reference20: 0
-Reference21: 0
-Reference22: 8
-Reference23: 14
-Reference24: 30.16
-Reference25: 1021
-Reference26: 2
-Reference27: 243.6999969482422
-Reference28: 1.7000000476837158
-Reference29: 68.69999694824219
-Reference30: 0.20000000298023224
-Reference31: 0.8999999761581421
-Reference32: 0.8999999761581421
-Reference33: 1
-Reference34: 1
-Reference35: Imperial
+ID: sakura.popupmenu.visible
 
 
 // response (Execution time : 0[ms])
@@ -2773,11 +2736,7 @@ Charset: UTF-8
 Sender: SSP
 SenderType: internal
 SecurityLevel: local
-ID: OnBatteryNotify
-Reference0: 100
-Reference1: -1
-Reference2: online
-Reference3: high
+ID: sakura.popupmenu.type
 
 
 // response (Execution time : 0[ms])
@@ -2786,42 +2745,12 @@ Charset: UTF-8
 
 
 // request
-NOTIFY SHIORI/3.0
+GET SHIORI/3.0
 Charset: UTF-8
 Sender: SSP
 SenderType: internal
 SecurityLevel: local
-ID: rateofusegraph
-Reference0: GazeTestGazeVoid5014406823.438306install
-Reference1: f_lowe_yf_lowe_yThe Locket11304035321.462421install
-Reference2: f_lowe_yf_lowe_yThe Narrator6013562018.945095boot
-Reference3: FLUXFLUXMusic952736314.553471install
-Reference4: Dr. W.D. GasterGasterBrothers78151768.071611install
-Reference5: SPAMTON G. SPAMTON!!SPAMTON!![FriendRequestDenied]45147097.823229install
-Reference6: HydrateHydrateYou being healthier1136311.931208install
-Reference7: Radio NowhereRadio SakuraRadio Kero2422161.178617install
-Reference8: GazeGazeForm513620.724403install
-Reference9: SebastianSebastianGhost96990.371775install
-Reference10: S the SkeletonRYS-0825None86180.328694install
-Reference11: statusBOTstatusBOT145410.287740boot
-Reference12: The Wretched ScientistWilsonKero33960.210619install
-Reference13: Ghost Jam TemmieTemmieNO ONE!!!103850.204769install
-Reference14: MiniDevMiniDev-182120.112756install
-Reference15: f_lowe_y_quietf_lowe_y_quietThe Locket42040.108501install
-Reference16: Ship of TheseusRadio SakuraRadio Kero91340.071270install
-Reference17: f_lowe_y 1.1f_lowe_yThe Locket8820.043613install
-Reference18: Dreamtale SansDreamtale Sans14550.029253install
-Reference19: Multiverse SansMVSansphone6540.028721install
-Reference20: どくでんぱ。どくでんぱ。none2520.027657install
-Reference21: f_lowe_y-oldf_lowe_yThe Locket4300.015956install
-Reference22: Emily/Phase4.5EmilyTeddy5280.014892install
-Reference23: The HandHandDummy3120.006382install
-Reference24: Mettaton EXMettatonTriangle2100.005319install
-Reference25: PLANETSPLANETS220.001064install
-Reference26: VitusVitusTriangle120.001064install
-Reference27: GazeGazeVoid210.000532install
-Reference28: GT Template - Y CleanGirlTriangle110.000532install
-Reference29: Gaze_YAYAGazeVoid110.000532install
+ID: recommendrootbutton.visible
 
 
 // response (Execution time : 16[ms])
@@ -2835,18 +2764,2079 @@ Charset: UTF-8
 Sender: SSP
 SenderType: internal
 SecurityLevel: local
-ID: OnGhostCallComplete
-Reference0: statusBOT
-Reference1: \![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomALL,947395488989204560,,,base_img,https://era-the-outworlder.github.io/era_makes_ghosts,,]\![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomSmallImageKey,"dev_img"]\![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomSmallImageText,"tired"]Hello f_lowe_y! It is good to see you.\_w[500]\e
-Reference2: statusBOT
-Reference7: statusBOT
+ID: sakura.recommendbuttoncaption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: recommendrootbutton.caption
 
 
 // response (Execution time : 0[ms])
 SHIORI/3.0 200 OK
 Sender: AYA
 Charset: UTF-8
-Value: \0\s[3]\_v[mus\sound_FLOWEY.mp3] * HELLO STATUSBOT.\_w[500]
+Value: &Recommendations
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: portalrootbutton.visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: sakura.portalbuttoncaption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: portalrootbutton.caption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: Crea&tor Sites
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: homeurl
+
+
+// response (Execution time : 16[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: https://raw.githubusercontent.com/Era-The-Outworlder/era_makes_ghosts/main/Updates/f_lowe_y/
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: updatebutton.visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: updatebuttoncaption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: sakura.updatebuttoncaption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: updatebutton.caption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: Update Ghost
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: readmebutton.visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: readmebuttoncaption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: readmebutton.caption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: READ ME
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: vanishbuttonvisible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: vanishbutton.visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: 0
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: vanishbuttoncaption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: vanishbutton.caption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: _nInsta_L__
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: aistatebutton.visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: aistatebutton.caption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: &AI Graph
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: sakura.recommendsites
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: Ukagaka Webring Hubhttps://ukagakawebring.netlify.app/Zarla's Ghost Template Walkthroughhttp://www.ashido.com/ukagaka/walkthrough.htmlSSPhttp://ssp.shillest.net/UKADOC (J)http://ssp.shillest.net/ukadoc/manual/index.htmlAYAYA/03 YAYA Information Wiki (J)http://emily.shillest.net/ayaya/?FrontPageDisc-2 (J)http://disc2.s56.xrea.com/
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: sakura.portalsites
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: GITHUBhttps://era-the-outworlder.github.io/era_makes_ghosts/f_lowe_y.html/ Tumblrhttp://theoutworlder.tumblr.com Twitter https://twitter.com/theoutworlder Deviantart http://baobhan-sith.deviantart.com Outworlder Affairs http://www.outworlderaffairs.com 
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: headlinesenserootbutton.visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: headlinesenserootbutton.caption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: Headlines + RSS
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: pluginrootbutton.visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: pluginrootbutton.caption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: &Plugins
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: biffbutton.visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: biffbutton.caption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: Check e&Mail
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: shellscalerootbutton.visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: shellscalerootbutton.caption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: Sh&ell Scaling
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: shellscaleotherbutton.visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: shellscaleotherbutton.caption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: &Other Percentage
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: balloonscalerootbutton.visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: balloonscalerootbutton.caption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: Balloon Scaling (&D)
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: balloonscaleotherbutton.visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: balloonscaleotherbutton.caption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: &Other Percentage
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: utilityrootbutton.visible
+
+
+// response (Execution time : 16[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: utilityrootbutton.caption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: Utilities (&F)
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: calendarbutton.visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: calendarbutton.caption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: &Calendar
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: messengerbutton.visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: messengerbutton.caption
+
+
+// response (Execution time : 15[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: SSP &Messenger
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: sntpbutton.visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: sntpbutton.caption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: &NTP Time Sync
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: ghostexplorerbutton.visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: ghostexplorerbutton.caption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: Ghost &Explorer
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: updateplatformbutton.visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: updateplatformbutton.caption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: Check SSP &Updates
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: dictationbutton..visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: dictationbutton..caption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: texttospeechbutton.visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: texttospeechbutton.caption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: &Voice Synthesis
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: addressbarbutton.visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: addressbarbutton.caption
+
+
+// response (Execution time : 16[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: &Address Bar
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: openfilebutton.visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: openfilebutton.caption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: Open FIle (&I)
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: openfolderbutton.visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: openfolderbutton.caption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: Open Folder (&F)
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: scriptlogbutton.visible
+
+
+// response (Execution time : 15[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: scriptlogbutton.caption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: Script &Log
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: duibutton.visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: duibutton.caption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: &Development Interface
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: purgeghostcachebutton.visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: purgeghostcachebutton.caption
+
+
+// response (Execution time : 16[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: Purge &Ghost Cache
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: updatefmobutton.visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: updatefmobutton.caption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: &FMO Update
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: reloadinfobutton.visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: reloadinfobutton.caption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: &Reload Extension Folders
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: switchreloadbutton.visible
+
+
+// response (Execution time : 16[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: switchreloadbutton.caption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: Rel&oad Ghost
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: leavepassivebutton.visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: leavepassivebutton.caption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: Reset &Passive Mode
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: switchreloadtempghostbutton.visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: switchreloadtempghostbutton.caption
+
+
+// response (Execution time : 15[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: &Keep Temporary Ghost
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: switchmovetodefaultpositionbutton.visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: switchmovetodefaultpositionbutton.caption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: Reset S&hell Position
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: resetballoonpositionbutton.visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: resetballoonpositionbutton.caption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: Reset Balloo&n Position
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: closeballoonbutton.visible
+
+
+// response (Execution time : 16[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: closeballoonbutton.caption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: Hide All &Balloons
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: configurationrootbutton.visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: configurationrootbutton.caption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: &Options
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: configurationbutton.visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: configurationbutton.caption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: &Preferences...?
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: configurationghostbutton.visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: configurationghostbutton.caption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: switchproxybutton.visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: switchproxybutton.caption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: Enable Pro&xy
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: charsetbutton.visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: charsetbutton.caption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: Set Default &Charset
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: switchtalkghostbutton.visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: switchtalkghostbutton.caption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: Raise AITalk from &SHIORI
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: switchcompatiblemodebutton.visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: switchcompatiblemodebutton.caption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: &Old Specification Support
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: ghostrootbutton.visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: ghostrootbutton.caption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: Change Ghost
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: callghostrootbutton.visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: callghostrootbutton.caption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: Call Ghost
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: shellrootbutton.visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: shellrootbutton.caption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: Change Shell
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: dressuprootbutton.visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: dressuprootbutton.caption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: &Clothes/Dress Up
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: balloonrootbutton.visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: balloonrootbutton.caption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: &Balloon
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: historyrootbutton.visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: historyrootbutton.caption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: History (&Y)
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: ghosthistorybutton.visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: ghosthistorybutton.caption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: Changed &Ghosts
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: callghosthistorybutton.visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: callghosthistorybutton.caption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: Called Ghosts (&Z)
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: balloonhistorybutton.visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: balloonhistorybutton.caption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: &Balloon
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: headlinesensehistorybutton.visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: headlinesensehistorybutton.caption
+
+
+// response (Execution time : 15[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: &Headline
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: pluginhistorybutton.visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: pluginhistorybutton.caption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: &Plugin
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: inforootbutton.visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: inforootbutton.caption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: Inform&ation
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: firststaffbutton.visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: firststaffbutton.caption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: &About SSP
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: readmebutton.visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: readmebutton.caption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: READ ME
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: termsbutton.visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: termsbutton.caption
+
+
+// response (Execution time : 15[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: helpbutton.visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: helpbutton.caption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: &Help
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: aistatebutton.visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: aistatebutton.caption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: &AI Graph
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: rateofusebutton.visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: rateofusebutton.caption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: Ghost Usage Statistics(&R)
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: systeminfobutton.visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: systeminfobutton.caption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: Output &System Information
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: hidebutton.visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: hidebutton.caption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: &Minimise
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: closebutton.visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: closebutton.caption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: Close (&W)
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: quitbutton.visible
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: quitbutton.caption
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: Quit
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: OnCloseAll
+BaseID: OnClose
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: OnClose
+Reference0: user
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: \0\s[3]\_v[mus\sound_FLOWEY.mp3] * [f_lowe_y_greeting_string] BYE\_w[500]\-
 
 
 // request
@@ -2856,17 +4846,17 @@ Charset: UTF-8
 Sender: SSP
 SenderType: internal
 SecurityLevel: local
-Reference0: \0\s[3]\_v[mus\sound_FLOWEY.mp3] * HELLO STATUSBOT.\_w[500]
+Reference0: \0\s[3]\_v[mus\sound_FLOWEY.mp3] * [f_lowe_y_greeting_string] BYE\_w[500]\-
 Reference1: 
-Reference2: OnGhostCallComplete
-Reference3: statusBOT\![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomALL,947395488989204560,,,base_img,https://era-the-outworlder.github.io/era_makes_ghosts,,]\![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomSmallImageKey,"dev_img"]\![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomSmallImageText,"tired"]Hello f_lowe_y! It is good to see you.\_w[500]\estatusBOTstatusBOT
+Reference2: OnClose
+Reference3: user
 
 
 // response (Execution time : 0[ms])
 SHIORI/3.0 200 OK
 Sender: AYA
 Charset: UTF-8
-Value: \0\s[3]\![sound,stop,mus\sound_FLOWEY.mp3] * HELLO STATUSBOT.\_w[500]
+Value: \0\s[3]\![sound,stop,mus\sound_FLOWEY.mp3] * [f_lowe_y_greeting_string] BYE\_w[500]\-
 
 
 // request
@@ -2878,330 +4868,53 @@ SecurityLevel: local
 Status: talking,balloon(0=0)
 ID: OnSurfaceChange
 Reference0: 3
-Reference1: -1
+Reference1: 10
 Reference2: 0,3,353,457
 
 
-// response (Execution time : 0[ms])
+// response (Execution time : 16[ms])
 SHIORI/3.0 200 OK
 Charset: UTF-8
 
 
 // request
-GET SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-Status: talking,balloon(0=0)
-ID: OnOtherOffscreen
-Reference0: statusBOT/1
-Reference1: 
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 204 No Content
-Charset: UTF-8
-
-
-// request
-GET SHIORI/3.0
+NOTIFY SHIORI/3.0
 Charset: UTF-8
 Sender: SSP
 SenderType: internal
 SecurityLevel: local
 Status: balloon(0=0)
-ID: OnBalloonClose
-Reference0: \0\s[3]\![sound,stop,mus\sound_FLOWEY.mp3] * HELLO STATUSBOT.\_w[500]
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 204 No Content
-Charset: UTF-8
-
-
-// request
-GET SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-ID: OnSurfaceRestore
-Reference0: 3
-Reference1: -1
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 200 OK
-Sender: AYA
-Charset: UTF-8
-Value: \![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomALL,943046097276923914,,,base_img,https://era-the-outworlder.github.io/era_makes_ghosts/f_lowe_y,,]\![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomSmallImageKey,"dev_img"]\![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomSmallImageText,"frustrated"]\0\s[0]\1\s[-1]\e
-
-
-// request
-GET SHIORI/3.0
-ID: OnTranslate
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-Reference0: \![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomALL,943046097276923914,,,base_img,https://era-the-outworlder.github.io/era_makes_ghosts/f_lowe_y,,]\![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomSmallImageKey,"dev_img"]\![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomSmallImageText,"frustrated"]\0\s[0]\1\s[-1]\e
-Reference1: 
-Reference2: OnSurfaceRestore
-Reference3: 3-1
-
-
-// response (Execution time : 15[ms])
-SHIORI/3.0 200 OK
-Sender: AYA
-Charset: UTF-8
-Value: \![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomALL,943046097276923914,,,base_img,https://era-the-outworlder.github.io/era_makes_ghosts/f_lowe_y,,]\![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomSmallImageKey,"dev_img"]\![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomSmallImageText,"frustrated"]\0\s[0]\1\s[-1]\e
-
-
-// request
-GET SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-ID: OnRaisePluginFailure
-Reference0: 204
-Reference1: Discord Rich Presence
-Reference2: OnDiscordPluginCustomALL
-Reference3: 943046097276923914
-Reference4: 
-Reference5: 
-Reference6: base_img
-Reference7: https://era-the-outworlder.github.io/era_makes_ghosts/f_lowe_y
-Reference8: 
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 204 No Content
-Charset: UTF-8
-
-
-// request
-GET SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-ID: OnRaisePluginFailure
-Reference0: 204
-Reference1: Discord Rich Presence
-Reference2: OnDiscordPluginCustomSmallImageKey
-Reference3: dev_img
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 204 No Content
-Charset: UTF-8
-
-
-// request
-GET SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-ID: OnRaisePluginFailure
-Reference0: 204
-Reference1: Discord Rich Presence
-Reference2: OnDiscordPluginCustomSmallImageText
-Reference3: frustrated
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 204 No Content
-Charset: UTF-8
-
-
-// request
-NOTIFY SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-ID: OnSurfaceChange
-Reference0: 0
-Reference1: -1
-Reference2: 1,-1,0,0
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 200 OK
-Charset: UTF-8
-
-
-// request
-NOTIFY SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-ID: OnSurfaceChange
-Reference0: 0
-Reference1: -1
-Reference2: 0,0,353,457
-
-
-// response (Execution time : 16[ms])
-SHIORI/3.0 200 OK
-Charset: UTF-8
-
-
-// request
-GET SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-ID: OnNetworkStatusChange
-Reference0: online
-Reference1: 192.168.1.3
-Reference2: wifi
-Reference3: 144
-Reference4: 144
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 204 No Content
-Charset: UTF-8
-
-
-// request
-GET SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-ID: OnMinuteChange
-Reference0: 0
-Reference1: 0
-Reference2: 0
-Reference3: 1
-Reference4: 17
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 204 No Content
-Charset: UTF-8
-
-
-
-// request
-GET SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-ID: OnBatteryNotify
-Reference0: 100
-Reference1: -1
-Reference2: online
-Reference3: high
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 204 No Content
-Charset: UTF-8
-
-
-// request
-NOTIFY SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
 ID: rateofusegraph
-Reference0: GazeTestGazeVoid5014406823.438057install
-Reference1: f_lowe_yf_lowe_yThe Locket11304035321.462193install
-Reference2: f_lowe_yf_lowe_yThe Narrator6013562118.945426boot
-Reference3: FLUXFLUXMusic952736314.553316install
-Reference4: Dr. W.D. GasterGasterBrothers78151768.071525install
-Reference5: SPAMTON G. SPAMTON!!SPAMTON!![FriendRequestDenied]45147097.823146install
-Reference6: HydrateHydrateYou being healthier1136311.931188install
-Reference7: Radio NowhereRadio SakuraRadio Kero2422161.178604install
-Reference8: GazeGazeForm513620.724395install
-Reference9: SebastianSebastianGhost96990.371771install
-Reference10: S the SkeletonRYS-0825None86180.328690install
-Reference11: statusBOTstatusBOT145420.288269boot
-Reference12: The Wretched ScientistWilsonKero33960.210617install
-Reference13: Ghost Jam TemmieTemmieNO ONE!!!103850.204767install
-Reference14: MiniDevMiniDev-182120.112755install
-Reference15: f_lowe_y_quietf_lowe_y_quietThe Locket42040.108500install
-Reference16: Ship of TheseusRadio SakuraRadio Kero91340.071269install
-Reference17: f_lowe_y 1.1f_lowe_yThe Locket8820.043613install
-Reference18: Dreamtale SansDreamtale Sans14550.029252install
-Reference19: Multiverse SansMVSansphone6540.028721install
-Reference20: どくでんぱ。どくでんぱ。none2520.027657install
-Reference21: f_lowe_y-oldf_lowe_yThe Locket4300.015956install
-Reference22: Emily/Phase4.5EmilyTeddy5280.014892install
-Reference23: The HandHandDummy3120.006382install
-Reference24: Mettaton EXMettatonTriangle2100.005319install
-Reference25: PLANETSPLANETS220.001064install
-Reference26: VitusVitusTriangle120.001064install
-Reference27: GazeGazeVoid210.000532install
-Reference28: GT Template - Y CleanGirlTriangle110.000532install
-Reference29: Gaze_YAYAGazeVoid110.000532install
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 204 No Content
-Charset: UTF-8
-
-
-// request
-GET SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-ID: OnNetworkStatusChange
-Reference0: online
-Reference1: 192.168.1.3
-Reference2: wifi
-Reference3: 144
-Reference4: 144
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 204 No Content
-Charset: UTF-8
-
-
-// request
-GET SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-ID: OnMinuteChange
-Reference0: 0
-Reference1: 0
-Reference2: 0
-Reference3: 1
-Reference4: 77
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 204 No Content
-Charset: UTF-8
-
-
-
-// request
-GET SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-ID: OnBatteryNotify
-Reference0: 100
-Reference1: -1
-Reference2: online
-Reference3: high
+Reference0: GazeTestGazeVoid5014406822.151514install
+Reference1: f_lowe_yf_lowe_yThe Locket11304035320.284107install
+Reference2: f_lowe_yf_lowe_yThe Narrator6033562917.909510install
+Reference3: FLUXFLUXMusic952736313.754467install
+Reference4: Dr. W.D. GasterGasterBrothers78151767.628469install
+Reference5: SPAMTON G. SPAMTON!!SPAMTON!![FriendRequestDenied]45147097.393724install
+Reference6: statusBOTstatusBOT168114545.757544install
+Reference7: HydrateHydrateYou being healthier1136311.825183install
+Reference8: Radio NowhereRadio SakuraRadio Kero2422161.113909install
+Reference9: GazeGazeForm513620.684632install
+Reference10: SebastianSebastianGhost96990.351364install
+Reference11: S the SkeletonRYS-0825None86180.310648install
+Reference12: The Wretched ScientistWilsonKero33960.199056install
+Reference13: Ghost Jam TemmieTemmieNO ONE!!!103850.193527install
+Reference14: MiniDevMiniDev-182120.106565install
+Reference15: f_lowe_y_quietf_lowe_y_quietThe Locket42040.102544install
+Reference16: Ship of TheseusRadio SakuraRadio Kero91340.067357install
+Reference17: f_lowe_y 1.1f_lowe_yThe Locket8820.041219install
+Reference18: Dreamtale SansDreamtale Sans14550.027647install
+Reference19: Multiverse SansMVSansphone6540.027144install
+Reference20: どくでんぱ。どくでんぱ。none2520.026139install
+Reference21: f_lowe_y-oldf_lowe_yThe Locket4300.015080install
+Reference22: Emily/Phase4.5EmilyTeddy5280.014075install
+Reference23: The HandHandDummy3120.006032install
+Reference24: Mettaton EXMettatonTriangle2100.005027install
+Reference25: PLANETSPLANETS220.001005install
+Reference26: VitusVitusTriangle120.001005install
+Reference27: GazeGazeVoid210.000503install
+Reference28: GT Template - Y CleanGirlTriangle110.000503install
+Reference29: Gaze_YAYAGazeVoid110.000503install
 
 
 // response (Execution time : 0[ms])
@@ -3215,37 +4928,8 @@ Charset: UTF-8
 Sender: SSP
 SenderType: internal
 SecurityLevel: local
-ID: rateofusegraph
-Reference0: GazeTestGazeVoid5014406823.437807install
-Reference1: f_lowe_yf_lowe_yThe Locket11304035321.461964install
-Reference2: f_lowe_yf_lowe_yThe Narrator6013562218.945756boot
-Reference3: FLUXFLUXMusic952736314.553162install
-Reference4: Dr. W.D. GasterGasterBrothers78151768.071439install
-Reference5: SPAMTON G. SPAMTON!!SPAMTON!![FriendRequestDenied]45147097.823062install
-Reference6: HydrateHydrateYou being healthier1136311.931167install
-Reference7: Radio NowhereRadio SakuraRadio Kero2422161.178592install
-Reference8: GazeGazeForm513620.724387install
-Reference9: SebastianSebastianGhost96990.371767install
-Reference10: S the SkeletonRYS-0825None86180.328687install
-Reference11: statusBOTstatusBOT145430.288798boot
-Reference12: The Wretched ScientistWilsonKero33960.210615install
-Reference13: Ghost Jam TemmieTemmieNO ONE!!!103850.204764install
-Reference14: MiniDevMiniDev-182120.112753install
-Reference15: f_lowe_y_quietf_lowe_y_quietThe Locket42040.108499install
-Reference16: Ship of TheseusRadio SakuraRadio Kero91340.071269install
-Reference17: f_lowe_y 1.1f_lowe_yThe Locket8820.043612install
-Reference18: Dreamtale SansDreamtale Sans14550.029252install
-Reference19: Multiverse SansMVSansphone6540.028720install
-Reference20: どくでんぱ。どくでんぱ。none2520.027656install
-Reference21: f_lowe_y-oldf_lowe_yThe Locket4300.015956install
-Reference22: Emily/Phase4.5EmilyTeddy5280.014892install
-Reference23: The HandHandDummy3120.006382install
-Reference24: Mettaton EXMettatonTriangle2100.005319install
-Reference25: PLANETSPLANETS220.001064install
-Reference26: VitusVitusTriangle120.001064install
-Reference27: GazeGazeVoid210.000532install
-Reference28: GT Template - Y CleanGirlTriangle110.000532install
-Reference29: Gaze_YAYAGazeVoid110.000532install
+ID: OnDestroy
+Reference0: 
 
 
 // response (Execution time : 0[ms])
@@ -3254,774 +4938,78 @@ Charset: UTF-8
 
 
 // request
-GET SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-ID: OnNetworkStatusChange
-Reference0: online
-Reference1: 192.168.1.3
-Reference2: wifi
-Reference3: 144
-Reference4: 144
 
-
+"array_eventtranslate
+array_translateinternal
+REQ.COMMAND
+REQ.PROTOCOL
+var.req.key
+var.req.value
+var.req.rawvalue
+LIB.PROTOCOL
+LIB.STATUSCODE
+var.lib.key
+var.lib.value
+var.lib.result
+SAORI.DllList
+ghostexlist
+ghostexcount
+selfname
+selfname2
+sakuraname
+keroname
+basewarename
+basewarenameex
+sender
+S_CHARSET
+installedghostlist
+installedsakuralist
+installedkerolist
+ascii
+displaybpp
+displaywidth
+displayheight
+uniqueid
+ghostbootmin
+status
+res_securitylevel
+res_reference
+res_marker
+refold
+refold0
+SHIORI3FW.Path
+SHIORI3FW.LastAITalk
+SHIORI3FW.LastAITalkTime
+SHIORI3FW.LastTalk
+SHIORI3FW.LastTalkTime
+SHIORI3FW.TalkEndTime
+SHIORI3FW.CanTalkFlag
+SHIORI3FW.IsSurfaceRestoreComplete
+SHIORI3FW.IsAITalkComplete
+SHIORI3FW.SaveVarCount
+SHIORI3FW.HWnd
+SHIORI3FW.HWndOld
+SHIORI3FW.BalloonHWnd
+SHIORI3FW.UniqueID
+SHIORI3FW.Eventid
+SHIORI3FW.EventidOld
+SHIORI3FW.EventidTranslate
+SHIORI3FW.EventidTranslateOld
+SHIORI3FW.DelayEventTime
+SHIORI3FW.DelayEvent
+SHIORI3FW.DelayEventReference
+SHIORI3FW.GhostName
+SHIORI3FW.ErrorDescription
+SHIORI3FW.ErrorLevel
+SHIORI3FW.LastErrorDescription
+C_CRLF2
+C_CRLF
+C_BYTE1"
+1157
 // response (Execution time : 0[ms])
-SHIORI/3.0 204 No Content
-Charset: UTF-8
 
+// Saving of variable value - D:\SSP\ghost\f_lowe_y\ghost\master\yaya_variable.cfg
+// ...Done.
 
-// request
-GET SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-ID: OnMinuteChange
-Reference0: 0
-Reference1: 0
-Reference2: 0
-Reference3: 1
-Reference4: 137
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 204 No Content
-Charset: UTF-8
-
-
-
-// request
-GET SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-ID: OnBatteryNotify
-Reference0: 100
-Reference1: -1
-Reference2: online
-Reference3: high
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 204 No Content
-Charset: UTF-8
-
-
-// request
-NOTIFY SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-ID: rateofusegraph
-Reference0: GazeTestGazeVoid5014406823.437558install
-Reference1: f_lowe_yf_lowe_yThe Locket11304035321.461736install
-Reference2: f_lowe_yf_lowe_yThe Narrator6013562318.946086boot
-Reference3: FLUXFLUXMusic952736314.553007install
-Reference4: Dr. W.D. GasterGasterBrothers78151768.071353install
-Reference5: SPAMTON G. SPAMTON!!SPAMTON!![FriendRequestDenied]45147097.822979install
-Reference6: HydrateHydrateYou being healthier1136311.931147install
-Reference7: Radio NowhereRadio SakuraRadio Kero2422161.178579install
-Reference8: GazeGazeForm513620.724379install
-Reference9: SebastianSebastianGhost96990.371763install
-Reference10: S the SkeletonRYS-0825None86180.328683install
-Reference11: statusBOTstatusBOT145440.289326boot
-Reference12: The Wretched ScientistWilsonKero33960.210613install
-Reference13: Ghost Jam TemmieTemmieNO ONE!!!103850.204762install
-Reference14: MiniDevMiniDev-182120.112752install
-Reference15: f_lowe_y_quietf_lowe_y_quietThe Locket42040.108497install
-Reference16: Ship of TheseusRadio SakuraRadio Kero91340.071268install
-Reference17: f_lowe_y 1.1f_lowe_yThe Locket8820.043612install
-Reference18: Dreamtale SansDreamtale Sans14550.029252install
-Reference19: Multiverse SansMVSansphone6540.028720install
-Reference20: どくでんぱ。どくでんぱ。none2520.027656install
-Reference21: f_lowe_y-oldf_lowe_yThe Locket4300.015955install
-Reference22: Emily/Phase4.5EmilyTeddy5280.014892install
-Reference23: The HandHandDummy3120.006382install
-Reference24: Mettaton EXMettatonTriangle2100.005318install
-Reference25: PLANETSPLANETS220.001064install
-Reference26: VitusVitusTriangle120.001064install
-Reference27: GazeGazeVoid210.000532install
-Reference28: GT Template - Y CleanGirlTriangle110.000532install
-Reference29: Gaze_YAYAGazeVoid110.000532install
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 204 No Content
-Charset: UTF-8
-
-
-// request
-GET SHIORI/3.0
-ID: OnTranslate
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-Reference0: \0\s[5]\1\s[-1]\_v[mus\HELP_text.mp3] * f_lowe_y is looking at something.\_w[1000]\n\n (It's not you.) \_w[500]
-Reference1: 
-Reference2: OnSecondChange
-Reference3: 0001160
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 200 OK
-Sender: AYA
-Charset: UTF-8
-Value: \0\s[5]\1\s[-1]\![sound,stop,mus\HELP_text.mp3] * f_lowe_y is looking at something.\_w[1000]\n\n (It's not you.) \_w[500]
-
-
-// request
-NOTIFY SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-Status: talking,balloon(1=0)
-ID: OnSurfaceChange
-Reference0: 5
-Reference1: -1
-Reference2: 1,-1,0,0
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 200 OK
-Charset: UTF-8
-
-
-// request
-NOTIFY SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-Status: talking,balloon(1=0)
-ID: OnSurfaceChange
-Reference0: 5
-Reference1: -1
-Reference2: 0,5,353,457
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 200 OK
-Charset: UTF-8
-
-
-// request
-NOTIFY SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-Status: talking,balloon(1=0)
-ID: OnSurfaceChange
-Reference0: 5
-Reference1: -1
-Reference2: 1,-1,0,0
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 200 OK
-Charset: UTF-8
-
-
-// request
-GET SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-Status: balloon(1=0)
-ID: OnBalloonTimeout
-Reference0: \0\s[5]\1\s[-1]\![sound,stop,mus\HELP_text.mp3] * f_lowe_y is looking at something.\_w[1000]\n\n (It's not you.) \_w[500]
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 204 No Content
-Charset: UTF-8
-
-
-// request
-GET SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-ID: OnNetworkStatusChange
-Reference0: online
-Reference1: 192.168.1.3
-Reference2: wifi
-Reference3: 144
-Reference4: 144
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 204 No Content
-Charset: UTF-8
-
-
-// request
-GET SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-ID: OnMinuteChange
-Reference0: 0
-Reference1: 0
-Reference2: 0
-Reference3: 1
-Reference4: 1
-
-
-// response (Execution time : 16[ms])
-SHIORI/3.0 204 No Content
-Charset: UTF-8
-
-
-
-// request
-GET SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-ID: OnBatteryNotify
-Reference0: 100
-Reference1: -1
-Reference2: online
-Reference3: high
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 204 No Content
-Charset: UTF-8
-
-
-// request
-NOTIFY SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-ID: rateofusegraph
-Reference0: GazeTestGazeVoid5014406823.437309install
-Reference1: f_lowe_yf_lowe_yThe Locket11304035321.461508install
-Reference2: f_lowe_yf_lowe_yThe Narrator6013562418.946417boot
-Reference3: FLUXFLUXMusic952736314.552852install
-Reference4: Dr. W.D. GasterGasterBrothers78151768.071267install
-Reference5: SPAMTON G. SPAMTON!!SPAMTON!![FriendRequestDenied]45147097.822896install
-Reference6: HydrateHydrateYou being healthier1136311.931126install
-Reference7: Radio NowhereRadio SakuraRadio Kero2422161.178567install
-Reference8: GazeGazeForm513620.724372install
-Reference9: SebastianSebastianGhost96990.371759install
-Reference10: S the SkeletonRYS-0825None86180.328680install
-Reference11: statusBOTstatusBOT145450.289855boot
-Reference12: The Wretched ScientistWilsonKero33960.210610install
-Reference13: Ghost Jam TemmieTemmieNO ONE!!!103850.204760install
-Reference14: MiniDevMiniDev-182120.112751install
-Reference15: f_lowe_y_quietf_lowe_y_quietThe Locket42040.108496install
-Reference16: Ship of TheseusRadio SakuraRadio Kero91340.071267install
-Reference17: f_lowe_y 1.1f_lowe_yThe Locket8820.043611install
-Reference18: Dreamtale SansDreamtale Sans14550.029251install
-Reference19: Multiverse SansMVSansphone6540.028720install
-Reference20: どくでんぱ。どくでんぱ。none2520.027656install
-Reference21: f_lowe_y-oldf_lowe_yThe Locket4300.015955install
-Reference22: Emily/Phase4.5EmilyTeddy5280.014892install
-Reference23: The HandHandDummy3120.006382install
-Reference24: Mettaton EXMettatonTriangle2100.005318install
-Reference25: PLANETSPLANETS220.001064install
-Reference26: VitusVitusTriangle120.001064install
-Reference27: GazeGazeVoid210.000532install
-Reference28: GT Template - Y CleanGirlTriangle110.000532install
-Reference29: Gaze_YAYAGazeVoid110.000532install
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 204 No Content
-Charset: UTF-8
-
-
-// request
-GET SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-ID: OnSurfaceRestore
-Reference0: 5
-Reference1: -1
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 200 OK
-Sender: AYA
-Charset: UTF-8
-Value: \![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomALL,943046097276923914,,,base_img,https://era-the-outworlder.github.io/era_makes_ghosts/f_lowe_y,,]\![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomSmallImageKey,"dev_img"]\![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomSmallImageText,"frustrated"]\0\s[0]\1\s[-1]\e
-
-
-// request
-GET SHIORI/3.0
-ID: OnTranslate
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-Reference0: \![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomALL,943046097276923914,,,base_img,https://era-the-outworlder.github.io/era_makes_ghosts/f_lowe_y,,]\![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomSmallImageKey,"dev_img"]\![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomSmallImageText,"frustrated"]\0\s[0]\1\s[-1]\e
-Reference1: 
-Reference2: OnSurfaceRestore
-Reference3: 5-1
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 200 OK
-Sender: AYA
-Charset: UTF-8
-Value: \![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomALL,943046097276923914,,,base_img,https://era-the-outworlder.github.io/era_makes_ghosts/f_lowe_y,,]\![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomSmallImageKey,"dev_img"]\![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomSmallImageText,"frustrated"]\0\s[0]\1\s[-1]\e
-
-
-// request
-GET SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-ID: OnRaisePluginFailure
-Reference0: 204
-Reference1: Discord Rich Presence
-Reference2: OnDiscordPluginCustomALL
-Reference3: 943046097276923914
-Reference4: 
-Reference5: 
-Reference6: base_img
-Reference7: https://era-the-outworlder.github.io/era_makes_ghosts/f_lowe_y
-Reference8: 
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 204 No Content
-Charset: UTF-8
-
-
-// request
-GET SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-ID: OnRaisePluginFailure
-Reference0: 204
-Reference1: Discord Rich Presence
-Reference2: OnDiscordPluginCustomSmallImageKey
-Reference3: dev_img
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 204 No Content
-Charset: UTF-8
-
-
-// request
-GET SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-ID: OnRaisePluginFailure
-Reference0: 204
-Reference1: Discord Rich Presence
-Reference2: OnDiscordPluginCustomSmallImageText
-Reference3: frustrated
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 204 No Content
-Charset: UTF-8
-
-
-// request
-NOTIFY SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-ID: OnSurfaceChange
-Reference0: 0
-Reference1: -1
-Reference2: 1,-1,0,0
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 200 OK
-Charset: UTF-8
-
-
-// request
-NOTIFY SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-ID: OnSurfaceChange
-Reference0: 0
-Reference1: -1
-Reference2: 0,0,353,457
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 200 OK
-Charset: UTF-8
-
-
-// request
-GET SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-ID: OnNetworkStatusChange
-Reference0: online
-Reference1: 192.168.1.3
-Reference2: wifi
-Reference3: 144
-Reference4: 144
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 204 No Content
-Charset: UTF-8
-
-
-// request
-GET SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-ID: OnMinuteChange
-Reference0: 0
-Reference1: 0
-Reference2: 0
-Reference3: 1
-Reference4: 36
-
-
-// response (Execution time : 16[ms])
-SHIORI/3.0 204 No Content
-Charset: UTF-8
-
-
-
-// request
-GET SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-ID: OnBatteryNotify
-Reference0: 100
-Reference1: -1
-Reference2: online
-Reference3: high
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 204 No Content
-Charset: UTF-8
-
-
-// request
-NOTIFY SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-ID: rateofusegraph
-Reference0: GazeTestGazeVoid5014406823.437060install
-Reference1: f_lowe_yf_lowe_yThe Locket11304035321.461279install
-Reference2: f_lowe_yf_lowe_yThe Narrator6013562518.946747boot
-Reference3: FLUXFLUXMusic952736314.552697install
-Reference4: Dr. W.D. GasterGasterBrothers78151768.071181install
-Reference5: SPAMTON G. SPAMTON!!SPAMTON!![FriendRequestDenied]45147097.822813install
-Reference6: HydrateHydrateYou being healthier1136311.931106install
-Reference7: Radio NowhereRadio SakuraRadio Kero2422161.178554install
-Reference8: GazeGazeForm513620.724364install
-Reference9: SebastianSebastianGhost96990.371755install
-Reference10: S the SkeletonRYS-0825None86180.328676install
-Reference11: statusBOTstatusBOT145460.290384boot
-Reference12: The Wretched ScientistWilsonKero33960.210608install
-Reference13: Ghost Jam TemmieTemmieNO ONE!!!103850.204758install
-Reference14: MiniDevMiniDev-182120.112750install
-Reference15: f_lowe_y_quietf_lowe_y_quietThe Locket42040.108495install
-Reference16: Ship of TheseusRadio SakuraRadio Kero91340.071266install
-Reference17: f_lowe_y 1.1f_lowe_yThe Locket8820.043611install
-Reference18: Dreamtale SansDreamtale Sans14550.029251install
-Reference19: Multiverse SansMVSansphone6540.028719install
-Reference20: どくでんぱ。どくでんぱ。none2520.027656install
-Reference21: f_lowe_y-oldf_lowe_yThe Locket4300.015955install
-Reference22: Emily/Phase4.5EmilyTeddy5280.014891install
-Reference23: The HandHandDummy3120.006382install
-Reference24: Mettaton EXMettatonTriangle2100.005318install
-Reference25: PLANETSPLANETS220.001064install
-Reference26: VitusVitusTriangle120.001064install
-Reference27: GazeGazeVoid210.000532install
-Reference28: GT Template - Y CleanGirlTriangle110.000532install
-Reference29: Gaze_YAYAGazeVoid110.000532install
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 204 No Content
-Charset: UTF-8
-
-
-// request
-GET SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-ID: OnNetworkStatusChange
-Reference0: online
-Reference1: 192.168.1.3
-Reference2: wifi
-Reference3: 144
-Reference4: 144
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 204 No Content
-Charset: UTF-8
-
-
-// request
-GET SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-ID: OnMinuteChange
-Reference0: 0
-Reference1: 0
-Reference2: 0
-Reference3: 1
-Reference4: 0
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 204 No Content
-Charset: UTF-8
-
-
-
-// request
-NOTIFY SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal,plugin
-SecurityLevel: local
-ID: OnDiscordPluginCustomEnd
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 200 OK
-Charset: UTF-8
-
-
-// request
-GET SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-ID: OnBatteryNotify
-Reference0: 100
-Reference1: -1
-Reference2: online
-Reference3: high
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 204 No Content
-Charset: UTF-8
-
-
-// request
-NOTIFY SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-ID: rateofusegraph
-Reference0: GazeTestGazeVoid5014406823.436810install
-Reference1: f_lowe_yf_lowe_yThe Locket11304035321.461051install
-Reference2: f_lowe_yf_lowe_yThe Narrator6013562618.947077boot
-Reference3: FLUXFLUXMusic952736314.552542install
-Reference4: Dr. W.D. GasterGasterBrothers78151768.071095install
-Reference5: SPAMTON G. SPAMTON!!SPAMTON!![FriendRequestDenied]45147097.822729install
-Reference6: HydrateHydrateYou being healthier1136311.931085install
-Reference7: Radio NowhereRadio SakuraRadio Kero2422161.178542install
-Reference8: GazeGazeForm513620.724356install
-Reference9: SebastianSebastianGhost96990.371751install
-Reference10: S the SkeletonRYS-0825None86180.328673install
-Reference11: statusBOTstatusBOT145470.290913boot
-Reference12: The Wretched ScientistWilsonKero33960.210606install
-Reference13: Ghost Jam TemmieTemmieNO ONE!!!103850.204756install
-Reference14: MiniDevMiniDev-182120.112749install
-Reference15: f_lowe_y_quietf_lowe_y_quietThe Locket42040.108494install
-Reference16: Ship of TheseusRadio SakuraRadio Kero91340.071266install
-Reference17: f_lowe_y 1.1f_lowe_yThe Locket8820.043610install
-Reference18: Dreamtale SansDreamtale Sans14550.029251install
-Reference19: Multiverse SansMVSansphone6540.028719install
-Reference20: どくでんぱ。どくでんぱ。none2520.027655install
-Reference21: f_lowe_y-oldf_lowe_yThe Locket4300.015955install
-Reference22: Emily/Phase4.5EmilyTeddy5280.014891install
-Reference23: The HandHandDummy3120.006382install
-Reference24: Mettaton EXMettatonTriangle2100.005318install
-Reference25: PLANETSPLANETS220.001064install
-Reference26: VitusVitusTriangle120.001064install
-Reference27: GazeGazeVoid210.000532install
-Reference28: GT Template - Y CleanGirlTriangle110.000532install
-Reference29: Gaze_YAYAGazeVoid110.000532install
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 204 No Content
-Charset: UTF-8
-
-
-// request
-GET SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-ID: OnOSUpdateInfo
-Reference0: 2022,2,27,11,22,16
-Reference1: 2022,2,27,11,26,48
-Reference2: success000000002022,2,27,11,26,48Security Intelligence Update for Microsoft Defender Antivirus - KB2267602 (Version 1.359.1039.0)
-Reference3: success000000002022,2,17,12,48,342022-01 Update for Windows 10 Version 20H2 for x64-based Systems (KB4023057)
-Reference4: success000000002022,2,15,14,2,292022-02 Update for Windows 10 Version 20H2 for x64-based Systems (KB5001716)
-Reference5: success000000002022,2,9,3,32,37Windows Malicious Software Removal Tool x64 - v5.98 (KB890830)
-Reference6: success000000002022,2,8,12,9,292022-02 Cumulative Update for Windows 10 Version 20H2 for x64-based Systems (KB5010342)
-Reference7: success000000002022,2,8,11,51,402022-02 Cumulative Update for .NET Framework 3.5 and 4.8 for Windows 10 Version 20H2 for x64 (KB5009467)
-Reference8: success000000002022,2,3,5,9,44SAMSUNG Electronics Co., Ltd.  - Modem - 2.17.16.0
-Reference9: success000000002022,1,11,18,59,362022-01 Cumulative Update for Windows 10 Version 20H2 for x64-based Systems (KB5009543)
-Reference10: success000000002022,1,11,18,48,442022-01 Cumulative Update for .NET Framework 3.5 and 4.8 for Windows 10 Version 20H2 for x64 (KB5008876)
-Reference11: success000000002022,1,11,18,48,3Windows Malicious Software Removal Tool x64 - v5.97 (KB890830)
-Reference12: success000000002021,12,14,13,28,422021-12 Cumulative Update for Windows 10 Version 20H2 for x64-based Systems (KB5008212)
-Reference13: success000000002021,12,14,13,8,38Windows Malicious Software Removal Tool x64 - v5.96 (KB890830)
-Reference14: success000000002021,12,3,19,25,532021-11 Cumulative Update for Windows 10 Version 20H2 for x64-based Systems (KB5007186)
-Reference15: fail802400342021,11,27,3,52,369NBLGGH4RV3K-Microsoft.VCLibs.140.00.UWPDesktop
-Reference16: fail802400342021,11,27,0,52,179NBLGGH4RV3K-Microsoft.VCLibs.140.00.UWPDesktop
-Reference17: fail802400342021,11,26,20,42,99NBLGGH4RV3K-Microsoft.VCLibs.140.00.UWPDesktop
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 204 No Content
-Charset: UTF-8
-
-
-// request
-GET SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-ID: OnNetworkStatusChange
-Reference0: online
-Reference1: 192.168.1.3
-Reference2: wifi
-Reference3: 144
-Reference4: 144
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 204 No Content
-Charset: UTF-8
-
-
-// request
-GET SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-ID: OnMinuteChange
-Reference0: 0
-Reference1: 0
-Reference2: 0
-Reference3: 1
-Reference4: 2
-
-
-// response (Execution time : 16[ms])
-SHIORI/3.0 204 No Content
-Charset: UTF-8
-
-
-
-// request
-GET SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-ID: OnBatteryNotify
-Reference0: 100
-Reference1: -1
-Reference2: online
-Reference3: high
-
-
-// response (Execution time : 15[ms])
-SHIORI/3.0 204 No Content
-Charset: UTF-8
-
-
-// request
-NOTIFY SHIORI/3.0
-Charset: UTF-8
-Sender: SSP
-SenderType: internal
-SecurityLevel: local
-ID: rateofusegraph
-Reference0: GazeTestGazeVoid5014406823.436561install
-Reference1: f_lowe_yf_lowe_yThe Locket11304035321.460823install
-Reference2: f_lowe_yf_lowe_yThe Narrator6013562718.947408boot
-Reference3: FLUXFLUXMusic952736314.552388install
-Reference4: Dr. W.D. GasterGasterBrothers78151768.071010install
-Reference5: SPAMTON G. SPAMTON!!SPAMTON!![FriendRequestDenied]45147097.822646install
-Reference6: HydrateHydrateYou being healthier1136311.931065install
-Reference7: Radio NowhereRadio SakuraRadio Kero2422161.178529install
-Reference8: GazeGazeForm513620.724349install
-Reference9: SebastianSebastianGhost96990.371747install
-Reference10: S the SkeletonRYS-0825None86180.328669install
-Reference11: statusBOTstatusBOT145480.291441boot
-Reference12: The Wretched ScientistWilsonKero33960.210604install
-Reference13: Ghost Jam TemmieTemmieNO ONE!!!103850.204753install
-Reference14: MiniDevMiniDev-182120.112747install
-Reference15: f_lowe_y_quietf_lowe_y_quietThe Locket42040.108493install
-Reference16: Ship of TheseusRadio SakuraRadio Kero91340.071265install
-Reference17: f_lowe_y 1.1f_lowe_yThe Locket8820.043610install
-Reference18: Dreamtale SansDreamtale Sans14550.029250install
-Reference19: Multiverse SansMVSansphone6540.028719install
-Reference20: どくでんぱ。どくでんぱ。none2520.027655install
-Reference21: f_lowe_y-oldf_lowe_yThe Locket4300.015955install
-Reference22: Emily/Phase4.5EmilyTeddy5280.014891install
-Reference23: The HandHandDummy3120.006382install
-Reference24: Mettaton EXMettatonTriangle2100.005318install
-Reference25: PLANETSPLANETS220.001064install
-Reference26: VitusVitusTriangle120.001064install
-Reference27: GazeGazeVoid210.000532install
-Reference28: GT Template - Y CleanGirlTriangle110.000532install
-Reference29: Gaze_YAYAGazeVoid110.000532install
-
-
-// response (Execution time : 0[ms])
-SHIORI/3.0 204 No Content
-Charset: UTF-8
-
+// unload time: 2022/03/21 00:17:39
 
