@@ -413,8 +413,6 @@ torichainB2
 
 timeTalk
 {
-	hourlyArray ,= "saidtimeslot"
-	--
 	if timeslot == "earlymorning"
 	{
 		"\0\s[3]%(Flowey) * Early morning."
@@ -443,13 +441,12 @@ timeTalk
 	{
 		"\0\s[3]%(Flowey) * %(lateearly)"
 	}
+	--
+	"\e:eval=hourlyArray ,= 'saidtimeslot'"
 }
 
 dayTalk
 {
-	
-	hourlyArray ,= "saidweekday"
-	--
 	if weekday == 0
 	{
 		"\0\s[3]%(Flowey) * Sunday."
@@ -479,12 +476,12 @@ dayTalk
 	{
 		"\0\s[3]%(Flowey) * Saturday."
 	}
+	--
+	"\e:eval=hourlyArray ,= 'saidweekday'"
 }
 
 monthTalk
 {
-	
-	hourlyArray ,= "saidmonthly"
 	if month == 1
 	{
 		"\0\s[3]%(Flowey) * January."
@@ -549,16 +546,11 @@ monthTalk
 		"\0\s[3]%(Flowey) * December."
 		"\0\s[3]%(Flowey) * Merry.Merry.Merry.Merry.Merry.Merry.Merry.Merry.Merry.Merry.Merry.Merry.Merry."
 	}
+	--
+	"\e:eval=hourlyArray ,= 'saidmonthly'"
 }
-HourCheck
-{
-if passmin >= 59
-	{
-		timeslot = GetTimeSlot
-		passmin = 0
-		passhour = passhour + 1
-	}
-}
+
+
 
 // ---- OnMinuteChange ----
 // Time related dialogue using the OnMinuteChange function
@@ -624,6 +616,16 @@ OnSecondChange
 	}
 }
 
+HourCheck
+{
+if passmin >= 59
+	{
+		timeslot = GetTimeSlot
+		passmin = 0
+		passhour = passhour + 1
+	}
+}
+
 //---- MikireTalk ----
 //MikireTalk is dialogue for when your main character is off-screen.
  
@@ -665,8 +667,6 @@ EndMikireTalk
 
 OnSurfaceRestore
 {	
-	OnDiscordPluginCustom
-	--
 	"\0\s[0]\1\s[-1]\e"	
 }
 

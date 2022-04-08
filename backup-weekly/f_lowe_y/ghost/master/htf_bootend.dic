@@ -297,25 +297,29 @@ OnClose
  		"\0\s[3]%(Flowey) * [f_lowe_y_greeting_string] BYE\_w[500]"
 		
  	}
+	--
+	ERASEVAR("hourlyArray")
  	--
 	"\-" 
 }
 
 OnCloseAll
 {
-	if passhour > 1
-	{
-		cumuhour = (cumuhour + passhour)
-		passhour = 0
-	}
-	--
-	passmin = 0
-	passsec = 0
-	--
+	
 	if ghostexcount > 0
 	{
-
+		if passhour > 1
+		{
+			cumuhour = (cumuhour + passhour)
+			passhour = 0
+		}
+		--
+		passmin = 0
+		passsec = 0
+		--
+		
 		"\0\s[3]%(Narrator) * (You say goodbye to everyone.)\_w[500]"
+		
 		case hour
 		{
 		when 0-4
@@ -344,6 +348,8 @@ OnCloseAll
 			"\0\s[3]%(Narrator) * (You say you'll see everyone another time.)"
 		}
 		}
+	--
+	ERASEVAR("hourlyArray")
 	--
 	"\-"
 	}

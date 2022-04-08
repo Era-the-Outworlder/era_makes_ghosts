@@ -32,7 +32,7 @@ OnMenuRun
 	--
  	"\![*] \q[%(newTalk),OnAiTalk]\n"
 	--
- 	"\![*] \q[%(ghostChat),OnTalkToGhost]\n"
+ 	"\![*] \q[%(ghostChat),OnStartCommunicate]\n"
 	--
 	"\![*] \q[%(userMenu),OnUserConfig]\n"
 	--

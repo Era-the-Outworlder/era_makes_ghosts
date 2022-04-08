@@ -44,7 +44,7 @@ Select.seteVar
 }
 OnEVar
 {
-	
+	EVAL(reference0)
 }
 Select.setPET1
 {

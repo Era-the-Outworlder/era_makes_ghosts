@@ -130,4 +130,4 @@ don't need onmousemove,0
 don't need bind,1
 
 // Ignore SERIKO Talk if 1
-don't need seriko talk,0
+don't need seriko talk,1
