@@ -1,0 +1,75 @@
+/* //---------------------------Communication--------------------------
+
+//I'm going to level with you, I don't really get a lot of what's going on in this .dic file. It allows ghosts to comment to eachother, but I really dont know how this works yet.
+
+
+OnCommunicate
+ {
+	if reference0 == "user" || reference0 == "User"
+ 	{
+		//---- Respond to input from user. Method of actually using this is unknown.
+ 		ReplyToUser
+	}
+ 	else
+	{
+ 		//---- Respond to comment from other ghost
+		ReplyToGhost
+ 	}
+}
+
+ReplyToUser
+{
+	TalkToUser
+}
+
+
+//----ReplyToGhost----
+
+//reference0 is the name of the ghost being communicated with. reference1 is their output string. res_reference0 is either also name of other ghost, or is name of self.
+ReplyToGhost
+{
+ 	if reference0 == "Gaze"
+	{
+		res_reference0 = "Gaze"
+		
+		"\0\s[0]\_v[trill.wav]Ah. Hello other self.\e"
+		"\0\s[0]\_v[trill.wav]This is rather awkward.\e"
+	}
+	elseif ",testy" _in_ ConvoTag
+{
+	//Gaze: Well look at you.
+	if ",0," _in_ ConvoTag
+	{
+		res_reference0 = "Gaze"
+
+		"Ah. Hello Self.\e,1"
+	}
+	//Gaze: You seem to be coming along quite well.
+	elseif ",2," _in_ ConvoTag
+	{
+		res_reference0 = "Gaze"
+
+		"That is the hope.\e,3"
+	}
+	//Gaze: You may replace me soon.
+	elseif ",4," _in_ ConvoTag
+	{
+		res_reference0 = ""
+
+		"...\e,5"
+	}
+	--
+	",testy"
+}	else
+	{	
+		res_reference0 = reference0
+		
+		"\0\s[0]\v[trill.wav]Well hello there,%(res_reference0). \e"
+	}
+
+OnCommunicateGhostOther
+{
+	"Help"
+}
+
+ */

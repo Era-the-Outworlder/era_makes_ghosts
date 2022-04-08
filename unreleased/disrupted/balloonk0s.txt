@@ -1,0 +1,3 @@
+//--Balloonk0s.txt
+//Right facing small balloon for kero/secondary character. 
+//No adjustments. <3Era

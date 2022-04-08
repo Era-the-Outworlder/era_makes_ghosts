@@ -1,0 +1,3 @@
+//--Balloons1s.txt
+//Left facing balloon for sakura/main character.
+//No adjustments needed. <3Era

@@ -1,0 +1,142 @@
+//----Descript.txt
+//~~~~~~~ Balloon component positioning and styles~~~~~~~~
+
+
+
+// 1. -- Basic information
+
+// This sets up the character set 
+charset,UTF-8
+
+// File set type
+type,balloon
+
+// This is the name of your balloon as it will appear in the "Change Balloon" menu option, and how it'll be referenced in install.txt.
+name,Disrupted Reality
+
+//Creator Identification
+craftman,Era
+craftmanurl,https://era-the-outworlder.github.io/era_makes_ghosts/
+
+
+// 2. -- Balloon Position
+
+// These two bits here basically determine where the balloon is positioned near your ghost when they start.
+windowposition.x,center
+windowposition.y,0
+
+
+
+// 3. -- Defining Text Areas
+
+// Origin defines exactly where text starts to appear in your balloon.
+origin.x,45
+origin.y,45
+
+// This defines the space that will be used for text.
+validrect.left,45
+validrect.top,45
+validrect.right,335
+validrect.bottom,155
+
+// This is where the balloon will wrap any words or letters that go past that point
+wordwrappoint.x,335
+wordwrappoint.y,0
+
+
+
+// 4. -- Text Styles and Choice Markers
+
+// This set of code here defines what the basic qualities fo the font you want to use for your balloon.
+// font.name,AzoteSSK
+// font.name,Cuneiform
+// font.name,Felina
+// font.name,Underwood1913
+
+//Font made from http://www.onlinewebfonts.com oNline Web Fontsis licensed by CC BY 3.0
+font.name,1785GLCBaskervilleW00-Norm
+
+font.height,16
+font.color.r,255
+font.color.g,255
+font.color.b,255
+
+// These settings here are for a "dropshadow" for your font.
+font.shadowcolor.r,-1
+font.shadowcolor.g,-1
+font.shadowcolor.b,-1
+
+//These set the values of the sstpmessage text.
+sstpmessage.font.height,10
+sstpmessage.font.color.r,255
+sstpmessage.font.color.g,255
+sstpmessage.font.color.b,255
+sstpmessage.x,155
+sstpmessage.y,208
+
+// Download Progress text
+number.font.name,1785GLCBaskervilleW00-Norm
+number.font.height,10
+number.font.color.r,255
+number.font.color.g,255
+number.font.color.b,255
+number.xr,330
+number.y,208
+
+// These values define the color of anchor links in a ghost.
+anchor.font.color.r,0
+anchor.font.color.g,75
+anchor.font.color.b,255
+
+// This set of code defines what it looks like when the balloon gives you a choice from a list of options.
+cursor.blendmethod,none
+cursor.style,underline
+
+// The colour of underline or square highlighting a choice
+cursor.pen.color.r,0
+cursor.pen.color.g,128
+cursor.pen.color.b,255
+
+// This is the color of the box applied over text on hover if style is set to square
+cursor.brush.color.r,200
+cursor.brush.color.g,200
+cursor.brush.color.b,200
+
+// This is the color of text for a choice. 
+cursor.font.color.r,0
+cursor.font.color.g,128
+cursor.font.color.b,255
+
+
+
+// 6. -- Image Markers
+
+// Up Scroll Arrow
+arrow0.x,345
+arrow0.y,42
+
+// Down Scroll Arrow
+arrow1.x,345
+arrow1.y,180
+
+// Online\Connection Indicator
+onlinemarker.x,45
+onlinemarker.y,205
+
+// Choice\SSTP Marker \![*]
+sstpmarker.x,345
+sstpmarker.y,205
+
+
+
+//7. -- Communication\Input Boxes
+
+// Text area start
+communicatebox.x,14
+communicatebox.y,34
+
+// Text area width\hight
+communicatebox.width,218
+communicatebox.height,26
+
+//~~~~~~~~~END~~~~~~~~~~~

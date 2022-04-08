@@ -1,0 +1,28 @@
+﻿//---------Envelopes--------
+//~~~~~~~~~~Special Envelopes for Ss&Gs~~~~~~~~~~~~~~
+
+exampleenvelope
+{
+	"Example Envelope Dialogue 1"
+	"Example Envelope Dialogue 2"
+	"Example Envelope Dialogue 3"
+}
+
+
+usersfolder
+{
+	"%(username)'s Recycle Bin, Hm."
+	"%(username)'s Document folder, It certainly has documents in it..."
+	"%(username)'s secret folder, It was not very well hidden..."
+}
+
+
+
+
+//**** Don't touch this **********************************************
+//~~~~Nobody knows what it does...~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+On_\person
+{
+ 	person
+}

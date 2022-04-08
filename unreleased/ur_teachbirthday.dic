@@ -1,0 +1,201 @@
+// --------User's Birthday--------
+// 
+
+
+// Gets the info the user may have set in SSP's settings and separates it into global variables
+OnNotifyUserInfo
+{
+
+	menuNName = SHIORI3FW.UserName
+	menuRName = SHIORI3FW.UserNameFull
+	menuBYear = TOSTR(SHIORI3FW.UserBirthday[0])
+	menuBMonth = TOSTR(SHIORI3FW.UserBirthday[1])
+	menuBDay = TOSTR(SHIORI3FW.UserBirthday[2])	
+}
+
+// The function called to have the user input their birthday
+OnGetBirthday	
+{
+	dayslot = GetDaySlot //This is setting up in case today is the user's birthday.
+	
+	"\0\s[0] Enter Birthdate. \n/
+	\![open,dateinput,OnInputBirthdate,,%(menuBYear),%(menuBMonth),%(menuBDay)]\x\n"
+	
+}
+
+// The function that evaluates the input birthdate
+OnInputBirthdate
+{
+	_a = SPLIT(reference[0],',')
+	_tempyear = TOINT(_a[0])
+	_tempmonth  = TOINT(_a[1])
+	_tempday  = TOINT(_a[2])
+	
+	{	//assigning year # and print version to global vars
+		bornyear = _tempyear
+		bornyearprint = ""
+		_cent = ""
+		_dec = ""
+		_yr = ""
+		_error = ""
+		
+		_num = IARRAY 
+		 
+		for _i=0;_i<4;_i++
+		{
+			_num[_i] = SUBSTR(_tempyear,_i,1)
+		}
+		--
+		if _num[0] == 1
+		{
+			if _num[1] == 6 && _num[2] == 0 {_cent = "Sixteen hundred and "}
+			elseif _num[1] == 6 {_cent ="Sixteen "}
+			elseif _num[1] == 7 && _num[2] == 0 {_cent ="Seventeen hundred and "}
+			elseif _num[1] == 7 {_cent ="Seventeen "}
+			elseif _num[1] == 8 && _num[2] == 0 {_cent ="Eighteen hundred and "}
+			elseif _num[1] == 8 {_cent ="Eighteen "}
+			elseif _num[1] == 9 && _num[2] == 0 {_cent ="Nineteen hundred and "}
+			elseif _num[1] == 9 {_cent ="Nineteen "}
+			else{"%(errorMsg)"}	
+		}
+		elseif _num[0] == 2
+		{
+			if _num[1] == 0 && _num[2] == 0 {_cent = "Two thousand "}
+			elseif _num[1] == 0 {_cent ="Twenty "}
+			else
+			{
+				_error = "The distant future "
+				"\![set,autoscroll,disable]The Developer considered the likelihood of anyone continuing to use this software into the 21st century or beyond to be unlikely to the extreme. They would like to apologise to any time-travellers, historians or collectors of ancient technology this may inconvinence.\x"
+			}
+		}	
+		else
+		{
+			_error = "The far-flung future "
+			"\![set,autoscroll,disable]The Developer considered the likelihood of anyone continuing to use this software into the 30th century or beyond to be unlikely to the extreme. They would like to apologise to any time-travellers, historians or collectors of ancient technology this may inconvinence.\x"
+		}
+		--		
+		if _num[2] == 0
+		{
+			_dec = ""
+		}
+		elseif _num[2] == 1
+		{
+			_dec = "teen"
+			if _num[3] == 1 {_yr = "eleven"}
+			elseif _num[3] == 2 {_yr ="twelve"}
+			elseif _num[3] == 3 {_yr ="thirteen"}
+			elseif _num[3] == 4 {_yr ="fourteen"}
+			elseif _num[3] == 5 {_yr ="fifteen"}
+			elseif _num[3] == 6 {_yr ="sixteen"}
+			elseif _num[3] == 7 {_yr ="seventeen"}
+			elseif _num[3] == 8 {_yr ="eighteen"}
+			elseif _num[3] == 9 {_yr ="nineteen"}
+			else{_yr ="ten"}
+		}
+		else
+		{
+			if _num[2] == 2 {_dec ="twenty"}
+			elseif _num[2] == 3 {_dec ="thirty"}
+			elseif _num[2] == 4 {_dec ="forty"}
+			elseif _num[2] == 5 {_dec ="fifty"}
+			elseif _num[2] == 6 {_dec ="sixty"}
+			elseif _num[2] == 7 {_dec ="seventy"}
+			elseif _num[2] == 8 {_dec ="eighty"}
+			elseif _num[2] == 9 {_dec ="ninety"}
+			else{""}	
+		}
+		--
+		if _num[3] == 1 {_yr = "one"}
+		elseif _num[3] == 2 {_yr ="two"}
+		elseif _num[3] == 3 {_yr ="three"}
+		elseif _num[3] == 4 {_yr ="four"}
+		elseif _num[3] == 5 {_yr ="five"}
+		elseif _num[3] == 6 {_yr ="six"}
+		elseif _num[3] == 7 {_yr ="seven"}
+		elseif _num[3] == 8 {_yr ="eight"}
+		elseif _num[3] == 9 {_yr ="nine"}
+		else{""}	
+	--
+	if _error != "" {bornyearprint = _error}
+	elseif _dec == "" {bornyearprint = "%(_cent)%(_yr)"}
+	elseif _yr == "" {bornyearprint = "%(_cent)%(_dec)"}
+	else {bornyearprint = "%(_cent)%(_dec)-%(_yr)"}
+		
+	}
+	--
+	{	// assigning month# and name to globar vars
+		bornmonth = _tempmonth
+		if _tempmonth == 1 {bornmonthprint = "January"}
+		elseif _tempmonth == 2 {bornmonthprint = "February"}
+		elseif _tempmonth == 3 {bornmonthprint = "March"}
+		elseif _tempmonth == 4 {bornmonthprint = "April"}
+		elseif _tempmonth == 5 {bornmonthprint = "May"}
+		elseif _tempmonth == 6 {bornmonthprint = "June"}
+		elseif _tempmonth == 7 {bornmonthprint = "July"}
+		elseif _tempmonth == 8 {bornmonthprint = "August"}
+		elseif _tempmonth == 9 {bornmonthprint = "September"}
+		elseif _tempmonth == 10 {bornmonthprint = "October"}
+		elseif _tempmonth == 11 {bornmonthprint = "November"}
+		elseif _tempmonth == 12 {bornmonthprint = "December"}
+	}
+	--
+	{
+		bornday = _tempday
+		borndayprint = Printday
+		userbirthday = "%(bornmonth)month %(bornday)day"
+		birthdayprint = "%(bornmonthprint) %(borndayprint)"
+	}
+	--
+	"%(birthchecked)" //checks birthday against 
+}
+
+//This adds an appropriate ordinal suffix to the day.
+
+Printday
+{
+	if bornday == 1 || bornday == 21 || bornday == 31
+	{
+	"%(bornday)st"
+	}
+	elseif bornday == 2 || bornday == 22
+	{
+	"%(bornday)nd"
+	}
+	elseif bornday == 3 || bornday == 23
+	{
+	"%(bornday)rd"
+	}
+	else
+	{
+	"%(bornday)th"
+	}
+}	
+
+//----birthchecked----
+
+birthchecked
+{
+	//if today is the user's birthday
+	if userbirthday == dayslot 
+	{
+		
+			if userbirthday == "12month 25day"
+			{
+				"\0\s[0] Merry Christmas and Happy Birthday"
+			}
+			else
+			{
+				"\0\s[0] Happy Birthday."
+			}
+	}
+	//Any number of these can be added to check birthdays against holidays
+	elseif userbirthday == "12month 25day"
+	{
+		"\0\s[0] You were born of Christmas Day"
+	}
+	//if the birthday is not listed above.
+	else 
+	{
+		"\0\s[0] Your birthday is %(bornmonthprint) %(borndayprint), %(bornyear) \( %(bornyearprint) \)."
+	}
+}

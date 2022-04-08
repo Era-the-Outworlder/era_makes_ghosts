@@ -1,0 +1,411 @@
+﻿//---------Booting and Ending--------
+
+//This .dic file contains booting and ending dialogue, as well as several other functions.
+
+
+//----OnFirstBoot----
+
+//~~~~Runs after new installation of ghost, only if ghost was installed from .nar file. Also declares and initialises variables
+//~~~~I've used variables without declaring them first here,and it was a nightmare. <3Era~~~~
+
+
+OnFirstBoot
+{
+//Not reccommended to remove any of these, but more can and should be added to declare variables if you're going to use any.
+
+	//This holds the last text displayed by the ghost, and is part of how chained conversations work (see aitalk.dic).
+ 	lastTalk = "" 
+	// These two keep track of the time elapsed since the ghost booted.
+	passmin = 0 
+	passsec = 0 
+	//This sets a temporary name for the user. 
+ 	username = "USER" 
+	// Sets their being-pet state to zero.
+	stroke = 0	
+	// Related to them learning your name.
+ 	teachusername = 0	
+	// Determines behavior at certain points.
+	mikireflag = 0
+	//Default talk rate.	
+ 	aitalkinterval = 400 
+	//How the default value for aitalkinterval will display in the config menu.
+	talktime = "5 minutes" 
+	//A temporary value for the user's birthday.
+ 	birthdayprint = "????" 
+	//Sets whether or not the user can uninstall the ghost to "OFF". The user can change it later in the config menu (see menu.dic). 
+	deleteshitai = "OFF" 
+	//This is for a special if check in aitalk.dic to see what shell the ghost is using.
+	nowshell = "default_shell" 
+	
+/*Music player specific variables, WIP
+	currentsongnum = 0 //Number of current song
+	songtitleon = 0  	//Song title window status
+	songlist = IARRAY	 //What it says on the tin
+	hotkey = "ON"		//Is hotkey operation on?
+	performance = "random" //Not sure if audio tracks or shell animation
+	mode = "normal"  	//Probably the repeats or not
+	cdplayer = 0
+	cdtracks = -1		//NUMBER OF CD TRACKS WHAT?
+	*/
+	
+
+	if reference0 == 0 //Don't touch this line unless you know exactly what you're doing.
+	{
+		// "\![enter,passivemode]" ensures that the balloons won't disappear, the choices won't time out, the ghosts won't talk randomly, you can't bring up menus, and makes sure that this dialogue plays through to the end correctly. 		
+		"\![enter,passivemode]\0\s[0]\_v[trill.wav] Hello. My name is Gaze,and I'm going to ask you a few questions to get to know you.\nWhat are your pronouns?  \n\n[half]/
+		\w5\_q\![*] \q[He/Him/His,choicefirsthehim]\n/
+		\![*] \q[She/Her/Her,choicefirstsheher]\n/
+		\![*] \q[They/Them/Their,choicefirsttheythem]\n/
+		\![*] \q[Something else...,choicefirstcustom]\s[0]\_v[trill.wav]\e"
+		
+ 	}
+		else //If the ghost has been uninstalled and reinstalled
+ 	{
+ 		"\0\s[0]\_v[trill.wav]Ah. We're back. Unexpected, but not unwelcome.\![leave,passivemode]\s[0]\e"
+ 	}
+
+}
+
+//~~~~~~~Setting pronouns~~~~~~
+
+Select.choicefirsthehim
+{
+	presuffix = "masculine"
+	himher = "him"
+	heshe = "he"
+	hisher = "his"
+	mrms = "mister"
+	--
+	NameInput
+}
+
+Select.choicefirstsheher
+{
+	presuffix = "feminine"
+	himher = "her"
+	heshe = "she"
+	hisher = "her"
+	mrms = "miss"
+	--
+	NameInput
+}
+
+Select.choicefirsttheythem
+{
+	himher = "them"
+	heshe = "they"
+	hisher = "their"
+	mrms = "friend"
+	--
+	NameInput
+}
+
+Select.choicefirstcustom
+{
+	presuffix = "open"
+	"\0\s[0]\_v[trill.wav]What is your Nominative pronoun? (ex. they) \![open,inputbox,OnHeSheTheyTeach,-1]\s[0]\e"
+	--
+	NameInput
+}
+
+
+
+//----NameInput----
+
+// Allows the ghost to save the user's name.
+
+NameInput
+{
+		
+	"\![enter,passivemode]\0\s[0]\_v[trill.wav]Thank you. \![leave,passivemode]\w8\0\s[0]\_v[trill.wav]What is your name, user? \![open,inputbox,OnNameTeach,-1]\e"	
+	--
+	BdayInput
+}
+
+BdayInput
+{
+	OnGetBirthday
+		
+}
+
+
+//-------GetTimeSlot----
+
+//GetTimeSlot allows periods of time to be given names so that functions can be called for specific parts of the day. It's totally unnecessary unless you want certain dialogue to play only at certain times,like talk of breakfast in the morning.
+
+GetTimeSlot
+{
+	if hour >= 5 && hour <= 8
+	{
+		"earlymorning"
+	}
+	elseif hour >= 9 && hour <= 11
+	{
+		"morning"
+	}
+	elseif hour >= 12 && hour <= 14
+	{
+		"lunch"
+	}
+	elseif hour >= 15 && hour <= 17
+	{
+		"afternoon"
+	}
+	elseif hour >= 18 && hour <= 20
+	{
+		"evening"
+	}
+	elseif hour >= 21 && hour <= 24
+	{
+		"latenight"
+	}
+	else
+	{
+		"midnight"
+	}
+}
+
+//----GetDaySlot----
+
+//Like the above, but to find out what day it is. 
+
+GetDaySlot
+{
+	"%(month)month %(day)day"
+}
+
+
+//-----Normal Booting----------
+
+//From this point on, the dialogue will be for any normal boot of your ghost. 
+
+//----OnBoot----
+
+//As you can probably guess, OnBoot runs when you boot your ghost. It will run every time you boot your ghost, as a matter of fact.
+
+
+
+OnBoot
+{
+	 //These values you may recognize from OnFirstBoot. This resets them to zero when you boot the ghost.
+	lastTalk = "" 
+	passmin = 0
+	passsec = 0
+	
+	//This sets the ghost up in their neutral pose for now.
+ 	"\0\s[0]\_v[trill.wav]\1\s[10]" 
+	
+	--
+	dayslot = GetDaySlot
+	timeslot = GetTimeSlot 
+	
+	if dayslot == userbirthday 
+	{
+		"\0\s[0]\_v[trill.wav]Look at that, it's %(bornmonthprint) %(borndayprint). Happy birthday, %(username).\e" 			
+	}
+	elseif dayslot == "6month 6day" 
+	{
+		"\0\s[0]\_v[trill.wav]Today is June 6th.\e"
+	}
+	elseif dayslot == "7month 4day"
+	{
+		"\1\s[10]It's the fourth of July.\e"	
+	}
+	else
+	{
+		//If none of the days above match the current date, the ghost instead will go down to the next function, normalboottalk.
+		"%(normalboottalk)" 
+	}
+}
+
+
+//----normalboottalk----
+
+//This is unique bit of coding from cindysuke's ghost, which allows for additional onboot dialogue.
+
+
+normalboottalk
+{
+	if weekday == 6 && hour >= 19 
+	{
+		"\0\s[0]\_v[trill.wav]It's Saturday night, and here we are.\e"
+	}
+	elseif RAND(100) < 40 
+	{
+		"\0\s[0]\_v[trill.wav]Ah... It is good to see you again, %(username).\e"
+	
+		"\0\s[0]\_v[trill.wav]Mmmm... Did you miss me?\e"
+	
+		"\0\s[0]\_v[trill.wav]Hello again, %(username).\e"
+	}
+ 	else
+ 	{
+		//The following if statements check the time of the day as defined above in the GetTimeSlot function and then call related dialogue.
+		
+		if timeslot == "earlymorning"
+		{
+			"\0\s[0]\_v[trill.wav]It is early.\e"
+		}
+		elseif timeslot == "morning"
+		{
+			"\0\s[0]\_v[trill.wav]Good morning, %(username).\e"
+		}
+		elseif timeslot == "lunch"
+		{
+			"\0\s[0]\_v[trill.wav]It is approximately lunch time.\e"
+		}
+		elseif timeslot == "afternoon"
+		{
+			"\0\s[0]\_v[trill.wav]Good afternoon, %(username).\e"
+		}
+		elseif timeslot == "evening"
+		{
+			"\0\s[0]\_v[trill.wav]Good evening, %(username).\e"
+		}
+		elseif timeslot == "latenight"
+		{
+			"\0\s[0]\_v[trill.wav]It is rather late...\e"
+		}
+		else 
+		{
+			"\0\s[0]\_v[trill.wav]It's very late... Or is it very early?\e"
+		}
+	}
+}
+
+
+//----OnClose----
+
+//OnClose runs when when the ghost closes.
+
+OnClose
+{
+	//Checks the timeslot. It's possible to set it based on hours instead based on the code of GetTimeSlot above
+	timeslot = GetTimeSlot 
+	--
+	//Checks to see if the ghost has been open at least 5 minutes
+	if passmin >= 5	
+	{
+		//Only calls a timeslot specific dialogue if a random number is greater than 40
+		if RAND(100) < 40 
+		{
+			"\0\s[0]\_v[trill.wav]Good bye.\w8\w8"
+		}
+		else
+		{
+			if timeslot == "earlymorning"
+			{	
+				"\0\s[0]\_v[trill.wav]Farewell.\w8\w8"
+			}
+			elseif timeslot == "morning"
+ 			{
+ 				"\0\s[0]\_v[trill.wav]Ah... good bye.\w8\w8"
+ 			}
+			elseif timeslot == "lunch"
+ 			{
+ 				"\0\s[0]\_v[trill.wav]See you later, %(username)\w8\w8"
+ 			}
+			elseif timeslot == "afternoon"
+ 			{
+ 				"\0\s[0]\_v[trill.wav]Good bye.\w8\w8"
+ 			}
+			elseif timeslot == "evening"
+ 			{
+ 				"\0\s[0]\_v[trill.wav]Good evening, %(username)\w8\w8"
+ 			}
+			elseif timeslot == "latenight"
+		 	{						
+				"\0\s[0]\_v[trill.wav]Good night, %(username)\w8\w8"
+ 			}
+			else 
+ 			{
+				//like above, this is the midnight time slot since it's the last one left.
+ 				"\0\s[0]\_v[trill.wav]Good night. Or is it good morning?\w8\w8"
+			}
+		}
+	}
+ 	else 
+ 	{
+		//For if the ghost has not been open for at least five minutes.
+ 		"\0\s[0]\_v[trill.wav]I see. Well, that is your choice.\w8\w8"
+ 	}
+ 	--
+	//this bit of code actually closes and ends the ghost. It can be used in any called piece of code to close the ghost.
+	"\-\e" 
+ }
+
+
+//----State Changing----
+//~~~For changing Ghosts, Shells, or states~~~~~~~~~~
+ 
+
+//----OnWindowStateRestore----
+
+//Runs when the ghost is restored after being minimised to tray
+
+OnWindowStateRestore
+{
+	"\0\s[0]\_v[trill.wav]Hmmmm... That was odd.\e"
+}
+
+
+//----OnGhostChanging----
+
+//This runs whenever the ghost is reloaded or changed
+ 
+OnGhostChanging
+{
+	 //This ghost's "sakura" name as in descript.txt, indicating that the ghost is being reloaded, not replaced.
+	if reference0 == "Gaze" 
+	{
+		"\0\s[0]\_v[trill.wav]I will be right back.\w8\w8\e"
+	}
+	//If switching to another Ghost.
+ 	else 
+	{
+		"\0\s[0]\_v[trill.wav]I will let %(reference0) take over from here.\w8\w8\e"
+	}
+}
+
+
+//----OnGhostChanged----
+
+//Similar to the above, this runs after the ghost has either reloaded itself, or switched from another ghost to this ghost.
+
+OnGhostChanged
+{
+	//this sets up their default poses
+	"\0\s[0]\_v[trill.wav]" 
+	--
+	//As above
+	if reference0 == "Gaze" 
+	{
+		"\0\s[0]\_v[trill.wav]I have reloaded.\e"
+	}
+	else
+	{
+		"\0\s[0]\_v[trill.wav]I will take it from here, %(reference0).\e"
+	}
+}
+
+
+//----OnShellChanging----
+
+//This will run when the ghost's shell changes. 
+
+OnShellChanging
+{	
+	"\0\s[0]\_v[trill.wav]Don't like the way I look?\w8\e"
+
+}
+ 
+ 
+//----OnShellChanged----
+ 
+//As above, for after the shell is changed.
+ 
+OnShellChanged
+{
+ 	"\0\s[0]\_v[trill.wav]I have changed my appearance to better suit your needs.\e"
+	
+}

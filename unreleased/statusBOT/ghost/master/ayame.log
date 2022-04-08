@@ -1,0 +1,70 @@
+// AYA request log
+// load time: 2022/04/01 19:44:17
+
+// Loading of dictionary file
+// - D:\SSP\ghost\statusBOT\ghost\master\yaya_config.txt
+// - D:\SSP\ghost\statusBOT\ghost\master\system/yaya_shiori3.dic
+// - D:\SSP\ghost\statusBOT\ghost\master\system/yaya_optional.dic
+// - D:\SSP\ghost\statusBOT\ghost\master\system/yaya_compatible.dic
+// - D:\SSP\ghost\statusBOT\ghost\master\sbot_aitalk.dic
+// - D:\SSP\ghost\statusBOT\ghost\master\sbot_anchor.dic
+// - D:\SSP\ghost\statusBOT\ghost\master\sbot_bootend.dic
+// - D:\SSP\ghost\statusBOT\ghost\master\sbot_changelog.dic
+// - D:\SSP\ghost\statusBOT\ghost\master\sbot_commu.dic
+// - D:\SSP\ghost\statusBOT\ghost\master\sbot_devtools.dic
+// - D:\SSP\ghost\statusBOT\ghost\master\sbot_drawmenu.dic
+// - D:\SSP\ghost\statusBOT\ghost\master\sbot_menu.dic
+// - D:\SSP\ghost\statusBOT\ghost\master\sbot_misc.dic
+// - D:\SSP\ghost\statusBOT\ghost\master\sbot_mouse.dic
+// - D:\SSP\ghost\statusBOT\ghost\master\sbot_richpresence.dic
+// - D:\SSP\ghost\statusBOT\ghost\master\sbot_userinfo.dic
+// - D:\SSP\ghost\statusBOT\ghost\master\sbot_word.dic
+// ...Done.
+
+// Parsing of dictionary
+// ...Done.
+
+// Loading of variable value - D:\SSP\ghost\statusBOT\ghost\master\yaya_variable.cfg
+// ...Done.
+
+// request
+D:\SSP\ghost\statusBOT\ghost\master\
+// response (Execution time : 0[ms])
+
+// request
+GET Version SHIORI/2.6
+Charset: UTF-8
+Sender: SSP
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 400 Bad Request
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+ID: version
+SecurityLevel: local
+Sender: SSP
+
+
+// response (Execution time : 16[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: Tc569-4
+
+
+// request
+NOTIFY SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: enable_log
+Reference0: 0
+
+
+// unload time: 2022/04/01 19:44:18
+

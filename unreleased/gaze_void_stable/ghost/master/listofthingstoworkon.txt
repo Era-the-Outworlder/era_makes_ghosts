@@ -1,0 +1,69 @@
+	What to do with Gaze- a fucking list.
+	
+	
+	Fix the awkward fucking way the pronoun selector is coded.
+	
+	Some kind of basic relationship mechanic
+	
+	Make Commu.dic work. Even better if I can get communicatebox working.
+	
+	Complete string.dic, specifically SSP/R-mouse/User Drawn Menu
+	
+	Speech Recognition, "Ghost Preferences..." [Compatibility], or Terms of This Ghost.
+	
+	More Fuctions for mouse.dic
+	
+	
+	Some actual damn Dialogue
+	
+	THIS???
+	
+	OnDiscordPluginCustomAppid
+OnDiscordPluginCustomState
+OnDiscordPluginCustomDetail
+OnDiscordPluginCustomLargeImageKey
+OnDiscordPluginCustomLargeImageText
+OnDiscordPluginCustomSmallImageKey
+OnDiscordPluginCustomSmallImageText
+OnDiscordPluginCustomALL
+Notify for ghost:
+
+OnDiscordPluginCustom[Notify for ghost]
+OnDiscordPluginCustomEnd[Notify for ghost]
+	
+	
+	
+
+
+//   ▄▄▄      ▓█████▄ ▓█████▄      █████▒█    ██  ▄████▄   ██ ▄█▀ ██▓ ███▄    █   ▄████     ███▄ ▄███▓ ▒█████  ▓█████▄ ▓█████   ██████ 
+//  ▒████▄    ▒██▀ ██▌▒██▀ ██▌   ▓██   ▒ ██  ▓██▒▒██▀ ▀█   ██▄█▒ ▓██▒ ██ ▀█   █  ██▒ ▀█▒   ▓██▒▀█▀ ██▒▒██▒  ██▒▒██▀ ██▌▓█   ▀ ▒██    ▒ 
+//  ▒██  ▀█▄  ░██   █▌░██   █▌   ▒████ ░▓██  ▒██░▒▓█    ▄ ▓███▄░ ▒██▒▓██  ▀█ ██▒▒██░▄▄▄░   ▓██    ▓██░▒██░  ██▒░██   █▌▒███   ░ ▓██▄   
+//  ░██▄▄▄▄██ ░▓█▄   ▌░▓█▄   ▌   ░▓█▒  ░▓▓█  ░██░▒▓▓▄ ▄██▒▓██ █▄ ░██░▓██▒  ▐▌██▒░▓█  ██▓   ▒██    ▒██ ▒██   ██░░▓█▄   ▌▒▓█  ▄   ▒   ██▒
+//   ▓█   ▓██▒░▒████▓ ░▒████▓    ░▒█░   ▒▒█████▓ ▒ ▓███▀ ░▒██▒ █▄░██░▒██░   ▓██░░▒▓███▀▒   ▒██▒   ░██▒░ ████▓▒░░▒████▓ ░▒████▒▒██████▒▒
+//   ▒▒   ▓▒█░ ▒▒▓  ▒  ▒▒▓  ▒     ▒ ░   ░▒▓▒ ▒ ▒ ░ ░▒ ▒  ░▒ ▒▒ ▓▒░▓  ░ ▒░   ▒ ▒  ░▒   ▒    ░ ▒░   ░  ░░ ▒░▒░▒░  ▒▒▓  ▒ ░░ ▒░ ░▒ ▒▓▒ ▒ ░
+//    ▒   ▒▒ ░ ░ ▒  ▒  ░ ▒  ▒     ░     ░░▒░ ░ ░   ░  ▒   ░ ░▒ ▒░ ▒ ░░ ░░   ░ ▒░  ░   ░    ░  ░      ░  ░ ▒ ▒░  ░ ▒  ▒  ░ ░  ░░ ░▒  ░ ░
+//    ░   ▒    ░ ░  ░  ░ ░  ░     ░ ░    ░░░ ░ ░ ░        ░ ░░ ░  ▒ ░   ░   ░ ░ ░ ░   ░    ░      ░   ░ ░ ░ ▒   ░ ░  ░    ░   ░  ░  ░  
+//        ░  ░   ░       ░                 ░     ░ ░      ░  ░    ░           ░       ░           ░       ░ ░     ░       ░  ░      ░  
+//             ░       ░                         ░                                                              ░                      
+
+experience form ruin touch contact wound wave
+
+//     ▄████████  ▄██████▄     ▄████████   ▄▄▄▄███▄▄▄▄   
+//    ███    ███ ███    ███   ███    ███ ▄██▀▀▀███▀▀▀██▄ 
+//    ███    █▀  ███    ███   ███    ███ ███   ███   ███ 
+//   ▄███▄▄▄     ███    ███  ▄███▄▄▄▄██▀ ███   ███   ███ 
+//  ▀▀███▀▀▀     ███    ███ ▀▀███▀▀▀▀▀   ███   ███   ███ 
+//    ███        ███    ███ ▀███████████ ███   ███   ███ 
+//    ███        ███    ███   ███    ███ ███   ███   ███ 
+//    ███         ▀██████▀    ███    ███  ▀█   ███   █▀  
+//                            ███    ███                 
+
+
+
+//   ▄▀▀▄▀▀▀▄  ▄▀▀▄ ▄▀▀▄  ▄▀▀█▀▄    ▄▀▀▄ ▀▄ 
+//  █   █   █ █   █    █ █   █  █  █  █ █ █ 
+//  ▐  █▀▀█▀  ▐  █    █  ▐   █  ▐  ▐  █  ▀█ 
+//   ▄▀    █    █    █       █       █   █  
+//  █     █      ▀▄▄▄▄▀   ▄▀▀▀▀▀▄  ▄▀   █   
+//  ▐     ▐              █       █ █    ▐   
+//                       ▐       ▐ ▐        

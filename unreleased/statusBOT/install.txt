@@ -1,0 +1,6 @@
+﻿// ---- Install.TXT ----
+
+charset,UTF-8
+type,ghost
+name,statusBOT
+directory,statusBOT

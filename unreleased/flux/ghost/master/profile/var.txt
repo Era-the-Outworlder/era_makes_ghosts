@@ -1,0 +1,9 @@
+Charset,UTF-8
+install,689489048
+homeurl_found,1
+surfacecount,46
+homeurl,https://zichqec.github.io/s-the-skeleton/updates/ghosts/flux/
+update_result,OK(0)
+firstboot,689489130
+commitmemorysize,533386
+lastboot,699305398

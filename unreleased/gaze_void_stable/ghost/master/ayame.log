@@ -1,0 +1,31 @@
+// AYA request log
+// load time: 2021/12/03 11:50:36
+
+// Loading of dictionary file
+// - D:\SSP\ghost\gaze_void_stable\ghost\master\yaya_config.txt
+// - D:\SSP\ghost\gaze_void_stable\ghost\master\system/yaya_shiori3.dic
+// - D:\SSP\ghost\gaze_void_stable\ghost\master\system/yaya_optional.dic
+// - D:\SSP\ghost\gaze_void_stable\ghost\master\system/yaya_compatible.dic
+// - D:\SSP\ghost\gaze_void_stable\ghost\master\gfr_string.dic
+// - D:\SSP\ghost\gaze_void_stable\ghost\master\gfr_aitalk.dic
+// - D:\SSP\ghost\gaze_void_stable\ghost\master\gfr_bootend.dic
+D:\SSP\ghost\gaze_void_stable\ghost\master\gfr_bootend.dic(-) : error E0094 : The parenthesis {} is invalid or has not been closed correctly.
+// - D:\SSP\ghost\gaze_void_stable\ghost\master\gfr_mouse.dic
+// - D:\SSP\ghost\gaze_void_stable\ghost\master\gfr_etc.dic
+// - D:\SSP\ghost\gaze_void_stable\ghost\master\gfr_menu.dic
+// - D:\SSP\ghost\gaze_void_stable\ghost\master\gfr_word.dic
+// - D:\SSP\ghost\gaze_void_stable\ghost\master\gfr_commu.dic
+// - D:\SSP\ghost\gaze_void_stable\ghost\master\gfr_nameteach.dic
+// - D:\SSP\ghost\gaze_void_stable\ghost\master\gfr_anchor.dic
+// - D:\SSP\ghost\gaze_void_stable\ghost\master\gfr_teachcustompronoun.dic
+...Done.
+
+// Parsing of dictionary
+D:\SSP\ghost\gaze_void_stable\ghost\master\gfr_bootend.dic(52) : error E0069 : This 'else'(or 'others') was not able to processed.
+...Done.
+
+// Loading of variable value - D:\SSP\ghost\gaze_void_stable\ghost\master\yaya_variable.cfg
+...Done.
+
+// unload time: 2021/12/03 11:59:05
+

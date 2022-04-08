@@ -1,0 +1,21 @@
+﻿//Character set
+charset,UTF-8
+
+//Ghost name and type
+name,Gaze
+type,ghost
+
+//Main and secondary character names
+sakura.name,Gaze
+kero.name,Void
+
+//Creater Info
+craftman,Era
+craftmanurl,http://theoutworlder.tumblr.com
+
+//????
+sstp.allowunspecifiedsend,0
+shiori,aya5.dll
+
+//Taskbar Icon
+icon,gaze_icon.ico

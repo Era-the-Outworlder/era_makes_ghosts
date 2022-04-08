@@ -1,0 +1,341 @@
+﻿//---------AI Talk--------
+
+//----AiTalk----
+//Determines whether or not ghost is currently in a chain.
+
+AiTalk
+{
+	if RAND(100) < communicateratio
+ 	{
+ 		StartCommunicate
+	}
+ 	else
+	{
+ 		if mikireflag == 0
+		{
+			if CHAIN.IDName == "" 
+			{
+ 				lastTalk = RandomTalk
+			}
+			else 
+			{
+				lastTalk = ChainTalk
+			}
+			lastTalk
+		}
+ 		else
+		{ 
+			MikireTalk
+ 		}
+	}
+}
+
+
+//----RandomTalk ----
+//----Randomized Dialogue----
+RandomTalk : nonoverlap
+{
+	
+//----General Random Chatter----~~
+	//The text commented out below is an example of various text formatting features available to ghosts
+	
+	//"\0\s[0]\_v[trill.wav]\f[height,20]These words are really large.\f[height,default]\w8These words are a normal size. \w8\f[height,6]These words are small.\f[height,default]\f[strike,true]These words are struck out.\f[strike,default]\w8\f[sub,true]These words are a subscript.\f[sub,false] \f[sup,true]These words are a superscript.\f[sup,false] \f[underline,true]These words are underlined.\f[underline,default] \f[bold,true]These words are bold.\f[bold,false] \f[italic,true]These words are italic.\f[italic,false] \f[color,186,146,112]These words are a color.\f[color,default] This tag would return to default.\f[default]\e"
+	
+	//"\0\s[0]\_v[trill.wav]Here's a link to a website. \_a[http://www.website.com/] Right here.\_a\e"	
+	
+	
+	
+//----Double Envelopes----
+		
+{	//Here, the envelope "usersfolder" is stored as a new value called _folders. 
+	_folders = usersfolder 
+	//The first part of the envelope's list
+	_folder = _folders[0] 
+	//This is the second item on the list,
+	_comment = _folders[1] 
+	
+	"\0\s[0]\_v[trill.wav]Oh, I've found %(_folder). \n\w8What's inside...? \n%(_comment).\e"
+	
+	}
+	
+		
+	
+	
+//----All conditional dialogue below this point----~
+	
+	
+	if nowshell == "default_shell" 
+	{
+		"\0\s[0]\_v[trill.wav]Hmmm..."	
+	}
+	
+	if nowshell == "Hypothetical Shell that doesn't actually exist"
+	{
+		""
+	}
+	
+	
+	if month == 1
+	{
+		" It is the first month of the year, if I recall correctly.\e"
+	}
+	if month == 2
+	{
+		"\0\s[0]\_v[trill.wav]It is the second month of the year, if I recall correctly\e"
+	}
+	if month == 3
+	{
+		"\0\s[0]\_v[trill.wav]It is the third month of the year, if I recall correctly\e"
+	}
+	if month == 4
+	{
+		"\0\s[0]\_v[trill.wav]It is the fourth month of the year, if I recall correctly\e"
+	}
+	if month == 5
+	{
+		"\0\s[0]\_v[trill.wav]It is the fifth month of the year, if I recall correctly\e"
+	}
+	if month == 6
+	{
+		"\0\s[0]\_v[trill.wav]It is the sixth month of the year, if I recall correctly\e"
+	}
+	if month == 7
+	{
+		"\0\s[0]\_v[trill.wav]It is the seventh month of the year, if I recall correctly\e"
+	}
+	if month == 8
+	{
+		"\0\s[0]\_v[trill.wav]It is the eighth month of the year, if I recall correctly\e"
+	}
+	if month == 9
+	{
+		"\0\s[0]\_v[trill.wav]It is the ninth month of the year, if I recall correctly\e"
+	}
+	if month == 10
+	{
+		"\0\s[0]\_v[trill.wav]It is the tenth month of the year, if I recall correctly\e"
+	}
+	if month == 11
+	{
+		"\0\s[0]\_v[trill.wav]It is the eleventh month of the year, if I recall correctly\e"
+	}
+	if month == 12
+	{
+		"\0\s[0]\_v[trill.wav]It is the twelfth month of the year, if I recall correctly\e"
+	}
+	if month >= 13
+	{
+		"\0\s[0]\_v[trill.wav]Either the world is not what I remember...\w8\w8\nOr something is terribly wrong with your computer.\e"
+	}
+	
+	//These ifs check what day of the week it is.
+	if weekday <= -1
+	{
+		"\0\s[0]\_v[trill.wav]Something is very wrong...\e"
+	}
+	if weekday == 1
+	{
+		"\0\s[0]\_v[trill.wav]It is the first day of the week as you count them.\e"
+	}
+	if weekday == 2
+	{
+		"\0\s[0]\_v[trill.wav]It is the second day of the week as you count them.\e"
+	}
+	if weekday == 3
+	{
+		"\0\s[0]\_v[trill.wav]It is the third day of the week as you count them.\e"
+	}
+	if weekday == 4
+	{
+		"\0\s[0]\_v[trill.wav]It is the fourth day of the week as you count them.\e"
+	}
+	if weekday == 5
+	{
+		"\0\s[0]\_v[trill.wav]It is the fifth day of the week as you count them.\e"
+	}
+	if weekday == 6
+	{
+		"\0\s[0]\_v[trill.wav]It is the sixth day of the week as you count them.\e"
+	}
+	if weekday == 0
+	{
+		"\0\s[0]\_v[trill.wav]It is the seventh day of the week as you count them.\e"
+	}
+	if weekday >= 7
+	{
+		"\0\s[0]\_v[trill.wav]Either the world is not what I remember...\w8\w8\nOr something is terribly wrong with your computer.\e"
+	}
+	
+	//These ifs check for the time of day as defined in bootend.dic.
+	if timeslot == "earlymorning"
+	{
+		"\0\s[0]\_v[trill.wav]It is early...\e"
+	}
+	if timeslot == "morning"
+	{
+		"\0\s[0]\_v[trill.wav]It is morning...\e"
+	}	
+	if timeslot == "lunch"
+	{
+		"\0\s[0]\_v[trill.wav]It is approximately time for lunch...\e"
+	}
+	if timeslot == "afternoon"
+	{
+		"\0\s[0]\_v[trill.wav]It is after noon...\e"
+	}
+	if timeslot == "evening"
+	{
+		"\0\s[0]\_v[trill.wav]It is evening...\e"
+	}
+	if timeslot == "latenight"
+	{
+		"\0\s[0]\_v[trill.wav]It is late at night...\e"
+	}
+	if timeslot == "midnight"
+	{
+		"\0\s[0]\_v[trill.wav]It is after midnight...\e"	
+	}	
+}
+
+
+//----Chained Dialogue----
+
+firstchain
+{{CHAIN
+	"\0\s[0]\_v[trill.wav]Here is the second part of the chain.\w8\w4Will there be more?\e:chain=end"
+}}CHAIN
+
+
+secondchain
+{{CHAIN
+	"\0\s[0]\_v[trill.wav]This is the second piece of chained dialogue.\w8This will lead to a third chain.\e:chain=thirdchain"
+}}CHAIN
+
+thirdchain
+{{CHAIN
+	"\0\s[0]\_v[trill.wav]This is the third piece of chained dialogue.\w8This is the end.\e:chain=end"
+}}CHAIN
+
+
+
+//----OnMinuteChange----
+//----Time related dialogue using the OnMinuteChange function----
+
+OnMinuteChange
+{
+	timeslot = GetTimeSlot 
+	--
+ 	if minute == 0
+	{
+ 		if hour == 12 
+		{
+ 			"\0\s[0]\_v[trill.wav]It's noon.\e"
+		}//Hour is zero, aka midnight.
+		{
+ 			"\0\s[0]\_v[trill.wav]It's midnight.\e"
+		}
+		else
+		{
+			//%(hour12) stores the time in 12-hour format. This is a general top of the hour notification. 
+			"\0\s[0]\_v[trill.wav]It is %(hour12) 'o clock.\e" 
+		}
+	}
+	elseif minute == 30
+	{
+		"\0\s[0]\_v[trill.wav]It is half past %(hour12) \e"
+	}
+	elseif minute == 55 && hour == 23 
+	{
+		"\0\s[0]\_v[trill.wav]5 minutes to midnight.\e"
+	}
+	//I am not sure what this does, so I am not messing with it.
+	elseif mikireflag == 1
+ 	{
+ 		MikireTalk
+	}
+}
+
+//----OnSecondChange----
+//Like the above, this handles what happens every time a second goes by. Most of this you will not have to touch.
+
+OnSecondChange
+{
+	if passsec == 60
+ 		{
+	 	passsec = 0
+ 		passmin = passmin + 1
+		}
+ 	else
+ 		{
+	 	passsec = passsec + 1
+		}
+	if mikireflag == 1 && reference1 == 0
+		{
+			EndMikireTalk
+ 		}
+		mikireflag = reference1
+	if reference2 == 1
+	{
+ 		"\1\s[10]\_s Somehow I am...\nDespite the fact that your resolution is %screenwidthx%screenheight, %(username).\nOne of us will move\1\s[10]\4\e"
+ 		"\0\s[0]\_v[trill.wav] Somehow I am in the void...\nDespite the fact that your resolution is %screenwidthx%screenheight, %(username).\nOne of us will move\4\e"
+	}
+}
+
+//---- MikireTalk ---------------
+//----~If ghost is partially off screen----
+ 
+MikireTalk
+{
+	"\0\s[0]\_v[trill.wav]I've been moved off screen, %(username). You can push Ctrl-Shift-F12 to bring me back."
+}
+
+//----EndMikireTalk--------------
+//For after you bring the character back on screen.
+ 
+EndMikireTalk
+{
+	"\0\s[0]\_v[trill.wav]Thank you.\e"
+}
+
+
+//----OnSurfaceRestore----
+//----Restores ghost to default postitions----
+OnSurfaceRestore
+{
+ 	//if reference0 == 4 || reference0 == 6 //This is checking what poses they are in. This looks to see if Girl is in pose 4 or pose 6, since she is reference0.
+ 	//{
+ 	//"\1\s[10]You're in a sad pose.\w8\0\s[0]\_v[trill.wav]I'll go back to normal then.\e"
+ 	//}
+ 	//elseif reference1 == 14 || reference1 == 16 //This is doing the same but for Triangle, since he's reference1. It looks to see if he's in pose 14 or post 16.
+ 	//{
+ 	//"\0\s[0]\_v[trill.wav]You look sad.\w8\w4I'll go back to normal.\e"
+ 	//}
+ 	//else
+ 	//{
+	"\0\s[0]\1\s[10]\e"
+	//}
+}
+
+ 
+//----OnKeyPress----
+//----Sets hotkeys----
+ 
+OnKeyPress
+{
+	if reference0 == "t"
+	{
+		OnAiTalk
+	}
+	elseif reference0 == "r"
+	{
+		OnLastTalk
+	}
+	elseif reference0 == "f4"
+	{
+		OnClose
+	}
+	elseif reference0 == "f1"
+	{
+		"\![open,readme]"
+	}
+}

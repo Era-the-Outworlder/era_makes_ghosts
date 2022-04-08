@@ -1,0 +1,6 @@
+//Shell installation data
+
+charset,UTF-8
+type,shell
+name,Madness Hapax Legomenom
+directory,fx_madness_era

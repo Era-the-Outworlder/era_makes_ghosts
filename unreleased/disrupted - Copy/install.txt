@@ -1,0 +1,13 @@
+//~~~~~~~~~~~~~Installation Data~~~~~~~~~~
+// That ever-important install data without which this won't work.
+
+
+
+charset,UTF-8 // sets character set
+
+type,balloon //install type
+
+name,Disturbed Pen //Balloon name
+
+directory,disrupted //install directory
+

@@ -1,0 +1,46 @@
+//--Balloons3s.txt
+//Left facing large/menu balloon for sakura/main character
+//Replacement values to adjust for diffrences from descript.txt
+//all other values inherited
+
+
+// Origin defines exactly where text starts to appear in your balloon.
+origin.x,50
+origin.y,40
+
+// This defines the space that will be used for text.
+validrect.left,50
+validrect.top,40
+validrect.right,240
+validrect.bottom,413
+
+// This is where the balloon will wrap any words or letters that go past that point
+wordwrappoint.x,240
+wordwrappoint.y,0
+
+// Up Scroll arrow
+arrow0.x,245
+arrow0.y,40
+
+// Down Scroll arrow
+arrow1.x,245
+arrow1.y,395
+
+// Online\Connection Indicator
+onlinemarker.x,50
+onlinemarker.y,415
+
+// Choice\SSTP Marker \![*]
+sstpmarker.x,245
+sstpmarker.y,415
+
+// SSTP message text position.
+sstpmessage.x,55
+sstpmessage.y,433
+
+// Download Progress text position
+number.xr,235
+number.y,420
+
+
+//~~~~~~~~~END~~~~~~~~~~~
