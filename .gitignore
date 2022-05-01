@@ -4,3 +4,7 @@ backup-daily/f_lowe_y/ghost/master/profile
 *.bak
 *.psd
 *.log
+Updates/f_lowe_y/ghost/master/profile/ghost.dat
+Updates/f_lowe_y/ghost/master/profile/history.dat
+Updates/f_lowe_y/ghost/master/profile/var.txt
+Updates/yaub_undertext/profile/var.txt
