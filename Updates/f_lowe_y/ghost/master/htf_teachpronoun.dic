@@ -11,14 +11,18 @@
 
 OnTeachPronouns
 {
-	"\c\0\s[3]\b2\_v[mus\sound_FLOWEY.mp3] * Do. _o. __.... Pronouns?\w5\n\n\n[half]\_q"
-	"\c\0\s[3]\b2\_v[mus\HELP_text.mp3] You are offered a choice of pronouns.\w5\n\n\n[half]\_q"
-	--
-	
-	"\![*] \q[He-His-Him,OnSetPronouns,1]\n/
+	"\t\c\0\s[3]\b2%(Flowey) * Do. %(d_)o. %(d_)%(o_).... Pronouns?\_w[500]\n\n\n[half]\_q/
+	\n\n\n/
+	\![*] \q[He-His-Him,OnSetPronouns,1]\n/
 	\![*] \q[She-Her-Her,OnSetPronouns,2]\n/	
 	\![*] \q[They-Their-Them,OnSetPronouns,3]\n/
-	\![*] \q[Something else...,OnTeachCustomPronoun]\s[0]"
+	\![*] \q[Something else...,OnTeachCustomPronoun]\0\s[0]"
+	
+	"\t\c\0\s[3]%(Narrator)\n\n\n * You are offered a choice of pronouns.\_w[500]\n\n\n[half]\_q/
+	\![*] \q[He-His-Him,OnSetPronouns,1]\n/
+	\![*] \q[She-Her-Her,OnSetPronouns,2]\n/	
+	\![*] \q[They-Their-Them,OnSetPronouns,3]\n/
+	\![*] \q[Something else...,OnTeachCustomPronoun]\0\s[0]"
 }	
 
 OnSetPronouns
@@ -50,19 +54,22 @@ OnSetPronouns
 		posPro = reference3
 	}
 	--
-
-	"\0\s[3]\_v[mus\HELP_text.mp3] Your pronouns are %(nomPro), %(oblPro), and %(posPro).\n\n F_lowe_y will now call you by the correct pronouns.\n\n You can always change this from f_low_ey's User Configuration Menu."
-	--
 	
 	if firstBoot == 1
 	{
-		firstBoot = 0
+		"\0\s[3]%(Narrator) * You say that your pronouns are %(nomPro), %(oblPro), and %(posPro).\n\n f_lowe_y will now call you by the correct pronouns.\n\n You can always change this from f_low_ey's User Configuration Menu.\_w[500]\_s\b[-1]\c\_s"
 		--
-		OnTeachName
+		"\![timerraise,1000,1,OnGetBirthday]"	
+	}
+	elseif firstBoot == 2
+	{
+		"\0\s[3]%(Narrator) * You say that your pronouns are %(nomPro), %(oblPro), and %(posPro).\n\n f_lowe_y will now call you by the correct pronouns.\n\n You can always change this from f_low_ey's User Configuration Menu.\_w[500]\_s\b[-1]\c\_s"
+		--
+		"\![timerraise,1000,1,OnGetBirthday]"	
 	}
 	else
 	{
-		"\e"
+		"\0\s[3]%(Narrator) * Your pronouns are %(nomPro), %(oblPro), and %(posPro).\n\n f_lowe_y will now call you by the correct pronouns.\n\n You can always change this again later.\e"
 	}
 
 }
@@ -70,7 +77,7 @@ OnSetPronouns
 
 OnTeachCustomPronoun
 {
-	"\0\s[3]\_v[mus\HELP_text.mp3] Enter your nominative pronoun, ex.'they'\![open,inputbox,OnNominativeTeach,-1]"
+	"\0\s[3]%(Narrator) Enter your nominative pronoun, ex.'they'\![open,inputbox,OnNominativeTeach,-1]"
 }
 
 //---- Teaching each pronoun ----
@@ -79,13 +86,14 @@ OnNominativeTeach
 {
 	_nounN = reference0 //this stores the pronoun value temporarily in reference0
 
-	if reference0  == "" || reference0 == " " || reference0 == "   " //This is if the user doesn't put in a pronoun at all.
+	_check = REPLACE(reference0," ","")
+	if _check  == "" // This is if the user doesn't enter any text
 	{
-		"\0\s[3]\_v[mus\HELP_text.mp3] You didn't type anything into the box. Whoops! \![open,inputbox,OnNominativeTeach,]"
+		"\0\s[3]%(Narrator) You didn't type anything into the box. Whoops! \![open,inputbox,OnNominativeTeach,]"
 	}
 	else //Continuing on
 	{
-		"\0\s[3]\_v[mus\HELP_text.mp3] Enter your oblique pronoun, ex.'them'\![open,inputbox,OnObliqueTeach,--reference=%_nounN]"
+		"\0\s[3]%(Narrator) Enter your oblique pronoun, ex.'them'\![open,inputbox,OnObliqueTeach,--reference=%_nounN]"
 	}
 }
 
@@ -94,13 +102,14 @@ OnObliqueTeach
 {
 	_nounO = reference0 //this stores the pronoun value temporarily in reference0
 	_nounN = reference2
-	if reference0  == "" || reference0 == " " || reference0 == "   " //This is if the user doesn't put in a pronoun at all.
+	_check = REPLACE(reference0," ","")
+	if _check  == "" // This is if the user doesn't enter any text
 	{
-		"\0\s[3]\_v[mus\HELP_text.mp3] You didn't type anything into the box. Whoops!\![open,inputbox,OnObliqueTeach,--reference=%_nounN]"
+		"\0\s[3]%(Narrator) You didn't type anything into the box. Whoops!\![open,inputbox,OnObliqueTeach,--reference=%_nounN]"
 	}
 	else //Continuing on
 	{
-		"\0\s[3]\_v[mus\HELP_text.mp3] Enter your possessive pronoun, ex.'their'\![open,inputbox,OnPossessiveTeach,--reference=%_nounN,--reference=%_nounO]"
+		"\0\s[3]%(Narrator) Enter your possessive pronoun, ex.'their'\![open,inputbox,OnPossessiveTeach,--reference=%_nounN,--reference=%_nounO]"
 	}
 }
 
@@ -111,13 +120,14 @@ OnPossessiveTeach
 	_nounP = reference0 //this stores the pronoun value temporarily in reference0
 	_nounO = reference3
 	_nounN = reference2
-	if reference0  == "" || reference0 == " " || reference0 == "   " //This is if the user doesn't put in a pronoun at all.
+	_check = REPLACE(reference0," ","")
+	if _check  == "" // This is if the user doesn't enter any text
 	{
-		"\0\s[3]\_v[mus\HELP_text.mp3] You didn't type anything into the box. Whoops!\![open,inputbox,OnPossessiveTeach,--reference=%_nounN,--reference=%_nounO]"
+		"\0\s[3]%(Narrator) You didn't type anything into the box. Whoops!\![open,inputbox,OnPossessiveTeach,--reference=%_nounN,--reference=%_nounO]"
 	}
 	else //Continuing on
 	{
-		"\0\s[3]\_v[mus\HELP_text.mp3] * You entered %(_nounN), %(_nounO), and %(_nounP).\n * Does that seem right? \w5\n\n[half]\_q/
+		"\0\s[3]%(Narrator) * You entered %(_nounN), %(_nounO), and %(_nounP).\n * Does that seem right? \_w[500]\n\n[half]\_q/
 		\![*]\q[Looks good!,OnSetPronouns,0,%_nounN,%_nounO,%_nounP]\n/
 		\![*]\q[Let's try that again...,OnTeachCustomPronoun]"
 			

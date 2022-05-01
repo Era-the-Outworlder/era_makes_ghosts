@@ -1,13 +1,13 @@
-﻿//-----------AI Talk----------
+﻿// -------- AI Talk --------
 //This is where all their random conversations are stored.
 
-//----AiTalk----
+// ---- AiTalk ----
 
 AiTalk
 {
-	if RAND(100) < communicateratio
+	if RAND(100) < (communicateratio - 1)
  	{
- 		StartCommunicate
+ 		OnStartCommunicate
 	}
  	else
 	{
@@ -60,373 +60,513 @@ AiTalk
 
 RandomTalk : nonoverlap
 {	
+	meanvariable = (petCountNeg + flickCount)
 	
-	//----Dialogue Valid for all moods/ conditions----
-	
-	
-	
-	// "\0\s[3]\_v[mus\HELP_text.mp3] * (Smells like herbicide.)\w8\w8"
-	
-	// "\0\s[21]\_v[mus\sound_FLOWEY.mp3] * Don't.Don't.Don't.Don't.Don't.\w8\w8\w8 h_ve _nything bette_ to do?\w8\w8"
-	
-	// "\0\_v[mus\flee.wav]\s[-1]\w8\w8\w8\w8\w8\w8 * Flowey ran away.\w8\w8\w8\w8\b4\_v[mus\hee.mp3]\f[height,100] Die.\w8\w8\w8\w8\f[height,default]\e"
-	
-	// "\0\s[3]\_v[mus\sound_FLOWEY.mp3] * You you you how how how\w8\w8\c\s[3]Howdy, %(username)!\w8\w8"
-	
-	// "\0\s[3]\_v[mus\sound_FLOWEY.mp3] * It's all a nightmare... \w8\w8\c\w8\s[16]AND WE'RE NEVER WAKING UP!!!!!!\w8\w8\w8\w8\w8\c%(floweyLaugh)\w8"
-	
-	"\![raise,OnTalkToGhost]"
-	
-	if ellVee == 1 && resetCount == 0
+	// User has not reset this installation
+	if resetCount == 0
 	{
-		//----User has never harmed him
-		if knifeTime == 0 && killCount == 0
+		// User has never "killed" him
+		if ellVee == 1
 		{
-			_confi = ""
-			_happi = ""
-			
-			
-			if nice >=2 && notnice == 0 //user has only been nice
+			// ----User has never harmed him
+			if knifeTime == 0 && killCount == 0
 			{
 				_confi = "confidently "
-				_happi = ANY("%(happy) ","%(sure)")
+				_happi = "happy "
+				
+				
+				if nicevariable >=2 && meanvariable == 0 //user has only been nice
+				{
+					_confi = "confidently "
+					_happi = ANY("%(happy) ","%(sure) ")
+				}
+				if meanvariable >=2 // User has been mean but not hurt him
+				{
+					_confi = "hesitantly "
+					_happi = "%(unsure) "
+				}
+			
+			--
+			
+			// ---- f_lowe_y ----
+	
+			"\0\s[21]%(Flowey) * Don't.Don't.Don't.Don't.Don't.\_w[1500] h_ve _nything bette_ to do?\_w[500]"
+			
+			
+	
+			"\0\s[3]%(Flowey) * You you you how how how\_w[1000]\c\s[3]Howdy, %(username)!\_w[500]"
+	
+			"\0\s[3]%(Flowey) * It's all a nightmare... \_w[1000]\c\_w[500]\s[16]AND WE'RE NEVER WAKING UP!!!!!!\_w[2500]\c%(floweyLaugh)\_w[500]"
+			
+			"\0\s[27]%(Flowey) * Howdy! \_w[500]"
+	
+			"\0\s[4]%(Flowey) * You wonder what caught his attention. \_w[1000]\n\n * There are no answers.\_w[500]"
+	
+			"\0\s[13]%(Flowey) * You... are...? \_w[500]"
+			
+			"\0\s[7]%(Narrator) * Is there something over there?\_w[500]"
+			
+			// ---- Narrator ----
+			
+			"\0\s[3]%(Narrator) * (Smells like herbicide.)\_w[500]"
+			
+			"\0\s[3]%(Narrator) * f_lowe_y %(_confi)asks if you remember something. \_w[1500]\c\n\n * It seems he's mistaken you for someone else.\_w[500]"
+			
+			"\0\s[5]%(Narrator) * f_lowe_y is looking at something.\_w[1000]\n\n (It's not you.) \_w[500]"
+			
+			"\0\s[12]%(Narrator) * You caught the flower by surprise.\_w[500]"
+	
+			"\0\s[3]%(Narrator) * You say hello. He doesn't seem to be listening\_w[500]"
+	
+			"\0\s[8]%(Narrator) * f_lowe_y is looking at something. \_w[500]"
+	
+			"\0\s[9]%(Narrator) * You give the flower a hug. \_w[500]"
+			
+			// ---- Both ----
+			"\0\s[3]%(Flowey) * .... you you you... \_w[1000]\s[23]friend! \_w[1000]\n/
+			\n\n%(Narrator)\n\n * He seems very %(_happi)about that."
+			
+			"\0\_v[mus\flee.wav]\s[-1]\_w[1000]%(Narrator)\f[align,center]\n\n\n * Flowey ran away.\_w[3000]\b[-1]\_w[3000]\c/
+			\0\b4\_v[mus\hee.mp3]\f[height,100]Die. \_w[3000]\b[-1]\c/
+			\_w[2500]\b0%(Narrator)\f[align,center]\n\n\n * But nobody came."
+	
 			}
-			if notnice >=2
+			
+			elseif knifeTime != 0 && killCount == 0
+			{
+				"\0\s[16]%(Narrator) * (You hit the flower. Since you didn't do it on purpose this time, it doesn't hurt him.)\_w[500]"
+			
+				"\0\s[18]%(Narrator) * (You feel him judging you.) \_w[500]"
+			
+				"\0\s[22]%(Flowey) * WHY WHY WHY WHYWHYWHY _HY _ON'T YOU LET ME _IN?!\_w[500]"
+			
+				"\0\s[17]%(Flowey) * YOU! STOP!\_w[1500]"
+			}
+			else
+			{
+				"\0\s[16]%(Narrator) * (You hit the flower. Since you didn't do it on purpose this time, it doesn't hurt him.)\_w[500]"
+			
+				"\0\s[18]%(Narrator) * (You feel him judging you.) \_w[500]"
+			
+				"\0\s[22]%(Flowey) * WHY WHY WHY WHYWHYWHY _HY _ON'T YOU LET ME _IN?!\_w[500]"
+			
+				"\0\s[17]%(Flowey) * YOU! STOP!\_w[1500]"
+			}
+		}
+		if ellVee >= 2
+		{
+			// "\0\s[14]%(Narrator) * (Something seems to be wrong.) \_w[500]"
+		
+			// "\0\s[15]%(Flowey) * What?! No. \_w[500]"
+			
+			
+		
+			// --------
+			
+			// "\0\s[24]%(Flowey) * HAHAHAHAHAHAHAHA"
+		
+			"\0\s[26]\i[0]%(Flowey)\f[align,center]EVERYONE"
+			
+
+			"\0\s[26]\i[1]%(Flowey)\f[align,center]\![embed,OnGLITCH,EVERYONE]"
+
+			
+			// "\0\s[27]%(Narrator) * Swing and miss. "
+			
+			"\0\s[27]%(Flowey)"
+			
+			"\0\s[28]%(Narrator)"
+
+			// "\0\s[29]\_v[mus\intermission.wav]"
+		}
+	}
+	elseif resetCount != 0
+	{
+			// ----User has been good to him----
+		"\0\s[3]%(Flowey) * .... you you you... friend? \_w[500]"
+		
+		"\0\s[23]%(Flowey) * Howdy! \_w[500]"
+		
+		{
+			_nm = OnGLITCH("nightmare")
+			"\0\s[3]%(Flowey) * It's all a %(_nm)... \_w[1000]\c\_w[500]\s[16]AND WE'RE NEVER WAKING UP!!!!!!\_w[2500]\c%(floweyLaugh)\_w[500]"
+		}
+		
+		"\0\s[21]%(Narrator) * (He's clearly annoyed.)\_w[1000]\n\n\n * (Was it something you did?)"
+		
+		
+		// ----User has been mean but never killed him----
+		
+		"\0\s[21]%(Narrator) * (He's clearly annoyed.)\_w[1000]\n\n\n * (Was it something you did?)"
+		
+		if ellVee == 1
+		{
+			// ----User has never harmed him
+			if knifeTime == 0 && killCount == 0
+			{
+			_confi = "confidently "
+			_happi = "happy "
+			
+			
+			if nicevariable >=2 && meanvariable == 0 //user has only been nice
+			{
+				_confi = "confidently "
+				_happi = ANY("%(happy) ","%(sure) ")
+			}
+			if meanvariable >=2 // User has been mean but not hurt him
 			{
 				_confi = "hesitantly "
-				_happi = "%(unsure)"
+				_happi = "%(unsure) "
 			}
 			
 			--
 			
-			"\0\s[3]\_v[mus\HELP_text.mp3] * (Smells like herbicide.)\w8\w8"
+			// ---- f_lowe_y ----
 	
-			"\0\s[21]\_v[mus\sound_FLOWEY.mp3] * Don't.Don't.Don't.Don't.Don't.\w8\w8\w8 h_ve _nything bette_ to do?\w8\w8"
+			"\0\s[21]%(Flowey) * Don't.Don't.Don't.Don't.Don't.\_w[1500] h_ve _nything bette_ to do?\_w[500]"
+	
+			"\0\s[3]%(Flowey) * You you you how how how\_w[1000]\c\s[3]Howdy, %(username)!\_w[500]"
+	
+			"\0\s[3]%(Flowey) * It's all a nightmare... \_w[1000]\c\_w[500]\s[16]AND WE'RE NEVER WAKING UP!!!!!!\_w[2500]\c%(floweyLaugh)\_w[500]"
 			
-			"\0\_v[mus\flee.wav]\s[-1]\w8\w8\w8\w8\w8\w8 * Flowey ran away.\w8\w8\w8\w8\b4\_v[mus\hee.mp3]\f[height,100] Die.\w8\w8\w8\w8\f[height,default]\e"
+			"\0\s[27]%(Flowey) * Howdy! \_w[500]"
 	
-			"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * You you you how how how\w8\w8\c\s[3]Howdy, %(username)!\w8\w8"
+			"\0\s[4]%(Flowey) * You wonder what caught his attention. \_w[1000]\n\n * There are no answers.\_w[500]"
 	
-			"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * It's all a nightmare... \w8\w8\c\w8\s[16]AND WE'RE NEVER WAKING UP!!!!!!\w8\w8\w8\w8\w8\c%(floweyLaugh)\w8"
-	
-			t//-------
-			"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * .... you you you... \w8\w8\s[23]friend! \w8\w8\n/
-			\n\n\_v[mus\HELP_text.mp3] * (He seems very %(_happi) about that.)"
+			"\0\s[13]%(Flowey) * You... are...? \_w[500]"
 			
-			"\0\s[3]\_v[mus\HELP_text.mp3] * (F_lowe_y %(_confi)asks if you remember something.) \w8\w8\w8\c\s[11] * (It seems he's mistaken you for someone else.)\w8\w8"
+			"\0\s[7]%(Flowey) * (Is there something over there?)\_w[500]"
 			
-			"\0\s[27]\_v[mus\sound_FLOWEY.mp3] * Howdy! \w8\w8"
+			// ---- Narrator ----
 			
-			"\0\s[3]\_v[mus\HELP_text.mp3] * (You say hello. He doesn't seem to be listening)\w8\w8"
-	
-			"\0\s[4]\_v[mus\sound_FLOWEY.mp3] * (You wonder what caught his attention.) \w8\w8\n\n * (There are no answers.)\w8\w8"
-	
-			"\0\s[5]\_v[mus\HELP_text.mp3] * (F_lowe_y is looking at something.)\w8\w8\n\n * (It's not you.) \w8\w8"
+			"\0\s[3]%(Narrator) * (Smells like herbicide.)\_w[500]"
 			
-			"\0\s[12]\_v[mus\HELP_text.mp3] * (You caught the flower by surprise.)\w8\w8"
-	
-			"\0\s[13]\_v[mus\sound_FLOWEY.mp3] * You... are...? \w8\w8"
+			"\0\s[3]%(Narrator) * f_lowe_y %(_confi)asks if you remember something. \_w[1500]\c\n\n\n * It seems he's mistaken you for someone else.\_w[500]"
 			
-				"\0\s[7]\_v[mus\sound_FLOWEY.mp3] * (Is there something over there?)\w8\w8"
-	
-			"\0\s[8]\_v[mus\HELP_text.mp3] * (F_lowe_y is looking at something.) \w8\w8"
-	
-			"\0\s[9]\_v[mus\HELP_text.mp3] * (You give the flower a hug.) \w8\w8"
+			"\0\s[5]%(Narrator) * f_lowe_y is looking at something.\_w[1000]\n\n (It's not you.) \_w[500]"
 			
+			"\0\s[12]%(Narrator) * You caught the flower by surprise.\_w[500]"
+	
+			"\0\s[3]%(Narrator) * You say hello. He doesn't seem to be listening\_w[500]"
+	
+			"\0\s[8]%(Narrator) * f_lowe_y is looking at something. \_w[500]"
+	
+			"\0\s[9]%(Narrator) * You give the flower a hug. \_w[500]"
+			
+			// ---- Both ----
+			"\0\s[3]%(Flowey) * .... you you you... \_w[1000]\s[23]friend! \_w[1000]\n/
+			\n\n%(Narrator) * He seems very %(_happi)about that."
+			
+			}
+			elseif knifeTime != 0 && killCount == 0
+			{
+				"\0\s[16]%(Narrator) * (You hit the flower. Since you didn't do it on purpose this time, it doesn't hurt him.)\_w[500]"
+			
+				"\0\s[18]%(Narrator) * (You feel him judging you.) \_w[500]"
+			
+				"\0\s[22]%(Flowey) * WHY WHY WHY WHYWHYWHY _HY _ON'T YOU LET ME _IN?!\_w[500]"
+			
+				"\0\s[17]%(Flowey) * YOU! STOP!\_w[1500]"
+			}
+			else
+			{
+				"\0\s[16]%(Narrator) * (You hit the flower. Since you didn't do it on purpose this time, it doesn't hurt him.)\_w[500]"
+			
+				"\0\s[18]%(Narrator) * (You feel him judging you.) \_w[500]"
+			
+				"\0\s[22]%(Flowey) * WHY WHY WHY WHYWHYWHY _HY _ON'T YOU LET ME _IN?!\_w[500]"
+			
+				"\0\s[17]%(Flowey) * YOU! STOP!\_w[1500]"
+			}
 		}
-	}
-	
-	if ellVee == 1 && resetCount != 0 //User has reset stats in the past and has not killed him this time
-	{
-		//----User has not harmed him this time----
-		if knifeTime == 0 && killCount == 0
+		if ellVee >= 2
 		{
+			"\0\s[14]%(Narrator) * (Something seems to be wrong.) \_w[500]"
 		
+			"\0\s[15]%(Flowey) * What?! No. \_w[500]"
+			
+			
+		
+			// --------
+			
+			"\0\s[24]%(Flowey) * HAHAHAHAHAHAHAHA"
+		
+			"\0\s[26]\i[0]%(Flowey)\f[align,center]EVERYONE"
+			
+			{
+				_EV = OnGLITCH("EVERYONE")
+				"\0\s[26]\i[1]%(Flowey)\f[align,center]%(_EV)"
+			}
+			
+			"\0\s[27]%(Narrator) * Swing and miss. "
+			
+			"\0\s[27]%(Flowey)"
+			
+			"\0\s[28]%(Narrator)"
 
-		//----User has been good to him----
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * .... you you you... friend. \w8\w8"
-		
-		
-		
-		"\0\s[23]\_v[mus\sound_FLOWEY.mp3] * Howdy! \w8\w8"
-		
-		"\0\s[21]\_v[mus\HELP_text.mp3] * (He's clearly annoyed.)\w8\w8\n\n\n * (Was it something you did?)"
+			"\0\s[29]\_v[mus\intermission.wav]"
 		}
-		
-		//----User has been mean but never killed him----
-		
-		"\0\s[21]\_v[mus\HELP_text.mp3] * (He's clearly annoyed.)\w8\w8\n\n\n * (Was it something you did?)"
-	}
 	
-	
-	if ellVee != 1
-	{
-		"\0\s[14]\_v[mus\HELP_text.mp3] * (Something seems to be wrong.) \w8\w8"
-		
-		"\0\s[15]\_v[mus\sound_FLOWEY.mp3] * What?! No. \w8\w8"
-		
-		"\0\s[16]\_v[mus\HELP_text.mp3] * (You hit the flower. Since you didn't do it on purpose this time, it doesn't hurt him.)\w8\w8"
-		
-		"\0\s[18]\_v[mus\HELP_text.mp3] * (You feel him judging you.) \w8\w8"
-		
-		"\0\s[22]\_v[mus\sound_FLOWEY.mp3] * WHY WHY WHY WHYWHYWHY _HY _ON'T YOU LET ME _IN?!\w8\w8"
-		
-		"\0\s[17]\_v[mus\sound_FLOWEY.mp3] * YOU! STOP!\w8\w8\w8"
-		
-		//--------
-		
-		"\0\s[24]\_v[mus\sound_FLOWEY.mp3] * HAHAHAHAHAHAHAHA"
-	
-		"\0\s[26]\i[9]\f[align,center]EVERYONE"
-		
-		{
-		_EV = GLITCH("EVERYONE")
-		"\0\s[26]\i[10]\f[align,center]%(_EV)"
-		}
-		
-		"\0\s[27]\_v[mus\HELP_text.mp3] * Miss. "
-		
-		"\0\s[27]\_v[mus\sound_FLOWEY.mp3]"
-		
-		"\0\s[28]\_v[mus\HELP_text.mp3]"
-
-		"\0\s[29]\_v[mus\intermission.wav]"
 	}
 
-	
-	
-	
-	//----Autonomous inter-Ghost chatting
-	
-	"\![raise,OnTalkToGhost]"
-	
-	
-	
-	
-	
-	
-//----All Other Conditionals----
+	 
+	 
+// -------- All Other Conditionals --------
 
-	//Program Commentary
-	if canDesktopEye = "ON"
+	// Program Commentary
+	if canDesktopEye == "ON"
 	{
 		OnDesktopEyeball
 	}
 
+	if ASEARCH("friendchain",hourlyArray) == -1 || ASEARCH("torichainA",hourlyArray) == -1 || ASEARCH("torichainB",hourlyArray) == -1
+	{OnStartChain}
 	
-	if month == 1
-	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * January."
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * New. New. New. New. Year. New Year. New year. new year. Happy. \n H A P P Y NEW YEAR"
-		"\0\s[3]\_v[mus\HELP_text.mp3] * (Celebratory noises)"
+	if ASEARCH("saidtimeslot",hourlyArray) == -1
+	{"%timeTalk"}
+	
+	if ASEARCH("saidweekday",hourlyArray) == -1
+	{"%dayTalk"}
+	
+	if ASEARCH("saidmonthly",hourlyArray) == -1
+	{"%monthTalk"}
+	
+	
+}	
+
+
+// ---- Chains ----
+//Chain dialogue is unique. A dialogue chain consists of multiple bits of dialogue that get called in order over a period of time.
+
+OnStartChain
+{
+	if RAND(100) >= 59 && ASEARCH("friendchain",hourlyArray) != -1
+	{	
+		hourlyArray ,= "friendchain"
+		"\0\s[3]%(Flowey) * Finally. :chain=friendchain0"
 	}
-	if month == 2
+	elseif RAND(100) >= 29 && ASEARCH("torichainA",hourlyArray) != -1
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * February."
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Love. LOVE. LV. Celebrate LV. Right?"
-		
+		hourlyArray ,= "torichainA"
+		"\0\s[30]\_v[mus\HELP_toriel.mp3] * Where oh where oh where oh where \_w[1500] my cccchhhhiiiillllldddd\_w[1500]:chain=torichainA1"
 	}
-	if month == 3
+	elseif ASEARCH("torichainB",hourlyArray) != -1
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * March."
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Third month. Third month. Th- Thi- Th- The start of spring."
-		
+		hourlyArray ,= "torichainB"
+		"\0\s[30]\_v[mus\HELP_toriel.mp3] * Where oh where oh where oh where \_w[1500] It's so cold. So cold.\_w[1500]:chain=torichainB1"
 	}
-	if month == 4
+}		
+// ---- Chained Dialogue ----
+	
+friendchain0
+{{CHAIN
+	"\0\s[14]%(Flowey) * Tired. I'm so tired. Tired. Tired of being a flower.:chain=friendchain1"
+}}CHAIN
+
+friendchain1
+{{CHAIN
+	"\0\s[13]%(Flowey) * %(username), are you there? \n/
+	\1\s[-1]\n\n\n\f[align,left] \![*] \q[Yes,there]\n \n[-100]\f[align,right]\![*] \q[No,notThere]"
+}}CHAIN
+
+SELECT.notThere
+{
+	meanvariable ++
+	"\0\s[11]\1\s[-1] * Well that wasn't very nice..."
+}
+SELECT.there
+{
+	"\0\s[6]:chain=friendchain2"
+}
+friendchain2
+{{CHAIN
+	"\0\s[3]%(Flowey) * It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.\_w[500]\c\s[28]\_q * It's me, your best friend.\_w[1000]\s[0]:chain=end"
+}}CHAIN
+
+
+torichainA1
+{{CHAIN
+	"\0\s[30]\_v[mus\HELP_toriel.mp3] * I've been looking. \_w[500]Looking. \_w[1500] All over for you.\_w[1500]:chain=torichainA2"
+}}CHAIN
+
+torichainA2
+{{CHAIN
+	"\0\s[8]\_v[mus\hee.mp3] * Hee hee hee. \_w[1500]%(Flowey)Is that what you wanted to hear? \_w[1500]You'll NEVER see her again.\_w[1500]:chain=end"
+}}CHAIN
+
+
+torichainB1
+{{CHAIN
+	"\0\s[30]\_v[mus\HELP_toriel.mp3] * It's so dark. \_w[500]Where am I? \_w[1500]Someone help me...\_w[1500]:chain=torichainB2"
+}}CHAIN
+
+torichainB2
+{{CHAIN
+	"\0\s[30]\_v[mus\HELP_toriel.mp3] * Anyone... \_w[500]Please... \_w[1500]Help\_w[1500]:chain=end"
+}}CHAIN
+
+// FlagArray ,= 'newflag' and ASEARCH('newflag',FlagArray) != -1
+
+// ---- More Time Functions ----
+// Keeps track of if an hour has passed. Just ignore this.
+
+
+timeTalk
+{
+	if timeslot == "earlymorning"
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * April."
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * 4 4 4 4 FOUR four Fourth month"
-		
+		"\0\s[3]%(Flowey) * Early morning."
 	}
-	if month == 5
+	if timeslot == "morning"
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * May."
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * The fifth month."
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * May flowers. Flowers. Flowers are blooming!\s[16]\w8\c\s[3]\_v[mus\sound_FLOWEY.mp3] * Howdy! I'm F_lowe_y the flower!\w8"	
+		"\0\s[3]%(Flowey) * Morning."
 	}
-	if month == 6
+	if timeslot == "lunch"
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * June."
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Hot.Hot.Hot.Not.Not.Not."
-		
+		"\0\s[3]%(Flowey) * Lunch time."
 	}
-	if month == 7
+	if timeslot == "afternoon"
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * July."
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Is it summer yet? "
+		"\0\s[3]%(Flowey) * Afternoon."
 	}
-	if month == 8
+	if timeslot == "evening"
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * August."
+		"\0\s[3]%(Flowey) * Evening."
 	}
-	if month == 9
+	if timeslot == "latenight"
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * September."
+		"\0\s[3]%(Flowey) * Late night."
 	}
-	if month == 10
+	if timeslot == "weehours"
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * October."
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Halloween. Humans in monster suits.\w8\w8\n\s[18] * Funny."
+		"\0\s[3]%(Flowey) * %(lateearly)"
 	}
-	if month == 11
-	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * November."
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Thank_giving?"
-	}
-	if month == 12
-	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * December."
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Merry.Merry.Merry.Merry.Merry.Merry.Merry.Merry.Merry.Merry.Merry.Merry.Merry."
-	}
-	// These ifs check what day of the week it is.
+	--
+	"\e:eval=hourlyArray ,= 'saidtimeslot'"
+}
+
+dayTalk
+{
 	if weekday == 0
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Sunday."
+		"\0\s[3]%(Flowey) * Sunday."
 	}
 	if weekday == 1
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Monday."
+		"\0\s[3]%(Flowey) * Monday."
 		
 	}
 	if weekday == 2
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Tuesday."
+		"\0\s[3]%(Flowey) * Tuesday."
 	}
 	if weekday == 3
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Wednesday."
+		"\0\s[3]%(Flowey) * Wednesday."
 	}
 	if weekday == 4
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Thursday."
+		"\0\s[3]%(Flowey) * Thursday."
 	}
 	if weekday == 5
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Friday."
+		"\0\s[3]%(Flowey) * Friday."
 	}
 	if weekday == 6
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Saturday."
+		"\0\s[3]%(Flowey) * Saturday."
 	}
-	
-	// //These ifs check for the time of day as defined in bootend.dic. Do you remember the words used for each chunk of time in GetTimeSlot? These are the same words!
-	if timeslot == "earlymorning"
-	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Early morning."
-	}
-	if timeslot == "morning"
-	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Morning."
-	}
-	if timeslot == "lunch"
-	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Lunch time."
-	}
-	if timeslot == "afternoon"
-	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Afternoon."
-	}
-	if timeslot == "evening"
-	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Evening."
-	}
-	if timeslot == "latenight"
-	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Late night."
-	}
-	if timeslot == "weehours"
-	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * %(lateearly)"
-	}
-	
-	
-	//--Chains
-	//Chain dialogue is unique. A dialogue chain consists of multiple bits of dialogue that get called in order over a period of time.
-	if RAND(100) >= 80
-	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Finally. :chain=firstchain"
-		
-		if RAND(100) >= 49
-		{
-			"\0\s[9]\_v[mus\HELP_toriel.mp3] * Where oh where oh where oh where \w8\w8\w8 my cccchhhhiiiillllldddd\w8\w8\w8:chain=torichain1"
-		}
-		else
-		{
-			"\0\s[9]\_v[mus\HELP_toriel.mp3] * Where oh where oh where oh where \w8\w8\w8 It's so cold. So cold.\w8\w8\w8:chain=torichain2"
-		}
-	}	
 	--
-	"\e"
-	
-}	
-	
-//----Chained Dialogue----
-	
-firstchain
-{{CHAIN
-	"\0\s[14]\_v[mus\sound_FLOWEY.mp3] * Tired. I'm so tired. Tired. Tired of being a flower.:chain=secondchain"
-}}CHAIN
-
-
-secondchain
-{{CHAIN
-	"\0\s[13]\_v[mus\sound_FLOWEY.mp3] * %(username), are you there? :chain=thirdchain"
-}}CHAIN
-
-thirdchain
-{{CHAIN
-	"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.\w8\c\s[11]\_q * It's me, your best friend.:chain=end"
-}}CHAIN
-
-torichain1
-{{CHAIN
-	"\0\s[9]\_v[mus\HELP_toriel.mp3] * I've been looking. \w8Looking. \w8\w8\w8 All over for you.\w8\w8\w8:chain=torichain12"
-}}CHAIN
-
-torichain12
-{{CHAIN
-	"\0\s[8]\_v[mus\hee.mp3] * Hee hee hee. \w8\w8\w8\_v[mus\sound_FLOWEY.mp3]Is that what you wanted to hear? \w8\w8\w8You'll NEVER see her again.\w8\w8\w8:chain=end"
-}}CHAIN
-
-torichain2
-{{CHAIN
-	"\0\s[9]\_v[mus\HELP_toriel.mp3] * It's so dark. \w8Where am I? \w8\w8\w8Someone help me...\w8\w8\w8:chain=torichain22"
-}}CHAIN
-
-torichain22
-{{CHAIN
-	"\0\s[9]\_v[mus\HELP_toriel.mp3] * Anyone... \w8Please... \w8\w8\w8Help\w8\w8\w8:chain=end"
-}}CHAIN
-
-
-
-//----More Time Functions----
-//Keeps track of if an hour has passed. Just ignore this.
-HourCheck
-{
-if passmin >= 59
-	{
-		timeslot = GetTimeSlot
-		passmin = 0
-		passhour = passhour + 1
-	}
+	"\e:eval=hourlyArray ,= 'saidweekday'"
 }
 
-//----OnMinuteChange----
-//----Time related dialogue using the OnMinuteChange function
+monthTalk
+{
+	if month == 1
+	{
+		"\0\s[3]%(Flowey) * January."
+		"\0\s[3]%(Flowey) * New. New. New. New. Year. New Year. New year. new year. Happy. \n H A P P Y NEW YEAR"
+		"\0\s[3]%(Narrator) * (Celebratory noises)"
+	}
+	if month == 2
+	{
+		"\0\s[3]%(Flowey) * February."
+		"\0\s[3]%(Flowey) * Love. LOVE. LV. Celebrate LV. Right?"
+		
+	}
+	if month == 3
+	{
+		"\0\s[3]%(Flowey) * March."
+		"\0\s[3]%(Flowey) * Third month. Third month. Th- Thi- Th- The start of spring."
+		
+	}
+	if month == 4
+	{
+		"\0\s[3]%(Flowey) * April."
+		"\0\s[3]%(Flowey) * 4 4 4 4 FOUR four Fourth month"
+		
+	}
+	if month == 5
+	{
+		"\0\s[3]%(Flowey) * May."
+		"\0\s[3]%(Flowey) * The fifth month."
+		"\0\s[3]%(Flowey) * May flowers. Flowers. Flowers are blooming!\s[16]\_w[500]\c\s[3]%(Flowey) * Howdy! I'm f_lowe_y the flower!\_w[500]"	
+	}
+	if month == 6
+	{
+		"\0\s[3]%(Flowey) * June."
+		"\0\s[3]%(Flowey) * Hot.Hot.Hot.Not.Not.Not."
+		
+	}
+	if month == 7
+	{
+		"\0\s[3]%(Flowey) * July."
+		"\0\s[3]%(Flowey) * Is it summer yet? "
+	}
+	if month == 8
+	{
+		"\0\s[3]%(Flowey) * August."
+	}
+	if month == 9
+	{
+		"\0\s[3]%(Flowey) * September."
+	}
+	if month == 10
+	{
+		"\0\s[3]%(Flowey) * October."
+		"\0\s[3]%(Flowey) * Halloween. Humans in monster suits.\_w[1000]\n\s[18] * Funny."
+	}
+	if month == 11
+	{
+		"\0\s[3]%(Flowey) * November."
+		"\0\s[3]%(Flowey) * Thank_giving?"
+	}
+	if month == 12
+	{
+		"\0\s[3]%(Flowey) * December."
+		"\0\s[3]%(Flowey) * Merry.Merry.Merry.Merry.Merry.Merry.Merry.Merry.Merry.Merry.Merry.Merry.Merry."
+	}
+	--
+	"\e:eval=hourlyArray ,= 'saidmonthly'"
+}
+
+
+
+// ---- OnMinuteChange ----
+// Time related dialogue using the OnMinuteChange function
 OnMinuteChange //This is what will trigger time-based dialogue for your Ghost.
- {
+{
 	HourCheck //checks to see if an hour has passed, ignore it
 	--
  	if minute == 0 //These ifs will check what time it is. 
 	{
  		if hour == 12 //And the hour equals 12, meaning it's noon. 
 		{
- 			"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * It's noon."
+ 			"\0\s[3]%(Flowey) * It's noon."
 		}
  		elseif hour == 0
 		{
- 			"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * It's midnight!"
+ 			"\0\s[3]%(Flowey) * It's midnight!"
 		}
 		else
 		{
@@ -436,20 +576,20 @@ OnMinuteChange //This is what will trigger time-based dialogue for your Ghost.
 	}
 	elseif hour == 23 && minute == 55 //this checks to see if the hour is 23 and the minutes are at 55... essentially, 11:55 pm.
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * 5 minutes to midnight."
+		"\0\s[3]%(Flowey) * 5 minutes to midnight."
 	}
 	
 	elseif mikireflag == 1
  	{
  		MikireTalk
 	}
- }
+}
 
-//--OnSecondChange
-//Like the above, this handles what happens every time a second goes by.
+// ---- OnSecondChange ----
+// Like the above, this handles what happens every time a second goes by.
 
 OnSecondChange
- {
+{
 	if passsec == 59
  		{
 	 	passsec = 0
@@ -474,116 +614,60 @@ OnSecondChange
 	{
  		""
 	}
- }
+}
 
- //---- MikireTalk ----
- //MikireTalk is dialogue for when your main character is off-screen. Like if you dragged Girl over to the side of your monitor until she was partially concealed by it.
+HourCheck
+{
+if passmin >= 59
+	{
+		timeslot = GetTimeSlot
+		passmin = 0
+		passhour = passhour + 1
+	}
+}
+
+//---- MikireTalk ----
+//MikireTalk is dialogue for when your main character is off-screen.
  
 MikireTalk
- {
-	 if RAND(100) < 50 
-	 {
+{
+	if RAND(100) < 49 
+	{
 		rescue = 1
-		"\0\s[15]\_v[mus\sound_FLOWEY.mp3] * No. No. No. No. No. No. Back. Back. Back.\n * Ctrl-Shift-F12 to bring back.\w8\w8"
+		"\0\s[15]%(Flowey) * No. No. No. No. No. No. Back. Back. Back.\n * Ctrl-Shift-F12 to bring back.\_w[500]"
 		
-	 }
-	 else
-	 {
-		 rescue = 0
-		"\0\s[15]\_v[mus\HELP_text.mp3] * (F_lowe_y seems distressed.)\n\n * (Press Ctrl-Shift-F12 to ease his pain.)\w8\w8"
-	 }
- }
-
- //----EndMikireTalk-----
- //For after you bring the character back on screen.
- 
-EndMikireTalk
- {
-	 if  rescue == 1 
-	 {
-		 rescue = 0
-		"\0\s[9]\_v[mus\sound_FLOWEY.mp3] * Back. Good. Thank.\w8\s[3]Thank. Thank. Thank. Thank. Thank.\w8\w8"
-	 }
-	 else
-	 {
-		 rescue = 0
-		"\0\s[9]\_v[mus\HELP_text.mp3] * (F_lowe_y looks relieved.)\w8\w8\w8"
-	 }
- }
-
-
-//**** OnSurfaceRestore *************
-//What this does is that after a short period of time, the ghost will go back to its default pose, so you won't have a ghost stuck in one expression for too long.
-
-OnSurfaceRestore
- {
- 	
-	"\0\s[0]\e"
-	
- }
-
- 
- //--OnKeyPress
- //This defines the hotkeys your ghost will use.
- 
-OnKeyPress
-{
-	if reference0 == "t"
-	{
-		OnAiTalk
 	}
-	elseif reference0 == "r"
-	{
-		OnLastTalk
-	}
-	elseif reference0 == "f4"
-	{
-		OnClose
-	}
-	elseif reference0 == "f1"
-	{
-		"\![open,readme]"
-	}
-	elseif reference0 == "o"
-	{
-	}
-}
-
-OnOtherGhostTalk
-{
-	if reference3 == "OnSurfaceRestore" {}
 	else
 	{
-		reference4 = REPLACE(reference4, "\_v[", "\![sound,stop,")
-		reference4 = REPLACE(reference4, "\e", "")
-		_spokenWord = TOLOWER(reference4)
-		
-		if "flowey" _in_ _spokenWord || "f_lowe_y" _in_ _spokenWord
-		{
-			// "%(_spokenWord)"
-			"\s[3]\_v[mus\HELP_text.mp3] * (The flower seems to be smiling at the sound of his name.)"
-		}
-		elseif "asriel" _in_ _spokenWord
-		{
-			"\s[11]\_v[mus\sound_FLOWEY.mp3] * No no no no no nono%(n)onono%(n)%(o)%(n)%(o)no%(n)%(o)nono"
-		}
-		elseif "alphys" _in_ _spokenWord
-		{
-			"\s[21]\_v[mus\sound_FLOWEY.mp3] * Her?\s[3]\i[2]\w8\w8"
-		}
-		elseif "toriel" _in_ _spokenWord
-		{
-			"\s[14]\_v[mus\sound_FLOWEY.mp3] * ...\w8\w8"
-		}
-		elseif "asgore" _in_ _spokenWord
-		{
-			"\s[14]\_v[mus\sound_FLOWEY.mp3] * ...\w8\w8"
-		}
-		else
-		{
-			// "%(referenceTest)"
-		}
-		--
-		"\e"
+		rescue = 0
+		"\0\s[15]%(Narrator) * (f_lowe_y seems distressed.)\n\n * (Press Ctrl-Shift-F12 to ease his pain.)\_w[500]"
 	}
 }
+
+// ---- EndMikireTalk -----
+//For after you bring the character back on screen.
+ 
+EndMikireTalk
+{
+	 if  rescue == 1 
+	{
+		rescue = 0
+		"\0\s[9]%(Flowey) * Back. Good. Thank.\_w[500]\s[3]Thank. Thank. Thank. Thank. Thank.\_w[500]"
+	}
+	else
+{
+		rescue = 0
+		"\0\s[9]%(Narrator) * (f_lowe_y looks relieved.)\_w[1500]"
+	}
+}
+
+
+// -------- OnSurfaceRestore --------
+// What this does is that after a short period of time, the ghost will go back to its default pose, so you won't have a ghost stuck in one expression for too long.
+
+OnSurfaceRestore
+{	
+	"\0\s[0]\1\s[-1]\e"	
+}
+
+ 

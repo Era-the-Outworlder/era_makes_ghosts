@@ -10,11 +10,13 @@ OnfirstBoot
 {
 	OnNotifyUserInfo
 	--
+	On_basewareversion
+	--
  	lastTalk = "" //This is part of how chained conversations work (see aitalk.dic).
 	passmin = 0 
 	passsec = 0 // These two keep track of the time.
- 	mikireflag       = 0	// Determines behavior at certain points.
- 	aitalkinterval = 400 //Their default talk rate.
+ 	mikireflag       = 0	// mikireflag tracks if character is cut off my screen border
+ 	aitalkinterval = 300 //Their default talk rate in seconds.
  	talktime = "5 minutes" //How the value aitalkinterval will display in the config menu.
 	nowshell = "master" //init as default shell
 	
@@ -26,84 +28,132 @@ OnfirstBoot
 	//wisott
 	installinfo = ("%(year)","%(month)","%(day)","%(hour)","%(minute)","%(second)","%(OnGhostVer)")
 	
+	// Custom options
 	silentMode = "OFF" //does not start in silent mode
 	canDesktopEye = "OFF" //does not start off commenting on open programs
 	verBalete = "ON" //DOES start with recycle bin confirmation on
-
-	//The following are global variables for F_lowe_y's interactions.
+	// A couple of flag arrays
+	hourlyArray = IARRAY
+	agreedToConsequences = IARRAY
+	//The following are global variables for f_lowe_y's ghost interactions.
+	gazeTalk = 0
+	//The following are global variables for f_lowe_y's user interactions.
 	stroke = 0	// Sets being-pet state to zero.
-	ellVee = 1
-	HP = 20
-	EXP = 0
+	rub = 0 // being-pet state for face rubbing
+	petCount = 0
+	petCountNeg = 0
+	flickCount = 0
 	knifeTime = 0
 	killCount = 0
 	resetCount = 0
+	HP = 20
+	EXP = 0
+	ellVee = 1
+	nicevariable = 0
+	meanvariable = 0
 	
+	smallImageCaption = ""
+	drpstatus = ""
+	
+	OnDiscordPluginCustom
 	--
+	"\t\0\s[-1]\1\s[-1]\![set,sticky-window,1,0]\![set,otherghosttalk,true]"
+	--
+	"This UKAGAKA uses audio to enhance certain events, as well as to indicate by sound that the ghost is talking. As not all users may desire this feature, a Silent Mode has been added, which prevents the ghost from playing any audio files.\n \x\c\1\n\_q\f[align,center]This setting can always be changed from the ghost's menu.\n\n\f[align,center]\![*] \q[Silent Mode On,OnFBStart,%(reference0),ON]\n/
+	\![*] \q[Silent Mode Off,OnFBStart,%(reference0),OFF]"
+}
+
+OnFBStart
+{
+	silentMode = reference1
 	if reference0 == 0 //Don't touch this line.
  	{
 		firstBoot = 1
-		"\0\s[3]\_v[mus\HELP_text.mp3]\t * (Flowey is attempting to introduce you to the SSP Ghost system.)\w8\w8\n\s[3]\_v[mus\sound_FLOWEY.mp3] * Howdy!\n\n[half]"
+		_flow1 = OnGlitchLite("flowey")
+		_flow1 = "\f[color,#FFFF00]" + _flow1 + "\f[color,default]"
+		_flow2 = OnGLITCH("flowey")
+		_flow2 = "\f[color,#FFFF00]" + _flow2 + "\f[color,default]"
+		_flow3 = OnGLITCH("flower")
+		_flow3 = "\f[color,#FFFF00]" + _flow3 + "\f[color,default]"
+		"\t"
 		--
-		OnTeachPronouns
+		"\0\s[-1]\1\s[-1]\f[align,center]\n\n\n * C\_w[50]O\_w[50]N\_w[50]N\_w[50]E\_w[50]C\_w[50]T\_w[50]I\_w[50]N\_w[50]G\_w[50].\_w[50].\_w[50].\_w[300]\c/
+		\f[align,center]\n\n\n * C\_w[50]O\_w[50]N\_w[50]N\_w[50]E\_w[50]C\_w[50]T\_w[50]I\_w[50]N\_w[50]G\_w[50].\_w[50].\_w[50].\_w[300]\c/
+		\f[align,center]\n\n\n * C\_w[50]O\_w[50]N\_w[50]N\_w[50]E\_w[50]C\_w[50]T\_w[50]I\_w[50]N\_w[50]G\_w[50].\_w[50].\_w[50].\_w[300]\c"
+		--
+		"\0\s[-1]\1\s[-1]\f[align,center]\n\n\n * CONNECTED.\_w[100]\n\f[align,center]Initiating Transfer\_w[100].\_w[100].\_w[100].\_w[500]\c/
+		%(Narrator)\n\n * Transfer %(CHR(37))(_transferStatus).\_w[500]\n\n/
+		S O M E T H I N G  H A S \_w[50].\_w[50].\_w[50].\_w[50].\_w[50]?\_w[1500]\c/
+		\0\s[0]%(Narrator)\n\n * Despite everything... \n\n          IT's still f_lowe_y. \_w[2000]\n/
+		\0\s[0]%(Flowey) * Howdy!\_w[500]\n/
+		%(Flowey) * I\_w[80]'\_w[200]m\_w[40] %(_flow1)\_w[120].\n * %(_flow2)\_w[180] t\_w[160]h\_w[180]e\_w[200] %(_flow3)\_w[500]!\_w[1000]\_s\b[-1]\c\_s/
+		%(Flowey) * 're new to new to NEWNEWNEWNEWNEWNEW NEW TO %(CHR(37))(var_locale)\_w[2000]\n/
+		\c%(Flowey) * G O L L Y\n * so confused so confused so confused confused confused \![embed,OnGLITCH,confused]\![embed,OnGLITCH,confused]\![embed,OnGLITCH,confused]\![embed,OnGLITCH,confused]\![embed,OnGLITCH,confused]\![embed,OnGLITCH,confused]\_w[2000]\c\n\n * ���̂������̃��[�������Ȃ��ł���H\_w[2000]\_s\b[-1]\c\_s/
+		%(Narrator)\n\n\n * Please record PlayerData "
+		--		
+		"\![timerraise,1000,1,OnTeachName]"
  	}
 	else
  	{
- 		// "\0\s[21]\_v[mus\sound_FLOWEY.mp3] * Returned. Why?"
+ 		// "\0\s[21]%(Flowey) * Returned. Why?"
+		firstBoot = 2
 		
-		"\0\s[21]\_v[mus\HELP_text.mp3] F_lowe_y does not remember being uninstalled. \n (But you remember doing it, don't you %(menuNName)?"
+		"\0\s[21]%(Narrator) * f_lowe_y does not remember being uninstalled. \n But you remember doing it, don't you %(menuNName)?\_w[500]\n Let's go over some things.\_w[1000]\_s\b[-1]\c\_s"
 		--
-		OnTeachPronouns
+		"\![timerraise,1000,1,OnTeachName]"
  	}
+
 }
 
+
+OnFBContinue
+{
+	firstBoot = 0
+	"\_s\b[-1]\c\_s%(Narrator) * End.\e"
+}
 
 
 
 
 //--timeslot
 
-//This is another unique function to tell what time of day it is. This is used for specialized dialogue related to the day.
 
 GetTimeSlot
 {
-	if hour >= 0 && hour <= 4
+	case hour
 	{
-		"weehours"
-	}
-	if hour >= 5 && hour <= 8
-	{
-		"earlymorning"
-	}
-	elseif hour >= 9 && hour <= 11
-	{
-		"morning"
-	}
-	elseif hour >= 12 && hour <= 14
-	{
-		"lunch"
-	}
-	elseif hour >= 15 && hour <= 17
-	{
-		"afternoon"
-	}
-	elseif hour >= 18 && hour <= 20
-	{
-		"evening"
-	}
-	elseif hour >= 21 && hour <= 24
-	{
-		"latenight"
-	}
-	else
-	{
-		"error"
+		when 0-4
+		{
+			"weehours"
+		}
+		when 5-8
+		{
+			"earlymorning"
+		}
+		when 9-11
+		{
+			"morning"
+		}
+		when 12-14
+		{
+			"lunch"
+		}
+		when 15-17
+		{
+			"afternoon"
+		}
+		when 18-20
+		{
+			"evening"
+		}
+		when 21-23
+		{
+			"latenight"
+		}
 	}
 }
 
-//--dayslot
 
-//Like the above, but to find out what day it is. You can primarily use this for specialized dialogue on certain days, like the user's birthday.
 
 GetDaySlot
 {
@@ -113,20 +163,20 @@ GetDaySlot
 
 //-----------------------Normal Booting----------------------------
 
-//From this point on, the dialogue will be for any normal boot of your ghost. You can specialize this for certain days or times if you like, or if you're uninterested, leave it very simple.
-
 
 //--OnBoot
 
-//As you can probably guess, OnBoot runs when you boot your ghost.
-//*********************Advanced User Info*******************************
-//You can also stick any values you want to reset on boot into their own function, like "BootReset", then run BootReset instead during boot so it's a bit less unwieldy.
-//***********************************************************************
-
 OnBoot
  {
+	if username =="Era"
+	{"%(Narrator)\n\n\nSet Development Status:\![open,inputbox,OnDevSet]"}
+	--
+	drpstatus = ""
+	OnDiscordPluginCustom
 	OnNotifyUserInfo
 	lastTalk = "" 
+	hourlyArray = IARRAY
+	cumuhour = (cumuhour + passhour)
 	passhour = 0
 	passmin = 0
 	passsec = 0
@@ -135,30 +185,27 @@ OnBoot
 	
 	//turns on detection of other ghosts' speech
 	//Neutral pose.
- 	"\0\s[0]\![set,otherghosttalk,true]" 
+ 	"\![set,sticky-window,1,0]\![set,otherghosttalk,true]\1\s[-1]\0\s[0]" 
 	--
 	
 	if dayslot == userbirthday 
-	
 	{
-				"\s[3]\_v[mus\sound_FLOWEY.mp3] * It's %(bornmonthprint) %(borndayprint).\w8\n * Happy birthday, %(username)." 
+				"\0\s[3]%(Narrator) * It's %(bornmonthprint) %(borndayprint).\_w[500]\n * Happy birthday, %(username)." 
 				--
-				"\s[0]\e"
+				"\0\s[0]\e"
 				
 	}
-	
 	elseif dayslot == "6month 6day" 
-	
 	{
-				"\s[3]\_v[mus\sound_FLOWEY.mp3] * Today. June 6th."
+				"\0\s[3]%(Flowey) * Today. June 6th."
 				--
-				"\s[0]\e"
+				"\0\s[0]\e"
 	}
 	elseif dayslot == "7month 4day"
 	{
-				"\s[3]\_v[mus\sound_FLOWEY.mp3] * Fourth. 4th. Fourth. July."
+				"\0\s[3]%(Flowey) * Fourth. 4th. Fourth. July."
 				--
-				"\s[0]\e"
+				"\0\s[0]\e"
 				
 	}
 	else
@@ -175,14 +222,14 @@ OnBoot
 normalboottalk
 {
 	if weekday == 6 && hour >= 19 
-		{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * It's Saturday night."
-		}
+	{
+		"\0\s[3]%(Flowey) * It's Saturday night."
+	}
 	elseif RAND(100) < 40 
-		{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * (Gurgling noises)"
+	{
+		"\0\s[3]%(Flowey) * (Gurgling noises)"
 	
-		}
+	}
  	else
  	{
 		timeslot = "%(GetTimeSlot)"
@@ -193,34 +240,34 @@ normalboottalk
 		}
 		elseif timeslot == "morning"
 		{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Bleah. "
+		"\0\s[3]%(Flowey) * Bleah. "
 		
 		}
 		elseif timeslot == "lunch"
 		{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Eat."
+		"\0\s[3]%(Flowey) * Eat."
 		}
 		elseif timeslot == "afternoon"
 		{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Afternoon. "
+		"\0\s[3]%(Flowey) * Afternoon. "
 		}
 		elseif timeslot == "evening"
 		{
- 		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Late. "
+ 		"\0\s[3]%(Flowey) * Late. "
 		}
 		elseif timeslot == "latenight"
 		{
- 		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Laaaaaaate."
+ 		"\0\s[3]%(Flowey) * Laaaaaaate."
 		
 		}
 		else //the last timeslot we haven't done is weehours, which is what's under here.
 		{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * %(lateearly)\w8"
+		"\0\s[3]%(Flowey) * %(lateearly)\_w[500]"
 		
 		}
 	}
 	--
-	"\s[0]\e"
+	"\0\s[0]\e"
 }
 
 
@@ -230,30 +277,96 @@ normalboottalk
 
 OnClose
 {
+	if passhour > 1
+	{
+	cumuhour = (cumuhour + passhour)
+	passhour = 0
+	}
+	--
+	passmin = 0
+	passsec = 0
+	--
 	if passmin >= 5	
-		{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Bye\w8\w8"	
-		"\0\s[3]\_v[mus\HELP_text.mp3] * (You tell Flowey you'll see him later.)\w8\w8"	
+	{
+		"\0\s[3]%(Flowey) * Bye.\_w[500]"	
+		"\0\s[3]%(Narrator) * (You tell f_lowe_y you'll see him later.)\_w[500]"	
  		
- 		}
+ 	}
  	else 
  	{
- 		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * [flowey_greeting_string] BYE\w8\w8"
+ 		"\0\s[3]%(Flowey) * [f_lowe_y_greeting_string] BYE\_w[500]"
 		
  	}
+	--
+	ERASEVAR("hourlyArray")
  	--
 	"\-" 
 }
 
 OnCloseAll
 {
-	"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * G%(o)%(o)%(d)-%(b)%(y)%(e)\w8\w8"	
-	"\0\s[3]\_v[mus\HELP_text.mp3] * (You tell Flowey you'll see everyone later.)\w8\w8"	
+	
+	if ghostexcount > 0
+	{
+		if passhour > 1
+		{
+			cumuhour = (cumuhour + passhour)
+			passhour = 0
+		}
+		--
+		passmin = 0
+		passsec = 0
+		--
+		
+		"\0\s[3]%(Narrator) * (You say goodbye to everyone.)\_w[500]"
+		
+		case hour
+		{
+		when 0-4
+		{
+			"\0\s[3]%(Flowey) * Goodnight. Or good morning"
+		}
+		when 5-11
+		{
+			"\0\s[3]%(Narrator) * (You say you'll see everyone later.)"
+			"\0\s[3]%(Flowey) * Good morning."
+		}
+		when 12-16
+		{
+			"\0\s[3]%(Flowey) * G%(o_)%(o_)%(d_)-%(b_)%(y_)%(e_)\_w[500]"	
+			"\0\s[3]%(Flowey) * Good afternoon."
+			"\0\s[3]%(Narrator) * (You say you'll see everyone later.)\_w[500]"
+		}
+		when 17-20
+		{
+			"\0\s[3]%(Flowey) * Good evening."
+			"\0\s[3]%(Narrator) * (You say you'll see everyone another time.)"
+		}
+		when 21-23
+		{
+			"\0\s[3]%(Flowey) * Goodnight."
+			"\0\s[3]%(Narrator) * (You say you'll see everyone another time.)"
+		}
+		}
 	--
-	"\-" 
+	ERASEVAR("hourlyArray")
+	--
+	"\-"
+	}
 
 }
 
+OnBasewareUpdating
+{
+	"Updating Baseware"
+}
+
+OnBasewareUpdated
+{
+	OnDiscordPluginCustom
+	--
+	""
+}
  //--------State Changing--------
  //From here on, most of the dialogue will have to do with changing shells, ghosts, or states in some way.
  
@@ -262,81 +375,110 @@ OnCloseAll
 
 //This will run when you minimize them.
 
- OnWindowStateMinimize
- {
-	"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Tiny\w8\w8"
-	"\0\s[3]\_v[mus\HELP_text.mp3] * (Flowey will hide for now.)\w8\w8"
+OnWindowStateMinimize
+{
+	DiscordCustom.MinimiseSet
 	--
-	"\s[0]\e"
+	"\0\s[3]%(Flowey) * \![embed,OnGLITCH,Tiny]. \_w[500]"
+	"\0\s[3]%(Narrator) * f_lowe_y will hide for now.\_w[500]"
+	--
+	"\0\s[0]\e"
 }
 
 //--OnWindowStateRestore
 
 OnWindowStateRestore
- {
-	"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Back\w8\w8"
-	"\0\s[3]\_v[mus\HELP_text.mp3] * (Flowey has returned.)\w8\w8"
+{
+	OnDiscordPluginCustom
 	--
-	"\s[0]\e"
+	"\0\s[3]%(Flowey) * Back\_w[500]"
+	"\0\s[3]%(Narrator) * (f_lowe_y has returned.)\_w[500]"
+	--
+	"\0\s[0]\e"
 }
 
 
 //--OnGhostChanging
 
 OnGhostChanging
- {
+{
 	if reference0 == "f_lowe_y" 
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * Re-re-re-re-re-re-re\w8\w8 LOADING\w3.\w3.\w3."
-		"\0\s[3]\_v[mus\HELP_text.mp3] * (The ghost of Flowey is reloading.)"
+		"\0\s[3]%(Flowey) * Re-re-re-re-re-re-re\_w[1000] LOADING\_w[200].\_w[200].\_w[200]."
+		"\0\s[3]%(Narrator) * The ghost of f_lowe_y is reloading."
 	}
  	else //If you're switching to another Ghost.
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * LOADING %(reference0). \w8Bye.\w8\w8"
-		"\0\s[3]\_v[mus\HELP_text.mp3] * (You decide to switch to someone else.)"	
+		if passhour > 1
+		{
+			cumuhour = (cumuhour + passhour)
+			passhour = 0
+		}
+		--
+		passmin = 0
+		passsec = 0
+		--
+		"\0\s[3]%(Flowey) * LOADING %(reference0). \_w[500]Bye.\_w[500]"
+		"\0\s[3]%(Narrator) * (You decide to switch to someone else.)"	
 	}
 	--
-	"\s[0]\e"
+	"\0\s[0]\e"
 }
 
 
 //--OnGhostChanged
 
-//A sister to the above, this runs after the ghost has either reloaded itself, or when you switch from another ghost to this ghost.
+//A sibling to the above, this runs after the ghost has either reloaded itself, or when you switch from another ghost to this ghost.
 
 OnGhostChanged
 {
-	"\0\s[3]\![set,otherghosttalk,true]" //this sets up their default poses
+	"\![set,sticky-window,1,0]\![set,otherghosttalk,true]\0\s[0]\1\s[-1]" //this sets up their default poses
+	--
+	OnDiscordPluginCustom
 	--
 	if reference0 == "f_lowe_y" //As above, this should be the name of your ghost as in install.txt or descript.txt.
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * LOADED"
-		"\0\s[3]\_v[mus\HELP_text.mp3] * (Ghost %(reference0) reloaded.)"
+		"\0\s[3]%(Flowey) * LOADED.\_w[500]"
+		"\0\s[3]%(Narrator) * (Ghost %(reference0) reloaded.)\_w[500]"
 	}
 	else //If you're switching to them from another ghost...
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * %(reference0)..."
-		"\0\s[3]\_v[mus\HELP_text.mp3] * (Ghost '%(reference0)' unloaded.)"
+		"\0\s[3]%(Flowey) * %(reference0)...\_w[500]"
+		"\0\s[3]%(Narrator) * (Ghost '%(reference0)' unloaded.)\_w[500]"
 	}
 	--
-	"\s[0]\e"
+	"\0\s[0]\e"
 }
 
 // When THIS ghost is called. ref0 = body/sakura/kero of calling ghost, ref2 name of calling ghost, ref3 path of call, ref 7 name of called ghost.
+
+
 OnGhostCalled
 {
+	OnDiscordPluginCustom
+	--
+	_glNam = OnGLITCH(reference0)
 	{
 		reference0 = TOUPPER(reference0)
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * HELLO %(reference0). "
+		"\0\s[3]%(Flowey) * HELLO %(reference0).\_w[500]\e"
 	}
-	"\0\s[3]\_v[mus\HELP_text.mp3] * (Ghost %(reference0) is already open.)"
+	"\0\s[3]%(Flowey) * HELLO %(_glNam).\_w[500]\e"
+	
+	"\0\s[3]%(Flowey) * IT'S IT'S IT'S %(reference2)! HELLO %(_glNam).\_w[500]\e"
+	
+	"\0\s[3]%(Narrator) * (%(reference0) is already here, but you called f_lowe_y anyway.)\_w[500]"
 }
 
 // When another ghost is BEING called from THIS ghost's r-click menu (happens before new ghost loads)
 // ref0 = body of called ghost, ref1 = call method, ref2 = name of called ghost, ref3 = path of called ghost
 OnGhostCalling
 {
-	"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * HELLO %(reference0). "
+	_glNam = OnGLITCH(reference0)
+	
+	
+	"\0\s[3]%(Flowey) * IT'S IT'S IT'S %(reference2)! HELLO %(_glNam).\_w[500]\e"
+	
+	"\0\s[3]%(Narrator) * f_lowe_y is already here, but you're calling %(reference0) anyway.\n\_w[300] Is it to keep him company?\_w[500]\e"
 }
 
 // When another ghost is called from THIS ghost's r-click menu (happens after new ghost completes boot function)
@@ -347,12 +489,12 @@ OnGhostCallComplete
 	
 	if "Hapax" _in_ reference7
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * HELLO HAPAX LEGOMENOM. "
+		"\0\s[3]%(Flowey) * HELLO HAPAX LEGOMENOM.\_w[500]"
 	}
 	else
 	{
 		reference0 = TOUPPER(reference0)
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * HELLO %(reference0). "
+		"\0\s[3]%(Flowey) * HELLO %(reference0).\_w[500]"
 	}
 }
 
@@ -363,12 +505,12 @@ OnOtherGhostBooted
 {
 	if "Hapax" _in_ reference7
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * HELLO HAPAX LEGOMENOM. "
+		"\0\s[3]%(Flowey) * HELLO HAPAX LEGOMENOM.\_w[500]"
 	}
 	else
 	{
 		reference0 = TOUPPER(reference0)
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * HELLO %(reference0). "
+		"\0\s[3]%(Flowey) * HELLO %(reference0).\_w[500]"
 	}
 }
 
@@ -379,23 +521,21 @@ OnOtherGhostBooted
 
 OnOtherGhostChanged
 {
-
-	"%(referenceTest)"
-	// if "Hapax" _in_ reference15
-	// {
-		// reference0 = TOUPPER(reference0)
-		// "\0\s[3]\_v[mus\sound_FLOWEY.mp3] * GOOD-BYE %(reference0). \n\n   HELLO HAPAX LEGOMENOM. "
-	// }
-	// elseif "Hapax" _in_ reference14
-	// {
-		// reference0 = TOUPPER(reference0)
-		// "\0\s[3]\_v[mus\sound_FLOWEY.mp3] * GOOD-BYE HAPAX LEGOMENOM. \n\n   HELLO %(reference1). "
-	// }
-	// else
-	// {
-		// reference0 = TOUPPER(reference0)
-		// "\0\s[3]\_v[mus\sound_FLOWEY.mp3]  * GOOD-BYE %(reference0). \n\n   HELLO %(reference1). "
-	// }
+	_refer0 = TOUPPER(reference0)
+	_refer1 = TOUPPER(reference1)
+	
+	if "Hapax" _in_ reference15
+	{
+		"\0\s[3]%(Flowey) * GOOD-BYE %(_refer0). \n\n   HELLO HAPAX LEGOMENOM.\_w[500]"
+	}
+	elseif "Hapax" _in_ reference14
+	{
+		"\0\s[3]%(Flowey) * GOOD-BYE HAPAX LEGOMENOM. \n\n   HELLO %(_refer1).\_w[500]"
+	}
+	else
+	{
+		"\0\s[3]%(Flowey)  * GOOD-BYE %(_refer0). \n\n   HELLO %(_refer1).\_w[500]"
+	}
 }
 
 
@@ -404,17 +544,18 @@ OnOtherGhostChanged
 
 OnOtherGhostClosed
 {
+	_refer0 = TOUPPER(reference0)
 	if "Hapax" _in_ reference7
 	{
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * GOODE-BYE HAPAX LEGOMENOM. "
+		"\0\s[3]%(Flowey) * GOODE-BYE HAPAX LEGOMENOM.\_w[500]"
 	}
 	else
 	{
-		reference0 = TOUPPER(reference0)
-		"\0\s[3]\_v[mus\sound_FLOWEY.mp3] * GOOD-BYE %(reference0). "
+		
+		"\0\s[3]%(Flowey) * GOOD-BYE %(_refer0).\_w[500]"
 	}
 }
-// "%(referenceTest)"
+// "%(refTest)"
 
 
 //--OnShellChanging
@@ -425,11 +566,11 @@ OnShellChanging
  {
 	if reference0 == "Hypothetical Shell that doesn't actually exist" //reference0 in OnShellChanging is the name of the shell you're swapping to. 
 	{
-		"\0\s[12] * %(errorMsg)\e"
+		"\0\s[12] * %(errorMsg)\_w[500]\e"
 	}
 	else //if you don't have any specific dialogue for a specific shell
 	{
-		"\0\s[3] * (It seems someone out there has made a new skin for the flower to wear.)\n\n\n\f[color255,0,0]* (Interesting.)\e"
+		"\0\s[3]%(Narrator) * It seems someone out there has made a new skin for the flower to wear.\_w[500]\n\n\n\f[color255,0,0] * Interesting.\_w[500]\e"
 	}
  }
  

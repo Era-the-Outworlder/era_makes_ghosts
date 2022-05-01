@@ -1,5 +1,5 @@
 // AYA request log
-// load time: 2022/01/07 17:52:42
+// load time: 2022/04/28 21:04:55
 
 // Loading of dictionary file
 // - D:\SSP\ghost\f_lowe_y\ghost\master\yaya_config.txt
@@ -11,9 +11,10 @@
 // - D:\SSP\ghost\f_lowe_y\ghost\master\htf_bootend.dic
 // - D:\SSP\ghost\f_lowe_y\ghost\master\htf_changelog.dic
 // - D:\SSP\ghost\f_lowe_y\ghost\master\htf_commu.dic
+// - D:\SSP\ghost\f_lowe_y\ghost\master\htf_devtools.dic
 // - D:\SSP\ghost\f_lowe_y\ghost\master\htf_drawmenu.dic
 // - D:\SSP\ghost\f_lowe_y\ghost\master\htf_etc.dic
-// - D:\SSP\ghost\f_lowe_y\ghost\master\htf_findwin.dic
+// - D:\SSP\ghost\f_lowe_y\ghost\master\htf_desktopeye.dic
 // - D:\SSP\ghost\f_lowe_y\ghost\master\htf_glitchtext.dic
 // - D:\SSP\ghost\f_lowe_y\ghost\master\htf_menu.dic
 // - D:\SSP\ghost\f_lowe_y\ghost\master\htf_mouse.dic
@@ -31,10 +32,7 @@
 
 // request
 D:\SSP\ghost\f_lowe_y\ghost\master\
-"警告：関数/イベント On_version はシステム辞書で上書きされます"
-"警告：関数/イベント On_craftman はシステム辞書で上書きされます"
-"警告：関数/イベント On_craftmanw はシステム辞書で上書きされます"
-// response (Execution time : 16[ms])
+// response (Execution time : 0[ms])
 
 // request
 GET Version SHIORI/2.6
@@ -42,7 +40,7 @@ Charset: UTF-8
 Sender: SSP
 
 
-// response (Execution time : 0[ms])
+// response (Execution time : 16[ms])
 SHIORI/3.0 400 Bad Request
 
 
@@ -58,7 +56,7 @@ Sender: SSP
 SHIORI/3.0 200 OK
 Sender: AYA
 Charset: UTF-8
-Value: Tc564-1
+Value: Tc569-4
 
 
 // request
@@ -71,5 +69,5 @@ ID: enable_log
 Reference0: 1
 
 
-// unload time: 2022/01/07 17:52:42
+// unload time: 2022/04/28 21:04:55
 

@@ -6,6 +6,3 @@ charset,UTF-8
 type,ghost
 name,f_lowe_y
 directory,f_lowe_y
-
-
-balloon.directory,undertrash

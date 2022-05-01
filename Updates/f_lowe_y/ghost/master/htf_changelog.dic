@@ -15,13 +15,14 @@ OnGhostVer
 
 OnChangeLog
 {
-	"\![set,autoscroll,disable]\_q\b2\_l[90]\n/
+	"\![set,autoscroll,disable]\_q\b6\_l[90]\n/
 	
 	--Version 2.0.0--\n\n/
 	-Add Network Update.\n/
 	-Significant Changes to Dialogues.\n/
 	-Addition of LV system and stat menu.\n/
 	-New/Modified basic functions\n/
+	-Change of dictionary names\n/
 	-Shell changes:\n/
 	---Update to new seriko definition.\n/
 	---Reorganise/reorder surfaces.\n/

@@ -7,6 +7,7 @@ charset.file, UTF-8
 charset.save, UTF-8
 charset.extension, UTF-8
 
+fncdepth,[0]
 
 //---- Dictionary Files ---------------------------------------------------------------------
 
@@ -18,9 +19,10 @@ dic, htf_anchor.dic
 dic, htf_bootend.dic
 dic, htf_changelog.dic
 dic, htf_commu.dic
+dic, htf_devtools.dic
 dic, htf_drawmenu.dic	
 dic, htf_etc.dic
-dic, htf_findwin.dic
+dic, htf_desktopeye.dic
 dic, htf_glitchtext.dic		
 dic, htf_menu.dic
 dic, htf_mouse.dic

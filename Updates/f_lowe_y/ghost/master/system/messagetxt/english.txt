@@ -1,9 +1,9 @@
 ﻿//
-// フェータルエラー文字列（英語）
+// Fatal Error String
 !!!msgf
 *
 //
-// エラー文字列（英語）
+// Error String
 !!!msge
 *error E0000 : Unknown error.
 *error E0001 : Function name is required.
@@ -109,7 +109,7 @@
 *error E0097 : Depth of the function call has reached its limit. Following execution has been aborted.
 *error E0098 : Loop count has reached its limit. Following execution has been aborted.
 //
-// ワーニング文字列（英語）
+// Warning String
 !!!msgw
 *warning W0000 : Syntax error. This line will be ignored.
 *warning W0001 : Restoration failed for the variable of this line: not parsable line.
@@ -135,16 +135,16 @@
 *warning W0021 : Empty here document found.
 *warning W0022 : Here document start sequence found.
 //
-// 注記文字列（英語）
+// Note String
 !!!msgn
 *note N0000 : Restoration of a variable value was not performed.
 *note N0001 : Invalid character code set was specified. Using the default setting of OS instead.
 //
-// その他のログ文字列（英語）
+// Other LOG Strings
 !!!msgj
 *// AYA request log\n// load time: 
 *// unload time: 
-// 欠番
+// MissingNo
 *
 //
 *// Loading of dictionary file\n

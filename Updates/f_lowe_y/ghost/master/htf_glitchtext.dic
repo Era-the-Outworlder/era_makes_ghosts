@@ -10,29 +10,67 @@
 //               ▀                                                    
 
 // THIS THING IS A MESSSSSSS. But I love it.
-
+			
+			// \![embed,OnGLITCH,happy]
+			// \![embed,OnGlitchLite,happy]
 
 // separates strings into characters, sends to glitch converter
-GLITCH 
+OnGLITCH 
 {
-
-	_text = TOLOWER(_argv[0])
+	_text = ""
+	if !_argv
+	{
+		_text = TOLOWER(reference0)
+	}
+	else
+	{
+		_text = TOLOWER(_argv[0])
+	}
 	_send = CHARSPLIT(_text)
 	_final = OnGlitchReplace(_send)
 	--
 	_final;
 }
 
-// separates strings into characters, sends to glitchLite converter
-glitchLite	
-{
+// separates strings into characters, sends to OnGlitchMidi converter
 
-	_text = TOLOWER(_argv[0])
+OnGlitchMidi	
+{
+	_text = ""
+	if reference0
+	{
+		_text = TOLOWER(reference0)
+	}
+	else
+	{
+		_text = TOLOWER(_argv[0])
+	}
+	_send = CHARSPLIT(_text)
+	_final = OnGMidiReplace(_send)
+	--
+	_final;
+}
+
+// separates strings into characters, sends to OnGlitchLite converter
+
+OnGlitchLite	
+{
+	_text = ""
+	if reference0
+	{
+		_text = TOLOWER(reference0)
+	}
+	else
+	{
+		_text = TOLOWER(_argv[0])
+	}
 	_send = CHARSPLIT(_text)
 	_final = OnGliteReplace(_send)
 	--
 	_final;
 }
+
+
 
 //USE:
 //CHARSPLIT('word') will return 'w,o,r,d'
@@ -48,6 +86,9 @@ CHARSPLIT
     _char; //display the array
 }
 
+alpha
+{"abcdefghijklmnopqrstuvwxyz"}
+
 // Replaces each character sent to it with its corrosponding glitch
 OnGlitchReplace
 {
@@ -56,36 +97,42 @@ OnGlitchReplace
 	_display = ""
 	_num = 0
 	foreach _array; _ref //Each time the loop runs, _ref will store the next value in the array, until the array ends
-	{
-		if _ref == "a"{_ref = REPLACE(_ref,'a',a)}
-		elseif _ref == "b"{_ref = REPLACE(_ref,'b',b_)}
-		elseif _ref == "c"{_ref = REPLACE(_ref,'c',c_)}
-		elseif _ref == "d"{_ref = REPLACE(_ref,'d',d_)}
-		elseif _ref == "e"{_ref = REPLACE(_ref,'e',e_)}
-		elseif _ref == "f"{_ref = REPLACE(_ref,'f',f_)}
-		elseif _ref == "g"{_ref = REPLACE(_ref,'g',g_)}
-		elseif _ref == "h"{_ref = REPLACE(_ref,'h',h_)}
-		elseif _ref == "i"{_ref = REPLACE(_ref,'i',i_)}
-		elseif _ref == "j"{_ref = REPLACE(_ref,'j',j_)}
-		elseif _ref == "k"{_ref = REPLACE(_ref,'k',k_)}
-		elseif _ref == "l"{_ref = REPLACE(_ref,'l',l_)}
-		elseif _ref == "m"{_ref = REPLACE(_ref,'m',m_)}
-		elseif _ref == "n"{_ref = REPLACE(_ref,'n',n_)}
-		elseif _ref == "o"{_ref = REPLACE(_ref,'o',o_)}
-		elseif _ref == "p"{_ref = REPLACE(_ref,'p',p_)}
-		elseif _ref == "q"{_ref = REPLACE(_ref,'q',q_)}
-		elseif _ref == "r"{_ref = REPLACE(_ref,'r',r_)}
-		elseif _ref == "s"{_ref = REPLACE(_ref,'s',s_)}
-		elseif _ref == "t"{_ref = REPLACE(_ref,'t',t_)}
-		elseif _ref == "u"{_ref = REPLACE(_ref,'u',u_)}
-		elseif _ref == "v"{_ref = REPLACE(_ref,'v',v_)}
-		elseif _ref == "w"{_ref = REPLACE(_ref,'w',w_)}
-		elseif _ref == "x"{_ref = REPLACE(_ref,'x',x_)}
-		elseif _ref == "y"{_ref = REPLACE(_ref,'y',y_)}
-		elseif _ref == "z"{_ref = REPLACE(_ref,'z',z_)}
+	{		
+		if _ref _in_ alpha
+		{
+		
+			if RAND(100) >= 29
+			{
+				
+				if RAND(100) <= 49
+				{_ref = TOUPPER(_ref)}
+				elseif RAND(100) >= 50
+				{_ref = TOLOWER(_ref)}
+				
+				--
+				
+				if RAND(100) <= 19
+				{_ref += "_"}
+				else{}
+			}
+			else
+			{
+				
+				if RAND(100) <= 9
+				{_ref = "."}
+				elseif RAND(100) >= 49
+				{_ref = "_"}
+				else
+				{_ref = "-"}
+					
+			}
+		}
+		else
+		{}
 		--
 		_display += "%(_ref)"
 		_num ++
+		
 	}
 	--
 	_display
@@ -93,37 +140,36 @@ OnGlitchReplace
 }
 
 
-//;"a̟ͦ";"b̳͑";"c̙̚";"d͉̀";"ȇ̹͉";"f̩͗̏";"g̘͕̅"
-//Letter glitch substitution
+OnGMidiReplace
+{
+	_array = IARRAY
+	_array = _argv[0]
+	_display = ""
+	_num = 0
+	foreach _array; _ref
+	{
+		if _ref _in_ alpha
+		{
+			if RAND(100) >= 49 {_ref = TOUPPER(_ref)}
+			else {_ref = TOLOWER(_ref)}
+			--
+			if RAND(100) <= 19 {_ref += "_"}
+			elseif RAND(100) <= 39 {_ref += " "}
+			elseif RAND(100) <= 59 {_ref += "-"}
+			else{}
+		}
+		else
+		{}
+		--
+		_display += "%(_ref)"
+		_num ++
+	}
+	--
+	_display
+}
 
-a_{if RAND(100)>=39{"a";"A"};else{"_";"-"}}
-b_{if RAND(100)>=39{"b";"B"};else{"_";"-"}}
-c_{if RAND(100)>=39{"c";"C"};else{"_";"-"}}
-d_{if RAND(100)>=39{"d";"D"};else{"_";"-"}}
-e_{if RAND(100)>=39{"e";"E"};else{"_";"-"}}
-f_{if RAND(100)>=39{"f";"F"};else{"_";"-"}}
-g_{if RAND(100)>=39{"g";"G"};else{"_";"-"}}
-h_{if RAND(100)>=39{"h";"H"};else{"_";"-"}}
-i_{if RAND(100)>=39{"i";"I"};else{"_";"-"}}
-j_{if RAND(100)>=39{"j";"J"};else{"_";"-"}}
-k_{if RAND(100)>=39{"k";"K"};else{"_";"-"}}
-l_{if RAND(100)>=39{"l";"L"};else{"_";"-"}}
-m_{if RAND(100)>=39{"m";"M"};else{"_";"-"}}
-n_{if RAND(100)>=39{"n";"N"};else{"_";"-"}}
-o_{if RAND(100)>=39{"o";"O"};else{"_";"-"}}
-p_{if RAND(100)>=39{"p";"P"};else{"_";"-"}}
-q_{if RAND(100)>=39{"q";"Q"};else{"_";"-"}}
-r_{if RAND(100)>=39{"r";"R"};else{"_";"-"}}
-s_{if RAND(100)>=39{"s";"S"};else{"_";"-"}}
-t_{if RAND(100)>=39{"t";"T"};else{"_";"-"}}
-u_{if RAND(100)>=39{"u";"U"};else{"_";"-"}}
-v_{if RAND(100)>=39{"v";"V"};else{"_";"-"}}
-w_{if RAND(100)>=39{"w";"W"};else{"_";"-"}}
-x_{if RAND(100)>=39{"x";"X"};else{"_";"-"}}
-y_{if RAND(100)>=39{"y";"Y"};else{"_";"-"}}
-z_{if RAND(100)>=39{"z";"Z"};else{"_";"-"}}
 
-// "randomly" turns letters upper or lowercase
+// "randomly" turns letters upper or lowercase, 15% += underscore
 OnGliteReplace 
 {
 	_array = IARRAY
@@ -132,10 +178,11 @@ OnGliteReplace
 	_num = 0
 	foreach _array; _ref
 	{
-		if RAND(99) >= 49
-		{_ref = TOUPPER(_ref)}
-		else
-		{_ref = TOLOWER(_ref)}
+		if RAND(100) >= 49 {_ref = TOUPPER(_ref)}
+		else {_ref = TOLOWER(_ref)}
+		--
+		if _ref _in_ alpha && RAND(100) <= 14 {_ref += "_"}
+		else{}
 		--
 		_display += "%(_ref)"
 		_num ++
@@ -144,6 +191,35 @@ OnGliteReplace
 	_display
 }
 
+//;"a̟ͦ";"b̳͑";"c̙̚";"d͉̀";"ȇ̹͉";"f̩͗̏";"g̘͕̅"
+//Letter glitch substitution
+
+a_{if RAND(100)>=39{"a";"A";"a_";"A_"};else{"_";"-";"."}}
+b_{if RAND(100)>=39{"b";"B";"b_";"B_"};else{"_";"-";"."}}
+c_{if RAND(100)>=39{"c";"C";"c_";"C_"};else{"_";"-";"."}}
+d_{if RAND(100)>=39{"d";"D";"d_";"D_"};else{"_";"-";"."}}
+e_{if RAND(100)>=39{"e";"E";"e_";"E_"};else{"_";"-";"."}}
+f_{if RAND(100)>=39{"f";"F";"f_";"F_"};else{"_";"-";"."}}
+g_{if RAND(100)>=39{"g";"G";"g_";"G_"};else{"_";"-";"."}}
+h_{if RAND(100)>=39{"h";"H";"h_";"H_"};else{"_";"-";"."}}
+i_{if RAND(100)>=39{"i";"I";"i_";"I_"};else{"_";"-";"."}}
+j_{if RAND(100)>=39{"j";"J";"j_";"J_"};else{"_";"-";"."}}
+k_{if RAND(100)>=39{"k";"K";"k_";"K_"};else{"_";"-";"."}}
+l_{if RAND(100)>=39{"l";"L";"l_";"L_"};else{"_";"-";"."}}
+m_{if RAND(100)>=39{"m";"M";"m_";"M_"};else{"_";"-";"."}}
+n_{if RAND(100)>=39{"n";"N";"n_";"N_"};else{"_";"-";"."}}
+o_{if RAND(100)>=39{"o";"O";"o_";"O_"};else{"_";"-";"."}}
+p_{if RAND(100)>=39{"p";"P";"p_";"P_"};else{"_";"-";"."}}
+q_{if RAND(100)>=39{"q";"Q";"q_";"Q_"};else{"_";"-";"."}}
+r_{if RAND(100)>=39{"r";"R";"r_";"R_"};else{"_";"-";"."}}
+s_{if RAND(100)>=39{"s";"S";"s_";"S_"};else{"_";"-";"."}}
+t_{if RAND(100)>=39{"t";"T";"t_";"T_"};else{"_";"-";"."}}
+u_{if RAND(100)>=39{"u";"U";"u_";"U_"};else{"_";"-";"."}}
+v_{if RAND(100)>=39{"v";"V";"v_";"V_"};else{"_";"-";"."}}
+w_{if RAND(100)>=39{"w";"W";"w_";"W_"};else{"_";"-";"."}}
+x_{if RAND(100)>=39{"x";"X";"x_";"X_"};else{"_";"-";"."}}
+y_{if RAND(100)>=39{"y";"Y";"y_";"Y_"};else{"_";"-";"."}}
+z_{if RAND(100)>=39{"z";"Z";"z_";"Z_"};else{"_";"-";"."}}
 
 // splitTest
 // {
