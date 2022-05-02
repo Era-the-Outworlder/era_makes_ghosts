@@ -73,7 +73,7 @@ OnUserConfig
 	--
 	"\f[height,14]\![*](\q[Edit,OnTeachName,menu])\f[height,19]NAME:\f[height,default]\f[color,ccffff] %(username)\f[default]\n"
 	--
-	"\f[height,14]\![*](\q[Edit,OnGetBirthday,menu])\f[height,19]PRONOUNS:\f[height,default]\n\f[color,bbffff]%(nomPro)/%(oblPro)/%(posPro)\f[default]\n"
+	"\f[height,14]\![*](\q[Edit,OnTeachPronouns,menu])\f[height,19]PRONOUNS:\f[height,default]\n\f[color,bbffff]%(nomPro)/%(oblPro)/%(posPro)\f[default]\n"
 	--
 	"\f[height,14]\![*](\q[Edit,OnGetBirthday,menu])\f[height,19]BIRTHDAY:\f[height,default]\n\f[color,aaffff]%(birthdayprint)\f[default]\n"
 	--
@@ -300,74 +300,6 @@ OnCommuSet
 	communicateratio = reference0
 	"%(sBOT)I will talk to other ghosts %(communicateratio)% of the time."
 }
-// If the user chooses to not have them speak.
-OnTalkNot
-	{
-		minutetalk = 0
- 		talksetting = "never"
-		aitalkinterval = 0
-		
-		"..."
-	}
-	
-// User decides not to change setting
-Select.TalksTill
-	{
-		"I will do as I was before, then.."
-	}
-
-
-// If the user chooses every fifteen minutes. This is the default rate set in bootend.dic.
-Select.talkFifteen
-	{
-		minutetalk = 15
- 		talksetting = "15 minutes"
-		aitalkinterval = 900
-		
- 		"15 minutes."
-	}
-	
-
-Select.talkThirty
-	{
-		minutetalk = 30
- 		talksetting = "30 minutes"
-		aitalkinterval = 1800
-		
- 		"30 minutes."
-	}
-	
-	
-OnTalkCustom
-	{
-		minutetalk = reference0
-		if minutetalk != 0
- 		{
-			talksetting = "%(minutetalk) minutes"
-			aitalkinterval = (minutetalk * 60)
-			
-			"%(minutetalk) minutes."
-		}
-		else
- 		{
-			talksetting = "never"
-			aitalkinterval = 0
-			
-			"%(minutetalk) minutes."
-		}
- 		
-	}
-
-
-OnTalkRandom
-	{
-		minutetalk = (RAND(60) + 1)
-		talksetting = "%(minutetalk) minutes"
-		aitalkinterval = (minutetalk * 60)
-		
-		"%(minutetalk) minutes."
-	}	
-	
 
 	
 OnFunctionMenu
