@@ -89,7 +89,13 @@ OnNameTeach
 	{
 		'\0\s[0]Developer, is that you?\n\n'
 		--
-		'\![*] \q[No,"script:\cOh. It is rather uncomfortable for me to call another by my creator%(Chr(39))s name. Please allow me to call you something else.\n\![*] \q[Call me...,OnTeachName]\n \n[-100]\f[align,right]\![*] \q[No.,OnKeepName,notdev,%(tempname)]"]\n \n[-100]\f[align,right]\![*] \q[Yes.,"script:It is good to see you Developer! \nPlease enter your password: \![open,passwordinput,OnDeveloperPassword]"] \n'
+		'\![*] \q[No,"script:\cOh. It is rather uncomfortable for me to call another by my creator%(CHR(39))s name. Please allow me to call you something else.\n\![*] \q[Call me...,OnTeachName]\n \n[-100]\f[align,right]\![*] \q[No.,OnKeepName,notdev,%(tempname)]"]\n \n[-100]\f[align,right]\![*] \q[Yes.,"script:It is good to see you Developer! \nPlease enter your password: \![open,passwordinput,OnDeveloperPassword]"] \n'
+	}
+	elseif reference0 == "BetaTest" 
+	{
+		'\0\s[0]Developer, is that you?\n\n'
+		--
+		'\![*] \q[No,"script:\cOh. It is rather uncomfortable for me to call another by my creator%(CHR(39))s name. Please allow me to call you something else.\n\![*] \q[Call me...,OnTeachName]\n \n[-100]\f[align,right]\![*] \q[No.,OnKeepName,notdev,%(_tempname)]"]\n \n[-100]\f[align,right]\![*] \q[Yes.,"script:It is good to see you Developer! \nPlease enter your password: \![open,passwordinput,OnDeveloperPassword]"] \n'
 	}
 	elseif _tempname == username //checks against existing username
 	{
@@ -116,7 +122,7 @@ OnDeveloperPassword
 		username = "Era"
 		"I'll set myself into debug mode-\_w[1000]"
 		--
-		eraDebug = "ON"
+		devDebug = "ON"
 		"\nWhat will your devMessage be?\![open,input,OnDevSet,,,--reference=naming]\x"
 	}
 	else
@@ -260,19 +266,19 @@ OnSetPronouns
 	
 	if firstBoot == 1
 	{
-		"\0\s[0]You have listed your pronouns as %(nomPro), %(oblPro), and %(posPro).\n\n Now I can call you by the correct pronouns.\n\n You can always change this from the User Configuration Menu.\_w[500]\_s\b[-1]\c\_s"
+		"\0\s[0]You have entered your pronouns as %(nomPro), %(oblPro), and %(posPro). \n\nNow I can call you by the correct pronouns.\n\n You can always change this from the User Configuration Menu.\_w[500]\_s\b[-1]\c\_s"
 		--
 		"\![timerraise,1000,1,OnGetBirthday]"	
 	}
 	elseif firstBoot == 2
 	{
-		"\0\s[0]You have listed your pronouns as %(nomPro), %(oblPro), and %(posPro).\n\n Now I can call you by the correct pronouns.\n\n You can always change this from the User Configuration Menu.\_w[500]\_s\b[-1]\c\_s"
+		"\0\s[0]You have entered your pronouns as %(nomPro), %(oblPro), and %(posPro). \n\nNow I can call you by the correct pronouns.\n\n You can always change this from the User Configuration Menu.\_w[500]\_s\b[-1]\c\_s"
 		--
 		"\![timerraise,1000,1,OnGetBirthday]"	
 	}
 	else
 	{
-		"\0\s[0]You have listed your pronouns as %(nomPro), %(oblPro), and %(posPro).\n\n Now I can call you by the correct pronouns.\n\n You can always change this from the User Configuration Menu.\_w[500]\_s\b[-1]\c\_s"
+		"\0\s[0]You have entered your pronouns as %(nomPro), %(oblPro), and %(posPro). \n\nNow I can call you by the correct pronouns.\n\n You can always change this from the User Configuration Menu.\_w[500]\_s\b[-1]\c\_s"
 	}
 
 }
@@ -398,13 +404,13 @@ OnInputBirthdate
 			else
 			{
 				_error = "The distant future "
-				"\![set,autoscroll,disable]The Developer considered the likelihood of anyone continuing to use this software into the 21st century or beyond to be highly unlikely. They would like to apologise to any time-travellers, historians or collectors of ancient technology this may inconvinence.\x"
+				"\![set,autoscroll,disable]The Developer considered the likelihood of anyone continuing to use this software into the 21st century or beyond to be highly unlikely. \nThey would like to apologise to any time-travellers, historians or collectors of ancient technology this may inconvinence.\x"
 			}
 		}	
 		else // Year is 3000+
 		{
 			_error = "The far-flung future "
-			"\![set,autoscroll,disable]The Developer considered the likelihood of anyone continuing to use this software into the 30th century or beyond to be unlikely to the extreme. They would like to apologise to any time-travellers, historians or collectors of ancient technology this may inconvinence.\x"
+			"\![set,autoscroll,disable]The Developer considered the likelihood of anyone continuing to use this software into the 30th century or beyond to be unlikely to the extreme. \nThey would like to apologise to any time-travellers, historians or collectors of ancient technology this may inconvinence.\x"
 		}
 		--		
 		if _num[2] == 0 // Year is XX0X
@@ -487,11 +493,11 @@ OnInputBirthdate
 	{
 		"\_w[500]\_s\b[-1]\c\_s"
 		--
-		"I'll remember that, %(username).\![timerraise,1000,1,OnFBContinue]"
+		"%(birthdayprint) of %(bornyearprint). \nI'll remember that, %(username).\![timerraise,1000,1,OnFBContinue]"
 	}
 	else
 	{
-		"I'll remember that, %(username).\e"
+		"%(birthdayprint) of %(bornyearprint). \nI'll remember that, %(username).\e"
 	}
 }
 
@@ -528,11 +534,11 @@ birthchecked
 		{
 			if bornday == 1
 			{
-				"It is your birthday today.\n The first day of a new year.\_w[1500]"
+				"It is your birthday today. \nThe first day of a new year.\_w[1500]"
 			}
 			elseif bornday == 14
 			{
-				"It is your birthday today.\n The first day of a new year, by some accounts. Make it a good one, %(username)\_w[1500]"
+				"It is your birthday today. \nThe first day of a new year, by some accounts. Make it a good one, %(username)\_w[1500]"
 			}			
 			else
 			{
@@ -661,10 +667,10 @@ birthchecked
 		{
 			if bornday == 13
 			{
-				if username == "Era" && eraDebug == "ON"
+				if username == "Era" && devDebug == "ON"
 				{"All set, Developer! Happy testing!"}
 				else
-				{"Oh, you share a birthday with my Developer! What a happy coincidence!"}
+				{"Oh, you share a birthday with my Developer! What a happy coincidence!\n Happy birthday and best wishes \f[color,#0099cc]from both of us.\f[color,default]"}
 			}
 			else
 			{
@@ -779,7 +785,10 @@ birthchecked
 		{
 			if bornday == 13
 			{
-				"Oh, you share a birthday with my Developer! What a happy coincidence!"
+				if username == "Era" && devDebug == "ON"
+				{"All set, Developer! Happy testing!"}
+				else
+				{"Oh, you share a birthday with my Developer! What a happy coincidence!"}
 			}
 			else
 			{

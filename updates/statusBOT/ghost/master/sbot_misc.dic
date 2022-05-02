@@ -83,48 +83,7 @@ SANITISE
 	"%(_clean)"
 }
 
-// ---- OnOtherGhostTalk ----
-// Activates after another ghost completes a script. 
-// ref0 = Ghost name, ref1 = body name, ref 2 = ???, ref3 = called function, ref4 = script, ref5 = other arguments
 
-
-OnOtherGhostTalk
-{
-	case reference2
-	{
-	when "communicate"
-	{
-		if "statusBOT" _in_ reference4 || "statusBOT" _in_ reference5 {}
-		else {}
-	}
-	when "break" {}; when "notranslate" {}; when "owned" {}; when "remote" {}
-	when "sstp-send" {}; when "plugin-script" {}; when "plugin-event" {}
-	others
-	{
-		// "%(refTest)\x"
-		--
-		if reference3 == "OnSurfaceRestore" {}
-		else
-		{
-			reference4 = REPLACE(reference4, "\_v[", "\![sound,stop,")
-			reference4 = REPLACE(reference4, "\e", "")
-			_spokenWord = TOLOWER(reference4)
-			
-			if "statusbot" _in_ _spokenWord
-			{
-				// "%(_spokenWord)"
-				"Is someone talking about me?"
-			}
-			else
-			{
-				// "%(refTest)"
-			}
-			--
-			// "\e"
-		}
-	}
-	}
-}
 
 
 
@@ -220,7 +179,7 @@ OnRunCPUID
 	--
 	"\f[color,#FFFF00]Ukagaka:\f[default] \n%(basewarename): %(bwVersionEX)"
 	--
-	if eraDebug == "ON"
+	if devDebug == "ON"
 	{"\n%property[baseware.version]"}
 	--
 	"\x\e"
@@ -876,7 +835,7 @@ OnUpdatedataCreated
  
 OnNarCreating
  {
-	"Creative Nanika Archive\_w[500]\e"
+	"Creating Nanika Archive\_w[500]\e"
  }
 
  //---- OnNarCreated ------------
@@ -924,7 +883,7 @@ OnSNTPCompare
 	}
  	else //if your clock doesn't match
 	{
- 		"Your computer's clock does not match the server time.\n Should I correct it?\![*] \q[Yes,OnSNTPEXECUTE]\n \n[-100]\f[align,right]\![*] \q[No,OnSNTPCANCEL]"
+ 		"Your computer's clock does not match the server time. \nShould I correct it?\![*] \q[Yes,OnSNTPEXECUTE]\n \n[-100]\f[align,right]\![*] \q[No,OnSNTPCANCEL]"
 	}
 }
 

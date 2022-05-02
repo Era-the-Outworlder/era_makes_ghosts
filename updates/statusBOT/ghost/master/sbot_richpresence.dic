@@ -17,7 +17,7 @@ OnDRPMenu
 {
 	"\0\b2Discord Rich Presence\n\n"
 	--
-	'\![*] \q[Change Status,"script:\![open,inputbox,OnDRPSet]"]\n\n[half]'
+	'\![*] \q[Change Status,OnDRPSelect]\n\n[half]'
 	--
 	"\![*] \q[Change DevStatus,OnDevStatMenu]\n\n[half]"
 	--
@@ -47,7 +47,10 @@ OnDRPMenu
 }	
 
 // ---- Setting Status aka CustomDetail ----
-
+OnDRPSelect
+{
+	"\n\nEnter your desired message:\![open,inputbox,OnDRPSet]\x"
+}
 OnDRPSet
 {
 	drpstatus = SANITISE(reference0)

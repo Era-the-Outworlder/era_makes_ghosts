@@ -69,7 +69,7 @@ OnFBStart
 		--
 		"\0\s[0]\_w[1000]%(sbot)Hello, I am statusBOT.\n"
 		--
-		"Before we get started, I need to know a few things about my User.\_w[1000]\_s\b[-1]\c\_s"
+		"Before we get started, I need to know a few things about my User.\_w[500]\_s\b[-1]\c\_s"
 		--		
 		"\![timerraise,1000,1,OnTeachName]"
  	}
@@ -116,11 +116,6 @@ GetDaySlot
 
 OnBoot
  {
-	drpstatus = ""
-	devstate = "NONE"
-	moodImageKey = "base_img"
-	moodImageText = "era-the-outworlder.github.io/era_makes_ghosts"
-	--
 	OnNotifyUserInfo
 	lastTalk = "" 
 	hourlyArray = IARRAY
@@ -133,7 +128,7 @@ OnBoot
 	
 	//turns on detection of other ghosts' speech
 	//Neutral pose.
- 	"%(pwrON)\![set,otherghosttalk,true]\0\s[0]" 
+ 	"%(pwrON)\![set,otherghosttalk,true]\0\s[0]"
 	--
 	
 	if dayslot == userbirthday 
@@ -250,10 +245,10 @@ normalboottalk
 		}
 	}
 	--
-	if username =="Era"
+	if devDebug == "ON"
 	{"\![timerraise,2000,1,OnDevStatMenu]"}
 	--
-	"\![timerraise,2000,1,OnDiscordPluginCustom]"
+	"\![timerraise,2000,1,OnDRPSelect]"
 }
 
 OnIsMorNight
@@ -269,10 +264,10 @@ OnIsMorNight
 		"\cWell I hope you are getting enough rest, %USER."
 	}
 	--
-	if username == "Era"
+	if devDebug == "ON"
 	{"\![timerraise,2000,1,OnDevStatMenu]"}
 	--
-	"\![timerraise,2000,1,OnDiscordPluginCustom]"
+	"\![timerraise,2000,1,OnDRPSelect]"
 }
 
 //----OnClose

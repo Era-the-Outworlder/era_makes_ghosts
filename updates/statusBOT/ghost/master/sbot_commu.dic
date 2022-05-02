@@ -154,7 +154,7 @@ ReplyToGhost
 			{	
 				"\0%(bweep)\f[height,20]\f[name,Wingdings]Ah, is this the correct font?\f[default]\e"
 				
-				"\0%(bweep)\f[height,20]\f[name,Webdings]Ah, is this the correct font?\n\n All these dingbat fonts look the same to me...\f[default]\e"
+				"\0%(bweep)\f[height,20]\f[name,Webdings]Ah, is this the correct font? \n\nAll these dingbat fonts look the same to me...\f[default]\e"
 
 				// Save for later I guess?
 				// "\0%(bweep)\f[height,20]\f[name,ITC Zapf Dingbats]Ah, is this the correct font?\n\n All thise dingbat fonts look the same to me...\f[default]\e"
@@ -176,8 +176,53 @@ ReplyToGhost
 	
 }
 
+// ---- OnOtherGhostTalk ----
+// Activates after another ghost completes a script. 
+// ref0 = Ghost name, ref1 = body name, ref 2 = ???, ref3 = called function, ref4 = script, ref5 = other arguments
+// THis particular implementation is very experimental, please excuse.
+
+
+OnOtherGhostTalk
+{
+	case reference2
+	{
+	when "communicate"
+	{
+		if "statusBOT" _in_ reference4 || "statusBOT" _in_ reference5 {}
+		else {}
+	}
+	when "break" {}; when "notranslate" {}; when "owned" {}; when "remote" {}
+	when "sstp-send" {}; when "plugin-script" {}; when "plugin-event" {}
+	others
+	{
+		// "%(refTest)\x"
+		--
+		if reference3 == "OnSurfaceRestore" {}
+		else
+		{
+			reference4 = REPLACE(reference4, "\_v[", "\![sound,stop,")
+			reference4 = REPLACE(reference4, "\e", "")
+			_spokenWord = TOLOWER(reference4)
+			
+			if "statusbot" _in_ _spokenWord
+			{
+				// "%(_spokenWord)"
+				"Is someone talking about me?"
+			}
+			else
+			{
+				// "%(refTest)"
+			}
+			--
+			// "\e"
+		}
+	}
+	}
+}
+
+
 // ----ReplyToUser----
-// New experimental communication feature!
+// New experimental communication feature! DOES NOTHING!
 
 ReplyToUser
 {

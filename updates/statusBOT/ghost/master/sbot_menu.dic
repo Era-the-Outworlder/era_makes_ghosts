@@ -43,7 +43,7 @@ OnMenuRun
 	{
 		""
 	}
-	elseif eraDebug == "ON"
+	elseif devDebug == "ON"
 	{
 		"\![*] \q[Test variable,OnTestVariable]\n"
 		--
@@ -51,7 +51,7 @@ OnMenuRun
 	}
 	else
 	{
-		"\![*] \q[Close Menu,CANCEL]\e"
+		"\n\![*] \q[Close Menu,CANCEL]\e"
 	}
 	
 }
@@ -83,11 +83,11 @@ OnUserConfig
 	--
  	"\![*] \q[Close,CANCEL]"
 	--
-	if username == "Era" 
+	if username == "Era" || username == "BetaTest"
 	{
 		"\nSet Debug? "
 		--
-		if eraDebug == "ON"
+		if devDebug == "ON"
 		{
 			"\f[color,#0099cc]\![*] \q[ON,eDBon] \f[color,default]--- \![*] \q[OFF,eDBoff] \f[align,left]"
 		}
@@ -154,13 +154,13 @@ OnConfigMenu
 // Private Debug Mode, nothing interesting here
 Select.eDBon
 {
-	eraDebug = "ON"
+	devDebug = "ON"
 	OnUserConfig
 }
 
 Select.eDBoff
 {
-	eraDebug = "OFF"
+	devDebug = "OFF"
 	OnUserConfig
 }
 
@@ -311,7 +311,7 @@ OnFunctionMenu
 	\![*] \q[View Ghost Changelog,OnChangeLog,menu]\n/
 	\![*] \q[Main Menu,OnMenuRun]\n"
 	--
-	if username == "Era" || username == "BugTest"
+	if devDebug == "ON"
 	{
 		"\f[align,center]\![*] \q[Test variable,OnTestVariable] \![*]"
 	}

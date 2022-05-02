@@ -11,4 +11,6 @@ ghost/master/sfx/raw_audio/,nonar,noupdate
 shell/master/profile/,nonar,noupdate
 shell/master/DRP_images/,nonar,noupdate
 
-crt_heart.nar/,noupdate
+crt_heart/,noupdate
+crt_heart/raws/,nonar,noupdate
+crt_heart/profile/,nonar,noupdate
