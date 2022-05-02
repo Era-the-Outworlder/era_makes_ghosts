@@ -44,9 +44,9 @@ menu.foreground.font.color.b,255
 
 //Menu Greyed Out Font Color
 
-menu.disable.font.color.r,222
-menu.disable.font.color.g,222
-menu.disable.font.color.b,222
+menu.disable.font.color.r,100
+menu.disable.font.color.g,100
+menu.disable.font.color.b,100
 
 
 //Menu Separate Color
