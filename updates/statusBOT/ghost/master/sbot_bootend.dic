@@ -54,7 +54,7 @@ OnFirstBoot
 	moodImageText = "era-the-outworlder.github.io/era_makes_ghosts"
 
 	--
-	"\t\0%(pwrON)\![set,otherghosttalk,true]\![set,sticky-window,1,0]"
+	"\t\0\s[0]%(pwrON)\![set,otherghosttalk,true]\![set,sticky-window,1,0]"
 	--
 	"This UKAGAKA uses audio to enhance certain events, as well as to indicate by sound that the ghost is talking. As not all users may desire this feature, a Silent Mode has been included, which prevents the ghost from playing any audio files.\x\c\n\n\_q\f[align,center]This setting can always be changed from the ghost's menu.\n\n\f[align,center]\![*] \q[Silent Mode On,OnFBStart,%(reference0),ON]\n/
 	\![*] \q[Silent Mode Off,OnFBStart,%(reference0),OFF]"

@@ -7,7 +7,7 @@ file,ghost/master/saori_cpuid.dlld13370aee8e579fe2517d789dba7c45esize=225280d
 file,ghost/master/sbot.icoc8967946d1e1d404cff93c227ac98dd2size=318date=2022-03-07T20:38:07
 file,ghost/master/sbot_aitalk.dic420ec326660dd39e499270c58c31460csize=8213date=2022-04-30T22:01:16
 file,ghost/master/sbot_anchor.dic0158df1473d6823d28fc45848c70b2a2size=2241date=2022-03-06T20:33:38
-file,ghost/master/sbot_bootend.dicb0fe44f74f88ea909bfc2f72aee045e8size=13211date=2022-05-02T00:35:40
+file,ghost/master/sbot_bootend.dic53fe5410eae5ab467cf7729d121bb57asize=13216date=2022-05-02T00:43:41
 file,ghost/master/sbot_changelog.dicf88cf5abcc5e3e2ea9f828b8d50728ffsize=895date=2022-03-06T23:44:38
 file,ghost/master/sbot_commu.dic092a78c7ecdb516a53aef4fdc1df85cbsize=6000date=2022-05-01T20:12:33
 file,ghost/master/sbot_devtools.dicdc5ac955b26c4cf4c53eb81f1a4084a0size=5903date=2022-05-02T00:35:40
