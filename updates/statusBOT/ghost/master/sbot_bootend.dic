@@ -14,8 +14,9 @@
 //~~~~Runs after new installation of ghost, only if ghost was installed from .nar file. Also declares and initialises certain variables
 
 
-OnfirstBoot
+OnFirstBoot
 {
+	
 	OnNotifyUserInfo
 	--
 	On_basewareversion

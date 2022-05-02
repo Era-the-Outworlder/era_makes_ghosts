@@ -39,7 +39,7 @@ OnTestVariable
 	--
 	"\![*] \q[Set commRatio,setRATE]\n"
 	--
-	"\![*] \q[Test OnfirstBoot?,newBoot]\n"
+	"\![*] \q[Test OnFirstBoot?,newBoot]\n"
 	--
 	"\![*] \q[Test Display?,OnDisplayTestMenu]\n"
 	--
