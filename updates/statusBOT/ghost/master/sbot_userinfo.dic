@@ -481,7 +481,6 @@ OnInputBirthdate
 	{
 		bornday = _tempday
 		borndayprint = Printday
-		userbirthday = "%(bornmonth)month %(bornday)day"
 		birthdayprint = "%(bornmonthprint) %(borndayprint)"
 		
 	}

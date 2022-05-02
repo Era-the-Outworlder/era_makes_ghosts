@@ -8,7 +8,7 @@ file,ghost/master/saori_cpuid.dlld13370aee8e579fe2517d789dba7c45esize=225280d
 file,ghost/master/sbot.icoc8967946d1e1d404cff93c227ac98dd2size=318date=2022-03-07T20:38:07
 file,ghost/master/sbot_aitalk.dic420ec326660dd39e499270c58c31460csize=8213date=2022-04-30T22:01:16
 file,ghost/master/sbot_anchor.dic0158df1473d6823d28fc45848c70b2a2size=2241date=2022-03-06T20:33:38
-file,ghost/master/sbot_bootend.dic40cd7dbccf033994c53bb3de880003b4size=13125date=2022-05-01T18:05:09
+file,ghost/master/sbot_bootend.dic7c1813cdc5caac3cf4473a611173eef0size=13001date=2022-05-01T18:25:13
 file,ghost/master/sbot_changelog.dicf88cf5abcc5e3e2ea9f828b8d50728ffsize=895date=2022-03-06T23:44:38
 file,ghost/master/sbot_commu.dic51ffb4dfb44651a8b0ee7ed47a8031dbsize=5804date=2022-05-01T18:05:09
 file,ghost/master/sbot_devtools.dic2d8e59e79e947cd3f8dcffee042a8a46size=5903date=2022-04-30T20:25:23
@@ -19,7 +19,7 @@ file,ghost/master/sbot_min.icoa8347a4c9c696a0142cabc097814e31dsize=318date=20
 file,ghost/master/sbot_misc.dic811261555f89126c383e3497c0481895size=26836date=2022-05-01T18:08:46
 file,ghost/master/sbot_mouse.dic5c9753b52326cbd89e0e2cc9ddda6935size=4644date=2022-03-29T18:39:52
 file,ghost/master/sbot_richpresence.dic14cffd648e8835f825828ad50c775fadsize=9618date=2022-05-01T17:46:41
-file,ghost/master/sbot_userinfo.dica68738b5de3e41ec5ad221f0dd4f97basize=21360date=2022-05-01T18:07:50
+file,ghost/master/sbot_userinfo.dicbcf2e345647cdc15dedc47acfffaa7a4size=21308date=2022-05-01T18:25:17
 file,ghost/master/sbot_word.dic7a499e26a72adf6e376de259b4762094size=3121date=2022-03-28T18:30:43
 file,ghost/master/sfx/beeboop.mp308d54e3b8df4d1cc1552b90908ccd95asize=9188date=2022-03-28T00:24:25
 file,ghost/master/sfx/beepe.mp3660cd81cc212adb7577eb91841e4d7c5size=4910date=2022-03-28T00:24:45

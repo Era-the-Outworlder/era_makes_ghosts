@@ -39,7 +39,6 @@ OnfirstBoot
 	verBalete = "ON" //DOES start with recycle bin confirmation on
 	// A couple of flag arrays
 	hourlyArray = IARRAY
-	agreedToConsequences = IARRAY
 	//The following are global variables for ghost interactions.
 	gazeTalk = 0
 	//The following are global variables for user interactions.
@@ -100,15 +99,6 @@ OnFBContinue
 
 
 
-
-
-
-GetDaySlot
-{
-	"%(month)month %(day)day"
-}
-
-
 //-----------------------Normal Booting----------------------------
 
 
@@ -123,15 +113,13 @@ OnBoot
 	passhour = 0
 	passmin = 0
 	passsec = 0
-	dayslot = GetDaySlot
-	timeslot = GetTimeSlot
 	
 	//turns on detection of other ghosts' speech
 	//Neutral pose.
  	"%(pwrON)\![set,otherghosttalk,true]\0\s[0]"
 	--
 	
-	if dayslot == userbirthday 
+	if bornmonth == month && bornday == day
 	{
 				"%(sbot)It is %(bornmonthprint) %(borndayprint).\_w[500]\nHappy birthday, %(username)." 
 				--
