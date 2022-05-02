@@ -32,6 +32,7 @@ OnfirstBoot
 	deleteshitai = "OFF" //Sets whether or not the user can uninstall the ghost to "OFF".
 	username = "" //This sets a temporary name for the user.
 	birthdayprint = "" //A temporary value for the user's birthday.
+	devDebug = "OFF"
 	//wisott
 	installinfo = ("%(year)","%(month)","%(day)","%(hour)","%(minute)","%(second)","%(OnGhostVer)")
 	// Custom options
