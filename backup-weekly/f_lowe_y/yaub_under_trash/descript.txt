@@ -13,7 +13,7 @@ craftman,Era the Outworlder
 craftmanw,Era the Outworlder
 craftmanurl,https://era-the-outworlder.github.io/era_makes_ghosts/
 
-homeurl,https://github.com/Era-the-Outworlder/era_makes_ghosts/tree/main/Updates/yaub_under_trash
+homeurl,https://github.com/Era-the-Outworlder/era_makes_ghosts/tree/main/updates/yaub_under_trash
 
 clickwaitmarker.filename,clickwaitmarker
 clickwaitmarker.x,-130
