@@ -69,7 +69,7 @@ OnLastTalk
 
 OnUserConfig
 {
-	"\0\b[2]\![set,autoscroll,disable]\_q" 
+	"%(sbot)\0\b[2]\![set,autoscroll,disable]\_q" 
 	--
 	"\f[height,14]\![*](\q[Edit,OnTeachName,menu])\f[height,19]NAME:\f[height,default]\f[color,ccffff] %(username)\f[default]\n"
 	--
@@ -104,12 +104,12 @@ OnUserConfig
 // Allows user to change various ghost settings
 OnConfigMenu
 {
-	"\0\b[2]\![set,autoscroll,disable]\_q" 
+	"%(sbot)\0\b[2]\![set,autoscroll,disable]\_q" 
 	--
-	"\f[height,15]\![*]\q[(Edit),OnSetTalk] \f[height,default]TALK RATE: \f[height,19]%(talksetting)\f[height,default]\n"
+	"\![*]\q[TALK RATE:,OnSetTalk] %(talksetting) \f[size,15]Commu:%(communicateratio)%\f[default]\n\n[half]"
 	--
 	
-	"Enable Silent Mode?\n "
+	" Enable Silent Mode?\n "
 	--
 	if silentMode == "ON"
 	{
@@ -211,22 +211,95 @@ Select.deleteoff
 
 OnSetTalk
 {
-	"\b2\0"
+	"%(sbot)\b2\0"
 	--
-	"I do not have much to say, but I can, if you want.\nHow often would you like me to talk?"
+	"I do not have much to say, but I can, if you want.\nHow often would you like me to talk?\_w[500]"
 	--
-	
-	"\0\n\n[half]/
-	\![*] \q[ Don't Talk,OnTalkNot]\n/
-	\![*] \q[ Every 15 minutes,talkFifteen]\n/
-	\![*] \q[ Every 30 minutes,talkThirty]\n"
+	"\0\c\n/
+	\![*] \q[ Don't Talk,OnTalkSet,never]\n/
+	\![*] \q[ Every 15 minutes,OnTalkSet,fifteen]\n/
+	\![*] \q[ Every 30 minutes,OnTalkSet,thirty]\n"
 	--
-	'\![*] \q[ Custom Time,"script:\![open,sliderinput,OnTalkCustom,,%(minutetalk),0,60]"]\n'
+	'\![*] \q[ Custom Time,"script:\![open,sliderinput,OnTalkSet,,%(minutetalk),0,60]"]\n'
 	--
-	"\![*] \q[ Random Time,OnTalkRandom]\n\n[half]/
-	\![*] \q[ Don't change,TalksTill]"
+	"\![*] \q[ Random Time,OnTalkSet,random]\n\n[half]/
+	\![*] \q[ Don't change,OnTalkSet,stay]"
 }
 
+OnTalkSet
+{
+	"I will talk"
+	--
+	case reference0
+	{
+		when "never"
+		{
+			minutetalk = 0
+			talksetting = "never"
+			aitalkinterval = 0
+			
+			"... Never, actually."
+		}
+		when "fifteen"
+		{
+			minutetalk = 15
+			talksetting = "15 minutes"
+			aitalkinterval = 900
+			
+			" every 15 minutes."
+		}
+		when "thirty"
+		{
+			minutetalk = 30
+			talksetting = "30 minutes"
+			aitalkinterval = 1800
+			
+			" every 30 minutes."
+		}
+		when "random"
+		{
+			minutetalk = (RAND(60) + 1)
+			talksetting = "%(minutetalk) minutes"
+			aitalkinterval = (minutetalk * 60)
+			
+			" every %(minutetalk) minutes."
+		}
+		when "stay"
+		{
+			"I will do as I was before, then.."
+		}
+		others
+		{
+			minutetalk = reference0
+			if minutetalk != 0
+			{
+				talksetting = "%(minutetalk) minutes"
+				aitalkinterval = (minutetalk * 60)
+				
+				" every %(minutetalk) minutes."
+			}
+			else
+			{
+				talksetting = "never"
+				aitalkinterval = 0
+				
+				"... Never, actually. Strange..."
+			}
+		}
+	}
+	--
+	"\n\nWould you like me to try to talk to other ghosts, and if so what percentage of my speech?\n"
+	--
+	"\f[align,center]\q[No,OnCommuSet,0] ------ "
+	--
+	'\q[Yes,"script:\![open,sliderinput,OnCommuSet,,%(communicateratio),0,100]"]'
+}
+
+OnCommuSet
+{
+	communicateratio = reference0
+	"%(sBOT)I will talk to other ghosts %(communicateratio)% of the time."
+}
 // If the user chooses to not have them speak.
 OnTalkNot
 	{
@@ -300,7 +373,7 @@ OnTalkRandom
 OnFunctionMenu
 {
 
-	"\0\b2Listing Functions:\n\n[half]"
+	"%(sbot)\0\b2Listing Functions:\n\n[half]"
 	
 	--
 	"\![*] \q[Open Calendar,CALENDAR]\n/
@@ -324,19 +397,19 @@ OnFunctionMenu
 // If the user selects cancel in a menu.
 Select.CANCEL
 {
-	"Closing Menu"
+	"%(sbot)Closing Menu...\e"
 }
 
 //When the user clicks Open Calender.
 Select.CALENDAR
 {
-	"Opening Calendar.\![open,calendar]"
+	"%(sbot)Opening Calendar.\![open,calendar]"
 }
 
 //When the user chooses SSP preferences.
 Select.sspconfig
 {
-	"Opening the SSP preferences menu.\![open,configurationdialog]"
+	"%(sbot)Opening the SSP preferences menu.\![open,configurationdialog]"
 }
 	
 //This is when the user chooses to check their email. The rest of this function plays out in etc.dic.
@@ -352,5 +425,5 @@ Select.MailCheck
 
 OnChoiceTimeout
  {
-	"Hm."
+	"\n\n\n... \n\n\f[size,13]\f[align,center]maybe %(nomPro) forgot..?\f[default]\e"
  }

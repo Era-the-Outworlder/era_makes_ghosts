@@ -15,7 +15,7 @@ OnGhostCalled
 
 bootText
 {
-	"\0\s0\_qAn ERROR occurred. \nBooting in Emergency Mode. \nContact \_a[bugmail]bugreport@outworlderaffairs.com\_a \x"
+	"\0\s0\_qAn ERROR occurred. \nBooting in Emergency Mode. \nContact \_a[bugmail]bugreport@outworlderaffairs.com\_a to report bugs. \nClick balloon to see error message(s).\x"
 }
 
 OnAnchorSelectEx

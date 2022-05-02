@@ -61,21 +61,27 @@ sakura.seriko.alignmenttodesktop,free
 
 sakura.seriko.defaultsurface, 0
 
-// sakura.defaultx,50
-// sakura.defaulty,-457
+// sakura.defaultx,0
+// sakura.defaulty,0
 sakura.defaultleft,200
-// sakura.defaulttop,600
+// sakura.defaulttop,0
 
 // ---- Kero ----
 kero.seriko.alignmenttodesktop, free
 
 kero.seriko.defaultsurface,10
 
+// kero.defaultx,0
+// kero.defaulty,0
+kero.defaultleft,200
+// kero.defaulttop,0
 
 
 // ---- Balloon ----
 // balloon.defaultsurface,0
 // sakura.balloon.defaultsurface,0
+
+
 
 balloon.dontmove,false
 balloon,CRT Heart

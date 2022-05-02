@@ -156,26 +156,26 @@ OnMouseWheel
 	}
 }
 
-
+/* 
 // ----OnMouseDragStart----
 // When dragging of ghost starts
 
-// OnMouseDragStart
-// {
-	// if !talkCheck
-	// {"\_v[mus\beep.wav]"}
-// }
+OnMouseDragStart
+{
+	if !talkCheck
+	{"\_v[sfx\bweep.mp3]"}
+}
 
 
 // ----OnMouseDragEnd----
 // When dragging of ghost ends.
 
-// OnMouseDragEnd
-// {
-	// if !talkCheck
-	// {"\_v[mus\boop.wav]"}
-// }
-
+OnMouseDragEnd
+{
+	if !talkCheck
+	{"\_v[sfx\bwoop.mp3]"}
+}
+*/
 
 OnMouseDownEx
 {
@@ -184,17 +184,17 @@ OnMouseDownEx
 	when "middle"
 	{
 		// "\s[0]\i[0]"
-		"Mouse Wheel/Middle"
+		"%(sbot)How strange..."
 	}
 	when "xbutton1"
 	{
 		// "\s[0]"
-		"Extended Button 1"
+		"%(sbot)What are you doing?"
 	}
 	when "xbutton2"
 	{
 		// "\s[0]"
-		"Extended Button 2"
+		"%(sbot)Hmmm..."
 	}
 	}
 }

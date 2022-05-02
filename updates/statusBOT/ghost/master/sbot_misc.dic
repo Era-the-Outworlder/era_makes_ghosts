@@ -157,7 +157,7 @@ OnRunCPUID
 	
 	"\0\b[2]\_q\![set,autoscroll,disable]"
 	--
-	"\f[color,#FFFF00]OS:\f[default] %(_os_name) v.%(_os_version_int) \n\f[color,#FFFF00]Build #:\f[default]%(_os_build) \n\n[half]"
+	// "\f[color,#FFFF00]OS:\f[default] %(_os_name) v.%(_os_version_int) \n\f[color,#FFFF00]Build #:\f[default]%(_os_build) \n\n[half]"
 	--
 	"\f[color,#FFFF00]CPU:\f[default] %(_cpu_name) \n\f[color,#FFFF00]Clock Rate:\f[default] %(_cpu_clockex)MHz\n\n[half]"
 	--
@@ -206,12 +206,12 @@ OnRecycleStart
 	}
 	elseif _binNum == 1 //If the recycle bin has 1 item
 	{
-		" There is %(_binNum) item, using %(_binDisplay)%(_type) of space. \_w[1000]\n/
+		"%(sbot)There is %(_binNum) item, using %(_binDisplay)%(_type) of space. \_w[1000]\n/
 		 \f[align,center]Proceed?\n	\![*] \f[align,left]\q[Yes,RecycleEmpty]\n \n[-100]\f[align,center]--------\n \n[-100]\f[align,right] \![*] \q[No,RecycleCancel]\n\n[half]\f[align,left]"
 	}
 	elseif _binNum >= 2 //If the recycle bin has anything in it.
 	{
-		"\0 There are %(_binNum) items, using %(_binDisplay)%(_type) of space. \_w[1000]\n/
+		"\0%(sbot)There are %(_binNum) items, using %(_binDisplay)%(_type) of space. \_w[1000]\n/
 		 Proceed?\n/
 		\![*] \q[Yes,RecycleEmpty] \n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \![*] \q[No,RecycleCancel]\n\n[half]\f[align,left]"
 	}
@@ -220,12 +220,12 @@ OnRecycleStart
 
 Select.RecycleEmpty
 {
-	"\Emptying Bin... \_w[1000]\_w[1000]\![raise,OnRecycleBinEmptied]"	
+	"%(sbot)Emptying Bin... \_w[1000]\_w[1000]\![raise,OnRecycleBinEmptied]"	
 }
 
 Select.RecycleCancel
 {	
-	"Ok. I will just leave it alone then.\e"
+	"%(sbot)Ok. I will just leave it alone then.\e"
 }
 
 OnRecycleBinEmptied
@@ -303,7 +303,7 @@ Select.SetWallpaper_Cancel
  
 OnInstallBegin
  {
-	" Contains an install.txt file. Installing.\e"
+	"Contains an install.txt file. Installing.\e"
  }
 
  //---- OnInstallComplete ----
@@ -333,7 +333,7 @@ OnInstallComplete
  	}
 	elseif reference0 == "balloon" //if the type of file is a balloon
  	{
-		"Balloon \_w[500] Name: %(reference1).\e"
+		"New Balloon.\_w[500] Name: %(reference1).\e"
 		//Reference1 here would be the name of the balloon. Replace as needed.
  	}
 	elseif reference0 == "plugin" //if the type of file is a plug-in, like a saori of some kind.
@@ -348,7 +348,7 @@ OnInstallComplete
 
 OnInstallFailure
 {
-	"Failed. Unable to install. \n\n[half]"
+	"%(sbot)Failed. Unable to install. \n\n[half]"
 	
 	--
 	if reference0 == "unsupported" //This checks if the reason it failed is because it was unsupported.
@@ -367,7 +367,7 @@ OnInstallFailure
  
 OnInstallRefuse
  {
-	"I ca not install this, but maybe %(reference0) can.\_w[500]"
+	"%(sbot)I cannot install this, but maybe %(reference0) can.\_w[500]"
 	
 	//reference0 in this function refers to the ghost this file is associated with, probably the name of the ghost listed in its install.txt file. You would see this if you dropped a shell made for a different ghost on your current ghost, for example.
  }
@@ -425,6 +425,8 @@ OnOtherGhostVanished
 	"%(reference0) Has been uninstalled.\_w[500]"
 }
 
+
+// I have not gotten this working yet.
 OnConfigurationDialogHelp
 {
 	case reference0
@@ -476,8 +478,7 @@ OnConfigurationDialogHelp
  
 OnBIFFBegin
  {
-	"\0\s[0]Check_ng... ma_l. \_w[500]\e"
-	"\0\s[0](f_lowe_y is checking your email.) \_w[500]\e"
+	"\0%(sbot)I'll check your email now.\_w[500]\e"
  }
 
  
@@ -488,29 +489,24 @@ OnBIFFComplete
 {
 	if reference0 == 0 //If you have no new mail.
  	{
- 		"\0\s[0]N_th_ng.. \_w[500]\e"
-		"\0\s[0](You have no new emails.) \_w[500]\e"
+ 		"\0%(sbot)There are no new emails.\_w[500]\e"
 	}
 	elseif reference0 == 1 //If you have one new email.
  	{
- 		"\0\s[0]1! N_w _mail. \_w[500]\e"
-		"\0\s[0](You have one new email.) \_w[500]\e"
+ 		"\0%(sbot)There is one(1) new email\_w[500]\e"
 	}
 	elseif reference0 > 1 && reference0 < 11 //If you have more than one email but less than eleven.
 	{
-		"\0\s[0]%(reference0)! ne_ ema_ls. \_w[500]\e"
-		"\0\s[0](You have %(reference0) new emails.) \_w[500]\e"
+		"\0%(sbot)There are %(reference0) new emails.\e"
 		//reference0 here stores the amount of new email it finds.
 	}
 	elseif reference0 > 100 //If there are over one hundred new emails.
 	{
-		"\0\s[0]%(reference0) emails. \_w[500]\e"
-		"\0\s[0](You have %(reference0) new emails.You should do something about that.) \_w[500]\e"
+		"\0%(sbot)There are %(reference0) new emails. That is quite a lot.\_w[500]\e"
 	}
  	else //For any other number of emails.
 	{
-		"\0\s[0]%(reference0) emails. \_w[500]\e"
-		"\0\s[0](%(reference0) new emails.) \_w[500]\e"
+		"\0%(sbot)There are %(reference0) new emails... \_w[500]\e"
  	}
 }
 
@@ -521,25 +517,21 @@ OnBIFFFailure
  {
 	if reference0 == "timeout" //If the connection times out.
  	{
-		"\0\s[0]C_nnecti_n timed _ut. \_w[500]\e"
-		"\0\s[0](The connection timed out.) \_w[500]\e"
+		"\0%(sbot)Connection timed out.\_w[500]\e"
 	}
  	elseif reference0 == "kick" //If the account blocks the ghost from accessing it. I think gmail may do this at first to try and protect your account from unapproved applications using it. It gives you the option to change the setting in the warning email they send you about it.
 	{
-		"\0\s[0]Acc_ss d_ni_d. \_w[500]\e"
-		"\0\s[0](Access denied. Check email settings.) \_w[500]\e"
+		"\0%(sbot)Access denied. Check email settings. \_w[500]\e"
  	}
 	elseif reference0 == "defect" //If the information put into the POP menu is wrong.
  	{
-		"\0\s[0]FA_LED. CHECK POP SETT_NGS. \_w[500]\![open,configurationdialog]\e"
-		"\0\s[0](Login failed. You should check your POP settings.) \_w[500]\![open,configurationdialog]\e"
+		"\0%(sbot)Login failed. Please check POP settings. \_w[500]\![open,configurationdialog]\e"
 		
 		//Note that this ends with \![open,configurationdialog]. This will open up the preferences menu I described above automatically. More on \! functions in the walkthrough. You can delete the \! tag here if you want to.
 	}
  	else //if there's some other kind of error.
 	{
-		"\0\s[0]FAILED. %(reference[0]) \_w[500]\e"
-		"\0\s[0](Connection failed. %(reference[0])) \_w[500]\e"
+		"\0%(sbot)Connection failed. ERROR: %(reference[0])\_w[500]\e"
 		
 		//reference0 here stores the error message the email server would have given the ghost, hopefully.
  	}
@@ -556,8 +548,7 @@ OnBIFFFailure
  
 OnUpdateBegin
  {
-	"U_dating\_w[500].\_w[500].\_w[500]. \_w[500]\e"
-	"(f_lowe_y is checking for updates.) \_w[500]\e"
+	"%(sbot)You would like me to check for updates? I can do that.\_w[500]\e"
  }
 
  //---- OnUpdateReady ----
@@ -569,18 +560,16 @@ OnUpdateReady
 	reference0++ //makes sure it starts at 1 instead of 0
 	if reference0 == 1
 	{
-		"%(reference0) F_LE AVA_LABLE. \_w[500]"
-		"(%(reference0) new file available for update.) \_w[500]"
+		"%(sbot)I have one(1) file available for update. \_w[500]"
 	
 	}
 	else
 	{
-		"%(reference0) F_LES AVA_LABLE. \_w[500]"
-		"(%(reference0) new files available for update.) \_w[500]"
+		"There are %(reference0) files available for me to update. \_w[500]"
 	
 	}
     --
-	"\c\0\s[0]\i[0]\_qDOWNLOADING\_w[500].\_w[500].\_w[500].\n\n"
+	"\c\0\n\n\nStarting Download"
 }
 
 
@@ -617,18 +606,18 @@ OnUpdate.OnDownloadBegin
 	//loop calculates how many check boxes to display based on the variables above, the if check is for displaying the ascii border on the sides
 	while PointA <= Update_Process 
 	{
-		_txt += "☑" 
+		_txt += "X" 
 		PointA++ 
 	} 
 	//see above except for blank boxes
 	while PointB <= Update_Remaining 
 	{
-		_txt += "☐" 
+		_txt += "0" 
 		PointB++ 
 	}
 	--
 	//using the text buffers to display the correct number of boxes
-	"\c[line,2]%(_txt)\n\n%(Update_Process) of %(Update_Total)"
+	"\c[line,2]\f[align,center]\_q\n\n\n%(_txt)\_q\f[default]\n\n%(Update_Process) of %(Update_Total)"
 	--
 	//flavortext - i don't want to lose this, i hope there's a way i can keep all of it
 		
@@ -678,13 +667,13 @@ OnUpdateComplete
  {
 	if reference0 == "none" //if the ghost had nothing to update with
  	{
- 		"There were no changes to be made. \_w[500]\e"
+ 		"%(sbot)There were no changes to be made. \_w[500]\e"
 		
 	}
  	else //if the ghost has updated successfully
 	{
 		lastUpDate = disDate
-		"Update complete. Do you wish to view the changelog?\_w[500]"
+		"%(sbot)Update complete. Do you wish to view the changelog?\_w[500]"
 		--
 		"\n\n\f[align,left] \![*] \q[Yes,OnChangeLog,update]\n \n[-100]\f[align,right]\![*] \q[No,NoChangelog]"
  	}
@@ -694,7 +683,7 @@ OnUpdateComplete
 Select.NoChangelog
 {
 	
-		"OK. You can view it anytime from my Functions menu.\_w[500]\e"
+		"%(sbot)OK. You can view it anytime from my Functions menu.\_w[500]\e"
 }
 
 
@@ -835,7 +824,7 @@ OnUpdatedataCreated
  
 OnNarCreating
  {
-	"Creating Nanika Archive\_w[500]\e"
+	"Creating Nanika Archive...\_w[500]\e"
  }
 
  //---- OnNarCreated ------------
@@ -873,7 +862,7 @@ OnSNTPBegin
  
 OnSNTPCompare
 {
- 	"Retrieved Time: %reference1[1]/%reference1[2]/%reference1[0] %reference1[3]:%reference1[4]:%reference1[5]\_w[100]\n/
+ 	"%(sbot)Retrieved Time: %reference1[1]/%reference1[2]/%reference1[0] %reference1[3]:%reference1[4]:%reference1[5]\_w[100]\n/
 	Your Time: %reference2[1]/%reference2[2]/%reference2[0] %reference2[3]:%reference2[4]:%reference2[5]\_w[100]\n/
  	\n"
 	--
@@ -892,7 +881,7 @@ OnSNTPCompare
  
 OnSNTPEXECUTE
 {
-	"\6\_w[500]Clock corrected. \_w[500]\e"
+	"%(sbot)Clock corrected. \_w[500]\e"
 }
 
 // ----　OnSNTPCANCEL -----------
@@ -900,7 +889,7 @@ OnSNTPEXECUTE
  
 OnSNTPCANCEL
 {
-	"OK. I am sure you have your reasons. I will not change it then. \_w[500]\e"
+	"%(sbot)OK. I am sure you have your reasons. I will not change it then. \_w[500]\e"
 }
 
 // ----　OnSNTPFailure -----------
@@ -908,7 +897,7 @@ OnSNTPCANCEL
  
 OnSNTPFailure
 {
-	"Unable to change conputer clock. \_w[500]\e"
+	"%(sbot)Unable to change conputer clock. \_w[500]\e"
 }
 
 
@@ -948,7 +937,7 @@ OnScreenSaverEnd
  
 OnBatteryLow
 {
-	"Your computer's battery level is low.\_w[500]\e"
+	"%(sbot)Your computer's battery level is low.\_w[500]\e"
 }
  
 // ----OnBatteryCritical----------
@@ -956,7 +945,7 @@ OnBatteryLow
  
 OnBatteryCritical
 {
-	"\0\s[0]Your computer's battery lever is critically low.\e"
+	"%(sbot)Your computer's battery lever is critically low.\e"
 }
  
  

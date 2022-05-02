@@ -14,7 +14,7 @@
 
 On_recommendrootbutton.caption
 {
-	"&Recommendations"
+	// "&Recommendations"
 }
 //---- Top Menu Option ----
 
@@ -71,7 +71,7 @@ On_sakura.portalsites
 {
 	"GITHUB"
 	--
-	"%ASC(1)https://era-the-outworlder.github.io/era_makes_ghosts/f_lowe_y.html/ %ASC(2)"
+	"%ASC(1)https://era-the-outworlder.github.io/era_makes_ghosts/index.html/ %ASC(2)"
 	--
  	"Tumblr"
 	--
@@ -103,7 +103,7 @@ On_updatebutton.caption
 //----  Network Update URL  ------
 On_homeurl
 {
-	"https://raw.githubusercontent.com/Era-The-Outworlder/era_makes_ghosts/main/Updates/f_lowe_y/"
+	"https://raw.githubusercontent.com/Era-The-Outworlder/era_makes_ghosts/main/Updates/statusBOT/"
 }
 
 

@@ -53,7 +53,7 @@ OnfirstBoot
 	moodImageText = "era-the-outworlder.github.io/era_makes_ghosts"
 
 	--
-	"%(pwrON)\t\0\![set,otherghosttalk,true]"
+	"%(pwrON)\t\0\![set,otherghosttalk,true]\![set,sticky-window,1,0]"
 	--
 	"This UKAGAKA uses audio to enhance certain events, as well as to indicate by sound that the ghost is talking. As not all users may desire this feature, a Silent Mode has been included, which prevents the ghost from playing any audio files.\x\c\n\n\_q\f[align,center]This setting can always be changed from the ghost's menu.\n\n\f[align,center]\![*] \q[Silent Mode On,OnFBStart,%(reference0),ON]\n/
 	\![*] \q[Silent Mode Off,OnFBStart,%(reference0),OFF]"
@@ -117,7 +117,7 @@ OnBoot
 	
 	//turns on detection of other ghosts' speech
 	//Neutral pose.
- 	"%(pwrON)\![set,otherghosttalk,true]\0\s[0]"
+ 	"%(pwrON)\![set,otherghosttalk,true]\![set,sticky-window,1,0]\0\s[0]"
 	--
 	
 	if bornmonth == month && bornday == day
@@ -275,6 +275,7 @@ OnClose
 	
 	--
 	
+	
 	if (_temphour == 0) && (_tempmin <= 5)
 	{
 		"Oh. Goodbye then. Time: %(_temphour):%(_tempmin).%(pwrOFF)\_w[500]"
@@ -283,7 +284,9 @@ OnClose
  	}
  	else 
  	{
- 		"Goodbye %USER. I hope to see you again soon.%(pwrOFF)\_w[500]"
+		_num = RAND(ghostexcount)
+		_pick ="%(ghostexlist[_num])"
+ 		"Goodbye %USER. Goodbye %(_pick). I hope to see you again soon.%(pwrOFF)\_w[500]"
 		passmin = 0
 		passsec = 0
  	}
@@ -311,7 +314,7 @@ OnCloseAll
 		{
 		when 0-4
 		{
-			"Goodnight. Or good morning"
+			"Goodnight. Or good morning."
 		}
 		when 5-11
 		{
@@ -345,7 +348,7 @@ OnBasewareUpdating
 
 OnBasewareUpdated
 {
-	"%(pwrON)"
+	"%(pwrON)\_w[500]Update complete.\_w[5000]"
 	--
 	OnDiscordPluginCustom
 }
@@ -419,7 +422,7 @@ OnGhostChanged
 	--
 	if reference0 == "statusBOT" //As above, this should be the name of your ghost as in install.txt or descript.txt.
 	{
-		"LOADED.\_w[500]"
+		"Program Loaded.\_w[500]"
 	}
 	else //If you're switching to them from another ghost...
 	{
@@ -462,7 +465,7 @@ OnGhostCallComplete
 	}
 	else
 	{
-		"Hello %(reference0). %(username) decided you should join us.\_w[500] %(refTest)"
+		"Hello %(reference0). %(username) decided you should join us. I agree with %(oblPro).\_w[500]"
 	}
 }
 

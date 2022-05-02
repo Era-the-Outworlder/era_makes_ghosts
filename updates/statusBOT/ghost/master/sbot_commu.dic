@@ -54,6 +54,10 @@ OnStartCommunicate
 				}
 				
 			}
+			when "f_lowe_y"
+			{
+				"%(sbot)Hello brother program!"
+			}
 			when "Gaster"
 			{
 				res_reference0 = "Gaster"
@@ -134,6 +138,13 @@ ReplyToGhost
 			res_reference0 = reference0
 			
 			"%(sbot)Hello, Sibling That Watches.\e"
+		}
+		elseif "f_lowe_y" _in_ _speaker
+		{	
+			
+			res_reference0 = reference0
+			
+			"%(sbot)Hello brother f_lowe_y.\e"
 		}
 		elseif "spamton" _in_ _speaker
 		{	
