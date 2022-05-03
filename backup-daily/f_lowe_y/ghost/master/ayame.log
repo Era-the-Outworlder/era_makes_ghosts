@@ -1,5 +1,5 @@
 // AYA request log
-// load time: 2022/04/28 21:04:55
+// load time: 2022/05/02 17:51:26
 
 // Loading of dictionary file
 // - D:\SSP\ghost\f_lowe_y\ghost\master\yaya_config.txt
@@ -40,7 +40,7 @@ Charset: UTF-8
 Sender: SSP
 
 
-// response (Execution time : 16[ms])
+// response (Execution time : 0[ms])
 SHIORI/3.0 400 Bad Request
 
 
@@ -60,14 +60,140 @@ Value: Tc569-4
 
 
 // request
-NOTIFY SHIORI/3.0
+GET SHIORI/3.0
 Charset: UTF-8
 Sender: SSP
 SenderType: internal
 SecurityLevel: local
-ID: enable_log
-Reference0: 1
+ID: OnInitialize
+Reference0: 
+Reference1: 0
 
 
-// unload time: 2022/04/28 21:04:55
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: homeurl
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: https://raw.githubusercontent.com/Era-The-Outworlder/era_makes_ghosts/main/Updates/f_lowe_y/
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: counterurl
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal
+SecurityLevel: local
+ID: OnDestroy
+Reference0: 
+Reference1: 0
+
+
+// response (Execution time : 0[ms])
+SHIORI/3.0 204 No Content
+Charset: UTF-8
+
+
+// request
+
+"array_eventtranslate
+array_translateinternal
+REQ.COMMAND
+REQ.PROTOCOL
+var.req.key
+var.req.value
+var.req.rawvalue
+LIB.PROTOCOL
+LIB.STATUSCODE
+var.lib.key
+var.lib.value
+var.lib.result
+SAORI.DllList
+ghostexlist
+ghostexcount
+selfname
+selfname2
+sakuraname
+keroname
+basewarename
+basewarenameex
+sender
+S_CHARSET
+installedghostlist
+installedsakuralist
+installedkerolist
+ascii
+displaybpp
+displaywidth
+displayheight
+uniqueid
+ghostbootmin
+status
+res_securitylevel
+res_reference
+res_marker
+refold
+refold0
+SHIORI3FW.Path
+SHIORI3FW.LastAITalk
+SHIORI3FW.LastAITalkTime
+SHIORI3FW.LastTalk
+SHIORI3FW.LastTalkTime
+SHIORI3FW.TalkEndTime
+SHIORI3FW.CanTalkFlag
+SHIORI3FW.IsSurfaceRestoreComplete
+SHIORI3FW.IsAITalkComplete
+SHIORI3FW.SaveVarCount
+SHIORI3FW.HWnd
+SHIORI3FW.HWndOld
+SHIORI3FW.BalloonHWnd
+SHIORI3FW.UniqueID
+SHIORI3FW.Eventid
+SHIORI3FW.EventidOld
+SHIORI3FW.EventidTranslate
+SHIORI3FW.EventidTranslateOld
+SHIORI3FW.DelayEventTime
+SHIORI3FW.DelayEvent
+SHIORI3FW.DelayEventReference
+SHIORI3FW.GhostName
+SHIORI3FW.ErrorDescription
+SHIORI3FW.ErrorLevel
+SHIORI3FW.LastErrorDescription
+C_CRLF2
+C_CRLF
+C_BYTE1"
+1157
+// response (Execution time : 16[ms])
+
+// Saving of variable value - D:\SSP\ghost\f_lowe_y\ghost\master\yaya_variable.cfg
+// ...Done.
+
+// unload time: 2022/05/02 17:51:27
 
