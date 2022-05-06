@@ -1,0 +1,12 @@
+// ----- BALLOON install.txt -----
+
+
+charset,UTF-8
+
+type,balloon
+name,EtO Balloon Template
+directory,eto_balloon_template
+accept,Abigor
+
+// refresh, bool
+// refreshundeletemask, filename 1: filename 2 ...
