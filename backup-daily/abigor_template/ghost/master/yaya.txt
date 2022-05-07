@@ -14,20 +14,12 @@ charset.extension, UTF-8
 
 include, system_config.txt		
 			
-dic, sbot_aitalk.dic	
-dic, sbot_anchor.dic		
-dic, sbot_bootend.dic
-dic, sbot_changelog.dic
-dic, sbot_commu.dic
-dic, sbot_devtools.dic
-dic, sbot_drawmenu.dic
-dic, sbot_menu.dic
-dic, sbot_misc.dic
-dic, sbot_mouse.dic
-dic, sbot_richpresence.dic
-dic, sbot_userinfo.dic
-dic, sbot_word.dic
-
+	
+dic, abtm_bootclose.dic
+dic, abtm_devtools.dic
+dic, abtm_drawmenu.dic
+dic, abtm_menu.dic
+dic, abtm_mouse.dic
 
 
 //---- Log Location -------------------------------------------------------------------------
