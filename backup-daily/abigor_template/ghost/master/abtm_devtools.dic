@@ -12,7 +12,15 @@
 
 OnFunctionRun
 {
-	"This is a test."
+	"(pose)... \_w[800](pose)Hnnnnnnnggg... \_w[1000](pose)Oh! \_w[800]You must be one of the Scientist's new hires, \_w[100]right? \_w[700]How else..? \_w[700] \n[200]But I don't...\_w[1000] \nYou'll have to excuse me-(pose)"
+	--
+	"\_w[3000]\cIt has been a...\_w[1200] well. \__w[1000] \n(pose).\_w[100].\_w[100].\_w[100].\_w[100].\_w[100].\_w[700](pose)"
+	--
+	"\_w[3000]\n(pose)(It almost appears that they have fallen asleep.)"
+	--
+	"\_w[1000](pose)Haaah-hn?\_w[500] You...\_w[700] are those medical-?\_w[1000](pose) Could you?"
+	--
+	"\n[200]\_w[500](It would seem you have first-aid supplies. You can render aid by double-clicking them and selecting %(CHR(34))First Aid%(CHR(34)) from the menu that appears.)"
 
 
 }
