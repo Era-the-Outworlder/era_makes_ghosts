@@ -1,0 +1,40 @@
+OnAITalk
+{
+	if RAND(100) < (communicateratio - 1)
+ 	{
+ 		OnStartCommunicate
+	}
+	else
+	{
+		if offscreenflag == 1
+		{
+			OnOffscreen("AITALK")
+		}
+	}
+
+}
+
+OnKeyPress
+{
+	case reference[0]
+	{
+		when "t"
+		{OnAiTalk}
+		when "r"
+		{
+		//OnLastTalk
+		}
+		when "f4"
+		{OnClose}
+		when "f1"
+		{"\![open,readme]"}
+	}
+	
+}
+
+OnSecondChange
+{}
+OnMinuteChange
+{}
+OnHourTimeSignal
+{}

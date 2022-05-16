@@ -14,8 +14,18 @@
 // ---- OnMenuRun ----
 
 
-OnMenuRun
+OnMainMenu
 {	
+	_source = _argv[0]
+	if (_source == "click1") || (reference[0] == "menu1")
+	{
+		"\0\b[2]\![set,autoscroll,disable]This menu is opened from the main character.\n\_q"
+	}
+	elseif (_source == "click2") || (reference[0] == "menu2")
+	{
+		"\1\b[2]\![set,autoscroll,disable]This menu is opened from the secondary character.\n\_q"
+	}
+	--
 	"\![*] \q[User Settings,OnUserConfig]\n"
 	--
 	"\![*] \q[Ghost Settings,OnConfigMenu]\n"
@@ -31,15 +41,15 @@ OnUserConfig
 {
 	"\0\b[2]\![set,autoscroll,disable]\_q" 
 	--
-	"\f[height,14]\![*](\q[Edit,OnTeachName,menu])\f[height,19]NAME:\f[height,default]\f[color,ccffff] %(username)\f[default]\n"
+	"\f[height,-2]\![*](\q[Edit,OnTeachName,menu])\f[height,+2]NAME:\f[height,default]\f[color,ccffff] %(username)\f[default]\n"
 	--
-	"\f[height,14]\![*](\q[Edit,OnTeachPronouns,menu])\f[height,19]PRONOUNS:\f[height,default]\n\f[color,bbffff]%(nomPro)/%(oblPro)/%(posPro)\f[default]\n"
+	"\f[height,-2]\![*](\q[Edit,OnTeachPronouns,menu])\f[height,+2]PRONOUNS:\f[height,default] \n\f[color,bbffff]%(nomPro)/%(oblPro)/%(posPro)\f[default]\n"
 	--
-	"\f[height,14]\![*](\q[Edit,OnGetBirthday,menu])\f[height,19]BIRTHDAY:\f[height,default]\n\f[color,aaffff]%(birthdayprint)\f[default]\n"
+	"\f[height,-2]\![*](\q[Edit,OnGetBirthday,menu])\f[height,+2]BIRTHDAY:\f[height,default] \n\f[color,aaffff]%(birthdayprint)\f[default]\n"
 	--
-	"\![*] \q[sBOT Settings,OnConfigMenu]\n"
+	"\![*] \q[GHOST Settings,OnConfigMenu]\n"
 	--	
-	"\![*] \q[Main Menu,OnMenuRun]\n"
+	"\![*] \q[Main Menu,OnMainMenu]\n"
 	--
  	"\![*] \q[Close,CANCEL]"
 	--
@@ -50,93 +60,86 @@ OnUserConfig
 // Allows user to change various ghost settings
 OnConfigMenu
 {
-	"\0\b[2]\![set,autoscroll,disable]\_q" 
+	"\b[2]\![set,autoscroll,disable]\_q" 
 	--
-	"\![*]\q[TALK RATE:,OnSetTalk] %(talksetting) \f[size,15]Commu:%(communicateratio)%\f[default]\n\n[half]"
-	--
-	
-	" Enable Silent Mode?\n "
-	--
-	if silentMode == "ON"
-	{
-		"\f[align,center]\f[color,#0099cc]\![*]\q[ON,silenton]\f[color,default] ----- \![*]\q[OFF,silentoff]\n \f[align,left]"
-	}
-	else
-	{
-		"\f[align,center]\![*]\q[ON,silenton] ----- \f[color,#0099cc]\![*]\q[OFF,silentoff]\f[color,default]\n \f[align,left]"
-	}
+	"\![*]\q[TALK RATE:,OnSetTalk] %(talksetting) \f[size,-2]Commu:%(communicateratio)%\f[default]\n\n[half]"
 	--
 	
-	"Confirm Recycle Bin?\n "
-	--
-	if verBalete == "ON"
-	{
-		"\f[align,center]\f[color,#0099cc]\![*]\q[ON,verBinOn]\f[color,default] ----- \![*]\q[OFF,verBinOff]\n \f[align,left]"
-	}
-	else
-	{
-		"\f[align,center]\![*]\q[ON,verBinOn] ----- \f[color,#0099cc]\![*]\q[OFF,verBinOff]\f[color,default]\n \f[align,left]"
-	}
-	--
-	"Enable Uninstall?\n "
+	"ENABLE UNINSTALL?\n "
 	--
 	if deleteshitai == "ON"
 	{
-		"\f[align,center]\f[color,#0099cc]\![*]\q[ON,deleteon]\f[color,default] ----- \![*]\q[OFF,deleteoff]\n[half] \f[align,left]"
+		"\f[align,center]\f[color,#0099cc]\![*]\q[ON,OnConfigSet,deleteon]\f[color,default] ----- \![*]\q[OFF,OnConfigSet,deleteoff]\n \f[align,left]"
 	}
 	else
 	{
-		"\f[align,center]\![*]\q[ON,deleteon] ----- \f[color,#0099cc]\![*]\q[OFF,deleteoff]\f[color,default]\n[half] \f[align,left]"
+		"\f[align,center]\![*]\q[ON,OnConfigSet,deleteon] ----- \f[color,#0099cc]\![*]\q[OFF,OnConfigSet,deleteoff]\f[color,default]\n \f[align,left]"
 	}
 	--
+	
+	"ENABLE SILENT MODE?\n "
+	--
+	if silentMode == "ON"
+	{
+		"\f[align,center]\f[color,#0099cc]\![*]\q[ON,OnConfigSet,silenton]\f[color,default] ----- \![*]\q[OFF,OnConfigSet,silentoff]\n \f[align,left]"
+	}
+	else
+	{
+		"\f[align,center]\![*]\q[ON,OnConfigSet,silenton] ----- \f[color,#0099cc]\![*]\q[OFF,OnConfigSet,silentoff]\f[color,default]\n \f[align,left]"
+	}
+	--
+	
+	"CONFIRM RECYCLE BIN?\n "
+	--
+	if verBalete == "ON"
+	{
+		"\f[align,center]\f[color,#0099cc]\![*]\q[ON,OnConfigSet,verBinOn]\f[color,default] ----- \![*]\q[OFF,OnConfigSet,verBinOff]\n \f[align,left]"
+	}
+	else
+	{
+		"\f[align,center]\![*]\q[ON,OnConfigSet,verBinOn] ----- \f[color,#0099cc]\![*]\q[OFF,OnConfigSet,verBinOff]\f[color,default]\n \f[align,left]"
+	}
+	--
+
 	"\n[half]\![*] \q[User Settings,OnUserConfig]\n"
 	--
-	"\f[align,center]\![*] \q[Main Menu,OnMenuRun] ---------- \![*] \q[Close,CANCEL]"
+	"\f[align,center]\![*] \q[Main Menu,OnMainMenu,return] ---------- \![*] \q[Close,CANCEL]"
 	--
 	"\e"
 }
 
-
-// Enable/Disable Verbose emptying recycle bin
-Select.verBinOn
+OnConfigSet
 {
-	verBalete = "ON"
+	case reference[0]
+	{
+		when "deleteon" // Enable/Disable Uninstall
+		{
+			deleteshitai = "ON"
+		}
+		when "deleteoff"
+		{
+			deleteshitai = "OFF"
+		}
+		when "verBinOn" // Enable/Disable Verbose emptying recycle bin
+		{
+			verBalete = "ON"
+		}
+		when "verBinOff"
+		{
+			verBalete = "OFF"
+		}
+		when "silenton"	// Enable/Disable SilentMode
+		{
+			silentMode = "ON"
+		}
+		when "silentoff"
+		{
+			silentMode = "OFF"
+		}
+	}
+	--
 	OnConfigMenu
 }
-
-Select.verBinOff
-{
-	verBalete = "OFF"
-	OnConfigMenu
-}
-
-// Enable/Disable Silent Mode
-Select.silenton
-{
-	silentMode = "ON"
-	OnConfigMenu
-}
-
-Select.silentoff
-{
-	silentMode = "OFF"
-	OnConfigMenu
-}
-
-// Enable/Disable Uninstall
-Select.deleteon
-{
-	deleteshitai = "ON"
-	OnConfigMenu
-}
-
-Select.deleteoff
-{
-	deleteshitai = "OFF"
-	OnConfigMenu
-}
-
-
 
 
 // ---- Talk Rate ----
@@ -144,12 +147,9 @@ Select.deleteoff
 
 OnSetTalk
 {
-	"\b2\0"
+	"\b2This is where the talk timing is set\_q"
 	--
-	"I do not have much to say, but I can, if you want.\nHow often would you like me to talk?\_w[500]"
-	--
-	"\0\c\n/
-	\![*] \q[ Don't Talk,OnTalkSet,never]\n/
+	"\![*] \q[ Don't Talk,OnTalkSet,never]\n/
 	\![*] \q[ Every 15 minutes,OnTalkSet,fifteen]\n/
 	\![*] \q[ Every 30 minutes,OnTalkSet,thirty]\n"
 	--
@@ -234,20 +234,25 @@ OnCommuSet
 	"I will talk to other ghosts %(communicateratio)% of the time."
 }
 
-	
 OnFunctionMenu
 {
 
-	"\0\b2Listing Functions:\n\n[half]"
+	"\b2Listing Functions: \n[200]"
 	
 	--
-	"\![*] \q[Open Calendar,CALENDAR]\n/
-	\![*] \q[Check Email,MailCheck]\n/
-	\![*] \q[Open SSP Preferences,sspconfig]\n/
-	\![*] \q[Empty Recycle Bin,OnRecycleStart]\n/
-	\![*] \q[System Information,OnRunCPUID]\n/
-	\![*] \q[View Ghost Changelog,OnChangeLog,menu]\n/
-	\![*] \q[Main Menu,OnMenuRun]\n"
+	'\![*] \q[Open Calendar,"script:Opening Calendar.\![open,calendar]"]\n'
+	--
+	'\![*] \q[Check Email,"script:\![biff]"]\n'
+	--
+	'\![*] \q[Open SSP Preferences,"script:Opening the SSP preferences menu.\![open,configurationdialog]"]\n'
+	--
+	"\![*] \q[Empty Recycle Bin,OnRecycleStart]\n"
+	--
+	"\![*] \q[System Information,OnRunCPUID]\n"
+	--
+	"\![*] \q[View Ghost Changelog,OnChangeLog,menu]\n"
+	--	
+	"\![*] \q[Main Menu,OnMainMenu,return]\n"
 	--
 	if devDebug == "ON"
 	{
@@ -258,37 +263,3 @@ OnFunctionMenu
 		"\e"
 	}
 }
-
-// If the user selects cancel in a menu.
-Select.CANCEL
-{
-	"Closing Menu...\e"
-}
-
-//When the user clicks Open Calender.
-Select.CALENDAR
-{
-	"Opening Calendar.\![open,calendar]"
-}
-
-//When the user chooses SSP preferences.
-Select.sspconfig
-{
-	"Opening the SSP preferences menu.\![open,configurationdialog]"
-}
-	
-//This is when the user chooses to check their email. The rest of this function plays out in etc.dic.
-Select.MailCheck
-{
-	"\![biff]\e"
-}
-
-
-
-//---- OnChoiceTimeout ----
-// Called every time a choice is timed out, not just the main menu.
-
-OnChoiceTimeout
- {
-	"\n\n\n... \n\n\f[size,13]\f[align,center]maybe %(nomPro) forgot..?\f[default]\e"
- }

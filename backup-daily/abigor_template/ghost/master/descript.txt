@@ -30,8 +30,8 @@ name.allowoverride,0
 
 
 // -----Taskbar Icon-----
-icon, temp.ico
-icon.minimize, temp_min.ico
+icon, eligos_seal.ico
+icon.minimize, eligos_seal_min.ico
 
 
 // -----Custom Cursors-----
