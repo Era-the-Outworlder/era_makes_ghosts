@@ -16,8 +16,8 @@ OnOffscreen
 		else
 		{offscreenflag = 0}
 	}
-	--
-	"%(offscreenflag)"
+	// --
+	// "%(offscreenflag)"
 }
 
 OnOtherOffscreen

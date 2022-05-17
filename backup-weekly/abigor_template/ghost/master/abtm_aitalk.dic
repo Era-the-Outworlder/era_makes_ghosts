@@ -10,12 +10,8 @@ OnAITalk
 		{
 			OnOffscreen("AITALK")
 		}
-		else
-		{
-		
-		}
-		
 	}
+
 }
 
 OnKeyPress
@@ -23,9 +19,7 @@ OnKeyPress
 	case reference[0]
 	{
 		when "t"
-		{
-			OnAITalk
-		}
+		{OnAiTalk}
 		when "r"
 		{
 		//OnLastTalk

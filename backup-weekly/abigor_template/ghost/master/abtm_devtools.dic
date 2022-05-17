@@ -164,7 +164,7 @@ OnTestInput
 {
 	// DUMPVAR()
 	_testtext = RE_REPLACE
-	"%(refTest)"
+	"%(REFTEST('OnTestInput'))"
 }
 
 
@@ -184,8 +184,9 @@ reqCheck
     "\_q\b6\![set,autoscroll,disable]%(_display)\x"
 }
 
-refTest
+REFTEST
 {
+	_caller = _argv[0]
 	_display = ""
 	_num = 0
 	foreach reference; _ref //Each time the loop runs, _ref will store the next value in the array, until the array ends
@@ -195,12 +196,12 @@ refTest
 		_num ++
 	}
 	--
-	"\_q\b2\![set,autoscroll,disable]%(_display)\x"
+	"\_q\b2\![set,autoscroll,disable]%(_caller) \n[200]References:\n%(_display)\x"
 }
 
 OnEmbedTest
 {
-	"Argument:\n%(_argv)\nReference:\n%(refTest)\x"
+	"Argument:\n%(_argv)\nReference:\n%(REFTEST)\x"
 }
 
 // OnRaisePluginFailure
@@ -209,7 +210,7 @@ OnEmbedTest
 	// {}
 	// else
 	// {
-		// "OnRaisePluginFailure:\n%refTest"
+		// "%(REFTEST('OnRaisePluginFailure'))"
 	// }
 // }
 

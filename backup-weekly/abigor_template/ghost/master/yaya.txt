@@ -14,12 +14,17 @@ charset.extension, UTF-8
 
 include, system_config.txt		
 			
-	
-dic, abtm_bootclose.dic
+dic, abtm_aitalk.dic
+dic, abtm_bootclosechange.dic
+dic, abtm_communicate.dic
 dic, abtm_devtools.dic
 dic, abtm_drawmenu.dic
+dic, abtm_installvanishupdate.dic
 dic, abtm_menu.dic
 dic, abtm_mouse.dic
+dic, abtm_ossystems.dic
+dic, abtm_surfaceballoon.dic
+dic, abtm_transanchorchoice.dic
 
 
 //---- Log Location -------------------------------------------------------------------------

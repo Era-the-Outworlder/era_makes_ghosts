@@ -44,19 +44,23 @@ kero.defaulttop,0
 
 kero.balloon.offsetx,0
 kero.balloon.offsety,0
+kero.balloon.alignment,??
+kero.balloon.dontmove,bool
 
-// -----Overwrite CHAR3-----
+// -----Overwrite CHAR2-----
 
 // char2.name, name
 char2.seriko.alignmenttodesktop,top
 
-// char3.defaultx,0
-// char3.defaulty,0
-char3.defaultleft,0
-// char3.defaulttop,0
+// char2.defaultx,0
+// char2.defaulty,0
+char2.defaultleft,0
+// char2.defaulttop,0
 
-kero.balloon.offsetx,0
-kero.balloon.offsety,-0
+char2.balloon.offsetx,0
+char2.balloon.offsety,-0
+char2.balloon.alignment,??
+char2.balloon.dontmove,bool
 
 // -----SERIKO-----	
 
