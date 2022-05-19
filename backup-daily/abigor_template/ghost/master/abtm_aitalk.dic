@@ -12,10 +12,160 @@ OnAITalk
 		}
 		else
 		{
-		
+			OnAIDialogue
 		}
 		
 	}
+}
+
+OnAIDialogue
+{
+
+
+	// -------- Conditionals --------
+
+		
+	if ASEARCH("saidtimeslot",hourlyArray) == -1
+	{OnTimeTalk}
+	
+	if ASEARCH("saidweekday",hourlyArray) == -1
+	{OnDayTalk}
+	
+	if ASEARCH("saidmonthly",hourlyArray) == -1
+	{OnMonthTalk}
+}
+
+OnTimeTalk
+{
+	"It's %(dishour):%(dismin)"
+	--
+	case hour
+	{
+		when 0-4 // weehours
+		{
+			" in the morning."
+		}
+		when 5-8 // earlymorning
+		{
+			" in the morning."
+		}
+		when 9-11 // morning
+		{
+			" in the morning."
+		}
+		when 12-14 // lunch
+		{
+			" in the afternoon."
+		}
+		when 15-17 // afternoon
+		{
+			" in the afternoon."
+		}
+		when 18-20 // evening
+		{
+			" in the evening."
+		}
+		when 21-23 // latenight
+		{
+			" at night."
+		}
+	}
+	--
+	"\nI have been running for \n%(passhour) hours and %(passmin) minutes."
+	--
+	"\e:eval=hourlyArray ,= 'saidtimeslot'"
+}
+
+OnDayTalk
+{
+	"Today is "
+	--
+	if weekday == 0
+	{
+		"Sunday."
+	}
+	if weekday == 1
+	{
+		"Monday."
+	}
+	if weekday == 2
+	{
+		"Tuesday."
+	}
+	if weekday == 3
+	{
+		"Wednesday."
+	}
+	if weekday == 4
+	{
+		"Thursday."
+	}
+	if weekday == 5
+	{
+		"Friday."
+	}
+	if weekday == 6
+	{
+		"Saturday."
+	}
+	--
+	"\e:eval=hourlyArray ,= 'saidweekday'"
+}
+
+OnMonthTalk
+{
+	"\n\n%(sbot)The current month is "
+	--
+	if month == 1
+	{
+		"January."
+	}
+	if month == 2
+	{
+		"February."
+	}
+	if month == 3
+	{
+		"March."
+	}
+	if month == 4
+	{
+		"April."
+	}
+	if month == 5
+	{
+		"May."
+	}
+	if month == 6
+	{
+		"June."
+	}
+	if month == 7
+	{
+		"July."
+	}
+	if month == 8
+	{
+		"August."
+	}
+	if month == 9
+	{
+		"September."
+	}
+	if month == 10
+	{
+		"October."
+	}
+	if month == 11
+	{
+		"November."
+	}
+	if month == 12
+	{
+		"December."
+	}
+	--
+	"\e:eval=hourlyArray ,= 'saidmonthly'"
 }
 
 OnKeyPress
@@ -43,4 +193,104 @@ OnSecondChange
 OnMinuteChange
 {}
 OnHourTimeSignal
-{}
+{
+	case hour
+	{
+		when 0 //midnight
+		{
+			"It is midnight."
+		}
+		when 1
+		{
+			"It is %(dishour) o'clock."
+		}
+		when 2
+		{
+			"It is %(dishour) o'clock."
+		}
+		when 3
+		{
+			"It is %(dishour) o'clock."
+		}
+		when 4
+		{
+			"It is %(dishour) o'clock."
+		}
+		when 5
+		{
+			"It is %(dishour) o'clock."
+		}
+		when 6
+		{
+			"It is %(dishour) o'clock."
+		}
+		when 7
+		{
+			"It is %(dishour) o'clock."
+		}
+		when 8
+		{
+			"It is %(dishour) o'clock."
+		}
+		when 9
+		{
+			"It is %(dishour) o'clock."
+		}
+		when 10
+		{
+			"It is %(dishour) o'clock."
+		}
+		when 11
+		{
+			"It is %(dishour) o'clock."
+		}
+		when 12
+		{
+			"It is noon."
+		}
+		when 13
+		{
+			"It is %(dishour) o'clock."
+		}
+		when 14
+		{
+			"It is %(dishour) o'clock."
+		}
+		when 15
+		{
+			"It is %(dishour) o'clock."
+		}
+		when 16
+		{
+			"It is %(dishour) o'clock."
+		}
+		when 17
+		{
+			"It is %(dishour) o'clock."
+		}
+		when 18
+		{
+			"It is %(dishour) o'clock."
+		}
+		when 19
+		{
+			"It is %(dishour) o'clock."
+		}
+		when 20
+		{
+			"It is %(dishour) o'clock."
+		}
+		when 21
+		{
+			"It is %(dishour) o'clock."
+		}
+		when 22
+		{
+			"It is %(dishour) o'clock."
+		}
+		when 23
+		{
+			"It is %(dishour) o'clock."
+		}
+	}
+}

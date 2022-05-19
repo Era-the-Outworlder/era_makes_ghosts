@@ -31,6 +31,30 @@ OnMainMenu
 	"\![*] \q[Ghost Settings,OnConfigMenu]\n"
 	--
 	"\![*] \q[Other Functions,OnFunctionMenu]\n\n[half]"
+	--
+	"%(disDate) %(disTime)\n"
+	--
+	"v%(OnGhostVer)\n"
+	--
+	if lastUpDate
+	{
+		"Last Updated: %(lastUpDate)\n"
+	}
+	else
+	{
+		"\n"
+	}
+	--
+	if devDebug == "ON"
+	{
+		"\![*] \q[Test variable,OnTestVariable]\n"
+		--
+		"\![*] \q[Close Menu,CANCEL]\e"
+	}
+	else
+	{
+		"\n\![*] \q[Close Menu,CANCEL]\e"
+	}
 }
 
 
