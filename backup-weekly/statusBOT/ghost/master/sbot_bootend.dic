@@ -357,7 +357,7 @@ OnBasewareUpdating
 
 OnBasewareUpdated
 {
-	"%(pwrON)\_w[500]Update complete.\_w[5000]"
+	"%(pwrON)\_w[500]Update complete.\_w[1000]"
 	--
 	OnDiscordPluginCustom
 }
@@ -502,7 +502,7 @@ OnOtherGhostChanged
 {	
 	if "Hapax" _in_ reference15
 	{
-		"GOOD-BYE %(_refer0). \n\nHello Hapax Legomenom.\_w[500]"
+		"GOOD-BYE %(_reference0). \n\nHello Hapax Legomenom.\_w[500]"
 	}
 	elseif "Hapax" _in_ reference14
 	{
@@ -530,7 +530,7 @@ OnOtherGhostClosed
 		"Good-bye %(reference0).\_w[500]"
 	}
 }
-// "%(refTest)"
+
 
 
 //--OnShellChanging

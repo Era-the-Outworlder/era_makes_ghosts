@@ -15,16 +15,19 @@ charset.extension, UTF-8
 include, system_config.txt		
 			
 dic, abtm_aitalk.dic
-dic, abtm_bootclosechange.dic
+dic, abtm_boot_close_change.dic
+dic, abtm_change_log.dic
 dic, abtm_communicate.dic
-dic, abtm_devtools.dic
-dic, abtm_drawmenu.dic
-dic, abtm_installvanishupdate.dic
+dic, abtm_envelopes.dic
+dic, abtm_dev_tools.dic
+dic, abtm_draw_menu.dic
+dic, abtm_install_vanish_update.dic
 dic, abtm_menu.dic
 dic, abtm_mouse.dic
-dic, abtm_ossystems.dic
-dic, abtm_surfaceballoon.dic
-dic, abtm_transanchorchoice.dic
+dic, abtm_os_systems.dic
+dic, abtm_surface_balloon.dic
+dic, abtm_trans_anchor_choice.dic
+dic, abtm_user_info.dic
 
 
 //---- Log Location -------------------------------------------------------------------------

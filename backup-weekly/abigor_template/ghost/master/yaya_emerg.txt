@@ -13,11 +13,11 @@ charset.extension, UTF-8
 
 include, system_config.txt		
 			
-dic, abtm_emergencyboot.dic	
+dic, abtm_emergency_boot.dic	
 
-//dic, abtm_devtools.dic
+//dic, abtm_dev_tools.dic
 
-//dic, abtm_drawmenu.dic	
+//dic, abtm_draw_menu.dic	
 
 
 
