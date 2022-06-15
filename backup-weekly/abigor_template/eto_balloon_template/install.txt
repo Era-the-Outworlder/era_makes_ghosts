@@ -6,6 +6,7 @@ charset,UTF-8
 type,balloon
 name,EtO Balloon Template
 directory,eto_balloon_template
+// Delete [accept] when making new balloon
 accept,Abigor
 
 // refresh, bool

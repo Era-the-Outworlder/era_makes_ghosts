@@ -10,7 +10,7 @@ http://theoutworlder.tumblr.com
 
 
 Ver 1.0 - Balloon Release
--- This balloon is intended to be a fully-featured template for me to base future balloons on.
+-- This balloon is intended to be a fully-featured template for myself and others to base future balloons on.
 
 Project Started:
 May 2, 2022
