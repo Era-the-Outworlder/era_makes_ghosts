@@ -32,7 +32,7 @@ OnGetBirthday
 	// Format retained for compatibility w/GT Template ghosts.
 	dayslot = GetDaySlot 
 	
-	"\0\s[0]%(Narrator)\n\n\n * Enter Birthdate. \n/
+	"\0\s[0]%(Narrator)\n[300] * Enter Birthdate. \n/
 	\![open,dateinput,OnInputBirthdate,,%(menuBYear),%(menuBMonth),%(menuBDay)]\x\n"
 	
 }
@@ -222,7 +222,7 @@ birthchecked
 			}			
 			else
 			{
-				"\0\s[8]%(Flowey) * %(HAPPY) \c%(Flowey) * Happy birthday, %(username).\_w[1000]\_w[1000]\_w[500]"
+				"\0\s[8]%(Flowey) * %(HAPPY) \c%(Flowey) * Happy birthday, %(username).\_w[2500]"
 				"\0\s[3]%(Narrator) * It's your birthday today. Stay warm, _user. \_w[1500]"
 			}
 		}
@@ -239,12 +239,18 @@ birthchecked
 			}
 			elseif bornday == 15
 			{
-				"\0\s[29]%(Narrator) * What a strange coincidence, the collapse of a multiverse occurring on the anniversary of one's birth. "
+				if bornyear == 2016
+				{
+					"\0\s[29]%(Narrator) * Amazing. You were born the same day the \![embed,OnGlitchMidi,multiverse collapse] birthed f_lowe_y and all the other ITs. "
+				}
+				else
+				{
+					"\0\s[29]%(Narrator) * What a strange coincidence, the collapse of a multiverse occurring on the anniversary of one's birth. "
+				}
 			}
 			else
 			{
-				"\0\s[8]%(Flowey) * %(HAPPY) \c%(Flowey) * Happy birthday, %(username).\_w[1000]\_w[1000]\_w[500]"
-				"\0\s[3]%(Narrator) * It's your birthday today.\_w[1500]"
+				genericBirthdayToday
 			}
 		}
 		elseif bornmonth == 3
@@ -255,8 +261,7 @@ birthchecked
 			}
 			else
 			{
-				"\0\s[8]%(Flowey) * %(HAPPY) \c%(Flowey) * Happy birthday, %(username).\_w[1000]\_w[500]"
-				"\0\s[3]%(Narrator) * It's your birthday today.\_w[1500]"
+				genericBirthdayToday
 			}
 		}
 		elseif bornmonth == 4
@@ -268,7 +273,7 @@ birthchecked
 			}
 			else
 			{
-				"\0\s[8]%(Flowey) * %(HAPPY) \c%(Flowey) * Happy birthday, %(username).\_w[1000]\_w[1000]\_w[500]"
+				"\0\s[8]%(Flowey) * %(HAPPY) \c%(Flowey) * Happy birthday, %(username).\_w[2500]"
 				"\0\s[3]%(Narrator) * It's your birthday today. How's the weather?\_w[1500]"
 			}
 		}
@@ -281,86 +286,84 @@ birthchecked
 			}
 			else
 			{
-				"\0\s[8]%(Flowey) * %(HAPPY) \c%(Flowey) * Happy birthday, %(username).\_w[1000]\_w[1000]\_w[500]"
-				"\0\s[3]%(Narrator) * It's your birthday today.\_w[1500]"
+				genericBirthdayToday
 			}
 		}
 		elseif bornmonth == 6
 		{
-			if bornday == 25
+			if bornday == 32
 			{
-				"\0\s[3]%(Flowey) \_w[1000]* Merry\_w[1000] Gyftmas.\_w[500]"
-				"\0\s[3]%(Narrator) * It's your birthday today.\n And it's Gyftmas, too?\_w[1500]"
+				"\0\s[3]%(Flowey) \_w[500]"
+				"\0\s[3]%(Narrator) * It's your birthday today.\_w[500]"
 			}
 			else
 			{
-				"\0\s[8]%(Flowey) * %(HAPPY) \c%(Flowey) * Happy birthday, %(username).\_w[1000]\_w[1000]\_w[500]"
-				"\0\s[3]%(Narrator) * It's your birthday today.\_w[1500]"
+				genericBirthdayToday
 			}
 		}
 		elseif bornmonth == 7
 		{
-			if bornday == 25
+			if bornday == 32
 			{
-				"\0\s[3]%(Flowey) \_w[1000]* Merry\_w[1000] Gyftmas.\_w[500]"
-				"\0\s[3]%(Narrator) * It's your birthday today.\n And it's Gyftmas, too?\_w[1500]"
+				"\0\s[3]%(Flowey) \_w[500]"
+				"\0\s[3]%(Narrator) * It's your birthday today.\_w[500]"
 			}
 			else
 			{
-				"\0\s[8]%(Flowey) * %(HAPPY) \c%(Flowey) * Happy birthday, %(username).\_w[1000]\_w[1000]\_w[500]"
-				"\0\s[3]%(Narrator) * It's your birthday today.\_w[1500]"
+				genericBirthdayToday
 			}
 		}
 		elseif bornmonth == 8
 		{
-			if bornday == 25
+			if bornday == 32
 			{
-				"\0\s[3]%(Flowey) \_w[1000]* Merry\_w[1000] Gyftmas.\_w[500]"
-				"\0\s[3]%(Narrator) * It's your birthday today.\n And it's Gyftmas, too?\_w[1500]"
+				"\0\s[3]%(Flowey) \_w[500]"
+				"\0\s[3]%(Narrator) * It's your birthday today.\_w[500]"
 			}
 			else
 			{
-				"\0\s[8]%(Flowey) * %(HAPPY) \c%(Flowey) * Happy birthday, %(username).\_w[1000]\_w[1000]\_w[500]"
-				"\0\s[3]%(Narrator) * It's your birthday today.\_w[1500]"
+				genericBirthdayToday
 			}
 		}
 		elseif bornmonth == 9
 		{
-			if bornday == 25
+			if bornday == 32
 			{
-				"\0\s[3]%(Flowey) \_w[1000]* Merry\_w[1000] Gyftmas.\_w[500]"
-				"\0\s[3]%(Narrator) * It's your birthday today.\n And it's Gyftmas, too?\_w[1500]"
+				"\0\s[3]%(Flowey) \_w[500]"
+				"\0\s[3]%(Narrator) * It's your birthday today.\_w[500]"
 			}
 			else
 			{
-				"\0\s[8]%(Flowey) * %(HAPPY) \c%(Flowey) * Happy birthday, %(username).\_w[1000]\_w[1000]\_w[500]"
-				"\0\s[3]%(Narrator) * It's your birthday today.\_w[1500]"
+				genericBirthdayToday
 			}
 		}
 		elseif bornmonth == 10
 		{
-			if bornday == 25
+			if bornday == 32
 			{
-				"\0\s[3]%(Flowey) \_w[1000]* Merry\_w[1000] Gyftmas.\_w[500]"
-				"\0\s[3]%(Narrator) * It's your birthday today.\n And it's Gyftmas, too?\_w[1500]"
+				"\0\s[3]%(Flowey) \_w[500]"
+				"\0\s[3]%(Narrator) * It's your birthday today.\_w[500]"
 			}
 			else
 			{
-				"\0\s[8]%(Flowey) * %(HAPPY) \c%(Flowey) * Happy birthday, %(username).\_w[1000]\_w[1000]\_w[500]"
-				"\0\s[3]%(Narrator) * It's your birthday today.\_w[1500]"
-			}
+				genericBirthdayToday
 		}
 		elseif bornmonth == 11
 		{
-			if bornday == 25
+			if bornday == 13
 			{
-				"\0\s[3]%(Flowey) \_w[1000]* Merry\_w[1000] Gyftmas.\_w[500]"
-				"\0\s[3]%(Narrator) * It's your birthday today.\n And it's Gyftmas, too?\_w[1500]"
+				if username == "Era" && menuRName == "Erinn"
+				{
+					"\0\s[3]%(Narrator) * All set, Era! Happy birthday! May your code be relatively bug free. "
+				}
+				else
+				{
+					"\0\s[3]%(Flowey) * Someone \![embed,OnGLITCH,ELSE] also has a birthday today.\_w[500] \![embed,OnGLITCH,9 MILLION SOMEONES] in fact! \![embed,OnGLITCH,HAPPY BIRTHDAY!]"
+					"\0\s[3]%(Narrator) * This ghost's developer was also born this day. \nThe odds of that are only 0.274%. How wonderful that you have overcome the odds.\_w[500]"
+				}
 			}
-			else
 			{
-				"\0\s[8]%(Flowey) * %(HAPPY) \c%(Flowey) * Happy birthday, %(username).\_w[1000]\_w[1000]\_w[500]"
-				"\0\s[3]%(Narrator) * It's your birthday today.\_w[1500]"
+				genericBirthdayToday
 			}
 		}
 		elseif bornmonth == 12
@@ -372,46 +375,193 @@ birthchecked
 			}
 			else
 			{
-				"\0\s[8]%(Flowey) * %(HAPPY) \c%(Flowey) * Happy birthday, %(username).\_w[1000]\_w[1000]\_w[500]"
-				"\0\s[3]%(Narrator) * It's your birthday today.\_w[1500]"
+				genericBirthdayToday
 			}
 		}
 	}
 	else
 	{
 		if bornmonth == 1
-		{}
+		{
+			if bornday == 1
+			{
+				"The first day of a new year.\_w[1500]"
+			}
+			elseif bornday == 14
+			{
+				"The first day of a new year, by some accounts.\_w[1500]"
+			}			
+			else
+			{
+				genericBirthday
+			}
+		}
 		elseif bornmonth == 2
-		{}
+		{
+			if bornday == 2
+			{
+				"\0\s[3]%(Flowey) * \![embed,OnGLITCH,happy birthday].\_w[500]\n * \![embed,OnGLITCH,happy birthday].\_w[500]\n * \![embed,OnGLITCH,happy birthday].\_w[500]\n"
+				"\0\s[3]%(Narrator) * Have you ever gotten the feeling you've done this before?\_w[500]\0\s[3]%(Flowey) * HAPPY \![embed,OnGLITCH,BIRTHDAY] "
+			}
+			elseif bornday == 14
+			{
+				"\0\s[3]%(Flowey) * Love. LOVE. LV. Celebrate. Celebrate. \![embed,OnGLITCH,celebrate].\n YOU."
+			}
+			elseif bornday == 15
+			{
+				if bornyear == 2016
+				{
+					"\0\s[29]%(Narrator) * Amazing. You were born the same day the \![embed,OnGlitchMidi,multiverse collapse] birthed f_lowe_y and all the other ITs. "
+				}
+				else
+				{
+					"\0\s[29]%(Narrator) * What a strange coincidence, the collapse of a multiverse occurring on the anniversary of one's birth. "
+				}
+			}
+			else
+			{
+				genericBirthday
+			}
+		}
 		elseif bornmonth == 3
-		{}
+		{
+			if bornday == 14
+			{
+				"\0\s[3]%(Flowey) * %(piDay)"
+			}
+			else
+			{
+				genericBirthday
+			}
+		}
 		elseif bornmonth == 4
-		{}
+		{
+			if bornday == 1
+			{
+				"\0\s[3]%(Flowey) * \![embed,OnGLITCH,you fool]."
+				"\0\s[3]%(Narrator) * What a funny day.\_w[1500]"
+			}
+			else
+			{
+				"\0\s[8]%(Flowey) * %(HAPPY) \c%(Flowey) * Happy birthday, %(username).\_w[2500]"
+				"\0\s[3]%(Narrator) * It's your birthday today. How's the weather?\_w[1500]"
+			}
+		}
 		elseif bornmonth == 5
-		{}
+		{
+			if bornday == 14
+			{
+				"\0\s[3]%(Flowey) * Take a \![embed,OnGLITCH,moment]. Look look \![embed,OnGLITCH,look] \![embed,OnGLITCH,look] \![embed,OnGLITCH,look] at the \![embed,OnGlitchMidi,sky].\n \![embed,OnGlitchMidi,You were born under one.]"
+				"\0\s[3]%(Narrator) * Take a look at the sky and celebrate. You were born under one.\_w[1500]"
+			}
+			else
+			{
+				genericBirthday
+			}
+		}
 		elseif bornmonth == 6
-		{}
+		{
+			if bornday == 32
+			{
+				"\0\s[3]%(Flowey) \_w[500]"
+				"\0\s[3]%(Narrator) * It's your birthday today.\_w[500]"
+			}
+			else
+			{
+				genericBirthdayToday
+			}
+		}
 		elseif bornmonth == 7
-		{}
+		{
+			if bornday == 32
+			{
+				"\0\s[3]%(Flowey) \_w[500]"
+				"\0\s[3]%(Narrator) * It's your birthday that day.\_w[500]"
+			}
+			else
+			{
+				genericBirthdayToday
+			}
+		}
 		elseif bornmonth == 8
-		{}
+		{
+			if bornday == 32
+			{
+				"\0\s[3]%(Flowey) \_w[500]"
+				"\0\s[3]%(Narrator) * It's your birthday that day.\_w[500]"
+			}
+			else
+			{
+				genericBirthdayToday
+			}
+		}
 		elseif bornmonth == 9
-		{}
+		{
+			if bornday == 32
+			{
+				"\0\s[3]%(Flowey) \_w[500]"
+				"\0\s[3]%(Narrator) * It's your birthday that day.\_w[500]"
+			}
+			else
+			{
+				genericBirthdayToday
+			}
+		}
 		elseif bornmonth == 10
-		{}
+		{
+			if bornday == 31
+			{
+				"\0\s[3]%(Flowey) * \![embed,OnGLITCH,HALLOWEEN] \![embed,OnGLITCH,HALLOWEEN] \![embed,OnGLITCH,HALLOWEEN] \![embed,OnGLITCH,HALLOWEEN] \![embed,OnGLITCH,HALLOWEEN] \![embed,OnGLITCH,HAPPY BIRTHDAY] \_w[500]"
+				"\0\s[3]%(Narrator) * It's your birthday that day.\_w[500]"
+			}
+			else
+			{
+				genericBirthday
+			}
+		}
 		elseif bornmonth == 11
-		{}
+		{
+			if bornday == 13
+			{
+				if username == "Era" && menuRName == "Erinn"
+				{
+					"\0\s[3]%(Narrator) * All set, Era! May your code be relatively bug free. "
+				}
+				else
+				{
+					"\0\s[3]%(Flowey) * Someone \![embed,OnGLITCH,ELSE] also has a birthday that day.\_w[500] \![embed,OnGLITCH,9 MILLION SOMEONES] in fact! \![embed,OnGLITCH,HAPPY BIRTHDAY!]"
+					"\0\s[3]%(Narrator) * This ghost's developer was also born that day. \nThe odds of that are only 0.274%. How wonderful that you have overcome the odds.\_w[500]"
+				}
+			}
+			else
+			{
+				genericBirthday
+			}
+		}
 		elseif bornmonth == 12
 		{
 			if bornday == 25
 			{
-				"\0\s[3]%(Narrator) * That's right, you were born on insert_holiday...\_w[1500]"
+				"\0\s[3]%(Narrator) * That's right, you were born on [insert_holiday]...\_w[1500]"
 			}
 			else
 			{
-				"\0\s[3]%(Flowey) * %(bornmonthprint) %(borndayprint), %(bornyear)? Is _ha_... righ_..."
-				"\0\s[3]%(Narrator) * %(bornmonthprint) %(borndayprint), %(bornyear).\n f_lowe_y will remember that.\_w[1500]"
+				genericBirthday
 			}
 		}
 	}
+}
+
+genericBirthdayToday
+{
+	"\0\s[8]%(Flowey) * %(HAPPY) \c%(Flowey) * Happy birthday, %(username).\_w[2500]"
+
+	"\0\s[3]%(Narrator) * It's your birthday today. Happy birthday, %(username)\_w[1500]"
+}
+
+genericBirthday
+{
+	"\0\s[3]%(Flowey) * %(bornmonthprint) %(borndayprint), %(bornyear)? Is _ha_... righ_..."
+	
+	"\0\s[3]%(Narrator) * %(bornmonthprint) %(borndayprint), %(bornyear).\n f_lowe_y will remember that.\_w[1500]"
 }

@@ -100,7 +100,7 @@ RandomTalk : nonoverlap
 			
 			"\0\s[27]%(Flowey) * Howdy! \_w[500]"
 	
-			"\0\s[4]%(Flowey) * You wonder what caught his attention. \_w[1000]\n\n * There are no answers.\_w[500]"
+			"\0\s[4]%(Flowey) * You wonder what caught his attention. \_w[1000]\n[200] * There are no answers.\_w[500]"
 	
 			"\0\s[13]%(Flowey) * You... are...? \_w[500]"
 			
@@ -110,9 +110,9 @@ RandomTalk : nonoverlap
 			
 			"\0\s[3]%(Narrator) * (Smells like herbicide.)\_w[500]"
 			
-			"\0\s[3]%(Narrator) * f_lowe_y %(_confi)asks if you remember something. \_w[1500]\c\n\n * It seems he's mistaken you for someone else.\_w[500]"
+			"\0\s[3]%(Narrator) * f_lowe_y %(_confi)asks if you remember something. \_w[1500]\c\n[200] * It seems he's mistaken you for someone else.\_w[500]"
 			
-			"\0\s[5]%(Narrator) * f_lowe_y is looking at something.\_w[1000]\n\n (It's not you.) \_w[500]"
+			"\0\s[5]%(Narrator) * f_lowe_y is looking at something.\_w[1000]\n[200] (It's not you.) \_w[500]"
 			
 			"\0\s[12]%(Narrator) * You caught the flower by surprise.\_w[500]"
 	
@@ -124,11 +124,11 @@ RandomTalk : nonoverlap
 			
 			// ---- Both ----
 			"\0\s[3]%(Flowey) * .... you you you... \_w[1000]\s[23]friend! \_w[1000]\n/
-			\n\n%(Narrator)\n\n * He seems very %(_happi)about that."
+			\n[200]%(Narrator)\n[200] * He seems very %(_happi)about that."
 			
-			"\0\_v[mus\flee.wav]\s[-1]\_w[1000]%(Narrator)\f[align,center]\n\n\n * Flowey ran away.\_w[3000]\b[-1]\_w[3000]\c/
+			"\0\_v[mus\flee.wav]\s[-1]\_w[1000]%(Narrator)\f[align,center]\n[300] * Flowey ran away.\_w[3000]\b[-1]\_w[3000]\c/
 			\0\b4\_v[mus\hee.mp3]\f[height,100]Die. \_w[3000]\b[-1]\c/
-			\_w[2500]\b0%(Narrator)\f[align,center]\n\n\n * But nobody came."
+			\_w[2500]\b0%(Narrator)\f[align,center]\n[300] * But nobody came."
 	
 			}
 			
@@ -192,12 +192,12 @@ RandomTalk : nonoverlap
 			"\0\s[3]%(Flowey) * It's all a %(_nm)... \_w[1000]\c\_w[500]\s[16]AND WE'RE NEVER WAKING UP!!!!!!\_w[2500]\c%(floweyLaugh)\_w[500]"
 		}
 		
-		"\0\s[21]%(Narrator) * (He's clearly annoyed.)\_w[1000]\n\n\n * (Was it something you did?)"
+		"\0\s[21]%(Narrator) * (He's clearly annoyed.)\_w[1000]\n[300] * (Was it something you did?)"
 		
 		
 		// ----User has been mean but never killed him----
 		
-		"\0\s[21]%(Narrator) * (He's clearly annoyed.)\_w[1000]\n\n\n * (Was it something you did?)"
+		"\0\s[21]%(Narrator) * (He's clearly annoyed.)\_w[1000]\n[300] * (Was it something you did?)"
 		
 		if ellVee == 1
 		{
@@ -231,7 +231,7 @@ RandomTalk : nonoverlap
 			
 			"\0\s[27]%(Flowey) * Howdy! \_w[500]"
 	
-			"\0\s[4]%(Flowey) * You wonder what caught his attention. \_w[1000]\n\n * There are no answers.\_w[500]"
+			"\0\s[4]%(Flowey) * You wonder what caught his attention. \_w[1000]\n[200] * There are no answers.\_w[500]"
 	
 			"\0\s[13]%(Flowey) * You... are...? \_w[500]"
 			
@@ -241,9 +241,9 @@ RandomTalk : nonoverlap
 			
 			"\0\s[3]%(Narrator) * (Smells like herbicide.)\_w[500]"
 			
-			"\0\s[3]%(Narrator) * f_lowe_y %(_confi)asks if you remember something. \_w[1500]\c\n\n\n * It seems he's mistaken you for someone else.\_w[500]"
+			"\0\s[3]%(Narrator) * f_lowe_y %(_confi)asks if you remember something. \_w[1500]\c\n[300] * It seems he's mistaken you for someone else.\_w[500]"
 			
-			"\0\s[5]%(Narrator) * f_lowe_y is looking at something.\_w[1000]\n\n (It's not you.) \_w[500]"
+			"\0\s[5]%(Narrator) * f_lowe_y is looking at something.\_w[1000]\n[200] (It's not you.) \_w[500]"
 			
 			"\0\s[12]%(Narrator) * You caught the flower by surprise.\_w[500]"
 	
@@ -255,7 +255,7 @@ RandomTalk : nonoverlap
 			
 			// ---- Both ----
 			"\0\s[3]%(Flowey) * .... you you you... \_w[1000]\s[23]friend! \_w[1000]\n/
-			\n\n%(Narrator) * He seems very %(_happi)about that."
+			\n[200]%(Narrator) * He seems very %(_happi)about that."
 			
 			}
 			elseif knifeTime != 0 && killCount == 0
@@ -366,7 +366,7 @@ friendchain0
 friendchain1
 {{CHAIN
 	"\0\s[13]%(Flowey) * %(username), are you there? \n/
-	\1\s[-1]\n\n\n\f[align,left] \![*] \q[Yes,there]\n \n[-100]\f[align,right]\![*] \q[No,notThere]"
+	\1\s[-1]\n[300]\f[align,left] \![*] \q[Yes,there]\n \n[-100]\f[align,right]\![*] \q[No,notThere]"
 }}CHAIN
 
 SELECT.notThere
@@ -640,7 +640,7 @@ MikireTalk
 	else
 	{
 		rescue = 0
-		"\0\s[15]%(Narrator) * (f_lowe_y seems distressed.)\n\n * (Press Ctrl-Shift-F12 to ease his pain.)\_w[500]"
+		"\0\s[15]%(Narrator) * (f_lowe_y seems distressed.)\n[200] * (Press Ctrl-Shift-F12 to ease his pain.)\_w[500]"
 	}
 }
 

@@ -25,9 +25,9 @@ OnTranslate
         _talk = REPLACE(_talk, "\_v[", "\![sound,stop,")
     }
     --
-    if reference1 == "" && reference2 == ""
-    { //send input box : no event (ref2) , no special flag (ref1)
-	REFTEST('OnTranslate')
+    if reference1 == "" && reference2 == "" // Script Input
+    {
+		REFTEST('OnTranslate')
         // EVAL('"' + REPLACE(_talk,'"','" + CHR(0x22) + "') +  + '"')
     }
     else

@@ -364,9 +364,9 @@ OnRunCPUID
 	
 	"\0\s[3]\b[2]\_q\![set,autoscroll,disable]"
 	--
-	"\f[color,#FFFF00]OS:\f[default] %(_os_name) v.%(_os_version_int) \n\f[color,#FFFF00]Build #:\f[default]%(_os_build) \n\n[half]"
+	"\f[color,#FFFF00]OS:\f[default] %(_os_name) v.%(_os_version_int) \n\f[color,#FFFF00]Build #:\f[default]%(_os_build) \n[150]"
 	--
-	"\f[color,#FFFF00]CPU:\f[default] %(_cpu_name) \n\f[color,#FFFF00]Clock Rate:\f[default] %(_cpu_clockex)MHz\n\n[half]"
+	"\f[color,#FFFF00]CPU:\f[default] %(_cpu_name) \n\f[color,#FFFF00]Clock Rate:\f[default] %(_cpu_clockex)MHz\n[150]"
 	--
 	_memTP = TOREAL(memorytotalphys)
 	_memTPKB = _memTP/1024
@@ -382,7 +382,7 @@ OnRunCPUID
 	_memAPGB = TOSTR(_memAPGB)
 	_availablePhysMemGB = SUBSTR(_memAPGB,0,4)
 
-	"\f[color,#FFFF00]Memory Load:\f[default] %(memoryload)% \n\f[color,#FFFF00]Total PhysMemory:\f[default] \n%(memorytotalphys) Bytes \n%(_totalPhysMemGB) GiB \n\f[color,#FFFF00]Available PhysMemory:\f[default] \n%(memoryavailphys) Bytes \n%(_availablePhysMemGB) GiB\n\n[half]"
+	"\f[color,#FFFF00]Memory Load:\f[default] %(memoryload)% \n\f[color,#FFFF00]Total PhysMemory:\f[default] \n%(memorytotalphys) Bytes \n%(_totalPhysMemGB) GiB \n\f[color,#FFFF00]Available PhysMemory:\f[default] \n%(memoryavailphys) Bytes \n%(_availablePhysMemGB) GiB\n[150]"
 	--
 	"\f[color,#FFFF00]Ukagaka:\f[default] \n%(basewarename): %(bwVersionEX)"
 	--
@@ -414,13 +414,13 @@ OnRecycleStart
 	elseif _binNum == 1 //If the recycle bin has 1 item
 	{
 		"\0\s[3]%(Narrator) There is %(_binNum) item, using %(_binDisplay)%(_type) of space. \_w[1000]\n/
-		 \f[align,center]Proceed?\n	\![*] \f[align,left]\q[Yes,RecycleEmpty]\n \n[-100]\f[align,center]--------\n \n[-100]\f[align,right] \![*] \q[No,RecycleCancel]\n\n[half]\f[align,left]"
+		 \f[align,center]Proceed?\n	\![*] \f[align,left]\q[Yes,RecycleEmpty]\n \n[-100]\f[align,center]--------\n \n[-100]\f[align,right] \![*] \q[No,RecycleCancel]\n[150]\f[align,left]"
 	}
 	elseif _binNum >= 2 //If the recycle bin has anything in it.
 	{
 		"\0\s[3]%(Narrator) There are %(_binNum) items, using %(_binDisplay)%(_type) of space. \_w[1000]\n/
 		 Proceed?\n/
-		\![*] \q[Yes,RecycleEmpty] \n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \![*] \q[No,RecycleCancel]\n\n[half]\f[align,left]"
+		\![*] \q[Yes,RecycleEmpty] \n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \![*] \q[No,RecycleCancel]\n[150]\f[align,left]"
 	}
 }
 	
@@ -446,7 +446,7 @@ OnRecycleBinEmptied
 		_gomi = FUNCTIONEX("gomi.dll", "-ev")
 	}
 	--
-	"\_w[500]\_w[500]\_w[500]\s[6]%(Flowey)\n\n * Done."
+	"\_w[500]\_w[500]\_w[500]\s[6]%(Flowey)\n[200] * Done."
 }
 
 
@@ -468,10 +468,10 @@ OnFileDrop2
 		{
 			Wallpaperfile = reference0
 			
-			"\0\s[3]%(Flowey) *  FILE %(_filename)%(_fileext). Wallpaper?\n\n[half]/
+			"\0\s[3]%(Flowey) *  FILE %(_filename)%(_fileext). Wallpaper?\n[150]/
 			\q[Centered,SetWallpaper_0]\n/
 			\q[Tiled,SetWallpaper_1]\n/
-			\q[Stretched,SetWallpaper_2]\n\n[half]/
+			\q[Stretched,SetWallpaper_2]\n[150]/
 			\q[No thanks,SetWallpaper_Cancel]\e"
 		}
 		when ".mid", ".wav", ".mp3", ".wma", ".au", ".ogg" //Audio file formats
@@ -555,7 +555,7 @@ OnInstallComplete
 
 OnInstallFailure
 {
-	"\0\s[3]%(Flowey) * Failed. Unable to install. \n\n[half]"
+	"\0\s[3]%(Flowey) * Failed. Unable to install. \n[150]"
 	
 	--
 	if reference0 == "unsupported" //This checks if the reason it failed is because it was unsupported.
@@ -636,7 +636,7 @@ OnVanished
 OnOtherGhostVanished
 {
 	"\0\s[14]%(Narrator) * (Is this the last we'll see of %(reference0)?\_w[500]"
-	"\0\s[14]%(Flowey) * %(reference0) %(reference0) %(reference0) %(reference0)\_w[1000]\n\n   Uninstalled."
+	"\0\s[14]%(Flowey) * %(reference0) %(reference0) %(reference0) %(reference0)\_w[1000]\n[200]   Uninstalled."
 }
 
 
@@ -753,7 +753,7 @@ OnUpdateReady
 	
 	}
     --
-	"\c\0\s[26]\i[0]\_q * DOWNLOADING\_w[500].\_w[500].\_w[500].\n\n"
+	"\c\0\s[26]\i[0]\_q * DOWNLOADING\_w[500].\_w[500].\_w[500].\n[200]"
 }
 
 
@@ -801,7 +801,7 @@ OnUpdate.OnDownloadBegin
 	}
 	--
 	//using the text buffers to display the correct number of boxes
-	"\c[line,2]%(_txt)\n\n%(Update_Process) of %(Update_Total)"
+	"\c[line,2]%(_txt)\n[200]%(Update_Process) of %(Update_Total)"
 	--
 	//flavortext - i don't want to lose this, i hope there's a way i can keep all of it
 		
@@ -862,7 +862,7 @@ OnUpdateComplete
 		"\0\s[3]%(Flowey) * SOMETHING CHANGED. VIEW CHANGELOG?\_w[500]"
 		"\0\s[3]%(Narrator) * SOMETHING CHANGED. VIEW CHANGELOG?\_w[500]"
 		--
-		"\n\n\f[align,left] \![*] \q[Yes,OnChangeLog,update]\n \n[-100]\f[align,right]\![*] \q[No,NoChangelog]"
+		"\n[200]\f[align,left] \![*] \q[Yes,OnChangeLog,update]\n \n[-100]\f[align,right]\![*] \q[No,NoChangelog]"
  	}
 }
 
@@ -935,7 +935,7 @@ OnHeadlinesense.OnFind
  	}
 	--
  	//---- Headlines
-	"\n\n%reference3\n"
+	"\n[200]%reference3\n"
  	--
 	//---- Pages
  	if reference2 == "First" || reference2 == "Next"
@@ -974,7 +974,7 @@ OnHeadlinesenseFailure
   {
 if RAND(100) <49
 	{
-		"\0\s[21]%(Flowey) * FAILURE. \_w[500]\n\n[half]"
+		"\0\s[21]%(Flowey) * FAILURE. \_w[500]\n[150]"
 	
  	--
 		if reference0 == "can't download" //if they can't download the rss feed for some reason
@@ -994,7 +994,7 @@ if RAND(100) <49
 	}
 	else
 	{
-		"\0\s[21]%(Narrator) * %(errorMsg)\_w[500]\n\n[half]"	
+		"\0\s[21]%(Narrator) * %(errorMsg)\_w[500]\n[150]"	
 		
 	--
 		if reference0 == "can't download" //if they can't download the rss feed for some reason
@@ -1089,9 +1089,9 @@ OnSNTPCompare
 	}
  	else //if your clock doesn't match
 	{
- 		"\0\s[3]%(Flowey) * WRONG. \_w[300]\s[3]\n  FIX?\n\n[half] \![*] \q[Yes,OnSNTPEXECUTE]\n \n[-100]\f[align,right]\![*] \q[No,OnSNTPCANCEL]\e"
+ 		"\0\s[3]%(Flowey) * WRONG. \_w[300]\s[3]\n  FIX?\n[150] \![*] \q[Yes,OnSNTPEXECUTE]\n \n[-100]\f[align,right]\![*] \q[No,OnSNTPCANCEL]\e"
 		
-		"\0\s[3]%(Narrator) * Your clock is wrong.\_w[300]\0\s[3]\1\s[-1]\nYou are given the option of correcting it.\n\n[half] \![*] \q[Correct it,OnSNTPEXECUTE]\n \n[-100]\f[align,right]\![*] \q[Leave it,OnSNTPCANCEL]\e"
+		"\0\s[3]%(Narrator) * Your clock is wrong.\_w[300]\0\s[3]\1\s[-1]\nYou are given the option of correcting it.\n[150] \![*] \q[Correct it,OnSNTPEXECUTE]\n \n[-100]\f[align,right]\![*] \q[Leave it,OnSNTPCANCEL]\e"
 	}
  }
 
