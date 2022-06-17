@@ -347,6 +347,7 @@ birthchecked
 			else
 			{
 				genericBirthdayToday
+			}
 		}
 		elseif bornmonth == 11
 		{
@@ -400,8 +401,8 @@ birthchecked
 		{
 			if bornday == 2
 			{
-				"\0\s[3]%(Flowey) * \![embed,OnGLITCH,happy birthday].\_w[500]\n * \![embed,OnGLITCH,happy birthday].\_w[500]\n * \![embed,OnGLITCH,happy birthday].\_w[500]\n"
-				"\0\s[3]%(Narrator) * Have you ever gotten the feeling you've done this before?\_w[500]\0\s[3]%(Flowey) * HAPPY \![embed,OnGLITCH,BIRTHDAY] "
+				"\0\s[3]%(Flowey) * \![embed,OnGLITCH,%(birthdayprint)].\_w[500]\n * \![embed,OnGLITCH,%(birthdayprint)].\_w[500]\n * \![embed,OnGLITCH,%(birthdayprint)].\_w[500]\n"
+				"\0\s[3]%(Narrator) * Have you ever gotten the feeling you've done this before?\_w[500]\0\s[3]%(Flowey) *  \![embed,OnGLITCH,%(birthdayprint)] "
 			}
 			elseif bornday == 14
 			{
@@ -417,6 +418,8 @@ birthchecked
 				{
 					"\0\s[29]%(Narrator) * What a strange coincidence, the collapse of a multiverse occurring on the anniversary of one's birth. "
 				}
+				--
+				"Congratulations on that."
 			}
 			else
 			{
