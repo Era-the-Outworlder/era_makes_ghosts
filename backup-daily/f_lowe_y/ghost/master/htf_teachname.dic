@@ -38,8 +38,14 @@ OnTeachName
 
 OnNameTeach
 {
-	_tempname = reference0 //this stores the name value from reference0 in tempname
-	if reference0 == "flowey" || reference0 == "Flowey" || reference0 == "FLOWEY"
+	_tempname = TOSTR(reference0) //this stores the name value from reference0 in tempname
+	_selfname = TOSTR(sakuraname)
+	
+	if _tempname == _selfname
+	{
+	
+	}
+	elseif reference0 == "flowey" || reference0 == "Flowey" || reference0 == "FLOWEY"
 	{
 		"\0\s[21]%(Flowey) * Chose... already...\![open,inputbox,OnNameTeach,-1]"
 		
