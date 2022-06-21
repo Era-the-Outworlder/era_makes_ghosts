@@ -12,6 +12,7 @@
 // THIS THING IS A MESSSSSSS. But I love it.
 			
 			// \![embed,OnGLITCH,happy]
+			// \![embed,OnGlitchMidi,happy]
 			// \![embed,OnGlitchLite,happy]
 
 // separates strings into characters, sends to glitch converter
@@ -87,9 +88,11 @@ CHARSPLIT
 }
 
 alpha
-{"abcdefghijklmnopqrstuvwxyz"}
+{"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"}
 
-// Replaces each character sent to it with its corrosponding glitch
+// Replaces each character sent to it with its corrosponding glitch. only changes alpha characters
+// 30% chance of case setting. then 20% += "_"
+// remaining 70% of cases: 10% = "." 40% = "-", 50% = "_"
 OnGlitchReplace
 {
 	_array = IARRAY
@@ -103,10 +106,10 @@ OnGlitchReplace
 		
 			if RAND(100) >= 29
 			{
-				
-				if RAND(100) <= 49
+				_caseSet = RAND(100)
+				if _caseSet <= 49
 				{_ref = TOUPPER(_ref)}
-				elseif RAND(100) >= 50
+				elseif _caseSet >= 50
 				{_ref = TOLOWER(_ref)}
 				
 				--
@@ -117,10 +120,10 @@ OnGlitchReplace
 			}
 			else
 			{
-				
-				if RAND(100) <= 9
+				_punctuationSet = RAND(100)
+				if _punctuationSet <= 9
 				{_ref = "."}
-				elseif RAND(100) >= 49
+				_punctuationSet >= 50
 				{_ref = "_"}
 				else
 				{_ref = "-"}
@@ -139,7 +142,7 @@ OnGlitchReplace
 
 }
 
-
+// 50% TOUPPER, otherwise TOLOWER. then 60% chance to += "_", " ", "-" (20% each, exclusive)
 OnGMidiReplace
 {
 	_array = IARRAY
@@ -150,10 +153,12 @@ OnGMidiReplace
 	{
 		if _ref _in_ alpha
 		{
-			if RAND(100) >= 49 {_ref = TOUPPER(_ref)}
+			_caseCENT = RAND(100)
+			_additionCENT = RAND(100)
+			if _caseCENT >= 49 {_ref = TOUPPER(_ref)}
 			else {_ref = TOLOWER(_ref)}
 			--
-			if RAND(100) <= 19 {_ref += "_"}
+			if _additionCENT <= 19 {_ref += "_"}
 			elseif RAND(100) <= 39 {_ref += " "}
 			elseif RAND(100) <= 59 {_ref += "-"}
 			else{}

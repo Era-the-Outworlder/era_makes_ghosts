@@ -17,7 +17,7 @@ OnChangeLog
 {
 	"\![set,autoscroll,disable]\_q\b6\_l[90]\n/
 	
-	--Version 2.0.0--\n\n/
+	--Version 2.0.0--\n[200]/
 	-Add Network Update.\n/
 	-Significant Changes to Dialogues.\n/
 	-Addition of LV system and stat menu.\n/
@@ -30,9 +30,9 @@ OnChangeLog
 	---Change to self-alpha transparency.\n/
 	---Not compatible with old versions.\n/
 	
-	\n\n/
+	\n[200]/
 	
-	--Version 1.5.0--\n\n/
+	--Version 1.5.0--\n[200]/
 	
 	-Development resumes late 2021. Not released publicly.\n/
 	-Changed from AYA shiori to YAYA.\n/
@@ -41,10 +41,10 @@ OnChangeLog
 	-Add Changelog\n/
 	-Add Silent Mode. As a result, the 'quiet' version will not be updating.\n/
 	
-	\n\n/
+	\n[200]/
 	
-	--Version 1.0.0--\n\n/
-	-Initial release\n\n"
+	--Version 1.0.0--\n[200]/
+	-Initial release\n[200]"
 	
 	--
 	if reference0 == "menu" //Checks to see if the user came here from the functions menu

@@ -15,13 +15,13 @@ OnDesktopEyeball
 	// if eraDebug == "ON"
 	// {
 				// Displays open windows, for debug
-				// _display = REPLACE("%(OpenWindows)",",","\n\n[half]")
-				// "\_q\b2%(_display)\n\n"
+				// _display = REPLACE("%(OpenWindows)",",","\n[150]")
+				// "\_q\b2%(_display)\n[200]"
 	// }
 	// else
 	{
-		"\0\s[3]%(Narrator) * (f_lowe_y looks at your computer.)\n\n"
-		"\0\s[3]%(Flowey) * Strange. \n\n"
+		"\0\s[3]%(Narrator) * (f_lowe_y looks at your computer.)\n[200]"
+		"\0\s[3]%(Flowey) * Strange. \n[200]"
 		--
 		//calls commentary
 		AppView
@@ -277,7 +277,7 @@ plusNotepad
 				}
 				else
 				{
-					"What... What is this?\n\n&(username)?"
+					"What... What is this?\n[200]&(username)?"
 				}
 			}
 			else

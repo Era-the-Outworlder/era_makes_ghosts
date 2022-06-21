@@ -49,7 +49,7 @@ OnSecondChange
 			else
 			{_level = "error"}
 			
-			_errors += "\f[bold,1]\f[name,arial]%(_level) in %(_file) on line %(_line):\f[default]\n%(_msg)\n\n"
+			_errors += "\f[bold,1]\f[name,arial]%(_level) in %(_file) on line %(_line):\f[default]\n%(_msg)\n[200]"
 		}
 		
 		_num = ARRAYSIZE(GETERRORLOG)
@@ -59,7 +59,7 @@ OnSecondChange
 		
 		"\0\s[0]\b6\_q\![set,autoscroll,disable]%(_num) error%(_s)."
 		--
-		"\n\n"
+		"\n[200]"
 		--
 		_errors
 		--

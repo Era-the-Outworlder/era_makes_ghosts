@@ -14,7 +14,7 @@
 
 OnTestVariable
 {
-	"\0\s[3]\b6%(Narrator) * Testing! \n\n"
+	"\0\s[3]\b6%(Narrator) * Testing! \n[200]"
 	--
 	"\![*] \q[Erase Variable,seteVar]\n"
 	--
@@ -92,7 +92,7 @@ Select.funkTest
 	"\0\s[15]\b[-1]\_v[mus\hit.wav]a \_w[100]b \s[-1]\_w[3000]c \s[21]\_v[mus\savestate_spam.wav]d\_w[1000]e\e"
 	
 	// DUMPVAR()
-	// "\n\n\n%(Narrator) * Dumping Variables to ayame.log.\n"
+	// "\n[300]%(Narrator) * Dumping Variables to ayame.log.\n"
 	--
 	// _text = OnGLITCH("This is a test string. Let's go!")
 	// --
@@ -143,7 +143,7 @@ reqCheck
     {
         _keyname = var.req.key[_i]
         _value = var.req.value[_i]
-        _display += "%(_keyname): %(_value)\n\n[half]"
+        _display += "%(_keyname): %(_value)\n[150]"
     }
     --
     "\_q\b6\![set,autoscroll,disable]%(_display)\x"

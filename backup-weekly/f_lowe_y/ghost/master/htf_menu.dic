@@ -19,7 +19,7 @@ OpenSakuraMenu
 
 OnMenuRun
 {	
-	"\b2\n\n[half]\_q" 
+	"\b2\n[150]\_q" 
 	--
 	if lastTalk != ""
 	{
@@ -38,11 +38,11 @@ OnMenuRun
 	--
 	"\![*] \q[%(configMenu),OnConfigMenu]\n"
 	--
-	"\![*] \q[%(funMenu),OnFunctionMenu]\n\n"
+	"\![*] \q[%(funMenu),OnFunctionMenu]\n[200]"
 	--
 	"\![*] \q[%(statsMenu),OnStatMenu]\n"
 	--
-	"LV: %(ellVee)\n\n"
+	"LV: %(ellVee)\n[200]"
 	--
 	"%(disDate) %(disTime)\n"
 	--
@@ -50,14 +50,14 @@ OnMenuRun
 	--
 	if lastUpDate
 	{
-		"Last Updated: %(lastUpDate)\n\n[half]"
+		"Last Updated: %(lastUpDate)\n[150]"
 	}
 	else
 	{
-		"\n\n[half]"
+		"\n[150]"
 	}
 	--
- 	"\![*] \q[%(closeMenu),CANCEL]\n\n[half]"
+ 	"\![*] \q[%(closeMenu),CANCEL]\n[150]"
 	--
 	
 	if eraDebug == "ON"
@@ -96,7 +96,7 @@ OnUserConfig
 	--
 	if username == "Era" 
 	{
-		"Set Debug?\n(NOW : %(eraDebug))\n\![*] \q[ON,eDBon]\n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \![*] \q[OFF,eDBoff]\n\n[half]\f[align,left]"
+		"Set Debug?\n(NOW : %(eraDebug))\n\![*] \q[ON,eDBon]\n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \![*] \q[OFF,eDBoff]\n[150]\f[align,left]"
 	}
 	--
 	"\![*] \q[%(configMenu),OnConfigMenu]\n"
@@ -112,63 +112,63 @@ OnConfigMenu
 {
 	"\0\b[2]\![set,autoscroll,disable]\_q\n" 
 	--
-	"TALK RATE: \nevery %(talktime) \n\f[height,14]\![*] (\q[%(change),talkinter])\f[height,default]\n\n[half]"
+	"TALK RATE: \nevery %(talktime) \n\f[height,14]\![*] (\q[%(change),talkinter])\f[height,default]\n[150]"
 	--
 	"Enable Silent Mode?\n"
 	--
 	if silentMode == "ON"
 	{
-		"\f[color,#fb0300]\![*] \q[ON,silenton] \f[color,default]\n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \![*] \q[OFF,silentoff] \n\n[half]\f[align,left]"
+		"\f[color,#fb0300]\![*] \q[ON,silenton] \f[color,default]\n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \![*] \q[OFF,silentoff] \n[150]\f[align,left]"
 	}
 	else
 	{
-		"\![*] \q[ON,silenton] \n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \f[color,#fb0300]\![*] \q[OFF,silentoff]\f[color,default]\n\n[half]\f[align,left]"
+		"\![*] \q[ON,silenton] \n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \f[color,#fb0300]\![*] \q[OFF,silentoff]\f[color,default]\n[150]\f[align,left]"
 	}
 	--
 	"Discord Rich Presence?\n"
 	--
 	if InDiscordPluginCustom == 1
 	{
-		"\f[color,#fb0300]\![*] \q[ON,OnDiscordPluginCustom] \f[color,default]\n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \![*] \q[OFF,OnDiscordPluginCustomEnd]\n\n[half]\f[align,left]"
+		"\f[color,#fb0300]\![*] \q[ON,OnDiscordPluginCustom] \f[color,default]\n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \![*] \q[OFF,OnDiscordPluginCustomEnd]\n[150]\f[align,left]"
 	}
 	else
 	{
 		"\![*] \q[ON,OnDiscordPluginCustom] \n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \f[color,#fb0300]\![*] \q[OFF,OnDiscordPluginCustomEnd]\f[color,default]\n\f[align,left]"
 	}
 	--
-	'\q[Change Status,"script:\![open,inputbox,OnDRPSet]"]\n\n[half]'
+	'\q[Change Status,"script:\![open,inputbox,OnDRPSet]"]\n[150]'
 	--
 	"Confirm Recycle Bin?\n"
 	--
 	if verBalete == "ON"
 	{
-		"\f[color,#fb0300]\![*] \q[ON,verBinOn] \f[color,default]\n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \![*] \q[OFF,verBinOff]\n\n[half]\f[align,left]"
+		"\f[color,#fb0300]\![*] \q[ON,verBinOn] \f[color,default]\n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \![*] \q[OFF,verBinOff]\n[150]\f[align,left]"
 	}
 	else
 	{
-		"\![*] \q[ON,verBinOn] \n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \f[color,#fb0300]\![*] \q[OFF,verBinOff]\f[color,default]\n\n[half]\f[align,left]"
+		"\![*] \q[ON,verBinOn] \n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \f[color,#fb0300]\![*] \q[OFF,verBinOff]\f[color,default]\n[150]\f[align,left]"
 	}
 	--		
 	// "Program Commentary?\n"
 	// --
 	// if canDesktopEye == "ON"
 	// {
-		// "\f[color,#fb0300]\![*] \q[ON,cDEon] \f[color,default]\n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \![*] \q[OFF,cDEoff]\n\n[half]\f[align,left]"
+		// "\f[color,#fb0300]\![*] \q[ON,cDEon] \f[color,default]\n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \![*] \q[OFF,cDEoff]\n[150]\f[align,left]"
 	// }
 	// else
 	// {
-		// "\![*] \q[ON,cDEon] \n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \f[color,#fb0300]\![*] \q[OFF,cDEoff]\f[color,default]\n\n[half]\f[align,left]"
+		// "\![*] \q[ON,cDEon] \n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \f[color,#fb0300]\![*] \q[OFF,cDEoff]\f[color,default]\n[150]\f[align,left]"
 	// }
 	--
 	"Enable Uninstall?\n"
 	--
 	if deleteshitai == "ON"
 	{
-		"\f[color,#fb0300]\![*] \q[ON,deleteon] \f[color,default]\n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \![*] \q[OFF,deleteoff]\n\n[half]\f[align,left]"
+		"\f[color,#fb0300]\![*] \q[ON,deleteon] \f[color,default]\n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \![*] \q[OFF,deleteoff]\n[150]\f[align,left]"
 	}
 	else
 	{
-		"\![*] \q[ON,deleteon] \n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \f[color,#fb0300]\![*] \q[OFF,deleteoff]\f[color,default]\n\n[half]\f[align,left]"
+		"\![*] \q[ON,deleteon] \n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \f[color,#fb0300]\![*] \q[OFF,deleteoff]\f[color,default]\n[150]\f[align,left]"
 	}
 	--
 	"\![*] \q[%(userMenu),OnUserConfig]\n"
@@ -259,13 +259,13 @@ Select.talkinter
 		"\_v[mus\help_TEXT.mp3] You can change how often f_lowe_y speaks.\_w[500]\0\s[3] The current rate is every %(talktime)."
 		--
 		
- 		"\0\n\n[half]/
+ 		"\0\n[150]/
  		\![*] \q[ Every 30 seconds,TALKMAX]\n/
 		\![*] \q[ Every minute,TALKHIGH]\n/
  		\![*] \q[ Every 3 minutes,TALKNORMAL]\n/
 		\![*] \q[ Every 5 minutes,TALKPOOR]\n/
 		\![*] \q[ Every 30 minutes,TALKRARE]\n/
- 		\![*] \q[ Don't speak,TALKNONE]\n\n[half]/
+ 		\![*] \q[ Don't speak,TALKNONE]\n[150]/
 		\![*] \q[ Don't change,TalksTill]"
 	}
 
@@ -343,23 +343,23 @@ Select.CANCEL
 OnFunctionMenu
 {
 
-	"\0\s[3]%(Flowey)\b2 * ...\n\n"
-	"\0\s[3]%(Flowey)\b2 * ACC_SSING FUNCTION M_NU\n\n"
-	"\0\s[3]\_v[mus\help_TEXT.mp3]\b2 * (You ask f_lowe_y to do something for you.)\n\n"
+	"\0\s[3]%(Flowey)\b2 * ...\n[200]"
+	"\0\s[3]%(Flowey)\b2 * ACC_SSING FUNCTION M_NU\n[200]"
+	"\0\s[3]\_v[mus\help_TEXT.mp3]\b2 * (You ask f_lowe_y to do something for you.)\n[200]"
 	
 	
 	--
-	"\![*] \q[Open Calendar,CALENDAR]\n\n[half]/
-	\![*] \q[Check Email,MailCheck]\n\n[half]/
-	\![*] \q[Open SSP Preferences,sspconfig]\n\n[half]/
-	\![*] \q[Empty Recycle Bin,OnRecycleStart]\n\n[half]/
-	\![*] \q[System Information,OnRunCPUID]\n\n[half]\n/
-	\![*] \q[View Ghost Changelog,OnChangeLog,menu]\n\n[half]\n/
+	"\![*] \q[Open Calendar,CALENDAR]\n[150]/
+	\![*] \q[Check Email,MailCheck]\n[150]/
+	\![*] \q[Open SSP Preferences,sspconfig]\n[150]/
+	\![*] \q[Empty Recycle Bin,OnRecycleStart]\n[150]/
+	\![*] \q[System Information,OnRunCPUID]\n[150]\n/
+	\![*] \q[View Ghost Changelog,OnChangeLog,menu]\n[150]\n/
 	\![*] \q[%(backMenu),OnMenuRun]\n"
 	--
 	if username == "Era" || username == "BugTest"
 	{
-		"\n\n\![*] \q[Test variable,OnTestVariable]\n"
+		"\n[200]\![*] \q[Test variable,OnTestVariable]\n"
 	}
 	else
 	{
@@ -376,16 +376,16 @@ OnStatMenu
 	--
 	"\b2\n  %(CHR(34))%(username)%(CHR(34)) "
 	--
-	"\n\n\n"
+	"\n[300]"
 	--
 	"LV %(ellVee)\n/
-	HP %(HP)/%(HP)\n\n/
+	HP %(HP)/%(HP)\n[200]/
 	AT NaN(NaN) EXP %(knifeTime)\n/
-	DF NaN(NaN) Next %(toNextLV)\n\n/
+	DF NaN(NaN) Next %(toNextLV)\n[200]/
 	WEAPON: weapon_id_%(_wID) \n/
-	ARMOR: equip_id_%(_aID) \n\n\n"
+	ARMOR: equip_id_%(_aID) \n[300]"
 	--
-	"\![*] \q[RESET STATS?,resetSTATS]\n\n"
+	"\![*] \q[RESET STATS?,resetSTATS]\n[200]"
 	--
 	"\![*] \q[%(backMenu),OnMenuRun]\n"
 	

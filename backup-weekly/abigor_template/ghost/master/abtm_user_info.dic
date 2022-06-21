@@ -77,7 +77,7 @@ OnNameTeach
 	elseif _tempname == username //checks against existing username
 	{
 		
-		"That is already your username. Are you trying to change something else? \_w[500]\n\n[half]"
+		"That is already your username. Are you trying to change something else? \_w[500]\n[150]"
 		--
 		
 		"\![*] \q[Yes,titlechoose]\n \n[-100]\f[align,right]\![*] \q[No,OnNameDone,repeat]\n"
@@ -87,9 +87,9 @@ OnNameTeach
 	{
 		username = _tempname
 		
-		"Specific Comment Responding to that Name\n\n"
+		"Specific Comment Responding to that Name\n[200]"
 		--
-		"Do you want me to use a title or honorific when addressing you? \_w[500]\n\n[half]"
+		"Do you want me to use a title or honorific when addressing you? \_w[500]\n[150]"
 		--
 		"\![*] \q[Yes,titlechoose]\n \n[-100]\f[align,right]\![*] \q[No,OnNameDone]\n"
 	}
@@ -97,7 +97,7 @@ OnNameTeach
 	{
 		username = _tempname
 		
-		"Do you want me to use a title or honorific when addressing you? \_w[500]\n\n[half]"
+		"Do you want me to use a title or honorific when addressing you? \_w[500]\n[150]"
 		--
 		"\![*] \q[Yes,titlechoose]\n \n[-100]\f[align,right]\![*] \q[No,OnNameDone]\n"
 	}
@@ -203,8 +203,8 @@ OnNameDone
 
 OnTeachPronouns
 {
-	"\t\c\b2Please select your pronouns:\_w[500]\n\n\n[half]\_q/
-	\n\n\n/
+	"\t\c\b2Please select your pronouns:\_w[500]\n[300][half]\_q/
+	\n[300]/
 	\![*] \q[He-His-Him,OnSetPronouns,1]\n/
 	\![*] \q[She-Her-Her,OnSetPronouns,2]\n/	
 	\![*] \q[They-Their-Them,OnSetPronouns,3]\n/
@@ -308,7 +308,7 @@ OnPossessiveTeach
 	}
 	else //Continuing on
 	{
-		"You entered %(_nounN), %(_nounO), and %(_nounP).\n Does that seem right? \_w[500]\n\n[half]/
+		"You entered %(_nounN), %(_nounO), and %(_nounP).\n Does that seem right? \_w[500]\n[150]/
 		\_q\![*]\q[Looks good!,OnSetPronouns,0,%_nounN,%_nounO,%_nounP]\n/
 		\![*]\q[Let's try that again...,OnTeachCustomPronoun]"
 			
@@ -323,7 +323,7 @@ OnGetBirthday
 {
 	OnNotifyUserInfo
 	--	
-	"\n\n\nEnter Birthdate. \n/
+	"\n[300]Enter Birthdate. \n/
 	\![open,dateinput,OnInputBirthdate,,%(menuBYear),%(menuBMonth),%(menuBDay)]\x\n"
 	
 }
@@ -546,7 +546,7 @@ OnBDayCheck
 			{
 				"I could recite Pi to some decimal if I was programmed to do so."
 				--
-				"\n\nHappy Birthday!"
+				"\n[200]Happy Birthday!"
 			}
 			else
 			{

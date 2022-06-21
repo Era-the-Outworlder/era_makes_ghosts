@@ -16,7 +16,7 @@ OnTeachName
 		{	
 			"\c\t"
 			--
-			"\0\s[3]%(Narrator)\n\n\n * Change var_player_name? \![open,inputbox,OnNameTeach,-1]\0\s[7]"
+			"\0\s[3]%(Narrator)\n[300] * Change var_player_name? \![open,inputbox,OnNameTeach,-1]\0\s[7]"
 			
 			"\0\s[8]%(Flowey) * RE-RE-RE-RE-RE-\_w[500]\c%(Flowey) * Name the Fallen Human \![open,inputbox,OnNameTeach,-1]\0\s[7]"
 			
@@ -28,7 +28,7 @@ OnTeachName
 			--
 			"\0\s[3]%(Flowey)* Name. Name. \n\_w[500]\s[7] * Name. Fallen Human. Fallen... name? \![open,inputbox,OnNameTeach,-1]\x\s[0]"
 			
-			"\0\s[3]%(Narrator)\n\n\n\f[align,center] Name the Fallen Human\_w[500]\0\s[8]\![open,inputbox,OnNameTeach,-1]\x\s[0]"
+			"\0\s[3]%(Narrator)\n[300]\f[align,center] Name the Fallen Human\_w[500]\0\s[8]\![open,inputbox,OnNameTeach,-1]\x\s[0]"
 		}
 }
 
@@ -38,8 +38,14 @@ OnTeachName
 
 OnNameTeach
 {
-	_tempname = reference0 //this stores the name value from reference0 in tempname
-	if reference0 == "flowey" || reference0 == "Flowey" || reference0 == "FLOWEY"
+	_tempname = TOSTR(reference0) //this stores the name value from reference0 in tempname
+	_selfname = TOSTR(sakuraname)
+	
+	if _tempname == _selfname
+	{
+	
+	}
+	elseif reference0 == "flowey" || reference0 == "Flowey" || reference0 == "FLOWEY"
 	{
 		"\0\s[21]%(Flowey) * Chose... already...\![open,inputbox,OnNameTeach,-1]"
 		
@@ -66,8 +72,8 @@ OnNameTeach
 		{
 			username = "NULL" //this sets the user's name.
 		
-			"\0\s[29]%(Flowey) * var_player_name = %(username)\n\n"
-			"\0\s[29]%(Narrator) * var_player_name = %(username) Is this correct? \n\n"
+			"\0\s[29]%(Flowey) * var_player_name = %(username)\n[200]"
+			"\0\s[29]%(Narrator) * var_player_name = %(username) Is this correct? \n[200]"
 			--
 			
 			"\![*] \q[Change it.,OnTeachName]\n \n[-100]\f[align,right]\![*] \q[It's fine.,OnRisk]\n\0\s[3]"
@@ -95,7 +101,7 @@ OnNameTeach
 			{
 				username = "Papalgamate"
 				
-				"\0\s[29]%(Flowey) * %(HAPPY)\n\n/
+				"\0\s[29]%(Flowey) * %(HAPPY)\n[200]/
 				\c%(Narrator) * IT... May be a bad idea to use that name. \n"
 				--
 				"\![*] \q[Change it.,OnTeachName]\n \n[-100]\f[align,right]\![*] \q[Risk it.,OnRisk]\0\s[3]"
@@ -113,7 +119,7 @@ OnNameTeach
 			if month == 2 && day == 15
 			{
 				username = "THANK"
-				"\0\s[29]%(Flowey) * %(HAPPY)\n\n/
+				"\0\s[29]%(Flowey) * %(HAPPY)\n[200]/
 				\c%(Narrator) * IT... May be a bad idea to use that name. \n"
 				--
 				"\![*] \q[Change it.,OnTeachName]\n \n[-100]\f[align,right]\![*] \q[Risk it.,OnRisk]\0\s[3]"
@@ -139,9 +145,9 @@ OnNameTeach
 		}
 		elseif _tempname == username //checks against existing username
 		{
-			"\0\s[3]%(Flowey) * %(username)... Again... Title...?\_w[500]\n\n[half]"
+			"\0\s[3]%(Flowey) * %(username)... Again... Title...?\_w[500]\n[150]"
 			
-			"\0\s[3]%(Narrator) * That is already your username. Are you trying to change something else? \_w[500]\n\n[half]"
+			"\0\s[3]%(Narrator) * That is already your username. Are you trying to change something else? \_w[500]\n[150]"
 			--
 			
 			"\![*] \q[Yes,titlechoose]\n \n[-100]\f[align,right]\![*] \q[No,titlenone]\n"
@@ -149,9 +155,9 @@ OnNameTeach
 		else //if the user put in something not specified above, ie a proper name the ghost can use. 
 		{
 			username = _tempname
-			"\0\s[3]%(Flowey) * Title...?\_w[500]\n\n[half]"
+			"\0\s[3]%(Flowey) * Title...?\_w[500]\n[150]"
 			
-			"\0\s[3]%(Narrator) * Do you want to be called by a title? \_w[500]\n\n[half]"
+			"\0\s[3]%(Narrator) * Do you want to be called by a title? \_w[500]\n[150]"
 			--
 			
 			"\![*] \q[Yes,titlechoose]\n \n[-100]\f[align,right]\![*] \q[No,titlenone]\n"
