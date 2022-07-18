@@ -43,7 +43,7 @@ OnNameTeach
 	
 	if _tempname == _selfname
 	{
-	
+		"\0\s[21]%(Flowey) * Chose. Chose. Chose. Chose. Chose\n[200]\_w[500]Chose... already...\![open,inputbox,OnNameTeach,-1]"
 	}
 	elseif reference0 == "flowey" || reference0 == "Flowey" || reference0 == "FLOWEY"
 	{

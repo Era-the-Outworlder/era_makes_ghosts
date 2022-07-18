@@ -18,7 +18,7 @@ Char3.center,894
 teachbox.left,837
 Char6.center,1512
 dateinput.top,444
-Char.VirtualDesktop,d3633fed-f266-4ed1-9496-bcf9d82cdb21
+Char.VirtualDesktop,506912f3-106c-40ca-bfc8-c77e0de8e07c
 Char4.center,629
 dateinput.left,745
 teachbox.top,725
@@ -26,12 +26,12 @@ timeinput.top,648
 seriko.waitmultiplier,100
 Char2.center,896
 Update.TestMode,0
-Char0.center,1500
+Char0.center,226
 scriptbox.top,398
 shell,shell\master\
 FirstBoot,booted
 passwordinput.left,810
-Char1.center,1498
+Char1.center,224
 sliderinput.top,382
 shiori.log,1
 shell.ischanged.2,1
