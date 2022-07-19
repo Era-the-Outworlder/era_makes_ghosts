@@ -1,4 +1,4 @@
-﻿//Character Set definitions. Do not change unless absolutely certain and necessary.
+﻿// Character Set definitions. Do not change unless absolutely certain what you are doing. Even then, reconsider whether it is necessary.
 
 charset, UTF-8
 charset.dic, UTF-8
@@ -7,10 +7,8 @@ charset.file, UTF-8
 charset.save, UTF-8
 charset.extension, UTF-8
 
-// fncdepth,[0]
 
-//---- Dictionary Files ---------------------------------------------------------------------
-
+// ---- Dictionary Files ----
 
 include, system_config.txt		
 			
@@ -30,8 +28,19 @@ dic, abtm_trans_anchor_choice.dic
 dic, abtm_user_info.dic
 
 
-//---- Log Location -------------------------------------------------------------------------
-//Sets the file path of the event log. Seems to be duplicated in other parts of the program
+// ---- Error Message List ----
+// Points to a file to specify what list of error messages to draw from. Primarily exists for localisation. Best to use an officially sourced one unless you're writing for an unsupported language.
 
 messagetxt,system/messagetxt/english.txt
+
+
+// ---- Function Depth ----
+// Controls the max iterations of a loop before failure. 0 to disable failsafe.
+
+// fncdepth,[0]
+
+
+// ---- Log Location ----
+//Sets the file path of the event log. Seems to be duplicated in other parts of the program
+
 log, ayame.log

@@ -114,18 +114,7 @@ OnConfigMenu
 	--
 	"TALK RATE: \nevery %(talktime) \n\f[height,14]\![*] (\q[%(change),talkinter])\f[height,default]\n[150]"
 	--
-	"Enable Silent Mode?\n"
-	--
-	if silentMode == "ON"
-	{
-		"\f[color,#fb0300]\![*] \q[ON,silenton] \f[color,default]\n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \![*] \q[OFF,silentoff] \n[150]\f[align,left]"
-	}
-	else
-	{
-		"\![*] \q[ON,silenton] \n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \f[color,#fb0300]\![*] \q[OFF,silentoff]\f[color,default]\n[150]\f[align,left]"
-	}
-	--
-	"Discord Rich Presence?\n"
+	"Discord Rich Presence \n"
 	--
 	if InDiscordPluginCustom == 1
 	{
@@ -136,7 +125,18 @@ OnConfigMenu
 		"\![*] \q[ON,OnDiscordPluginCustom] \n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \f[color,#fb0300]\![*] \q[OFF,OnDiscordPluginCustomEnd]\f[color,default]\n\f[align,left]"
 	}
 	--
-	'\q[Change Status,"script:\![open,inputbox,OnDRPSet]"]\n[150]'
+	"\q[Open DRP Menu,OnDRPMenu]\n[150]"
+	--
+	"Enable Silent Mode?\n"
+	--
+	if silentMode == "ON"
+	{
+		"\f[color,#fb0300]\![*] \q[ON,silenton] \f[color,default]\n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \![*] \q[OFF,silentoff] \n[150]\f[align,left]"
+	}
+	else
+	{
+		"\![*] \q[ON,silenton] \n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \f[color,#fb0300]\![*] \q[OFF,silentoff]\f[color,default]\n[150]\f[align,left]"
+	}
 	--
 	"Confirm Recycle Bin?\n"
 	--

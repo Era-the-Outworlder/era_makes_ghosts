@@ -4,6 +4,18 @@
 
 // -------- Things specifically added by Era --------
 
+//----- SANITISE -----
+// Strips out punctuation that would interrupt any of the functions
+
+SANITISE
+{
+	_clean = REPLACE(_argv[0],"'",CHR(39)) //Converts apostrophes/single quotes
+	_clean = REPLACE(_clean,'"',CHR(34)) //Converts double quotes
+	_clean = REPLACE(_clean,",",CHR(44)) //Converts commas
+	
+	"%(_clean)"
+}
+
 //As the name implies, this checks if the balloon is currently open or not. This was written by Levidre, and modified a bit by Zi.
 
 balloonCheck
@@ -192,156 +204,7 @@ On_hwnd
 
 // ----------------------------------
 // ---- Discord Plugin by steve
-// haven't sorted out how it works quite yet
-
-
-SakuraScriptArgConverter
-{
-    '"'+REPLACE(TOSTR(_argv[0]),'"','""')+'"'
-}
-
-OnDiscordPluginCustom
-{
-	InDiscordPluginCustom = 1
-	"\![raiseplugin,Discord Rich Presence,OnDiscordPluginCustomALL,"
-	--
-	"943046097276923914,"//Appid
-	--
-	","//CustomDetail
-	--
-	","//CustomState
-	--
-	"base_img,"//LargeImageKey
-	--
-	"https://era-the-outworlder.github.io/era_makes_ghosts/f_lowe_y,"//LargeImageText
-	--
-	","//SmallImageKey
-	--
-	""//SmallImageText
-	--
-	"]"
-	--
-	DiscordCustom.DeveloperSet
-	--
-	if drpstatus != ""
-	{DiscordCustom.UserDetail}
-	// --
-	// DiscordCustom.LoggingSet
-	// --
-	// "\0\s[0]DISCORD UPDATED\n"
-}
-
-OnDiscordPluginCustomEnd
-{
-	InDiscordPluginCustom=0
-}
-
-DiscordCustomSet.base
-{
-	if InDiscordPluginCustom
-		"\![raiseplugin,Discord Rich Presence,"+_argv[0]+","+SakuraScriptArgConverter(_argv[1])+"]"
-}
-
-DiscordCustomSet.LargeImageKey
-{
-	DiscordCustomSet.base("OnDiscordPluginCustomLargeImageKey",_argv[0])
-}
-
-DiscordCustomSet.LargeImageText
-{
-	DiscordCustomSet.base("OnDiscordPluginCustomLargeImageText",_argv[0])
-}
-
-DiscordCustomSet.SmallImageKey
-{
-	DiscordCustomSet.base("OnDiscordPluginCustomSmallImageKey",_argv[0])
-}
-
-DiscordCustomSet.SmallImageText
-{
-	DiscordCustomSet.base("OnDiscordPluginCustomSmallImageText",_argv[0])
-}
-
-DiscordCustomSet.CustomDetail
-{
-	DiscordCustomSet.base("OnDiscordPluginCustomDetail",_argv[0])
-}
-
-DiscordCustomSet.CustomState
-{
-	DiscordCustomSet.base("OnDiscordPluginCustomState",_argv[0])
-}
-
-// ---- Setting Minimised Status ----
-DiscordCustom.MinimiseSet
-{
-	if !InDiscordPluginCustom
-	{
-		return
-	}
-	else
-	{
-		DiscordCustomSet.CustomState("Minimised")
-		--
-		DiscordCustomSet.LargeImageKey("minimise_img")
-	}
-}
-
-// ---- Setting Dev Information ----
-
-OnDevSet
-{
-	smallImageCaption = reference0
-}
-
-DiscordCustom.DeveloperSet
-{
-	if !InDiscordPluginCustom
-		return
-	if username == "Era"
-	{
-		DiscordCustomSet.SmallImageKey("dev_img")
-		--
-		DiscordCustomSet.SmallImageText(smallImageCaption)
-	}
-	else
-	{
-		DiscordCustomSet.SmallImageKey("")
-		--
-		DiscordCustomSet.SmallImageText("")
-	}
-}
-
-
-
-// ---- Setting CustomDetail ----
-OnDRPSet
-{
-	drpstatus = reference0
-}
-
-DiscordCustom.UserDetail
-{
-	if !InDiscordPluginCustom
-	{
-		return
-	}
-	else
-	{
-		DiscordCustomSet.CustomDetail(drpstatus)
-		--
-		OnDiscordPluginCustom
-	}
-}
-
-devMTEST
-{
-	"\![open,inputbox,OnDevSet]"
-}
-
-
-
-
+// moved relevent code to htf_richpresence.dic
 
 // -------- SAORI_CPUID --------
 // CPU related
