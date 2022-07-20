@@ -5,8 +5,8 @@
 //
 // Error String
 !!!msge
-*error E0000 : Unknown error.
-*error E0001 : Function name is required.
+*error E0000 : Unknown error. Good luck, pal.
+*error E0001 : Function name is required. How did  they leave that out??
 *error E0002 : Too many '}' exist.
 *error E0003 : Invalid name is used for the function.
 *error E0004 : Unanalyzable. Probably, '{' is required here.
