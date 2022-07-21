@@ -20,9 +20,13 @@ Feel free to modify for your own use, and if you've done extensive modifications
 
 
 Anyway, have a nice day!
+~~~~~~~~~~Update: July 2022
+Version 2.0.0 Change log available in ghost.
+Ghost has been converted to YAYA and had many features added/changed.
+
 ~~~~~~~~~~Update: 11/11/2021 
 Version 1.1.0
-5 years later I'm finally doing more (documented) updates and officially giving this a version number. Change log available in ghost.
+5 years later I'm finally doing more (documented) updates and officially giving this a version number. 
 
 ~~~~~~~~~~Update: Oct 5 2016
 

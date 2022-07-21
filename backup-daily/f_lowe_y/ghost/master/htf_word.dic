@@ -18,7 +18,7 @@ Narrator
 Flowey
 {"\_v[mus\sound_FLOWEY.mp3]"}
 
-// ----System display related----
+// ---- System display related ----
 ap
 {
  	if ampm
@@ -83,7 +83,7 @@ dayLong
 
 
 
-// ----Dialogue----
+// ---- Dialogue ----
 
 floweyLaugh
 {

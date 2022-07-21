@@ -22,7 +22,12 @@ OnChangeLog
 	-Significant Changes to Dialogues.\n/
 	-Addition of LV system and stat menu.\n/
 	-New/Modified basic functions\n/
+	--Communication with other ghosts\n/
+	--Will notice other ghosts saying his name\n/
+	--\n/
 	-Change of dictionary names\n/
+	-Discord Rich Presence Plugin integration\n/
+	-Emergency Boot Mode\n/
 	-Shell changes:\n/
 	---Update to new seriko definition.\n/
 	---Reorganise/reorder surfaces.\n/
@@ -36,7 +41,7 @@ OnChangeLog
 	
 	-Development resumes late 2021. Not released publicly.\n/
 	-Changed from AYA shiori to YAYA.\n/
-	-Rename default shell to match system defaults.\n/
+	-Rename default shell to %(CHR(34))master%(CHR(34)) to match system defaults.\n/
 	-Rename dictionaries\n/
 	-Add Changelog\n/
 	-Add Silent Mode. As a result, the 'quiet' version will not be updating.\n/

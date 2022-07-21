@@ -46,4 +46,4 @@ messagetxt,system/messagetxt/flowery.txt
 // ---- Log Location ----
 //Sets the file path of the event log. Seems to be duplicated in other parts of the program
 
-log, ayame.log
+log, flowey_yaya.log

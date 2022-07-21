@@ -19,7 +19,7 @@ OpenSakuraMenu
 
 OnMenuRun
 {	
-	"\b2\n[150]\_q" 
+	"\b2\n[110]\_q" 
 	--
 	if lastTalk != ""
 	{

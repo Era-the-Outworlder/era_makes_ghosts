@@ -6,19 +6,19 @@
 // Error String
 !!!msge
 *error E0000 : Unknown error. Good luck, pal.
-*error E0001 : Function name is required. How did  they leave that out??
+*error E0001 : Function name is required. How did they leave that out??
 *error E0002 : Too many '}' exist.
 *error E0003 : Invalid name is used for the function.
-*error E0004 : Unanalyzable. Probably, '{' is required here.
-*error E0005 : Failed to open the file.
-*error E0006 : Missing name of the array.
+*error E0004 : Unanalyzable. Probably, '{' is required here. Maybe.
+*error E0005 : Failed to open the file. That sucks.
+*error E0006 : Array name missing. Weird. 
 *error E0007 : Incomplete string exists.
 *error E0008 : Invalid double quote exists.
 *error E0009 : Internal error (1).
 *error E0010 : Unanalyzable string.
 *error E0011 : Some invalid characters are used in the identifier.
 *error E0012 : Invalid name is used for the variable.
-*error E0013 : Duplicated function names exist.
+*error E0013 : Duplicated function names exist. Is the whole function duplicated or just the name? No idea. Check my functions against those in systemconfig.txt and the dictionaries in ghost/master/system/.
 *error E0014 : Ordinal number is required for the array.
 *error E0015 : Internal error (2).
 *error E0016 : Internal error (3).
