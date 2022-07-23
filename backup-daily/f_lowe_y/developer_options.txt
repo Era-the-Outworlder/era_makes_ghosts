@@ -8,6 +8,7 @@ ghost/master/htf_teachbirthday.dic.bak,nonar,noupdate
 ghost/master/htf_teachbirthday_old.dic,nonar,noupdate
 ghost/master/yaya_variable.cfg,nonar,noupdate
 ghost/master/ayame.log,nonar,noupdate
+ghost/master/flowey_yaya.log,nonar,noupdate
 ghost/master/yaya_ssp_debug.log,nonar,noupdate
 ghost/master/ssp_shiori_log.txt,nonar,noupdate
 

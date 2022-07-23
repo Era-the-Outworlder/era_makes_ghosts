@@ -96,7 +96,7 @@ OnUserConfig
 	--
 	if username == "Era" 
 	{
-		"Set Debug?\n(NOW : %(eraDebug))\n\![*] \q[ON,eDBon]\n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \![*] \q[OFF,eDBoff]\n[150]\f[align,left]"
+		"Set Debug?\n(NOW : %(eraDebug))\n\![*] \q[ON,OnSetEraDebug,eDBon]\n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \![*] \q[OFF,OnSetEraDebug,eDBoff]\n[150]\f[align,left]"
 	}
 	--
 	"\![*] \q[%(configMenu),OnConfigMenu]\n"
@@ -106,13 +106,31 @@ OnUserConfig
  	"\![*] \q[%(closeMenu),CANCEL]\e"
 }
 
+OnSetEraDebug
+{
+	case reference[0]
+	{
+		when "eDBon" // Private Debug Mode, nothing interesting here
+		{
+			eraDebug = "ON"
+		}
+		when "eDBoff"
+		{
+			eraDebug = "OFF"
+		}
+	}
+	--
+	OnUserConfig
+}
+
+
 // ---- OnConfigMenu ----
 // Allows user to change various ghost settings
 OnConfigMenu
 {
 	"\0\b[2]\![set,autoscroll,disable]\_q\n" 
 	--
-	"TALK RATE: \nevery %(talktime) \n\f[height,14]\![*] (\q[%(change),talkinter])\f[height,default]\n[150]"
+	"TALK RATE: \nevery %(talktime) \n\f[height,14]\![*] (\q[%(change),OnSetTalk])\f[height,default]\n[150]"
 	--
 	"Discord Rich Presence \n"
 	--
@@ -131,22 +149,22 @@ OnConfigMenu
 	--
 	if silentMode == "ON"
 	{
-		"\f[color,#fb0300]\![*] \q[ON,silenton] \f[color,default]\n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \![*] \q[OFF,silentoff] \n[150]\f[align,left]"
+		"\f[color,#fb0300]\![*] \q[ON,OnConfigSet,silenton] \f[color,default]\n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \![*] \q[OFF,OnConfigSet,silentoff] \n[150]\f[align,left]"
 	}
 	else
 	{
-		"\![*] \q[ON,silenton] \n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \f[color,#fb0300]\![*] \q[OFF,silentoff]\f[color,default]\n[150]\f[align,left]"
+		"\![*] \q[ON,OnConfigSet,silenton] \n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \f[color,#fb0300]\![*] \q[OFF,OnConfigSet,silentoff]\f[color,default]\n[150]\f[align,left]"
 	}
 	--
 	"Confirm Recycle Bin?\n"
 	--
 	if verBalete == "ON"
 	{
-		"\f[color,#fb0300]\![*] \q[ON,verBinOn] \f[color,default]\n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \![*] \q[OFF,verBinOff]\n[150]\f[align,left]"
+		"\f[color,#fb0300]\![*] \q[ON,OnConfigSet,verBinOn] \f[color,default]\n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \![*] \q[OFF,OnConfigSet,verBinOff]\n[150]\f[align,left]"
 	}
 	else
 	{
-		"\![*] \q[ON,verBinOn] \n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \f[color,#fb0300]\![*] \q[OFF,verBinOff]\f[color,default]\n[150]\f[align,left]"
+		"\![*] \q[ON,OnConfigSet,verBinOn] \n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \f[color,#fb0300]\![*] \q[OFF,OnConfigSet,verBinOff]\f[color,default]\n[150]\f[align,left]"
 	}
 	--		
 	// "Program Commentary?\n"
@@ -164,11 +182,11 @@ OnConfigMenu
 	--
 	if deleteshitai == "ON"
 	{
-		"\f[color,#fb0300]\![*] \q[ON,deleteon] \f[color,default]\n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \![*] \q[OFF,deleteoff]\n[150]\f[align,left]"
+		"\f[color,#fb0300]\![*] \q[ON,OnConfigSet,deleteon] \f[color,default]\n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \![*] \q[OFF,OnConfigSet,deleteoff]\n[150]\f[align,left]"
 	}
 	else
 	{
-		"\![*] \q[ON,deleteon] \n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \f[color,#fb0300]\![*] \q[OFF,deleteoff]\f[color,default]\n[150]\f[align,left]"
+		"\![*] \q[ON,OnConfigSet,deleteon] \n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \f[color,#fb0300]\![*] \q[OFF,OnConfigSet,deleteoff]\f[color,default]\n[150]\f[align,left]"
 	}
 	--
 	"\![*] \q[%(userMenu),OnUserConfig]\n"
@@ -178,69 +196,45 @@ OnConfigMenu
 	"\![*] \q[%(closeMenu),CANCEL]\e"
 }
 
-
-// Private Debug Mode, nothing interesting here
-Select.eDBon
+OnConfigSet
 {
-	eraDebug = "ON"
-	OnUserConfig
-}
-
-Select.eDBoff
-{
-	eraDebug = "OFF"
-	OnUserConfig
-}
-
-// Enable/Disable Desktop Program Commentary
-Select.cDEon
-{
-	canDesktopEye = "ON"
-	OnConfigMenu
-}
-
-Select.cDEoff
-{
-	canDesktopEye = "OFF"
-	OnConfigMenu
-}
-
-// Enable/Disable Verbose emptying recycle bin
-Select.verBinOn
-{
-	verBalete = "ON"
-	OnConfigMenu
-}
-
-Select.verBinOff
-{
-	verBalete = "OFF"
-	OnConfigMenu
-}
-
-// Enable/Disable Silent Mode
-Select.silenton
-{
-	silentMode = "ON"
-	OnConfigMenu
-}
-
-Select.silentoff
-{
-	silentMode = "OFF"
-	OnConfigMenu
-}
-
-// Enable/Disable Uninstall
-Select.deleteon
-{
-	deleteshitai = "ON"
-	OnConfigMenu
-}
-
-Select.deleteoff
-{
-	deleteshitai = "OFF"
+	case reference[0]
+	{
+		when "deleteon" // Enable/Disable Uninstall
+		{
+			deleteshitai = "ON"
+		}
+		when "deleteoff"
+		{
+			deleteshitai = "OFF"
+		}
+		when "verBinOn" // Enable/Disable Verbose emptying recycle bin
+		{
+			verBalete = "ON"
+		}
+		when "verBinOff"
+		{
+			verBalete = "OFF"
+		}
+		when "silenton"	// Enable/Disable SilentMode
+		{
+			silentMode = "ON"
+		}
+		when "silentoff"
+		{
+			silentMode = "OFF"
+		}
+		// The following are preserved for when I get the feature working
+		when "cDEon" // Enable/Disable DesktopEye
+		{
+			canDesktopEye = "ON"
+		}
+		when "cDEoff"
+		{
+			canDesktopEye = "OFF"
+		}
+	}
+	--
 	OnConfigMenu
 }
 
@@ -250,86 +244,120 @@ Select.deleteoff
 // ---- Talk Rate ----
 // This is when the user chooses to adjust the talk rate in the config menu. The talk rate is how often the ghost will read some dialogue from aitalk.dic.
 
-Select.talkinter
- 	{
- 		"\b2\0\s[3]"
-		--
- 		"%(Flowey)* Change [talktime]?\_w[500]\0\s[3]\n talktime == %(talktime)."
-		
-		"\_v[mus\help_TEXT.mp3] You can change how often f_lowe_y speaks.\_w[500]\0\s[3] The current rate is every %(talktime)."
-		--
-		
- 		"\0\n[150]/
- 		\![*] \q[ Every 30 seconds,TALKMAX]\n/
-		\![*] \q[ Every minute,TALKHIGH]\n/
- 		\![*] \q[ Every 3 minutes,TALKNORMAL]\n/
-		\![*] \q[ Every 5 minutes,TALKPOOR]\n/
-		\![*] \q[ Every 30 minutes,TALKRARE]\n/
- 		\![*] \q[ Don't speak,TALKNONE]\n[150]/
-		\![*] \q[ Don't change,TalksTill]"
-	}
-
-Select.TalksTill
-	{
-		"\0\s[3]%(Flowey) * No change."
-	}
-
-	// If the user chooses every 30 seconds.
-Select.TALKMAX
-	{
- 		talktime = "30 seconds" // this sets up the envelope properly
-		aitalkinterval = 30 // this changes the actual rate
-		
- 		"\0\s[3]%(Flowey) * 30 seconds."
-	}
-
-// If the user chooses every minute.
-Select.TALKHIGH
-	{
- 		talktime = "minute"
-		aitalkinterval = 60
-		
- 		"\0\s[3]%(Flowey) * 1 minute."
-	}
-
-// If the user chooses every three minutes.
-Select.TALKNORMAL
-	{
- 		talktime = "3 minutes"
-		aitalkinterval = 180
-		
- 		"\0\s[3]%(Flowey) * 3 minutes."
-	}
-
-// If the user chooses every five minutes. This is the default rate the ghost will start up in, as seen in bootend.dic.
-Select.TALKPOOR
-	{
- 		talktime = "5 minutes"
-		aitalkinterval = 300
-		
- 		"\0\s[3]%(Flowey) * 5 minutes."
-	}
+OnSetTalk
+{
+	"\b2\0\s[3]"
+	--
+	"%(Flowey)* Change [talktime]?\_w[500]\0\s[3]\n talktime == %(talktime)."
 	
+	"\_v[mus\help_TEXT.mp3] You can change how often f_lowe_y speaks.\_w[500]\0\s[3] The current rate is every %(talktime)."
+	--
+	
+	"\0\n[150]/
+	\![*] \q[ Don't Talk,OnTalkSet,never]\n/
+	\![*] \q[ Every minute,OnTalkSet,one]\n/
+	\![*] \q[ Every 5 minutes,OnTalkSet,five]\n/
+	\![*] \q[ Every 15 minutes,OnTalkSet,fifteen]\n/
+	\![*] \q[ Every 30 minutes,OnTalkSet,thirty]\n"
+	--
+	'\![*] \q[ Custom Time,"script:\![open,sliderinput,OnTalkSet,,%(minutetalk),0,60]"]\n'
+	--
+	"\![*] \q[ Random Time,OnTalkSet,random]\n\n[half]/
+	\![*] \q[ Don't change,OnTalkSet,stay]"
+}
 
-Select.TALKRARE
-	{
- 		talktime = "30 minutes"
-		aitalkinterval = 1800
-		
- 		"\0\s[3]%(Flowey) * 30 minutes."
-	}
-	
-	
 
-// If the user chooses to not have them speak.
-Select.TALKNONE
+OnTalkSet
+{
+	"\0\s[3]%(Flowey) * "
+	--
+	case reference0
 	{
- 		talktime = "never"
-		aitalkinterval = 0
-		
-		"\0\s[3]%(Flowey) * ..."
+		when "never"
+		{
+			minutetalk = 0
+			talksetting = "never"
+			aitalkinterval = 0
+			
+			"..."
+		}
+		when "one"
+		{
+			minutetalk = 1
+			talksetting = "1 minute"
+			aitalkinterval = 60
+			
+			"1 minute."
+		}
+		when "five"
+		{
+			minutetalk = 5
+			talksetting = "5 minutes"
+			aitalkinterval = 300
+			
+			"5 minutes."
+		}
+		when "fifteen"
+		{
+			minutetalk = 15
+			talksetting = "15 minutes"
+			aitalkinterval = 900
+			
+			"15 minutes."
+		}
+		when "thirty"
+		{
+			minutetalk = 30
+			talksetting = "30 minutes"
+			aitalkinterval = 1800
+			
+			"30 minutes."
+		}
+		when "random"
+		{
+			minutetalk = (RAND(60) + 1)
+			talksetting = "%(minutetalk) minutes"
+			aitalkinterval = (minutetalk * 60)
+			
+			"%(minutetalk) minutes."
+		}
+		when "stay"
+		{
+			"No change."
+		}
+		others
+		{
+			minutetalk = reference0
+			if minutetalk != 0
+			{
+				talksetting = "%(minutetalk) minutes"
+				aitalkinterval = (minutetalk * 60)
+				
+				"%(minutetalk) minutes."
+			}
+			else
+			{
+				talksetting = "never"
+				aitalkinterval = 0
+				
+				"... \_w[500]\s[18]... \_w[500]\s[21]...\_w[500]"
+			}
+		}
 	}
-	
+	--
+	"\n[200]Talk... others?\n"
+	--
+	"\f[align,center]\q[No,OnCommuSet,0] ------ "
+	--
+	'\q[Yes,"script:%(Narrator) * What percentage of the time would you like %(callHim) to try to communicate with other ghosts? \![open,sliderinput,OnCommuSet,,%(communicateratio),0,100]"]'
+}
+
+OnCommuSet
+{
+	communicateratio = reference0
+	"I will talk to other ghosts %(communicateratio)% of the time."
+}
+
 	
 // If the user selects cancel in a menu.
 Select.CANCEL
@@ -458,7 +486,7 @@ Select.MailCheck
 // These are the envelopes containing all the multi-version menu options used
 
 // This first one is ...something... because it's the whole line with tags and not just one phrase
-menuIntro
+menuIntro: pool
 {
 	{
 		menuOption = 0
@@ -492,7 +520,7 @@ menuIntro
 
 //---- Conditional Choice captions ----
 
-rlTalk
+rlTalk: pool
 {
 	if ellVee <= 3
 	{
@@ -523,7 +551,7 @@ rlTalk
 	
 }
 
-newTalk
+newTalk: pool
 {
 	"select.ONAITALK"
 	"Say something."
@@ -535,7 +563,7 @@ ghostChat
 {
 	"Chat with Others"
 }
-userMenu
+userMenu: pool
 {
 	"select.USERMENU"
 	"User Menu"
@@ -543,7 +571,7 @@ userMenu
 	"Us_r _onf_gurat_on_"
 }
 
-configMenu
+configMenu: pool
 {
 	"select.CONFIGMENU"
 	"Config Menu"
@@ -551,7 +579,7 @@ configMenu
 	"C_NFIGURATI_N"
 }
 
-funMenu
+funMenu: pool
 {
 	"select.ONFUNMENU"
 	"Functions"
@@ -559,19 +587,19 @@ funMenu
 	"FUNct_ons"
 }
 
-statsMenu
+statsMenu: pool
 {
 	"select.ONSTATMENU"
 	"Check Stats"
 }
 
-backMenu
+backMenu: pool
 {
 	"Backbackbackback."
 	"Return to the menu"
 }
 
-closeMenu
+closeMenu: pool
 {
 	if ellVee >=2
 	{
