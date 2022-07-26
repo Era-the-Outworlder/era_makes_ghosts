@@ -11,6 +11,36 @@
 // ------ This is a whole bunch of testing stuff shhhhh ------
 // ---- An Important Tool
 //		LOGGING("What Am I Doing Here")
+// \![embed,OnGLITCH,abcdefg]
+
+OnConvert
+{
+	_text = ""
+	if !_argv
+	{
+		_text = reference0
+	}
+	else
+	{
+		_text = _argv[0]
+	}
+	_send = CHARSPLIT(_text)
+	_final = OnTesting(_send)
+	--
+	_final;
+}
+
+OnTesting
+{
+	_array = IARRAY
+	_array = _argv[0]
+	_display = ""
+	_num = 0
+	foreach _array; _char
+	{_display += "%(_char)"}
+	--
+	_display
+}
 
 OnTestVariable
 {

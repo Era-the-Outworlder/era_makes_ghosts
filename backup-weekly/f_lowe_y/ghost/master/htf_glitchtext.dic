@@ -19,6 +19,7 @@
 OnGLITCH 
 {
 	_text = ""
+	_final = ""
 	if !_argv
 	{
 		_text = TOLOWER(reference0)
@@ -93,51 +94,80 @@ alpha
 // Replaces each character sent to it with its corrosponding glitch. only changes alpha characters
 // 30% chance of case setting. then 20% += "_"
 // remaining 70% of cases: 10% = "." 40% = "-", 50% = "_"
+
 OnGlitchReplace
 {
 	_array = IARRAY
 	_array = _argv[0]
 	_display = ""
 	_num = 0
-	foreach _array; _ref //Each time the loop runs, _ref will store the next value in the array, until the array ends
-	{		
-		if _ref _in_ alpha
+	foreach _array; _char //Each time the loop runs, _char will store the next value in the array, until the array ends
+	{	
+		LOGGING("iteration %(_num + 1)")
+		if _char _in_ alpha
 		{
-		
+			LOGGING("_char _in_ alpha")
+			--
 			if RAND(100) >= 29
 			{
+				LOGGING("rand GREATER than 29%")
+				--
 				_caseSet = RAND(100)
 				if _caseSet <= 49
-				{_ref = TOUPPER(_ref)}
+				{
+					LOGGING("c == %(CHR(34))%(_char)%(CHR(34)) TOUPPER")
+					_char = TOUPPER(_char)
+				}
 				elseif _caseSet >= 50
-				{_ref = TOLOWER(_ref)}
+				{
+					LOGGING("char == %(CHR(34))%(_char)%(CHR(34)) TOLOWER")
+					_char = TOLOWER(_char)
+				}
 				
 				--
 				
 				if RAND(100) <= 19
-				{_ref += "_"}
-				else{}
+				{
+					LOGGING("ADD UNDERSCORE")
+					_char += "_"
+				}
+				else{LOGGING("DO NOTHING")}
 			}
 			else
 			{
+				LOGGING("rand LESS than 29%")
+				--
 				_punctuationSet = RAND(100)
 				if _punctuationSet <= 9
-				{_ref = "."}
-				_punctuationSet >= 50
-				{_ref = "_"}
+				{
+					LOGGING("char == %(CHR(34))%(_char)%(CHR(34)) REPLACE PERIOD")
+					_char = "."
+				}
+				elseif _punctuationSet >= 50
+				{
+					LOGGING("char == %(CHR(34))%(_char)%(CHR(34)) REPLACE UNDERSCORE")
+					_char = "_"
+				}
 				else
-				{_ref = "-"}
+				{
+					LOGGING("char == %(CHR(34))%(_char)%(CHR(34)) REPLACE HYPHEN")
+					_char = "-"
+				}
 					
 			}
 		}
 		else
-		{}
+		{
+			LOGGING("OutOfBounds char == %(CHR(34))%(_char)%(CHR(34))")
+		}
 		--
-		_display += "%(_ref)"
+		_display += "%(_char)"
+		{LOGGING("_display == %(CHR(34))%(_display)%(CHR(34)) AND _NUM == %(_num)")}
 		_num ++
 		
 	}
 	--
+	LOGGING("display == %(_display)")
 	_display
 
 }
@@ -149,24 +179,24 @@ OnGMidiReplace
 	_array = _argv[0]
 	_display = ""
 	_num = 0
-	foreach _array; _ref
+	foreach _array; _char
 	{
-		if _ref _in_ alpha
+		if _char _in_ alpha
 		{
 			_caseCENT = RAND(100)
 			_additionCENT = RAND(100)
-			if _caseCENT >= 49 {_ref = TOUPPER(_ref)}
-			else {_ref = TOLOWER(_ref)}
+			if _caseCENT >= 49 {_char = TOUPPER(_char)}
+			else {_char = TOLOWER(_char)}
 			--
-			if _additionCENT <= 19 {_ref += "_"}
-			elseif RAND(100) <= 39 {_ref += " "}
-			elseif RAND(100) <= 59 {_ref += "-"}
+			if _additionCENT <= 19 {_char += "_"}
+			elseif RAND(100) <= 39 {_char += " "}
+			elseif RAND(100) <= 59 {_char += "-"}
 			else{}
 		}
 		else
 		{}
 		--
-		_display += "%(_ref)"
+		_display += "%(_char)"
 		_num ++
 	}
 	--
@@ -181,15 +211,15 @@ OnGliteReplace
 	_array = _argv[0]
 	_display = ""
 	_num = 0
-	foreach _array; _ref
+	foreach _array; _char
 	{
-		if RAND(100) >= 49 {_ref = TOUPPER(_ref)}
-		else {_ref = TOLOWER(_ref)}
+		if RAND(100) >= 49 {_char = TOUPPER(_char)}
+		else {_char = TOLOWER(_char)}
 		--
-		if _ref _in_ alpha && RAND(100) <= 14 {_ref += "_"}
+		if _char _in_ alpha && RAND(100) <= 14 {_char += "_"}
 		else{}
 		--
-		_display += "%(_ref)"
+		_display += "%(_char)"
 		_num ++
 	}
 	--

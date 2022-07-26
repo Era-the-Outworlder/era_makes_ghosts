@@ -1930,4 +1930,3 @@ memorytotalphys    { GETMEMINFO[1] }
 memoryavailphys    { GETMEMINFO[2] }
 memorytotalvirtual { GETMEMINFO[3] }
 memoryavailvirtual { GETMEMINFO[4] }
-
