@@ -22,10 +22,12 @@ OnDRPMenu
 	if username == "Era"
 	{
 		"\![*] \q[Change DevStatus,OnDevStatMenu]\n[150]"
+		--
+		"\![*] \q[Check Attitude,OnCheckDRPAttitude]\n[150]"
 	}
 	else
 	{
-		"\n[150]"
+		"\n[300]"
 	}
 	--
 	"\n[150]"
@@ -318,6 +320,9 @@ OnDiscordPluginCustom
 	if drpstatus != ""
 	{DiscordCustom.UserDetail}
 	--
+	if drp_attitude != ""
+	{DiscordCustom.Attitude}
+	--
 	DiscordCustom.MoodSet
 }
 
@@ -363,4 +368,43 @@ DiscordCustomSet.CustomDetail
 DiscordCustomSet.CustomState
 {
 	DiscordCustomSet.base("OnDiscordPluginCustomState",_argv[0])
+}
+
+// tESTING SOMETHING
+
+DiscordCustom.Attitude
+{
+	if !InDiscordPluginCustom
+	{
+		return
+	}
+	else
+	{
+		DiscordCustomSet.CustomState(drp_attitude)
+		--
+		DiscordCustomSet.LargeImageKey("base_img")
+	}
+}
+
+OnCheckDRPAttitude
+{
+	if ellVee == 1
+	{flowey_mood = "default"}
+	
+	--
+	case flowey_mood 
+	{
+		when "default"
+		{drp_attitude = OnGLITCH("* Howdy!")}
+		when "happy"
+		{drp_attitude = OnGLITCH("* Yes!")}
+		when "hurt"
+		{drp_attitude = OnGLITCH("* OW!")}
+		when "scared"
+		{drp_attitude = OnGLITCH("* No!")}
+		when "angry"
+		{drp_attitude = OnGLITCH("* Grr!")}
+	}
+
+	OnDiscordPluginCustom
 }

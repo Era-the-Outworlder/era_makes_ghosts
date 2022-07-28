@@ -355,7 +355,19 @@ OnTalkSet
 OnCommuSet
 {
 	communicateratio = reference0
-	"I will talk to other ghosts %(communicateratio)% of the time."
+	--
+	if communicateratio == 0
+	{
+		if ghostexcount > 0
+		{"\![set,otherghosttalk,false]%(Narrator) * He'll never know he isn't alone."}
+		else
+		{"\![set,otherghosttalk,false]%(Narrator) * He'll never know how alone he is."}
+		
+	}
+	else
+	{
+		"\![set,otherghosttalk,true]%(Narrator) * He will try to talk to other ghosts %(communicateratio)% of the time."
+	}
 }
 
 	

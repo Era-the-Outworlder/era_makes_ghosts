@@ -185,7 +185,12 @@ OnBoot
 	
 	//turns on detection of other ghosts' speech
 	//Neutral pose.
- 	"\![set,sticky-window,1,0]\![set,otherghosttalk,true]\1\s[-1]\0\s[0]" 
+ 	"\![set,sticky-window,1,0]\1\s[-1]\0\s[0]" 
+	--
+	if communicateratio == 0
+	{"\![set,otherghosttalk,false]"}
+	else
+	{"\![set,otherghosttalk,true]"}
 	--
 	
 	if dayslot == userbirthday 

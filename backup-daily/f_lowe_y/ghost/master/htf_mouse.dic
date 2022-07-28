@@ -61,34 +61,60 @@ MouseMoveSakura
 	{
 		stroke++ 
 		if stroke >= 90
-		{		
-			stroke = 0 //resetting the stroke count
-			petCount++
-			case petCount
+		{	
+			if ellVee == 1
 			{
-			when 1-10
-			{
-				
-				"\0\s[21]%(Flowey) * Stop. sssssssssssstop?  \_w[500]"
-				"\0\s[9]%(Flowey) * Pat. Pet. \![embed,OnGLITCH,pat]\![embed,OnGLITCH,pet]\![embed,OnGLITCH,pot]\![embed,OnGLITCH,pat]\![embed,OnGLITCH,pot]\![embed,OnGLITCH,pet].  \_w[500]"
-				"\0\s[21]%(Narrator) * (You get the feeling he might appreciate it more if you'd stop.) \_w[1000]\n[200](Or Not.)\_w[500]"
-				"\0\s[9]%(Narrator) * He seems to be enjoying this?\_w[500]"
+				stroke = 0 //resetting the stroke count
+				petCount++
+				case petCount
+				{
+				when 1-10
+				{
+					
+					"\0\s[21]%(Flowey) * Stop. sssssssssssstop?  \_w[500]"
+					"\0\s[9]%(Flowey) * Pat. Pet. \![embed,OnGLITCH,pat]\![embed,OnGLITCH,pet]\![embed,OnGLITCH,pot]\![embed,OnGLITCH,pat]\![embed,OnGLITCH,pot]\![embed,OnGLITCH,pet].  \_w[500]"
+					"\0\s[21]%(Narrator) * (You get the feeling he might appreciate it more if you'd stop.) \_w[1000]\n[200](Or Not.)\_w[500]"
+					"\0\s[9]%(Narrator) * He seems to be enjoying this?\_w[500]"
+				}
+				when 11-50
+				{
+					"\0\s[9]%(Flowey) * Pat. Pet. \![embed,OnGLITCH,pat]\![embed,OnGlitchLite,pet]\![embed,OnGLITCH,pot]\![embed,OnGlitchLite,pat]\![embed,OnGlitchLite,pot]\![embed,OnGlitchLite,pet].  \_w[500]"
+					"\0\s[9]%(Narrator) * He seems to be enjoying this.\_w[500]"
+				}
+				when 50-100
+				{
+					"\0\s[9]%(Flowey) * Pat. \![embed,OnGlitchLite,pat]\![embed,OnGlitchLite,pet]\![embed,OnGlitchLite,pot]\![embed,OnGlitchLite,pat]\![embed,OnGlitchLite,pot]\![embed,OnGlitchLite,pet].  \_w[500]"
+					"\0\s[9]%(Narrator) * He's definitely enjoying this.\_w[500]"
+				}
+				others
+				{
+					"\0\s[9]%(Flowey) * Pat. patpetpotpatpotpet.  \_w[500]"
+					"\0\s[9]%(Narrator) * You've really pet him quite a lot, haven't you?\_w[500]"
+				}
+				}
 			}
-			when 11-50
+			else
 			{
-				"\0\s[9]%(Flowey) * Pat. Pet. \![embed,OnGLITCH,pat]\![embed,OnGlitchLite,pet]\![embed,OnGLITCH,pot]\![embed,OnGlitchLite,pat]\![embed,OnGlitchLite,pot]\![embed,OnGlitchLite,pet].  \_w[500]"
-				"\0\s[9]%(Narrator) * He seems to be enjoying this.\_w[500]"
-			}
-			when 50-100
-			{
-				"\0\s[9]%(Flowey) * Pat. \![embed,OnGlitchLite,pat]\![embed,OnGlitchLite,pet]\![embed,OnGlitchLite,pot]\![embed,OnGlitchLite,pat]\![embed,OnGlitchLite,pot]\![embed,OnGlitchLite,pet].  \_w[500]"
-				"\0\s[9]%(Narrator) * He's definitely enjoying this.\_w[500]"
-			}
-			others
-			{
-				"\0\s[9]%(Flowey) * Pat. patpetpotpatpotpet.  \_w[500]"
-				"\0\s[9]%(Narrator) * You've really pet him quite a lot, haven't you?\_w[500]"
-			}
+				stroke = 0 //resetting the stroke count
+				petCount++
+				petCountNeg++
+				case petCount
+				{
+				when 1-50
+				{
+					
+					"\0\s[21]%(Flowey) * Stop. sssssssssssstop?  \_w[500]"
+					"\0\s[9]%(Flowey) * Pat. Pet. \![embed,OnGLITCH,pat]\![embed,OnGLITCH,pet]\![embed,OnGLITCH,pot]\![embed,OnGLITCH,pat]"
+					"\0\s[21]%(Flowey) * Stop. sssssssssssstop?  \_w[500]\![embed,OnGLITCH,pet].  \_w[500]"
+					"\0\s[21]%(Narrator) * (You get the feeling he might appreciate it more if you'd stop.)\_w[500]"
+					"\0\s[9]%(Narrator) * He's not enjoying this.\_w[500]"
+				}
+				others
+				{
+					"\0\s[21]%(Narrator) * He's really not iterested. Can you blame him? \_w[500]"
+					"\0\s[21]%(Flowey) * Stop. sssssssssssstop. \![embed,OnGLITCH,Stop].  \_w[500]"
+				}
+				}
 			}
 		}
 	}
@@ -206,18 +232,18 @@ MouseDoubleClickSakura
 					knifeTime++ 
 					"\0\s[24]\1\s[-1]\_v[mus\hahaha.mp3]\n[200] * f_lowe_y is considering doing a violence. \_w[500]"
 					
-					"\0\s[18]%(Flowey)\n[200] \f[height,30]Die.\f[default]\_w[500]"
+					"\0\s[18]%(Flowey)\b4\f[height,100]Die.\f[default]\_w[500]\e"
 					
 				}
 				elseif knifeTime >= 12
 				{
 					knifeTime++
-					_stop = OnGLITCH("stop it")
-					_cut = OnGLITCH("cut that out")
-					_hey = OnGLITCH("hey you")
-					"\0\s[15]\_v[mus\r_ack.wav] * %(_stop)!\_w[500]"
-					"\0\s[21]\_v[mus\r_oh.wav] * %(_cut)!!\_w[500]"
-					"\0\s[21]\_v[mus\r_hey.wav] * %(_hey)! \_w[500]"
+					"\0\s[15]\_v[mus\r_ack.wav] * \![embed,OnGLITCH,stop it]!\_w[500]"
+					
+					"\0\s[21]\_v[mus\r_oh.wav] * \![embed,OnGLITCH,cut that out]!!\_w[500]"
+					
+					"\0\s[21]\_v[mus\r_hey.wav] * \![embed,OnGLITCH,hey you]! \_w[500]"
+					
 					"\0\s[14]\1\s[-1]\_v[mus\r_screech.wav]\n * (Scared noises)\n[200]\_w[500]"
 					"\0\s[15]\_v[mus\hit.wav]\_w[500]\e"
 				}
@@ -252,7 +278,7 @@ MouseDoubleClickSakura
 		else
 		{
 
-			"%(Narrator) * You have not commited any violence against the flower \f[italic]\f[color,250,0,0]yet\f[default].\n[200] Continuing may put you on a path you cannot turn back from.\n[150]/
+			"%(Narrator) * You have not commited any violence against %(callHim) \f[italic]\f[color,250,0,0]yet\f[default].\n[200] Continuing may put you on a path you cannot turn back from.\n[150]/
 			\![*]\q[Accept Consequences,OnMouseDoubleClick,172,208,0,0,Face,0,punchHim] \n \n[-100]\f[align,right] \![*]\q[Pet Him,OnMouseMove,129,137,0,0,Petals,0,noPunching]\n[150]\f[align,left]"
 		}
  	}
@@ -317,7 +343,7 @@ OnMouseDownEx
 	}
 	when "xbutton2"
 	{
-		"\s[29]"
+		"\s[29]\_v[mus\glitch_hee.wav]"
 		// "Extended Button 2"
 	}
 	}
