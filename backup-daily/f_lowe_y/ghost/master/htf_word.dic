@@ -22,6 +22,37 @@ heeHeeHee
 {"\_v[mus\heeheehee.wav]"}
 
 // ---- System display related ----
+timerStartDisplay
+{
+	_temhr = "%(timerStart[0])"
+	_temmn = "%(timerStart[1])"
+	if _temhr == 0
+	{	
+		_display = "12:"
+	}
+	else
+	{
+		_display = _temhr
+	}
+	--
+	_display = ("%(_display):%(_temmn)")
+	
+	--
+	"%(_display)"
+}
+
+timerEndDisplay
+{
+	_tem = timerEnd[0]
+	if _tem > 12
+	{_display = (_tem - 12)}
+	elseif _tem < 12 && _tem > 0
+	{_display = _tem}
+	else
+	{_display = 12}
+	--
+	"%(_display)"
+}
 ap
 {
  	if ampm

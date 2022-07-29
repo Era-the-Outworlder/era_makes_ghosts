@@ -6,7 +6,7 @@ GroupFlagOverride,noupdateauto,nocheck,
 communicatebox.left,474
 Char8.center,824
 passwordinput.top,565
-scriptbox.left,572
+scriptbox.left,820
 Char9.center,559
 shiori.lognotify,0
 sliderinput.left,620
@@ -26,12 +26,12 @@ timeinput.top,648
 seriko.waitmultiplier,100
 Char2.center,896
 Update.TestMode,0
-Char0.center,1445
-scriptbox.top,305
+Char0.center,165
+scriptbox.top,342
 shell,shell\master\
 FirstBoot,booted
 passwordinput.left,810
-Char1.center,1444
+Char1.center,164
 sliderinput.top,382
 shiori.log,0
 shell.ischanged.2,1
@@ -40,4 +40,5 @@ timeinput.left,846
 update.lastexec,694922426
 communicatebox.top,724
 Talk.Activate,true
+DeveloperPalette.visible,1
 __system_written_flag_do_not_remove__,written

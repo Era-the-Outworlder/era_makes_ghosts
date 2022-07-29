@@ -19,7 +19,7 @@ OpenSakuraMenu
 
 OnMenuRun
 {	
-	"\b2\n[110]\_q" 
+	"\b2\n[110]\_q\n" 
 	--
 	if lastTalk != ""
 	{
@@ -57,7 +57,7 @@ OnMenuRun
 		"\n[150]"
 	}
 	--
- 	"\![*] \q[%(closeMenu),CANCEL]\n[150]"
+ 	"\![*] \q[%(closeMenu),OnMenuCancel]\n[150]"
 	--
 	
 	if eraDebug == "ON"
@@ -85,25 +85,32 @@ OnUserConfig
 {
 	"\0\b[2]\![set,autoscroll,disable]\_q\n" 
 	--
-	"\f[height,17]NAME:\f[height,default] %(username) \n/
-	\f[height,15]\![*](\q[%(change)?,OnTeachName,menu])\f[height,default]\n"
+	"\f[height,-1]NAME:\f[height,default] %(username) \n/
+	\f[height,-3]\![*](\q[%(change)?,OnTeachName,menu])\f[height,default]\n[150]"
 	--
-	"\f[height,17]PRONOUNS:\f[height,default]\n%(nomPro)/%(oblPro)/%(posPro) \n/
-	\f[height,15]\![*](\q[%(change)?,OnTeachPronouns,menu])\f[height,default]\n"
+	"\f[height,-1]PRONOUNS:\f[height,default]\n%(nomPro)/%(oblPro)/%(posPro) \n/
+	\f[height,-3]\![*](\q[%(change)?,OnTeachPronouns,menu])\f[height,default]\n[150]"
 	--
-	"\f[height,17]BIRTHDAY:\f[height,default]\n%(birthdayprint), %(menuBDay) \n/
-	\f[height,15]\![*](\q[%(change)?,OnGetBirthday,menu])\f[height,default]\n"
+	"\f[height,-1]BIRTHDAY:\f[height,default]\n%(birthdayprint) \n/
+	\f[height,-3]\![*](\q[%(change)?,OnGetBirthday,menu])\f[height,default]\n[150]"
+	--
+	"\f[height,-1]AWAY HOURS:\f[height,default]\n%(timerStartDisplay) to %(timerEndDisplay) \n/
+	\f[height,-3]Current status: %(userStatus) \![*](\q[%(change)?,OnAwayTimer,menu])\f[height,default]\n[150]"
 	--
 	if username == "Era" 
 	{
 		"Set Debug?\n(NOW : %(eraDebug))\n\![*] \q[ON,OnSetEraDebug,eDBon]\n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \![*] \q[OFF,OnSetEraDebug,eDBoff]\n[150]\f[align,left]"
+	}
+	else
+	{
+		"\n[450]"
 	}
 	--
 	"\![*] \q[%(configMenu),OnConfigMenu]\n"
 	--	
 	"\![*] \q[%(backMenu),OnMenuRun]\n"
 	--
- 	"\![*] \q[%(closeMenu),CANCEL]\e"
+ 	"\![*] \q[%(closeMenu),OnMenuCancel]\e"
 }
 
 OnSetEraDebug
@@ -193,7 +200,7 @@ OnConfigMenu
 	--
 	"\![*] \q[%(backMenu),OnMenuRun]\n"
 	--
-	"\![*] \q[%(closeMenu),CANCEL]\e"
+	"\![*] \q[%(closeMenu),OnMenuCancel]\e"
 }
 
 OnConfigSet
@@ -372,10 +379,10 @@ OnCommuSet
 
 	
 // If the user selects cancel in a menu.
-Select.CANCEL
+OnMenuCancel
 {
 	"\0\s[3]%(Flowey) * Nevermind. "
-	
+	"\0\s[3]%(Flowey) * Nevermind. "
 	"\0\s[3]%(Flowey) * Whatever. "
 }
 
@@ -387,14 +394,15 @@ OnFunctionMenu
 	"\0\s[3]%(Flowey)\b2 * ACC_SSING FUNCTION M_NU\n[200]"
 	"\0\s[3]\_v[mus\help_TEXT.mp3]\b2 * (You ask f_lowe_y to do something for you.)\n[200]"
 	
-	
 	--
 	"\![*] \q[Open Calendar,CALENDAR]\n[150]/
 	\![*] \q[Check Email,MailCheck]\n[150]/
 	\![*] \q[Open SSP Preferences,sspconfig]\n[150]/
 	\![*] \q[Empty Recycle Bin,OnRecycleStart]\n[150]/
-	\![*] \q[System Information,OnRunCPUID]\n[150]\n/
-	\![*] \q[View Ghost Changelog,OnChangeLog,menu]\n[150]\n/
+	\![*] \q[System Information,OnRunCPUID]\n[200]/
+	\![*] \q[Discord Rich Presence,OnRunCPUID]\n[250]/
+	
+	\![*] \q[View Ghost Changelog,OnChangeLog,menu]\n[250]/
 	\![*] \q[%(backMenu),OnMenuRun]\n"
 	--
 	if username == "Era" || username == "BugTest"

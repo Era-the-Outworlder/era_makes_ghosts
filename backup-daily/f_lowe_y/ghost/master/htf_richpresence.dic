@@ -51,7 +51,7 @@ OnDRPMenu
 	}
 	else
 	{
-		"\![*] \q[Close Menu,CANCEL]\e"
+		"\![*] \q[Close Menu,OnMenuCancel]\e"
 	}
 }	
 
@@ -217,7 +217,7 @@ OnDRPMoodMenu	// See OnDRPMoodSet, line
 	{"\f[color,#00ffcc]\![*]\q[Creepy,OnDRPMoodSet,mood_creepy,creepy]\f[color,default]"}
 	else{"\![*]\q[Creepy,OnDRPMoodSet,mood_creepy,creepy]"}
 	--
-	"\n\n\q[Back,OnDRPMenu]\n\q[Close,CANCEL]\*"
+	"\n\n\q[Back,OnDRPMenu]\n\q[Close,OnMenuCancel]\*"
 }
 
 // Sets the variables that are used to send the info to the plugin
@@ -408,3 +408,82 @@ OnCheckDRPAttitude
 
 	OnDiscordPluginCustom
 }
+
+OnAwayTimer
+{
+	case reference2
+	{
+		when "setStart"
+		{
+			timerStart = SPLIT(reference0,",")
+			--
+			"%(timerStart[0])/%(timerStart[1])"
+		}
+		when "setEnd"
+		{
+			timerEnd = SPLIT(reference0,",")
+		}
+	
+	}
+	--
+	case reference0
+	{
+		when "changeStatus"
+		{
+		
+		}
+		when "menu"
+		{
+			"\1\b2Scheduled Status\n[200]"
+			--
+			if !timerStart && !timerEnd
+			{
+				'\![*] \q[Set Away Start Time,"script:\![open,timeinput,OnAwayTimer,,%(hour),%(minute),00,--reference=setStart]"]\n'
+				--
+				'\![*] \q[Set Away End Time,"script:\![open,timeinput,OnAwayTimer,,%(hour),%(minute),0,--reference=setEnd]"]\n'
+			}
+			elseif timerStart && !timerEnd
+			{
+				"Away Start Time: %(timerStartDisplay)\n"
+				--
+				'\![*] \q[Change,"script:\![open,timeinput,OnAwayTimer,,%(hour),%(minute),00,--reference=setStart]"]\n'
+				--
+				'\![*] \q[Set Away End Time,"script:\![open,timeinput,OnAwayTimer,,%(hour),%(minute),0,--reference=setEnd]"]\n'
+			}
+			elseif !timerStart && timerEnd
+			{
+				'\![*] \q[Set Away Start Time,"script:\![open,timeinput,OnAwayTimer,,%(hour),%(minute),00,--reference=setStart]"]\n'
+				--
+				"Away End Time: %(timerEndDisplay)\n"
+				'\![*] \q[Change,"script:\![open,timeinput,OnAwayTimer,,%(hour),%(minute),00,--reference=setEnd]"]\n'
+			}
+			else
+			{
+				"Away Start Time: %(timerStartDisplay)\n"
+				--
+				'\![*] \q[Change,"script:\![open,timeinput,OnAwayTimer,,%(hour),%(minute),00,--reference=setStart]"]\n'
+				--
+				"Away End Time: %(timerEndDisplay)\n"
+				'\![*] \q[Change,"script:\![open,timeinput,OnAwayTimer,,%(hour),%(minute),00,--reference=setEnd]"]\n'
+			}
+		}
+		--
+		
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

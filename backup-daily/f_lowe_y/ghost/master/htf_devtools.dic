@@ -119,7 +119,7 @@ OnCOMMRATE
 }
 Select.funkTest
 {	
-	"\0\s[15]\b[-1]\_v[mus\hit.wav]a \_w[100]b \s[-1]\_w[3000]c \s[21]\_v[mus\savestate_spam.wav]d\_w[1000]e\e"
+	// "\0\s[15]\b[-1]\_v[mus\hit.wav]a \_w[100]b \s[-1]\_w[3000]c \s[21]\_v[mus\savestate_spam.wav]d\_w[1000]e\e"
 	
 	// DUMPVAR()
 	// "\n[300]%(Narrator) * Dumping Variables to ayame.log.\n"
@@ -146,7 +146,8 @@ Select.funkTest
 	// \![open,passwordinput,OnTestInput]Passwordbox\x\n/
 	// \![open,dateinput,OnTestInput,,1900,1,1]Dateinput\x\n/
 	// \![open,sliderinput,OnTestInput,,1,1,21]Sliderinput\x\n/
-	// \![open,timeinput,OnTestInput,,0,0,0]Timeinput\x"
+	// "\![open,timeinput,OnTestInput,,%(hour),%(minute),0,--reference=setEnd] Timeinput\x"
+	'\![*] \q[Set Away End Time,"script:\![open,timeinput,OnTestInput,,%(hour),%(minute),0,--reference=setEnd]"]\n'
 
 }
 

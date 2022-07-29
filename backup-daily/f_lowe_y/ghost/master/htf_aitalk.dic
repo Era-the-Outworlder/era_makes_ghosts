@@ -560,13 +560,13 @@ OnMinuteChange //This is what will trigger time-based dialogue for your Ghost.
 	--
  	if minute == 0 //These ifs will check what time it is. 
 	{
-		if hour == 10
+		if hour == timerStart[0] && minute == timerStart[1]
 		{
-			"\![embed,OnDRPSet,Era is at work]"
+			"\![embed,OnDRPSet,%(userStatus[1])]"
 		}
-		elseif hour == 14
+		elseif hour == timerEnd[0] && minute == timerEnd[1]
 		{
-			"\![embed,OnDRPSet,Era should be off work]"
+			"\![embed,OnDRPSet,%(userStatus[2])]"
 		}
  		elseif hour == 12 //And the hour equals 12, meaning it's noon. 
 		{
