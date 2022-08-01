@@ -52,11 +52,11 @@ OnChangeLog
 	-Initial release\n[200]"
 	
 	--
-	if reference0 == "menu" //Checks to see if the user came here from the functions menu
+	if reference[0] == "menu" //Checks to see if the user came here from the functions menu
 	{
 		"\![*]\q[Done,]\n\![*]\q[Back to Functions,OnFunctionMenu]\e"
 	}
-	elseif reference0 == "update"
+	elseif reference[0] == "update"
 	{"\n\![*]\q[Close,]\e"}
 	
 }

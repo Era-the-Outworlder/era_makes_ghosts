@@ -15,14 +15,14 @@
 			// \![embed,OnGlitchMidi,happy]
 			// \![embed,OnGlitchLite,happy]
 
-// separates strings into characters, sends to glitch converter
+// accepts either argument or reference, separates strings into characters, sends to glitch converter.
 OnGLITCH 
 {
 	_text = ""
 	_final = ""
 	if !_argv
 	{
-		_text = TOLOWER(reference0)
+		_text = TOLOWER(reference[0])
 	}
 	else
 	{
@@ -34,14 +34,14 @@ OnGLITCH
 	_final;
 }
 
-// separates strings into characters, sends to OnGlitchMidi converter
+// as above but sends to OnGlitchMidi converter
 
 OnGlitchMidi	
 {
 	_text = ""
-	if reference0
+	if reference[0]
 	{
-		_text = TOLOWER(reference0)
+		_text = TOLOWER(reference[0])
 	}
 	else
 	{
@@ -53,14 +53,14 @@ OnGlitchMidi
 	_final;
 }
 
-// separates strings into characters, sends to OnGlitchLite converter
+// as above but sends to OnGlitchLite converter
 
 OnGlitchLite	
 {
 	_text = ""
-	if reference0
+	if reference[0]
 	{
-		_text = TOLOWER(reference0)
+		_text = TOLOWER(reference[0])
 	}
 	else
 	{
@@ -103,24 +103,24 @@ OnGlitchReplace
 	_num = 0
 	foreach _array; _char //Each time the loop runs, _char will store the next value in the array, until the array ends
 	{	
-		LOGGING("iteration %(_num + 1)")
+		// LOGGING("iteration %(_num + 1)")
 		if _char _in_ alpha
 		{
-			LOGGING("_char _in_ alpha")
+			// LOGGING("_char _in_ alpha")
 			--
 			if RAND(100) >= 29
 			{
-				LOGGING("rand GREATER than 29%")
+				// LOGGING("rand GREATER than 29%")
 				--
 				_caseSet = RAND(100)
 				if _caseSet <= 49
 				{
-					LOGGING("c == %(CHR(34))%(_char)%(CHR(34)) TOUPPER")
+					// LOGGING("c == %(CHR(34))%(_char)%(CHR(34)) TOUPPER")
 					_char = TOUPPER(_char)
 				}
 				elseif _caseSet >= 50
 				{
-					LOGGING("char == %(CHR(34))%(_char)%(CHR(34)) TOLOWER")
+					// LOGGING("char == %(CHR(34))%(_char)%(CHR(34)) TOLOWER")
 					_char = TOLOWER(_char)
 				}
 				
@@ -128,29 +128,29 @@ OnGlitchReplace
 				
 				if RAND(100) <= 19
 				{
-					LOGGING("ADD UNDERSCORE")
+					// LOGGING("ADD UNDERSCORE")
 					_char += "_"
 				}
 				else{LOGGING("DO NOTHING")}
 			}
 			else
 			{
-				LOGGING("rand LESS than 29%")
+				// LOGGING("rand LESS than 29%")
 				--
 				_punctuationSet = RAND(100)
 				if _punctuationSet <= 9
 				{
-					LOGGING("char == %(CHR(34))%(_char)%(CHR(34)) REPLACE PERIOD")
+					// LOGGING("char == %(CHR(34))%(_char)%(CHR(34)) REPLACE PERIOD")
 					_char = "."
 				}
 				elseif _punctuationSet >= 50
 				{
-					LOGGING("char == %(CHR(34))%(_char)%(CHR(34)) REPLACE UNDERSCORE")
+					// LOGGING("char == %(CHR(34))%(_char)%(CHR(34)) REPLACE UNDERSCORE")
 					_char = "_"
 				}
 				else
 				{
-					LOGGING("char == %(CHR(34))%(_char)%(CHR(34)) REPLACE HYPHEN")
+					// LOGGING("char == %(CHR(34))%(_char)%(CHR(34)) REPLACE HYPHEN")
 					_char = "-"
 				}
 					
@@ -162,12 +162,12 @@ OnGlitchReplace
 		}
 		--
 		_display += "%(_char)"
-		{LOGGING("_display == %(CHR(34))%(_display)%(CHR(34)) AND _NUM == %(_num)")}
+		// {LOGGING("_display == %(CHR(34))%(_display)%(CHR(34)) AND _NUM == %(_num)")}
 		_num ++
 		
 	}
 	--
-	LOGGING("display == %(_display)")
+	// LOGGING("display == %(_display)")
 	_display
 
 }
@@ -189,8 +189,8 @@ OnGMidiReplace
 			else {_char = TOLOWER(_char)}
 			--
 			if _additionCENT <= 19 {_char += "_"}
-			elseif RAND(100) <= 39 {_char += " "}
-			elseif RAND(100) <= 59 {_char += "-"}
+			elseif _additionCENT <= 39 {_char += " "}
+			elseif _additionCENT <= 59 {_char += "-"}
 			else{}
 		}
 		else

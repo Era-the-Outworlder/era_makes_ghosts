@@ -2,8 +2,7 @@
 //This .dic file contains booting and ending dialogue, as well as several other functions.
 
 //----OnfirstBoot----
-//~~~~Runs after new installation of ghost, only if ghost was installed from .nar file. Also declares and initialises variables
-//~~~~I've used variables without declaring them first here and it was a nightmare at the time. <3Era~~~~
+//~~~~Runs after new installation of ghost, if ghost was installed from .nar file. technically possible to make a zip install that with run OnfirstBoot Used to declare and initialise some variables. If something is initialised here, it's because something somewhere failed without it. <3Era~~~~
 
 
 OnfirstBoot
@@ -49,6 +48,7 @@ OnfirstBoot
 	HP = 20
 	EXP = 0
 	ellVee = 1
+	toNextLV = 100
 	nicevariable = 0
 	meanvariable = 0
 	
@@ -59,14 +59,16 @@ OnfirstBoot
 	--
 	"\t\0\s[-1]\1\s[-1]\![set,sticky-window,1,0]\![set,otherghosttalk,true]"
 	--
-	"This UKAGAKA uses audio to enhance certain events, as well as to indicate by sound that the ghost is talking. As not all users may desire this feature, a Silent Mode has been added, which prevents the ghost from playing any audio files.\n \x\c\1\n\_q\f[align,center]This setting can always be changed from the ghost's menu.\n[200]\f[align,center]\![*] \q[Silent Mode On,OnFBStart,%(reference0),ON]\n/
-	\![*] \q[Silent Mode Off,OnFBStart,%(reference0),OFF]"
+	"This UKAGAKA uses audio to enhance certain events, as well as to indicate by sound that the ghost is talking. As not all users may desire this feature, a Silent Mode has been added, which prevents the ghost from playing any audio files.\n \x\c\1\n\_q\f[align,center]This setting can always be changed from the ghost's \nAudio Settings\n[200]/
+	\f[align,center]/
+	\![*] \q[Silent Mode On,OnFBStart,%(reference[0]),ON]\n/
+	\![*] \q[Silent Mode Off,OnFBStart,%(reference[0]),OFF]"
 }
 
 OnFBStart
 {
-	silentMode = reference1
-	if reference0 == 0 //Don't touch this line.
+	silentMode = reference[1]
+	if reference[0] == 0 //Don't touch this line.
  	{
 		firstBoot = 1
 		_flow1 = OnGlitchLite("flowey")
@@ -407,7 +409,7 @@ OnWindowStateRestore
 
 OnGhostChanging
 {
-	if reference0 == "f_lowe_y" 
+	if reference[0] == "f_lowe_y" 
 	{
 		"\0\s[3]%(Flowey) * Re-re-re-re-re-re-re\_w[1000] LOADING\_w[200].\_w[200].\_w[200]."
 		"\0\s[3]%(Narrator) * The ghost of f_lowe_y is reloading."
@@ -441,7 +443,7 @@ OnGhostChanged
 	--
 	OnDiscordPluginCustom
 	--
-	if reference0 == "f_lowe_y" //As above, this should be the name of your ghost as in install.txt or descript.txt.
+	if reference[0] == "f_lowe_y" //As above, this should be the name of your ghost as in install.txt or descript.txt.
 	{
 		"\0\s[3]%(Flowey) * LOADED.\_w[500]"
 		"\0\s[3]%(Narrator) * (Ghost %(reference0) reloaded.)\_w[500]"
@@ -462,28 +464,28 @@ OnGhostCalled
 {
 	OnDiscordPluginCustom
 	--
-	_glNam = OnGLITCH(reference0)
+	_glNam = OnGLITCH(reference[0])
 	{
-		reference0 = TOUPPER(reference0)
-		"\0\s[3]%(Flowey) * HELLO %(reference0).\_w[500]\e"
+		_yellName = TOUPPER(reference[0])
+		"\0\s[3]%(Flowey) * HELLO %(_yellName).\_w[500]\e"
 	}
 	"\0\s[3]%(Flowey) * HELLO %(_glNam).\_w[500]\e"
 	
-	"\0\s[3]%(Flowey) * IT'S IT'S IT'S %(reference2)! HELLO %(_glNam).\_w[500]\e"
+	"\0\s[3]%(Flowey) * IT'S IT'S IT'S %(reference[2])! HELLO %(_glNam).\_w[500]\e"
 	
-	"\0\s[3]%(Narrator) * (%(reference0) is already here, but you called f_lowe_y anyway.)\_w[500]"
+	"\0\s[3]%(Narrator) * (%(reference[0]) is already here, but you called f_lowe_y anyway.)\_w[500]"
 }
 
 // When another ghost is BEING called from THIS ghost's r-click menu (happens before new ghost loads)
 // ref0 = body of called ghost, ref1 = call method, ref2 = name of called ghost, ref3 = path of called ghost
 OnGhostCalling
 {
-	_glNam = OnGLITCH(reference0)
+	_glNam = OnGLITCH(reference[0])
 	
 	
-	"\0\s[3]%(Flowey) * IT'S IT'S IT'S %(reference2)! HELLO %(_glNam).\_w[500]\e"
+	"\0\s[3]%(Flowey) * IT'S IT'S IT'S %(reference[2])! HELLO %(_glNam).\_w[500]\e"
 	
-	"\0\s[3]%(Narrator) * f_lowe_y is already here, but you're calling %(reference0) anyway.\n\_w[300] Is it to keep him company?\_w[500]\e"
+	"\0\s[3]%(Narrator) * f_lowe_y is already here, but you're calling %(reference[0]) anyway.\n\_w[300] Is it to keep him company?\_w[500]\e"
 }
 
 // When another ghost is called from THIS ghost's r-click menu (happens after new ghost completes boot function)
@@ -491,15 +493,14 @@ OnGhostCalling
 
 OnGhostCallComplete
 {
-	
-	if "Hapax" _in_ reference7
+	if "Hapax" _in_ reference[7]
 	{
 		"\0\s[3]%(Flowey) * HELLO HAPAX LEGOMENOM.\_w[500]"
 	}
 	else
 	{
-		reference0 = TOUPPER(reference0)
-		"\0\s[3]%(Flowey) * HELLO %(reference0).\_w[500]"
+		_yellName = TOUPPER(reference[0])
+		"\0\s[3]%(Flowey) * HELLO %(_yellName).\_w[500]"
 	}
 }
 
@@ -508,14 +509,14 @@ OnGhostCallComplete
 
 OnOtherGhostBooted
 {
-	if "Hapax" _in_ reference7
+	if "Hapax" _in_ reference[7]
 	{
 		"\0\s[3]%(Flowey) * HELLO HAPAX LEGOMENOM.\_w[500]"
 	}
 	else
 	{
-		reference0 = TOUPPER(reference0)
-		"\0\s[3]%(Flowey) * HELLO %(reference0).\_w[500]"
+		_yellName = TOUPPER(reference[0])
+		"\0\s[3]%(Flowey) * HELLO %(_yellName).\_w[500]"
 	}
 }
 
@@ -526,14 +527,14 @@ OnOtherGhostBooted
 
 OnOtherGhostChanged
 {
-	_refer0 = TOUPPER(reference0)
-	_refer1 = TOUPPER(reference1)
+	_refer0 = TOUPPER(reference[0])
+	_refer1 = TOUPPER(reference[1])
 	
-	if "Hapax" _in_ reference15
+	if "Hapax" _in_ reference[15]
 	{
 		"\0\s[3]%(Flowey) * GOOD-BYE %(_refer0). \n[200]   HELLO HAPAX LEGOMENOM.\_w[500]"
 	}
-	elseif "Hapax" _in_ reference14
+	elseif "Hapax" _in_ reference[14]
 	{
 		"\0\s[3]%(Flowey) * GOOD-BYE HAPAX LEGOMENOM. \n[200]   HELLO %(_refer1).\_w[500]"
 	}
@@ -549,8 +550,8 @@ OnOtherGhostChanged
 
 OnOtherGhostClosed
 {
-	_refer0 = TOUPPER(reference0)
-	if "Hapax" _in_ reference7
+	_refer0 = TOUPPER(reference[0])
+	if "Hapax" _in_ reference[7]
 	{
 		"\0\s[3]%(Flowey) * GOODE-BYE HAPAX LEGOMENOM.\_w[500]"
 	}
@@ -569,7 +570,7 @@ OnOtherGhostClosed
 
 OnShellChanging
  {
-	if reference0 == "Hypothetical Shell that doesn't actually exist" //reference0 in OnShellChanging is the name of the shell you're swapping to. 
+	if reference[0] == "Hypothetical Shell that doesn't actually exist" //reference0 in OnShellChanging is the name of the shell you're swapping to. 
 	{
 		"\0\s[12] * %(errorMsg)\_w[500]\e"
 	}

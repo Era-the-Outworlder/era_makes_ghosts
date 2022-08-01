@@ -10,7 +10,7 @@
 // ▐░░░░░░░░░░▌ ▐░▌▐░▌       ▐░▌▐░▌▐░▌  ▐░▌
 //  ▀▀▀▀▀▀▀▀▀▀   ▀  ▀         ▀  ▀  ▀    ▀ 
 
-// This dictionary is all functions relating to Discord Rich Presence Plugin
+// This dictionary is all functions relating to the Discord Rich Presence Plugin
 
 //The main DRP settings menu. OnDRPSet sets the "CustomDetail" info. OnDevSet sets "SmallImageText"
 OnDRPMenu
@@ -41,17 +41,17 @@ OnDRPMenu
 		"\![*] \q[Turn On,OnDiscordPluginCustom]\n[150]"
 	}
 	--
-	if reference0 == "menu"
+	if reference[0] == "menu"
 	{
 		"\![*] \q[Main Menu,OnMenuRun]\e"
 	}
-	elseif reference0 == "firstboot"
+	elseif reference[0] == "firstboot"
 	{
 		"\t"
 	}
 	else
 	{
-		"\![*] \q[Close Menu,OnMenuCancel]\e"
+		"\![*] \q[Close Menu,OnMenu,cancel]\e"
 	}
 }	
 
@@ -62,7 +62,7 @@ OnDRPSelect
 }
 OnDRPSet
 {
-	drpstatus = SANITISE(reference0)
+	drpstatus = SANITISE(reference[0])
 	OnDiscordPluginCustom
 }
 
@@ -108,10 +108,10 @@ OnDevStatMenu
 // Sets devstate to determine SmallImageKey 
 OnDevType
 {
-	if !reference0
+	if !reference[0]
 	{devstate = ""}
 	else
-	{devstate = reference0}
+	{devstate = reference[0]}
 	--
 	if devstate == "SHELL" || devstate == "CODE" || devstate == "WRITE"
 	{"\n\nEnter Development Status Message:\x\![open,inputbox,OnDevSet]"}
@@ -120,7 +120,7 @@ OnDevType
 // User Input sets smallImageCaption for SmallImageText
 OnDevSet
 {
-	_cleanRef = SANITISE(reference0)
+	_cleanRef = SANITISE(reference[0])
 	
 	if reference2 == "naming"
 	{
@@ -223,7 +223,7 @@ OnDRPMoodMenu	// See OnDRPMoodSet, line
 // Sets the variables that are used to send the info to the plugin
 OnDRPMoodSet
 {
-	moodImageKey = reference0
+	moodImageKey = reference[0]
 	--
 	if "github" _in_ reference1
 	{moodImageText = reference1}
@@ -408,82 +408,4 @@ OnCheckDRPAttitude
 
 	OnDiscordPluginCustom
 }
-
-OnAwayTimer
-{
-	case reference2
-	{
-		when "setStart"
-		{
-			timerStart = SPLIT(reference0,",")
-			--
-			"%(timerStart[0])/%(timerStart[1])"
-		}
-		when "setEnd"
-		{
-			timerEnd = SPLIT(reference0,",")
-		}
-	
-	}
-	--
-	case reference0
-	{
-		when "changeStatus"
-		{
-		
-		}
-		when "menu"
-		{
-			"\1\b2Scheduled Status\n[200]"
-			--
-			if !timerStart && !timerEnd
-			{
-				'\![*] \q[Set Away Start Time,"script:\![open,timeinput,OnAwayTimer,,%(hour),%(minute),00,--reference=setStart]"]\n'
-				--
-				'\![*] \q[Set Away End Time,"script:\![open,timeinput,OnAwayTimer,,%(hour),%(minute),0,--reference=setEnd]"]\n'
-			}
-			elseif timerStart && !timerEnd
-			{
-				"Away Start Time: %(timerStartDisplay)\n"
-				--
-				'\![*] \q[Change,"script:\![open,timeinput,OnAwayTimer,,%(hour),%(minute),00,--reference=setStart]"]\n'
-				--
-				'\![*] \q[Set Away End Time,"script:\![open,timeinput,OnAwayTimer,,%(hour),%(minute),0,--reference=setEnd]"]\n'
-			}
-			elseif !timerStart && timerEnd
-			{
-				'\![*] \q[Set Away Start Time,"script:\![open,timeinput,OnAwayTimer,,%(hour),%(minute),00,--reference=setStart]"]\n'
-				--
-				"Away End Time: %(timerEndDisplay)\n"
-				'\![*] \q[Change,"script:\![open,timeinput,OnAwayTimer,,%(hour),%(minute),00,--reference=setEnd]"]\n'
-			}
-			else
-			{
-				"Away Start Time: %(timerStartDisplay)\n"
-				--
-				'\![*] \q[Change,"script:\![open,timeinput,OnAwayTimer,,%(hour),%(minute),00,--reference=setStart]"]\n'
-				--
-				"Away End Time: %(timerEndDisplay)\n"
-				'\![*] \q[Change,"script:\![open,timeinput,OnAwayTimer,,%(hour),%(minute),00,--reference=setEnd]"]\n'
-			}
-		}
-		--
-		
-	}
-	
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

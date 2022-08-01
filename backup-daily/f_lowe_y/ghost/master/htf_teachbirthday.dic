@@ -353,9 +353,9 @@ birthchecked
 		{
 			if bornday == 13
 			{
-				if username == "Era" && menuRName == "Erinn"
+				if username == "Era" && menuRName == "Erinn" && bornyear = 1988
 				{
-					"\0\s[3]%(Narrator) * All set, Era! Happy birthday! May your code be relatively bug free. "
+					"\0\s[3]%(Narrator)\b[6] * All set, Era! Happy birthday! May your code be relatively bug free. \n[200]If you're not this ghost's developer, then here is an extra special message from them: \n[200]Hi. I'm Era the Outworlder, and I made this ghost in 2016 and rebuilt him in 2021-2022. \nIf you're seeing this, it means either there is something majorly broken, or you put in not just the same username as me, Era, and the same 'real' name, Erinn, in SSP's settings menu. You ALSO put in the same birthday as me. Either you know me, or this is the wildest coincidence ever. Either way, I hope you enjoy my ghost, and I hope you have an amazing birthday."
 				}
 				else
 				{
@@ -467,11 +467,11 @@ birthchecked
 			if bornday == 32
 			{
 				"\0\s[3]%(Flowey) \_w[500]"
-				"\0\s[3]%(Narrator) * It's your birthday today.\_w[500]"
+				"\0\s[3]%(Narrator) * It's your birthday that day.\_w[500]"
 			}
 			else
 			{
-				genericBirthdayToday
+				genericBirthday
 			}
 		}
 		elseif bornmonth == 7
@@ -483,7 +483,7 @@ birthchecked
 			}
 			else
 			{
-				genericBirthdayToday
+				genericBirthday
 			}
 		}
 		elseif bornmonth == 8
@@ -495,7 +495,7 @@ birthchecked
 			}
 			else
 			{
-				genericBirthdayToday
+				genericBirthday
 			}
 		}
 		elseif bornmonth == 9
@@ -507,7 +507,7 @@ birthchecked
 			}
 			else
 			{
-				genericBirthdayToday
+				genericBirthday
 			}
 		}
 		elseif bornmonth == 10
@@ -515,7 +515,7 @@ birthchecked
 			if bornday == 31
 			{
 				"\0\s[3]%(Flowey) * \![embed,OnGLITCH,HALLOWEEN] \![embed,OnGLITCH,HALLOWEEN] \![embed,OnGLITCH,HALLOWEEN] \![embed,OnGLITCH,HALLOWEEN] \![embed,OnGLITCH,HALLOWEEN] \![embed,OnGLITCH,HAPPY BIRTHDAY] \_w[500]"
-				"\0\s[3]%(Narrator) * It's your birthday that day.\_w[500]"
+				"\0\s[3]%(Narrator) * Some may consider that an inauspicious day to be born. But you have an excuse for every birthday party being a costume party. How fun.\_w[500]"
 			}
 			else
 			{
@@ -526,14 +526,14 @@ birthchecked
 		{
 			if bornday == 13
 			{
-				if username == "Era" && menuRName == "Erinn"
+				if username == "Era" && menuRName == "Erinn" && bornyear == 1988
 				{
-					"\0\s[3]%(Narrator) * All set, Era! May your code be relatively bug free. "
+					"\0\s[3]%(Narrator)\b[6] * All set, Era! May your code be relatively bug free. \n[200]If you're not this ghost's developer, then here is an extra special message from them: \n[200]Hi. I'm Era the Outworlder, and I made this ghost in 2016 and rebuilt him in 2021-2022. \nIf you're seeing this, it means either there is something majorly broken, or you put in not just the same username as me, Era, and the same 'real' name, Erinn, in SSP's settings menu. You ALSO put in the same birthday as me. Either you know me, or this is the wildest coincidence ever. Either way, I hope you enjoy my ghost, and I hope when your birthday rolls around again, it's a happy one."
 				}
 				else
 				{
 					"\0\s[3]%(Flowey) * Someone \![embed,OnGLITCH,ELSE] also has a birthday that day.\_w[500] \![embed,OnGLITCH,9 MILLION SOMEONES] in fact! \![embed,OnGLITCH,HAPPY BIRTHDAY!]"
-					"\0\s[3]%(Narrator) * This ghost's developer was also born that day. \nThe odds of that are only 0.274%. How wonderful that you have overcome the odds.\_w[500]"
+					"\0\s[3]%(Narrator) * This ghost's developer shares a birthday with you. \nThe odds of that are only 0.274%. How wonderful that you have overcome the odds.\_w[500]"
 				}
 			}
 			else
@@ -559,12 +559,12 @@ genericBirthdayToday
 {
 	"\0\s[8]%(Flowey) * %(HAPPY) \c%(Flowey) * Happy birthday, %(username).\_w[2500]"
 
-	"\0\s[3]%(Narrator) * It's your birthday today. Happy birthday, %(username)\_w[1500]"
+	"\0\s[3]%(Narrator) * It's your birthday today. Happy birthday, %(username).\_w[1500]"
 }
 
 genericBirthday
 {
 	"\0\s[3]%(Flowey) * %(bornmonthprint) %(borndayprint), %(bornyear)? Is _ha_... righ_..."
 	
-	"\0\s[3]%(Narrator) * %(bornmonthprint) %(borndayprint), %(bornyear).\n f_lowe_y will remember that.\_w[1500]"
+	"\0\s[3]%(Narrator) * %(bornmonthprint) %(borndayprint), %(bornyear). \nf_lowe_y will remember that.\_w[1500]"
 }

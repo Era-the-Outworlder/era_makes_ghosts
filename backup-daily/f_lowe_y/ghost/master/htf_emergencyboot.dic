@@ -69,7 +69,7 @@ OnSecondChange
 
 OnKeyPress
 {
-	if reference0 == "e"
+	if reference[0] == "e"
 	{
 		"\b6\_q\_?%(GETERRORLOG)\_?\x"
 	}

@@ -23,11 +23,11 @@
 
 OnMouseMove
 {
-    case reference3 
+    case reference[3] 
 	{
 		when 0 
 		{
-			if reference6 == "noPunching"
+			if reference[6] == "noPunching"
 			{
 				stroke = 91
 				MouseMoveSakura
@@ -55,7 +55,7 @@ OnMouseMove
 
 MouseMoveSakura
 {
-    case reference4 
+    case reference[4] 
 	{
 	when "Petals"
 	{
@@ -124,6 +124,7 @@ MouseMoveSakura
 		if rub >= 120
 		{
 			rub = 0 //resetting the stroke count
+			meanvariable++
 			petCountNeg++
 			case petCountNeg
 			{
@@ -134,6 +135,7 @@ MouseMoveSakura
 			}
 			others
 			{
+				meanvariable++
 				"\0\s[17]%(Flowey)\f[height,25] * \![embed,OnGlitchLite,stop].\![embed,OnGlitchLite,stop].\![embed,OnGlitchLite,stop].\![embed,OnGlitchLite,stop]\f[default] \_w[500]"
 				"\0\s[17]%(Narrator) * Does his anger amuse you? \_w[1500]"
 			}
@@ -156,13 +158,13 @@ MouseMoveSakura
 OnMouseDoubleClick
 {
 
-	if reference5 == 0 //left button == 0 right button == 1
+	if reference[5] == 0 //left button == 0 right button == 1
 	{
-		case reference3 // sakura == 0, kero == 1, char3 == 2, etc
+		case reference[3] // sakura == 0, kero == 1, char3 == 2, etc
 		{
 		when 0 
 		{
-			if reference6 == "punchHim"
+			if reference[6] == "punchHim"
 			{
 				agreedToConsequences ,= "punching"
 				--
@@ -193,51 +195,55 @@ OnMouseDoubleClick
 MouseDoubleClickSakura
 {
 
- 	if reference4 == "Face" //name of collision
+ 	if reference[4] == "Face" //name of collision
 	{
 		if ASEARCH("punching",agreedToConsequences) == 0
 		{
 			_test = RAND(100)
 			case _test 
 			{
-			when 13-26
+			when 2,40,50,56,57,61-63,65,80,90
 			{
 				"\0\s[27]\_v[mus\swipe.wav]\e"
 			}
 			others
 			{
-				if knifeTime >= 19
+				if knifeTime >= 20
 				{
 					if killCount >= 5
 					{
-						EXP = EXP+knifeTime
+						EXP++
 						knifeTime = 0
 						killCount = 0
 						ellVee++
 						"\0\s[15]\_v[mus\hit.wav]\_w[1500]\n[300]\s[-1]\_v[mus\dust.wav]\_w[1500]"
 						--
-						"\1\[-1]\_v[mus\LV_increased.wav]\f[align,center] * YOU WIN! \_w[500]\e"
+						"\1\s[-1]\_v[mus\LV_increased.wav]\f[align,center] * YOU WIN! \_w[500]\e"
 					}
 					else
 					{
-						EXP = EXP+knifeTime
+						EXP++
 						knifeTime = 0
 						killCount++
-						"\0\s[15]\_v[mus\hit.wav]\_w[100]\s[-1]\_w[2000]\s[21]\_v[mus\savestate_spam.wav]\_w[1000]\e"
+						"\0\s[15]\_v[mus\hit.wav]\_w[300]\s[-1]\_w[2000]\s[21]\_v[mus\savestate_spam.wav]\_w[1000]\e"
 					}
 				
 				}
-				elseif knifeTime == 18
+				elseif knifeTime == 19
 				{
 					knifeTime++ 
-					"\0\s[24]\1\s[-1]\_v[mus\hahaha.mp3]\n[200] * f_lowe_y is considering doing a violence. \_w[500]"
+					EXP++
+					
+					"\0\s[24]\b8\_v[mus\hahaha.mp3]\n[200] * f_lowe_y is considering doing a violence. \_w[500]"
 					
 					"\0\s[18]%(Flowey)\b4\f[height,100]Die.\f[default]\_w[500]\e"
 					
 				}
 				elseif knifeTime >= 12
-				{
+				nonoverlap : {
 					knifeTime++
+					EXP++
+					
 					"\0\s[15]\_v[mus\r_ack.wav] * \![embed,OnGLITCH,stop it]!\_w[500]"
 					
 					"\0\s[21]\_v[mus\r_oh.wav] * \![embed,OnGLITCH,cut that out]!!\_w[500]"
@@ -245,11 +251,13 @@ MouseDoubleClickSakura
 					"\0\s[21]\_v[mus\r_hey.wav] * \![embed,OnGLITCH,hey you]! \_w[500]"
 					
 					"\0\s[14]\1\s[-1]\_v[mus\r_screech.wav]\n * (Scared noises)\n[200]\_w[500]"
+					
 					"\0\s[15]\_v[mus\hit.wav]\_w[500]\e"
 				}
 				elseif knifeTime >= 6
-				{
+				nonoverlap : {
 					knifeTime++
+					EXP++
 					
 					"\0\s[16]\_v[mus\r_ack.wav] * Ack! Why-\_w[500]"
 					"\0\s[15]\_v[mus\r_oh.wav] * OW! You!\_w[500]"
@@ -258,8 +266,9 @@ MouseDoubleClickSakura
 					"\0\s[15]\_v[mus\hit.wav]\_w[500]\e"
 				}
 				else
-				{
+				nonoverlap : {
 					knifeTime++
+					EXP++
 					
 					"\0\s[15]\_v[mus\r_ack.wav] * Ack!\_w[500]"
 					"\0\s[12]\_v[mus\r_oh.wav] * OW!\_w[500]"
@@ -270,8 +279,9 @@ MouseDoubleClickSakura
 				}
 				
 				--
-					"\e"
-					"\n[half]\n[300]\_w[1500]\_v[mus\HELP_text.mp3]\_q\f[color,250,0,0]\f[align,right] * (%(knifeTime))\f[color,default]\_w[1000]\e"
+				
+				"\e"
+				"\n[350]\_w[1500]\_v[mus\HELP_text.mp3]\_q\f[color,250,0,0]\f[align,right] * (%(knifeTime))\f[color,default]\_w[1000]\e"
 			}
 			}			
 		}
@@ -299,9 +309,10 @@ MouseDoubleClickKero
 
 OnMouseWheel
 {
-	if reference4 == "Face"
+	if reference[4] == "Face"
 	{
 		flickCount++
+		meanvariable++
 		"\0\s[27]\_v[mus\swipe.wav]\e" //\n\f[height,100]\f[color,255,0,0] MISS\f[default]
 	}
 }
@@ -329,7 +340,7 @@ OnMouseDragEnd
 
 OnMouseDownEx
 {
-	case reference5
+	case reference[5]
 	{
 	when "middle"
 	{

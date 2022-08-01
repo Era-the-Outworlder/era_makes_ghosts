@@ -16,43 +16,16 @@ Narrator
 {"\1\s[-1]\_v[mus\HELP_text.mp3]"}
 
 Flowey
-{"\_v[mus\sound_FLOWEY.mp3]"}
+{"\0\_v[mus\sound_FLOWEY.mp3]"}
 
 heeHeeHee
 {"\_v[mus\heeheehee.wav]"}
 
-// ---- System display related ----
-timerStartDisplay
-{
-	_temhr = "%(timerStart[0])"
-	_temmn = "%(timerStart[1])"
-	if _temhr == 0
-	{	
-		_display = "12:"
-	}
-	else
-	{
-		_display = _temhr
-	}
-	--
-	_display = ("%(_display):%(_temmn)")
-	
-	--
-	"%(_display)"
-}
+towerBell
+{"\_v[mus\mus_bell.wav]"}
 
-timerEndDisplay
-{
-	_tem = timerEnd[0]
-	if _tem > 12
-	{_display = (_tem - 12)}
-	elseif _tem < 12 && _tem > 0
-	{_display = _tem}
-	else
-	{_display = 12}
-	--
-	"%(_display)"
-}
+// ---- System display related ----
+
 ap
 {
  	if ampm

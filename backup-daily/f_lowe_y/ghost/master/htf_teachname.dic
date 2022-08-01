@@ -12,7 +12,7 @@
 
 OnTeachName	
 {
-	if reference0 == "menu" //function was called from User Config
+	if reference[0] == "menu" //function was called from User Config
 		{	
 			"\c\t"
 			--
@@ -38,47 +38,47 @@ OnTeachName
 
 OnNameTeach
 {
-	_tempname = TOSTR(reference0) //this stores the name value from reference0 in tempname
+	_tempname = TOSTR(reference[0]) //this stores the name value from reference[0] in tempname
 	_selfname = TOSTR(sakuraname)
 	
 	if _tempname == _selfname
 	{
 		"\0\s[21]%(Flowey) * Chose. Chose. Chose. Chose. Chose\n[200]\_w[500]Chose... already...\![open,inputbox,OnNameTeach,-1]"
 	}
-	elseif reference0 == "flowey" || reference0 == "Flowey" || reference0 == "FLOWEY"
+	elseif reference[0] == "flowey" || reference[0] == "Flowey" || reference[0] == "FLOWEY"
 	{
 		"\0\s[21]%(Flowey) * Chose... already...\![open,inputbox,OnNameTeach,-1]"
 		
 	}
-	elseif reference0 == "FlOwEy" || reference0 == "fLoWeY"
+	elseif reference[0] == "FlOwEy" || reference[0] == "fLoWeY"
 	{
 		"\0\s[21]%(Flowey) * Clevvvvvvvver Vvve ver very clever.\![open,inputbox,OnNameTeach,-1]"
 		"\0\s[18]%(Narrator) * (You decide that may have been a bad idea.)\![open,inputbox,OnNameTeach,-1]"
 	}
 	else
 	{
-		reference0 = TOLOWER(reference0) //changes it to lowercase
-		reference0 = REPLACE(reference0," ","") //removes spaces
-		reference0 = REPLACE(reference0,".","") //removes periods
-		reference0 = REPLACE(reference0,"-","") //removes dashes
-		reference0 = REPLACE(reference0,"_","") //removes underscores
+		reference[0] = TOLOWER(reference[0]) //changes it to lowercase
+		reference[0] = REPLACE(reference[0]," ","") //removes spaces
+		reference[0] = REPLACE(reference[0],".","") //removes periods
+		reference[0] = REPLACE(reference[0],"-","") //removes dashes
+		reference[0] = REPLACE(reference[0],"_","") //removes underscores
 		
 		
-		if reference0 == "flowey" 
+		if reference[0] == "flowey" 
 		{
 			"\0\s[21]%(Flowey) * Chose... already...\![open,inputbox,OnTeachName,-1]"
 		}
-		elseif reference0 == "" //This is if the user doesn't put in a name at all, since that'd also get awkward in dialogue.
+		elseif reference[0] == "" //This is if the user doesn't put in a name at all, or only enters invalid characters.
 		{
-			username = "NULL" //this sets the user's name.
+			username = "NULL" //this sets the user's name to NULL, which is a fun joke but isn't exactly safe. AFAIK, NULL isn't used as a value in YAYA, but it could cause problems if the ghost share's the user's name with outside programs through a plugin or something. 
 		
 			"\0\s[29]%(Flowey) * var_player_name = %(username)\n[200]"
 			"\0\s[29]%(Narrator) * var_player_name = %(username) Is this correct? \n[200]"
 			--
 			
-			"\![*] \q[Change it.,OnTeachName]\n \n[-100]\f[align,right]\![*] \q[It's fine.,OnRisk]\n\0\s[3]"
+			"\![*] \q[Change it.,OnTeachName]\n \n[-100]\f[align,right]\![*] \q[It's fine.,OnRisk]"
 		}
-		elseif reference0 == "sans"
+		elseif reference[0] == "sans"
 		{
 			if month == 2 && day == 15
 			{
@@ -93,9 +93,9 @@ OnNameTeach
 			"\0\s[21]%(Narrator) * f_lowe_y isn't a fan of that name. \n (You get the feeling he may decide to call you something rude instead.) \n"
 			}
 			--
-			"\![*] \q[Change it.,OnTeachName]\n \n[-100]\f[align,right]\![*] \q[Risk it.,OnRisk]\0\s[3]"
+			"\![*] \q[Change it.,OnTeachName]\n \n[-100]\f[align,right]\![*] \q[Risk it.,OnRisk]"
 		}
-		elseif reference0 == "papyrus"
+		elseif reference[0] == "papyrus"
 		{
 			if month == 2 && day == 15
 			{
@@ -104,17 +104,17 @@ OnNameTeach
 				"\0\s[29]%(Flowey) * %(HAPPY)\n[200]/
 				\c%(Narrator) * IT... May be a bad idea to use that name. \n"
 				--
-				"\![*] \q[Change it.,OnTeachName]\n \n[-100]\f[align,right]\![*] \q[Risk it.,OnRisk]\0\s[3]"
+				"\![*] \q[Change it.,OnTeachName]\n \n[-100]\f[align,right]\![*] \q[Risk it.,OnRisk]"
 			}
 			else
 			{
 				username = _tempname //this sets the user's name to what they entered
 				_temp = OnGLITCH(username)
-				"\0\s[23]%(Flowey) * %(_temp) \0\s[0]\n"
-				"\0\s[23]%(Narrator) * It appears he has... fond? ...memories of someone. \n"
+				"\0\s[23]%(Flowey) * %(_temp) \_w[500]\s[0]"
+				"\0\s[23]%(Narrator) * It appears he has... fond? ...memories of someone. \_w[500]\0\s[0]"
 			}
 		}
-		elseif reference0 == "help" //template for referencing HELP_tale names
+		elseif reference[0] == "help" //template for referencing HELP_tale names
 		{
 			if month == 2 && day == 15
 			{
@@ -122,26 +122,26 @@ OnNameTeach
 				"\0\s[29]%(Flowey) * %(HAPPY)\n[200]/
 				\c%(Narrator) * IT... May be a bad idea to use that name. \n"
 				--
-				"\![*] \q[Change it.,OnTeachName]\n \n[-100]\f[align,right]\![*] \q[Risk it.,OnRisk]\0\s[3]"
+				"\![*] \q[Change it.,OnTeachName]\n \n[-100]\f[align,right]\![*] \q[Risk it.,OnRisk]"
 			}
 			else
 			{
 				username = _tempname //this sets the user's name to what they entered
 				_temp = OnGLITCH(username)
-				"\0\s[23]%(Flowey) * %(_temp) \0\s[0]\n"
-				"\0\s[23]%(Narrator) * It appears he has... [var_sentiment] ...memories of someone. \n"
+				"\0\s[23]%(Flowey) * %(_temp) \_w[500]\0\s[0]"
+				"\0\s[23]%(Narrator) * It appears he has... [var_sentiment] ...memories of someone. \_w[500]\0\s[0]"
 			}
 		}
-		elseif reference0 == "name" //some character
+		elseif reference[0] == "name" //some character
 		{
 			username = "reference" 
 		
-			"\0\s[5]%(Flowey) * var_player_name = %(username)\0\s[3]"
+			"\0\s[5]%(Flowey) * var_player_name = %(username)\n"
 			
-			"\0\s[5]%(Narrator) * var_player_name = %(username) Is this correct? \n"
+			"\0\s[5]%(Narrator) * var_player_name = %(username)\nIs this correct? \n"
 			--
 			
-			"\![*] \q[Change it.,OnTeachName]\n \n[-100]\f[align,right]\![*] \q[It's fine.,OnRisk]\n\0\s[3]"
+			"\![*] \q[Change it.,OnTeachName]\n \n[-100]\f[align,right]\![*] \q[It's fine.,OnRisk]\n"
 		}
 		elseif _tempname == username //checks against existing username
 		{
@@ -168,16 +168,17 @@ OnNameTeach
 // If the user chooses to risk a FUN name
 OnRisk
 {
-	
+	thatonename = username
+	agreedToConsequences ,= "naming"
 	if firstBoot == 1 //this checks for the flag that was set during the firstBoot sequence
 	{
-		"\0\s[16]%(Narrator) * f_lowe_y has learned to call you... something.\0\s[3]"
+		"\0\s[16]%(Narrator) * f_lowe_y has learned to call you... something."
 		--
 		OnTeachPronouns
 	}
 	else
 	{
-		"\0\s[24]\_v[mus\heeheehee.wav] * HA HA HA HA HA HA HA-\e"
+		"\0\s[24]\_v[mus\heeheehee.wav] * HA HA HA HA HA HA HA- %(Narrator) * Whatever follows is a consequence of your decision."
 	}	
 
 }
