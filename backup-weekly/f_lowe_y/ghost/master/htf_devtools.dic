@@ -18,7 +18,7 @@ OnConvert
 	_text = ""
 	if !_argv
 	{
-		_text = reference0
+		_text = reference[0]
 	}
 	else
 	{
@@ -46,7 +46,7 @@ OnTestVariable
 {
 	"\0\s[3]\b6%(Narrator) * Testing! \n[200]"
 	--
-	"\![*] \q[Erase Variable,seteVar]\n"
+	"\![*] \q[Set Variable,seteVal]\n"
 	--
 	"\![*] \q[Set PETS+,setPET1]\n"
 	--
@@ -68,13 +68,13 @@ OnTestVariable
 	
 }
 
-Select.seteVar
+Select.seteVal
 {
-	"\![open,input,OnEVar,]"
+	"\![open,input,OnEVal,]"
 }
-OnEVar
+OnEVal
 {
-	EVAL(reference0)
+	EVAL(reference[0])
 }
 Select.setPET1
 {
@@ -82,7 +82,7 @@ Select.setPET1
 }
 OnPet1
 {
-	petCount = reference0
+	petCount = reference[0]
 }
 Select.setPET2
 {
@@ -90,7 +90,7 @@ Select.setPET2
 }
 OnPet2
 {
-	petCountNeg = reference0
+	petCountNeg = reference[0]
 }
 
 Select.setSTAT
@@ -99,7 +99,7 @@ Select.setSTAT
 }
 OnStat
 {
-	ellVee = reference0
+	ellVee = reference[0]
 }
 Select.setSTAT2
 {
@@ -107,7 +107,7 @@ Select.setSTAT2
 }
 OnStat2
 {
-	EXP = reference0
+	EXP = reference[0]
 }
 Select.setRATE
 {
@@ -115,11 +115,11 @@ Select.setRATE
 }
 OnCOMMRATE
 {
-	communicateratio = reference0
+	communicateratio = reference[0]
 }
 Select.funkTest
 {	
-	"\0\s[15]\b[-1]\_v[mus\hit.wav]a \_w[100]b \s[-1]\_w[3000]c \s[21]\_v[mus\savestate_spam.wav]d\_w[1000]e\e"
+	// "\0\s[15]\b[-1]\_v[mus\hit.wav]a \_w[100]b \s[-1]\_w[3000]c \s[21]\_v[mus\savestate_spam.wav]d\_w[1000]e\e"
 	
 	// DUMPVAR()
 	// "\n[300]%(Narrator) * Dumping Variables to ayame.log.\n"
@@ -146,7 +146,10 @@ Select.funkTest
 	// \![open,passwordinput,OnTestInput]Passwordbox\x\n/
 	// \![open,dateinput,OnTestInput,,1900,1,1]Dateinput\x\n/
 	// \![open,sliderinput,OnTestInput,,1,1,21]Sliderinput\x\n/
-	// \![open,timeinput,OnTestInput,,0,0,0]Timeinput\x"
+	// "\![open,timeinput,OnTestInput,,%(hour),%(minute),0,--reference=setEnd] Timeinput\x"
+	// '\![*] \q[Set Away End Time,"script:\![open,timeinput,OnTestInput,,%(hour),%(minute),0,--reference=setEnd]"]\n'
+	_didpunch = ASEARCH("punching",agreedToConsequences)
+	"%(_didpunch)"
 
 }
 
@@ -200,7 +203,7 @@ OnEmbedTest
 
 OnTeach
 {
-	reference0
+	reference[0]
 }
 
 // ---- Weird testing stuff end ----

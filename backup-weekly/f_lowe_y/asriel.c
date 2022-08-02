@@ -97,6 +97,7 @@ Are you friends with all of them yet?
 Maybe you should go back and... "hang" with them.
 The power of friendship...
 That always saves the day, right?
+
 So, killing people is ACTUALLY fine...?
 Sure.
 I'm glad we agree on the value of a life.
@@ -104,6 +105,7 @@ I've learned SO MUCH from you.
 Though... are you REALLY gonna keep doing things halfway?
 The amount of people you killed...
 It's honestly DISAPPOINTING.
+
 You IDIOT.
 You really can't do ANYTHING right.
 Why,
@@ -129,6 +131,7 @@ Well, I'll let you mess around.
 I know you'll come back eventually.
 And when that time comes...
 I'll be waiting for you.
+
 Why do you keep coming back here?
 Oh, I get it. You wanna be friends, huh...?
 You're PATHETIC.
@@ -142,6 +145,7 @@ Someone that I won't get tired of.
 Someone like ME.
 Quit looking at me with that stupid expression.
 You're pissing me off.
+
 So you're here again.
 What's wrong with you?
 Are you trying to start the Flowey Fan Club?
@@ -154,6 +158,7 @@ He's one of the better characters to mess around with.
 Took me a long time to get bored of that one.
 ...Yeah.
 Talk to him about it.
+
 So.
 Did you start the Flowey Fan Club?
 Ha. I'm just kidding.
@@ -170,6 +175,7 @@ He'll... well...
 Let's just say.
 He's caused me more than my fair share of resets.
 Stay away from that guy.
+
 Why do you keep coming back here?
 You don't REALLY want to be friends, do you...?
 No. I get it.
@@ -226,6 +232,10 @@ I'm sorry.
 You've probably heard this a hundred times already, haven't you...?
 Well, that's all.
 See you later...
+
+
+
+
 
 Is this a joke? Are you braindead? RUN. INTO. THE. friendliness pellets
 

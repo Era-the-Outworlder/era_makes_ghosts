@@ -4,6 +4,7 @@ yaub_undertext/,noupdate
 ghost/master/profile/,nonar,noupdate
 ghost/master/mus/unused/,nonar,noupdate
 
+ghost/master/htf_desktopeye.dic.bak,nonar,noupdate
 ghost/master/htf_teachbirthday.dic.bak,nonar,noupdate
 ghost/master/htf_teachbirthday_old.dic,nonar,noupdate
 ghost/master/yaya_variable.cfg,nonar,noupdate

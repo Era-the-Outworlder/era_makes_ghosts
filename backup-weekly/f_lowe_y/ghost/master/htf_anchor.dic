@@ -12,7 +12,7 @@
 
 // OnTranslate
 // {
-	// _talk = reference0
+	// _talk = reference[0]
 	// _talk = REPLACE(_talk, "bugreport(at)outworlderaffairs.com", "\_a[bugmail]bugreport@outworlderaffairs.com\_a")		
 	// if silentMode == "ON"
 	// {
@@ -27,7 +27,7 @@
 // }
 OnTranslate
 {
-    _talk = reference0
+    _talk = reference[0]
     _talk = REPLACE(_talk, "bugreport(at)outworlderaffairs.com","\_a[bugmail]bugreport@outworlderaffairs.com\_a")        
     if silentMode == "ON"
     {
@@ -45,14 +45,14 @@ OnTranslate
 }
 	
 // ---- OnAnchorSelectEx ----
-//\ _a Occurs the moment the link is clicked. Reference0 = Link text. Reference1 = Link ID
+//\ _a Occurs the moment the link is clicked. reference[0] = Link text. Reference1 = Link ID
 // Reference* = Extended information (second and subsequent arguments in the \ _a tag).
 
 OnAnchorSelectEx
 {
-	if "http://" _in_ reference0 || "https://" _in_ reference0 //checking to see if the link is a web address
+	if "http://" _in_ reference[0] || "https://" _in_ reference[0] //checking to see if the link is a web address
 	{
-		"\j[%(reference0)]\e"
+		"\j[%(reference[0])]\e"
 	}
 	else //if it's NOT a web address
 	{

@@ -98,7 +98,7 @@ On_sakura.portalsites
  
 On_updatebutton.caption
 {
-	CapGlitch2("Update Ghost")	
+	CapGlitch3("Update Ghost")	
 }
 
 //----  Network Update URL  ------
@@ -286,7 +286,7 @@ On_closeballoonbutton.caption
 
 On_configurationrootbutton.caption
 {
-	CapGlitch2("&Options")
+	CapGlitch3("&Options")
 }
 
 On_configurationbutton.caption
@@ -500,7 +500,7 @@ CapGlitch
 	elseif ellVee >=20 
 	{_cap = OnGLITCH("help");"%(_cap)"}
 	elseif ellVee >=13 
-	{_cap = OnGLITCH("_cap");"%(_cap)"}
+	{_cap = OnGLITCH("%(_cap)");"%(_cap)"}
 	elseif ellVee >= 7
 	{_cap = OnGlitchMidi("%(_cap)");"%(_cap)"}
 	elseif ellVee >=2

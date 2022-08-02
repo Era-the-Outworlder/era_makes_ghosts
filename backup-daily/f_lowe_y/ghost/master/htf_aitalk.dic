@@ -58,7 +58,7 @@ AiTalk
 
 
 
-RandomTalk : nonoverlap_ pool
+RandomTalk : nonoverlap_pool
 {	
 	
 	// -------- All Non-LV Conditionals --------

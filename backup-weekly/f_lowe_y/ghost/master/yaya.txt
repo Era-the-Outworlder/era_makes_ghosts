@@ -20,7 +20,7 @@ dic, htf_commu.dic
 dic, htf_devtools.dic
 dic, htf_drawmenu.dic	
 dic, htf_etc.dic
-dic, htf_desktopeye.dic
+// dic, htf_desktopeye.dic
 dic, htf_glitchtext.dic		
 dic, htf_menu.dic
 dic, htf_mouse.dic

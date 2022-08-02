@@ -17,7 +17,7 @@
 
 OnCommunicate
 {
-	if reference0 == "user" || reference0 == "User"
+	if reference[0] == "user" || reference[0] == "User"
  	{
  		ReplyToUser(reference[1])
 	}
@@ -43,7 +43,7 @@ OnStartCommunicate
 		{
 			when "Gaze"
 			{
-				res_reference0 = "Gaze"
+				res_reference[0] = "Gaze"
 				gazeTalk ++
 				_gz = OnGLITCH("Gaze")
 				case gazeTalk
@@ -57,56 +57,56 @@ OnStartCommunicate
 			}
 			when "Gaster"
 			{
-				res_reference0 = "Gaster"
+				res_reference[0] = "Gaster"
 				"Doctor."
 			}
 			when "Temmie"
 			{
-				res_reference0 = "Temmie"
+				res_reference[0] = "Temmie"
 				"tem"
 			}
 			when "MiniDev"
 			{
-				res_reference0 = "MiniDev"
+				res_reference[0] = "MiniDev"
 				"little robot"
 			}
 			when "Sebastian"
 			{
-				res_reference0 = "Sebastian"
+				res_reference[0] = "Sebastian"
 				"cowboy"
 			}
 			when "RYS-0825"
 			{
-				res_reference0 = "RYS-0825"
+				res_reference[0] = "RYS-0825"
 				"S the Skeleton"
 			}
 			when "Wilson"
 			{
-				res_reference0 = "Wilson"
+				res_reference[0] = "Wilson"
 				"constant"
 			}
 			when "Hydrate"
 			{
-				res_reference0 = "Hydrate"
+				res_reference[0] = "Hydrate"
 				"liquid"
 			}
 			when "Radio Sakura"
 			{
-				res_reference0 = "Radio Sakura"
+				res_reference[0] = "Radio Sakura"
 				"Radio"
 			}
 			when "FLUX"
 			{
-				res_reference0 = "FLUX"
+				res_reference[0] = "FLUX"
 				"...music..?"
 			}
 			others // greeting all other ghosts
 			{
 				//if res_reference isn't defined, the other ghost won't respond.
 				
-				res_reference0 = _randghost
+				res_reference[0] = _randghost
 				
-				"%(res_reference0).\_w[500]\e"
+				"%(res_reference[0]).\_w[500]\e"
 			}
 		}
 		
@@ -124,18 +124,18 @@ OnStartCommunicate
 
 //----ReplyToGhost----
 
-//reference0 is the name of the ghost being communicated with. reference1 is their output string. res_reference0 is the ghost that will respond (if a response is available)
+//reference[0] is the name of the ghost being communicated with. reference[1] is their output string. res_reference[0] is the ghost that will respond (if a response is available)
 ReplyToGhost
 {
-	if responseTimes < 1
+	if responseTimes < 2
 	{
 		responseTimes++
-		_speaker = TOLOWER(reference0) //changes it to lowercase
-		_glSpeaker = OnGLITCH(reference0)
+		_speaker = TOLOWER(reference[0]) //changes it to lowercase
+		_glSpeaker = OnGLITCH(reference[0])
 		if "gaze" _in_ _speaker
 		{
 			gazeTalk++
-			res_reference0 = reference0
+			res_reference[0] = reference[0]
 			
 			"\0\s[3]%(Flowey) * You-you-you-you-you-\n[500]     me?\e"
 			
@@ -144,7 +144,7 @@ ReplyToGhost
 		elseif "spamton" _in_ _speaker
 		{	
 			
-			res_reference0 = reference0
+			res_reference[0] = reference[0]
 			
 			"\0\s[23]\_v[mus\spam_mock.wav] * HAEAHAEAHAEAHAEA !\e"
 			
@@ -155,12 +155,13 @@ ReplyToGhost
 		elseif "gaster" _in_ _speaker
 		{	
 			
-			res_reference0 = reference0
-			if "teeheegooglied" _in_ reference1
-			{
-				_googlymoogly = OnGlitchLite("Dr. W.D. Gaster")
-				"%(floweyLaugh)\e"
-				"\0\s[3]%(Narrator) * The Great %(_googlymoogly)."
+			res_reference[0] = reference[0]
+			if "teeheegooglied" _in_ reference[1]
+			nonoverlap : {
+				// _googlymoogly = OnGlitchLite("Dr. W.D. Gaster")
+				"%(floweyLaugh)"
+				
+				"\0\s[3]%(Narrator) * The Great \![embed,OnGlitchLite,Dr. W.D. Gaster]."
 			}
 			else
 			{	
@@ -172,8 +173,7 @@ ReplyToGhost
 		}
 		else
 		{	
-			res_reference0 = reference0
-			_glitchComm = OnGLITCH("test")
+			res_reference[0] = reference[0]
 			"\0\s[3]%(Flowey) * '%(_glSpeaker)'.\_w[500]\0\s[3]YOU.\e"
 		
 			"\0\s[3]%(Flowey) * wait Wait wa i t, '%(_glSpeaker)'. no\e"
@@ -188,7 +188,7 @@ ReplyToGhost
 }
 
 // ----ReplyToUser----
-// New experimental communication feature!
+// New experimental communication feature! Currently does nothing!
 
 ReplyToUser
 {

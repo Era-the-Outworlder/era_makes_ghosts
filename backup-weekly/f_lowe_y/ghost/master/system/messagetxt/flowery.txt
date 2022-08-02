@@ -52,12 +52,12 @@
 *error E0042 : Missing '{' after 'for'.
 *error E0043 : The container variable of 'foreach' is incorrectly placed.
 *error E0044 : Missing '{' after 'foreach'.
-*error E0045 : The label of 'when' must be a constant.
-*error E0046 : The label of 'when' must be a constant.
+*error E0045 : The label of 'when' must be a constant. Error 45 (not 46 or 50)
+*error E0046 : The label of 'when' must be a constant. Error 46 (not 45 or 50)
 *error E0047 : 'if' 'elseif' 'case' (corresponding to this line) was not found.
 *error E0048 : The parenthesis () has not been closed.
 *error E0049 : Internal error (9).
-*error E0050 : The label of 'when' must be a constant.
+*error E0050 : The label of 'when' must be a constant. Error 50 (not 45 or 46)
 *error E0051 : Missing '{' after 'case'.
 *error E0052 : Internal error (10).
 *error E0053 : Syntax error.
