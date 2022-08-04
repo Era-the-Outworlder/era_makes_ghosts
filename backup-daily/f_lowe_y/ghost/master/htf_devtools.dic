@@ -121,8 +121,8 @@ Select.funkTest
 {	
 	// "\0\s[15]\b[-1]\_v[mus\hit.wav]a \_w[100]b \s[-1]\_w[3000]c \s[21]\_v[mus\savestate_spam.wav]d\_w[1000]e\e"
 	
-	// DUMPVAR()
-	// "\n[300]%(Narrator) * Dumping Variables to ayame.log.\n"
+	DUMPVAR()
+	"\n[300]%(Narrator) * Dumping Variables to flowey_yaya.log.\n"
 	--
 	// _text = OnGLITCH("This is a test string. Let's go!")
 	// --

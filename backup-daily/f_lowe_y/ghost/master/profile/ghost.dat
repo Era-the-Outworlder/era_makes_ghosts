@@ -14,12 +14,11 @@ shiori.debugnotify,0
 Char7.center,1247
 Char5.center,364
 Char10.center,294
-SurfaceTest.visible,1
 Char3.center,894
 teachbox.left,837
 Char6.center,1512
 dateinput.top,444
-Char.VirtualDesktop,506912f3-106c-40ca-bfc8-c77e0de8e07c
+Char.VirtualDesktop,2ea983e8-ee78-4114-b78a-7f44a174e408
 Char4.center,629
 dateinput.left,745
 teachbox.top,725
@@ -32,7 +31,7 @@ scriptbox.top,246
 shell,shell\master\
 FirstBoot,booted
 passwordinput.left,810
-Char1.center,225
+Char1.center,1467
 sliderinput.top,382
 shiori.log,0
 shell.ischanged.2,1

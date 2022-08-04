@@ -60,7 +60,8 @@ AiTalk
 
 RandomTalk : nonoverlap_pool
 {	
-	
+	OnCalcMood
+	--
 	// -------- All Non-LV Conditionals --------
 
 	if ASEARCH("friendchain",hourlyArray) == -1 || ASEARCH("torichainA",hourlyArray) == -1 || ASEARCH("torichainB",hourlyArray) == -1
@@ -75,255 +76,125 @@ RandomTalk : nonoverlap_pool
 	if ASEARCH("saidmonthly",hourlyArray) == -1
 	{"%monthTalk"}
 	
-	// -------- All Reset and LV Specific Conditionals --------
-	// User has not reset this installation
-	if resetCount == 0
+	
+	// -------- Mood Conditionals --------
+	if ASEARCH("happyness",extraMood) != -1
+	{}
+	if ASEARCH("surprise",extraMood) != -1
 	{
-		// User has never "killed" him
-		if ellVee == 1
-		{
-			// ----User has never harmed him
-			if knifeTime == 0 && killCount == 0
-			{
-				_confi = "confidently "
-				_happi = "happy "
-				
-				
-				if nicevariable >=2 && meanvariable == 0 //user has only been nice
-				{
-					_confi = "confidently "
-					_happi = ANY("%(happy) ","%(sure) ")
-				}
-				if meanvariable >=2 // User has been mean but not hurt him
-				{
-					_confi = "hesitantly "
-					_happi = "%(unsure) "
-				}
-			
-			--
-			
-			// ---- f_lowe_y ----
-	
-			"\0\s[21]%(Flowey) * Don't.Don't.Don't.Don't.Don't.\_w[1500] h_ve _nything bette_ to do?\_w[500]"
-			
-			
-	
-			"\0\s[3]%(Flowey) * You you you how how how\_w[1000]\c\s[3]Howdy, %(username)!\_w[500]"
-	
-			"\0\s[3]%(Flowey) * It's all a nightmare... \_w[1000]\c\_w[500]\s[16]AND WE'RE NEVER WAKING UP!!!!!!\_w[2500]\c%(floweyLaugh)\_w[500]"
-			
-			"\0\s[27]%(Flowey) * Howdy! \_w[500]"
-	
-			"\0\s[4]%(Flowey) * You wonder what caught his attention. \_w[1000]\n[200] * There are no answers.\_w[500]"
-	
-			"\0\s[13]%(Flowey) * You... are...? \_w[500]"
-			
-			"\0\s[7]%(Narrator) * Is there something over there?\_w[500]"
-			
-			// ---- Narrator ----
-			
-			"\0\s[3]%(Narrator) * (Smells like herbicide.)\_w[500]"
-			
-			"\0\s[3]%(Narrator) * f_lowe_y %(_confi)asks if you remember something. \_w[1500]\c\n[200] * It seems he's mistaken you for someone else.\_w[500]"
-			
-			"\0\s[5]%(Narrator) * f_lowe_y is looking at something.\_w[1000]\n[200] (It's not you.) \_w[500]"
-			
-			"\0\s[12]%(Narrator) * You caught the flower by surprise.\_w[500]"
-	
-			"\0\s[3]%(Narrator) * You say hello. He doesn't seem to be listening\_w[500]"
-	
-			"\0\s[8]%(Narrator) * f_lowe_y is looking at something. \_w[500]"
-	
-			"\0\s[9]%(Narrator) * You give the flower a hug. \_w[500]"
-			
-			// ---- Both ----
-			"\0\s[3]%(Flowey) * .... you you you... \_w[1000]\s[23]friend! \_w[1000]\n/
-			\n[200]%(Narrator)\n[200] * He seems very %(_happi)about that."
-			
-			"\0\_v[mus\flee.wav]\s[-1]\_w[1000]%(Narrator)\f[align,center]\n[300] * Flowey ran away.\_w[3000]\b[-1]\_w[3000]\c/
-			\0\b4\_v[mus\hee.mp3]\f[height,100]Die. \_w[3000]\b[-1]\c/
-			\_w[2500]\b0%(Narrator)\f[align,center]\n[300] * But nobody came."
-	
-			}
-			
-			elseif knifeTime != 0 && killCount == 0
-			{
-				"\0\s[16]%(Narrator) * (You hit the flower. Since you didn't do it on purpose this time, it doesn't hurt him.)\_w[500]"
-			
-				"\0\s[18]%(Narrator) * (You feel him judging you.) \_w[500]"
-			
-				"\0\s[22]%(Flowey) * WHY WHY WHY WHYWHYWHY _HY _ON'T YOU LET ME _IN?!\_w[500]"
-			
-				"\0\s[17]%(Flowey) * YOU! STOP!\_w[1500]"
-			}
-			else
-			{
-				"\0\s[16]%(Narrator) * (You hit the flower. Since you didn't do it on purpose this time, it doesn't hurt him.)\_w[500]"
-			
-				"\0\s[18]%(Narrator) * (You feel him judging you.) \_w[500]"
-			
-				"\0\s[22]%(Flowey) * WHY WHY WHY WHYWHYWHY _HY _ON'T YOU LET ME _IN?!\_w[500]"
-			
-				"\0\s[17]%(Flowey) * YOU! STOP!\_w[1500]"
-			}
-		}
-		if ellVee >= 2
-		{
-			// "\0\s[14]%(Narrator) * (Something seems to be wrong.) \_w[500]"
+		"\0\s[15]%(Flowey) * What?! No. \_w[500]"
+	}
+	if ASEARCH("revulsion",extraMood) != -1
+	{
+		"\0\s[21]%(Narrator) * (He's clearly annoyed.)\_w[1000]\n[300] * (Was it something you did?)"
 		
-			// "\0\s[15]%(Flowey) * What?! No. \_w[500]"
-			
-			
+		"\0\s[18]%(Narrator) * (You feel him judging you.) \_w[500]"
+	}
+	if ASEARCH("sadness",extraMood) != -1
+	{}
+	if ASEARCH("anger",extraMood) != -1
+	{
+		"\0\s[22]%(Flowey) * WHY WHY WHY WHYWHYWHY _HY _ON'T YOU LET ME _IN?!\_w[500]"
 		
-			// --------
-			
-			// "\0\s[24]%(Flowey) * HAHAHAHAHAHAHAHA"
-		
-			"\0\s[26]\i[0]%(Flowey)\f[align,center]EVERYONE"
-			
-
-			"\0\s[26]\i[1]%(Flowey)\f[align,center]\![embed,OnGLITCH,EVERYONE]"
-
-			
-			// "\0\s[27]%(Narrator) * Swing and miss. "
-			
-			"\0\s[27]%(Flowey)"
-			
-			"\0\s[28]%(Narrator)"
-
-			// "\0\s[29]\_v[mus\intermission.wav]"
-		}
+		"\0\s[17]%(Flowey) * YOU! STOP!\_w[1500]"
+	}
+	if ASEARCH("fear",extraMood) != -1
+	{}
+	
+	
+	// -------- Consequences --------
+	if ASEARCH("punching",agreedToConsequences) >= 0
+	{
+		"\0\s[16]%(Narrator) * (While doing something else, you hit the flower. Since you didn't do it on purpose this time, it doesn't hurt him.)\_w[500]"
+	}
+	if ASEARCH("naming",agreedToConsequences) >= 0
+	{
+		"%(thatonename)"
 	}
 	
-	if resetCount != 0
+	// -------- Base Dialogue --------
+	
+	"\0\s[3]%(Flowey) * You you you how how how\_w[1000]\c\s[3]Howdy, %(username)!\_w[500]"
+		
+		
 	{
-			// ----User has been good to him----
+		"\0\s[3]%(Flowey) * It's all a %(nightmare)... \_w[1000]\c\_w[500]\s[16]AND WE'RE NEVER WAKING UP!!!!!!\_w[2500]\c%(floweyLaugh)\_w[500]"
+	}
+	
+	
+	"\0\s[27]%(Flowey) * Howdy! \_w[500]"
+
+	"\0\s[4]%(Flowey) * You wonder what caught his attention. \_w[1000]\n[200] * There are no answers.\_w[500]"
+
+	"\0\s[13]%(Flowey) * You... are...? \_w[500]"
+	
+	"\0\s[7]%(Narrator) * Is there something over there?\_w[500]"
+
+		
+	"\0\s[3]%(Narrator) * (Smells like herbicide.)\_w[500]"
+	
+	
+	// -------- All Reset and LV Specific Conditionals --------
+
+	if ellVee == 1
+	{
+		
+		// ---- f_lowe_y ----
+			
 		"\0\s[3]%(Flowey) * .... you you you... friend? \_w[500]"
-		
-		"\0\s[23]%(Flowey) * Howdy! \_w[500]"
-		
-		{
-			"\0\s[3]%(Flowey) * It's all a \![embed,OnGLITCH,nightmare]... \_w[1000]\c\_w[500]\s[16]AND WE'RE NEVER WAKING UP!!!!!!\_w[2500]\c%(floweyLaugh)\_w[500]"
-		}
-		
-		"\0\s[21]%(Narrator) * (He's clearly annoyed.)\_w[1000]\n[300] * (Was it something you did?)"
-		
-		
-		// ----User has been mean but never killed him----
-		
-		"\0\s[21]%(Narrator) * (He's clearly annoyed.)\_w[1000]\n[300] * (Was it something you did?)"
-		
-		if ellVee == 1
-		{
-			// ----User has never harmed him
-			if knifeTime == 0 && killCount == 0
-			{
-			_confi = "confidently "
-			_happi = "happy "
-			
-			
-			if nicevariable >=2 && meanvariable == 0 //user has only been nice
-			{
-				_confi = "confidently "
-				_happi = ANY("%(happy) ","%(sure) ")
-			}
-			if meanvariable >=2 // User has been mean but not hurt him
-			{
-				_confi = "hesitantly "
-				_happi = "%(unsure) "
-			}
-			
-			--
-			
-			// ---- f_lowe_y ----
-	
-			"\0\s[21]%(Flowey) * Don't.Don't.Don't.Don't.Don't.\_w[1500] h_ve _nything bette_ to do?\_w[500]"
-	
-			"\0\s[3]%(Flowey) * You you you how how how\_w[1000]\c\s[3]Howdy, %(username)!\_w[500]"
-	
-			"\0\s[3]%(Flowey) * It's all a nightmare... \_w[1000]\c\_w[500]\s[16]AND WE'RE NEVER WAKING UP!!!!!!\_w[2500]\c%(floweyLaugh)\_w[500]"
-			
-			"\0\s[27]%(Flowey) * Howdy! \_w[500]"
-	
-			"\0\s[4]%(Flowey) * You wonder what caught his attention. \_w[1000]\n[200] * There are no answers.\_w[500]"
-	
-			"\0\s[13]%(Flowey) * You... are...? \_w[500]"
-			
-			"\0\s[7]%(Flowey) * (Is there something over there?)\_w[500]"
-			
-			// ---- Narrator ----
-			
-			"\0\s[3]%(Narrator) * (Smells like herbicide.)\_w[500]"
-			
-			"\0\s[3]%(Narrator) * f_lowe_y %(_confi)asks if you remember something. \_w[1500]\c\n[300] * It seems he's mistaken you for someone else.\_w[500]"
-			
-			"\0\s[5]%(Narrator) * f_lowe_y is looking at something.\_w[1000]\n[200] (It's not you.) \_w[500]"
-			
-			"\0\s[12]%(Narrator) * You caught the flower by surprise.\_w[500]"
-	
-			"\0\s[3]%(Narrator) * You say hello. He doesn't seem to be listening\_w[500]"
-	
-			"\0\s[8]%(Narrator) * f_lowe_y is looking at something. \_w[500]"
-	
-			"\0\s[9]%(Narrator) * You give the flower a hug. \_w[500]"
-			
-			// ---- Both ----
-			"\0\s[3]%(Flowey) * .... you you you... \_w[1000]\s[23]friend! \_w[1000]\n/
-			\n[200]%(Narrator) * He seems very %(_happi)about that."
-			
-			}
-			elseif knifeTime != 0 && killCount == 0
-			{
-				"\0\s[16]%(Narrator) * (You hit the flower. Since you didn't do it on purpose this time, it doesn't hurt him.)\_w[500]"
-			
-				"\0\s[18]%(Narrator) * (You feel him judging you.) \_w[500]"
-			
-				"\0\s[22]%(Flowey) * WHY WHY WHY WHYWHYWHY _HY _ON'T YOU LET ME _IN?!\_w[500]"
-			
-				"\0\s[17]%(Flowey) * YOU! STOP!\_w[1500]"
-			}
-			else
-			{
-				"\0\s[16]%(Narrator) * (You hit the flower. Since you didn't do it on purpose this time, it doesn't hurt him.)\_w[500]"
-			
-				"\0\s[18]%(Narrator) * (You feel him judging you.) \_w[500]"
-			
-				"\0\s[22]%(Flowey) * WHY WHY WHY WHYWHYWHY _HY _ON'T YOU LET ME _IN?!\_w[500]"
-			
-				"\0\s[17]%(Flowey) * YOU! STOP!\_w[1500]"
-			}
-		}
-		if ellVee >= 2
-		{
-			"\0\s[14]%(Narrator) * (Something seems to be wrong.) \_w[500]"
-		
-			"\0\s[15]%(Flowey) * What?! No. \_w[500]"
-			
-			
-		
-			// --------
-			
-			"\0\s[24]%(Flowey) * HAHAHAHAHAHAHAHA"
-		
-			"\0\s[26]\i[0]%(Flowey)\f[align,center]EVERYONE"
-			
-			{
-				_EV = OnGLITCH("EVERYONE")
-				"\0\s[26]\i[1]%(Flowey)\f[align,center]%(_EV)"
-			}
-			
-			"\0\s[27]%(Narrator) * Swing and miss. "
-			
-			"\0\s[27]%(Flowey)"
-			
-			"\0\s[28]%(Narrator)"
 
-			"\0\s[29]\_v[mus\intermission.wav]"
-		}
-	
-	}	
-}	
+		"\0\s[21]%(Flowey) * Don't.Don't.Don't.Don't.Don't.\_w[1500] h_ve _nything bette_ to do?\_w[500]"
+		
+		// ---- Narrator ----
+		
+		
+		
+		"\0\s[3]%(Narrator) * f_lowe_y asks %(adverb) if you remember something. \_w[1500]\c\n[200] * It seems he's mistaken you for someone else.\_w[500]"
+		
+		"\0\s[5]%(Narrator) * f_lowe_y is looking at something.\_w[1000]\n[200] (It's not you.) \_w[500]"
+		
+		"\0\s[12]%(Narrator) * You caught the flower by surprise.\_w[500]"
 
+		"\0\s[3]%(Narrator) * You say hello. He doesn't seem to be listening\_w[500]"
+
+		"\0\s[8]%(Narrator) * f_lowe_y is looking at something. \_w[500]"
+
+		"\0\s[9]%(Narrator) * You give the flower a hug. \_w[500]"
+		
+		// ---- Both ----
+		"\0\s[3]%(Flowey) * .... you you you... \_w[1000]\s[23]friend! \_w[1000]\n/
+		\n[200]%(Narrator)\n[200] * He seems very %(adjectives) about that."
+		
+		"\0\_v[mus\flee.wav]\s[-1]\_w[1000]%(Narrator)\f[align,center]\n[300] * Flowey ran away.\_w[3000]\b[-1]\_w[3000]\c/
+		\0\b4\_v[mus\hee.mp3]\f[height,100]Die. \_w[3000]\b[-1]\c/
+		\_w[2500]\b0%(Narrator)\f[align,center]\n[300] * But nobody came."
+
+	}
+	if ellVee >= 2
+	{
+		// "\0\s[14]%(Narrator) * (Something seems to be wrong.) \_w[500]"
+	
+		
+		
+	
+		
+		"\0\s[24]%(Flowey) * HAHAHAHAHAHAHAHA"
+	
+		"\0\s[26]\i[0]%(Flowey)\f[align,center]EVERYONE"
+		
+
+		"\0\s[26]\i[1]%(Flowey)\f[align,center]\![embed,OnGLITCH,EVERYONE]"
+
+		
+		// "\0\s[27]%(Narrator) * Swing and miss. "
+		
+		// "\0\s[27]%(Flowey)"
+		
+		"\0\s[28]%(Narrator)"
+
+		"\0\s[29]\_v[mus\intermission.wav]"
+	}
+}
 
 // ---- Chains ----
 //Chain dialogue is unique. A dialogue chain consists of multiple bits of dialogue that get called in order over a period of time.

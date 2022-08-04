@@ -94,7 +94,7 @@ dayLong
 
 floweyLaugh
 {
-	"\b2%(heeHeeHee)\s[24]\f[height,32]HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA\f[default]"
+	"\b2%(heeHeeHee)\s[24]\f[height,32]HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA\f[default]"
 }
 
 nonono
@@ -139,33 +139,138 @@ errorMsg
 
 
 // A whole bunch of word swaps
-happy
+
+adverbs
 {
-	"delighted" 
-	"glad"
-	"pleased" 
-	"satisfied" 
-	"thankful" 
-	"happy"
-}
-unhappy
-{
-	"unhappy"
-	"displeased"
-	"unsatisfied"
+	if curMood == "happiness"
+	{
+		"cheerfully"
+		"gleefully"
+		"happily"
+		"confidently"
+		
+	}
+	elseif curMood == "surprise"
+	{
+		"doubtfully"
+		"queasily"
+		"quizzically"
+		"sheepishly"
+		"unexpectedly"
+	}
+	elseif curMood == "revulsion"
+	{
+		"suspiciously"
+		"reproachfully"
+		"mockingly"
+	}
+	elseif curMood == "sadness"
+	{
+		"woefully"
+		"solemnly"
+		"miserably"
+		"hopelessly"
+	}
+	elseif curMood == "anger"
+	{
+		"viciously"
+		"irritably"
+	}
+	elseif curMood == "fear"
+	{
+		"worriedly"
+		"tensely"
+		"nervously"
+	}
+	else
+	{
+		"wearily"
+		"vaguely"
+		"vacantly"
+		"searchingly"
+	}
 }
 
-sure
+adjectives
 {
-	"sure"
-	"certain"
-	"confident"
-}
+	if curMood == "happiness"
+	{
+		"delighted" 
+		"glad"
+		"pleased" 
+		"satisfied" 
+		"thankful" 
+		"happy"
+		"sure"
+		"certain"
+		"confident"
+		
+	}
+	elseif curMood == "surprise"
+	{
+		"doubtful"
+		"sheepish"
+		"surprised"
+		"unsure"
+		"uncertain"
+	}
+	elseif curMood == "revulsion"
+	{
+		"unhappy"
+		"displeased"
+		"unsatisfied"
+		"annoyed"
+		"repulsed"
+		"reluctant"
+		"annoyed"
+		"bitter"
+		"hostile"
+	}
+	elseif curMood == "sadness"
+	{
+		"unhappy"
+		"displeased"
+		"unsatisfied"
+		"dejected"
+		"pessimistic"
+		"distressed"
+		"resigned"
+		"gloomy"
+	}
+	elseif curMood == "anger"
+	{
+		"angry"
+		"unhappy"
+		"displeased"
+		"unsatisfied"
+		"aggravated"
+		"irritated"
+		"annoyed"
+		"bitter"
+		"disgruntled"
+		"hostile"
+	}
+	elseif curMood == "fear"
+	{
+		"unhappy"
+		"displeased"
+		"unsatisfied"
+		"unsure"
+		"uncertain"
+		"anxious"
+		"horrified"
+		"distressed"
+		"tense"
+	}
+	else
+	{
+		"unsure"
+		"uncertain"	
+		"indifferent"
+		"passive"
+		"ambivalent"
+	}
 
-unsure
-{
-	"unsure"
-	"uncertain"
 }
 
 callHe
@@ -181,6 +286,17 @@ callHim
 	"the flower"
 	"him"
 }
+
+
+
+nightmare
+{
+	if resetCount == 0
+	{"nightmare"}
+	else
+	{"\![embed,OnGLITCH,nightmare]"}
+}
+
 
 piDay
 {

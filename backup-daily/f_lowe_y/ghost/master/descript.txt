@@ -76,9 +76,9 @@ kero.seriko.alignmenttodesktop, free
 
 kero.seriko.defaultsurface,10
 
-// kero.defaultx,0
-// kero.defaulty,0
-kero.defaultleft,225
+kero.defaultx,250
+kero.defaulty,300
+// kero.defaultleft,50
 // kero.defaulttop,0
 
 // ---- Char3 ----

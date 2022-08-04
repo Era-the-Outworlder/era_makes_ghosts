@@ -364,6 +364,7 @@ OnMenuSelect
 			knifeTime = 0
 			killCount = 0
 			toNextLV = 100
+			extraMood ,= "revulsion"
 			resetCount++
 			// agreedToConsequences = IARRAY
 			--
@@ -671,5 +672,7 @@ closeMenu: pool
 OnChoiceTimeout
  {
 	"\0\s[3]%(Flowey)* Come back when-when-when you actually want something."
+	--
+	"%(refTest)"
  }
 
