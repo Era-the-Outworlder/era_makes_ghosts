@@ -29,7 +29,7 @@ OnfirstBoot
 	
 	// Custom options
 	silentMode = "OFF" //does not start in silent mode
-	canDesktopEye = "OFF" //does not start off commenting on open programs
+	// canDesktopEye = "OFF" //does not start off commenting on open programs
 	verBalete = "ON" //DOES start with recycle bin confirmation on
 	// A couple of flag arrays
 	hourlyArray = IARRAY

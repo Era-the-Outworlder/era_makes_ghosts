@@ -39,10 +39,10 @@ scriptbox.top,246
 Char10.balloon.isleft,1
 passwordinput.left,810
 Char8.balloon.isleft,1
-Char1.centery,879
+Char1.centery,900
 seriko.ignoremove,0
 Char3.centery,900
-Char1.center,1467
+Char1.center,235
 seriko.scaling.percent.x,100
 forceAlignFree,true
 seriko.scaling.balloon.percent.x,100
