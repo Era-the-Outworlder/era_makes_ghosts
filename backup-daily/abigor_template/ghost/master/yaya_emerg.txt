@@ -1,0 +1,28 @@
+//Emergency Mode Loading Protocol 
+
+charset, UTF-8
+charset.dic, UTF-8
+charset.output, UTF-8
+charset.file, UTF-8
+charset.save, UTF-8
+charset.extension, UTF-8
+
+
+// ---- Dictionary Files ----
+
+include, system_config.txt		
+			
+dic, abtm_emergency_boot.dic	
+
+//dic, abtm_dev_tools.dic
+
+//dic, abtm_draw_menu.dic	
+
+
+// ---- Log Location ----
+
+//Sets the file path of the event log. Seems to be duplicated in other parts of the program
+
+messagetxt,system/messagetxt/english.txt
+log, ayame.log
+maxlognum,1000

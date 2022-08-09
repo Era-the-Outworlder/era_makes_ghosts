@@ -1,0 +1,10 @@
+// ----- Abigor Template Shell Install -----
+
+charset,UTF-8
+name,Abigor Template Shell
+type,shell
+directory,master
+accept,Abigor
+
+// refresh, bool
+// refreshundeletemask, filename 1: filename 2 ...
