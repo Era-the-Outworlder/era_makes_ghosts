@@ -68,18 +68,20 @@ RandomTalk : nonoverlap_pool
 	{OnStartChain}
 	
 	if ASEARCH("saidtimeslot",hourlyArray) == -1
-	{"%timeTalk"}
+	{"%(timeTalk)"}
 	
 	if ASEARCH("saidweekday",hourlyArray) == -1
-	{"%dayTalk"}
+	{"%(dayTalk)"}
 	
 	if ASEARCH("saidmonthly",hourlyArray) == -1
-	{"%monthTalk"}
+	{"%(monthTalk)"}
 	
 	
 	// -------- Mood Conditionals --------
 	if ASEARCH("happyness",extraMood) != -1
-	{}
+	{
+	
+	}
 	if ASEARCH("surprise",extraMood) != -1
 	{
 		"\0\s[15]%(Flowey) * What?! No. \_w[500]"
@@ -91,7 +93,9 @@ RandomTalk : nonoverlap_pool
 		"\0\s[18]%(Narrator) * (You feel him judging you.) \_w[500]"
 	}
 	if ASEARCH("sadness",extraMood) != -1
-	{}
+	{
+	
+	}
 	if ASEARCH("anger",extraMood) != -1
 	{
 		"\0\s[22]%(Flowey) * WHY WHY WHY WHYWHYWHY _HY _ON'T YOU LET ME _IN?!\_w[500]"
@@ -99,7 +103,9 @@ RandomTalk : nonoverlap_pool
 		"\0\s[17]%(Flowey) * YOU! STOP!\_w[1500]"
 	}
 	if ASEARCH("fear",extraMood) != -1
-	{}
+	{
+	
+	}
 	
 	
 	// -------- Consequences --------
@@ -109,7 +115,7 @@ RandomTalk : nonoverlap_pool
 	}
 	if ASEARCH("naming",agreedToConsequences) >= 0
 	{
-		"%(thatonename)"
+		"\0\s[18]%(Flowey) * %(nomPro) %(nomPro) %(nomPro) ... %(thatonename)\_w[500]"
 	}
 	
 	// -------- Base Dialogue --------
@@ -350,7 +356,7 @@ dayTalk
 	"\e:eval=hourlyArray ,= 'saidweekday'"
 }
 
-monthTalk
+monthTalk : nonoverlap_pool
 {
 	if month == 1
 	{
@@ -430,27 +436,7 @@ OnMinuteChange //This is what will trigger time-based dialogue for your Ghost.
 	--
  	if minute == 0 //These ifs will check what time it is. 
 	{
-		if hour == timerStart[0] && minute == timerStart[1]
-		{
-			"\![embed,OnDRPSet,%(userStatus[1])]"
-		}
-		elseif hour == timerEnd[0] && minute == timerEnd[1]
-		{
-			"\![embed,OnDRPSet,%(userStatus[2])]"
-		}
- 		elseif hour == 12 //And the hour equals 12, meaning it's noon. 
-		{
- 			"\0\s[3]%(Flowey) * It's noon."
-		}
- 		elseif hour == 0
-		{
- 			"\0\s[3]%(Flowey) * It's midnight!"
-		}
-		else
-		{
-			"\0\s[3]It's %(hour12) o'clock.\e"
-			//%(hour12) stores the time. This is a general top of the hour notification.
-		}
+ 		
 	}
 	elseif hour == 23 && minute == 55 //this checks to see if the hour is 23 and the minutes are at 55... essentially, 11:55 pm.
 	{
@@ -504,6 +490,32 @@ if passmin >= 59
 	}
 }
 
+
+OnHourTimeSignal
+{
+	_playbells = TOSTR("")
+	for _i = 0; _i < hour12; _i++ 
+	{
+		LOGGING("Loop %(_i)")
+		_playbells = _playbells + "%(towerBell)\_w[1000]"
+	}
+	--
+	
+	if hour == 12 //And the hour equals 12, meaning it's noon. 
+	{
+		"\0\s[3]%(towerBell2)\_V%(Flowey) * It's noon."
+	}
+	elseif hour == 0
+	{
+		"\0\s[3]%(towerBell2)\_V%(Flowey) * It's midnight!"
+	}
+	else
+	{
+		
+		"\0\s[3]%(_playbells)\_V%(Flowey) * It's %(dishour) o'clock.\e"
+	}
+
+}
 //---- MikireTalk ----
 //MikireTalk is dialogue for when your main character is off-screen.
  

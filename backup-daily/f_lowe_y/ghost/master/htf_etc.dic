@@ -32,19 +32,19 @@ OnCalcMood : void
 	_final = ASORT('int,ascending,index',_mood)
 	
 	if _final[0] == 5
-	{curMood == "happyness"}
+	{curMood = "happyness"}
 	elseif _final[1] == 5
-	{curMood == "surprise"}
+	{curMood = "surprise"}
 	elseif _final[2] == 5
-	{curMood == "revulsion"}
+	{curMood = "revulsion"}
 	elseif _final[3] == 5
-	{curMood == "sadness"}
+	{curMood = "sadness"}
 	elseif _final[4] == 5
-	{curMood == "anger"}
+	{curMood = "anger"}
 	elseif _final[5] == 5
-	{curMood == "fear"}
+	{curMood = "fear"}
 	else
-	{curMood == "other"}
+	{curMood = "other"}
 	
 }
 

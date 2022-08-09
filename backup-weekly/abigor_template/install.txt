@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 ﻿// ---- Abigor Template GHOST install.txt ----
 
 charset,UTF-8
@@ -11,18 +10,4 @@ balloon.directory,eto_balloon_template
 balloon.source.directory,eto_balloon_template
 
 // refresh, bool
-=======
-﻿// ---- Abigor Template GHOST install.txt ----
-
-charset,UTF-8
-type,ghost
-name,Abigor Template
-directory,abigor_template
-// accept,Abigor
-
-balloon.directory,eto_balloon_template
-balloon.source.directory,eto_balloon_template
-
-// refresh, bool
->>>>>>> Stashed changes
 // refreshundeletemask, filename 1: filename 2 ...

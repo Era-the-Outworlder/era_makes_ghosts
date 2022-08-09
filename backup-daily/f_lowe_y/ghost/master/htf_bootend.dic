@@ -29,13 +29,19 @@ OnfirstBoot
 	
 	// Custom options
 	silentMode = "OFF" //does not start in silent mode
-	// canDesktopEye = "OFF" //does not start off commenting on open programs
+	
+	hourChime = "ON" // Bell chimes the hours (if silentMode is off)
+	
 	verBalete = "ON" //DOES start with recycle bin confirmation on
+	
 	// A couple of flag arrays
 	hourlyArray = IARRAY
 	agreedToConsequences = IARRAY
+	extraMood = IARRAY
+	
 	//The following are global variables for f_lowe_y's ghost interactions.
 	gazeTalk = 0
+	
 	//The following are global variables for f_lowe_y's user interactions.
 	stroke = 0	// Sets being-pet state to zero.
 	rub = 0 // being-pet state for face rubbing
@@ -49,9 +55,9 @@ OnfirstBoot
 	EXP = 0
 	ellVee = 1
 	toNextLV = 100
-	nicevariable = 0
-	meanvariable = 0
+	curMood = "other"
 	
+	//Discord Rich Presence defaults
 	smallImageCaption = ""
 	drpstatus = ""
 	

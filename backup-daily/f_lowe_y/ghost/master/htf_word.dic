@@ -22,7 +22,20 @@ heeHeeHee
 {"\_v[mus\heeheehee.wav]"}
 
 towerBell
-{"\_v[mus\mus_bell.wav]"}
+{
+	if hourChime == "ON"
+	{"\_v[mus\mus_bell.wav]"}
+	else
+	{}
+}
+
+towerBell2
+{
+	if hourChime == "ON"
+	{"\_v[mus\mus_bell2.wav]"}
+	else
+	{}
+}
 
 // ---- System display related ----
 

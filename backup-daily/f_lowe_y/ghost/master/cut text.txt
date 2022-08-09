@@ -23,6 +23,16 @@
 
 			// "\0\s[29]\_v[mus\intermission.wav]"
 			
+			
+			if hour == timerStart[0] && minute == timerStart[1]
+		{
+			"\![embed,OnDRPSet,%(userStatus[1])]"
+		}
+		elseif hour == timerEnd[0] && minute == timerEnd[1]
+		{
+			"\![embed,OnDRPSet,%(userStatus[2])]"
+		}
+			
 timerStartDisplay
 {
 	_temhr = "%(timerStart[0])"

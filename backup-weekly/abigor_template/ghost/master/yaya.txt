@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 ﻿// Character Set definitions. Do not change unless absolutely certain what you are doing. Even then, reconsider whether it is necessary.
 
 charset, UTF-8
@@ -44,51 +43,4 @@ messagetxt,system/messagetxt/english.txt
 // ---- Log Location ----
 //Sets the file path of the event log. Seems to be duplicated in other parts of the program
 
-=======
-﻿// Character Set definitions. Do not change unless absolutely certain what you are doing. Even then, reconsider whether it is necessary.
-
-charset, UTF-8
-charset.dic, UTF-8
-charset.output, UTF-8
-charset.file, UTF-8
-charset.save, UTF-8
-charset.extension, UTF-8
-
-
-// ---- Dictionary Files ----
-
-include, system_config.txt		
-			
-dic, abtm_aitalk.dic
-dic, abtm_boot_close_change.dic
-dic, abtm_change_log.dic
-dic, abtm_communicate.dic
-dic, abtm_envelopes.dic
-dic, abtm_dev_tools.dic
-dic, abtm_draw_menu.dic
-dic, abtm_install_vanish_update.dic
-dic, abtm_menu.dic
-dic, abtm_mouse.dic
-dic, abtm_os_systems.dic
-dic, abtm_surface_balloon.dic
-dic, abtm_trans_anchor_choice.dic
-dic, abtm_user_info.dic
-
-
-// ---- Error Message List ----
-// Points to a file to specify what list of error messages to draw from. Primarily exists for localisation. Best to use an officially sourced one unless you're writing for an unsupported language.
-
-messagetxt,system/messagetxt/english.txt
-
-
-// ---- Function Depth ----
-// Controls the max iterations of a loop before failure. 0 to disable failsafe.
-
-// fncdepth,[0]
-
-
-// ---- Log Location ----
-//Sets the file path of the event log. Seems to be duplicated in other parts of the program
-
->>>>>>> Stashed changes
 log, ayame.log

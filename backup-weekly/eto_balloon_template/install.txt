@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 // ----- BALLOON install.txt -----
 
 
@@ -11,18 +10,4 @@ directory,eto_balloon_template
 accept,Abigor
 
 // refresh, bool
-=======
-// ----- BALLOON install.txt -----
-
-
-charset,UTF-8
-
-type,balloon
-name,EtO Balloon Template
-directory,eto_balloon_template
-// Delete [accept] when making new balloon
-accept,Abigor
-
-// refresh, bool
->>>>>>> Stashed changes
 // refreshundeletemask, filename 1: filename 2 ...

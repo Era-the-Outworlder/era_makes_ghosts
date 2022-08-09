@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 ﻿//This file tells SSP and possibly other ghost programs how to install your ghost when a user drags and drops the .nar file on an existing ghost.
 
 
@@ -6,13 +5,4 @@
 charset,UTF-8
 type,ghost
 name,f_lowe_y
-=======
-﻿//This file tells SSP and possibly other ghost programs how to install your ghost when a user drags and drops the .nar file on an existing ghost.
-
-
-
-charset,UTF-8
-type,ghost
-name,f_lowe_y
->>>>>>> Stashed changes
 directory,f_lowe_y

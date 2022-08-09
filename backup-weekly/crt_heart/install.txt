@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 //Installation info
 
 
@@ -8,14 +7,3 @@ type,balloon
 name,CRT Heart
 directory,crt_heart
 
-=======
-//Installation info
-
-
-charset,UTF-8
-
-type,balloon
-name,CRT Heart
-directory,crt_heart
-
->>>>>>> Stashed changes

@@ -1,7 +1,2 @@
-<<<<<<< Updated upstream
 //-- Defining Text Areas
 
-=======
-//-- Defining Text Areas
-
->>>>>>> Stashed changes

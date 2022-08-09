@@ -1,12 +1,5 @@
-<<<<<<< Updated upstream
 List of things to work on-
 
 Reorganise and recomment
 
-=======
-List of things to work on-
-
-Reorganise and recomment
-
->>>>>>> Stashed changes
 surfaces.txt and descript.txt
