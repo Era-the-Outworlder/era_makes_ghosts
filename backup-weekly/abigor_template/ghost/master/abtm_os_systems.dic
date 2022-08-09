@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 // OS Functions
 
 OnNetworkHeavy{}
@@ -41,4 +42,49 @@ OnDeviceArrival{}
 OnDeviceRemove{}
 OnTabletMode{}
 OnDarkTheme{}
+=======
+// OS Functions
+
+OnNetworkHeavy{}
+OnNetworkStatusChange{}
+
+OnSSTPBreak{}
+OnSSTPBlacklisting{}
+
+
+OnExecuteHTTPComplete{}
+OnExecuteHTTPFailure{}
+OnExecuteHTTPSSLInfo{}
+OnExecuteRSSComplete{}
+OnExecuteRSSFailure{}
+OnExecuteRSS_SSLInfo{}
+OnPingComplete{}
+OnPingProgress{}
+OnNSLookupComplete{}
+OnNSLookupFailure{}
+
+OnScreenSaverStart{}
+OnScreenSaverEnd{}
+OnSessionLock{}
+OnSessionUnlock{}
+OnSessionDisconnect{}
+OnSessionReconnect{}
+OnCPULoadHigh{}
+OnCPULoadLow{}
+OnMemoryLoadHigh{}
+OnMemoryLoadLow{}
+OnDisplayChange{}
+OnDisplayHandover{}
+OnDisplayChangeEx{}
+OnDisplayPowerStatus{}
+OnBatteryNotify{}
+OnBatteryLow{}
+OnBatteryCritical{}
+OnBatteryChargingStart{}
+OnBatteryChargingStop{}
+OnDeviceArrival{}
+OnDeviceRemove{}
+OnTabletMode{}
+OnDarkTheme{}
+>>>>>>> Stashed changes
 OnOSUpdateInfo{}

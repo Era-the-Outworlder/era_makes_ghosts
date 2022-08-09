@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 ﻿// ---- Install.TXT ----
 
 charset,UTF-8
@@ -6,4 +7,14 @@ name,statusBOT
 directory,statusBOT
 
 balloon.directory,crt_heart
+=======
+﻿// ---- Install.TXT ----
+
+charset,UTF-8
+type,ghost
+name,statusBOT
+directory,statusBOT
+
+balloon.directory,crt_heart
+>>>>>>> Stashed changes
 balloon.source.directory,crt_heart

@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 origin.x,14
 origin.y,14
 
@@ -6,3 +7,13 @@ windowposition.y,0
 
 wordwrappoint.x,-35
 wordwrappoint.y,0
+=======
+origin.x,14
+origin.y,14
+
+windowposition.x,0
+windowposition.y,0
+
+wordwrappoint.x,-35
+wordwrappoint.y,0
+>>>>>>> Stashed changes

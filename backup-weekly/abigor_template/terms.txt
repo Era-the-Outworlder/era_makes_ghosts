@@ -1,4 +1,10 @@
+<<<<<<< Updated upstream
 Abigor Ghost Template by Era the Outworlder 
 Terms of Use
 
+=======
+Abigor Ghost Template by Era the Outworlder 
+Terms of Use
+
+>>>>>>> Stashed changes
 None. I love you.

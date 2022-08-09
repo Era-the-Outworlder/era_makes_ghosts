@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 // surface/balloon
 
 OnOverlap
@@ -101,3 +102,108 @@ OnTrayBalloonTimeout
 	"%(REFTEST('OnTrayBalloonTimeout'))"
 }
 
+=======
+// surface/balloon
+
+OnOverlap
+{
+	"%(REFTEST('OnOverlap'))"
+}
+
+OnOtherOverlap
+{
+	"%(REFTEST('OnOtherOverlap'))"
+}
+
+OnOffscreen
+{
+	if _argv[0] == "AITALK"
+	{
+		"I have been moved offscreen. Press Ctrl-Shift-F12 to return me to my default position."
+	}
+	else
+	{
+		if reference[0] == "0"
+		{offscreenflag = 1}
+		else
+		{offscreenflag = 0}
+	}
+	--
+	// "%(offscreenflag)"
+}
+
+OnOtherOffscreen
+{
+	"%(REFTEST('OnOtherOffscreen'))"
+}
+
+OnSurfaceChange
+{
+	"%(REFTEST('OnSurfaceChange'))"
+}
+
+OnSurfaceRestore
+{
+	"%(REFTEST('OnSurfaceRestore'))"
+}
+
+OnOtherSurfaceChange
+{
+	"%(REFTEST('OnOtherSurfaceChange'))"
+}
+
+
+
+OnShellChanged
+{
+	"%(errorMsg)\_w[500]\e"
+}
+
+OnShellChanging
+{
+	"%(errorMsg)\_w[500]\e"
+}
+
+OnOnShellScaling
+{"%(REFTEST('OnShellScaling'))"}
+
+DressupChanged
+{
+	"%(errorMsg)\_w[500]\e"
+}
+
+OnBalloonChange
+{
+	"Maybe this will look better. \_w[500]"
+}
+
+OnBalloonBreak
+{"%(REFTEST('OnBalloonBreak'))"}
+
+OnBalloonClose
+{
+	// Bevery careful of using or ghost will not be able to close
+	// "%(REFTEST('OnBalloonClose'))"
+}
+
+OnBalloonTimeout
+{
+	// "%(REFTEST('OnBalloonTimeout'))"
+}
+
+OnBalloonScaling
+{
+	"%(REFTEST('OnBalloonScaling'))"
+}
+
+OnTrayBalloonClick
+{
+	"%(REFTEST('OnTrayBalloonClick'))"
+}
+
+OnTrayBalloonTimeout
+{
+	"%(REFTEST('OnTrayBalloonTimeout'))"
+}
+
+>>>>>>> Stashed changes

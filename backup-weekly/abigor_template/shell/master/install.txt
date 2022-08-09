@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 // ----- Abigor Template Shell Install -----
 
 charset,UTF-8
@@ -7,4 +8,15 @@ directory,master
 accept,Abigor
 
 // refresh, bool
+=======
+// ----- Abigor Template Shell Install -----
+
+charset,UTF-8
+name,Abigor Template Shell
+type,shell
+directory,master
+accept,Abigor
+
+// refresh, bool
+>>>>>>> Stashed changes
 // refreshundeletemask, filename 1: filename 2 ...

@@ -1,5 +1,13 @@
+<<<<<<< Updated upstream
 charset,UTF-8
 type,balloon
 name,Disrupted Reality
 directory,disrupted_reality
 refresh,1
+=======
+charset,UTF-8
+type,balloon
+name,Disrupted Reality
+directory,disrupted_reality
+refresh,1
+>>>>>>> Stashed changes

@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 //Installation info
 
 
@@ -7,3 +8,14 @@ type,balloon
 name,Undertext
 directory,yaub_undertext
 
+=======
+//Installation info
+
+
+charset,UTF-8
+
+type,balloon
+name,Undertext
+directory,yaub_undertext
+
+>>>>>>> Stashed changes

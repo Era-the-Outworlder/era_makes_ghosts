@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 // ---- Developer Options ----
 
 ghost/master/profile/,nonar,noupdate
@@ -13,4 +14,21 @@ shell/master/raw_images/,nonar,noupdate
 
 eto_balloon_template/,noupdate
 eto_balloon_template/raw_images/,nonar,noupdate
+=======
+// ---- Developer Options ----
+
+ghost/master/profile/,nonar,noupdate
+
+ghost/master/yaya_variable.cfg,nonar,noupdate
+ghost/master/ayame.log,nonar,noupdate
+ghost/master/yaya_ssp_debug.log,nonar,noupdate
+ghost/master/ssp_shiori_log.txt,nonar,noupdate
+ghost/master/sfx/raw_audio/,nonar,noupdate
+
+shell/master/profile/,nonar,noupdate
+shell/master/raw_images/,nonar,noupdate
+
+eto_balloon_template/,noupdate
+eto_balloon_template/raw_images/,nonar,noupdate
+>>>>>>> Stashed changes
 eto_balloon_template/profile/,nonar,noupdate

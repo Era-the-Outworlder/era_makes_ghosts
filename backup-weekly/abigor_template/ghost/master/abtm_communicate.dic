@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 
 
 OnCommunicate{}
@@ -13,4 +14,21 @@ OnTeach{}
 
 
 
+=======
+
+
+OnCommunicate{}
+OnCommunicateInputCancel{}
+OnUserInput{}
+OnUserInputCancel{}
+inputbox.autocomplete{}
+
+
+OnTeachStart{}
+OnTeachInputCancel{}
+OnTeach{}
+
+
+
+>>>>>>> Stashed changes
 OnOtherGhostTalk{}
