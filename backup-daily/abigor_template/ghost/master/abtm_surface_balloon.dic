@@ -39,14 +39,13 @@ OnSurfaceChange
 
 OnSurfaceRestore
 {
-	"%(REFTEST('OnSurfaceRestore'))"
+	// "%(REFTEST('OnSurfaceRestore'))"
 }
 
 OnOtherSurfaceChange
 {
 	"%(REFTEST('OnOtherSurfaceChange'))"
 }
-
 
 
 OnShellChanged
@@ -77,7 +76,7 @@ OnBalloonBreak
 
 OnBalloonClose
 {
-	// Bevery careful of using or ghost will not be able to close
+	// Be very careful of using or ghost will not be able to close
 	// "%(REFTEST('OnBalloonClose'))"
 }
 

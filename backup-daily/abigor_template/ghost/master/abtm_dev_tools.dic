@@ -13,7 +13,11 @@
 OnFunctionRun
 {
 
-	OnBoot
+	SAVEVAR("eligos_save.txt")
+
+	// OnBoot
+	
+	
 	/* "(pose)... \_w[800](pose)Hnnnnnnnggg... \_w[1000](pose)Oh! \_w[800]You must be one of the Scientist's new hires, \_w[100]right? \_w[700]How else..? \_w[700] \n[200]But I don't...\_w[1000] \nYou'll have to excuse me-(pose)"
 	--
 	"\_w[3000]\cIt has been a...\_w[1200] well. \__w[1000] \n(pose).\_w[100].\_w[100].\_w[100].\_w[100].\_w[100].\_w[700](pose)"
@@ -26,16 +30,6 @@ OnFunctionRun
 
 
 }
-
-
-
-
-
-
-
-
-
-
 
 TextAlignTest
 {
@@ -57,7 +51,7 @@ TextAlignTest
 
 OnTestVariable
 {
-	"\0\b6Testing! \n\n"
+	"\0\b6Testing! \n[200]"
 	--
 	"\![*] \q[EVAL ANYTHING,setEVAL]\n"
 	--
@@ -83,6 +77,7 @@ Select.setEVAL
 {
 	"\![open,input,OnEVAL1,]"
 }
+
 OnEVAL1
 {
 	EVAL(reference0)
@@ -137,7 +132,7 @@ Select.funkTest
 {	
 	TextAlignTest
 	// DUMPVAR()
-	// \n\n\nDumping Variables to ayame.log.\n"
+	// \n[200]\nDumping Variables to ayame.log.\n"
 	
 	// --
 	// foreach ghostexlist; _ref
@@ -178,7 +173,7 @@ reqCheck
     {
         _keyname = var.req.key[_i]
         _value = var.req.value[_i]
-        _display += "%(_keyname): %(_value)\n\n[half]"
+        _display += "%(_keyname): %(_value)\n[150]"
     }
     --
     "\_q\b6\![set,autoscroll,disable]%(_display)\x"
@@ -217,7 +212,7 @@ OnEmbedTest
 OnDisplayTestMenu
 {
 	_testText = reference1
-	"\_q\f[align,center]Select Mood\n\n"
+	"\_q\f[align,center]Select Mood\n[200]"
 	--
 	if _testText == ""
 	{"\f[color,#00ffcc]\![*]\q[Neutral,OnDisplayTestMenu,,]  \f[color,default]"}
@@ -231,7 +226,7 @@ OnDisplayTestMenu
 	{"\f[color,#00ffcc]\![*]\q[Tired,OnDisplayTestMenu,mood_tired,tired]\f[color,default]"}
 	else{"\![*]\q[Tired,OnDisplayTestMenu,mood_tired,tired]"}
 	--
-	"\n\n[half]"
+	"\n[150]"
 	--
 	if _testText == "angry"
 	{"\f[color,#00ffcc]\![*]\q[Angry,OnDisplayTestMenu,mood_angry,angry]  \f[color,default]"}
@@ -245,7 +240,7 @@ OnDisplayTestMenu
 	{"\f[color,#00ffcc]\![*]\q[Surprised,OnDisplayTestMenu,mood_surprised,surprised]\f[color,default]"}
 	else{"\![*]\q[Surprised,OnDisplayTestMenu,mood_surprised,surprised]"}
 	--
-	"\n\n[half]"
+	"\n[150]"
 	--
 	if _testText == "scared"
 	{"\f[color,#00ffcc]\![*]\q[Scared,OnDisplayTestMenu,mood_scared,scared]  \f[color,default]"}
@@ -259,7 +254,7 @@ OnDisplayTestMenu
 	{"\f[color,#00ffcc]\![*]\q[Creepy,OnDisplayTestMenu,mood_creepy,creepy]\f[color,default]"}
 	else{"\![*]\q[Creepy,OnDisplayTestMenu,mood_creepy,creepy]"}
 	--
-	"\n\n\q[Back,OnTestVariable]\e"
+	"\n[200]\q[Back,OnTestVariable]\e"
 }
 
 // ---- Weird testing stuff end ----

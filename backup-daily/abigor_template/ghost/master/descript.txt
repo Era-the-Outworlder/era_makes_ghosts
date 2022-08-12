@@ -7,7 +7,7 @@ charset,UTF-8
 // -----Creator Info-----
 craftman, Era the Outworlder
 craftmanw, Era the Outworlder
-craftmanurl, https://era-the-outworlder.github.io/era_makes_ghosts/index.html
+craftmanurl, https://era-the-outworlder.github.io
 homeurl,https://raw.githubusercontent.com/Era-The-Outworlder/era_makes_ghosts/main/updates/abigor_template/
 
 // -----Readme-----
@@ -67,7 +67,7 @@ shiori.cache,0
 
 //----- Default Surfaces and Positions -----
 // Priority order:
-// seriko < scope.seriko < shell-seriko < shell-scope.seriko
+// seriko < scope.seriko < shell descript.txt seriko < shell descript.txt scope.seriko
 
 // Position locations-- top, bottom, free
 seriko.alignmenttodesktop, free

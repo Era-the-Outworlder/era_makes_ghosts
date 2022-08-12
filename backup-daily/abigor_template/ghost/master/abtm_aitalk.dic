@@ -114,7 +114,7 @@ OnDayTalk
 
 OnMonthTalk
 {
-	"\n\n%(sbot)The current month is "
+	"The current month is "
 	--
 	if month == 1
 	{
@@ -178,14 +178,17 @@ OnKeyPress
 		}
 		when "r"
 		{
-		//OnLastTalk
+			//OnLastTalk
 		}
 		when "f4"
-		{OnClose}
+		{
+			OnClose
+		}
 		when "f1"
-		{"\![open,readme]"}
+		{
+			"\![open,readme]"
+		}
 	}
-	
 }
 
 OnSecondChange
@@ -200,95 +203,11 @@ OnHourTimeSignal
 		{
 			"It is midnight."
 		}
-		when 1
-		{
-			"It is %(dishour) o'clock."
-		}
-		when 2
-		{
-			"It is %(dishour) o'clock."
-		}
-		when 3
-		{
-			"It is %(dishour) o'clock."
-		}
-		when 4
-		{
-			"It is %(dishour) o'clock."
-		}
-		when 5
-		{
-			"It is %(dishour) o'clock."
-		}
-		when 6
-		{
-			"It is %(dishour) o'clock."
-		}
-		when 7
-		{
-			"It is %(dishour) o'clock."
-		}
-		when 8
-		{
-			"It is %(dishour) o'clock."
-		}
-		when 9
-		{
-			"It is %(dishour) o'clock."
-		}
-		when 10
-		{
-			"It is %(dishour) o'clock."
-		}
-		when 11
-		{
-			"It is %(dishour) o'clock."
-		}
 		when 12
 		{
 			"It is noon."
 		}
-		when 13
-		{
-			"It is %(dishour) o'clock."
-		}
-		when 14
-		{
-			"It is %(dishour) o'clock."
-		}
-		when 15
-		{
-			"It is %(dishour) o'clock."
-		}
-		when 16
-		{
-			"It is %(dishour) o'clock."
-		}
-		when 17
-		{
-			"It is %(dishour) o'clock."
-		}
-		when 18
-		{
-			"It is %(dishour) o'clock."
-		}
-		when 19
-		{
-			"It is %(dishour) o'clock."
-		}
-		when 20
-		{
-			"It is %(dishour) o'clock."
-		}
-		when 21
-		{
-			"It is %(dishour) o'clock."
-		}
-		when 22
-		{
-			"It is %(dishour) o'clock."
-		}
-		when 23
+		when 1-11,13-23
 		{
 			"It is %(dishour) o'clock."
 		}
