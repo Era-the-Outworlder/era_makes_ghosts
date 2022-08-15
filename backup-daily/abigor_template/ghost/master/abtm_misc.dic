@@ -104,6 +104,9 @@ headlinepathlist{}
 pluginpathlist{}
 calendarskinpathlist{}
 calendarpluginpathlist{}
-rateofusegraph{}
+rateofusegraph
+{
+	"%(REFTEST('rateofusegraph'))"
+}
 enable_log{}
 enable_debug{}

@@ -25,14 +25,14 @@ OnTranslate
         _talk = REPLACE(_talk, "\_v[", "\![sound,stop,")
     }
     --
-    if reference1 == "" && reference2 == "" // Script Input
+    if reference1 == "" && reference2 == "" // Script Input, script choice call
     {
-		REFTEST('OnTranslate')
-        // EVAL('"' + REPLACE(_talk,'"','" + CHR(0x22) + "') +  + '"')
+		// REFTEST('OnTranslate')
+        EVAL('"' + REPLACE(_talk,'"','" + CHR(0x22) + "') +  + '"')
     }
     else
     { //event result from ghost
-        EVAL('"' + _talk + '"')
+        _talk;
     }
 }
 
@@ -73,7 +73,7 @@ OnChoiceSelectEx
 OnChoiceEnter
 {}
 
-//---- OnChoiceTimeout ----
+//---- OnChoiceTimeout -----
 // Called every time a choice is timed out, not just the main menu.
 
 OnChoiceTimeout

@@ -30,7 +30,7 @@
 // │       │                                                                    │
 // │ 1     │ local Y coordinate of mouse cursor                                 │
 // │       │                                                                    │
-// │ 2     │ always "0" ---- EXCEPT FOR:                                        │
+// │ 2     │ always "0" ----- EXCEPT FOR:                                        │
 // │       │ OnMouseWheel, OnMouseDragStart, OnMouseDragEnd:                    │
 // │       │ The amount of rotation of the mouse wheel.                         │
 // │       │ Positive forward/up, negative backward /down                       │
@@ -392,7 +392,7 @@ mouseClickCHAR
 	}
 }
 
-// -------- OnMouseWheel --------
+// ----- OnMouseWheel -----
 // When the wheel of a mouse moves
 OnMouseWheel
 {
@@ -409,7 +409,7 @@ OnMouseWheel
 
 /* ############# OnMouseDragStart && OnMouseDragEnd ############# */
 
-// -------- OnMouseDragStart --------
+// ----- OnMouseDragStart -----
 // When dragging of ghost starts
 OnMouseDragStart
 {
@@ -424,7 +424,7 @@ OnMouseDragStart
     }
 }
 
-// -------- OnMouseDragEnd --------
+// ----- OnMouseDragEnd -----
 // When dragging of ghost ends.
 OnMouseDragEnd
 {
@@ -445,7 +445,7 @@ OnMouseDragEnd
 // OnMouseMove -> OnMouseEnter - OnMouseLeave -> OnMouseEnterAll - OnMouseLeaveAll
 // OnMouseHover only seems to trigger if OnMouseMove does not return
 
-// -------- OnMouseMove --------
+// ----- OnMouseMove -----
 OnMouseMove
 {
 	case reference3 
@@ -465,26 +465,26 @@ OnMouseMove
     }
 }
 
-// -------- OnMouseEnter --------
+// ----- OnMouseEnter -----
 // When the mouse enters any collision area of the ghost. Takes Priority over OnMouseEnterAll
 OnMouseEnter
 {
 }
 
-//-------- OnMouseLeave --------
+//-------- OnMouseLeave -----
 // When the mouse leaves any collision area of the ghost. Takes Priority over OnMouseLeaveAll
 
 OnMouseLeave
 {
 }
 
-// -------- OnMouseEnterAll --------
+// ----- OnMouseEnterAll -----
 // When the mouse enters the outermost boundary of the ghost. Does not trigger by changing collision areas
 OnMouseEnterAll
 {
 }
 
-// -------- OnMouseLeaveAll --------
+// ----- OnMouseLeaveAll -----
 // When the mouse leaves the outermost boundary of the ghost. Does not trigger by changing collision areas.
 OnMouseLeaveAll
 {
@@ -506,7 +506,7 @@ OnMouseLeaveAll
 }
 
 
-// -------- OnMouseHover --------
+// ----- OnMouseHover -----
 // When mouse cursor is stationary. Seems to only be called if Reference4 is NOT empty, aka if the surface has a declared collision there.
 OnMouseHover
 {

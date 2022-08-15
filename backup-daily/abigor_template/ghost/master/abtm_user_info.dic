@@ -5,7 +5,7 @@
 
 // This was written expecting a variable (here called firstBoot) to be set to indicate if OnTeachName was called from OnFirstBoot, starting a sequence that gets the user's name, pronouns, and birthdate consecutively. In this code, "firstBoot == 1" means that this is the first time the ghost has been installed, or in OnFirstBoot "reference0 == 0". "firstBoot == 2" means that this in NOT the first time the ghost has been installed, or in OnFirstBoot "reference0" having any other value than 0.
 
-// ---- OnNotifyUserInfo ----
+// ----- OnNotifyUserInfo -----
 // This gets the info the user may have set in SSP's settings and separates it into global variables.
 OnNotifyUserInfo
 {
@@ -17,16 +17,25 @@ OnNotifyUserInfo
 	menuBDay = TOSTR(SHIORI3FW.UserBirthday[2])	
 }
 
-//-------- OnTeachName --------
+// ----- OnTeachName ----- 
 //This is the first function called when a name entry or change is started
 
 OnTeachName	
 {
 	if reference0 == "menu" //function was called from User Config or other menu with \q[Caption,OnTeachName,menu]
 		{	
-			"\c\t"
-			--
-			"What name would you like me to call you by instead? \![open,inputbox,OnNameTeach,-1]"
+			if !username
+			{
+				"\c\t"
+				--
+				"This is the dialogue for SETTING one's username from the User Settings menu. \![open,inputbox,OnNameTeach,-1]"
+			}
+			else
+			{
+				"\c\t"
+				--
+				"This is the dialogue for CHANGING one's username from the User Settings menu. \![open,inputbox,OnNameTeach,-1]"
+			}
 		}
 	else //function called from anywhere else
 		{
@@ -37,7 +46,7 @@ OnTeachName
 }
 
 
-//--OnNameTeach
+// -- OnNameTeach --
 //This is where the user inputs their name and the ghost analyzes it.
 
 OnNameTeach
@@ -61,7 +70,7 @@ OnNameTeach
 	{
 		"Oh, that is my name too.\n"
 		--
-		"\![*] \q[Change,OnTeachName]\n \n[-100]\f[align,right]\![*] \q[Keep,OnNameDone,keepname]\n"
+		"\![*] \q[Change,OnTeachName]\n \n[-100]\f[align,right]\![*] \q[Keep,OnNameDone,keepghostname]\n"
 	}
 	
 	elseif reference0 == "" //This is if the user doesn't put in a name at all or puts one that is only spaces, periods, dashes, or uderscores since that'd also get awkward in dialogue.
@@ -139,7 +148,7 @@ OnHonorificChoice
 	}
 }
 
-// -------- OnNameDone --------
+// ----- OnNameDone -----
 // Signifies that it's done, moves on to wherever else
 
 
@@ -151,7 +160,20 @@ OnHonorificChoice
 
 OnNameDone
 {	
-	if reference0 == "keepname" 
+	if reference0 == "keepghostname" // if user has the same name as the ghost
+	{
+		if firstBoot == 1 || firstBoot == 2 //this checks for the flag that was set during the firstBoot sequence
+		{
+			"Name Confirmed as %()\b[-1]\c"
+			--
+			"\![timerraise,1000,1,OnTeachPronouns]"
+		}
+		else
+		{
+			"Different Name Confirmation. Likely Name Changed From Menu\e"
+		}
+	}
+	elseif reference0 == "keepname"
 	{
 		if firstBoot == 1 || firstBoot == 2 //this checks for the flag that was set during the firstBoot sequence
 		{
@@ -198,7 +220,7 @@ OnNameDone
 	}
 }
 
-// -------- OnTeachPronouns --------
+// ----- OnTeachPronouns -----
 // This is called to set/change the user's pronouns
 
 OnTeachPronouns
@@ -244,13 +266,13 @@ OnSetPronouns
 	
 	if firstBoot == 1 || firstBoot == 2
 	{
-		"You have listed your pronouns as %(nomPro), %(oblPro), and %(posPro).\n\b[-1]\c"
+		"You have listed your pronouns as %(nomPro), %(oblPro), and %(posPro).\_w[500]\n\b[-1]\c"
 		--
 		"\![timerraise,1000,1,OnGetBirthday]"	
 	}
 	else
 	{
-		"You have listed your pronouns as %(nomPro), %(oblPro), and %(posPro).\n\b[-1]\c"
+		"You have listed your pronouns as %(nomPro), %(oblPro), and %(posPro).\_w[500]"
 	}
 
 }
@@ -261,7 +283,7 @@ OnTeachCustomPronoun
 	"Enter your nominative pronoun, ex.'they' \![open,inputbox,OnNominativeTeach,-1]"
 }
 
-//---- Teaching each pronoun ----
+//---- Teaching each pronoun -----
 
 OnNominativeTeach
 {
@@ -316,7 +338,7 @@ OnPossessiveTeach
 }
 
 
-// -------- OnGetBirthday --------
+// ----- OnGetBirthday -----
 // Function called to have the user input their birthday. 
 // Variable names retained for compatibility w/GT Template ghosts.
 OnGetBirthday	
@@ -500,7 +522,7 @@ OrdinalDay
 }	
 
 
-// ---- OnBDayCheck ----
+// ----- OnBDayCheck -----
 
 // Included below are some examples of possible dates to check and write specific responses to. It is not exhaustive, has a bias towards Western/NA holidays, and contains much that is apocryphal \joke. Actually it is mostly empty and totally optional.
 OnBDayCheck

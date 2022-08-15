@@ -70,6 +70,7 @@ iolog.filter.mode, blacklist
 
 iolog.filter.keyword, OnSecondChange 
 iolog.filter.keyword, OnMouse 
+iolog.filter.keyword, OnSurfaceRestore
 
 
 // -- Message List --

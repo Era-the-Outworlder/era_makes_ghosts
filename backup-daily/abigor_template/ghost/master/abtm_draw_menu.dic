@@ -8,7 +8,7 @@
 //   #####   #####  #          #     # ###### #    #  ####  
 
 
-//---- SSP/User Draw Menu Items ----
+//---- SSP/User Draw Menu Items -----
 
 
 
@@ -16,7 +16,7 @@ On_recommendrootbutton.caption
 {
 	// "&Recommendations"
 }
-//---- Top Menu Option ----
+//---- Top Menu Option -----
 
 
 On_sakura.recommendsites
@@ -57,7 +57,7 @@ On_sakura.recommendsites
 	
 } 
 
-//---- The second option from the top ----
+//---- The second option from the top -----
 
 
 On_portalrootbutton.caption
@@ -65,7 +65,7 @@ On_portalrootbutton.caption
 	// "Crea&tor Sites"
 }
 
-//---- Websites in the Second Option ----
+//---- Websites in the Second Option -----
  
 On_sakura.portalsites
 {
@@ -122,13 +122,13 @@ On_headlinesenserootbutton.caption
 	"Headlines + RSS"
 }
 
-//---- Plugins ----
+//---- Plugins -----
 On_pluginrootbutton.caption
 {
 	// "&Plugins"	
 }
 
-//---- Check Mail (BIFF) ----
+//---- Check Mail (BIFF) -----
 
 On_biffbutton.caption
 {
@@ -136,7 +136,7 @@ On_biffbutton.caption
 	// "Check e&Mail"
 }
 
-//---- Shell Scaling ----
+//---- Shell Scaling -----
 
 On_shellscalerootbutton.caption
 {
@@ -151,7 +151,7 @@ On_shellscaleotherbutton.caption
 }
 
 
-//---- Baloon Scaling ----
+//---- Baloon Scaling -----
 
 On_balloonscalerootbutton.caption
 {
@@ -163,7 +163,7 @@ On_balloonscaleotherbutton.caption
 	// "&Other Percentage"
 }
 
-//-------- Utilities --------
+//-------- Utilities -----
 
 On_utilityrootbutton.caption
 {
@@ -280,7 +280,7 @@ On_closeballoonbutton.caption
 	// "Hide All &Balloons"
 }
 
-//-------- Options --------
+//-------- Options -----
 
 
 On_configurationrootbutton.caption
@@ -383,7 +383,7 @@ On_pluginhistorybutton.caption
 
 
 
-//---- Information ----
+//---- Information -----
 
 On_inforootbutton.caption
 {
@@ -441,7 +441,7 @@ On_quitbutton.caption
 }
 
  
-//---- Top Menu Option in the Second Character ----
+//---- Top Menu Option in the Second Character -----
 
 
 On_kero.recommendbuttoncaption
@@ -450,7 +450,7 @@ On_kero.recommendbuttoncaption
 	
 }
 
-//---- Top Menu Websites for the Second Character ----
+//---- Top Menu Websites for the Second Character -----
 
  
 On_kero.recommendsites
@@ -473,7 +473,7 @@ On_kero.testbuttoncaption
 }
 
 
-//---- 3+ Character ----
+//---- 3+ Character -----
 
 On_char3.recommendsitescaption
 {
@@ -487,7 +487,7 @@ On_char3.recommendsites
 }
 	
 
-//---- Uninstall Options visibility On/Off ----
+//---- Uninstall Options visibility On/Off -----
 On_vanishbutton.visible
 {
  	if deleteshitai == "ON"

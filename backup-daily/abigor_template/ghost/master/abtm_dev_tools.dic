@@ -7,7 +7,7 @@
 
 // DEV TOOLS FUCK YEAH
 // ------ This is a whole bunch of testing stuff shhhhh ------
-// ---- An Important Tool
+// ----- An Important Tool
 //		LOGGING("What Am I Doing Here")
 
 OnFunctionRun
@@ -257,4 +257,4 @@ OnDisplayTestMenu
 	"\n[200]\q[Back,OnTestVariable]\e"
 }
 
-// ---- Weird testing stuff end ----
+// ----- Weird testing stuff end -----

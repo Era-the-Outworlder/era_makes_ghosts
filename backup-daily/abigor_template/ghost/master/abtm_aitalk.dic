@@ -22,7 +22,7 @@ OnAIDialogue
 {
 
 
-	// -------- Conditionals --------
+	// ----- Conditionals -----
 
 		
 	if ASEARCH("saidtimeslot",hourlyArray) == -1

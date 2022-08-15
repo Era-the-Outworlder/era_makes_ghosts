@@ -7,11 +7,11 @@
 // [..       [..[..      [..    [. ..[..     [..
 // [..       [..[........[..      [..  [.....   
 
-// -------- Menus --------
+// ----- Menus -----
 //This .dic file is primarily concerned with the double-click menu.
 
 
-// ---- OnMainMenu ----
+// ----- OnMainMenu -----
 
 
 OnMainMenu
@@ -58,7 +58,7 @@ OnMainMenu
 }
 
 
-// -------- OnUserConfig --------
+// ----- OnUserConfig -----
 // This menu allows the user to change their name and other information
 
 OnUserConfig
@@ -80,7 +80,7 @@ OnUserConfig
 	"\e"
 }
 
-// ---- OnConfigMenu ----
+// ----- OnConfigMenu -----
 // Allows user to change various ghost settings
 OnConfigMenu
 {
@@ -166,7 +166,7 @@ OnConfigSet
 }
 
 
-// ---- Talk Rate ----
+// ----- Talk Rate -----
 // This is when the user chooses to adjust the talk rate in the config menu. The talk rate is how often the ghost will read some dialogue from aitalk.dic.
 
 OnSetTalk
