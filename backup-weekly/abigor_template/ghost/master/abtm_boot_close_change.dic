@@ -1,13 +1,13 @@
 OnFirstBoot
 {
-	"\![set,otherghosttalk,true]\![set,sticky-window,1,0]"
+	"\![set,otherghosttalk,true]"
 	--
 	"This is my first time booting.\_w[500]"
 }
 
 OnBoot
 {
-	"\![set,otherghosttalk,true]\![set,sticky-window,1,0]"
+	"\![set,otherghosttalk,true]"
 	--
 	"I have booted.\_w[500]"
 }
@@ -125,6 +125,7 @@ OnGhostChanging
 	--
 	"\e"
 }
+
 OnGhostCalled
 {
 	hourlyArray = IARRAY
@@ -152,24 +153,34 @@ OnOtherGhostBooted
 
 OnOtherGhostChanged
 {
-	"Good-bye %(reference0). \n\nHello %(reference1).\_w[500]"
+	"A ghost other than myself has been replaced by yet a third ghost. \nGood-bye %(reference0). \nHello %(reference1).\_w[500]"
 }
 
 OnOtherGhostClosed
 {
-	"Good-bye %(reference0).\_w[500]"
+	"A ghost other than myself has closed. \nGood-bye %(reference0).\_w[500]"
 }
 
 
 
 OnWindowStateRestore
 {
-	"I will minimise to the taskbar now.\_w[500]"
+	"This is the dialogue that plays when I have been restored to fullscreen after being minimised to the taskbar.\_w[500]"
 }
 
 OnWindowStateMinimize
 {
-	"I am no longer minimised. Good. It was a bit cramped and rather boring.\_w[500]"
+	"I have been commanded to minimise to the taskbar. This dialogue will play before I complete that action.\_w[500]"
+}
+
+OnBasewareUpdating
+{
+	"Updating Baseware %(baseware)...\_w[1000]"
+}
+
+OnBasewareUpdated
+{
+	"\_w[500]Baseware %(baseware) Update complete.\_w[1000]"
 }
 
 OnFullScreenAppMinimize
@@ -217,13 +228,5 @@ OnSysSuspend
 	"%(errorMsg)\_w[500]\e"
 }
 
-OnBasewareUpdating
-{
-	"Updating Baseware %(baseware)...\_w[1000]"
-}
 
-OnBasewareUpdated
-{
-	"\_w[500]Update complete.\_w[1000]"
-}
 

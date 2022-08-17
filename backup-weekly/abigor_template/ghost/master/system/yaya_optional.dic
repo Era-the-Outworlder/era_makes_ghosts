@@ -53,7 +53,7 @@ SHIORI3FW.EscapeDangerousTags{
 //　Argument : argv0＝Text
 //------------------------------------------------------------------------------
 SHIORI3FW.EscapeAllTags{
-	_txt=_argv[0]
+	_txt=TOSTR(_argv[0])
 	_txt=REPLACE(_txt,'\\',ESCAPE_TAG_1)
 	_txt=REPLACE(_txt,'\%',ESCAPE_TAG_2)
 	_txt=REPLACE(_txt,'\','\\')

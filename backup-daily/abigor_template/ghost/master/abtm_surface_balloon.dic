@@ -18,7 +18,7 @@ OnOffscreen
 	}
 	else
 	{
-		if reference[0] == "0"
+		if reference0 == "0"
 		{offscreenflag = 1}
 		else
 		{offscreenflag = 0}

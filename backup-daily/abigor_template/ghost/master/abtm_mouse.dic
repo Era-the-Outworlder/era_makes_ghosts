@@ -30,7 +30,7 @@
 // │       │                                                                    │
 // │ 1     │ local Y coordinate of mouse cursor                                 │
 // │       │                                                                    │
-// │ 2     │ always "0" ----- EXCEPT FOR:                                        │
+// │ 2     │ always "0" ----- EXCEPT FOR:                                       │
 // │       │ OnMouseWheel, OnMouseDragStart, OnMouseDragEnd:                    │
 // │       │ The amount of rotation of the mouse wheel.                         │
 // │       │ Positive forward/up, negative backward /down                       │
@@ -53,7 +53,7 @@
 // │ 6     │ Windows 7+ Input Source: "mouse" for mouse input,                  │
 // │       │ "touch" for touch panel of multi-touch environment                 │
 // │       │                                                                    │
-// │ 7     │ OnMouseMultipleClick and OnMouseMultipleClickEx Only               │
+// │ 7     │ OnMouseMultipleClick and OnMouseMultipleClickEx Only:              │
 // │       │ Number of Consecutive Clicks                                       │
 // └───────┴────────────────────────────────────────────────────────────────────┘
 
@@ -62,28 +62,14 @@
 
 OnMouseUp
 {
-	case reference3 
-	{
-		when 0 
-		{mouseClickSAKURA('OnMouseUp')}
-		when 1
-		{mouseClickKERO('OnMouseUp')}
-		others 
-		{mouseClickCHAR('OnMouseUp')}
-    }
+	_toRun = "mouseClick"+TOSTR(reference3)+"('OnMouseUp')"
+	EVAL(_toRun)
 }
 
 OnMouseUpEx
 {
-	case reference3 
-	{
-		when 0 
-		{mouseClickSAKURA('OnMouseUp')}
-		when 1
-		{mouseClickKERO('OnMouseUp')}
-		others 
-		{mouseClickCHAR('OnMouseUp')}
-    }
+	_toRun = "mouseClick"+TOSTR(reference3)+"('OnMouseUpEx')"
+	EVAL(_toRun)
 }
 
 // ############# OnMouseDown && OnMouseDownEx #############
@@ -91,28 +77,14 @@ OnMouseUpEx
 
 OnMouseDown
 {
-	case reference3 
-	{
-		when 0 
-		{mouseClickSAKURA('OnMouseDown')}
-		when 1
-		{mouseClickKERO('OnMouseDown')}
-		others 
-		{mouseClickCHAR('OnMouseDown')}
-    }
+	_toRun = "mouseClick"+TOSTR(reference3)+"('OnMouseDown')"
+	EVAL(_toRun)
 }
 
 OnMouseDownEx
 {
-	case reference3 
-	{
-		when 0 
-		{mouseClickSAKURA('OnMouseDown')}
-		when 1
-		{mouseClickKERO('OnMouseDown')}
-		others 
-		{mouseClickCHAR('OnMouseDown')}
-    }
+	_toRun = "mouseClick"+TOSTR(reference3)+"('OnMouseDownEx')"
+	EVAL(_toRun)
 }
 
 /* ############# OnMouseClick && OnMouseClickEx ############# */
@@ -121,28 +93,14 @@ OnMouseDownEx
 
 OnMouseClick
 {
-	case reference3 
-	{
-		when 0 
-		{mouseClickSAKURA('OnMouseClick')}
-		when 1
-		{mouseClickKERO('OnMouseClick')}
-		others 
-		{mouseClickCHAR('OnMouseClick')}
-    }
+	_toRun = "mouseClick"+TOSTR(reference3)+"('OnMouseClick')"
+	EVAL(_toRun)
 }
 
 OnMouseClickEx
 {
-	case reference3 
-	{
-		when 0 
-		{mouseClickSAKURA('OnMouseClick')}
-		when 1
-		{mouseClickKERO('OnMouseClick')}
-		others 
-		{mouseClickCHAR('OnMouseClick')}
-    }
+	_toRun = "mouseClick"+TOSTR(reference3)+"('OnMouseClickEx')"
+	EVAL(_toRun)
 }
 
 /* ############# OnMouseDoubleClick && OnMouseDoubleClickEx ############# */
@@ -152,28 +110,14 @@ OnMouseClickEx
 
 OnMouseDoubleClick
 {
-	case reference[3] 
-	{
-		when 0 
-		{mouseClickSAKURA('OnMouseDoubleClick')}
-		when 1
-		{mouseClickKERO('OnMouseDoubleClick')}
-		others 
-		{mouseClickCHAR('OnMouseDoubleClick')}
-    }
+	_toRun = "mouseClick"+TOSTR(reference3)+"('OnMouseDoubleClick')"
+	EVAL(_toRun)
 }
 
 OnMouseDoubleClickEx
 {
-	case reference[3]
-	{
-		when 0 
-		{mouseClickSAKURA('OnMouseDoubleClick')}
-		when 1
-		{mouseClickKERO('OnMouseDoubleClick')}
-		others 
-		{mouseClickCHAR('OnMouseDoubleClick')}
-    }
+	_toRun = "mouseClick"+TOSTR(reference3)+"('OnMouseDoubleClickEx')"
+	EVAL(_toRun)
 }
 
 
@@ -183,99 +127,136 @@ OnMouseDoubleClickEx
 
 OnMouseMultipleClick
 {
-	case reference3 
-	{
-		when 0 
-		{mouseClickSAKURA('OnMouseMultipleClick')}
-		when 1
-		{mouseClickKERO('OnMouseMultipleClick')}
-		others 
-		{mouseClickCHAR('OnMouseMultipleClick')}
-    }
+	_toRun = "mouseClick"+TOSTR(reference3)+"('OnMouseMultipleClick')"
+	EVAL(_toRun)
 }
 
 OnMouseMultipleClickEx
 {
-	case reference3 
-	{
-		when 0 
-		{mouseClickSAKURA('OnMouseMultipleClick')}
-		when 1
-		{mouseClickKERO('OnMouseMultipleClick')}
-		others 
-		{mouseClickCHAR('OnMouseMultipleClick')}
-    }
+	_toRun = "mouseClick"+TOSTR(reference3)+"('OnMouseMultipleClickEx')"
+	EVAL(_toRun)
 }
+
+/* ############# OnMouseWheel ############# */
+
+// ----- OnMouseWheel -----
+// When the wheel of a mouse moves
+OnMouseWheel
+{
+	_toRun = "mouseClick"+TOSTR(reference3)+"('OnMouseWheel')"
+	EVAL(_toRun)
+}
+
+/* ############# OnMouseDragStart && OnMouseDragEnd ############# */
+
+// ----- OnMouseDragStart -----
+// When dragging of ghost starts
+OnMouseDragStart
+{
+	_toRun = "mouseClick"+TOSTR(reference3)+"('OnMouseDragStart')"
+	EVAL(_toRun)
+}
+
+// ----- OnMouseDragEnd -----
+// When dragging of ghost ends.
+OnMouseDragEnd
+{
+	_toRun = "mouseClick"+TOSTR(reference3)+"('OnMouseDragEnd')"
+	EVAL(_toRun)
+}
+
 
 
 
 /* ############# mouseClickSAKURA ############# */
-mouseClickSAKURA
+
+mouseClick0
 {
 	_source = _argv[0]
-	_collision = reference[4]
-	_button = reference[5]
-
-	case _button 
-	{
-		when 0 // Left
+	_collision = reference4
+	_button = reference5
+	if _button != 1
+    {
+        if _collision == "Face"
 		{
-			if _source == "OnMouseClick"
-			{
-				
-			}
-			elseif _source == "OnMouseDoubleClick"
-			{
-				OnMainMenu('click1')
-			}
-			elseif _source == "OnMouseMultipleClick"
-			{
-			
-			}
+			"Ow!"
 		}
-		when 1 // Right
+		elseif _source == "OnMouseDoubleClick" || _source == "OnMouseDoubleClickEx"
 		{
-			// No right-clicks, they interfere with draw menu
+			OnMainMenu("click0")
 		}
-		when "middle"
+		elseif _source == "OnMouseDragStart"
 		{
-			if _source == "OnMouseClick"
-			{
-				
-			}
-			elseif _source == "OnMouseDoubleClick"
-			{
-				
-			}
-			elseif _source == "OnMouseMultipleClick"
-			{
-			
-			}
-		}
-		others // "2", "xbutton1", "xbutton2"
-		{
-			if _source == "OnMouseClick"
-			{
-				
-			}
-			elseif _source == "OnMouseDoubleClick"
-			{
-				
-			}
-			elseif _source == "OnMouseMultipleClick"
-			{
-			
-			}
+			"Put me down! I'm the main character!"
 		}
 	}
+
+
+	// case _button 
+	// {
+		// when 0 // Left mouse OR mousewheel scroll
+		// {
+			// if _source == "OnMouseClick"
+			// {
+				// "I hope this works."
+			// }
+			// elseif _source == "OnMouseDoubleClick"
+			// {
+				// OnMainMenu('click1')
+			// }
+			// elseif _source == "OnMouseMultipleClick"
+			// {
+			
+			// }
+			// elseif _source == "OnMouseWheel"
+			// {
+				// "flick"
+			// }
+		// }
+		// when 1 // Right mouse
+		// {
+			// No right-clicks, they interfere with draw menu
+		// }
+		// when "middle"
+		// {
+			// if _source == "OnMouseClick"
+			// {
+				
+			// }
+			// elseif _source == "OnMouseDoubleClick"
+			// {
+				
+			// }
+			// elseif _source == "OnMouseMultipleClick"
+			// {
+			
+			// }
+		// }
+		// others // "2", "xbutton1", "xbutton2"
+		// {
+			// if _source == "OnMouseClick"
+			// {
+				
+			// }
+			// elseif _source == "OnMouseDoubleClick"
+			// {
+				
+			// }
+			// elseif _source == "OnMouseMultipleClick"
+			// {
+			
+			// }
+		// }
+	// }
 }
 
+
 /* ############# mouseClickKERO ############# */
-mouseClickKERO
+mouseClick1
 {
 	_source = _argv[0]
-	_collision = reference[4]
-	_button = reference[5]
+	_collision = reference4
+	_button = reference5
 
 	case _button 
 	{
@@ -332,11 +313,11 @@ mouseClickKERO
 }
 
 /* ############# mouseClickCHAR ############# */
-mouseClickCHAR
+mouseClick2
 {
 	_source = _argv[0]
-	_collision = reference[4]
-	_button = reference[5]
+	_collision = reference4
+	_button = reference5
 
 	case _button 
 	{
@@ -392,52 +373,6 @@ mouseClickCHAR
 	}
 }
 
-// ----- OnMouseWheel -----
-// When the wheel of a mouse moves
-OnMouseWheel
-{
-	case reference3 
-	{
-		when 0 
-		{mouseClickSAKURA('OnMouseWheel')}
-		when 1
-		{mouseClickKERO('OnMouseWheel')}
-		others 
-		{mouseClickCHAR('OnMouseWheel')}
-    }
-}
-
-/* ############# OnMouseDragStart && OnMouseDragEnd ############# */
-
-// ----- OnMouseDragStart -----
-// When dragging of ghost starts
-OnMouseDragStart
-{
-	case reference3 
-	{
-		when 0 
-		{mouseClickSAKURA('OnMouseDragStart')}
-		when 1
-		{mouseClickKERO('OnMouseDragStart')}
-		others 
-		{mouseClickCHAR('OnMouseDragStart')}
-    }
-}
-
-// ----- OnMouseDragEnd -----
-// When dragging of ghost ends.
-OnMouseDragEnd
-{
-	case reference3 
-	{
-		when 0 
-		{mouseClickSAKURA('OnMouseDragEnd')}
-		when 1
-		{mouseClickKERO('OnMouseDragEnd')}
-		others 
-		{mouseClickCHAR('OnMouseDragEnd')}
-    }
-}
 
 
 /* ############# OnMouseMove, OnMouseEnter, OnMouseLeave, OnMouseHover ############# */
@@ -448,21 +383,21 @@ OnMouseDragEnd
 // ----- OnMouseMove -----
 OnMouseMove
 {
-	case reference3 
-	{
-		when 0 
-		{
-			mouseMoveSAKURA('OnMouseMove')
-		}
-		when 1
-		{
-			mouseMoveKERO('OnMouseMove')
-		}
-		others 
-		{
-			mouseMoveCHAR('OnMouseMove')
-		}
-    }
+	// case reference3 
+	// {
+		// when 0 
+		// {
+			// mouseMoveSAKURA('OnMouseMove')
+		// }
+		// when 1
+		// {
+			// mouseMoveKERO('OnMouseMove')
+		// }
+		// others 
+		// {
+			// mouseMoveCHAR('OnMouseMove')
+		// }
+    // }
 }
 
 // ----- OnMouseEnter -----
@@ -532,7 +467,7 @@ OnMouseHover
 mouseMoveSAKURA
 {
 	_source = _argv[0]
-	_collision = "%(reference[4])"
+	_collision = "%(reference4)"
 
 	case _source
 	{
@@ -581,7 +516,7 @@ mouseMoveSAKURA
 mouseMoveKERO
 {
 	_source = _argv[0]
-	_collision = "%(reference[4])"
+	_collision = "%(reference4)"
 
 	case _source
 	{
@@ -618,7 +553,7 @@ mouseMoveKERO
 mouseMoveCHAR
 {
 	_source = _argv[0]
-	_collision = "%(reference[4])"
+	_collision = "%(reference4)"
 
 	case _source
 	{
@@ -687,7 +622,7 @@ mouseMoveCHAR
 
 OnMouseGesture
 {
-	// if reference[5]!= "end"
+	// if reference5!= "end"
 	// {"%(REFTEST('OnMouseGesture'))"}
 }
 

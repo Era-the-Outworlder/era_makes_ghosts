@@ -1,4 +1,4 @@
-system.year
+/* system.year
 system.month
 system.day
 system.hour
@@ -89,8 +89,10 @@ rateofuselist.index(順位).keroname
 rateofuselist.index(順位).boottime
 rateofuselist.index(順位).bootminute
 rateofuselist.index(順位).percent
-汎用プロパティ名
-name
+汎用プロパティ名 */
+
+
+/* name
 sakuraname
 keroname
 craftmanw
@@ -106,4 +108,4 @@ index
 menu
 sakura.bind.menu
 kero.bind.menu
-char*.bind.menu
+char*.bind.menu */

@@ -7,7 +7,7 @@ type,shell
 name,Abigor Template Shell
 craftman,Era the Outworlder
 craftmanw,Era the Outworlder
-craftmanurl,https://era-the-outworlder.github.io/era_makes_ghosts/index.html
+craftmanurl,https://era-the-outworlder.github.io/
 homeurl,URL
 
 // -----Readme-----
@@ -20,47 +20,47 @@ readme.charset,UTF-8
 
 // sakura.name, name
 // sakura.name2, name
-sakura.seriko.alignmenttodesktop,free
+// sakura.seriko.alignmenttodesktop,free
 
-sakura.defaultx,0
-sakura.defaulty,0
-sakura.defaultleft,0
-sakura.defaulttop,0
+// sakura.defaultx,0
+// sakura.defaulty,0
+// sakura.defaultleft,0
+// sakura.defaulttop,0
 
-sakura.balloon.offsetx,0
-sakura.balloon.offsety,0
-sakura.balloon.alignment,??
-sakura.balloon.dontmove,bool
+// sakura.balloon.offsetx,0
+// sakura.balloon.offsety,0
+// sakura.balloon.alignment,??
+// sakura.balloon.dontmove,bool
 
 // -----Overwrite KERO-----
 
 // kero.name, name
-kero.seriko.alignmenttodesktop,bottom
+// kero.seriko.alignmenttodesktop,bottom
 
-kero.defaultx,0
-kero.defaulty,0
-kero.defaultleft,0
-kero.defaulttop,0
+// kero.defaultx,0
+// kero.defaulty,0
+// kero.defaultleft,0
+// kero.defaulttop,0
 
-kero.balloon.offsetx,0
-kero.balloon.offsety,0
-kero.balloon.alignment,??
-kero.balloon.dontmove,bool
+// kero.balloon.offsetx,0
+// kero.balloon.offsety,0
+// kero.balloon.alignment,??
+// kero.balloon.dontmove,bool
 
 // -----Overwrite CHAR2-----
 
 // char2.name, name
-char2.seriko.alignmenttodesktop,top
+// char2.seriko.alignmenttodesktop,top
 
 // char2.defaultx,0
 // char2.defaulty,0
-char2.defaultleft,0
+// char2.defaultleft,0
 // char2.defaulttop,0
 
-char2.balloon.offsetx,0
-char2.balloon.offsety,-0
-char2.balloon.alignment,??
-char2.balloon.dontmove,bool
+// char2.balloon.offsetx,0
+// char2.balloon.offsety,0
+// char2.balloon.alignment,??
+// char2.balloon.dontmove,bool
 
 // -----SERIKO-----	
 

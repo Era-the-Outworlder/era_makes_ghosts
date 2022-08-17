@@ -7,11 +7,11 @@
 // [..       [..[..      [..    [. ..[..     [..
 // [..       [..[........[..      [..  [.....   
 
-// -------- Menus --------
+// ----- Menus -----
 //This .dic file is primarily concerned with the double-click menu.
 
 
-// ---- OnMenuRun ----
+// ----- OnMainMenu -----
 
 
 OnMainMenu
@@ -30,7 +30,7 @@ OnMainMenu
 	--
 	"\![*] \q[Ghost Settings,OnConfigMenu]\n"
 	--
-	"\![*] \q[Other Functions,OnFunctionMenu]\n\n[half]"
+	"\![*] \q[Other Functions,OnFunctionMenu]\n[150]"
 	--
 	"%(disDate) %(disTime)\n"
 	--
@@ -58,7 +58,7 @@ OnMainMenu
 }
 
 
-// -------- OnUserConfig --------
+// ----- OnUserConfig -----
 // This menu allows the user to change their name and other information
 
 OnUserConfig
@@ -80,13 +80,13 @@ OnUserConfig
 	"\e"
 }
 
-// ---- OnConfigMenu ----
+// ----- OnConfigMenu -----
 // Allows user to change various ghost settings
 OnConfigMenu
 {
 	"\b[2]\![set,autoscroll,disable]\_q" 
 	--
-	"\![*]\q[TALK RATE:,OnSetTalk] %(talksetting) \f[size,-2]Commu:%(communicateratio)%\f[default]\n\n[half]"
+	"\![*]\q[TALK RATE:,OnSetTalk] %(talksetting) \f[size,-2]Commu:%(communicateratio)%\f[default]\n[150]"
 	--
 	
 	"ENABLE UNINSTALL?\n "
@@ -166,7 +166,7 @@ OnConfigSet
 }
 
 
-// ---- Talk Rate ----
+// ----- Talk Rate -----
 // This is when the user chooses to adjust the talk rate in the config menu. The talk rate is how often the ghost will read some dialogue from aitalk.dic.
 
 OnSetTalk
@@ -179,7 +179,7 @@ OnSetTalk
 	--
 	'\![*] \q[ Custom Time,"script:\![open,sliderinput,OnTalkSet,,%(minutetalk),0,60]"]\n'
 	--
-	"\![*] \q[ Random Time,OnTalkSet,random]\n\n[half]/
+	"\![*] \q[ Random Time,OnTalkSet,random]\n[150]/
 	\![*] \q[ Don't change,OnTalkSet,stay]"
 }
 
@@ -245,7 +245,7 @@ OnTalkSet
 		}
 	}
 	--
-	"\n\nWould you like me to try to talk to other ghosts, and if so what percentage of my speech?\n"
+	"\n[200]Would you like me to try to talk to other ghosts, and if so what percentage of my speech?\n"
 	--
 	"\f[align,center]\q[No,OnCommuSet,0] ------ "
 	--

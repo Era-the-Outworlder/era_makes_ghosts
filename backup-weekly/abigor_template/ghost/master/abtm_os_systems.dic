@@ -29,7 +29,7 @@ OnCPULoadLow{}
 OnMemoryLoadHigh{}
 OnMemoryLoadLow{}
 OnDisplayChange{}
-OnDisplayHandover{}
+OnDisplayHandover{"%(REFTEST('OnDisplayHandover'))"}
 OnDisplayChangeEx{}
 OnDisplayPowerStatus{}
 OnBatteryNotify{}
@@ -37,8 +37,10 @@ OnBatteryLow{}
 OnBatteryCritical{}
 OnBatteryChargingStart{}
 OnBatteryChargingStop{}
-OnDeviceArrival{}
-OnDeviceRemove{}
+
+OnDeviceChange{}
+OnDeviceArrival{"%(REFTEST('OnDeviceArrival'))"}
+OnDeviceRemove{"%(REFTEST('OnDeviceRemove'))"}
 OnTabletMode{}
 OnDarkTheme{}
-OnOSUpdateInfo{}
+OnOSUpdateInfo{"%(REFTEST('OnOSUpdateInfo'))"}

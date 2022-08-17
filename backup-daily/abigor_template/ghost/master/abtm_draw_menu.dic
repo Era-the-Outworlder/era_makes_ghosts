@@ -103,7 +103,7 @@ On_updatebutton.caption
 //----  Network Update URL  ------
 On_homeurl
 {
-	"https://raw.githubusercontent.com/Era-The-Outworlder/era_makes_ghosts/main/updates/abigor_template/"
+	"https://raw.githubusercontent.com/Era-The-Outworlder/abigor_template/main/updates/abigor_template/"
 }
 
 
@@ -475,13 +475,13 @@ On_kero.testbuttoncaption
 
 //---- 3+ Character -----
 
-On_char3.recommendsitescaption
+On_char2.recommendsitescaption
 {
 	// "Recommended Sites"
 	
 }
 
-On_char3.recommendsites
+On_char2.recommendsites
 {
 	"Nothing"
 }

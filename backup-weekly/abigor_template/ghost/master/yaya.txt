@@ -1,16 +1,33 @@
-﻿// Character Set definitions. Do not change unless absolutely certain what you are doing. Even then, reconsider whether it is necessary.
+﻿// ----- Character Set definitions. -----
+// Do not change unless absolutely certain what you are doing. Even then, reconsider whether it is necessary. (Changing to Shift_JIS/ShiftJIS/SJIS is understandable for users working in such an environment, and Shift JIS is the default if these are not otherwise set.)
+
 
 charset, UTF-8
 charset.dic, UTF-8
+charset.setting, UTF-8
 charset.output, UTF-8
 charset.file, UTF-8
 charset.save, UTF-8
 charset.extension, UTF-8
 
 
-// ---- Dictionary Files ----
+// ----- Dictionary Files -----
 
-include, system_config.txt		
+// Include to read additional configuration files.
+include, system_config.txt
+include, error_handling.txt	// File contains error handling and iolog settings
+
+// These are where all the content is. The methods of defining them are: 
+
+// dic, filename  OR  dic, filename,charset
+// where the final serparating comma and charset are optional. This allows importing of dictionaries from other sources without needing to reencode them.
+
+// dicif, filename  OR  dicif, filename, charset
+// dicif operates like dic, but ignores the specified file if it isn't found.
+
+// dicdir, dirname  OR  dicdir, dirname, charset
+// Reads all files under the specified directory as a single dictionary, but reads those files in no set order.
+
 			
 dic, abtm_aitalk.dic
 dic, abtm_boot_close_change.dic
@@ -28,19 +45,14 @@ dic, abtm_trans_anchor_choice.dic
 dic, abtm_user_info.dic
 
 
-// ---- Error Message List ----
-// Points to a file to specify what list of error messages to draw from. Primarily exists for localisation. Best to use an officially sourced one unless you're writing for an unsupported language.
-
-messagetxt,system/messagetxt/english.txt
 
 
-// ---- Function Depth ----
-// Controls the max iterations of a loop before failure. 0 to disable failsafe.
+// ----- Save Data -----
+// The default save file is "yaya_variable.cfg". Other save files can be specified in the functions SAVEVAR() and RESTOREVAR().
 
-// fncdepth,[0]
+// Off by default. Provides weak encryption to save file. Once turned on, it will stay encrypted until the file is deleted (and such deletion must be done while the ghost is closed.)
+save.encode, off
 
 
-// ---- Log Location ----
-//Sets the file path of the event log. Seems to be duplicated in other parts of the program
-
-log, ayame.log
+//On by default. Backs up variable regularly and save when closing ghost. If off, will not save variable except with SAVEVAR() function.
+save.auto, on

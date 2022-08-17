@@ -8,11 +8,11 @@ charset,UTF-8
 craftman, Era the Outworlder
 craftmanw, Era the Outworlder
 craftmanurl, https://era-the-outworlder.github.io
-homeurl,https://raw.githubusercontent.com/Era-The-Outworlder/era_makes_ghosts/main/updates/abigor_template/
+homeurl,https://raw.githubusercontent.com/Era-The-Outworlder/abigor_template/main/updates/abigor_template/
 
 // -----Readme-----
-readme, readme.txt
-readme.charset,UTF-8
+readme, abigor_readme.txt
+readme.charset, UTF-8
 
 // ----- Ghost Identification -----
 
@@ -23,7 +23,7 @@ title,Template by Era
 sakura.name,Abigor
 sakura.name2,Eligos
 kero.name,The Mount of Abigor
-char3.name,The Ars Goetica
+char2.name,The Ars Goetia
 
 //Shell allowed to override sakura/kero/char{*} names when 1
 name.allowoverride,0
@@ -63,8 +63,6 @@ shiori.cache,0
 
 // makoto, filename
 
-
-
 //----- Default Surfaces and Positions -----
 // Priority order:
 // seriko < scope.seriko < shell descript.txt seriko < shell descript.txt scope.seriko
@@ -73,15 +71,18 @@ shiori.cache,0
 seriko.alignmenttodesktop, free
 seriko.defaultsurfacedirectoryname,master
 
+// defaultx and defaulty seem to set a point within the bounds of the ghost.
+// defaultleft is the one that actually 
+
 // ---- Sakura ----
 sakura.seriko.alignmenttodesktop,free
 
 sakura.seriko.defaultsurface,0
 
-// sakura.defaultx,0
-// sakura.defaulty,0
+sakura.defaultx,0
+sakura.defaulty,0
 sakura.defaultleft,200
-// sakura.defaulttop,0
+sakura.defaulttop,200
 
 // ---- Kero ----
 kero.seriko.alignmenttodesktop, free
@@ -93,15 +94,15 @@ kero.seriko.defaultsurface,10
 kero.defaultleft,200
 // kero.defaulttop,0
 
-// ---- Char3 ----
-char3.seriko.alignmenttodesktop, free
+// ---- char2 ----
+char2.seriko.alignmenttodesktop, free
 
-char3.seriko.defaultsurface,50
+char2.seriko.defaultsurface,20
 
-// char3.defaultx,0
-// char3.defaulty,0
-char3.defaultleft,200
-// char3.defaulttop,0
+// char2.defaultx,0
+// char2.defaulty,0
+char2.defaultleft,200
+// char2.defaulttop,0
 
 
 // -----Draw Menu-----
@@ -114,7 +115,7 @@ menu.font.height, font size
 // balloon.defaultsurface,0
 // sakura.balloon.defaultsurface,0
 // kero.balloon.defaultsurface,0
-// char3.balloon.defaultsurface,0
+// char2.balloon.defaultsurface,0
 
 balloon.dontmove,false
 balloon,EtO Balloon Template

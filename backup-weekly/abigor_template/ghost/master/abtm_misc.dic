@@ -39,6 +39,7 @@ OnRSSComplete{}
 OnRSSFailure{}
 
 // Calendar Functions
+OnScheduleTodayNotify{"%(REFTEST('OnScheduleTodayNotify'))"}
 OnSchedule5MinutesToGo{}
 OnScheduleRead{}
 OnSchedulesenseBegin{}
@@ -84,7 +85,7 @@ OnNotifyShellInfo{}
 OnNotifyDressupInfo{}
 OnNotifyUserInfo{}
 OnNotifyOSInfo{}
-OnNotifyFontInfo{}
+OnNotifyFontInfo{"%(REFTEST('OnNotifyFontInfo'))"}
 
 basewareversion{}
 hwnd{}
@@ -104,6 +105,9 @@ headlinepathlist{}
 pluginpathlist{}
 calendarskinpathlist{}
 calendarpluginpathlist{}
-rateofusegraph{}
+rateofusegraph
+{
+	"%(REFTEST('rateofusegraph'))"
+}
 enable_log{}
 enable_debug{}

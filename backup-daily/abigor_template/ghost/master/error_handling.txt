@@ -1,0 +1,56 @@
+// ----- Error Handling -----
+
+// -- Error Log --
+
+//Sets the file path of the event log. Seems to be duplicated in other parts of the program
+
+log, abigor_log.log	
+
+// Maximum number of elements retrievable by GETERRORLOG. Default is 256
+// maxlognum,1000
+
+// Log input/output and processing time of load, unload, and request. On by default.
+iolog, on 
+
+
+// -- Log Filtering --
+// Log filtering has 2 modes: 
+// "Do not output matching content", indicated as "blacklist" or "denylist", is the default mode.
+// "Output ONLY matching content", indicated as "whitelist" or "allowlist"
+
+iolog.filter.mode, blacklist 
+
+// Ignore these events. Can be written using regular expressions with the following format:
+// iolog.filter.keyword.regex, keyword: regex 
+
+iolog.filter.keyword, OnMouse
+iolog.filter.keyword, OnSecondChange
+iolog.filter.keyword, OnBalloonTimeout
+iolog.filter.keyword, OnBalloonClose
+iolog.filter.keyword, OnSurfaceRestore
+
+iolog.filter.keyword, OnNotifyFontInfo
+iolog.filter.keyword, OnLanguageChange
+iolog.filter.keyword, OnNetworkStatusChange
+iolog.filter.keyword, OnOSUpdateInfo
+iolog.filter.keyword, OnNotifyOSInfo
+
+iolog.filter.keyword, rateofusegraph
+iolog.filter.keyword, OnBatteryNotify
+
+
+// -- Message List --
+// Points to a file to specify what languages list of error messages to draw from. Best to use an officially sourced one unless you're writing for an unsupported language.
+
+messagetxt, system/messagetxt/english.txt
+
+
+// -- Function Depth --
+// Maximum function depth before failure. Default 32. Minimum 2. Set to 0 to not check upper limit.
+
+// fncdepth, 0
+
+// -- Loop Limit
+// Controls the max iterations of a loop before failure. Default is 10000. 0 to disable limit.
+
+// looplimit, 0
