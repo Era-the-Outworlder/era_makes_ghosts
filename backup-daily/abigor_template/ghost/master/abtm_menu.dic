@@ -45,7 +45,7 @@ OnMainMenu
 		"\n"
 	}
 	--
-	if devDebug == "ON"
+	if SHIORI3FW.DebugMode
 	{
 		"\![*] \q[Test variable,OnTestVariable]\n"
 		--

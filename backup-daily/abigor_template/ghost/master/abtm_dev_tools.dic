@@ -104,7 +104,7 @@ OnTestSelect
 		}
 		others
 		{
-			if reference1 == "funkTest"
+			if reference2 == "funkTest"
 			{
 				EVAL(reference0)
 			}

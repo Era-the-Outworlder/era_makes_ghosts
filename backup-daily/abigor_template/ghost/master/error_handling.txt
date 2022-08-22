@@ -23,8 +23,11 @@ iolog.filter.mode, blacklist
 // Ignore these events. Can be written using regular expressions with the following format:
 // iolog.filter.keyword.regex, keyword: regex 
 
-iolog.filter.keyword, OnMouse
+// iolog.filter.keyword, OnMouse
+iolog.filter.keyword, OnMouseMove
+iolog.filter.keyword, OnMouseLeave
 iolog.filter.keyword, OnSecondChange
+iolog.filter.keyword, OnMinuteChange
 iolog.filter.keyword, OnBalloonTimeout
 iolog.filter.keyword, OnBalloonClose
 iolog.filter.keyword, OnSurfaceRestore

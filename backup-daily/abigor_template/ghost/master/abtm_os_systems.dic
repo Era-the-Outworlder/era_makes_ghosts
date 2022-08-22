@@ -10,9 +10,11 @@ OnSSTPBlacklisting{}
 OnExecuteHTTPComplete{}
 OnExecuteHTTPFailure{}
 OnExecuteHTTPSSLInfo{}
+
 OnExecuteRSSComplete{}
 OnExecuteRSSFailure{}
 OnExecuteRSS_SSLInfo{}
+
 OnPingComplete{}
 OnPingProgress{}
 OnNSLookupComplete{}
@@ -24,23 +26,65 @@ OnSessionLock{}
 OnSessionUnlock{}
 OnSessionDisconnect{}
 OnSessionReconnect{}
+
 OnCPULoadHigh{}
 OnCPULoadLow{}
 OnMemoryLoadHigh{}
 OnMemoryLoadLow{}
+
 OnDisplayChange{}
-OnDisplayHandover{"%(REFTEST('OnDisplayHandover'))"}
+OnDisplayHandover
+{
+	"%(REFTEST('OnDisplayHandover'))"
+}
 OnDisplayChangeEx{}
 OnDisplayPowerStatus{}
+
+
 OnBatteryNotify{}
 OnBatteryLow{}
 OnBatteryCritical{}
 OnBatteryChargingStart{}
 OnBatteryChargingStop{}
 
-OnDeviceChange{}
-OnDeviceArrival{"%(REFTEST('OnDeviceArrival'))"}
-OnDeviceRemove{"%(REFTEST('OnDeviceRemove'))"}
+OnDeviceChange
+{
+	"%(REFTEST('OnDeviceChange'))"
+}
+OnDeviceArrival
+{
+	if "mouse" _in_ reference1
+	{
+		"It appears that you have plugged in a new mouse."
+	}
+	
+	if "keyboard" _in_ reference1
+	{
+		"It appears that you have plugged in a keyboard."
+	}
+	
+	// "%(REFTEST('OnDeviceArrival'))"
+}
+
+OnDeviceRemove
+{
+	if "mouse" _in_ reference0
+	{
+		"It appears that you have unplugged the mouse."
+	}
+	
+	if "keyboard" _in_ reference0
+	{
+		"It appears that you have unplugged the keyboard."
+	}
+	// "%(REFTEST('OnDeviceRemove'))"
+}
+
 OnTabletMode{}
+
 OnDarkTheme{}
-OnOSUpdateInfo{"%(REFTEST('OnOSUpdateInfo'))"}
+
+OnOSUpdateInfo
+{
+	// "%(REFTEST('OnOSUpdateInfo'))"
+}
