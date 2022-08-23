@@ -10,16 +10,16 @@ charset.file, UTF-8
 charset.save, UTF-8
 charset.extension, UTF-8
 
-
-// ----- Dictionary Files -----
-
+// ----- Additional Configuration Files -----
 // Include to read additional configuration files.
 include, system_config.txt
 include, error_handling.txt	// File contains error handling and iolog settings
 
+
+// ----- Dictionary Files -----
 // These are where all the content is. The methods of defining them are: 
 
-// dic, filename  OR  dic, filename,charset
+// dic, filename  OR  dic, filename, charset
 // where the final serparating comma and charset are optional. This allows importing of dictionaries from other sources without needing to reencode them.
 
 // dicif, filename  OR  dicif, filename, charset
@@ -40,19 +40,17 @@ dic, abtm_install_vanish_update.dic
 dic, abtm_menu.dic
 dic, abtm_mouse.dic
 dic, abtm_os_systems.dic
+dic, abtm_property.dic
 dic, abtm_surface_balloon.dic
 dic, abtm_trans_anchor_choice.dic
 dic, abtm_user_info.dic
 
 
-
-
 // ----- Save Data -----
 // The default save file is "yaya_variable.cfg". Other save files can be specified in the functions SAVEVAR() and RESTOREVAR().
 
-// Off by default. Provides weak encryption to save file. Once turned on, it will stay encrypted until the file is deleted (and such deletion must be done while the ghost is closed.)
+// "off" by default. Provides weak encryption to save file. Once turned on, it will stay encrypted until the file is deleted (and such deletion must be done while the ghost is closed.)
 save.encode, off
 
-
-//On by default. Backs up variable regularly and save when closing ghost. If off, will not save variable except with SAVEVAR() function.
+//On by default. Backs up variables regularly and saves when closing ghost. If off, will not save variable except with SAVEVAR() function.
 save.auto, on

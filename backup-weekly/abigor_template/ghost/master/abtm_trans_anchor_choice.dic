@@ -17,9 +17,8 @@
 
 OnTranslate
 {
+	_talk = reference0
 	
-    _talk = reference0
-    _talk = REPLACE(_talk, "bugreport(at)outworlderaffairs.com","\_a[bugmail]bugreport@outworlderaffairs.com\_a")        
     if silentMode == "ON"
     {
         _talk = REPLACE(_talk, "\_v[", "\![sound,stop,")
@@ -27,10 +26,9 @@ OnTranslate
     --
     if reference1 == "" && reference2 == "" // Script Input, script choice call
     {
-		// REFTEST('OnTranslate')
-        EVAL('"' + REPLACE(_talk,'"','" + CHR(0x22) + "') +  + '"')
+        _talk = ('"' + REPLACE(_talk,'"','" + CHR(0x22) + "')+ '"')
     }
-    else
+	--
     { //event result from ghost
         _talk;
     }

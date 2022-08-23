@@ -17,11 +17,11 @@
 OnMainMenu
 {	
 	_source = _argv[0]
-	if (_source == "click1") || (reference[0] == "menu1")
+	if (_source == "click0") || (reference0 == "menu1")
 	{
 		"\0\b[2]\![set,autoscroll,disable]This menu is opened from the main character.\n\_q"
 	}
-	elseif (_source == "click2") || (reference[0] == "menu2")
+	elseif (_source == "click1") || (reference0 == "menu2")
 	{
 		"\1\b[2]\![set,autoscroll,disable]This menu is opened from the secondary character.\n\_q"
 	}
@@ -45,7 +45,7 @@ OnMainMenu
 		"\n"
 	}
 	--
-	if devDebug == "ON"
+	if SHIORI3FW.DebugMode
 	{
 		"\![*] \q[Test variable,OnTestVariable]\n"
 		--
@@ -134,7 +134,7 @@ OnConfigMenu
 
 OnConfigSet
 {
-	case reference[0]
+	case reference0
 	{
 		when "deleteon" // Enable/Disable Uninstall
 		{

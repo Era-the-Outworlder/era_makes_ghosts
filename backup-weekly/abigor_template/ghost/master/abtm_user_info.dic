@@ -7,6 +7,7 @@
 
 // ----- OnNotifyUserInfo -----
 // This gets the info the user may have set in SSP's settings and separates it into global variables.
+// OnNotifyUserInfo is an event built into SSP.
 OnNotifyUserInfo
 {
 
@@ -353,7 +354,7 @@ OnGetBirthday
 // The function that evaluates the input birthdate
 OnInputBirthdate
 {
-	_a = SPLIT(reference[0],',')
+	_a = SPLIT(reference0,',')
 	_tempyear = TOINT(_a[0])
 	_tempmonth  = TOINT(_a[1])
 	_tempday  = TOINT(_a[2])

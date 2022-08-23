@@ -160,20 +160,16 @@ OnMouseDoubleClick
 
 	if reference[5] == 0 //left button == 0 right button == 1
 	{
-		case reference[3] // sakura == 0, kero == 1, char3 == 2, etc
+		case reference[3] // sakura == 0, kero == 1, char2 == 2, etc
 		{
 		when 0 
 		{
 			if reference[6] == "punchHim"
 			{
 				agreedToConsequences ,= "punching"
-				--
-				MouseDoubleClickSakura
 			}
-			else
-			{
-				MouseDoubleClickSakura
-			}
+			--
+			MouseDoubleClickSakura
 		}
 		when 1
 		{

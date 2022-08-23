@@ -8,15 +8,17 @@ name,Abigor Template Shell
 craftman,Era the Outworlder
 craftmanw,Era the Outworlder
 craftmanurl,https://era-the-outworlder.github.io/
-homeurl,URL
+homeurl,https://raw.githubusercontent.com/Era-The-Outworlder/abigor_template/main/updates/template_shell_1/
 
 // -----Readme-----
-readme, readme.txt
+readme, shell_readme.txt
 readme.charset,UTF-8
 
 // menu,hidden
 
-// -----Overwrite SAKURA-----
+// The following "Overwrite" sections are for overriding the setting in the descript.txt file in the ghost folder. They can be ignored or removed in master/default shells, or if they aren't being used.
+
+// ----- Overwrite SAKURA -----
 
 // sakura.name, name
 // sakura.name2, name
@@ -32,7 +34,7 @@ readme.charset,UTF-8
 // sakura.balloon.alignment,??
 // sakura.balloon.dontmove,bool
 
-// -----Overwrite KERO-----
+// ----- Overwrite KERO -----
 
 // kero.name, name
 // kero.seriko.alignmenttodesktop,bottom
@@ -47,7 +49,7 @@ readme.charset,UTF-8
 // kero.balloon.alignment,??
 // kero.balloon.dontmove,bool
 
-// -----Overwrite CHAR2-----
+// ----- Overwrite CHAR2 -----
 
 // char2.name, name
 // char2.seriko.alignmenttodesktop,top
@@ -62,67 +64,62 @@ readme.charset,UTF-8
 // char2.balloon.alignment,??
 // char2.balloon.dontmove,bool
 
-// -----SERIKO-----	
+// ----- SERIKO -----	
 
-seriko.zorder,0,1,2
-seriko.sticky-window,0,1,2
+seriko.zorder,2,1,0
+// seriko.sticky-window,0,1,2
 seriko.alignmenttodesktop,free
 seriko.use_self_alpha,1
 
 
 
-
-
-
-kero.balloon.offsetx,75
-kero.balloon.offsety,-700
-
-//Shiori Icon
-//Don't mess with any of this.
+// Shiori Icon
+// Don't mess with any of this, I've yet to sort it out.
 
 shiori.logo.filename,resources\niseshiori.png
 shiori.logo.x,16
 shiori.logo.y,256
 
+// ----- User Draw Menu -----
 
-//Menu Font Color
+// Menu Text Font Color
 
 menu.background.font.color.r,0
 menu.background.font.color.g,0
 menu.background.font.color.b,0
 
 
-//Menu Highlighted Text Color
+// Menu Highlighted Text Color
 
 menu.foreground.font.color.r,255
 menu.foreground.font.color.g,255
 menu.foreground.font.color.b,255
 
 
-//Menu Greyed Out Font Color
+// Menu Disabled Item Font Color
 
 menu.disable.font.color.r,100
 menu.disable.font.color.g,100
 menu.disable.font.color.b,100
 
 
-//Menu Separate Color
+// Menu Separator Color
 
 menu.separator.color.r,240
 menu.separator.color.g,240
 menu.separator.color.b,240
 
 
-//Menu Background Image Alignment
-
-
-menu.background.alignment,leftbottom+repeat-x+repeat-y
-menu.foreground.alignment,leftbottom+repeat-x+repeat-y
-menu.sidebar.alignment,leftbottom
-
-
-//Menu Background Image Location
+// Menu Background Image Location
 
 menu.background.bitmap.filename,menu_background.png
 menu.foreground.bitmap.filename,menu_foreground.png
 menu.sidebar.bitmap.filename,menu_sidebar.png
+
+
+
+// Menu Background Image Alignment
+
+menu.background.alignment,leftbottom+repeat-x+repeat-y
+menu.foreground.alignment,leftbottom+repeat-x+repeat-y
+menu.sidebar.alignment,leftbottom

@@ -170,7 +170,7 @@ OnMonthTalk
 
 OnKeyPress
 {
-	case reference[0]
+	case reference0
 	{
 		when "t"
 		{

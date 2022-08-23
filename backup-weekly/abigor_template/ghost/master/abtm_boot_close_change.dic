@@ -1,15 +1,16 @@
 OnFirstBoot
 {
-	"\![set,otherghosttalk,true]"
+
+	"\0\s[0]\1\s[10]\p[2]\s[30]\![set,otherghosttalk,true]"
 	--
-	"This is my first time booting.\_w[500]"
+	"\0This is my first time booting.\_w[500]"
 }
 
 OnBoot
 {
-	"\![set,otherghosttalk,true]"
+	"\0\s[0]\1\s[10]\p[2]\s[30]\![set,otherghosttalk,true]"
 	--
-	"I have booted.\_w[500]"
+	"\0I have booted.\_w[500]"
 }
 
 OnClose
@@ -47,7 +48,7 @@ OnCloseAll
 	}
 	else
 	{
-		"Goodbye, User.\_w[500] "
+		"Goodbye, %(user).\_w[500] "
 	}
 	--
 	if runhour > 1
@@ -100,7 +101,7 @@ OnGhostChanged
 	_selfname = TOSTR(sakuraname)
 	if reference0 == _selfname
 	{
-		"Reloaded\_w[500]"
+		"\0\s[0]\1\s[10]\p[2]\s[30]\0Reloaded\_w[500]"
 	}
 	else
 	{
@@ -133,12 +134,12 @@ OnGhostCalled
 	--
 	OnDiscordPluginCustom
 	--
-	"Hello %(reference2)! I have been called.\_w[500]\e"
+	"\0\s[0]\1\s[10]\p[2]\s[30]\0Hello %(reference2)! I have been called.\_w[500]\e"
 }
 
 OnGhostCalling // Before new ghost loads
 {
-	"I will call %(reference[2]) for you.\_w[500]"
+	"I will call %(reference2) for you.\_w[500]"
 }
 
 OnGhostCallComplete // After new ghost OnBoot finishes.
@@ -165,7 +166,7 @@ OnOtherGhostClosed
 
 OnWindowStateRestore
 {
-	"This is the dialogue that plays when I have been restored to fullscreen after being minimised to the taskbar.\_w[500]"
+	"\0\s[0]\1\s[10]\p[2]\s[30]\0This is the dialogue that plays when I have been restored to fullscreen after being minimised to the taskbar.\_w[500]"
 }
 
 OnWindowStateMinimize
@@ -210,7 +211,7 @@ OnCacheRestore
 
 OnInitialize
 {
-	"%(errorMsg)\_w[500]\e"
+	"%(REFTEST('OnInitialize'))"
 }
 
 OnDestroy

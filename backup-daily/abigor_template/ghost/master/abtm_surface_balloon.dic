@@ -2,23 +2,23 @@
 // ----- SHIORI RESOURCE -----
 // Like their corresponding settings in descript.txt, except they actually WORK. maybe.
 
-On_sakura.defaultx{0}
-On_sakura.defaulty{0}
-On_sakura.defaultleft{0}
-On_sakura.defaulttop{0}
+// On_sakura.defaultx{0}
+// On_sakura.defaulty{0}
+// On_sakura.defaultleft{100}
+// On_sakura.defaulttop{100}
 
 
-On_kero.defaultx{500}
-On_kero.defaulty{300}
-On_kero.defaultleft{0}
-On_kero.defaulttop{0}
+// On_kero.defaultx{500}
+// On_kero.defaulty{300}
+// On_kero.defaultleft{200}
+// On_kero.defaulttop{200}
 
 
 
-On_char2.defaultx{1000}
-On_char2.defaulty{600}
-On_char2.defaultleft{0}
-On_char2.defaulttop{0}
+// On_char2.defaultx{1000}
+// On_char2.defaulty{600}
+// On_char2.defaultleft{300}
+// On_char2.defaulttop{300}
 
 
 
