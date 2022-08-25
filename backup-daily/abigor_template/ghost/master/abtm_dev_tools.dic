@@ -22,9 +22,9 @@ OnTestVariable
 	--
 	"\![*] \q[Set commRatio,OnTestSelect,setCOMM]\n"
 	--
-	"\![*] \q[Test OnFirstBoot?,OnTestSelect,newBoot0\n"
+	"\![*] \q[Test OnFirstBoot?,OnTestSelect,newBoot0]\n"
 	--
-	"\![*] \q[Test Second OnFirstBoot?,OnTestSelect,newBoot1\n"
+	"\![*] \q[Test Second OnFirstBoot?,OnTestSelect,newBoot1]\n"
 	--
 	"\![*] \q[Test Display?,OnDisplayTestMenu]\n"
 	--
@@ -71,11 +71,11 @@ OnTestSelect
 		}
 		when "newBoot0"
 		{
-			"\![raise,OnfirstBoot,0]"
+			"\![raise,OnFirstBoot,0]"
 		}
 		when "newBoot1"
 		{
-			"\![raise,OnfirstBoot,1]"
+			"\![raise,OnFirstBoot,1]"
 		}
 		when "testFunk"
 		{

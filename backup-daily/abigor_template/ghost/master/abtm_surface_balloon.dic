@@ -71,31 +71,93 @@ OnOtherSurfaceChange
 }
 
 
+// ----- OnShellChanged -----
+// Occurs after shell change complete
+
+// ┌───────┬────────────────────┐
+// │ ref # │ Reference Contents │
+// ╞═══════╪════════════════════╡
+// │ 0     │ Current Shell name │
+// │       │                    │
+// │ 1     │ Current ghost name │
+// │       │                    │
+// │ 2     │ Current shell path │
+// └───────┴────────────────────┘
+
 OnShellChanged
 {
 	"%(errorMsg)\_w[500]\e"
 }
+
+
+// ----- OnShellChanging -----
+
+// ┌───────┬─────────────────────────────────┐
+// │ ref # │ Reference Contents              │
+// ╞═══════╪═════════════════════════════════╡
+// │ 0     │ Shell name being switched to    │
+// │       │                                 │
+// │ 1     │ Name of shell before switching  │
+// │       │                                 │
+// │ 2     │ Path of shell being switched to │
+// └───────┴─────────────────────────────────┘
 
 OnShellChanging
 {
 	"%(errorMsg)\_w[500]\e"
 }
 
-OnOnShellScaling
-{"%(REFTEST('OnShellScaling'))"}
+OnShellScaling
+{
+	"%(REFTEST('OnShellScaling'))"
+}
 
-DressupChanged
+
+// ----- OnDressupChanged -----
+
+// ┌───────┬─────────────────────────────────────┐
+// │ ref # │ Reference Contents                  │
+// ╞═══════╪═════════════════════════════════════╡
+// │ 0     │ (SCOPEID?) to be changed            │
+// │       │                                     │
+// │ 1     │ Part name                           │
+// │       │                                     │
+// │ 2     │ Are dress-ups enabled:              │
+// │       │ When disabled, "0"                  │
+// │       │ When enabled, "1"                   │
+// │       │                                     │
+// │ 3     │ Part group name                     │
+// │       │                                     │
+// │ 4     │ Source:                             │
+// │       │ When executed from script, "script" │
+// │       │ When excecuted from menu, "user"    │
+// └───────┴─────────────────────────────────────┘
+
+OnDressupChanged
 {
 	"%(errorMsg)\_w[500]\e"
 }
 
+// ----- OnBalloonChange -----
+
+// ┌───────┬─────────────────────────────┐
+// │ ref # │ Reference Contents          │
+// ╞═══════╪═════════════════════════════╡
+// │ 0     │ Name of balloon switched to │
+// │       │                             │
+// │ 1     │ Path of balloon switched to │
+// └───────┴─────────────────────────────┘
+
 OnBalloonChange
 {
-	"Maybe this will look better. \_w[500]"
+	"%(REFTEST('OnBalloonChange'))"
+	// "Maybe this will look better. \_w[500]"
 }
 
 OnBalloonBreak
-{"%(REFTEST('OnBalloonBreak'))"}
+{
+	"%(REFTEST('OnBalloonBreak'))"
+}
 
 OnBalloonClose
 {

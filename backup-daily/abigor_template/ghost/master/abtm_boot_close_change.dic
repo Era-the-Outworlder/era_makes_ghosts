@@ -1,10 +1,37 @@
+/* ############# Boot, Close, and Change Functions ############# */
+
+
+
+
+// ----- OnFirstBoot -----
+
+// ┌───────┬────────────────────────────────────────────────────────────────────────────────────┐
+// │ ref # │ Reference Contents                                                                 │
+// ╞═══════╪════════════════════════════════════════════════════════════════════════════════════╡
+// │ 0     │ Number of times ghost has been uninstalled                                         │
+// │       │ (only applies to removal with OnVanish)                                            │
+// └───────┴────────────────────────────────────────────────────────────────────────────────────┘
 OnFirstBoot
 {
-
 	"\0\s[0]\1\s[10]\p[2]\s[30]\![set,otherghosttalk,true]"
 	--
 	"\0This is my first time booting.\_w[500]"
 }
+
+
+// ----- OnBoot -----
+
+// ┌───────┬───────────────────────────────────────────────────────┐
+// │ ref # │ Reference Contents                                    │
+// ╞═══════╪═══════════════════════════════════════════════════════╡
+// │ 0     │ Shell name                                            │
+// │       │                                                       │
+// │ 1-5   │ ~~unused~~                                            │
+// │       │                                                       │
+// │ 6     │ If previous startup failed, "Halt"                    │
+// │       │                                                       │
+// │ 7     │ If previous startup failed, name of ghost that failed │
+// └───────┴───────────────────────────────────────────────────────┘
 
 OnBoot
 {
@@ -12,6 +39,18 @@ OnBoot
 	--
 	"\0I have booted.\_w[500]"
 }
+
+
+// ----- OnClose & OnCloseAll -----
+
+// ┌───────┬────────────────────────────────────────────────────────────┐
+// │ ref # │ Reference Contents                                         │
+// ╞═══════╪════════════════════════════════════════════════════════════╡
+// │ 0     │ Reason for termination                                     │
+// │       │                                                            │
+// │ 1     │ Scope number of the character used to initiate termination │
+// └───────┴────────────────────────────────────────────────────────────┘
+
 
 OnClose
 {
@@ -93,6 +132,25 @@ OnCloseAll
 	"\-"
 }
 
+
+// ----- OnGhostChanged -----
+
+// ┌───────┬──────────────────────────────────────────────────┐
+// │ ref # │ Reference Contents                               │
+// ╞═══════╪══════════════════════════════════════════════════╡
+// │ 0     │ Name of sakura/scope0 of previous ghost          │
+// │       │                                                  │
+// │ 1     │ Script played when switching from previous ghost │
+// │       │                                                  │
+// │ 2     │ Name of previous ghost                           │
+// │       │                                                  │
+// │ 3     │ Previous ghost's filepath                        │
+// │       │                                                  │
+// │ 4-6   │ ~~unused~~                                       │
+// │       │                                                  │
+// │ 7     │ Shell name of THIS GHOST                         │
+// └───────┴──────────────────────────────────────────────────┘
+
 OnGhostChanged
 {
 	hourlyArray = IARRAY
@@ -111,6 +169,23 @@ OnGhostChanged
 	"\e"
 }
 
+
+// ----- OnGhostChanging -----
+
+// ┌───────┬──────────────────────────────────────────────────┐
+// │ ref # │ Reference Contents                               │
+// ╞═══════╪══════════════════════════════════════════════════╡
+// │ 0     │ Name of sakura/scope0 of previous ghost          │
+// │       │                                                  │
+// │ 1     │ Switch type:                                     │
+// │       │ "manual" (if switched by user)                   │
+// │       │ "automatic" (if switched by system)              │
+// │       │                                                  │
+// │ 2     │ Name of previous ghost                           │
+// │       │                                                  │
+// │ 3     │ Previous ghost's filepath                        │
+// └───────┴──────────────────────────────────────────────────┘
+
 OnGhostChanging
 {
 	ERASEVAR("hourlyArray")
@@ -127,6 +202,27 @@ OnGhostChanging
 	"\e"
 }
 
+
+// ----- OnGhostCalled & OnGhostCallComplete -----
+// OnGhostCalled is the event that plays when this ghost is called and finishes loading.
+// OnGhostCallComplete is the event that plays when a newly called ghost completes its boot sequence, including playing OnGhostCalled, if it has it.
+
+// ┌───────┬─────────────────────────────────────────────┐
+// │ ref # │ Reference Contents                          │
+// ╞═══════╪═════════════════════════════════════════════╡
+// │ 0     │ Name of sakura/scope0 of ghost being called │
+// │       │                                             │
+// │ 1     │ Script played when incoming ghost is called │
+// │       │                                             │
+// │ 2     │ Name of called ghost                        │
+// │       │                                             │
+// │ 3     │ Called ghost's filepath                     │
+// │       │                                             │
+// │ 4-6   │ ~~unused~~                                  │
+// │       │                                             │
+// │ 7     │ Shell name of called ghost                  │
+// └───────┴─────────────────────────────────────────────┘
+
 OnGhostCalled
 {
 	hourlyArray = IARRAY
@@ -137,25 +233,105 @@ OnGhostCalled
 	"\0\s[0]\1\s[10]\p[2]\s[30]\0Hello %(reference2)! I have been called.\_w[500]\e"
 }
 
-OnGhostCalling // Before new ghost loads
-{
-	"I will call %(reference2) for you.\_w[500]"
-}
-
 OnGhostCallComplete // After new ghost OnBoot finishes.
 {
 	"Hello %(reference0). %(username) decided you should join us. I agree with %(oblPro). \_w[500]"
 }
+
+
+// ----- OnGhostCalling -----
+// OnGhostCalling plays when the called ghost is invoked. 
+// If the script is too long, it may not finish before the called ghost finishes booting.
+
+// ┌───────┬──────────────────────────────────────────────────┐
+// │ ref # │ Reference Contents                               │
+// ╞═══════╪══════════════════════════════════════════════════╡
+// │ 0     │ Name of sakura/scope0 of previous ghost          │
+// │       │                                                  │
+// │ 1     │ Switch type:                                     │
+// │       │ "manual" (if switched by user)                   │
+// │       │ "automatic" (if switched by system)              │
+// │       │                                                  │
+// │ 2     │ Name of previous ghost                           │
+// │       │                                                  │
+// │ 3     │ Previous ghost's filepath                        │
+// └───────┴──────────────────────────────────────────────────┘
+
+OnGhostCalling 
+{
+	"I will call %(reference2) for you.\_w[500]"
+	--
+	"%(REFTEST(''))"
+}
+
+
+// ----- OnOtherGhostBooted -----
+
+// ┌───────┬─────────────────────────────────────────────┐
+// │ ref # │ Reference Contents                          │
+// ╞═══════╪═════════════════════════════════════════════╡
+// │ 0     │ Name of sakura/scope0 of the launched ghost │
+// │       │                                             │
+// │ 1     │ Startup script of launched ghost            │
+// │       │                                             │
+// │ 2     │ Name of started ghost                       │
+// │       │                                             │
+// │ 3-6   │ Called ghost's filepath                     │
+// │       │                                             │
+// │ 7     │ Shell name of launched ghost                │
+// └───────┴─────────────────────────────────────────────┘
 
 OnOtherGhostBooted
 {
 	"Hello %(reference0). %(username) decided you should join us.\_w[500]"
 }
 
+
+// ----- OnOtherGhostChanged -----
+
+// ┌───────┬────────────────────────────────────────────────────┐
+// │ ref # │ Reference Contents                                 │
+// ╞═══════╪════════════════════════════════════════════════════╡
+// │ 0     │ Name of sakura/scope0 of the previous ghost        │
+// │       │                                                    │
+// │ 1     │ Name of sakura/scope0 of the incoming ghost        │
+// │       │                                                    │
+// │ 2     │ The script the previous ghost played while leaving │
+// │       │                                                    │
+// │ 3     │ Boot/Switch-in script of incoming ghost            │
+// │       │                                                    │
+// │ 4     │ Previous ghost name                                │
+// │       │                                                    │
+// │ 5     │ Incoming ghost name                                │
+// │       │                                                    │
+// │ 6-13  │ ~~unused~~                                         │
+// │       │                                                    │
+// │ 14    │ Shell name of previous ghost                       │
+// │       │                                                    │
+// │ 15    │ Shell name of incoming ghost                       │
+// └───────┴────────────────────────────────────────────────────┘
+
 OnOtherGhostChanged
 {
 	"A ghost other than myself has been replaced by yet a third ghost. \nGood-bye %(reference0). \nHello %(reference1).\_w[500]"
 }
+
+
+// ----- OnOtherGhostClosed -----
+
+// ┌───────┬────────────────────────────────────────────────┐
+// │ ref # │ Reference Contents                             │
+// ╞═══════╪════════════════════════════════════════════════╡
+// │ 0     │ Name of sakura/scope0 of the ghost that closed │
+// │       │                                                │
+// │ 1     │ Closing script of the ended ghost              │
+// │       │                                                │
+// │ 2     │ Name of closed ghost                           │
+// │       │                                                │
+// │ 3-6   │ ~~unused~~                                     │
+// │       │                                                │
+// │ 7     │ Shell name of closed ghost                     │
+// └───────┴────────────────────────────────────────────────┘
 
 OnOtherGhostClosed
 {
