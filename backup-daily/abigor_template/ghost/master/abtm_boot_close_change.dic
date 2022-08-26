@@ -54,9 +54,9 @@ OnBoot
 
 OnClose
 {
-	if (_runhour == 0) && (_runmin <= 5)
+	if (runhour == 0) && (runmin <= 5)
 	{
-		"Goodbye. Run Time: %(_runhour):%(_runmin).\_w[500]"
+		"Goodbye. Run Time: %(runhour):%(runmin).\_w[500]"
 		passmin = 0
 		passsec = 0
  	}
@@ -65,7 +65,7 @@ OnClose
 		if ghostexcount > 1
 		{
 			_num = RAND(ghostexcount)
-			_pick ="%(ghostexlist[_num])"
+			_pick = "%(ghostexlist[_num])"
 			"Goodbye %USER. Goodbye %(_pick).Run Time: %(_runhour):%(_runmin).\_w[500]"
 		}
 		else
@@ -261,7 +261,7 @@ OnGhostCalling
 {
 	"I will call %(reference2) for you.\_w[500]"
 	--
-	"%(REFTEST(''))"
+	"%(REFTEST('OnGhostCalling'))"
 }
 
 
@@ -339,16 +339,17 @@ OnOtherGhostClosed
 }
 
 
+// ----- OnBasewareUpdating & OnBasewareUpdated -----
+// OnBasewareUpdating plays before the ghost closes and file update starts
+// OnBasewareUpdated plays when the ghost restarts ofter the file update occurs
 
-OnWindowStateRestore
-{
-	"\0\s[0]\1\s[10]\p[2]\s[30]\0This is the dialogue that plays when I have been restored to fullscreen after being minimised to the taskbar.\_w[500]"
-}
-
-OnWindowStateMinimize
-{
-	"I have been commanded to minimise to the taskbar. This dialogue will play before I complete that action.\_w[500]"
-}
+// ┌───────┬─────────────────────────────────────────────────────────────┐
+// │ ref # │ Reference Contents                                          │
+// ╞═══════╪═════════════════════════════════════════════════════════════╡
+// │ 0     │ Current Version Number when event is called                 │
+// │       │                                                             │
+// │ 1     │ Version number as shown in Windows Explorer file properties │
+// └───────┴─────────────────────────────────────────────────────────────┘
 
 OnBasewareUpdating
 {
@@ -358,6 +359,29 @@ OnBasewareUpdating
 OnBasewareUpdated
 {
 	"\_w[500]Baseware %(baseware) Update complete.\_w[1000]"
+}
+
+
+// ----- OnWindowState*, OnFullScreenApp*, Restore/Minimize -----
+// ┌───────┬────────────────────────────────────────────────────────────────────────┐
+// │ ref # │ Reference Contents                                                     │
+// ╞═══════╪════════════════════════════════════════════════════════════════════════╡
+// │ 0     │ Reason ghost was minimised:                                            │
+// │       │ "system", if from OS source, including menu from taskbar               │
+// │       │ "script" if from SakuraSript                                           │
+// │       │ "sakuraapi" if form Sakura API                                         │
+// │       │ "user" if from user draw menu                                          │
+// │       │ "fullscreen" if from OnFullScreenAppMinimize or OnFullScreenAppRestore │
+// └───────┴────────────────────────────────────────────────────────────────────────┘
+
+OnWindowStateRestore
+{
+	"\0\s[0]\1\s[10]\p[2]\s[30]\0This is the dialogue that plays when I have been restored to fullscreen after being minimised to the taskbar.\_w[500]"
+}
+
+OnWindowStateMinimize
+{
+	"I have been commanded to minimise to the taskbar. This dialogue will play before I complete that action.\_w[500]"
 }
 
 OnFullScreenAppMinimize
@@ -370,10 +394,27 @@ OnFullScreenAppRestore
 	"%(errorMsg)\_w[500]\e"
 }
 
+
+// ----- OnVirtualDesktopChanged -----
+
+// ┌───────┬───────────────────────────────────────────────────────────────────────────────────────────────┐
+// │ ref # │ Reference Contents                                                                            │
+// ╞═══════╪═══════════════════════════════════════════════════════════════════════════════════════════════╡
+// │ 0     │ Dekstop/ghost state: (as of Aug 25 2022)                                                      │
+// │       │ "current", if the ghost is on the current virtual desktop                                     │
+// │       │ "hidden", if the ghost is on an inactive/hidden virtual desktop                               │
+// │       │ "minimize" the ghost has been minimized and it is unknown which virtual desktop it belongs to │
+// │ 1     │ Current virtual desktop ID                                                                    │
+// └───────┴───────────────────────────────────────────────────────────────────────────────────────────────┘
+
 OnVirtualDesktopChanged
 {
 	"%(errorMsg)\_w[500]\e"
 }
+
+
+// ----- OnCacheSuspend, OnCacheRestore -----
+// No Reference values
 
 OnCacheSuspend
 {
@@ -385,20 +426,45 @@ OnCacheRestore
 	"%(errorMsg)\_w[500]\e"
 }
 
+
+// ----- OnInitialize, OnDestroy -----
+// NOTIFY Events
+
+// ┌───────┬─────────────────────────────────────────────┐
+// │ ref # │ Reference Contents                          │
+// ╞═══════╪═════════════════════════════════════════════╡
+// │ 0     │ "reload" when reloading, otherwise no value │
+// └───────┴─────────────────────────────────────────────┘
+
 OnInitialize
 {
-	"%(REFTEST('OnInitialize'))"
+	
 }
 
 OnDestroy
 {
-	"%(errorMsg)\_w[500]\e"
+	
 }
+
+
+// ----- OnSysResume -----
+
+// ┌───────┬─────────────────────────────────────────────────────────┐
+// │ ref # │ Reference Contents                                      │
+// ╞═══════╪═════════════════════════════════════════════════════════╡
+// │ 0     │ Reason system sleep/hibernation was ended:              │
+// │       │ "normal" if ended normally                              │
+// │       │ "auto" if cancelled by system schedule                  │
+// │       │ "critical" if due to low battery (Win Vista or earlier) │
+// └───────┴─────────────────────────────────────────────────────────┘
 
 OnSysResume
 {
 	"%(errorMsg)\_w[500]\e"
 }
+
+// ----- OnSysSuspend -----
+// No Reference values
 
 OnSysSuspend
 {

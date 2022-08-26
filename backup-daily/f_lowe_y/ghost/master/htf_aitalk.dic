@@ -455,14 +455,14 @@ OnMinuteChange //This is what will trigger time-based dialogue for your Ghost.
 OnSecondChange
 {
 	if passsec == 59
- 		{
+ 	{
 	 	passsec = 0
  		passmin = passmin + 1
-		}
+	}
  	else
- 		{
+ 	{
 	 	passsec = passsec + 1
-		}
+	}
 	if mikireflag == 0 && reference[1] == 1 
 	{
 		//"\0\s[3]You've moved me off screen."

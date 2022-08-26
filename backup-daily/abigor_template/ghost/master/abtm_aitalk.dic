@@ -8,7 +8,7 @@ OnAITalk
 	{
 		if offscreenflag == 1
 		{
-			OnOffscreen("AITALK")
+			OnOffScreenTalk("AITALK")
 		}
 		else
 		{
@@ -18,7 +18,7 @@ OnAITalk
 	}
 }
 
-OnAIDialogue
+OnAIDialogue : nonoverlap_pool
 {
 
 
@@ -191,10 +191,56 @@ OnKeyPress
 	}
 }
 
+
+// ----- OnSecondChange, OnMinuteChange, & OnHourTimeSignal -----
+
+// ┌───────┬────────────────────────────────────────────────┐
+// │ ref # │ Reference Contents                             │
+// ╞═══════╪════════════════════════════════════════════════╡
+// │ 0     │ Continuous OS uptime in hours                  │
+// │       │                                                │
+// │ 1     │ Is ghost offscreen:                            │
+// │       │ "1" if yes                                     │
+// │       │ "0" if no                                      │
+// │       │                                                │
+// │ 2     │ Is ghost overlapping:                          │
+// │       │ "1" if yes                                     │
+// │       │ "0" if no                                      │
+// │       │                                                │
+// │ 3     │ Can ghost talk now:                            │
+// │       │ always "1" if OnHourTimeSignal, otherwise:     │
+// │       │ "1" if yes                                     │
+// │       │ "0" if no                                      │
+// │       │                                                │
+// │ 4     │ Seconds since last mouse movement- at OS level │
+// └───────┴────────────────────────────────────────────────┘
+
 OnSecondChange
-{}
+{
+	if runsec == 59
+ 	{
+	 	runsec = 0
+ 		runmin = runmin + 1
+	}
+ 	else
+ 	{
+	 	runsec = runsec + 1
+	}
+	--
+}
+
 OnMinuteChange
-{}
+{
+	if reference1
+	{
+		OnOffScreenTalk("OnMinuteChange")
+	}
+	elseif reference2
+	{
+		OnOverlapTalk("OnMinuteChange")
+	}
+}
+
 OnHourTimeSignal
 {
 	case hour

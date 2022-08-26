@@ -20,17 +20,55 @@
 // On_char2.defaultleft{300}
 // On_char2.defaulttop{300}
 
+// ----- OnOverlap -----
 
-
+// ┌───────┬────────────────────────────────────────────────────────────────────────────┐
+// │ ref # │ Reference Contents                                                         │
+// ╞═══════╪════════════════════════════════════════════════════════════════════════════╡
+// │ 0     │ Overlapping character/surface pairs by scope ID: "ID-ID"                   │
+// │       │ Where multiple characters overlap, pairs are separated by 1 byte character │
+// │       │ "ID-ID [\1] ID-ID"                                                         │
+// │       │ e.g. "0-1,0-2,1-2"                                                         │
+// │       │                                                                            │
+// │ 1     │ In the same format as reference0, the previous state before the event ran  │
+// └───────┴────────────────────────────────────────────────────────────────────────────┘
 
 OnOverlap
 {
-	"%(REFTEST('OnOverlap'))"
+	if _argv[0] == "OnMinuteChange"
+	{
+		"%(REFTEST('OnOverlap-Fuck'))"
+	}
+	else
+	{
+		"%(REFTEST('OnOverlap'))"
+	}
+	
 }
+
+
+// ----- OnOtherOverlap -----
+
+// ┌───────┬────────────────────────────────────────────────────────────────────────────┐
+// │ ref # │ Reference Contents                                                         │
+// ╞═══════╪════════════════════════════════════════════════════════════════════════════╡
+// │ 0     │ Overlapping pairs by Sakura name and scope ID: "sakura/ID-sakura/ID"       │
+// │       │ Where multiple characters overlap, pairs are separated by 1 byte character │
+// │       │ "sakura/ID-sakura/ID [\1] sakura/ID-sakura/ID"                             │
+// │       │ e.g. "Abigor/0-Abigor/1,Abigor/0-f_lowe_y/0,Abigor/2-statusBOT/0"          │
+// │       │                                                                            │
+// │ 1     │ In the same format as reference0, the previous state before the event ran  │
+// └───────┴────────────────────────────────────────────────────────────────────────────┘
 
 OnOtherOverlap
 {
 	"%(REFTEST('OnOtherOverlap'))"
+}
+
+// Dialogue for overlaping ghosts
+OnOverlapTalk
+{
+
 }
 
 OnOffscreen
@@ -54,6 +92,12 @@ OnOtherOffscreen
 {
 	"%(REFTEST('OnOtherOffscreen'))"
 }
+
+OnOffScreenTalk
+{
+
+}
+
 
 OnSurfaceChange
 {
