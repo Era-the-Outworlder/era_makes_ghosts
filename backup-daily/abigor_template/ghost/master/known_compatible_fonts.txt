@@ -1,0 +1,13 @@
+Known Compatible Fonts
+
+Consolas
+Courier New
+DejaVu Sans Mono
+Fairfax HD
+Fairfax SM HD
+Fixedsys Excelsior
+Letter Gothic Std
+Liberation Mono
+Lucida Console
+Orator 
+Source Code Pro

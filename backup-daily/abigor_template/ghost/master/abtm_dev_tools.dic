@@ -18,7 +18,7 @@ OnTestVariable
 	--
 	"\![*] \q[EVAL ANYTHING,OnTestSelect,doEVAL]\n"
 	--
-	"\![*] \q[Empty array,OnTestSelect,emptyARRAY]\n"
+	'\![*] \q[Empty array?,"script: \![open,inputbox,OnTestSelect,--reference=emptyARRAY]Input the name of the array you wish to empty."]\n'
 	--
 	"\![*] \q[Set commRatio,OnTestSelect,setCOMM]\n"
 	--
@@ -45,25 +45,6 @@ OnTestSelect
 		when "doEVAL"
 		{
 			"\![open,input,OnEVAL,]"
-		}
-		when "emptyARRAY"
-		{
-			_display = ""
-			_num = 0
-			foreach hourlyArray; _ref //Each time the loop runs, _ref will store the next value in the array, until the array ends
-			{
-				_ref = SHIORI3FW.EscapeAllTags(_ref)
-				_display += "\n%(_num)- %(_ref) Deleted"
-				
-				// hourlyArray[_num] = ""
-				
-				ERASEVAR("hourlyArray"[_num])
-				
-				
-				_num ++
-			}
-			--
-			"\_q\b2\![set,autoscroll,disable]%(_display)\x"
 		}
 		when "setCOMM"
 		{
@@ -107,6 +88,27 @@ OnTestSelect
 			if reference2 == "funkTest"
 			{
 				EVAL(reference0)
+			}
+			elseif reference2 == "emptyARRAY"
+			{
+				_dummyarrayname = reference0
+				_dummyarray = EVAL(reference0)
+				_display = ""
+				_num = 0
+				foreach _dummyarray; _ref //Each time the loop runs, _ref will store the next value in the array, until the array ends
+				{
+					_ref = SHIORI3FW.EscapeAllTags(_ref)
+					_display += "\n%(_num)- %(_ref) Deleted"
+					
+					// hourlyArray[_num] = ""
+					
+					EVAL('ERASEVAR('+_dummyarrayname+'[_num])')
+					
+					
+					_num ++
+				}
+				--
+				"\_q\b2\![set,autoscroll,disable]%(_display)\x"
 			}
 		}
 	}

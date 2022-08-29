@@ -5,14 +5,17 @@
 
 // ----- OnFirstBoot -----
 
-// ┌───────┬────────────────────────────────────────────────────────────────────────────────────┐
-// │ ref # │ Reference Contents                                                                 │
-// ╞═══════╪════════════════════════════════════════════════════════════════════════════════════╡
-// │ 0     │ Number of times ghost has been uninstalled                                         │
-// │       │ (only applies to removal with OnVanish)                                            │
-// └───────┴────────────────────────────────────────────────────────────────────────────────────┘
+// ┌───────┬────────────────────────────────────────────┐
+// │ ref # │ Reference Contents                         │
+// ╞═══════╪════════════════════════════════════════════╡
+// │ 0     │ Number of times ghost has been uninstalled │
+// │       │ (only applies to removal with OnVanish)    │
+// └───────┴────────────────────────────────────────────┘
 OnFirstBoot
 {
+	hourlyArray = IARRAY
+	offscreenflag = IARRAY
+	runhour = 0
 	"\0\s[0]\1\s[10]\p[2]\s[30]\![set,otherghosttalk,true]"
 	--
 	"\0This is my first time booting.\_w[500]"
@@ -35,6 +38,9 @@ OnFirstBoot
 
 OnBoot
 {
+	hourlyArray = IARRAY
+	runhour = 0
+	
 	"\0\s[0]\1\s[10]\p[2]\s[30]\![set,otherghosttalk,true]"
 	--
 	"\0I have booted.\_w[500]"
@@ -57,24 +63,30 @@ OnClose
 	if (runhour == 0) && (runmin <= 5)
 	{
 		"Goodbye. Run Time: %(runhour):%(runmin).\_w[500]"
-		passmin = 0
-		passsec = 0
- 	}
+	}
  	else 
  	{
 		if ghostexcount > 1
 		{
 			_num = RAND(ghostexcount)
 			_pick = "%(ghostexlist[_num])"
-			"Goodbye %USER. Goodbye %(_pick).Run Time: %(_runhour):%(_runmin).\_w[500]"
+			"Goodbye %USER. Goodbye %(_pick).Run Time: %(runhour):%(runmin).\_w[500]"
 		}
 		else
 		{
 			"Goodbye %USER.\_w[500]"
 		}
  	}
+	--
+	if runhour > 1
+	{
+		cumuhour = (cumuhour + runhour)
+	}
  	--
 	ERASEVAR("hourlyArray")
+	ERASEVAR("runsec")
+	ERASEVAR("runmin")
+	ERASEVAR("runhour")
 	--
 	"\-" 
 }
@@ -88,11 +100,6 @@ OnCloseAll
 	else
 	{
 		"Goodbye, %(user).\_w[500] "
-	}
-	--
-	if runhour > 1
-	{
-		cumuhour = (cumuhour + passhour)
 	}
 	--
 	case runhour
@@ -127,7 +134,15 @@ OnCloseAll
 		}
 	}
 	--
+	if runhour > 1
+	{
+		cumuhour = (cumuhour + runhour)
+	}
+	--
 	ERASEVAR("hourlyArray")
+	ERASEVAR("runsec")
+	ERASEVAR("runmin")
+	ERASEVAR("runhour")
 	--
 	"\-"
 }
@@ -154,6 +169,7 @@ OnCloseAll
 OnGhostChanged
 {
 	hourlyArray = IARRAY
+	runhour = 0
 	"\![set,otherghosttalk,true]\0\s[0]"
 	--
 	_selfname = TOSTR(sakuraname)
@@ -196,6 +212,14 @@ OnGhostChanging
 	}
 	else
 	{
+		if runhour > 1
+		{
+			cumuhour = (cumuhour + runhour)
+		}
+		--
+		ERASEVAR("runsec")
+		ERASEVAR("runmin")
+		ERASEVAR("runhour")
 		"Switching."
 	}
 	--
@@ -386,26 +410,28 @@ OnWindowStateMinimize
 
 OnFullScreenAppMinimize
 {
-	"%(errorMsg)\_w[500]\e"
+	"%(REFTEST('OnFullScreenAppMinimize'))"
 }
 
 OnFullScreenAppRestore
 {
-	"%(errorMsg)\_w[500]\e"
+	"%(REFTEST('OnFullScreenAppRestore'))"
 }
 
 
 // ----- OnVirtualDesktopChanged -----
 
-// ┌───────┬───────────────────────────────────────────────────────────────────────────────────────────────┐
-// │ ref # │ Reference Contents                                                                            │
-// ╞═══════╪═══════════════════════════════════════════════════════════════════════════════════════════════╡
-// │ 0     │ Dekstop/ghost state: (as of Aug 25 2022)                                                      │
-// │       │ "current", if the ghost is on the current virtual desktop                                     │
-// │       │ "hidden", if the ghost is on an inactive/hidden virtual desktop                               │
-// │       │ "minimize" the ghost has been minimized and it is unknown which virtual desktop it belongs to │
-// │ 1     │ Current virtual desktop ID                                                                    │
-// └───────┴───────────────────────────────────────────────────────────────────────────────────────────────┘
+// ┌───────┬─────────────────────────────────────────────────────────────────┐
+// │ ref # │ Reference Contents                                              │
+// ╞═══════╪═════════════════════════════════════════════════════════════════╡
+// │ 0     │ Dekstop/ghost state: (as of Aug 25 2022)                        │
+// │       │ "current", if the ghost is on the current virtual desktop       │
+// │       │ "hidden", if the ghost is on an inactive/hidden virtual desktop │
+// │       │ "minimize" the ghost has been minimized AND                     │
+// │       │ it is unknown which virtual desktop it belongs to               │
+// │       │                                                                 │
+// │ 1     │ Current virtual desktop ID                                      │
+// └───────┴─────────────────────────────────────────────────────────────────┘
 
 OnVirtualDesktopChanged
 {

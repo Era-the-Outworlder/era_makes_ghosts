@@ -2,16 +2,19 @@ OnAITalk
 {
 	if RAND(100) < (communicateratio - 1)
  	{
+		LOGGING("OnStartCommunicate")
  		OnStartCommunicate
 	}
 	else
 	{
-		if offscreenflag == 1
+		if TOSTR(offscreenflag) != ",,"
 		{
-			OnOffScreenTalk("AITALK")
+			LOGGING("OnOffscreenTalk")
+			OnOffscreenTalk
 		}
 		else
 		{
+			LOGGING("OnAIDialogue")
 			OnAIDialogue
 		}
 		
@@ -21,7 +24,7 @@ OnAITalk
 OnAIDialogue : nonoverlap_pool
 {
 
-
+	"\0This is a line of test dialogue."
 	// ----- Conditionals -----
 
 		
@@ -71,7 +74,7 @@ OnTimeTalk
 		}
 	}
 	--
-	"\nI have been running for \n%(passhour) hours and %(passmin) minutes."
+	"\nI have been running for \n%(runhour) hours and %(runmin) minutes."
 	--
 	"\e:eval=hourlyArray ,= 'saidtimeslot'"
 }
@@ -168,8 +171,28 @@ OnMonthTalk
 	"\e:eval=hourlyArray ,= 'saidmonthly'"
 }
 
+
+// ----- OnKeyPress -----
+
+// ┌───────┬──────────────────────────────────────┐
+// │ ref # │ Reference Contents                   │
+// ╞═══════╪══════════════════════════════════════╡
+// │ 0     │ Key entered (button pressed)         │
+// │       │                                      │
+// │ 1     │ Key entered (Win32 virtual key code) │
+// │       │                                      │
+// │ 2     │ Number of keypresses                 │
+// │       │                                      │
+// │ 3     │ Scope ID that sent the key event     │
+// │       │                                      │
+// │ 4     │ Modifier keys separated by commas    │
+// │       │ e.g. "ctrl,alt"                      │
+// └───────┴──────────────────────────────────────┘
+
 OnKeyPress
 {
+	"%(REFTEST('OnKeyPress'))"
+	--
 	case reference0
 	{
 		when "t"
@@ -199,11 +222,11 @@ OnKeyPress
 // ╞═══════╪════════════════════════════════════════════════╡
 // │ 0     │ Continuous OS uptime in hours                  │
 // │       │                                                │
-// │ 1     │ Is ghost offscreen:                            │
+// │ 1     │ Is sakura/scope1 offscreen:                    │
 // │       │ "1" if yes                                     │
 // │       │ "0" if no                                      │
 // │       │                                                │
-// │ 2     │ Is ghost overlapping:                          │
+// │ 2     │ Is sakura/scope1 overlapping ker/scope2:       │
 // │       │ "1" if yes                                     │
 // │       │ "0" if no                                      │
 // │       │                                                │
@@ -220,24 +243,28 @@ OnSecondChange
 	if runsec == 59
  	{
 	 	runsec = 0
- 		runmin = runmin + 1
+		if runmin == 59
+		{
+			runhour ++
+			runmin = 0
+		}
+		else
+		{
+			runmin ++
+		}
 	}
  	else
  	{
-	 	runsec = runsec + 1
+	 	runsec ++
 	}
 	--
 }
 
 OnMinuteChange
 {
-	if reference1
+	if timeTillAsk != 0
 	{
-		OnOffScreenTalk("OnMinuteChange")
-	}
-	elseif reference2
-	{
-		OnOverlapTalk("OnMinuteChange")
+		timeTillAsk --
 	}
 }
 

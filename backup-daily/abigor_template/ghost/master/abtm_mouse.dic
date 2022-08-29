@@ -242,29 +242,31 @@ OnMouseHover
 // "Since SSP 2.3.53, if SHIORI does not return anything (204 No Content is returned) for something where Reference 5 of OnMouseGesture is up or down in the touch panel environment, OnMouseWheel will occur as an alternative event. See the On Mouse Wheel section for details."
 // However I have not been able to test that, as I am not working on a touch device
 
-// ┌───────┬──────────────────────────────────────────────────────────────────────────────────┐
-// │ ref # │                                Reference Contents                                │
-// ╞═══════╪══════════════════════════════════════════════════════════════════════════════════╡
-// │ 0     │ scope of surface (0 for sakura, 1 for kero, etc)                                 │
-// │       │                                                                                  │
-// │ 1     │ Mouse cursor XY coordinates (1 byte value delimited)                             │
-// │       │                                                                                  │
-// │ 2     │ surface collision name/identifier                                                │
-// │       │                                                                                  │
-// │ 3     │ Mouse cursor XY coordinates (1 byte value delimited) that started right dragging │
-// │       │                                                                                  │
-// │ 4     │ surface collision name/identifier of right-drag start                            │
-// │       │                                                                                  │
-// │ 5     │ Gesture direction:                                                               │
-// │       │ "left_up" to upper lefft, "up" upwards, "right_up" to upper right                │
-// │       │ "left" to left, "right" to right                                                 │
-// │       │ "left_down" to lower left, "down" downwards, "right_down" to lower right         │
-// │       │ "circle.cw" clockwise, "circle.ccw" counterclockwise                             │
-// │       │ "end" release of button                                                          │
-// │       │                                                                                  │
-// │ 6     │ Gesture movement angle:                                                          │
-// │       │ From 0 degrees to the right, counterclockwise 360 degrees.                       │
-// └───────┴──────────────────────────────────────────────────────────────────────────────────┘
+// ┌───────┬───────────────────────────────────────────────────────────────────────────┐
+// │ ref # │                                Reference Contents                         │
+// ╞═══════╪═══════════════════════════════════════════════════════════════════════════╡
+// │ 0     │ scope of surface (0 for sakura, 1 for kero, etc)                          │
+// │       │                                                                           │
+// │ 1     │ Mouse cursor XY coordinates                                               │
+// │       │ (byte value 1 delimited)                                                  │
+// │       │                                                                           │
+// │ 2     │ surface collision name/identifier                                         │
+// │       │                                                                           │
+// │ 3     │ Mouse cursor XY coordinates that started right dragging                   │
+// │       │ (1 byte value delimited                                                   │
+// │       │                                                                           │
+// │ 4     │ surface collision name/identifier of right-drag start                     │
+// │       │                                                                           │
+// │ 5     │ Gesture direction:                                                        │
+// │       │ "left_up" to upper lefft, "up" upwards, "right_up" to upper right         │
+// │       │ "left" to left, "right" to right                                          │
+// │       │ "left_down" to lower left, "down" downwards, "right_down" to lower right  │
+// │       │ "circle.cw" clockwise, "circle.ccw" counterclockwise                      │
+// │       │ "end" release of button                                                   │
+// │       │                                                                           │
+// │ 6     │ Gesture movement angle:                                                   │
+// │       │ From 0 degrees to the right, counterclockwise 360 degrees.                │
+// └───────┴───────────────────────────────────────────────────────────────────────────┘
 
 OnMouseGesture
 {

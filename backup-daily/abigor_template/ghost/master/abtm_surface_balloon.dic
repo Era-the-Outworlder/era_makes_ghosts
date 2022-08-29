@@ -1,4 +1,4 @@
-// surface/balloon
+/* ############# Surface and Location Functions ############# */
 // ----- SHIORI RESOURCE -----
 // Like their corresponding settings in descript.txt, except they actually WORK. maybe.
 
@@ -20,94 +20,206 @@
 // On_char2.defaultleft{300}
 // On_char2.defaulttop{300}
 
+
+/* #############  Overlap, Offscreen ############# */
+
+// These fuctions use the character with byte value 1 as a delimiter.
+// In both UTF-8 and Shift_JIS encoding, this is the Start of Heading glyph, .
+// YAYA has a function AUTO_TYPE_CONVERT which converts them to commas as in the examples below
+
+
 // ----- OnOverlap -----
 
-// ┌───────┬────────────────────────────────────────────────────────────────────────────┐
-// │ ref # │ Reference Contents                                                         │
-// ╞═══════╪════════════════════════════════════════════════════════════════════════════╡
-// │ 0     │ Overlapping character/surface pairs by scope ID: "ID-ID"                   │
-// │       │ Where multiple characters overlap, pairs are separated by 1 byte character │
-// │       │ "ID-ID [\1] ID-ID"                                                         │
-// │       │ e.g. "0-1,0-2,1-2"                                                         │
-// │       │                                                                            │
-// │ 1     │ In the same format as reference0, the previous state before the event ran  │
-// └───────┴────────────────────────────────────────────────────────────────────────────┘
+// ┌───────┬──────────────────────────────────────────────────────────┐
+// │ ref # │ Reference Contents                                       │
+// ╞═══════╪══════════════════════════════════════════════════════════╡
+// │ 0     │ Overlapping character/surface pairs by scope ID: "ID-ID" │
+// │       │ Where multiple characters overlap, pairs are separated   │
+// │       │ by the character at byte value 1.                        │
+// │       │ "ID-ID[\1]ID-ID"                                         │
+// │       │ e.g. "0-1,0-2,1-2"                                       │
+// │       │                                                          │
+// │ 1     │ In the same format as reference0:                        │
+// │       │ The previous state before the event ran                  │
+// └───────┴──────────────────────────────────────────────────────────┘
 
 OnOverlap
 {
-	if _argv[0] == "OnMinuteChange"
-	{
-		"%(REFTEST('OnOverlap-Fuck'))"
-	}
-	else
-	{
-		"%(REFTEST('OnOverlap'))"
-	}
-	
+	"%(REFTEST('OnOverlap'))"	
 }
 
 
 // ----- OnOtherOverlap -----
+// Global detection within a baseware instance
 
-// ┌───────┬────────────────────────────────────────────────────────────────────────────┐
-// │ ref # │ Reference Contents                                                         │
-// ╞═══════╪════════════════════════════════════════════════════════════════════════════╡
-// │ 0     │ Overlapping pairs by Sakura name and scope ID: "sakura/ID-sakura/ID"       │
-// │       │ Where multiple characters overlap, pairs are separated by 1 byte character │
-// │       │ "sakura/ID-sakura/ID [\1] sakura/ID-sakura/ID"                             │
-// │       │ e.g. "Abigor/0-Abigor/1,Abigor/0-f_lowe_y/0,Abigor/2-statusBOT/0"          │
-// │       │                                                                            │
-// │ 1     │ In the same format as reference0, the previous state before the event ran  │
-// └───────┴────────────────────────────────────────────────────────────────────────────┘
+// ┌───────┬───────────────────────────────────────────────────────────────────────┐
+// │ ref # │ Reference Contents                                                    │
+// ╞═══════╪═══════════════════════════════════════════════════════════════════════╡
+// │ 0     │ Overlapping pairs by sakura name and scope ID: "sakura/ID-sakura/ID"  │
+// │       │ Where multiple characters overlap, pairs are separated                │
+// │       │ by the character at byte value 1.                                     │
+// │       │ "sakura/ID-sakura/ID[\1]sakura/ID-sakura/ID"                          │
+// │       │ e.g. "Abigor/0-Abigor/1,Abigor/0-f_lowe_y/0,Abigor/2-statusBOT/0"     │
+// │       │                                                                       │
+// │ 1     │ In the same format as reference0:                                     │
+// │       │ The previous state before the event ran                               │
+// └───────┴───────────────────────────────────────────────────────────────────────┘
+
 
 OnOtherOverlap
 {
 	"%(REFTEST('OnOtherOverlap'))"
 }
+// ----- OnOffscreen-----
 
-// Dialogue for overlaping ghosts
-OnOverlapTalk
-{
-
-}
+// ┌───────┬─────────────────────────────────────────────────────────────────┐
+// │ ref # │ Reference Contents                                              │
+// ╞═══════╪═════════════════════════════════════════════════════════════════╡
+// │ 0     │ Offscreen character/surface by scope ID: "ID"                   │
+// │       │ When multiple surfaces are offscreen, they are separated by the │
+// │       │ character at byte value 1.                                      │
+// │       │ "ID[\1]ID"                                                      │
+// │       │ e.g. "0,1,2"                                                    │
+// │       │                                                                 │
+// │ 1     │ In the same format as reference0:                               │
+// │       │ The previous state before the event ran                         │
+// └───────┴─────────────────────────────────────────────────────────────────┘
 
 OnOffscreen
 {
-	if _argv[0] == "AITALK"
+	if  "0" !_in_ TOSTR(reference0)
 	{
-		"I have been moved offscreen. Press Ctrl-Shift-F12 to return me to my default position."
+	
+		offscreenflag[0] = ""
+		
 	}
-	else
+	elseif "0" _in_ TOSTR(reference0) && offscreenflag[0] != "0"
 	{
-		if reference0 == "0"
-		{offscreenflag = 1}
-		else
-		{offscreenflag = 0}
+		offscreenflag[0] = "0"
 	}
 	--
-	// "%(offscreenflag)"
+	if  "1" !_in_ TOSTR(reference0)
+	{
+	
+		offscreenflag[1] = ""
+		
+	}
+	elseif "1" _in_ TOSTR(reference0) && offscreenflag[1] != "1"
+	{
+		offscreenflag[1] = "1"
+	}
+	--
+	if  "2" !_in_ TOSTR(reference0)
+	{
+	
+		offscreenflag[2] = ""
+		
+	}
+	elseif "2" _in_ TOSTR(reference0) && offscreenflag[2] != "2"
+	{
+		offscreenflag[2] = "2"
+	}
+	--
+	OnOffscreenTalk
 }
+
+// ----- OnOffscreenTalk -----
+// User Added -- Era
+
+OnOffscreenTalk : nonoverlap_pool
+{
+	if offscreenflag[0] == "0"
+	{
+		"\0I've been moved off screen. Drag me back in or give focus to the ghost window and press CTRL+SHIFT+F12 to return us all to our default positions."
+	}
+	if offscreenflag[1] == "1"
+	{
+		"\1* A muffled clanking sounds *"
+		--
+		"\0How did my mount get off screen? \n[200]Drag them back in or give focus to the ghost window and press CTRL+SHIFT+F12 to return us all to our default positions."
+	}
+	if offscreenflag[2] == "2"
+	{
+		"\p[2]* There is a rustling of papers *"
+		--
+		"\0Did the wind blow that manuscript off screen? \n[200]Drag it back over here or give focus to the ghost window and press CTRL+SHIFT+F12 to return us all to our default positions."
+	}
+}
+
+// ----- OnOtherOffscreen -----
+// Global detection within a baseware instance
+
+// ┌───────┬─────────────────────────────────────────────────────────────────┐
+// │ ref # │ Reference Contents                                              │
+// ╞═══════╪═════════════════════════════════════════════════════════════════╡
+// │ 0     │ Offscreen characters by sakura name and scope ID: "sakura/ID"   │
+// │       │ When multiple surfaces are offscreen, they are separated by the │
+// │       │ character at byte value 1.                                      │
+// │       │ "sakura/ID[\1]sakura/ID"                                        │
+// │       │ e.g. "Abigor/3,f_lowe_y/0,statusBOT/0"                          │
+// │       │                                                                 │
+// │ 1     │ In the same format as reference0:                               │
+// │       │ The previous state before the event ran                         │
+// └───────┴─────────────────────────────────────────────────────────────────┘
 
 OnOtherOffscreen
 {
-	"%(REFTEST('OnOtherOffscreen'))"
+	// "%(REFTEST('OnOtherOffscreen'))"
 }
 
-OnOffScreenTalk
-{
+// ----- OnSurfaceRestore -----
 
-}
-
-
-OnSurfaceChange
-{
-	"%(REFTEST('OnSurfaceChange'))"
-}
+// ┌───────┬────────────────────────────────┐
+// │ ref # │ Reference Contents             │
+// ╞═══════╪════════════════════════════════╡
+// │ 0     │ The current surface of scope 1 │
+// │       │                                │
+// │ 1     │ The current surface of scope 2 │
+// └───────┴────────────────────────────────┘
 
 OnSurfaceRestore
 {
 	"\0\s[0]\1\s[10]\p[2]\s[30]"
 }
+
+
+// ----- OnSurfaceChange -----
+// NOTIFY Event
+
+// ┌───────┬─────────────────────────────────────────┐
+// │ ref # │ Reference Contents                      │
+// ╞═══════╪═════════════════════════════════════════╡
+// │ 0     │ The current surface of scope 1          │
+// │       │                                         │
+// │ 1     │ The current surface of scope 2          │
+// │       │                                         │
+// │ 2     │ scope ID, surface number, width, height │
+// │       │ e.g. "0,3,150,200"                      │
+// └───────┴─────────────────────────────────────────┘
+OnSurfaceChange
+{
+	"%(REFTEST('OnSurfaceChange'))"
+}
+
+
+// ----- OnOtherSurfaceChange -----
+
+// ┌───────┬──────────────────────────────────────┐
+// │ ref # │ Reference Contents                   │
+// ╞═══════╪══════════════════════════════════════╡
+// │ 0     │ Ghost name                           │
+// │       │                                      │
+// │ 1     │ Ghost sakura/scope0 name             │
+// │       │                                      │
+// │ 2     │ Scope ID where surface was changed   │
+// │       │                                      │
+// │ 3     │ New surface ID                       │
+// │       │                                      │
+// │ 4     │ Old surface ID                       │
+// │       │                                      │
+// │ 5     │ New surface dimensions, width,height │
+// │       │ e.g. "325,400"                       │
+// └───────┴──────────────────────────────────────┘
 
 OnOtherSurfaceChange
 {
@@ -151,6 +263,21 @@ OnShellChanging
 	"%(errorMsg)\_w[500]\e"
 }
 
+
+// ----- OnShellScaling -----
+
+// ┌───────┬─────────────────────────────────────┐
+// │ ref # │ Reference Contents                  │
+// ╞═══════╪═════════════════════════════════════╡
+// │ 0     │ NEW Horizontal (X) scale percentage │
+// │       │                                     │
+// │ 1     │ OLD Horizontal (X) scale percentage │
+// │       │                                     │
+// │ 2     │ NEW Vertical (Y) scale percentage   │
+// │       │                                     │
+// │ 3     │ OLD Vertical (Y) scale percentage   │
+// └───────┴─────────────────────────────────────┘
+
 OnShellScaling
 {
 	"%(REFTEST('OnShellScaling'))"
@@ -182,6 +309,11 @@ OnDressupChanged
 	"%(errorMsg)\_w[500]\e"
 }
 
+
+
+/* ############# Balloon Functions ############# */
+
+
 // ----- OnBalloonChange -----
 
 // ┌───────┬─────────────────────────────┐
@@ -198,26 +330,88 @@ OnBalloonChange
 	// "Maybe this will look better. \_w[500]"
 }
 
+
+// ----- OnBalloonBreak -----
+
+// ┌───────┬─────────────────────────────────────────────────────────────┐
+// │ ref # │ Reference Contents                                          │
+// ╞═══════╪═════════════════════════════════════════════════════════════╡
+// │ 0     │ Script where the interruption occurred                      │
+// │       │                                                             │
+// │ 1     │ Scope ID number of the interrupted balloon                  │
+// │       │                                                             │
+// │ 2     │ Break position                                              │
+// │       │ Expressed as number of characters from beginning of script, │
+// │       │ including all Sakura Script tags                            │
+// └───────┴─────────────────────────────────────────────────────────────┘
+
 OnBalloonBreak
 {
 	"%(REFTEST('OnBalloonBreak'))"
 }
 
+
+// ----- OnBalloonClose -----
+// Be very careful of using or ghost will not be able to close
+
+// ┌───────┬────────────────────────────────────────┐
+// │ ref # │ Reference Contents                     │
+// ╞═══════╪════════════════════════════════════════╡
+// │ 0     │ Script that was displayed when closing │
+// └───────┴────────────────────────────────────────┘
+
 OnBalloonClose
 {
-	// Be very careful of using or ghost will not be able to close
+	
 	// "%(REFTEST('OnBalloonClose'))"
 }
 
+
+// ----- OnBalloonTimeout -----
+
+// ┌───────┬──────────────────────────────────────────┐
+// │ ref # │ Reference Contents                       │
+// ╞═══════╪══════════════════════════════════════════╡
+// │ 0     │ Script that was displayed when timed out │
+// │       │                                          │
+// │ 1     │ Time remaining                           │
+// └───────┴──────────────────────────────────────────┘
+
 OnBalloonTimeout
 {
-	// "%(REFTEST('OnBalloonTimeout'))"
+	"%(REFTEST('OnBalloonTimeout'))"
 }
+
+
+// ----- OnBalloonScaling -----
+
+// ┌───────┬─────────────────────────────────────┐
+// │ ref # │ Reference Contents                  │
+// ╞═══════╪═════════════════════════════════════╡
+// │ 0     │ NEW Horizontal (X) scale percentage │
+// │       │                                     │
+// │ 1     │ OLD Horizontal (X) scale percentage │
+// │       │                                     │
+// │ 2     │ NEW Vertical (Y) scale percentage   │
+// │       │                                     │
+// │ 3     │ OLD Vertical (Y) scale percentage   │
+// └───────┴─────────────────────────────────────┘
 
 OnBalloonScaling
 {
 	"%(REFTEST('OnBalloonScaling'))"
 }
+
+
+// ----- OnTrayBalloonClick & OnTrayBalloonTimeout -----
+
+// ┌───────┬────────────────────┐
+// │ ref # │ Reference Contents │
+// ╞═══════╪════════════════════╡
+// │ 0     │ Title String       │
+// │       │                    │
+// │ 1     │ Display text       │
+// └───────┴────────────────────┘
 
 OnTrayBalloonClick
 {
