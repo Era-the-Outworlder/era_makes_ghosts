@@ -17,6 +17,7 @@
 
 OnTranslate
 {
+
 	_talk = reference0
 	
     if silentMode == "ON"
@@ -27,8 +28,9 @@ OnTranslate
     if reference1 == "" && reference2 == "" // Script Input, script choice call
     {
         _talk = ('"' + REPLACE(_talk,'"','" + CHR(0x22) + "')+ '"')
+		EVAL(_talk)
     }
-	--
+	else
     { //event result from ghost
         _talk;
     }

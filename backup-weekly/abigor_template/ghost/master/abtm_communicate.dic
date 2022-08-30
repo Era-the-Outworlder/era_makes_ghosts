@@ -1,16 +1,167 @@
 
 
-OnCommunicate{}
-OnCommunicateInputCancel{}
-OnUserInput{}
-OnUserInputCancel{}
+// ----- OnCommunicate -----
+
+// ┌───────┬─────────────────────────────────────┐
+// │ ref # │ Reference Contents                  │
+// ╞═══════╪═════════════════════════════════════╡
+// │ 0     │ Sender:                             │
+// │       │ "user" if from CommunicateBox, or   │
+// │       │ the sakuraname of the sending ghost │
+// │       │                                     │
+// │ 1     │ The script being sent               │
+// │       │                                     │
+// │ *     │ Additional references sent by ghost │
+// └───────┴─────────────────────────────────────┘
+
+OnCommunicate
+{
+
+}
+
+
+// ----- OnOtherGhostTalk -----
+
+// ┌───────┬──────────────────────────────────────────────────────────────────────┐
+// │ ref # │ Reference Contents                                                   │
+// ╞═══════╪══════════════════════════════════════════════════════════════════════╡
+// │ 0     │ Ghost name                                                           │
+// │       │                                                                      │
+// │ 1     │ Sakura/scope 1 name                                                  │
+// │       │                                                                      │
+// │ 2     │ Type:                                                                │
+// │       │ "break", if interrupt                                                │
+// │       │ "communicate" if OnCommunicate                                       │
+// │       │ SSTP: "sstp-send", "owned", or "remote" if non-local SSTP            │
+// │       │ "notranslate" if that is specified                                   │
+// │       │ "plugin-script" if from a plugin:                                    │
+// │       │ the corresponding plugin-event is returned as a comma separated list │
+// │       │                                                                      │
+// │ 3     │ Event ID sending the script                                          │
+// │       │                                                                      │
+// │ 4     │ The script sent                                                      │
+// │       │                                                                      │
+// │ 5     │ references passed by the ghost as a 'byte value 1' separated list    │
+// └───────┴──────────────────────────────────────────────────────────────────────┘
+
+OnOtherGhostTalk
+{
+
+}
+
+// ----- OnCommunicateInputCancel -----
+
+// ┌───────┬────────────────────┐
+// │ ref # │ Reference Contents │
+// ╞═══════╪════════════════════╡
+// │ 0     │ empty string       │
+// │       │                    │
+// │ 1     │ "cancel" if closed │
+// └───────┴────────────────────┘
+
+OnCommunicateInputCancel
+{
+
+}
+
+
+// ----- OnUserInput -----
+
+// ┌───────┬──────────────────────────────────────────────────────┐
+// │ ref # │ Reference Contents                                   │
+// ╞═══════╪══════════════════════════════════════════════════════╡
+// │ 0     │ ID of the InputBox                                   │
+// │       │                                                      │
+// │ 1     │ What was entered by the user                         │
+// │       │                                                      │
+// │ 2     │ supplemental content if sliderinput:                 │
+// │       │ minimum,maximum                                      │
+// │       │                                                      │
+// │ 3+    │ adittional information specified with "--reference=" │
+// └───────┴──────────────────────────────────────────────────────┘
+
+OnUserInput
+{
+
+}
+
+
+OnUserInputCancel
+
+// ┌───────┬──────────────────────────────────────────────────────┐
+// │ ref # │ Reference Contents                                   │
+// ╞═══════╪══════════════════════════════════════════════════════╡
+// │ 0     │ Input Event ID                                       │
+// │       │                                                      │
+// │ 1     │ Close reason                                         │
+// │       │ "timeout" if timed out                               │
+// │       │ "close" if closed by user                            │
+// │       │                                                      │
+// │ 2     │ supplemental content if sliderinput:                 │
+// │       │ minimum,maximum                                      │
+// │       │                                                      │
+// │ 3+    │ adittional information specified with "--reference=" │
+// └───────┴──────────────────────────────────────────────────────┘
+
+OnUserInputCancel
+{
+
+}
+
+
+// ----- inputbox.autocomplete -----
+
+// ┌───────┬─────────────────────────────────────────────┐
+// │ ref # │ Reference Contents                          │
+// ╞═══════╪═════════════════════════════════════════════╡
+// │ 0     │ Input box type                              │
+// │       │ "inputbox"                                  │
+// │       │ "communicatebox"                            │
+// │       │ "teachbox"                                  │
+// │       │                                             │
+// │ 1     │ for "inputbox" only:                        │
+// │       │ Event ID the occurs when input is completed │
+// └───────┴─────────────────────────────────────────────┘
+
 inputbox.autocomplete{}
 
+// ----- OnTeachStart -----
+// The event has no references
 
-OnTeachStart{}
-OnTeachInputCancel{}
-OnTeach{}
+OnTeachStart
+{
+
+}
+
+// ----- OnTeachInputCancel -----
+
+// ┌───────┬────────────────────┐
+// │ ref # │ Reference Contents │
+// ╞═══════╪════════════════════╡
+// │ 0     │ empty string       │
+// │       │                    │
+// │ 1     │ "cancel" if closed │
+// └───────┴────────────────────┘
+
+OnTeachInputCancel
+{
+
+}
+
+// ----- OnTeach -----
+
+// ┌───────┬────────────────────────────────────┐
+// │ ref # │ Reference Contents                 │
+// ╞═══════╪════════════════════════════════════╡
+// │ *     │ History of words entered           │
+// │       │ reference0 is first, latest is end │
+// │       │ nth input is reference[n-1]        │
+// └───────┴────────────────────────────────────┘
+
+OnTeach
+{
+
+}
 
 
 
-OnOtherGhostTalk{}

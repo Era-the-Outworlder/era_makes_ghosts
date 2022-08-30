@@ -68,7 +68,7 @@ shiori.cache,0
 // seriko < scope.seriko < shell descript.txt seriko < shell descript.txt scope.seriko
 
 // Position locations-- top, bottom, free
-seriko.alignmenttodesktop, free
+seriko.alignmenttodesktop,top
 seriko.defaultsurfacedirectoryname,master
 
 // defaultx and defaulty seem to set a point within the bounds of the ghost.
@@ -95,7 +95,7 @@ kero.defaultleft,500
 kero.defaulttop,300
 
 // ---- char2 ----
-char2.seriko.alignmenttodesktop, free
+char2.seriko.alignmenttodesktop,free
 
 char2.seriko.defaultsurface,30
 

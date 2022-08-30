@@ -2,26 +2,29 @@ OnAITalk
 {
 	if RAND(100) < (communicateratio - 1)
  	{
+		LOGGING("OnStartCommunicate")
  		OnStartCommunicate
 	}
 	else
 	{
-		if offscreenflag == 1
+		if TOSTR(offscreenflag) != ",,"
 		{
-			OnOffscreen("AITALK")
+			LOGGING("OnOffscreenTalk")
+			OnOffscreenTalk
 		}
 		else
 		{
+			LOGGING("OnAIDialogue")
 			OnAIDialogue
 		}
 		
 	}
 }
 
-OnAIDialogue
+OnAIDialogue : nonoverlap_pool
 {
 
-
+	"\0This is a line of test dialogue."
 	// ----- Conditionals -----
 
 		
@@ -71,7 +74,7 @@ OnTimeTalk
 		}
 	}
 	--
-	"\nI have been running for \n%(passhour) hours and %(passmin) minutes."
+	"\nI have been running for \n%(runhour) hours and %(runmin) minutes."
 	--
 	"\e:eval=hourlyArray ,= 'saidtimeslot'"
 }
@@ -168,8 +171,28 @@ OnMonthTalk
 	"\e:eval=hourlyArray ,= 'saidmonthly'"
 }
 
+
+// ----- OnKeyPress -----
+
+// ┌───────┬──────────────────────────────────────┐
+// │ ref # │ Reference Contents                   │
+// ╞═══════╪══════════════════════════════════════╡
+// │ 0     │ Key entered (button pressed)         │
+// │       │                                      │
+// │ 1     │ Key entered (Win32 virtual key code) │
+// │       │                                      │
+// │ 2     │ Number of keypresses                 │
+// │       │                                      │
+// │ 3     │ Scope ID that sent the key event     │
+// │       │                                      │
+// │ 4     │ Modifier keys separated by commas    │
+// │       │ e.g. "ctrl,alt"                      │
+// └───────┴──────────────────────────────────────┘
+
 OnKeyPress
 {
+	"%(REFTEST('OnKeyPress'))"
+	--
 	case reference0
 	{
 		when "t"
@@ -191,10 +214,60 @@ OnKeyPress
 	}
 }
 
+
+// ----- OnSecondChange, OnMinuteChange, & OnHourTimeSignal -----
+
+// ┌───────┬────────────────────────────────────────────────┐
+// │ ref # │ Reference Contents                             │
+// ╞═══════╪════════════════════════════════════════════════╡
+// │ 0     │ Continuous OS uptime in hours                  │
+// │       │                                                │
+// │ 1     │ Is sakura/scope1 offscreen:                    │
+// │       │ "1" if yes                                     │
+// │       │ "0" if no                                      │
+// │       │                                                │
+// │ 2     │ Is sakura/scope1 overlapping ker/scope2:       │
+// │       │ "1" if yes                                     │
+// │       │ "0" if no                                      │
+// │       │                                                │
+// │ 3     │ Can ghost talk now:                            │
+// │       │ always "1" if OnHourTimeSignal, otherwise:     │
+// │       │ "1" if yes                                     │
+// │       │ "0" if no                                      │
+// │       │                                                │
+// │ 4     │ Seconds since last mouse movement- at OS level │
+// └───────┴────────────────────────────────────────────────┘
+
 OnSecondChange
-{}
+{
+	if runsec == 59
+ 	{
+	 	runsec = 0
+		if runmin == 59
+		{
+			runhour ++
+			runmin = 0
+		}
+		else
+		{
+			runmin ++
+		}
+	}
+ 	else
+ 	{
+	 	runsec ++
+	}
+	--
+}
+
 OnMinuteChange
-{}
+{
+	if timeTillAsk != 0
+	{
+		timeTillAsk --
+	}
+}
+
 OnHourTimeSignal
 {
 	case hour
