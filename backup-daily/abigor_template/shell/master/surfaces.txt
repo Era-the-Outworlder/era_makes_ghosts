@@ -29,6 +29,45 @@ sakura.cursor
 surface0
 {
 	element0,overlay,surface0.png,0,0
+	element1,overlay,surface100.png,0,0
+	
+	//Randomised expressions at rest
+	animation0.interval,random,10
+	animation0.pattern0,alternativestart,[1.1.1.2.]
+	
+	// Blinking
+	animation1.interval,never
+	animation1.pattern0,base,21,0,0,0
+	animation1.pattern1,overlay,100,0,0,0
+	animation1.pattern2,overlay,101,50,0,0
+	animation1.pattern3,overlay,101,50,0,0
+	animation1.pattern4,overlay,102,50,0,0
+	animation1.pattern5,overlay,104,50,0,0
+	animation1.pattern6,overlay,105,50,0,0
+	animation1.pattern7,overlay,104,100,0,0
+	animation1.pattern8,overlay,103,50,0,0
+	animation1.pattern9,overlay,102,50,0,0
+	animation1.pattern10,overlay,101,50,0,0
+	animation1.pattern11,overlay,100,50,0,0
+	animation1.pattern12,base,0,0,0,0
+	
+	//something
+	
+	animation2.interval,never
+	animation2.pattern0,base,21,0,0,0
+	animation2.pattern1,overlay,100,0,0,0
+	animation2.pattern2,overlay,101,50,0,0
+	animation2.pattern3,overlay,101,50,0,0
+	animation2.pattern4,overlay,102,50,0,0
+	animation2.pattern5,overlay,104,50,0,0
+	animation2.pattern6,overlay,105,50,0,0
+	animation2.pattern7,overlay,104,100,0,0
+	animation2.pattern8,overlay,103,50,0,0
+	animation2.pattern9,overlay,102,50,0,0
+	animation2.pattern10,overlay,101,50,0,0
+	animation2.pattern11,overlay,100,50,0,0
+	animation2.pattern12,base,0,0,0,0
+	
 }
 
 // ----- surface1: Shy -----
@@ -40,7 +79,8 @@ surface1
 // ----- surface2: Surprised -----
 surface2
 {
-	element0,overlay,surface0.png,0,0
+	element0,overlay,surface2.png,0,0
+	element1,overlay,surprise0.png,0,0
 }
 
 // ----- surface3: Anxious -----
@@ -76,7 +116,8 @@ surface7
 // ----- surface8: Disgusted -----
 surface8
 {
-	element0,overlay,surface0.png,0,0
+	element0,overlay,surface8.png,0,0
+	// element1,overlay,surface0.png,0,0
 }
 
 // ----- surface9: Embarrassed -----
@@ -90,6 +131,12 @@ surface9
 surface20
 {
 	element0,overlay,surface20.png,0,0
+}
+
+// ----- surface20- Blank Face -----
+surface21
+{
+	element0,overlay,surface0.png,0,0
 }
 
 // ----- surface25- default "sing" surface Sakura -----
