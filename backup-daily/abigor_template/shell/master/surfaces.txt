@@ -1,11 +1,11 @@
-// ----- Template SHELL surfaces.txt -----
+/* ############# Template SHELL surfaces.txt ############# */
 
 version,1
 
 // ---------------------------Surfaces.txt--------------------------
 // Sorry? It will be a bit before I have this proper figured out and commented.
 
-// ---- Tooltips ----
+// ----- Tooltips -----
 
 sakura.tooltips 
 {
@@ -13,7 +13,7 @@ sakura.tooltips
 	Box2,Box 2
 }
 
-// ---- Cursor s----
+// ----- Cursor s -----
 
 sakura.cursor 
 { 
@@ -22,8 +22,9 @@ sakura.cursor
 	// mousewheel0,AAA,flick.ani
 	// mousehover0, collision detection ID, file name
 } 
-// ----- Poses -----
 
+
+/* ############# SAKURA SURFACES ############# */
 
 // ----- surface0: default surface Sakura -----
 surface0
@@ -52,7 +53,6 @@ surface0
 	animation1.pattern12,base,0,0,0,0
 	
 	//something
-	
 	animation2.interval,never
 	animation2.pattern0,base,21,0,0,0
 	animation2.pattern1,overlay,100,0,0,0
@@ -68,6 +68,12 @@ surface0
 	animation2.pattern11,overlay,100,50,0,0
 	animation2.pattern12,base,0,0,0,0
 	
+	// Talk animation
+	// animation10.interval,talk,2
+	// animation10.pattern0,overlay,200,700,200,120
+	// animation10.pattern1,overlay,201,700,200,120
+	// animation10.pattern2,overlay,202,700,200,120
+	// animation10.pattern3,overlay,-1,700,0,0
 }
 
 // ----- surface1: Shy -----
@@ -145,7 +151,7 @@ surface25
 	element0,overlay,surface25.png,0,0
 }
 
-// ----- KERO SURFACES -----
+/* ############# KERO SURFACES ############# */
 // ----- surface10: default surface Kero -----
 surface10
 {

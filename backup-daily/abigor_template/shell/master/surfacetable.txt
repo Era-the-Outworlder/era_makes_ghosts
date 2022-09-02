@@ -20,7 +20,7 @@ scope,0
 9,Embarrassed
 
 20,Signboard
-
+21,Blank Face
 25,Singing
 }
 
@@ -29,6 +29,7 @@ group,char1
 scope,1
 
 10,Default
+11,Suprised
 
 19,Singing
 }
@@ -39,4 +40,14 @@ scope,3
 
 30,Default
 
+}
+
+group,_disabled
+{
+	100,_parts
+	101,_parts
+	102,_parts
+	103,_parts
+	104,_parts
+	105,_parts
 }

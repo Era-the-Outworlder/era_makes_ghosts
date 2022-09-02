@@ -1,4 +1,4 @@
-﻿// ----- Abigor Template SHELL descript.txt -----
+﻿/* ############# Abigor Template SHELL descript.txt ############# */
 
 // -----General Information-----
 

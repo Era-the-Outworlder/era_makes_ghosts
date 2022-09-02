@@ -1,4 +1,4 @@
-﻿// ----- Abigor Template GHOST descript -----
+﻿/* ############# Abigor Template GHOST descript ############# */
 
 // -----Character set-----
 charset,UTF-8
