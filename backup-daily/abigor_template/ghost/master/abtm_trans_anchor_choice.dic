@@ -65,7 +65,8 @@ OnTranslate
 // │ 2+    │ Extended information             │
 // └───────┴──────────────────────────────────┘
 
-// OnChoiceSelect is included in yaya_shiori3.dic
+OnChoiceSelect
+{}
 
 OnChoiceSelectEx
 {}

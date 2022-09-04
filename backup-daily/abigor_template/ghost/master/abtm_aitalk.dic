@@ -1,42 +1,100 @@
 OnAITalk
 {
-	if RAND(100) < (communicateratio - 1)
- 	{
-		LOGGING("OnStartCommunicate")
- 		OnStartCommunicate
-	}
-	else
-	{
-		if TOSTR(offscreenflag) != ",,"
-		{
-			LOGGING("OnOffscreenTalk")
-			OnOffscreenTalk
-		}
-		else
-		{
-			LOGGING("OnAIDialogue")
-			OnAIDialogue
-		}
+	// if RAND(100) < (communicateratio - 1)
+ 	// {
+		// LOGGING("OnStartCommunicate")
+ 		// OnStartCommunicate
+	// }
+	// else
+	// {
+		// if TOSTR(offscreenflag) != ",,"
+		// {
+			// LOGGING("OnOffscreenTalk")
+			// OnOffscreenTalk
+		// }
+		// elseif CHAIN.IDName
+		// {
+			// LOGGING("ChainTalk")
+			// ChainTalk
+		// }
+		// else
+		// {
+			// LOGGING("RandomTalk")
+			// RandomTalk
+		// }
 		
-	}
+	// }
 }
 
-OnAIDialogue : nonoverlap_pool
+RandomTalk : nonoverlap_pool
 {
 
 	"\0This is a line of test dialogue."
-	// ----- Conditionals -----
+	"\1*The sabaton gives a bored clink*"
+	"\p[2]*The papers rustle restlessly*"
+	
+	
+	// ----- Timed Conditionals -----
 
 		
-	if ASEARCH("saidtimeslot",hourlyArray) == -1
+	if ASEARCH('saidtimeslot',hourlyArray) == -1
 	{OnTimeTalk}
 	
-	if ASEARCH("saidweekday",hourlyArray) == -1
+	if ASEARCH('saidweekday',hourlyArray) == -1
 	{OnDayTalk}
 	
-	if ASEARCH("saidmonthly",hourlyArray) == -1
+	if ASEARCH('saidmonthly',hourlyArray) == -1
 	{OnMonthTalk}
+	
+	// ----- Chained Dialogue -----
+	
+	if ASEARCH('testchain',hourlyArray) == -1 
+	{	
+		"\0This is the first test chain. "
+		--
+		"\e:chain=testchain0 :eval=hourlyArray ,= 'testchain'"
+	}
+	
+	if ASEARCH('forkchain',hourlyArray) == -1
+	{
+		"\0This Should be a forking chain. "
+		--
+		"\e:chain=forkchain0 :eval=hourlyArray ,= 'forkchain'"
+	}
 }
+
+	
+// ---- Chained Dialogue ----
+testchain0
+{{CHAIN
+	"\0This is the second part of the first test chain. \e:chain=testchain1"
+}}CHAIN
+
+
+forkchain0
+{{CHAIN
+	_test = RAND(100)
+	"\0This is the second part of the FORKED test chain."
+	--
+	if _test <= 49
+	{
+		"\e:chain=forkchainA"
+	}
+	else
+	{
+		"\e:chain=forkchainB"
+	}
+}}CHAIN
+
+forkchainA
+{{CHAIN
+	"\0\This is fork A of the forked test chain. \e:chain=end"
+}}CHAIN
+
+forkchainB
+{{CHAIN
+	"\0\This is fork B of the forked test chain. \e:chain=end"
+}}CHAIN
 
 OnTimeTalk
 {
@@ -191,7 +249,7 @@ OnMonthTalk
 
 OnKeyPress
 {
-	"%(REFTEST('OnKeyPress'))"
+	// "%(REFTEST('OnKeyPress'))"
 	--
 	case reference0
 	{
@@ -201,7 +259,7 @@ OnKeyPress
 		}
 		when "r"
 		{
-			//OnLastTalk
+			OnLastTalk
 		}
 		when "f4"
 		{
@@ -247,6 +305,7 @@ OnSecondChange
 		{
 			runhour ++
 			runmin = 0
+			ERASEVAR("hourlyArray")
 		}
 		else
 		{

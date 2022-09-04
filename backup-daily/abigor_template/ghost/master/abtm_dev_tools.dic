@@ -60,7 +60,8 @@ OnTestSelect
 		}
 		when "testFunk"
 		{
-			TextAlignTest
+			ASEARCH('forkchain',hourlyArray)
+			// TextAlignTest
 			// DUMPVAR()
 			// \n[200]\nDumping Variables to ayame.log.\n"
 			
