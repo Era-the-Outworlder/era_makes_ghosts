@@ -89,9 +89,7 @@ OnOffscreen
 {
 	if  "0" !_in_ TOSTR(reference0)
 	{
-	
 		offscreenflag[0] = ""
-		
 	}
 	elseif "0" _in_ TOSTR(reference0) && offscreenflag[0] != "0"
 	{
@@ -100,9 +98,7 @@ OnOffscreen
 	--
 	if  "1" !_in_ TOSTR(reference0)
 	{
-	
-		offscreenflag[1] = ""
-		
+		offscreenflag[1] = ""	
 	}
 	elseif "1" _in_ TOSTR(reference0) && offscreenflag[1] != "1"
 	{
@@ -111,9 +107,7 @@ OnOffscreen
 	--
 	if  "2" !_in_ TOSTR(reference0)
 	{
-	
-		offscreenflag[2] = ""
-		
+		offscreenflag[2] = ""	
 	}
 	elseif "2" _in_ TOSTR(reference0) && offscreenflag[2] != "2"
 	{
@@ -198,7 +192,7 @@ OnSurfaceRestore
 // └───────┴─────────────────────────────────────────┘
 OnSurfaceChange
 {
-	"%(REFTEST('OnSurfaceChange'))"
+	// "%(REFTEST('OnSurfaceChange'))"
 }
 
 
@@ -223,7 +217,7 @@ OnSurfaceChange
 
 OnOtherSurfaceChange
 {
-	"%(REFTEST('OnOtherSurfaceChange'))"
+	// "%(REFTEST('OnOtherSurfaceChange'))"
 }
 
 
@@ -242,7 +236,7 @@ OnOtherSurfaceChange
 
 OnShellChanged
 {
-	"%(errorMsg)\_w[500]\e"
+	// "%(errorMsg)\_w[500]\e"
 }
 
 
@@ -260,7 +254,7 @@ OnShellChanged
 
 OnShellChanging
 {
-	"%(errorMsg)\_w[500]\e"
+	// "%(errorMsg)\_w[500]\e"
 }
 
 
@@ -280,7 +274,7 @@ OnShellChanging
 
 OnShellScaling
 {
-	"%(REFTEST('OnShellScaling'))"
+	// "%(REFTEST('OnShellScaling'))"
 }
 
 
@@ -326,7 +320,7 @@ OnDressupChanged
 
 OnBalloonChange
 {
-	"%(REFTEST('OnBalloonChange'))"
+	// "%(REFTEST('OnBalloonChange'))"
 	// "Maybe this will look better. \_w[500]"
 }
 
@@ -347,7 +341,7 @@ OnBalloonChange
 
 OnBalloonBreak
 {
-	"%(REFTEST('OnBalloonBreak'))"
+	// "%(REFTEST('OnBalloonBreak'))"
 }
 
 
@@ -379,7 +373,7 @@ OnBalloonClose
 
 OnBalloonTimeout
 {
-	"%(REFTEST('OnBalloonTimeout'))"
+	// "%(REFTEST('OnBalloonTimeout'))"
 }
 
 
@@ -399,7 +393,7 @@ OnBalloonTimeout
 
 OnBalloonScaling
 {
-	"%(REFTEST('OnBalloonScaling'))"
+	// "%(REFTEST('OnBalloonScaling'))"
 }
 
 
@@ -415,11 +409,11 @@ OnBalloonScaling
 
 OnTrayBalloonClick
 {
-	"%(REFTEST('OnTrayBalloonClick'))"
+	// "%(REFTEST('OnTrayBalloonClick'))"
 }
 
 OnTrayBalloonTimeout
 {
-	"%(REFTEST('OnTrayBalloonTimeout'))"
+	// "%(REFTEST('OnTrayBalloonTimeout'))"
 }
 

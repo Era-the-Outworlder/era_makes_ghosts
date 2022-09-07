@@ -16,6 +16,7 @@ OnFirstBoot
 	hourlyArray = IARRAY
 	offscreenflag = IARRAY
 	runhour = 0
+	runmin = 0
 	"\0\s[0]\1\s[10]\p[2]\s[30]\![set,otherghosttalk,true]"
 	--
 	"\0This is my first time booting.\_w[500]"
@@ -40,6 +41,7 @@ OnBoot
 {
 	hourlyArray = IARRAY
 	runhour = 0
+	runmin = 0
 	
 	"\0\s[0]\1\s[10]\p[2]\s[30]\![set,otherghosttalk,true]"
 	--
@@ -170,6 +172,7 @@ OnGhostChanged
 {
 	hourlyArray = IARRAY
 	runhour = 0
+	runmin = 0
 	"\![set,otherghosttalk,true]\0\s[0]"
 	--
 	_selfname = TOSTR(sakuraname)
