@@ -306,7 +306,7 @@ OnUpdateComplete
 		if GETTYPE(resetcount) == 3
 		{
 			_transfer = STRLEN(resetcount)
-		
+			resetcount = TOINT(_transfer)
 		}
 		--
 
