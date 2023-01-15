@@ -3,8 +3,8 @@ install,717028147
 homeurl_found,1
 surfacecount,42
 homeurl,https://raw.githubusercontent.com/Era-The-Outworlder/era_makes_ghosts/main/Updates/aya-f_lowe_y/
-update_result,OK(1)
+update_result,OK(0)
 firstboot,717028205
-update_time,727081862
+update_time,727083634
 commitmemorysize,5011994
 lastboot,727083311

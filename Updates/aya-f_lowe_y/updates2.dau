@@ -7,7 +7,7 @@ SOUL_split.wav97a3059248b1397a688f254dcf46535fsize=62706date=2022-05-01T14:48
 asriel.c93839a4a403af6693a1b6fb63a719db5size=20334date=2022-05-01T14:48:06
 attack.wav6abb4d46eb0fce3d94824365e83b2577size=174926date=2022-05-01T14:48:06
 battle_start.wav89fa8dd222bccd5a519a68b92c11015asize=29518date=2022-05-01T14:48:06
-developer_options.txt82865e6ee8786f642c5f597f830e828bsize=1226date=2022-07-29T20:54:37
+developer_options.txtb1cb593b2b2eb02617738c7ac5c3cb95size=270date=2023-01-14T23:40:51
 dust.wavf66ae9c237f93f6674bb387aca5371easize=302478date=2022-05-01T14:48:06
 encounter.wavd2e30091c731d944109ebd79b63bc6bcsize=221734date=2022-05-01T14:48:06
 flee.wavf0247bee566c87ead3e68c34d0ab358csize=110906date=2022-05-01T14:48:06
@@ -48,6 +48,8 @@ shell/master/descript.txtf98a3cf750799cfd96eee82b92a28bafsize=1442date=2022-0
 shell/master/menu_background.pngeda768182b5efecc077e51f7cbfdebf2size=5150date=2022-05-01T14:48:06
 shell/master/menu_foreground.png966a85a9ace2208ce5313629591fd2dasize=5392date=2022-05-01T14:48:06
 shell/master/menu_sidebar.pngf539171e955be4f1b5ac09260fd22968size=12818date=2023-01-14T22:35:58
+shell/master/opamap0.png2a519214c0bcbd89dc39fcf627e9b46dsize=18392date=2022-05-01T14:48:06
+shell/master/opamap_blink.pngc5ad667c309c707d8eb12485b01232b6size=61372date=2022-05-01T14:48:06
 shell/master/opamap_laugh.png1e4a52da855e92c86de49641056effe5size=3995date=2022-05-01T14:48:06
 shell/master/read me.txt5099f0f671ce1e7707345036078545a4size=1178date=2022-05-01T14:48:06
 shell/master/surface0.pna2a519214c0bcbd89dc39fcf627e9b46dsize=18392date=2022-05-01T14:48:06
@@ -133,6 +135,7 @@ shell/master/surface1308.pna294a34fcf0d38191c2d578d443a2a8cdsize=13018date=20
 shell/master/surface1308.png20fe34bce30602a24009367ebbc7b8basize=82368date=2022-05-01T14:48:06
 shell/master/surface1309.pna14cd916ac77b22d3e0ef337ed6ad2a0bsize=12492date=2022-05-01T14:48:06
 shell/master/surface1309.pngb5cb4c0ce3c0c2855db4e15b0c02cd37size=81635date=2022-05-01T14:48:06
+shell/master/surface1310.mdp48d358d1713463d5133c84bb2bc21a98size=1653450date=2022-05-01T14:48:06
 shell/master/surface1310.pna8fac9256b108644896b69c91fd0cc476size=13214date=2022-05-01T14:48:06
 shell/master/surface1310.pnga8579068f66f65bd333026ab5500c1adsize=78879date=2022-05-01T14:48:06
 shell/master/surfaces.txt0e803eac0e38891798f633f083918827size=7469date=2022-05-01T14:48:06
