@@ -9,9 +9,9 @@ OnTeachName
 {
 	if reference0 == "TEACHNAME" //ignore this
 		{
-		"\0\s[0]\_v[HELP_text.mp3] * (Change var_player_name?) \![open,inputbox,OnNameTeach,-1]\s[0]\e"
-		"\0\s[12]\_v[sound_FLOWEY.mp3] * Name the Fallen Human \![open,inputbox,OnNameTeach,-1]\s[0]\e"
-		"\0\s[16]\_v[sound_FLOWEY.mp3] * Human name name name fallen human fallen fallen... name? \![open,inputbox,OnNameTeach,-1]\s[0]\e"
+		"\0\s[0]%(narrator) * (Change var_player_name?) \![open,inputbox,OnNameTeach,-1]\s[0]\e"
+		"\0\s[12]%(floweySpeech) * Name the Fallen Human \![open,inputbox,OnNameTeach,-1]\s[0]\e"
+		"\0\s[16]%(floweySpeech) * Human name name name fallen human fallen fallen... name? \![open,inputbox,OnNameTeach,-1]\s[0]\e"
 		
 		}
 	else
@@ -30,21 +30,21 @@ OnNameTeach
 	
 	if reference0 == "flowey" || reference0 == "Flowey" || reference0 == "FLOWEY" //this checks to see if the user input the name flowey.
 	{
-		"\0\s[9]\_v[sound_FLOWEY.mp3] * Chose... already...\![open,inputbox,OnNameTeach,-1]"
+		"\0\s[9]%(floweySpeech) * Chose... already...\![open,inputbox,OnNameTeach,-1]"
 		
 	}
 	elseif reference0 == "FlOwEy" || reference0 == "fLoWeY"
 	{
-		"\0\s[5]\_v[sound_FLOWEY.mp3] * Clevvvvvvvver Vvve ver very clever.\![open,inputbox,OnNameTeach,-1]"
-		"\0\s[8]\_v[HELP_text.mp3] * (You decide that may have been a bad idea.)\![open,inputbox,OnNameTeach,-1]"
+		"\0\s[5]%(floweySpeech) * Clevvvvvvvver Vvve ver very clever.\![open,inputbox,OnNameTeach,-1]"
+		"\0\s[8]%(narrator) * (You decide that may have been a bad idea.)\![open,inputbox,OnNameTeach,-1]"
 		
 	}
 	elseif reference0 == "" || reference0 == " " || reference0 == "   " //This is if the user doesn't put in a name at all.
 	{
 		username = "NULL" //this sets the user's name.
 		
-		"\0\s[14]\_v[sound_FLOWEY.mp3] * var_player_name = %(username)\s[0]\e"
-		"\0\s[14]\_v[HELP_text.mp3] * var_player_name = %(username) Is this correct? \n/
+		"\0\s[14]%(floweySpeech) * var_player_name = %(username)\s[0]\e"
+		"\0\s[14]%(narrator) * var_player_name = %(username) Is this correct? \n/
 		\![*]\q[Change it.,TEACHNAME]\n/
 		\![*]\q[It's fine.,CANCEL]\n\s[0]\e"
 		
@@ -53,8 +53,8 @@ OnNameTeach
 	{
 		username = "Smiley Trashbag" //this sets the user's name to something insulting
 		
-		"\0\s[8]\_v[sound_FLOWEY.mp3] * Trash_bag_ \s[0]\e"
-		"\0\s[8]\_v[HELP_text.mp3] * (Flowey isn't a fan of that name. You feel he may decide to call you something rude instead.) \n/
+		"\0\s[8]%(floweySpeech) * Trash_bag_ \s[0]\e"
+		"\0\s[8]%(narrator) * (Flowey isn't a fan of that name. You feel he may decide to call you something rude instead.) \n/
 		\![*]\q[Change it.,TEACHNAME]\n/
 		\![*]\q[Risk it.,CANCEL]\n\s[0]\e"
 		
@@ -62,16 +62,16 @@ OnNameTeach
 	elseif reference0 == username //checks against existing username
 	{
 
-		"\0\s[13]\_v[sound_FLOWEY.mp3] * %(username)... Title...?\w4\n\n[half]\![*]\q[Reject lables,titlenone]\n"
-		"\0\s[0]\_v[HELP_text.mp3] * (You do not change your name. Are you trying to change something else?) \w4\n\n[half]/
+		"\0\s[13]%(floweySpeech) * %(username)... Title...?\w4\n\n[half]\![*]\q[Reject lables,titlenone]\n"
+		"\0\s[0]%(narrator) * (You do not change your name. Are you trying to change something else?) \w4\n\n[half]/
 		\![*]\q[Yes,titlechoose]\n/
 		\![*]\q[No,titlenone]\n"
 		
 	}
 	else //if the user put in something not specified above, ie a proper name the ghost can use. 
 	{
-		"\0\s[13]\_v[sound_FLOWEY.mp3] * Title...?\w4\n\n[half]\![*]\q[Reject lables,titlenone]\n"
-		"\0\s[0]\_v[HELP_text.mp3] * Do you want to be called by a title? \w4\n\n[half]/
+		"\0\s[13]%(floweySpeech) * Title...?\w4\n\n[half]\![*]\q[Reject lables,titlenone]\n"
+		"\0\s[0]%(narrator) * Do you want to be called by a title? \w4\n\n[half]/
 		\![*]\q[Yes,titlechoose]\n/
 		\![*]\q[No,titlenone]\n"
 		
@@ -173,6 +173,6 @@ Select.titlesan
 
 NameDone
 {
-		"\0\s[6]\_v[sound_FLOWEY.mp3] * \w8%(username)!\s[0]\e"
+		"\0\s[6]%(floweySpeech) * \w8%(username)!\s[0]\e"
 		
 }

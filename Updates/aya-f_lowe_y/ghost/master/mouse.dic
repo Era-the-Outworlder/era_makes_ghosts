@@ -16,7 +16,7 @@ OnMouseMove
 		}
 		else //if the character isn't 0, then it must be the side character.
 		{
-			"\0\s[0]\_v[HELP_text.mp3] * (Something is Wrong. Please report bug to era@outworlderaffairs.com)\w8\w8\s[0]\e"
+			"\0\s[0]%(narrator) * (Something is Wrong. Please report bug to era@outworlderaffairs.com)\w8\w8\s[0]\e"
 		}
 	}
  }
@@ -36,21 +36,12 @@ MouseMoveSakura
  			stroke = 0 //resetting the stroke count
 			if reference4 == "Top" //collision as set in surfaces.txt
  			{
-				"\0\s[9]\_v[sound_FLOWEY.mp3] * Stop. sssssssssssstop. \w8\w8\s[0]\e"
-				"\0\s[6]\_v[sound_FLOWEY.mp3] * Pat. patpetpotpatpotpet. \w8\w8\s[0]\e"
-				"\0\s[9]\_v[HELP_text.mp3] * (You get the feeling he would appreciate it more if you'd stop.) \w8\w8\w8\s[0]\e"
-				"\0\s[6]\_v[HELP_text.mp3] * (He seems to be enjoying this.)\w8\w8\s[0]\e"
+				"\0\s[9]%(floweySpeech) * Stop. sssssssssssstop. \w8\w8\s[0]\e"
+				"\0\s[6]%(floweySpeech) * Pat. patpetpotpatpotpet. \w8\w8\s[0]\e"
+				"\0\s[9]%(narrator) * (You get the feeling he would appreciate it more if you'd stop.) \w8\w8\w8\s[0]\e"
+				"\0\s[6]%(narrator) * (He seems to be enjoying this.)\w8\w8\s[0]\e"
 				
  			}
- 			elseif reference4 == "Chin" 
- 			{
- 				"\0\s[9]\_v[sound_FLOWEY.mp3] * Stop. sssssssssssstop. \w8\w8\s[0]\e"
-				"\0\s[0]\_v[sound_FLOWEY.mp3] * Pat. patpetpotpatpotpet. \w8\w8\s[0]\e"
-				"\0\s[9]\_v[HELP_text.mp3] * (You get the feeling he would appreciate it more if you'd stop.) \w8\w8\w8\s[0]\e"
-				"\0\s[0]\_v[HELP_text.mp3] * (He seems to be enjoying this.)\w8\w8\s[0]\e"
-				
- 			}
-			
  		}
 	}
  	else
@@ -73,7 +64,7 @@ OnMouseDoubleClick
  	}
 	else
  	{
- 		"\0\s[0]\_v[HELP_text.mp3] * (Something is Wrong. Please report bug to era@outworlderaffairs.com)\w8\w8\s[0]\e"
+ 		"\0\s[0]%(narrator) * (Something is Wrong. Please report bug to era@outworlderaffairs.com)\w8\w8\s[0]\e"
 	}
  }
 
@@ -95,13 +86,13 @@ MouseDoubleClickSakura
 				knifetime = 0
 				killcount = 0
 				resetcount++
-				"\0\s[-1]\_v[dust.wav]\w8\w8\w8\_v[LV_increased.wav] * YOU WIN! \w8\e"
+				"\0\s[-1]%(dustSFX)\w8\w8\w8%(upLV) * YOU WIN! \w8\e"
 			}
 			else
 			{
 				knifetime = 0
 				killcount++
-				"\0\s[-1]\w8\w8\w8\w8\s[0]\_v[savestate_spam.wav]\w8\w8\w8\w8\s[7]\e"
+				"\0\s[-1]\w8\w8\w8\w8\s[0]%(savestateSFX)\w8\w8\w8\w8\s[7]\e"
 			}
 			
 		}
@@ -109,41 +100,41 @@ MouseDoubleClickSakura
 		elseif knifetime == 29
 		{
 			knifetime++ 
-			"\0\s[8]\_v[hahaha.mp3] * (Flowey is considering a violence.) \w8\w8\s[0]\e"
-			"\0\s[8]\_v[sound_FLOWEY.mp3] \f[bold,true]Die.\w8\w8\s[0]\e"
+			"\0\s[8]%(hahahaLaugh) * (Flowey is considering a violence.) \w8\w8\s[0]\e"
+			"\0\s[8]%(floweySpeech) \f[bold,true]Die.\w8\w8\s[0]\e"
 			
 		}
 		elseif knifetime >= 20
 		{
 			knifetime++
-			"\0\s[15]\_v[r_ack.wav] * ST_P IT!\w8\w8\s[0]\e"
-			"\0\s[9]\_v[r_oh.wav] * C_T TH_T __T!!\w8\w8\s[0]\e"
-			"\0\s[4]\_v[r_screech.wav] * (Scared noises)\w8\w8\s[0]\e"
-			"\0\s[9]\_v[r_hey.wav] * H_Y Y__! \w8\w8\s[0]\e"
-			"\0\s[4]\_v[HELP_text.mp3] \f[color,250,0,0]* ( %(knifetime) )\f[color,default]  \w8\w8\s[0]\e"
-			"\0\s[15]\_v[hit.wav]\w8\w8\s[0]\e"
+			"\0\s[15]%(ackSFX) * ST_P IT!\w8\w8\s[0]\e"
+			"\0\s[9]%(ohSFX) * C_T TH_T __T!!\w8\w8\s[0]\e"
+			"\0\s[4]%(screechSFX) * (Scared noises)\w8\w8\s[0]\e"
+			"\0\s[9]%(heySFX) * H_Y Y__! \w8\w8\s[0]\e"
+			"\0\s[4]%(narrator) \f[color,250,0,0]* ( %(knifetime) )\f[color,default]  \w8\w8\s[0]\e"
+			"\0\s[15]%(hitSFX)\w8\w8\s[0]\e"
 		}
 		elseif knifetime >= 10
 		{
 			knifetime++
 			
-			"\0\s[16]\_v[r_ack.wav] * Ack! Why-\w8\w8\s[0]\e"
-			"\0\s[15]\_v[r_oh.wav] * OW! You!\w8\w8\s[0]\e"
-			"\0\s[16]\_v[r_screech.wav] * (Angrier noises)\w8\w8\s[0]\e"
-			"\0\s[16]\_v[r_hey.wav] * Hey! Stop! \w8\w8\s[0]\e"
-			"\0\s[4]\_v[HELP_text.mp3] \f[color,250,0,0]* ( %(knifetime) )\f[color,default]   \w8\w8\s[0]\e"
-			"\0\s[15]\_v[hit.wav]\w8\w8\s[0]\e"
+			"\0\s[16]%(ackSFX) * Ack! Why-\w8\w8\s[0]\e"
+			"\0\s[15]%(ohSFX) * OW! You!\w8\w8\s[0]\e"
+			"\0\s[16]%(screechSFX) * (Angrier noises)\w8\w8\s[0]\e"
+			"\0\s[16]%(heySFX) * Hey! Stop! \w8\w8\s[0]\e"
+			"\0\s[4]%(narrator) \f[color,250,0,0]* ( %(knifetime) )\f[color,default]   \w8\w8\s[0]\e"
+			"\0\s[15]%(hitSFX)\w8\w8\s[0]\e"
 		}
 		else
 		{
 			knifetime++
 			
-			"\0\s[15]\_v[r_ack.wav] * Ack!\w8\w8\s[0]\e"
-			"\0\s[2]\_v[r_oh.wav] * OW!\w8\w8\s[0]\e"
-			"\0\s[2]\_v[r_screech.wav] * (Angry noises)\w8\w8\s[0]\e"
-			"\0\s[2]\_v[r_hey.wav] * Hey! \w8\w8\s[0]\e"
-			"\0\s[4]\_v[HELP_text.mp3] \f[color,250,0,0]* ( %(knifetime) )\f[color,default]   \w8\w8\s[0]\e"
-			"\0\s[15]\_v[hit.wav]\w8\w8\s[0]\e"
+			"\0\s[15]%(ackSFX) * Ack!\w8\w8\s[0]\e"
+			"\0\s[2]%(ohSFX) * OW!\w8\w8\s[0]\e"
+			"\0\s[2]%(screechSFX) * (Angry noises)\w8\w8\s[0]\e"
+			"\0\s[2]%(heySFX) * Hey! \w8\w8\s[0]\e"
+			"\0\s[4]%(narrator) \f[color,250,0,0]* ( %(knifetime) )\f[color,default]   \w8\w8\s[0]\e"
+			"\0\s[15]%(hitSFX)\w8\w8\s[0]\e"
 		}
 		
 		

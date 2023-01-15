@@ -1,15 +1,15 @@
 //---------------------------Menus--------------------------
 //This .dic file is primarily concerned with the double-click menus.
 
-//--OpenSakuraMenu
+//--OpenSakuraMenu %(floweySpeech)
 //This is a bit of intro dialogue before the main character opens their menu.
 //The \b2 tag tells the ghost to use their big balloon for this dialogue. 
 
 OpenSakuraMenu
 {
-		"\0\s[0]\_v[sound_FLOWEY.mp3] * \b2 oooooooooOOOOOOOOO \n Ope_ Me_u.\w8\w8\w8\c\_q * Howdy!!"
-		"\0\s[0]\_v[sound_FLOWEY.mp3] * \b2 What do you want?"
-		"\0\s[0]\_v[sound_FLOWEY.mp3] * \b2 Need something?"
+		"\0\s[0]%(floweySpeech) * \b2 oooooooooOOOOOOOOO \n Ope_ Me_u.\w8\w8\w8\c\_q * Howdy!!"
+		"\0\s[0]%(floweySpeech) * \b2 What do you want?"
+		"\0\s[0]%(floweySpeech) * \b2 Need something?"
 		--
 		MenuRun
 }
@@ -51,11 +51,24 @@ MenuRun
 	"\![*] \q[FUNct_ons,dosomething]\n\n[half]"
 	
 	--
- 	"\![*] \q[Nevermind,CANCEL]\n\n\n[half]%(wd) %(nowhour):%(nowmin) %(ap),\n %(month)/%(day)/%(year)\nReset: %(resetcount)\e"
-	"\![*] \q[Shut up.,CANCEL]\n\n\n[half]%(wd) %(nowhour):%(nowmin) %(ap),\n %(month)/%(day)/%(year)\nReset: %(resetcount)\e"
-	"\![*] \q[N_V_RMIND,CANCEL]\n\n\n[half]%(wd) %(nowhour):%(nowmin) %(ap),\n %(month)/%(day)/%(year)\nReset: %(resetcount)\e"
-	
+ 	"\![*] \q[Nevermind,CANCEL]\n\n\n[half]"
+	"\![*] \q[Shut up.,CANCEL]\n\n\n[half]"
+	"\![*] \q[N_V_RMIND,CANCEL]\n\n\n[half]"
 	//These three lead to the Config Menu, the Function menu, and Cancel. 
+	--
+	"%(wd) %(nowhour):%(nowmin) %(ap) \n%(month)/%(day)/%(year)\n"
+	--
+	if resetcount != 0
+	{
+		_resetdisplay = resetcount
+		--
+		if RAND(99) > 24
+		{
+			_resetdisplay = TOBINSTR(resetcount)
+		}
+		--
+		"Reset: %(_resetdisplay)"
+	}
 }
 
 //Leave this next bit alone.
@@ -68,7 +81,7 @@ Select.altalk
 //Leave this alone
 OnLastTalk 
 {
-"%(lastTalk)\s[0]\e"
+	"%(lastTalk)\s[0]\e"
 }
 
 //This is figuring out what day of the week it is. Leave it alone.
@@ -153,7 +166,7 @@ TalkConfig
 	--
 	"f[bold,1]NAME:\f[bold,0] %(username) \n\f[height,10]\![*](\q[Ch-ch-change?,TEACHNAME])\f[height,default]\n"
 	--
-	"\f[bold,1]PRONOUNS:\f[bold,0] %(heshe)/%(himher)/%(hisher) \n\f[height,10]\![*](\q[Ch-__-change?,TEACHPRONOUN])\f[height,default]\n"
+	"\f[bold,1]PRONOUNS:\f[bold,0]\n%(heshe)/%(himher)/%(hisher) \n\f[height,10]\![*](\q[Ch-__-change?,TEACHPRONOUN])\f[height,default]\n"
 	--
 	"\f[bold,1]BIRTHDAY\f[bold,0] %(birthdayprint) \n\f[height,10]\![*](\q[C_-__-_hange?,TEACHBDAY])\f[height,default]\n"
 	--
@@ -167,7 +180,9 @@ TalkConfig
 	}
 	else
 	{
-		"\![*] \q[ON,silenton] \n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \f[color,#fb0300]\![*] \q[OFF,silentoff]\f[color,default]\n\n[half]\f[align,left]"
+		"\![*] \q[ON,silenton] \n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \f[color,#fb0300]\![*] \q[OFF,silentoff]\f[color,default]\n\f[align,left]"
+		--
+		"\f[align,center]\q[Set Volume,volumeslider]\n\n[half]\f[align,left]"
 	}
 	--
 	"Enable Uninstall?\n"
@@ -188,13 +203,13 @@ TalkConfig
 
 Select.TEACHPRONOUN
 {
-	"\0\s[0]\_v[sound_FLOWEY.mp3] * Do. _o. __.... Pronouns?\w5\n\n[half]\_q/
+	"\0\s[0]%(floweySpeech) * Do. _o. __.... Pronouns?\w5\n\n[half]\_q/
 		\![*] \q[He-His-Him,choicemasc]\n/
 		\![*] \q[She-Her-Her,choicefem]\n/	
 		\![*] \q[They-Their-Them,choiceneither]\n/
 		\![*] \q[Something else...,choicecustom]\s[0]\e"
 	
-	"\0\s[0]\_v[HELP_text.mp3] * (You are offered a choice of pronouns.)\w5\n\n[half]\_q/
+	"\0\s[0]%(narrator) * (You are offered a choice of pronouns.)\w5\n\n[half]\_q/
 		\![*] \q[He-His-Him,choicemasc]\n/
 		\![*] \q[She-Her-Her,choicefem]\n/	
 		\![*] \q[They-Their-Them,choiceneither]\n/
@@ -211,8 +226,8 @@ Select.choicemasc
 	hisher = "his"
 	mrms = "mister"
 	--
-	"\0\s[0]\_v[sound_FLOWEY.mp3] * Good. %(mrms)\s[0]\e"
-	"\0\s[0]\_v[HELP_text.mp3] * (F_lowe_y will now call you by the correct pronouns.)\n\n * (You can always change this later)\s[0]\e"
+	"\0\s[0]%(floweySpeech) * Good. %(mrms)\s[0]\e"
+	"\0\s[0]%(narrator) * (F_lowe_y will now call you by the correct pronouns.)\n\n * (You can always change this later)\s[0]\e"
 	
 	
 }
@@ -225,8 +240,8 @@ Select.choicefem
 	hisher = "her"
 	mrms = "miss"
 	--
-	"\0\s[0]\_v[sound_FLOWEY.mp3] * Good. %(mrms)\s[0]\e"
-	"\0\s[0]\_v[HELP_text.mp3] * (F_lowe_y will now call you by the correct pronouns.)\n\n * (You can always change this later)\s[0]\e"
+	"\0\s[0]%(floweySpeech) * Good. %(mrms)\s[0]\e"
+	"\0\s[0]%(narrator) * (F_lowe_y will now call you by the correct pronouns.)\n\n * (You can always change this later)\s[0]\e"
 	
 		
 }
@@ -239,8 +254,8 @@ Select.choiceneither
 	hisher = "their"
 	mrms = "friend"
 	--
-		"\0\s[0]\_v[sound_FLOWEY.mp3] * Good. %(mrms)\s[0]\e"
-		"\0\s[0]\_v[HELP_text.mp3] * (F_lowe_y will now call you by the correct pronouns.)\n\n * (You can always change this later)\s[0]\e"
+		"\0\s[0]%(floweySpeech) * Good. %(mrms)\s[0]\e"
+		"\0\s[0]%(narrator) * (F_lowe_y will now call you by the correct pronouns.)\n\n * (You can always change this later)\s[0]\e"
 	
 }
 
@@ -248,7 +263,7 @@ Select.choicecustom //for people with less common pronouns
 {
 	presuffix = "open"
 	--
-	"\0\s[0]\_v[HELP_text.mp3] * (Enter the first of your pronouns, ex.'they')\![open,inputbox,OnHeSheTheyTeach,-1]\s[0]\e"
+	"\0\s[0]%(narrator) * (Enter the first of your pronouns, ex.'they')\![open,inputbox,OnHeSheTheyTeach,-1]\s[0]\e"
 }
 
 //These two options toggle whether or not you can delete your ghost. Leave them alone.
@@ -278,14 +293,24 @@ Select.silentoff
 	TalkConfig
 }
 
+Select.volumeslider
+{
+	"\C\![open,sliderinput,OnSetVolume,,%(volume),1,100]"
+}
+
+OnSetVolume
+{
+	volume = reference0
+	TalkConfig
+}
 //This next set of functions handles inputting the user's birthday.
 
 Select.TEACHBDAY
 	{
 		dayslot = GetDaySlot //This is setting up in case today is the user's birthday.
 		
-		"\0\s[0]\_v[sound_FLOWEY.mp3] * Birth month. \w8 [inputbox_integer].\![open,inputbox,OnUserBornMonth,-1]\s[0]\e"
-		"\0\s[0]\_v[HELP_text.mp3] * (Enter your birth month as an integer.)\![open,inputbox,OnUserBornMonth,-1]\s[0]\e"
+		"\0\s[0]%(floweySpeech) * Birth month. \w8 [inputbox_integer].\![open,inputbox,OnUserBornMonth,-1]\s[0]\e"
+		"\0\s[0]%(narrator) * (Enter your birth month as an integer.)\![open,inputbox,OnUserBornMonth,-1]\s[0]\e"
 		
 		
 	}
@@ -301,13 +326,13 @@ OnUserBornMonth
 			bornmonth = _tempmonth
 			bornmonthprint = Printmonth
 			
-			"\0\s[0]\_v[sound_FLOWEY.mp3] * %(bornmonthprint).%(bornmonthprint).%(bornmonthprint).%(bornmonthprint).%(bornmonthprint).\n\w8Day?\![open,inputbox,OnUserBornDay,-1]\s[0]\e"
-			"\0\s[0]\_v[HELP_text.mp3] * (You tell him you were born in %(bornmonthprint))\n\w8 * (What was the day?)\![open,inputbox,OnUserBornDay,-1]\s[0]\e"
+			"\0\s[0]%(floweySpeech) * %(bornmonthprint).%(bornmonthprint).%(bornmonthprint).%(bornmonthprint).%(bornmonthprint).\n\w8Day?\![open,inputbox,OnUserBornDay,-1]\s[0]\e"
+			"\0\s[0]%(narrator) * (You tell him you were born in %(bornmonthprint))\n\w8 * (What was the day?)\![open,inputbox,OnUserBornDay,-1]\s[0]\e"
 			}
 		else //if the month isn't a valid month, like 32 or something.
 			{
-			"\0\s[0]\_v[sound_FLOWEY.mp3] * _s th_s _ JOKOKO__ JOKE?? Are you [swap_status]?\![open,inputbox,OnUserBornMonth,-1]\s[0]\e"
-			"\0\s[0]\_v[HELP_text.mp3] * (The number you gave F_lowe_y did not match up with a month.)\n\w8 * (Are you proud of yourself?)\![open,inputbox,OnUserBornMonth,-1]\s[0]\e"
+			"\0\s[0]%(floweySpeech) * _s th_s _ JOKOKO__ JOKE?? Are you [swap_status]?\![open,inputbox,OnUserBornMonth,-1]\s[0]\e"
+			"\0\s[0]%(narrator) * (The number you gave F_lowe_y did not match up with a month.)\n\w8 * (Are you proud of yourself?)\![open,inputbox,OnUserBornMonth,-1]\s[0]\e"
 			}
 	}
 
@@ -408,8 +433,8 @@ OnUserBornDay
 			else 
 				{
 					
-					"\0\s[0]\_v[sound_FLOWEY.mp3] * Do do do do do you like lilililike watching me suffer??\![open,inputbox,OnUserBornDay,-1]\s[0]\e"
-					"\0\s[0]\_v[HELP_text.mp3] * (The number you gave F_lowe_y could not possily be a day of the month.)\n\w8 * (Try again.)\![open,inputbox,OnUserBornMonth,-1]\s[0]\e"
+					"\0\s[0]%(floweySpeech) * Do do do do do you like lilililike watching me suffer??\![open,inputbox,OnUserBornDay,-1]\s[0]\e"
+					"\0\s[0]%(narrator) * (The number you gave F_lowe_y could not possily be a day of the month.)\n\w8 * (Try again.)\![open,inputbox,OnUserBornMonth,-1]\s[0]\e"
 					
 				}
 		}
@@ -427,8 +452,8 @@ OnUserBornDay
 				}
 			else
 				{
-					"\0\s[0]\_v[sound_FLOWEY.mp3] * Do do do do do you think I'm an idiot??\![open,inputbox,OnUserBornDay,-1]\s[0]\e"
-					"\0\s[0]\_v[HELP_text.mp3] * (The number you gave F_lowe_y could not possily be a day of the month.)\n\w8 * (Try again.)\![open,inputbox,OnUserBornDay,-1]\s[0]\e"
+					"\0\s[0]%(floweySpeech) * Do do do do do you think I'm an idiot??\![open,inputbox,OnUserBornDay,-1]\s[0]\e"
+					"\0\s[0]%(narrator) * (The number you gave F_lowe_y could not possily be a day of the month.)\n\w8 * (Try again.)\![open,inputbox,OnUserBornDay,-1]\s[0]\e"
 				}
 		}
 	else //if it's any other month than those
@@ -444,8 +469,8 @@ OnUserBornDay
 				}
 			else
 				{
-					"\0\s[0]\_v[sound_FLOWEY.mp3] * Do do do do do you think I'm an idiot??\![open,inputbox,OnUserBornDay,-1]\s[0]\e"
-					"\0\s[0]\_v[HELP_text.mp3] * (The number you gave F_lowe_y could not possily be a day of the month.)\n\w8 * (Try again.)\![open,inputbox,OnUserBornDay,-1]\s[0]\e"
+					"\0\s[0]%(floweySpeech) * Do do do do do you think I'm an idiot??\![open,inputbox,OnUserBornDay,-1]\s[0]\e"
+					"\0\s[0]%(narrator) * (The number you gave F_lowe_y could not possily be a day of the month.)\n\w8 * (Try again.)\![open,inputbox,OnUserBornDay,-1]\s[0]\e"
 				}
 		}		
 }
@@ -459,24 +484,24 @@ birthchecked
 		{
 			if userbirthday == "12month 25day"
 			{
-				"\0\s[0]\_v[sound_FLOWEY.mp3] \w8\w8* Merry\w8\w8 Gyftmas\w8\c\_q * Merry Christmas.\w8\w8\s[0]\e"
-				"\0\s[0]\_v[HELP_text.mp3] * (It's your birthday today.)\n * (And it's Christmas, too?)\w8\w8\w8\s[0]\e"
+				"\0\s[0]%(floweySpeech) \w8\w8* Merry\w8\w8 Gyftmas\w8\c\_q * Merry Christmas.\w8\w8\s[0]\e"
+				"\0\s[0]%(narrator) * (It's your birthday today.)\n * (And it's Christmas, too?)\w8\w8\w8\s[0]\e"
 			}
 			else
 			{
-			"\0\s[12]\_v[sound_FLOWEY.mp3] * %(HAPPY) \c\_v[sound_FLOWEY.mp3] *Happy birthday, %(username).\w8\w8\w8\w8\w8\w8\s[0]\e"
+			"\0\s[12]%(floweySpeech) * %(HAPPY) \c%(floweySpeech) *Happy birthday, %(username).\w8\w8\w8\w8\w8\w8\s[0]\e"
 			
-			"\0\s[0]\_v[HELP_text.mp3] * (It's your birthday today.)\w8\w8\w8\s[0]\e"
+			"\0\s[0]%(narrator) * (It's your birthday today.)\w8\w8\w8\s[0]\e"
 			}
 		}
 	elseif userbirthday == "12month 25day"
 		{
-			"\0\s[0]\_v[HELP_text.mp3] * (That's right, you were born on Christmas...)\w8\w8\w8\s[0]\e"
+			"\0\s[0]%(narrator) * (That's right, you were born on Christmas...)\w8\w8\w8\s[0]\e"
 		}
 	else //if the birthday is not listed above.
 		{
-			"\0\s[0]\_v[sound_FLOWEY.mp3] * %(bornmonthprint) %(borndayprint)? Is _ha_... righ_...\s[0]\e"
-			"\0\s[0]\_v[HELP_text.mp3] * (%(bornmonthprint) %(borndayprint))\n * (F_lowe_y will remember that.)\w8\w8\w8\s[0]\e"
+			"\0\s[0]%(floweySpeech) * %(bornmonthprint) %(borndayprint)? Is _ha_... righ_...\s[0]\e"
+			"\0\s[0]%(narrator) * (%(bornmonthprint) %(borndayprint))\n * (F_lowe_y will remember that.)\w8\w8\w8\s[0]\e"
 		}
 }
 
@@ -485,8 +510,8 @@ birthchecked
 
 Select.talkinter
  	{
- 		"\0\s[0]\_v[sound_FLOWEY.mp3] * \b2 Change [talktime]? \w8\0\s[0] talktime is currently %(talktime)."
-		"\0\s[0]\_v[HELP_text.mp3] * \b2 You can change how often F_lowe_y speaks.\w8\0\s[0] The current rate is every %(talktime)."
+ 		"\0\s[0]%(floweySpeech) * \b2 Change [talktime]? \w8\0\s[0] talktime is currently %(talktime)."
+		"\0\s[0]%(narrator) * \b2 You can change how often F_lowe_y speaks.\w8\0\s[0] The current rate is every %(talktime)."
 		//note the new envelope here for %(talktime). You'll see it again in a second. You can replace the dialogue above with whatever you like, just make sure it ends with ./ and not \s[0]\e.
 		--
 		
@@ -502,7 +527,7 @@ Select.talkinter
 //If the user doesn't want to change the rate. You can change all of the dialogue in any of these options if you want to reflect the choice the user made. You TECHNICALLY could also change the value in talktime to reflect some other way of measuring time but I would NOT recommend it, it'd just be confusing I'm sure.
 Select.TalksTill
 	{
-		"\0\s[0]\_v[sound_FLOWEY.mp3] * No change.\s[0]\e"
+		"\0\s[0]%(floweySpeech) * No change.\s[0]\e"
 	}
 
 //If the user chooses every 30 seconds.
@@ -511,7 +536,7 @@ Select.TALKMAX
  		talktime = "30 seconds" //this sets up the envelope properly
 		aitalkinterval = 45 //this changes the actual rate
 		
- 		"\0\s[0]\_v[sound_FLOWEY.mp3] * 30 seconds.\s[0]\e"
+ 		"\0\s[0]%(floweySpeech) * 30 seconds.\s[0]\e"
 	}
 
 //If the user chooses every minute.
@@ -520,7 +545,7 @@ Select.TALKHIGH
  		talktime = "minute"
 		aitalkinterval = 90
 		
- 		"\0\s[0]\_v[sound_FLOWEY.mp3] * 1 minute.\s[0]\e"
+ 		"\0\s[0]%(floweySpeech) * 1 minute.\s[0]\e"
 	}
 
 //If the user chooses every three minutes.
@@ -529,7 +554,7 @@ Select.TALKNORMAL
  		talktime = "3 minutes"
 		aitalkinterval = 270
 		
- 		"\0\s[0]\_v[sound_FLOWEY.mp3] * 3 minutes.\s[0]\e"
+ 		"\0\s[0]%(floweySpeech) * 3 minutes.\s[0]\e"
 	}
 
 //If the user chooses every five minutes. This is the default rate the ghost will start up in, as seen in bootend.dic.
@@ -538,7 +563,7 @@ Select.TALKPOOR
  		talktime = "5 minutes"
 		aitalkinterval = 400
 		
- 		"\0\s[0]\_v[sound_FLOWEY.mp3] * 5 minutes.\s[0]\e"
+ 		"\0\s[0]%(floweySpeech) * 5 minutes.\s[0]\e"
 	}
 
 //If the user chooses to not have them speak. This is one case where you MIGHT want to make talktime equal something else, if you have a snappier way of saying the ghost won't talk. Make sure it flows well in your menus though, since it will be displayed in your config menu.
@@ -547,7 +572,7 @@ Select.TALKNONE
  		talktime = "never"
 		aitalkinterval = 0
 		
-		"\0\s[0]\_v[sound_FLOWEY.mp3] * ...\s[0]\e"
+		"\0\s[0]%(floweySpeech) * ...\s[0]\e"
 	}
 
 	
@@ -561,9 +586,9 @@ Select.TEACHNAME
 //If the user selects cancel in a menu. Replace as you like, or just leave them blank.
 Select.CANCEL
 	{
-		"\0\s[0]\_v[sound_FLOWEY.mp3] * Nevermind. \s[0]\e"
+		"\0\s[0]%(floweySpeech) * Nevermind. \s[0]\e"
 		
-		"\0\s[0]\_v[sound_FLOWEY.mp3] * Whatever. \s[0]\e"
+		"\0\s[0]%(floweySpeech) * Whatever. \s[0]\e"
  	}
 
 	
@@ -571,9 +596,9 @@ Select.CANCEL
 
 Select.dosomething
 {
- 		"\0\s[0]\_v[sound_FLOWEY.mp3] *\b2 ...\n\n"
- 		"\0\s[0]\_v[sound_FLOWEY.mp3] *\b2 ACC_SSING FUNCTION M_NU\n\n"
-		"\0\s[0]\_v[HELP_text.mp3] *\b2 (You ask F_lowe_y to do something for you.)\n\n"
+ 		"\0\s[0]%(floweySpeech) *\b2 ...\n\n"
+ 		"\0\s[0]%(floweySpeech) *\b2 ACC_SSING FUNCTION M_NU\n\n"
+		"\0\s[0]%(narrator) *\b2 (You ask F_lowe_y to do something for you.)\n\n"
 		
 		
 		--
@@ -588,7 +613,7 @@ Select.dosomething
 //When the user clicks Open Calender. This will open the calender function of SSP, an in-built feature that you don't have to worry about in the least.
 Select.CALENDAR
 {
-	"\0\s[0]\_v[sound_FLOWEY.mp3] * Op_ning th_ cal_nder.\![open,calendar]\s[0]\e"
+	"\0\s[0]%(floweySpeech) * Op_ning th_ cal_nder.\![open,calendar]\s[0]\e"
 	
 	//You can replace the dialogue here up to the \!.
 	//Advanced users, can you break it down yet? It's basically just using \! to open calender.exe or dll or whatever SSP uses to make it happen.
@@ -597,7 +622,7 @@ Select.CALENDAR
 //When the user chooses SSP preferences. This will open the same window that shows up if you right click your ghost and go to Utilities - Preferences.
 Select.sspconfig
 {
-	"\0\s[0]\_v[sound_FLOWEY.mp3] * _pening the SSP c_nfig menu.\![open,configurationdialog]\s[0]\e"
+	"\0\s[0]%(floweySpeech) * _pening the SSP c_nfig menu.\![open,configurationdialog]\s[0]\e"
 	
 	//Again, you can replace up to the \! tag.
 }
@@ -609,13 +634,13 @@ Select.ChoiceGarbagecan
 	
 	if _gomicheck == 0 //If the recycle bin is empty.
 	{
-		"\0\s[-1]\w8\w8\w8\w8\s[0]\_v[sound_FLOWEY.mp3] * IT IS EMPTY.\e"
+		"\0\s[-1]\w8\w8\w8\w8\s[0]%(floweySpeech) * IT IS EMPTY.\e"
 		
 		
 	}
 	elseif _gomicheck >= 1 //If the recycle bin is full.
 	{
-		"\0\s[0]\_v[sound_FLOWEY.mp3] * Emptying... \w8\w8\s[-1]\w8\w8\w8\w8\w8\![raise,OnGarbagecanEmpty]\w9\w9\w9\c\s[0] * Done.\e"
+		"\0\s[0]%(floweySpeech) * Emptying... \w8\w8\s[-1]\w8\w8\w8\w8\w8\![raise,OnGarbagecanEmpty]\w9\w9\w9\c\s[0] * Done.\e"
 		
 		
 		//Somewhat similar to the above, but notice the \![raise],OnGarbagecanEmpty] tag in there. That's what actually empties the recycle bin, so make sure you don't delete that tag. Otherwise, replace the dialogue as you want.
@@ -657,7 +682,7 @@ Select.MailCheck
 //This is when the user ends their headline session. Headlines are detailed more in etc.dic. Replace dialogue with what strikes you.
 Select.HEADLINECANCEL
  	{
- 		"\0\s[0]\_v[sound_FLOWEY.mp3] * DONE. \s[0]\e"
+ 		"\0\s[0]%(floweySpeech) * DONE. \s[0]\e"
 	}
 
 	
@@ -666,7 +691,7 @@ Select.HEADLINECANCEL
 
 OnChoiceTimeout
  {
-	"\0\s[0]\_v[sound_FLOWEY.mp3] * Come back when-when-when you actually want something.\s[0]\e"
+	"\0\s[0]%(floweySpeech) * Come back when-when-when you actually want something.\s[0]\e"
  }
 
  

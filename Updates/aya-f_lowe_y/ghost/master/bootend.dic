@@ -20,16 +20,17 @@ OnFirstBoot
 	deleteshitai = "OFF" //Sets whether or not the user can uninstall the ghost to "OFF". The user can change it later in the config menu (see menu.dic). 
 	nowshell = "master" //This is for a special if check in aitalk.dic to see what shell the ghost is using. You should use the name of your default shell folder here.
 	silentMode = "OFF"
-	//The foloowing are counters for F_lowe_y's... game.
+	volume = 100
+	//The folowing are counters for F_lowe_y's... game.
 
 	knifetime = 0
 	killcount = 0
-	resestcount = 0
+	resetcount = 0
 	
 	if reference0 == 0 //Don't touch this line.
  	{
 		
-		"\![enter,passivemode]\0\s[13]\_v[HELP_text.mp3] * (Flowey is attempting to introduce you to the SSP Ghost system.)\w8\w8\n\s[0]\_v[sound_FLOWEY.mp3] * Howdy!\n\n[half]/
+		"\![enter,passivemode]\0\s[13]%(narrator) * (Flowey is attempting to introduce you to the SSP Ghost system.)\w8\w8\n\s[0]%(floweySpeech) * Howdy!\n\n[half]/
 		\w5\_q\![*] \q[He/Him/His,choicefirsthehim]\n/
 		\![*] \q[She/Her/Hers,choicefirstsheher]\n/
 		\![*] \q[They/Them/Their,choicefirsttheythem]\n/
@@ -41,8 +42,8 @@ OnFirstBoot
  	{
 		
  		{
- 		"\0\s[9]\_v[sound_FLOWEY.mp3] * Problem. Fix.\![leave,passivemode]\s[0]\e"
-		"\0\s[9]\_v[HELP_text.mp3] * (A problem was encountered.)\![leave,passivemode]\s[0]\e"
+ 		"\0\s[9]%(floweySpeech) * Problem. Fix.\![leave,passivemode]\s[0]\e"
+		"\0\s[9]%(narrator) * (A problem was encountered.)\![leave,passivemode]\s[0]\e"
 		}
  	}
 }
@@ -84,7 +85,7 @@ Select.choicefirsttheythem
 Select.choicefirstcustom
 {
 	presuffix = "open"
-	"\0\s[0]\_v[HELP_text.mp3] * (Enter the first of your pronouns, ex.'they')\![open,inputbox,OnHeSheTheyTeach,-1]\s[0]\e"
+	"\0\s[0]%(narrator) * (Enter the first of your pronouns, ex.'they')\![open,inputbox,OnHeSheTheyTeach,-1]\s[0]\e"
 	--
 	NameInput
 }
@@ -96,8 +97,8 @@ Select.choicefirstcustom
 
 NameInput
 {
-	"\0\s[0]\_v[sound_FLOWEY.mp3] * Name. Name. \![leave,passivemode]\w8\s[0] * Name. Fallen Human. Fallen... name? \![open,inputbox,OnNameTeach,-1]\s[0]\e"
-	"\0\s[0]\_v[HELP_text.mp3] Name the Fallen Human \![leave,passivemode]\w8\s[0]  \![open,inputbox,OnNameTeach,-1]\s[0]\e"
+	"\0\s[0]%(floweySpeech) * Name. Name. \![leave,passivemode]\w8\s[0] * Name. Fallen Human. Fallen... name? \![open,inputbox,OnNameTeach,-1]\s[0]\e"
+	"\0\s[0]%(narrator) Name the Fallen Human \![leave,passivemode]\w8\s[0]  \![open,inputbox,OnNameTeach,-1]\s[0]\e"
 	
 }
 
@@ -176,7 +177,7 @@ OnBoot
 	if dayslot == userbirthday 
 	
 	{
-				"\s[0]\_v[sound_FLOWEY.mp3] * It's %(bornmonthprint) %(borndayprint).\w8\n * Happy birthday, %(username).\s[0]\e" 
+				"\s[0]%(floweySpeech) * It's %(bornmonthprint) %(borndayprint).\w8\n * Happy birthday, %(username).\s[0]\e" 
 	
 				
 	}
@@ -184,11 +185,11 @@ OnBoot
 	elseif dayslot == "6month 6day" 
 	
 	{
-				"\s[0]\_v[sound_FLOWEY.mp3] * Today. June 6th.\s[0]\e"
+				"\s[0]%(floweySpeech) * Today. June 6th.\s[0]\e"
 	}
 	elseif dayslot == "7month 4day"
 	{
-				"\s[0]\_v[sound_FLOWEY.mp3] * Fourth. 4th. Fourth. July.\s[0]\e"
+				"\s[0]%(floweySpeech) * Fourth. 4th. Fourth. July.\s[0]\e"
 				
 				
 	}
@@ -207,11 +208,11 @@ normalboottalk
 {
 	if weekday == 6 && hour >= 19 //This checks if the weekday equals six, meaning saturday AND (using the && operator) if the hour is past 19. You can change these numbers or values to anything you like! As such you can check any combination of date and day and time for potential boot dialogue. You can also add more elseif checks for other days if you want.
 		{
-		"\0\s[0]\_v[sound_FLOWEY.mp3] * It's Saturday night.\s[0]\e"
+		"\0\s[0]%(floweySpeech) * It's Saturday night.\s[0]\e"
 		}
 	elseif RAND(100) < 40 //What this does is choose a random number from 1-100, and then checks if that number is less than 40. If it's less than forty, then these dialogue pieces will occur. Remember, you can have multiple lines of dialogue within one set of brackets like this! You just need to make sure they're all enclosed in their own set of quotation marks.
 		{
-		"\0\s[0]\_v[sound_FLOWEY.mp3] * (Gurgling noises)\s[0]\e"
+		"\0\s[0]%(floweySpeech) * (Gurgling noises)\s[0]\e"
 	
 		}
  	else
@@ -225,29 +226,29 @@ normalboottalk
 		}
 		elseif timeslot == "morning"
 		{
-		"\0\s[0]\_v[sound_FLOWEY.mp3] * Bleah. \s[0]\e"
+		"\0\s[0]%(floweySpeech) * Bleah. \s[0]\e"
 		
 		}
 		elseif timeslot == "lunch"
 		{
-		"\0\s[0]\_v[sound_FLOWEY.mp3] * Eat.\s[0]\e"
+		"\0\s[0]%(floweySpeech) * Eat.\s[0]\e"
 		}
 		elseif timeslot == "afternoon"
 		{
-		"\0\s[0]\_v[sound_FLOWEY.mp3] * Afternoon. \s[0]\e"
+		"\0\s[0]%(floweySpeech) * Afternoon. \s[0]\e"
 		}
 		elseif timeslot == "evening"
 		{
- 		"\0\s[0]\_v[sound_FLOWEY.mp3] * Late. \s[0]\e"
+ 		"\0\s[0]%(floweySpeech) * Late. \s[0]\e"
 		}
 		elseif timeslot == "latenight"
 		{
- 		"\0\s[0]\_v[sound_FLOWEY.mp3] * Laaaaaaate.\s[0]\e"
+ 		"\0\s[0]%(floweySpeech) * Laaaaaaate.\s[0]\e"
 		
 		}
 		else //the last timeslot we haven't done is midnight, which is what's under here.
 		{
-		"\0\s[0]\_v[sound_FLOWEY.mp3] * MIDNIGHT\w8\s[0]\e"
+		"\0\s[0]%(floweySpeech) * MIDNIGHT\w8\s[0]\e"
 		
 		}
 	}
@@ -264,13 +265,13 @@ OnClose
  --
 	if passmin >= 5	//This checks to see if you've had them open for at least five minutes.
 		{
-		"\0\s[0]\_v[sound_FLOWEY.mp3] * Bye\w8\w8"	
-		"\0\s[0]\_v[HELP_text.mp3] * (You tell Flowey you'll see him later.)\w8\w8"	
+		"\0\s[0]%(floweySpeech) * Bye\w8\w8"	
+		"\0\s[0]%(narrator) * (You tell Flowey you'll see him later.)\w8\w8"	
  		
  		}
  	else //This dialogue is for if they haven't been open for at least five minutes.
  	{
- 		"\0\s[0]\_v[sound_FLOWEY.mp3] * [flowey_greeting_string] BYE\w8\w8"
+ 		"\0\s[0]%(floweySpeech) * [flowey_greeting_string] BYE\w8\w8"
 		
  	}
  	--
@@ -288,8 +289,8 @@ OnClose
 
 OnWindowStateRestore
  {
-	"\0\s[0]\_v[sound_FLOWEY.mp3] * Back\w8\w8\s[0]\e"
-	"\0\s[0]\_v[HELP_text.mp3] * (Flowey has returned.)\w8\w8\s[0]\e"
+	"\0\s[0]%(floweySpeech) * Back\w8\w8\s[0]\e"
+	"\0\s[0]%(narrator) * (Flowey has returned.)\w8\w8\s[0]\e"
 }
 
 
@@ -302,13 +303,13 @@ OnGhostChanging
  {
 	if reference0 == "f_lowe_y" 
 	{
-		"\0\s[0]\_v[sound_FLOWEY.mp3] * Re-re-re-re-re-re-re\w8\w8 LOADING\w3.\w3.\w3.\s[0]\e"
-		"\0\s[0]\_v[HELP_text.mp3] * (The ghost of Flowey is reloading.)\s[0]\e"
+		"\0\s[0]%(floweySpeech) * Re-re-re-re-re-re-re\w8\w8 LOADING\w3.\w3.\w3.\s[0]\e"
+		"\0\s[0]%(narrator) * (The ghost of Flowey is reloading.)\s[0]\e"
 	}
  	else //If you're switching to another Ghost.
 	{
-		"\0\s[0]\_v[sound_FLOWEY.mp3] * LOADING %(reference0). \w8Bye.\w8\w8\s[0]\e"
-		"\0\s[0]\_v[HELP_text.mp3] * (You decide to switch to someone else.)\s[0]\e"
+		"\0\s[0]%(floweySpeech) * LOADING %(reference0). \w8Bye.\w8\w8\s[0]\e"
+		"\0\s[0]%(narrator) * (You decide to switch to someone else.)\s[0]\e"
 		
 		
 	}
@@ -325,13 +326,13 @@ OnGhostChanged
 	--
 	if reference0 == "f_lowe_y" //As above, this should be the name of your ghost as in install.txt or descript.txt.
 	{
-		"\0\s[0]\_v[sound_FLOWEY.mp3] * LOADED\s[0]\e"
-		"\0\s[0]\_v[HELP_text.mp3] * (Ghost %(reference0) reloaded.)\s[0]\e"
+		"\0\s[0]%(floweySpeech) * LOADED\s[0]\e"
+		"\0\s[0]%(narrator) * (Ghost %(reference0) reloaded.)\s[0]\e"
 	}
 	else //If you're switching to them from another ghost...
 	{
-		"\0\s[0]\_v[sound_FLOWEY.mp3] * %(reference0)...\s[0]\e"
-		"\0\s[0]\_v[HELP_text.mp3] * (Ghost '%(reference0)' loaded.)\s[0]\e"
+		"\0\s[0]%(floweySpeech) * %(reference0)...\s[0]\e"
+		"\0\s[0]%(narrator) * (Ghost '%(reference0)' loaded.)\s[0]\e"
 
 		//Again, %(reference0) in this function is the name of the ghost in question. As above, replace these two lines of dialogue what what'd be appropriate for your ghost.
 	}

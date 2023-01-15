@@ -1,9 +1,83 @@
 ﻿//---------------------------Envelopes--------------------------
+floweySpeech
+{
+	"\![sound,play,sound_FLOWEY.mp3,--volume=%(volume),--window=false]"
+}
+
+narrator
+{
+	"\![sound,play,HELP_text.mp3,--volume=%(volume),--window=false]"
+}
+
+toriel
+{
+	"\![sound,play,HELP_toriel.mp3,--volume=%(volume),--window=false]"
+}
+
+fleeSFX
+{
+	"\![sound,play,flee.wav,--volume=%(volume),--window=false]"
+}
+
+heeSFX
+{
+	"\![sound,play,hee.mp3,--volume=%(volume),--window=false]"
+}
+
+dustSFX
+{
+	"\![sound,play,dust.wav,--volume=%(volume),--window=false]"
+}
+
+upLV
+{
+	"\![sound,play,LV_increased.wav,--volume=%(volume),--window=false]"
+}
+
+hahahaLaugh
+{
+	"\![sound,play,hahaha.wav,--volume=%(volume),--window=false]"
+}
+
+ackSFX
+{
+	"\![sound,play,r_ack.wav,--volume=%(volume),--window=false]"
+}
+
+ohSFX
+{
+	"\![sound,play,r_oh.wav,--volume=%(volume),--window=false]"
+}
+
+screechSFX
+{
+	"\![sound,play,r_screech.wav,--volume=%(volume),--window=false]"
+}
+
+heySFX
+{
+	"\![sound,play,r_hey.wav,--volume=%(volume),--window=false]"
+}
+
+hitSFX
+{
+	"\![sound,play,hit.wav,--volume=%(volume),--window=false]"
+}
+
+savestateSFX
+{
+	"\![sound,play,savestate_spam.wav,--volume=%(volume),--window=false]"
+}
+
+heeheeheeSFX
+{
+	"\![sound,play,heeheehee.wav,--volume=%(volume),--window=false]"
+}
 
 
 floweyLaugh
 {
-	"\s[5]\_v[heeheehee.wav]HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA"
+	"\s[5]%(heeheeheeSFX)HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA"
 }
 
 nonono

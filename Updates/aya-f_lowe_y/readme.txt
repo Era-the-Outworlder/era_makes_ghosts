@@ -18,6 +18,10 @@ Feel free to modify for your own use, and if you've done extensive modifications
 
 
 Anyway, have a nice day!
+
+~~~~~~~~~~Update: Jan 14 2023
+version 1.2 Added Volume control for sounds, bugfixes, =)
+
 ~~~~~~~~~~Update: Jan 21 2022
 version 1.1 Integrated Silentmode, renamed default shell to master, updateurl in case of future bugfixes
 

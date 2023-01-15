@@ -37,60 +37,60 @@ AiTalk
 RandomTalk : nonoverlap
 {
 	
-	"\0\s[0]\_v[HELP_text.mp3] * (Smells like herbicide.)\w8\w8\s[0]\e"
+	"\0\s[0]%(narrator) * (Smells like herbicide.)\w8\w8\s[0]\e"
 	
-	"\0\s[0]\_v[sound_FLOWEY.mp3] * You you you how how how\w8\w8\c\s[0]Howdy, %(username)!\w8\w8\s[0]\e"
+	"\0\s[0]%(floweySpeech) * You you you how how how\w8\w8\c\s[0]Howdy, %(username)!\w8\w8\s[0]\e"
 	
-	"\0\s[0]\_v[HELP_text.mp3] * (F_lowe_y asks if you remember something.) \w8\c\s[1] * (It seems he's mistaken you for someone else.)\w8\w8\s[0]\e"
+	"\0\s[0]%(narrator) * (F_lowe_y asks if you remember something.) \w8\c\s[1] * (It seems he's mistaken you for someone else.)\w8\w8\s[0]\e"
 	
 	//testing all surfaces
-	"\0\s[0]\_v[HELP_text.mp3] * (You say hello. He doesn't seem to be listening)\w8\w8\s[0]\e"
+	"\0\s[0]%(narrator) * (You say hello. He doesn't seem to be listening)\w8\w8\s[0]\e"
 	
-	"\0\s[1]\_v[sound_FLOWEY.mp3] * Howdy! \w8\w8\s[0]\e"
+	"\0\s[1]%(floweySpeech) * Howdy! \w8\w8\s[0]\e"
 	
-	"\0\s[2]\_v[HELP_text.mp3] * (You caught the flower by surprise.)\w8\w8\s[0]\e"
+	"\0\s[2]%(narrator) * (You caught the flower by surprise.)\w8\w8\s[0]\e"
 	
-	"\0\s[3]\_v[sound_FLOWEY.mp3] * You... are...? \w8\w8\s[0]\e"
+	"\0\s[3]%(floweySpeech) * You... are...? \w8\w8\s[0]\e"
 	
-	"\0\s[4]\_v[HELP_text.mp3] * (Something seems to be wrong.) \w8\w8\s[0]\e"
+	"\0\s[4]%(narrator) * (Something seems to be wrong.) \w8\w8\s[0]\e"
 	
-	"\0\s[5]\_v[sound_FLOWEY.mp3] * Howdy! \w8\w8\s[0]\e"
+	"\0\s[5]%(floweySpeech) * Howdy! \w8\w8\s[0]\e"
 	
-	"\0\s[6]\_v[HELP_text.mp3] * (You give the flower a hug.) \w8\w8\s[0]\e"
+	"\0\s[6]%(narrator) * (You give the flower a hug.) \w8\w8\s[0]\e"
 	
-	"\0\s[7]\_v[sound_FLOWEY.mp3] * YOU! STOP!\w8\w8\w8\s[0]\e"
+	"\0\s[7]%(floweySpeech) * YOU! STOP!\w8\w8\w8\s[0]\e"
 	
-	"\0\s[8]\_v[HELP_text.mp3] * (You feel him judging you.) \w8\w8\s[0]\e"
+	"\0\s[8]%(narrator) * (You feel him judging you.) \w8\w8\s[0]\e"
 	
-	"\0\s[9]\_v[sound_FLOWEY.mp3] * Don't.Don't.Don't.Don't.Don't.\w8\w8\w8 h_ve _nything bette_ to do?\w8\w8\s[0]\e"
+	"\0\s[9]%(floweySpeech) * Don't.Don't.Don't.Don't.Don't.\w8\w8\w8 h_ve _nything bette_ to do?\w8\w8\s[0]\e"
 	
-	"\0\s[12]\_v[HELP_text.mp3] * (F_lowe_y is looking at something.) \w8\w8\s[0]\e"
+	"\0\s[12]%(narrator) * (F_lowe_y is looking at something.) \w8\w8\s[0]\e"
 	
-	"\0\s[13]\_v[sound_FLOWEY.mp3] * .... you you you... friend. \w8\w8\s[0]\e"
+	"\0\s[13]%(floweySpeech) * .... you you you... friend. \w8\w8\s[0]\e"
 	
-	"\0\s[14]\_v[HELP_text.mp3] * (F_lowe_y is looking at something. It's not you.) \w8\w8\s[0]\e"
+	"\0\s[14]%(narrator) * (F_lowe_y is looking at something. It's not you.) \w8\w8\s[0]\e"
 	
-	"\0\s[15]\_v[sound_FLOWEY.mp3] * What?! No. \w8\w8\s[0]\e"
+	"\0\s[15]%(floweySpeech) * What?! No. \w8\w8\s[0]\e"
 	
-	"\0\s[16]\_v[HELP_text.mp3] * (You hit the flower. Since you didn't do it on purpose, it doesnt hurt him.)\w8\w8\s[0]\e"
+	"\0\s[16]%(narrator) * (You hit the flower. Since you didn't do it on purpose, it doesnt hurt him.)\w8\w8\s[0]\e"
 	
-	"\0\s[17]\_v[sound_FLOWEY.mp3] * WHY WHY WHY WHYWHYWHY _HY _ON'T YOU LET ME _IN?!\w8\w8\s[0]\e"
+	"\0\s[17]%(floweySpeech) * WHY WHY WHY WHYWHYWHY _HY _ON'T YOU LET ME _IN?!\w8\w8\s[0]\e"
 	
-	"\0\s[13]\_v[sound_FLOWEY.mp3] It's all a nightmare... \w8\w8\c\w8\s[16]AND WE'RE NEVER WAKING UP!!!!!!\w8\w8\w8\w8\w8\c %(floweyLaugh)\c\w8\s[0]\e"
+	"\0\s[13]%(floweySpeech) It's all a nightmare... \w8\w8\c\w8\s[16]AND WE'RE NEVER WAKING UP!!!!!!\w8\w8\w8\w8\w8\c %(floweyLaugh)\c\w8\s[0]\e"
 	
 	
 	//--Chains
 	//Chain dialogue is unique. A dialogue chain consists of multiple bits of dialogue that get called in order over a period of time.
 	
-	"\0\s[0]\_v[sound_FLOWEY.mp3] * Finally. \s[0]\e:chain=firstchain"
+	"\0\s[0]%(floweySpeech) * Finally. \s[0]\e:chain=firstchain"
 	
 	if RAND(100) >= 49
 	{
-	"\0\s[6]\_v[HELP_toriel.mp3] * Where oh where oh where oh where \w8\w8\w8 my cccchhhhiiiillllldddd\w8\w8\w8\s[0]\e:chain=torichain1"
+	"\0\s[6]%(toriel) * Where oh where oh where oh where \w8\w8\w8 my cccchhhhiiiillllldddd\w8\w8\w8\s[0]\e:chain=torichain1"
 	}
 	else
 	{
-	"\0\s[6]\_v[HELP_toriel.mp3] * Where oh where oh where oh where \w8\w8\w8 It's so cold. So cold.\w8\w8\w8\s[0]\e:chain=torichain2"
+	"\0\s[6]%(toriel) * Where oh where oh where oh where \w8\w8\w8 It's so cold. So cold.\w8\w8\w8\s[0]\e:chain=torichain2"
 	}
 	//Note here that instead of ending the dialogue with the normal end tag of \s[0]\e, it ends with \s[0]\e:chain=firstchain. This will link down below to a chunk of code outside RandomTalk called firstchain. You can scroll down and find it now if you want. You can name your chain anything you want, it'd just follow the same format of \s[0]\e:chain=yourchainsname, and you can have a long series of chains as well. Once a dialogue has entered a chain, they won't say any other random dialogue until the chain is finished.
 	
@@ -105,137 +105,137 @@ RandomTalk : nonoverlap
 	
 	if month == 1
 	{
-		"\0\s[0]\_v[sound_FLOWEY.mp3] * January.\s[0]\e"
-		"\0\s[0]\_v[sound_FLOWEY.mp3] * New. New. New. New. Year. New Year. New year. new year. Happy. \n H A P P Y NEW YEAR\s[0]\e"
-		"\0\s[0]\_v[HELP_text.mp3] * (Celebratory noises)\s[0]\e"
+		"\0\s[0]%(floweySpeech) * January.\s[0]\e"
+		"\0\s[0]%(floweySpeech) * New. New. New. New. Year. New Year. New year. new year. Happy. \n H A P P Y NEW YEAR\s[0]\e"
+		"\0\s[0]%(narrator) * (Celebratory noises)\s[0]\e"
 	}
 	if month == 2
 	{
-		"\0\s[0]\_v[sound_FLOWEY.mp3] * February.\s[0]\e"
-		"\0\s[0]\_v[sound_FLOWEY.mp3] * Love. LOVE. LV. Celebrate LV. Right?\s[0]\e"
+		"\0\s[0]%(floweySpeech) * February.\s[0]\e"
+		"\0\s[0]%(floweySpeech) * Love. LOVE. LV. Celebrate LV. Right?\s[0]\e"
 		
 	}
 	if month == 3
 	{
-		"\0\s[0]\_v[sound_FLOWEY.mp3] * March.\s[0]\e"
-		"\0\s[0]\_v[sound_FLOWEY.mp3] * Third month. Third month. Th- Thi- Th- The start of spring.\s[0]\e"
+		"\0\s[0]%(floweySpeech) * March.\s[0]\e"
+		"\0\s[0]%(floweySpeech) * Third month. Third month. Th- Thi- Th- The start of spring.\s[0]\e"
 		
 	}
 	if month == 4
 	{
-		"\0\s[0]\_v[sound_FLOWEY.mp3] * April.\s[0]\e"
-		"\0\s[0]\_v[sound_FLOWEY.mp3] * 4 4 4 4 FOUR four Fourth month\s[0]\e"
+		"\0\s[0]%(floweySpeech) * April.\s[0]\e"
+		"\0\s[0]%(floweySpeech) * 4 4 4 4 FOUR four Fourth month\s[0]\e"
 		
 	}
 	if month == 5
 	{
-		"\0\s[0]\_v[sound_FLOWEY.mp3] * May.\s[0]\e"
-		"\0\s[0]\_v[sound_FLOWEY.mp3] * The fifth month.\s[0]\e"
-		"\0\s[0]\_v[sound_FLOWEY.mp3] * May flowers. Flowers. Flowers are blooming!\s[16]\w8\c\s[0]\_v[sound_FLOWEY.mp3] * Howdy! I'm F_lowe_y the flower!\w8\s[0]\e"
+		"\0\s[0]%(floweySpeech) * May.\s[0]\e"
+		"\0\s[0]%(floweySpeech) * The fifth month.\s[0]\e"
+		"\0\s[0]%(floweySpeech) * May flowers. Flowers. Flowers are blooming!\s[16]\w8\c\s[0]%(floweySpeech) * Howdy! I'm F_lowe_y the flower!\w8\s[0]\e"
 		
 	}
 	if month == 6
 	{
-		"\0\s[0]\_v[sound_FLOWEY.mp3] * June.\s[0]\e"
-		"\0\s[0]\_v[sound_FLOWEY.mp3] * Hot.Hot.Hot.Not.Not.Not.\s[0]\e"
+		"\0\s[0]%(floweySpeech) * June.\s[0]\e"
+		"\0\s[0]%(floweySpeech) * Hot.Hot.Hot.Not.Not.Not.\s[0]\e"
 		
 	}
 	if month == 7
 	{
-		"\0\s[0]\_v[sound_FLOWEY.mp3] * July.\s[0]\e"
-		"\0\s[0]\_v[sound_FLOWEY.mp3] * Is it summer yet? \s[0]\e"
+		"\0\s[0]%(floweySpeech) * July.\s[0]\e"
+		"\0\s[0]%(floweySpeech) * Is it summer yet? \s[0]\e"
 	}
 	if month == 8
 	{
-		"\0\s[0]\_v[sound_FLOWEY.mp3] * August.\s[0]\e"
+		"\0\s[0]%(floweySpeech) * August.\s[0]\e"
 	}
 	if month == 9
 	{
-		"\0\s[0]\_v[sound_FLOWEY.mp3] * September.\s[0]\e"
+		"\0\s[0]%(floweySpeech) * September.\s[0]\e"
 	}
 	if month == 10
 	{
-		"\0\s[0]\_v[sound_FLOWEY.mp3] * October.\s[0]\e"
-		"\0\s[0]\_v[sound_FLOWEY.mp3] * Halloween. Humans in monster suits.\w8\w8\n\s[8] * Funny.\s[0]\e"
+		"\0\s[0]%(floweySpeech) * October.\s[0]\e"
+		"\0\s[0]%(floweySpeech) * Halloween. Humans in monster suits.\w8\w8\n\s[8] * Funny.\s[0]\e"
 	}
 	if month == 11
 	{
-		"\0\s[0]\_v[sound_FLOWEY.mp3] * November.\s[0]\e"
-		"\0\s[0]\_v[sound_FLOWEY.mp3] * Thank_giving?\s[0]\e"
+		"\0\s[0]%(floweySpeech) * November.\s[0]\e"
+		"\0\s[0]%(floweySpeech) * Thank_giving?\s[0]\e"
 	}
 	if month == 12
 	{
-		"\0\s[0]\_v[sound_FLOWEY.mp3] * December.\s[0]\e"
-		"\0\s[0]\_v[sound_FLOWEY.mp3] * Merry.Merry.Merry.Merry.Merry.Merry.Merry.Merry.Merry.Merry.Merry.Merry.Merry.\s[0]\e"
+		"\0\s[0]%(floweySpeech) * December.\s[0]\e"
+		"\0\s[0]%(floweySpeech) * Merry.Merry.Merry.Merry.Merry.Merry.Merry.Merry.Merry.Merry.Merry.Merry.Merry.\s[0]\e"
 	}
 	// These ifs check what day of the week it is.
 	// if weekday == 1
 	{
-		"\0\s[0]\_v[sound_FLOWEY.mp3] * Monday.\s[0]\e"
+		"\0\s[0]%(floweySpeech) * Monday.\s[0]\e"
 		
 	}
 	if weekday == 2
 	{
-		"\0\s[0]\_v[sound_FLOWEY.mp3] * Tuesday.\s[0]\e"
+		"\0\s[0]%(floweySpeech) * Tuesday.\s[0]\e"
 	}
 	if weekday == 3
 	{
-		"\0\s[0]\_v[sound_FLOWEY.mp3] * Wednesday.\s[0]\e"
+		"\0\s[0]%(floweySpeech) * Wednesday.\s[0]\e"
 	}
 	if weekday == 4
 	{
-		"\0\s[0]\_v[sound_FLOWEY.mp3] * Thursday.\s[0]\e"
+		"\0\s[0]%(floweySpeech) * Thursday.\s[0]\e"
 	}
 	if weekday == 5
 	{
-		"\0\s[0]\_v[sound_FLOWEY.mp3] * Friday.\s[0]\e"
+		"\0\s[0]%(floweySpeech) * Friday.\s[0]\e"
 	}
 	if weekday == 6
 	{
-		"\0\s[0]\_v[sound_FLOWEY.mp3] * Saturday.\s[0]\e"
+		"\0\s[0]%(floweySpeech) * Saturday.\s[0]\e"
 	}
 	if weekday == 7
 	{
-		"\0\s[0]\_v[sound_FLOWEY.mp3] * Sunday.\s[0]\e"
+		"\0\s[0]%(floweySpeech) * Sunday.\s[0]\e"
 	}
 	// //These ifs check for the time of day as defined in bootend.dic. Do you remember the words used for each chunk of time in GetTimeSlot? These are the same words!
 	if timeslot == "earlymorning"
 	{
-		"\0\s[0]\_v[sound_FLOWEY.mp3] * Early morning.\s[0]\e"
+		"\0\s[0]%(floweySpeech) * Early morning.\s[0]\e"
 	}
 	if timeslot == "morning"
 	{
-		"\0\s[0]\_v[sound_FLOWEY.mp3] * Morning.\s[0]\e"
+		"\0\s[0]%(floweySpeech) * Morning.\s[0]\e"
 	}
 	if timeslot == "lunch"
 	{
-		"\0\s[0]\_v[sound_FLOWEY.mp3] * Lunch time.\s[0]\e"
+		"\0\s[0]%(floweySpeech) * Lunch time.\s[0]\e"
 	}
 	if timeslot == "afternoon"
 	{
-		"\0\s[0]\_v[sound_FLOWEY.mp3] * Afternoon.\s[0]\e"
+		"\0\s[0]%(floweySpeech) * Afternoon.\s[0]\e"
 	}
 	if timeslot == "evening"
 	{
-		"\0\s[0]\_v[sound_FLOWEY.mp3] * Evening.\s[0]\e"
+		"\0\s[0]%(floweySpeech) * Evening.\s[0]\e"
 	}
 	if timeslot == "latenight"
 	{
-		"\0\s[0]\_v[sound_FLOWEY.mp3] * Late night.\s[0]\e"
+		"\0\s[0]%(floweySpeech) * Late night.\s[0]\e"
 	}
 	if timeslot == "midnight"
 	{
-		"\0\s[0]\_v[sound_FLOWEY.mp3] * Midnight.\s[0]\e"
+		"\0\s[0]%(floweySpeech) * Midnight.\s[0]\e"
 	}
 	
 	
 	
 	
-	"\0\s[0]\_v[flee.wav]\s[-1] * \w8\w8\w8\w8\w8\w8Flowey ran away.\w8\w8\c\w8\w8\_v[hee.mp3]\b2\f[height,100] Die.\w8\w8\w8\w8\c\f[height,default]\e"
+	"\0\s[0]%(fleeSFX)\s[-1] * \w8\w8\w8\w8\w8\w8Flowey ran away.\w8\w8\c\w8\w8%(heeSFX)\b2\f[height,100] Die.\w8\w8\w8\w8\c\f[height,default]\e"
 	
 	
 	
-	//"\0\s[0]\_v[sound_FLOWEY.mp3] *\f[strike,true]These words are struck out.\f[strike,default]\w8\0\s[0]\f[sub,true]These words are a subscript.\f[sub,false] \f[sup,true]These words are a superscript.\f[sup,false] \f[underline,true]These words are underlined.\f[underline,default] \f[bold,true]These words are bold.\f[bold,false] \f[italic,true]These words are italic.\f[italic,false] \f[color,186,146,112]These words are a color.\f[color,default] This tag would return to default.\f[default]\s[0]\e"
+	//"\0\s[0]%(floweySpeech) *\f[strike,true]These words are struck out.\f[strike,default]\w8\0\s[0]\f[sub,true]These words are a subscript.\f[sub,false] \f[sup,true]These words are a superscript.\f[sup,false] \f[underline,true]These words are underlined.\f[underline,default] \f[bold,true]These words are bold.\f[bold,false] \f[italic,true]These words are italic.\f[italic,false] \f[color,186,146,112]These words are a color.\f[color,default] This tag would return to default.\f[default]\s[0]\e"
 	//For the \f[color] tag, the three colors listed are the RGB values of the color you want to use for your text. Change them to whatever color you want to use. \f[default] can be an easy way to quickly go back to the default word setting in your balloon after messing with colors and effects a lot.
 	//Along the same lines as above, you can use \_a[address] to link to certain things. Note that it ends with \_a to close the link. It's very similar to <a href=address> and </a> in html.
 	
@@ -247,38 +247,38 @@ RandomTalk : nonoverlap
 
 firstchain
 {{CHAIN
-	"\0\s[4]\_v[sound_FLOWEY.mp3] * Tired. I'm so tired. Tired. Tired of being a flower.\s[0]\e:chain=secondchain"
+	"\0\s[4]%(floweySpeech) * Tired. I'm so tired. Tired. Tired of being a flower.\s[0]\e:chain=secondchain"
 }}CHAIN
 
 
 secondchain
 {{CHAIN
-	"\0\s[0]\_v[sound_FLOWEY.mp3] * %(username), are you there? \s[0]\e:chain=thirdchain"
+	"\0\s[0]%(floweySpeech) * %(username), are you there? \s[0]\e:chain=thirdchain"
 }}CHAIN
 
 thirdchain
 {{CHAIN
-	"\0\s[0]\_v[sound_FLOWEY.mp3] * It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.\w8\c\s[1]\_q * It's me, your best friend.\s[0]\e:chain=end"
+	"\0\s[0]%(floweySpeech) * It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.It's me.\w8\c\s[1]\_q * It's me, your best friend.\s[0]\e:chain=end"
 }}CHAIN
 
 torichain1
 {{CHAIN
-	"\0\s[6]\_v[HELP_toriel.mp3] * I've been looking. \w8Looking. \w8\w8\w8 All over for you.\w8\w8\w8\s[0]\e:chain=torichain12"
+	"\0\s[6]%(toriel) * I've been looking. \w8Looking. \w8\w8\w8 All over for you.\w8\w8\w8\s[0]\e:chain=torichain12"
 }}CHAIN
 
 torichain12
 {{CHAIN
-	"\0\s[12]\_v[hee.mp3] * Hee hee hee. \w8\w8\w8\_v[sound_FLOWEY.mp3]Is that what you wanted to hear? \w8\w8\w8You'll NEVER see her again.\w8\w8\w8\s[0]\e:chain=end"
+	"\0\s[12]%(heeSFX) * Hee hee hee. \w8\w8\w8%(floweySpeech)Is that what you wanted to hear? \w8\w8\w8You'll NEVER see her again.\w8\w8\w8\s[0]\e:chain=end"
 }}CHAIN
 
 torichain2
 {{CHAIN
-	"\0\s[6]\_v[HELP_toriel.mp3] * It's so dark. \w8Where am I? \w8\w8\w8Someone help me...\w8\w8\w8\s[0]\e:chain=torichain22"
+	"\0\s[6]%(toriel) * It's so dark. \w8Where am I? \w8\w8\w8Someone help me...\w8\w8\w8\s[0]\e:chain=torichain22"
 }}CHAIN
 
 torichain22
 {{CHAIN
-	"\0\s[6]\_v[HELP_toriel.mp3] * Anyone... \w8Please... \w8\w8\w8Help\w8\w8\w8\s[0]\e:chain=end"
+	"\0\s[6]%(toriel) * Anyone... \w8Please... \w8\w8\w8Help\w8\w8\w8\s[0]\e:chain=end"
 }}CHAIN
 
 
@@ -293,18 +293,18 @@ OnMinuteChange
 	{
  		if hour == 12 //And the hour equals 12, ie it's noon. You can change this to some other hour if you want.
 		{
- 			"\0\s[0]\_v[sound_FLOWEY.mp3] * It's noon.\s[0]\e"
+ 			"\0\s[0]%(floweySpeech) * It's noon.\s[0]\e"
 			
 		}
  		elseif hour == 0 //If the hour is zero, aka midnight. Again, you can change this to whatever hour you want to check for.
 		{
- 			"\0\s[0]\_v[sound_FLOWEY.mp3] * It's midnight!\s[0]\e"
+ 			"\0\s[0]%(floweySpeech) * It's midnight!\s[0]\e"
  		}
 		elseif hour == 23 //if the hour is 23, aka 11 pm.
 		{
 			if minute == 55 //And if the minutes are at 55.
 			{
-				"\0\s[0]\_v[sound_FLOWEY.mp3] * 5 minutes to midnight.\s[0]\e"
+				"\0\s[0]%(floweySpeech) * 5 minutes to midnight.\s[0]\e"
 			}
 			else 
 			{
@@ -313,13 +313,13 @@ OnMinuteChange
 		}
 		elseif hour == 7 && minute == 30 && weekday == 0 //Here, it's checking for a specific time on a specific day. You can add things to your time checks just like this by using the AND operator, &&. This adds up to 7:30, Sunday. If you have a favorite TV program on at some time, you could have your ghost comment on when it comes on like this.
 		{
-			"\0\s[0]\_v[sound_FLOWEY.mp3] * It's 7:30 on Sunday.\s[0]\e"
+			"\0\s[0]%(floweySpeech) * It's 7:30 on Sunday.\s[0]\e"
 			//Replace with what's appropriate.
 		}
 		
 		else
 		{
-			"\0\s[0]\_v[sound_FLOWEY.mp3] * %(hour12) hours.\s[0]\e"
+			"\0\s[0]%(floweySpeech) * %(hour12) hours.\s[0]\e"
 			//%(hour12) stores the time. This is a general top of the hour notification. I personally like this because it helps me keep track of time when I've been working on something, so when a ghost is all "Hey it's 3 o clock" I can be like woah really when did that happen. If you think this is annoying though, you can just delete this bit of dialogue to leave this else statement blank, or leave "" in here instead.
 		}
 	}
@@ -366,13 +366,13 @@ MikireTalk
 	 if RAND(100) < 50 
 	 {
 		rescue = 1
-		"\0\s[15]\_v[sound_FLOWEY.mp3] * No. No. No. No. No. No. Back. Back. Back.\n * Ctrl-Shift-F12 to bring back.\w8\w8\s[0]\e"
+		"\0\s[15]%(floweySpeech) * No. No. No. No. No. No. Back. Back. Back.\n * Ctrl-Shift-F12 to bring back.\w8\w8\s[0]\e"
 		
 	 }
 	 else
 	 {
 		 rescue = 0
-		"\0\s[15]\_v[HELP_text.mp3] * (F_lowe_y seems distressed.)\n\n * (Press Ctrl-Shift-F12 to ease his pain.)\w8\w8\s[0]\e"
+		"\0\s[15]%(narrator) * (F_lowe_y seems distressed.)\n\n * (Press Ctrl-Shift-F12 to ease his pain.)\w8\w8\s[0]\e"
 	 }
 	//Note the hotkey combo Triangle mentions. He's telling the truth, that should bring her back on the screen.
  }
@@ -385,12 +385,12 @@ EndMikireTalk
 	 if  rescue == 1 
 	 {
 		 rescue = 0
-		"\0\s[6]\_v[sound_FLOWEY.mp3] * Back. Good. Thank.\w8\s[0]Thank. Thank. Thank. Thank. Thank.\w8\w8\s[0]\e"
+		"\0\s[6]%(floweySpeech) * Back. Good. Thank.\w8\s[0]Thank. Thank. Thank. Thank. Thank.\w8\w8\s[0]\e"
 	 }
 	 else
 	 {
 		 rescue = 0
-		"\0\s[6]\_v[HELP_text.mp3] * (F_lowe_y looks relieved.)\w8\w8\w8\s[0]\e"
+		"\0\s[6]%(narrator) * (F_lowe_y looks relieved.)\w8\w8\w8\s[0]\e"
 	 }
 }
 
