@@ -18,7 +18,7 @@ file,ghost/master/aya5.txt661d400e938e1c75f25de6af3e7bc60esize=1296date=2022-
 file,ghost/master/bootend.dic65aea37ccc9b366fe79a2bf8053bf2dasize=11241date=2023-01-14T19:33:19
 file,ghost/master/commu.dic52d09162c35c9a613886d6f1de0d8d3csize=1584date=2023-01-14T18:13:22
 file,ghost/master/descript.txt332dce638b2e4604eee2ab2025fc495bsize=1880date=2023-01-14T22:55:51
-file,ghost/master/etc.dic9c30663b6d7d96d9a8e66cd3ad898059size=34239date=2023-01-14T19:47:08
+file,ghost/master/etc.dic39b7178041d06e9a6afeb4632162af3csize=33229date=2023-01-14T23:06:24
 file,ghost/master/gomi.dll51fe9597398db01e684a0f9d52c63242size=13312date=2022-05-01T14:48:06
 file,ghost/master/mciaudior.dllb1082bccd2aac2017f7936baf2d967b3size=29696date=2022-05-01T14:48:06
 file,ghost/master/menu.dic8175746f86910ba0e5bed0a62ba53672size=20949date=2023-01-14T21:12:07
@@ -27,7 +27,7 @@ file,ghost/master/nameteach.dic706336018a56e9b58ad890f965d07bd0size=4821date=
 file,ghost/master/saori_cpuid.dlld13370aee8e579fe2517d789dba7c45esize=225280date=2022-05-01T14:48:06
 file,ghost/master/shiori3.dic58b4b947e0aa6741018aa8861f862ebfsize=34827date=2023-01-14T19:33:19
 file,ghost/master/sspundertaleicon.icoa117a1019693fd074f4e977489e269b3size=590date=2022-05-01T14:48:06
-file,ghost/master/string.dica9feeca5e1bc569d113f3534ac3209cesize=6066date=2023-01-14T22:49:59
+file,ghost/master/string.dic459c0069e428a96e8d7e20c68b6f4cd5size=6065date=2023-01-14T23:07:01
 file,ghost/master/teachcustompronoun.dic77eb1bf510f6ee139ebf4345c4729b2csize=2809date=2023-01-14T19:33:19
 file,ghost/master/word.dic714c81d685cc2412aef4ab107a4827f1size=4505date=2023-01-14T19:33:19
 file,hahaha.wav1506af21fbc8be322e0e3741f24c76e9size=1132878date=2022-05-01T14:48:06

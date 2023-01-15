@@ -266,13 +266,9 @@ OnBIFFFailure
 
 
  //**** Network Update *****************************************************************
- //The following functions are for the Network Update of your ghost, where it will connect to your website, check for new files, and update itself. This is a handy feature, but tricky to set up. If you have no intention of using Network Update, you can disregard these, but it won't hurt to fill them out anyway just in case. More details about how to set up Network Update are in the walkthrough (http://www.ashido.com/ukagaka/walkthrough.html).
- 
- //Replace the dialogue in the next set of functions as appropriate. You can easily test these messages using the Developer panel. Go to Open at the bottom of it and choose one of the four Update Event options to simulate a Ghost's update process. I highly recommend doing this at LEAST once if you're going to use this feature to make sure it flows well.
 
  
  //---- OnUpdateBegin -------------------------------------------------------------
- //When you first tell your ghost to update. An introductory statement, like OnBIFFBegin above. Replace or add more dialogue as appropriate. Note that they end with \w8 to give a little breather time.
  
 OnUpdateBegin
  {
