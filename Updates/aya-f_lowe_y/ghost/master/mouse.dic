@@ -36,7 +36,6 @@ MouseMoveSakura
  			stroke = 0 //resetting the stroke count
 			if reference4 == "Top" //collision as set in surfaces.txt
  			{
-				//aaaaaaaaaaaaaaaaaaaaaa
 				"\0\s[9]%(floweySpeech) * Stop. sssssssssssstop. \w8\w8\s[0]\e"
 				"\0\s[6]%(floweySpeech) * Pat. patpetpotpatpotpet. \w8\w8\s[0]\e"
 				"\0\s[9]%(narrator) * (You get the feeling he would appreciate it more if you'd stop.) \w8\w8\w8\s[0]\e"

@@ -272,8 +272,8 @@ OnBIFFFailure
  
 OnUpdateBegin
  {
-	"\0\s[13]%(floweySpeech) * U_dating\w5.\w5.\w5. \w8\w8\w8\e"
-	"\0\s[13]%(narrator) * (Flowey is checking for updates.) \w8\w8\w8\e"
+	"\0\s[13]\_q%(floweySpeech) * U_dating\w5.\w5.\w5. \w8\w8\w8\e"
+	"\0\s[13]\_q%(narrator) * (Flowey is checking for updates.) \w8\w8\w8\e"
 	
  }
 
@@ -282,8 +282,8 @@ OnUpdateBegin
  
 OnUpdateReady
  {
-	"\0\s[13]%(floweySpeech) * %(reference0) F_LES AVA_LABLE. \w8\w8\w8\e"
-	"\0\s[13]%(narrator) * (%(reference0) new files available for update.) \w8\w8\w8\e"
+	"\0\s[13]\_q%(floweySpeech) * %(reference0) F_LES AVA_LABLE. \w8\w8\w8\e"
+	"\0\s[13]\_q%(narrator) * (%(reference0) new files available for update.) \w8\w8\w8\e"
 	
 	//reference0 here storing the number of new files. You don't have to use it if you don't want to.
  }
@@ -322,18 +322,18 @@ OnUpdateFailure
  {
 	if reference0 == "timeout" //if the connection times out
  	{
- 		"\0\s[9]%(floweySpeech) * f_AILED. C_onnection l_ost \w8\w8\w8\e"
-		"\0\s[9]%(narrator) * (The update failed because the connection timed out.) \w8\w8\w8\e"
+ 		"\0\s[9]\_q%(floweySpeech) * f_AILED. C_onnection l_ost \w8\w8\w8\e"
+		"\0\s[9]\_q%(narrator) * (The update failed because the connection timed out.) \w8\w8\w8\e"
 	}
  	elseif reference0 == "md5 miss" //This is if the files don't match properly to updates.dau, I think. For example, if a file only partially transferred or somehow got corrupted. This may also come up if you didn't set up the directory and updates.dau properly as outlined on the walkthrough page.
 	{
-		"\0\s[7]%(floweySpeech) * HASH HASH HASH ##### MD5 hash check failed. \w8\w8\w8\e"
-		"\0\s[7]%(narrator) * NOTHING CHANGED. \w8\w8\w8\e"
+		"\0\s[7]\_q%(floweySpeech) * HASH HASH HASH ##### MD5 hash check failed. \w8\w8\w8\e"
+		"\0\s[7]\_q%(narrator) * NOTHING CHANGED. \w8\w8\w8\e"
  	}
 	else //for other errors
  	{
-		"\0\s[9]%(floweySpeech) * f_AILED. ERROR: %(reference0) \w8\w8\w8\e"
-		"\0\s[9]%(narrator) * (Update failed. Looks like %(reference0).) \w8\w8\w8\e"
+		"\0\s[9]\_q%(floweySpeech) * f_AILED. ERROR: %(reference0) \w8\w8\w8\e"
+		"\0\s[9]\_q%(narrator) * (Update failed. Looks like %(reference0).) \w8\w8\w8\e"
 	}
  }
 
@@ -346,13 +346,13 @@ OnUpdate.OnDownloadBegin
  {
  	if "aitalk" _in_ reference0 //this is checking to see what kind of files are being downloaded. In this case, it's looking for files called aitalk in the download queue. If you want to have a specialized bit of dialogue for each type of file, you can expand this with elseifs and by replacing aitalk with whatever file you have in mind. Keep in mind my warning above though.
  	{
- 		"\0\s[0]%(floweySpeech) * D_wnl_ading new w_rds. \w8\w8\w8\e"
-		"\0\s[0]%(narrator) * (Flowey is downloading new dialogue.) \w8\w8\w8\e"
+ 		"\0\s[0] * D_wnl_ading new w_rds. \w8\w8\w8\e"
+		"\0\s[0] * (Flowey is downloading new dialogue.) \w8\w8\w8\e"
  	}
  	else //for files not specified above
  	{
-		"\0\s[0]%(floweySpeech) * DOWNLOADING\w5.\w5.\w5. \w8\w8\w8\e"
-		"\0\s[0]%(narrator) * (Flowey is downloading new files.) \w8\w8\w8\e"
+		"\0\s[0] * DOWNLOADING\w5.\w5.\w5. \w8\w8\w8\e"
+		"\0\s[0] * (Flowey is downloading new files.) \w8\w8\w8\e"
 	}
  }
 
