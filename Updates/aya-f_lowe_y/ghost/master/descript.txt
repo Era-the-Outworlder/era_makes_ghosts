@@ -5,7 +5,7 @@ shiori.encoding,0
 //-----Creater Info-----
 craftman, Era the Outworlder
 craftmanw, Era the Outworlder
-craftmanurl, https://era-the-outworlder.github.io/era_makes_ghosts/index.html
+craftmanurl, https://era-the-outworlder.github.io
 readme, readme.txt
 
 //-----Taskbar Icon-----
@@ -35,9 +35,9 @@ shiori.cache,1
 
 
 //-----Ghost Identification-----
-name,f_lowe_y 1.1
+name,f_lowe_y 1.2
 type,ghost
-id,f_lowe_y 1.1
+id,f_lowe_y 1.2
 title,AYA HELP_tale Flowey
 sakura.name,f_lowe_y
 sakura.name2,Flowey
