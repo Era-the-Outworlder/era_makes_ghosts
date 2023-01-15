@@ -23,7 +23,7 @@ file,ghost/master/etc.dicf5e8e829d915958caf4bf80b2cc8d2e8size=33259date=2023-
 file,ghost/master/gomi.dll51fe9597398db01e684a0f9d52c63242size=13312date=2022-05-01T14:48:06
 file,ghost/master/mciaudior.dllb1082bccd2aac2017f7936baf2d967b3size=29696date=2022-05-01T14:48:06
 file,ghost/master/menu.dic8175746f86910ba0e5bed0a62ba53672size=20949date=2023-01-14T21:12:07
-file,ghost/master/mouse.dic8ad22ee786cdb70ccf51908bf64f594dsize=4924date=2023-01-14T23:34:52
+file,ghost/master/mouse.dic2b620342e329448fa0be37f6ec0f5d12size=4904date=2023-01-14T23:42:41
 file,ghost/master/nameteach.dic706336018a56e9b58ad890f965d07bd0size=4821date=2023-01-14T19:33:19
 file,ghost/master/saori_cpuid.dlld13370aee8e579fe2517d789dba7c45esize=225280date=2022-05-01T14:48:06
 file,ghost/master/shiori3.dic58b4b947e0aa6741018aa8861f862ebfsize=34827date=2023-01-14T19:33:19
