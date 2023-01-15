@@ -1,29 +1,30 @@
 OnAITalk
 {
-	// if RAND(100) < (communicateratio - 1)
- 	// {
-		// LOGGING("OnStartCommunicate")
- 		// OnStartCommunicate
-	// }
-	// else
-	// {
-		// if TOSTR(offscreenflag) != ",,"
-		// {
-			// LOGGING("OnOffscreenTalk")
-			// OnOffscreenTalk
-		// }
-		// elseif CHAIN.IDName
-		// {
-			// LOGGING("ChainTalk")
-			// ChainTalk
-		// }
-		// else
-		// {
-			// LOGGING("RandomTalk")
-			// RandomTalk
-		// }
+	if CHAIN.IDName
+	{
+		LOGGING("ChainTalk")
+		ChainTalk
+	}
+	elseif TOSTR(offscreenflag) != ",,"
+	{
+		LOGGING("OnOffscreenTalk")
+		OnOffscreenTalk
+	}
+	else
+	{
 		
-	// }
+		if RAND(100) < (communicateratio - 1)
+		{
+			LOGGING("OnStartCommunicate")
+			OnStartCommunicate
+		}
+		else
+		{
+			LOGGING("RandomTalk")
+			RandomTalk
+		}
+		
+	}
 }
 
 RandomTalk : nonoverlap_pool
@@ -132,7 +133,18 @@ OnTimeTalk
 		}
 	}
 	--
-	"\nI have been running for \n%(runhour) hours and %(runmin) minutes."
+	if runhour == 1
+	{runhour_s = ""}
+	else
+	{runhour_s = "s"}
+	--
+	if runmin == 1
+	{runmin_s = ""}
+	else
+	{runmin_s = "s"}
+	--
+	"\nI have been running for \n%(runhour) hour%(runhour_s) and %(runmin) minute%(runmin_s)."
+	
 	--
 	"\e:eval=hourlyArray ,= 'saidtimeslot'"
 }
@@ -229,7 +241,6 @@ OnMonthTalk
 	"\e:eval=hourlyArray ,= 'saidmonthly'"
 }
 
-
 // ----- OnKeyPress -----
 
 // ┌───────┬──────────────────────────────────────┐
@@ -259,7 +270,11 @@ OnKeyPress
 		}
 		when "r"
 		{
-			OnLastTalk
+			SHIORI3FW.LastTalk 
+		}
+		when "h"
+		{
+			OnHelpMenu
 		}
 		when "f4"
 		{

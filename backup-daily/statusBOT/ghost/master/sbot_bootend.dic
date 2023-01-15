@@ -38,6 +38,7 @@ OnFirstBoot
 	installinfo = ("%(year)","%(month)","%(day)","%(hour)","%(minute)","%(second)","%(OnGhostVer)")
 	// Custom options
 	silentMode = "OFF" //does not start in silent mode
+	volume = 100
 	verBalete = "ON" //DOES start with recycle bin confirmation on
 	// A couple of flag arrays
 	hourlyArray = IARRAY

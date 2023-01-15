@@ -118,6 +118,8 @@ OnConfigMenu
 	else
 	{
 		"\f[align,center]\![*]\q[ON,silenton] ----- \f[color,#0099cc]\![*]\q[OFF,silentoff]\f[color,default]\n \f[align,left]"
+		--
+		"\f[align,center]\q[Set Volume,volumeslider]\n\n[half]\f[align,left]"
 	}
 	--
 	
@@ -188,6 +190,17 @@ Select.silentoff
 {
 	silentMode = "OFF"
 	OnConfigMenu
+}
+
+Select.volumeslider
+{
+	"\C\![open,sliderinput,OnSetVolume,,%(volume),1,100]"
+}
+
+OnSetVolume
+{
+	volume = reference0
+	TalkConfig
 }
 
 // Enable/Disable Uninstall

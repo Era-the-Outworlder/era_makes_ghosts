@@ -307,7 +307,7 @@ OnClick0
 				}
 				else
 				{
-					OnMainMenu("click0")
+					OnMenu("click0")
 				}
 			}
 			elseif _source == "OnMouseDragStart"

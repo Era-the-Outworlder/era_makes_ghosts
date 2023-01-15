@@ -81,7 +81,7 @@ sakura.seriko.defaultsurface,0
 
 sakura.defaultx,0
 sakura.defaulty,0
-sakura.defaultleft,100
+sakura.defaultleft,100  
 sakura.defaulttop,100
 
 // ---- Kero ----

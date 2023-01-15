@@ -90,7 +90,7 @@ OnNameTeach
 		"That is already your username. Are you trying to change something else? \_w[500]\n[150]"
 		--
 		
-		"\![*] \q[Yes,titlechoose]\n \n[-100]\f[align,right]\![*] \q[No,OnNameDone,repeat]\n"
+		"\![*] \q[Yes,OnHonorificChoice]\n \n[-100]\f[align,right]\![*] \q[No,OnNameDone,repeat]\n"
 	}
 	
 	elseif reference0 == "Hypothetical Acceptable Name" //If there is a name the ghost will simply accept
@@ -101,7 +101,7 @@ OnNameTeach
 		--
 		"Do you want me to use a title or honorific when addressing you? \_w[500]\n[150]"
 		--
-		"\![*] \q[Yes,titlechoose]\n \n[-100]\f[align,right]\![*] \q[No,OnNameDone]\n"
+		"\![*] \q[Yes,OnHonorificChoice]\n \n[-100]\f[align,right]\![*] \q[No,OnNameDone]\n"
 	}
 	else //if the user put in something not specified above, ie a proper name the ghost can use. 
 	{
@@ -109,7 +109,7 @@ OnNameTeach
 		
 		"Do you want me to use a title or honorific when addressing you? \_w[500]\n[150]"
 		--
-		"\![*] \q[Yes,titlechoose]\n \n[-100]\f[align,right]\![*] \q[No,OnNameDone]\n"
+		"\![*] \q[Yes,OnHonorificChoice]\n \n[-100]\f[align,right]\![*] \q[No,OnNameDone]\n"
 	}
 }
 

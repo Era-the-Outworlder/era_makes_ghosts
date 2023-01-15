@@ -1,19 +1,24 @@
+/* ############# OnTranslate, Anchors, and Choices ############# */
 
-// ┌──────┬──────────────────────────────────────────────────────────────────┐
-// │ Ref# │                             Contents                             │
-// ╞══════╪══════════════════════════════════════════════════════════════════╡
-// │ 0    │ The original script                                              │
-// │ 1    │ Source:                                                          │
-// │      │ communicate                                                      │
-// │      │ sstp-send                                                        │
-// │      │ owned                                                            │
-// │      │ remote                                                           │
-// │      │ notranslate                                                      │
-// │      │ if sourced from plugin, the above will be followed by ",EventID" │
-// │      │                                                                  │
-// │ 2    │ EventID of the originating event                                 │
-// │ 3    │ References of the originating event.                             │
-// └──────┴──────────────────────────────────────────────────────────────────┘
+// ----- OnTranslate -----
+
+// ┌──────┬───────────────────────────────────────────┐
+// │ Ref# │         Reference Contents                │
+// ╞══════╪═══════════════════════════════════════════╡
+// │ 0    │ The original script                       │
+// │ 1    │ Source:                                   │
+// │      │ communicate                               │
+// │      │ sstp-send                                 │
+// │      │ owned                                     │
+// │      │ remote                                    │
+// │      │ notranslate                               │
+// │      │                                           │
+// │      │ if sourced from a plugin,                 │
+// │      │ reference1 will be followed by ",EventID" │
+// │      │                                           │
+// │ 2    │ EventID of the originating event          │
+// │ 3    │ References of the originating event.      │
+// └──────┴───────────────────────────────────────────┘
 
 OnTranslate
 {
@@ -22,7 +27,7 @@ OnTranslate
 	
     if silentMode == "ON"
     {
-        _talk = REPLACE(_talk, "\_v[", "\![sound,stop,")
+        _talk = REPLACE(_talk, "\![sound,play,", "\![sound,stop,")
     }
     --
     if reference1 == "" && reference2 == "" // Script Input, script choice call
@@ -37,62 +42,91 @@ OnTranslate
 }
 
 
-/* ############# OnChoice ############# */
+// ----- OnChoiceSelect -----
 // ┌───────┬──────────────────────────────────┐
 // │ ref # │        Reference Contents        │
-// ╞═══════╧══════════════════════════════════╡
-// │              OnChoiceSelect              │
+// ╞═══════╪══════════════════════════════════╡
 // │ 0     │ ID of the selected choice.       │
-// │             OnChoiceSelectEx             │
-// │ 0     │ Choice text                      │
-// │ 1     │ ID of the choice.                │
-// │ 2+    │ Extended information             │
-// │              OnChoiceEnter               │
-// │ 0     │ Choice text                      │
-// │ 1     │ ID of the choice.                │
-// │ 2+    │ Extended information             │
-// │             OnChoiceTimeout              │
-// │ 0     │ ID of timed-out choice           │
-// │              OnChoiceHover               │
-// │ 0     │ Choice text                      │
-// │ 1     │ ID of the choice.                │
-// │ 2+    │ Extended information             │
-// │              OnAnchorSelect              │
-// │ 0     │ The ID of the selected jumper.   │
-// │             OnAnchorSelectEx             │
-// │ 0     │ The text of the selected jumper. │
-// │ 1     │ The ID of the selected jumper.   │
-// │ 2+    │ Extended information             │
 // └───────┴──────────────────────────────────┘
 
 OnChoiceSelect
 {}
 
+// ----- OnChoiceSelectEx, OnChoiceEnter, & OnChoiceHover -----
+// ┌───────┬──────────────────────────────────┐
+// │ ref # │        Reference Contents        │
+// ╞═══════╪══════════════════════════════════╡
+// │ 0     │ Choice text                      │
+// │ 1     │ ID of the choice.                │
+// │ 2+    │ Extended information             │
+// └───────┴──────────────────────────────────┘
+
 OnChoiceSelectEx
-{}
+{
+	"\p[2]*The papers shuffle at your choice*"
+}
 
 OnChoiceEnter
-{}
-
-//---- OnChoiceTimeout -----
-// Called every time a choice is timed out, not just the main menu.
-
-OnChoiceTimeout
 {
-	"This plays when a choice times out.\e"
+	"\C\p[2]*The papers shudder*"
 }
 
 OnChoiceHover
-{}
+{
+	"\C\p[2]\c%REFTEST"
+}
+
+//---- OnChoiceTimeout -----
+// Called every time a choice is timed out, not just the main menu.
+// ┌───────┬──────────────────────────────────┐
+// │ ref # │        Reference Contents        │
+// ╞═══════╪══════════════════════════════════╡
+// │ 0     │ Raw text of timed-out choice     │
+// └───────┴──────────────────────────────────┘
+
+OnChoiceTimeout
+{
+	ERASEVAR("lastSource")
+	--
+	"This plays when a choice times out."
+}
+
+
+// ----- OnAnchorSelect -----
+// ┌───────┬──────────────────────────────────┐
+// │ ref # │        Reference Contents        │
+// ╞═══════╪══════════════════════════════════╡
+// │ 0     │ The ID of the selected anchor.   │
+// └───────┴──────────────────────────────────┘
 
 OnAnchorSelect
 {}
 
+
+// ----- OnAnchorSelectEx -----
+// ┌───────┬──────────────────────────────────┐
+// │ ref # │        Reference Contents        │
+// ╞═══════╪══════════════════════════════════╡
+// │ 0     │ The text of the selected anchor. │
+// │ 1     │ The ID of the selected anchor.   │
+// │ 2+    │ Extended information             │
+// └───────┴──────────────────────────────────┘
 OnAnchorSelectEx
 {
-	if "http://" _in_ reference0 || "https://" _in_ reference0 //checking to see if the link is a web address
+	if "http://" _in_ reference0 || "https://" _in_ reference0  //checking to see if the link is a web address
 	{
-		"\j[%(reference0)]\e"
+		if reference0 != reference1
+		{
+			"Link text and URL do not match. This may be an error."
+		}
+		else
+		{
+			"Opening %(reference0)... \j[%(reference0)]"
+		}
+	}
+	elseif "http://" _in_ reference1 || "https://" _in_ reference1
+	{
+		"Opening %(reference0)... \j[%(reference1)]"
 	}
 	else //if it's NOT a web address
 	{

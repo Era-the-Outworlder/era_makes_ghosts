@@ -163,7 +163,7 @@ OnMouseWheel
 OnMouseDragStart
 {
 	if !talkCheck
-	{"\_v[sfx\bweep.mp3]"}
+	{"\![sound,play,sfx\bweep.mp3],--volume=%(volume),--window=false]"}
 }
 
 
@@ -173,7 +173,7 @@ OnMouseDragStart
 OnMouseDragEnd
 {
 	if !talkCheck
-	{"\_v[sfx\bwoop.mp3]"}
+	{"\![sound,play,sfx\bwoop.mp3],--volume=%(volume),--window=false]"}
 }
 */
 
@@ -228,7 +228,7 @@ OnMouseDownEx
 
 // OnMouseEnter
 // {
-	// "\0\_v[trill.wav]OnMouseEnter Test.\e"
+	// "\0\![sound,play,trill.wav]OnMouseEnter Test.\e"
 // }
 	
 //----OnMouseEnterAll----
@@ -236,7 +236,7 @@ OnMouseDownEx
 
 // OnMouseEnterAll
 // {
-	// "\0\_v[trill.wav]I am currently fuctional.\e"
+	// "\0\![sound,play,trill.wav]I am currently fuctional.\e"
 // }
 
 //----OnMouseLeave----
@@ -244,7 +244,7 @@ OnMouseDownEx
 
 // OnMouseLeave
 // {
-	// "\0\_v[trill.wav]OnMouseLeave Test.\e"
+	// "\0\![sound,play,trill.wav]OnMouseLeave Test.\e"
 // }
 
 //----OnMouseLeaveAll----
@@ -252,7 +252,7 @@ OnMouseDownEx
 
 // OnMouseLeaveAll
 // {
-	// "\0\_v[trill.wav]OnMouseLeaveAll Test.\e"
+	// "\0\![sound,play,trill.wav]OnMouseLeaveAll Test.\e"
 // }
 
 
