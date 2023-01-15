@@ -8,11 +8,11 @@ file,SOUL_split.wav97a3059248b1397a688f254dcf46535fsize=62706date=2022-05-01T
 file,asriel.c93839a4a403af6693a1b6fb63a719db5size=20334date=2022-05-01T14:48:06
 file,attack.wav6abb4d46eb0fce3d94824365e83b2577size=174926date=2022-05-01T14:48:06
 file,battle_start.wav89fa8dd222bccd5a519a68b92c11015asize=29518date=2022-05-01T14:48:06
-file,developer_options.txtb1cb593b2b2eb02617738c7ac5c3cb95size=270date=2023-01-14T23:40:51
+file,developer_options.txt33db55658098ba2dbe2011c625f9131esize=260date=2023-01-15T00:17:36
 file,dust.wavf66ae9c237f93f6674bb387aca5371easize=302478date=2022-05-01T14:48:06
 file,encounter.wavd2e30091c731d944109ebd79b63bc6bcsize=221734date=2022-05-01T14:48:06
 file,flee.wavf0247bee566c87ead3e68c34d0ab358csize=110906date=2022-05-01T14:48:06
-file,ghost/master/aitalk.dic797967631d6731ecdcd3b0e132cbab81size=14899date=2023-01-15T00:12:01
+file,ghost/master/aitalk.dic797967631d6731ecdcd3b0e132cbab81size=14899date=2023-01-15T00:21:42
 file,ghost/master/anchor.dicd9e928a7aeb5b3dd3740516beccc4674size=1335date=2023-01-15T00:04:46
 file,ghost/master/aya5.dll7737614f08f642a0261a4f81917ed77asize=198144date=2022-05-01T14:48:06
 file,ghost/master/aya5.txt661d400e938e1c75f25de6af3e7bc60esize=1296date=2022-05-01T14:48:06
