@@ -257,8 +257,8 @@ OnBIFFFailure
 	}
  	else //if there's some other kind of error.
 	{
-		"\0\s[9]%(floweySpeech) * FAILED. %(reference[0]) \w8\w8\w8\e"
-		"\0\s[9]%(narrator) * (Connection failed. %(reference[0])) \w8\w8\w8\e"
+		"\0\s[9]%(floweySpeech) * FAILED. %(reference0) \w8\w8\w8\e"
+		"\0\s[9]%(narrator) * (Connection failed. %(reference0)) \w8\w8\w8\e"
 		
 		//reference0 here stores the error message the email server would have given the ghost, hopefully.
  	}
@@ -282,8 +282,8 @@ OnUpdateBegin
  
 OnUpdateReady
  {
-	"\0\s[13]%(floweySpeech) * %(reference[0]) F_LES AVA_LABLE. \w8\w8\w8\e"
-	"\0\s[13]%(narrator) * (%(reference[0]) new files available for update.) \w8\w8\w8\e"
+	"\0\s[13]%(floweySpeech) * %(reference0) F_LES AVA_LABLE. \w8\w8\w8\e"
+	"\0\s[13]%(narrator) * (%(reference0) new files available for update.) \w8\w8\w8\e"
 	
 	//reference0 here storing the number of new files. You don't have to use it if you don't want to.
  }
