@@ -35,6 +35,7 @@ RandomTalk : nonoverlap_pool
 	"\p[2]*The papers rustle restlessly*"
 	
 	
+	
 	// ----- Timed Conditionals -----
 
 		
@@ -62,7 +63,18 @@ RandomTalk : nonoverlap_pool
 		--
 		"\e:chain=forkchain0 :eval=hourlyArray ,= 'forkchain'"
 	}
+	
+	if ASEARCH('choicechain',onetimeArray) == -1
+	{
+	 // :eval=onetimeArray ,= 'choicechain 
+		"\0This is a chain that changes depending on how the user responds to a question. Yes or No?\n[200]"
+		--
+		"\![*] \q[Yes,ChainChoice,choicechainYES]\n[150]"
+		--
+		"\![*] \q[No,ChainChoice,choicechainNO]\n[150]"
+	}
 }
+
 
 	
 // ---- Chained Dialogue ----
@@ -96,6 +108,32 @@ forkchainB
 {{CHAIN
 	"\0\This is fork B of the forked test chain. \e:chain=end"
 }}CHAIN
+
+choicechainA
+{{CHAIN
+	"\0This is Chain that plays if you chose YES. \e:chain=choicechainA1"
+}}CHAIN
+
+choicechainA1
+{{CHAIN
+	"\0This ends the chain that plays if you chose YES. \e:chain=end"
+}}CHAIN
+
+choicechainB
+{{CHAIN
+	"\0This is Chain that plays if you chose NO. \e:chain=choicechainB1"
+}}CHAIN
+
+choicechainB1
+{{CHAIN
+	"\0This ends the chain that plays if you chose NO. \e:chain=end"
+}}CHAIN
+
+
+
+
+
+
 
 OnTimeTalk
 {

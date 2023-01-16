@@ -14,6 +14,7 @@
 OnFirstBoot
 {
 	hourlyArray = IARRAY
+	onetimeArray = IARRAY
 	offscreenflag = IARRAY
 	runhour = 0
 	runmin = 0
@@ -88,6 +89,7 @@ OnClose
 	}
  	--
 	ERASEVAR("hourlyArray")
+	ERASEVAR("lastChoice")
 	ERASEVAR("runsec")
 	ERASEVAR("runmin")
 	ERASEVAR("runhour")
@@ -144,6 +146,7 @@ OnCloseAll
 	}
 	--
 	ERASEVAR("hourlyArray")
+	ERASEVAR("lastChoice")
 	ERASEVAR("runsec")
 	ERASEVAR("runmin")
 	ERASEVAR("runhour")
@@ -213,6 +216,7 @@ OnGhostChanging
 	_selfname = TOSTR(sakuraname)
 	if reference0 == _selfname
 	{
+		ERASEVAR("lastChoice")
 		"Reloading."
 	}
 	else
@@ -222,6 +226,8 @@ OnGhostChanging
 			cumuhour = (cumuhour + runhour)
 		}
 		--
+		ERASEVAR("hourlyArray")
+		ERASEVAR("lastChoice")
 		ERASEVAR("runsec")
 		ERASEVAR("runmin")
 		ERASEVAR("runhour")

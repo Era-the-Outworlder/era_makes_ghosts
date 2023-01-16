@@ -63,18 +63,41 @@ OnChoiceSelect
 
 OnChoiceSelectEx
 {
-	"\p[2]*The papers shuffle at your choice*"
+	if lastChoice
+	{
+		ERASEVAR("lastChoice")
+	}
+	--
+	{
+		"\p[2]*The papers shuffle at your choice*"
+	}
+	--
+	if reference1 == "ChainChoice"
+	{
+		case reference2
+		{
+			when "choicechainYES"
+			{
+				"\0Hmmm... \e:chain=choicechainA"
+			}
+			when "choicechainNO"
+			{
+				"\0Oh... \e:chain=choicechainB"
+			}
+		}
+	}
+	
 }
 
-OnChoiceEnter
+// OnChoiceEnter
+// {}
+//This one seems to fire multiple times, either because the edge detection of the anchor text is too sensitive, or because of an undetermined bug.
+
+OnChoiceHover
 {
 	"\C\p[2]*The papers shudder*"
 }
 
-OnChoiceHover
-{
-	"\C\p[2]\c%REFTEST"
-}
 
 //---- OnChoiceTimeout -----
 // Called every time a choice is timed out, not just the main menu.
@@ -86,9 +109,17 @@ OnChoiceHover
 
 OnChoiceTimeout
 {
-	ERASEVAR("lastSource")
-	--
-	"This plays when a choice times out."
+	if 'OnMenu,cancel' !_in_ reference0
+	{
+		lastChoice = reference0
+		"This plays when a choice times out."
+	}
+	else
+	{
+		"Menu Timeout"
+	}
+	// "%(REFTEST)"
+	
 }
 
 
@@ -148,7 +179,24 @@ OnAnchorSelectEx
 	}
 }
 
+// ----- OnRecommendsiteChoice -----
+
+// ┌───────┬─────────────────────────────────┐
+// │ ref # │        Reference Contents       │
+// ╞═══════╪═════════════════════════════════╡
+// │ 0     │ Selected site name.             │
+// │ 1     │ URL of the selected site.       │
+// │ 2     │ URL/path of the thumbnail image │
+// │ 3     │ recommend or portal             │
+// │ 4     │ 0 or 1 (0=sakura or 1=kero)     │
+// │ 5     │ Position in menu list           │
+// │       │ (0 indexed0                     │
+// └───────┴─────────────────────────────────┘
+
 OnRecommendsiteChoice
 {
-	"https://plaintexttools.github.io/plain-text-table/"
+	"%(REFTEST)"
+	--
+	//"https://plaintexttools.github.io/plain-text-table/"
+	"Opening webpage..."
 }

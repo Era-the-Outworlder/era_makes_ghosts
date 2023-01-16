@@ -1,36 +1,45 @@
 ﻿
 
 OnMenu
-{
+{	
 	lastSource = _argv[0]
+	reference0 = _argv[1]
 	
-	--
-	"%(lastSource)\n"
-	--
 	case reference0
 	{
 		when "main"
 		{
-			"Help %lastSource \x"
-			--
-			if lastSource == "click0" || reference1 == "menu1"
+			if lastSource == "click0"
 			{
-				"\0\b[2]\![set,autoscroll,disable]This menu is opened from the main character.\n\_q"
+				"\0\b[2]\![set,autoscroll,disable]This menu is opened from the main character.\n[200]\_q"
 			}
-			elseif lastSource == "click1" || reference1 == "menu2"
+			elseif lastSource == "click1"
 			{
-				"\1\b[2]\![set,autoscroll,disable]This menu is opened from the secondary character.\n\_q"
+				"\1\b[2]\![set,autoscroll,disable]This menu is opened from the secondary character.\n[200]\_q"
 			}
 			
 			--
-			if lastTalk != ""
+			if SHIORI3FW.LastAITalk != ""
 			{
-				"\![*] \q[Last Talk,OnLastTalk]\n"
+				_repeat = SHIORI3FW.LastAITalk
+				'\![*] \q[Repeat Statement,"script:%(SHIORI3FW.LastAITalk)"]\n'
+				// "\![*] \q[Last Talk,OnLastTalk]\n"
 			}
 			else
 			{
 				"\n"
 			}
+			--
+			if lastChoice != ""
+			{
+				'\![*] \q[Repeat Question,"script:%(lastChoice)"]\n'
+			}
+			else
+			{
+				"\n"
+			}
+			
+			
 			--
 			"\![*] \q[Say something,OnAiTalk]\n"
 			--
@@ -184,7 +193,7 @@ OnMenu
 			--
 			"\![*]  \q[Random Time,OnTalkSet,random]\n[150]"
 			--
-			'\![*] \q[ Custom Time,"script:\![open,sliderinput,OnTalkSet,,%(minutetalk),0,60]"]\n[150]'
+			'\![*]  \q[Custom Time,"script:\![open,sliderinput,OnTalkSet,,%(minutetalk),0,60]"]\n[150]'
 			--
 			"\![*]  \q[Don't change,OnTalkSet,stay]\n[150]"
 			--
@@ -225,12 +234,10 @@ OnMenu
 		when "cancel"
 		{
 			"Closing Menu"
-			--
-			// ERASEVAR("lastSource")
 		}
 		others
 		{
-			"\![embed,OnMenu,main]"
+			// "\![embed,OnMenu,main]"
 		}
 	}
 }
