@@ -211,7 +211,7 @@ OnOtherGhostTalk
 		if reference3 == "OnSurfaceRestore" {}
 		else
 		{
-			reference4 = REPLACE(reference4, "\_v[", "\![sound,stop,")
+			reference4 = REPLACE(reference4, "\![sound,play,", "\![sound,stop,")
 			reference4 = REPLACE(reference4, "\e", "")
 			_spokenWord = TOLOWER(reference4)
 			

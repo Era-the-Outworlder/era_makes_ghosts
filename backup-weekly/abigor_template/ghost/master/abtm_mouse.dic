@@ -18,48 +18,51 @@
 
 
 /* ############# Mouse Functions ############# */
-// Here are the SHIORI Functions related to interacting with the ghost via mouse. Clicking, dragging, swiping, here it is
+// Here are the SHIORI Functions related to interacting with the ghost via mouse. Clicking, dragging, swiping, here it is.
 
 // Reference Chart for Most Mouse Functions
 
-// ┌───────┬────────────────────────────────────────────────────────────────────┐
-// │ ref # │                         Reference Contents                         │
-// ╞═══════╪════════════════════════════════════════════════════════════════════╡
-// │ 0     │ local X coordinate of mouse cursor                                 │
-// │       │                                                                    │
-// │ 1     │ local Y coordinate of mouse cursor                                 │
-// │       │                                                                    │
-// │ 2     │ always "0" ----- EXCEPT FOR:                                       │
-// │       │ OnMouseWheel, OnMouseDragStart, OnMouseDragEnd:                    │
-// │       │ The amount of rotation of the mouse wheel.                         │
-// │       │ Positive forward/up, negative backward /down                       │
-// │       │                                                                    │
-// │ 3     │ scope of surface (0 for sakura, 1 for kero, etc)                   │
-// │       │                                                                    │
-// │ 4     │ surface collision name/identifier                                  │
-// │       │                                                                    │
-// │ 5     │ Mouse Button Identifier:                                           │
-// │       │ "0" for leftmouse, "1" for rightmouse, "2" for middlemouse         │
-// │       │ for OnMouseDragStart/End, only left and right                      │
-// │       │                                                                    │
-// │ 5     │ FOR "EX" FUNCTIONS:                                                │
-// │       │ "middle" for middlemouse / mouse wheel. Has Priority               │
-// │       │ "xbutton1" for extended button 1, "xbutton2" for extended button 2 │
-// │       │                                                                    │
-// │ 5     │ FOR FUNCTIONS NOT TRIGGERED BY CLICK:                              │
-// │       │ always "0"                                                         │
-// │       │                                                                    │
-// │ 6     │ Windows 7+ Input Source: "mouse" for mouse input,                  │
-// │       │ "touch" for touch panel of multi-touch environment                 │
-// │       │                                                                    │
-// │ 7     │ OnMouseMultipleClick and OnMouseMultipleClickEx Only:              │
-// │       │ Number of Consecutive Clicks                                       │
-// └───────┴────────────────────────────────────────────────────────────────────┘
+// ┌───────┬────────────────────────────────────────────────────────────┐
+// │ ref # │                Reference Contents                          │
+// ╞═══════╪════════════════════════════════════════════════════════════╡
+// │ 0     │ local X coordinate of mouse cursor                         │
+// │       │                                                            │
+// │ 1     │ local Y coordinate of mouse cursor                         │
+// │       │                                                            │
+// │ 2     │ always "0" ----- EXCEPT FOR:                               │
+// │       │ OnMouseWheel, OnMouseDragStart, OnMouseDragEnd:            │
+// │       │ The amount of rotation of the mouse wheel.                 │
+// │       │ Positive forward/up, negative backward /down               │
+// │       │                                                            │
+// │ 3     │ scope of surface (0 for sakura, 1 for kero, etc)           │
+// │       │                                                            │
+// │ 4     │ surface collision name/identifier                          │
+// │       │                                                            │
+// │ 5     │ Mouse Button Identifier:                                   │
+// │       │ "0" for leftmouse, "1" for rightmouse, "2" for middlemouse │
+// │       │ for OnMouseDragStart/End, only left and right              │
+// │       │                                                            │
+// │ 5     │ FOR "EX" FUNCTIONS:                                        │
+// │       │ "middle" for middlemouse / mouse wheel. Has Priority       │
+// │       │ "xbutton1" for extended button 1,                          │
+// │       │ "xbutton2" for extended button 2                           │
+// │       │                                                            │
+// │ 5     │ FOR FUNCTIONS NOT TRIGGERED BY CLICK:                      │
+// │       │ always "0"                                                 │
+// │       │                                                            │
+// │ 6     │ Windows 7+ Input Source: "mouse" for mouse input,          │
+// │       │ "touch" for touch panel of multi-touch environment         │
+// │       │                                                            │
+// │ 7     │ OnMouseMultipleClick and OnMouseMultipleClickEx Only:      │
+// │       │ Number of Consecutive Clicks                               │
+// └───────┴────────────────────────────────────────────────────────────┘
 
 // All OnMouse events are technically optional, but if your ghost is going to have a menu when clicked on, OnMouseClick or OnMouseDoubleClick is recommended. 
 
 // All events are included for completeness. Unused events can (and perhaps should) be deleted. 
-// The example code in OnClick0/OnClick1/OnClick2 uses OnMouseDoubleClick, OnMouseDragStart, OnMouseDragEnd and OnMouseWheel. 
+
+// The example code in OnClick0/OnClick1/OnClick2 uses OnMouseDoubleClick, OnMouseDragStart, OnMouseDragEnd and OnMouseWheel.
+
 // The example code in OnMouse0/OnMouse1/OnMouse2 uses OnMouseMove and OnMouseHover.
 
 // The contents of the events below can be removed if you prefer not to use the scope detection/selector at all and instead prefer to write new code directly in the function.
@@ -307,7 +310,8 @@ OnClick0
 				}
 				else
 				{
-					OnMainMenu("click0")
+					OnMenu("click0","main")
+					
 				}
 			}
 			elseif _source == "OnMouseDragStart"
@@ -324,7 +328,7 @@ OnClick0
 		{
 			if _source == "OnMouseWheel"
 			{
-				"About time..."
+				"Test..."
 			}
 		}
 		
@@ -332,7 +336,7 @@ OnClick0
 		{
 			if _source == "OnMouseWheel"
 			{
-				"About time..."
+				"Test..."
 			}
 		}
 		
@@ -340,7 +344,7 @@ OnClick0
 		{
 			if _source == "OnMouseWheel"
 			{
-				"About time..."
+				"Test..."
 			}
 		}
 		
@@ -355,6 +359,60 @@ OnClick1
 	_hitbox = reference4
 	_button = reference5
 
+	if _button != 1 
+    {
+		// If the click DID NOT occur in the bounds of a hitbox
+		if !_hitbox
+		{
+			if _source == "OnMouseDoubleClick" || _source == "OnMouseDoubleClickEx"
+			{
+				if _button == "xbutton1"
+				{
+					"%(REFTEST('NewClickFunction'))"
+				}
+				else
+				{
+					// lastSource = "click0"
+					--
+					OnMenu("click1","main")
+					
+				}
+			}
+			elseif _source == "OnMouseDragStart"
+			{
+				"*it wriggles slightly, demanding to be let down*"
+			}
+			elseif _source == "OnMouseDragEnd"
+			{
+				"*the sabaton give a desultory rattle*"
+			}
+		}
+		
+		if _hitbox == "Box1"
+		{
+			if _source == "OnMouseWheel"
+			{
+				"*clonk*"
+			}
+		}
+		
+		if _hitbox == "Box2"
+		{
+			if _source == "OnMouseWheel"
+			{
+				"*clank*"
+			}
+		}
+		
+		if _hitbox == "Box3"
+		{
+			if _source == "OnMouseWheel"
+			{
+				"*clink*"
+			}
+		}
+		
+	}
 }
 
 /* ############# OnMouseClickCHAR ############# */

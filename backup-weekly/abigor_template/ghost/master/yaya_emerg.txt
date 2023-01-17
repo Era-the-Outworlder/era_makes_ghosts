@@ -45,7 +45,7 @@ iolog, on
 
 iolog.filter.mode, blacklist 
 
-// Kist of keywords to filter. Can be written using regular expressions with the following format:
+// List of keywords to filter. Can be written using regular expressions with the following format:
 // iolog.filter.keyword.regex, keyword: regex 
 
 iolog.filter.keyword, OnSecondChange 

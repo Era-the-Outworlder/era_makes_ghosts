@@ -13,28 +13,28 @@
 // ---- Voices ----
 
 sbot
-{"\_v[sfx\beepe.mp3]"}
+{"\![sound,play,sfx\beepe.mp3,--volume=%(volume),--window=false]"}
 
 beeboop
-{"\_v[sfx\beeboop.mp3]"}
+{"\![sound,play,sfx\beeboop.mp3,--volume=%(volume),--window=false]"}
 
 boobeep
-{"\_v[sfx\boobeep.mp3]"}
+{"\![sound,play,sfx\boobeep.mp3,--volume=%(volume),--window=false]"}
 
 hum
-{"\_v[sfx\hum.mp3]"}
+{"\![sound,play,sfx\hum.mp3,--volume=%(volume),--window=false]"}
 
 buzz
-{"\_v[sfx\buzz.mp3]"}
+{"\![sound,play,sfx\buzz.mp3,--volume=%(volume),--window=false]"}
 
 pwrON
-{"\_v[sfx\pwr_on.mp3]"}
+{"\![sound,play,sfx\pwr_on.mp3,--volume=%(volume),--window=false]"}
 
 pwrOFF
-{"\_v[sfx\pwr_off.mp3]"}
+{"\![sound,play,sfx\pwr_off.mp3,--volume=%(volume),--window=false]"}
 
 bweep
-{"\_v[sfx\bweep.mp3]"}
+{"\![sound,play,sfx\bweep.mp3,--volume=%(volume),--window=false]"}
 
 
 // ----System display related----

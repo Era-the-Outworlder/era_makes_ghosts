@@ -1,193 +1,324 @@
 ﻿
-// [..       [..[........[...     [..[..     [..
-// [. [..   [...[..      [. [..   [..[..     [..
-// [.. [.. [ [..[..      [.. [..  [..[..     [..
-// [..  [..  [..[......  [..  [.. [..[..     [..
-// [..   [.  [..[..      [..   [. [..[..     [..
-// [..       [..[..      [..    [. ..[..     [..
-// [..       [..[........[..      [..  [.....   
 
-// ----- Menus -----
-//This .dic file is primarily concerned with the double-click menu.
-
-
-// ----- OnMainMenu -----
-
-
-OnMainMenu
+OnMenu
 {	
-	_source = _argv[0]
-	if (_source == "click0") || (reference0 == "menu1")
-	{
-		"\0\b[2]\![set,autoscroll,disable]This menu is opened from the main character.\n\_q"
-	}
-	elseif (_source == "click1") || (reference0 == "menu2")
-	{
-		"\1\b[2]\![set,autoscroll,disable]This menu is opened from the secondary character.\n\_q"
-	}
-	--
-	"\![*] \q[User Settings,OnUserConfig]\n"
-	--
-	"\![*] \q[Ghost Settings,OnConfigMenu]\n"
-	--
-	"\![*] \q[Other Functions,OnFunctionMenu]\n[150]"
-	--
-	"%(disDate) %(disTime)\n"
-	--
-	"v%(OnGhostVer)\n"
-	--
-	if lastUpDate
-	{
-		"Last Updated: %(lastUpDate)\n"
-	}
-	else
-	{
-		"\n"
-	}
-	--
-	if SHIORI3FW.DebugMode
-	{
-		"\![*] \q[Test variable,OnTestVariable]\n"
-		--
-		"\![*] \q[Close Menu,CANCEL]\e"
-	}
-	else
-	{
-		"\n\![*] \q[Close Menu,CANCEL]\e"
-	}
-}
-
-
-// ----- OnUserConfig -----
-// This menu allows the user to change their name and other information
-
-OnUserConfig
-{
-	"\0\b[2]\![set,autoscroll,disable]\_q" 
-	--
-	"\f[height,-2]\![*](\q[Edit,OnTeachName,menu])\f[height,+2]NAME:\f[height,default]\f[color,ccffff] %(username)\f[default]\n"
-	--
-	"\f[height,-2]\![*](\q[Edit,OnTeachPronouns,menu])\f[height,+2]PRONOUNS:\f[height,default] \n\f[color,bbffff]%(nomPro)/%(oblPro)/%(posPro)\f[default]\n"
-	--
-	"\f[height,-2]\![*](\q[Edit,OnGetBirthday,menu])\f[height,+2]BIRTHDAY:\f[height,default] \n\f[color,aaffff]%(birthdayprint)\f[default]\n"
-	--
-	"\![*] \q[GHOST Settings,OnConfigMenu]\n"
-	--	
-	"\![*] \q[Main Menu,OnMainMenu]\n"
-	--
- 	"\![*] \q[Close,CANCEL]"
-	--
-	"\e"
-}
-
-// ----- OnConfigMenu -----
-// Allows user to change various ghost settings
-OnConfigMenu
-{
-	"\b[2]\![set,autoscroll,disable]\_q" 
-	--
-	"\![*]\q[TALK RATE:,OnSetTalk] %(talksetting) \f[size,-2]Commu:%(communicateratio)%\f[default]\n[150]"
-	--
+	lastSource = _argv[0]
+	reference0 = _argv[1]
 	
-	"ENABLE UNINSTALL?\n "
-	--
-	if deleteshitai == "ON"
-	{
-		"\f[align,center]\f[color,#0099cc]\![*]\q[ON,OnConfigSet,deleteon]\f[color,default] ----- \![*]\q[OFF,OnConfigSet,deleteoff]\n \f[align,left]"
-	}
-	else
-	{
-		"\f[align,center]\![*]\q[ON,OnConfigSet,deleteon] ----- \f[color,#0099cc]\![*]\q[OFF,OnConfigSet,deleteoff]\f[color,default]\n \f[align,left]"
-	}
-	--
-	
-	"ENABLE SILENT MODE?\n "
-	--
-	if silentMode == "ON"
-	{
-		"\f[align,center]\f[color,#0099cc]\![*]\q[ON,OnConfigSet,silenton]\f[color,default] ----- \![*]\q[OFF,OnConfigSet,silentoff]\n \f[align,left]"
-	}
-	else
-	{
-		"\f[align,center]\![*]\q[ON,OnConfigSet,silenton] ----- \f[color,#0099cc]\![*]\q[OFF,OnConfigSet,silentoff]\f[color,default]\n \f[align,left]"
-	}
-	--
-	
-	"CONFIRM RECYCLE BIN?\n "
-	--
-	if verBalete == "ON"
-	{
-		"\f[align,center]\f[color,#0099cc]\![*]\q[ON,OnConfigSet,verBinOn]\f[color,default] ----- \![*]\q[OFF,OnConfigSet,verBinOff]\n \f[align,left]"
-	}
-	else
-	{
-		"\f[align,center]\![*]\q[ON,OnConfigSet,verBinOn] ----- \f[color,#0099cc]\![*]\q[OFF,OnConfigSet,verBinOff]\f[color,default]\n \f[align,left]"
-	}
-	--
-
-	"\n[half]\![*] \q[User Settings,OnUserConfig]\n"
-	--
-	"\f[align,center]\![*] \q[Main Menu,OnMainMenu,return] ---------- \![*] \q[Close,CANCEL]"
-	--
-	"\e"
-}
-
-OnConfigSet
-{
 	case reference0
 	{
+		when "main"
+		{
+			if lastSource == "click0"
+			{
+				"\0\b[2]\![set,autoscroll,disable]This menu is opened from the main character.\n[200]\_q"
+			}
+			elseif lastSource == "click1"
+			{
+				"\1\b[2]\![set,autoscroll,disable]This menu is opened from the secondary character.\n[200]\_q"
+			}
+			
+			--
+			if SHIORI3FW.LastAITalk != ""
+			{
+				_repeat = SHIORI3FW.LastAITalk
+				'\![*] \q[Repeat Statement,"script:%(SHIORI3FW.LastAITalk)"]\n'
+				// "\![*] \q[Last Talk,OnLastTalk]\n"
+			}
+			else
+			{
+				"\n"
+			}
+			--
+			if lastChoice != ""
+			{
+				'\![*] \q[Repeat Question,"script:%(lastChoice)"]\n'
+			}
+			else
+			{
+				"\n"
+			}
+			
+			
+			--
+			"\![*] \q[Say something,OnAiTalk]\n"
+			--
+			"\![*] \q[Talk to others,OnStartCommunicate]\n"
+			--
+			"\![*] \q[User Settings,OnMenu,user]\n"
+			--
+			"\![*] \q[GHOST Settings,OnMenu,settings]\n"
+			--
+			"\![*] \q[Functions,OnMenu,functions]\n[200]"
+			--
+			"%(disDate) %(disTime)\n"
+			--
+			"v%(OnGhostVer)\n"
+			--
+			if lastUpDate
+			{
+				"Last Updated: %(lastUpDate)\n"
+			}
+			else
+			{
+				"\n"
+			}
+			--
+			if SHIORI3FW.DebugMode
+			{
+				"\![*] \q[Test variable,OnTestVariable]\n"
+			}
+			--
+			
+				"\n\![*] \q[Close Menu,OnMenu,cancel]\e"
+			--
+		}
+		when "user"
+		{
+			"\0\b[2]\![set,autoscroll,disable]\_q\f[align,center]User Settings\n \f[align,left]\n" 
+			--
+			"\f[height,-2]\![*](\q[Edit,OnTeachName,menu])\f[height,+2]NAME:\f[height,default]\f[color,ccffff] %(username)\f[default]\n"
+			--
+			"\f[height,-2]\![*](\q[Edit,OnTeachPronouns,menu])\f[height,+2]PRONOUNS:\f[height,default] \n\f[color,bbffff]%(nomPro)/%(oblPro)/%(posPro)\f[default]\n"
+			--
+			"\f[height,-2]\![*](\q[Edit,OnGetBirthday,menu])\f[height,+2]BIRTHDAY:\f[height,default] \n\f[color,aaffff]%(birthdayprint)\f[default]\n"
+		
+			--
+			"\![*] \q[GHOST Settings,OnMenu,settings]\n"
+			--	
+			"\![*] \q[Main Menu,OnMenu,main]\n"
+			--
+			"\![*] \q[Close,OnMenu,cancel]\e"
+		
+		}
+		when "settings"
+		{
+			"\0\b[2]\![set,autoscroll,disable]\f[align,center]Ghost Settings\_q\n\f[align,left]" 
+			--
+			
+			"TALK RATE: \nevery %(talktime) \n\f[height,14]\![*] (\q[%(change),OnMenu,talkrate])\f[height,default]\n[150]"
+			--
+			
+			"\n\![*] \q[Audio Settings,OnMenu,audio]\n" 
+			--
+			
+			"\![*] \q[Discord Rich Presence,OnDRPMenu]\n[150]"
+			--
+			if InDiscordPluginCustom == 1
+			{
+				"\f[color,#fb0300]\![*] \q[ON,OnDiscordPluginCustom] \f[color,default]\n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \![*] \q[OFF,OnDiscordPluginCustomEnd]\n[150]\f[align,left]"
+			}
+			else
+			{
+				"\![*] \q[ON,OnDiscordPluginCustom] \n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \f[color,#fb0300]\![*] \q[OFF,OnDiscordPluginCustomEnd]\f[color,default]\n\f[align,left]"
+			}
+			
+			--
+			"Enable Uninstall?\n"
+			--
+			if deleteshitai == "ON"
+			{
+				"\f[color,#fb0300]\![*] \q[ON,OnMenuSelect,deleteon] \f[color,default]\n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \![*] \q[OFF,OnMenuSelect,deleteoff]\n[150]\f[align,left]"
+			}
+			else
+			{
+				"\![*] \q[ON,OnMenuSelect,deleteon] \n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \f[color,#fb0300]\![*] \q[OFF,OnMenuSelect,deleteoff]\f[color,default]\n[150]\f[align,left]"
+			}
+			--	
+			"Confirm Recycle Bin?\n"
+			--
+			if verBalete == "ON"
+			{
+				"\f[color,#fb0300]\![*] \q[ON,OnMenuSelect,verBinOn] \f[color,default]\n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \![*] \q[OFF,OnMenuSelect,verBinOff]\n[150]\f[align,left]"
+			}
+			else
+			{
+				"\![*] \q[ON,OnMenuSelect,verBinOn] \n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \f[color,#fb0300]\![*] \q[OFF,OnMenuSelect,verBinOff]\f[color,default]\n[150]\f[align,left]"
+			}			
+			
+			--
+			"\![*] \q[User Settings,OnMenu,user]\n"
+			--
+			"\![*] \q[Main Menu,OnMenu,main]\n"
+			--
+			"\![*] \q[Close,OnMenu,cancel]\e"		
+		}
+		when "audio"
+		{
+			"\0\b[2]\![set,autoscroll,disable]\f[align,center]Audio Settings\_q\n[200]\f[align,left]"
+			--
+			"Enable Silent Mode?\n"
+			--
+			if silentMode == "ON"
+			{
+				"\f[color,#fb0300]\![*]  \q[ON,OnMenuSelect,silenton] \f[color,default]\n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \![*]  \q[OFF,OnMenuSelect,silentoff] \n[200]\f[align,left]"
+			}
+			else
+			{
+				"\![*]  \q[ON,OnMenuSelect,silenton] \n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \f[color,#fb0300]\![*]  \q[OFF,OnMenuSelect,silentoff]\f[color,default]\n[200]\f[align,left]"
+				--
+				"\f[align,center]\![*] \q[Set Volume?,OnMenuSelect,volumeslider]\nCurrently: %(volume) \n\f[align,left]\n"
+			}
+			--
+			"Play Hourly Chimes?\n"
+			--
+			if hourChime == "ON"
+			{
+				"\f[color,#fb0300]\![*]  \q[ON,OnMenuSelect,bellon] \f[color,default]\n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \![*]  \q[OFF,OnMenuSelect,belloff] \n[200]\f[align,left]"
+			}
+			else
+			{
+				"\![*]  \q[ON,OnMenuSelect,bellon] \n \n[-100]\f[align,center]----\n \n[-100]\f[align,right] \f[color,#fb0300]\![*]  \q[OFF,OnMenuSelect,belloff]\f[color,default]\n[200]\f[align,left]"
+			}
+			--
+			"\![*] \q[GHOST Settings,OnMenu,settings]\n"
+			--
+			"\![*] \q[Main Menu,OnMenu,main]\n"
+			--
+			"\![*] \q[Close,OnMenu,cancel]\e"	
+		}
+		when "talkrate"
+		{
+			"\b2\0\s[3]"
+			--
+			"\b2This is where the talk timing is set.\_q\n It is currently set to %(talktime), with %(communicateratio)%(CHR(37)) directed to other ghosts."
+			--
+			
+			"\0\n[150]/
+			\![*]  \q[Don't Talk,OnTalkSet,never]\n/
+			\![*]  \q[Every minute,OnTalkSet,one]\n/
+			\![*]  \q[Every 5 minutes,OnTalkSet,five]\n/
+			\![*]  \q[Every 15 minutes,OnTalkSet,fifteen]\n/
+			\![*]  \q[Every 30 minutes,OnTalkSet,thirty]\n[150]"
+			--
+			"\![*]  \q[Random Time,OnTalkSet,random]\n[150]"
+			--
+			'\![*]  \q[Custom Time,"script:\![open,sliderinput,OnTalkSet,,%(minutetalk),0,60]"]\n[150]'
+			--
+			"\![*]  \q[Don't change,OnTalkSet,stay]\n[150]"
+			--
+			"\![*]  \q[Change commu percent,OnTalkSet,changecommu]\n[150]"
+			--
+			"\![*] \q[GHOST Settings,OnMenu,settings]\n"
+			--
+			"\![*] \q[Main Menu,OnMenu,main]\n"
+			--
+			"\![*] \q[Close,OnMenu,cancel]\e"
+		
+		
+		}
+		when "function"
+		{
+			"\b2Listing Functions: \n[200]"
+			
+			--
+			"\![*] \q[Open Calendar,OnMenuSelect,calendar]\n[150]/
+			\![*] \q[Check Email,OnMenuSelect,mailcheck]\n[150]/
+			\![*] \q[Open SSP Preferences,OnMenuSelect,sspconfig]\n[150]/
+			\![*] \q[Empty Recycle Bin,OnRecycleStart]\n[150]/
+			\![*] \q[System Information,OnRunCPUID]\n[200]/
+			\![*] \q[Discord Rich Presence,OnDRP]\n[250]/
+			
+			\![*] \q[View Ghost Changelog,OnChangeLog,menu]\n[250]/
+			\![*] \q[MainMenu,OnMenu,main]\n"
+			--
+			if username == "Era" || username == "BugTest"
+			{
+				"\n[200]\![*] \q[Test variable,OnTestVariable]\n"
+			}
+			else
+			{
+				"\e"
+			}
+		}
+		when "cancel"
+		{
+			"Closing Menu"
+		}
+		others
+		{
+			// "\![embed,OnMenu,main]"
+		}
+	}
+}
+
+OnMenuSelect
+{
+	case reference[0]
+	{
+		// Settings
 		when "deleteon" // Enable/Disable Uninstall
 		{
 			deleteshitai = "ON"
+			"\![raise,OnMenu,settings]"
 		}
 		when "deleteoff"
 		{
 			deleteshitai = "OFF"
+			"\![raise,OnMenu,settings]"
 		}
 		when "verBinOn" // Enable/Disable Verbose emptying recycle bin
 		{
 			verBalete = "ON"
+			"\![raise,OnMenu,settings]"
 		}
 		when "verBinOff"
 		{
 			verBalete = "OFF"
+			"\![raise,OnMenu,settings]"
 		}
+		// Audio Menu
 		when "silenton"	// Enable/Disable SilentMode
 		{
 			silentMode = "ON"
+			"\![raise,OnMenu,audio]"
 		}
 		when "silentoff"
 		{
 			silentMode = "OFF"
+			"\![raise,OnMenu,audio]"
+		}
+		when "volumeslider"
+		{
+			"\C\![open,sliderinput,OnSetVolume,,%(volume),1,100]"
+		}
+		when "bellon"
+		{
+			hourChime = "ON"
+			"\![raise,OnMenu,audio]"
+		}
+		when "belloff"
+		{
+			hourChime = "OFF"
+			"\![raise,OnMenu,audio]"
+		}
+		// Functions
+		when "calendar" // The caledar built into SSP
+		{
+			"\0\s[3]%(Flowey)* Op_ning th_ cal_nder.\![open,calendar]"
+		}
+		when "sspconfig" // When the user chooses SSP Preferences.
+		{
+			"\0\s[3]%(Flowey)* _pening the SSP c_nfig menu.\![open,configurationdialog]"
+		}
+		when "mailcheck"	// This is when the user chooses to check their email. The rest of this plays out in etc.dic.
+		{
+			"\![biff]"
 		}
 	}
-	--
-	OnConfigMenu
 }
 
-
-// ----- Talk Rate -----
-// This is when the user chooses to adjust the talk rate in the config menu. The talk rate is how often the ghost will read some dialogue from aitalk.dic.
-
-OnSetTalk
+OnSetVolume
 {
-	"\b2This is where the talk timing is set\_q"
-	--
-	"\![*] \q[ Don't Talk,OnTalkSet,never]\n/
-	\![*] \q[ Every 15 minutes,OnTalkSet,fifteen]\n/
-	\![*] \q[ Every 30 minutes,OnTalkSet,thirty]\n"
-	--
-	'\![*] \q[ Custom Time,"script:\![open,sliderinput,OnTalkSet,,%(minutetalk),0,60]"]\n'
-	--
-	"\![*] \q[ Random Time,OnTalkSet,random]\n[150]/
-	\![*] \q[ Don't change,OnTalkSet,stay]"
+	volume = reference0
+	"\![raise,OnMenu,audio]"
 }
 
 OnTalkSet
 {
-	"I will talk"
+	"\0\s[3]%(Flowey) * "
 	--
-	case reference0
+	case reference[0]
 	{
 		when "never"
 		{
@@ -195,7 +326,23 @@ OnTalkSet
 			talksetting = "never"
 			aitalkinterval = 0
 			
-			"... Never, actually."
+			"..."
+		}
+		when "one"
+		{
+			minutetalk = 1
+			talksetting = "1 minute"
+			aitalkinterval = 60
+			
+			"1 minute."
+		}
+		when "five"
+		{
+			minutetalk = 5
+			talksetting = "5 minutes"
+			aitalkinterval = 300
+			
+			"5 minutes."
 		}
 		when "fifteen"
 		{
@@ -203,7 +350,7 @@ OnTalkSet
 			talksetting = "15 minutes"
 			aitalkinterval = 900
 			
-			" every 15 minutes."
+			"15 minutes."
 		}
 		when "thirty"
 		{
@@ -211,7 +358,7 @@ OnTalkSet
 			talksetting = "30 minutes"
 			aitalkinterval = 1800
 			
-			" every 30 minutes."
+			"30 minutes."
 		}
 		when "random"
 		{
@@ -219,71 +366,67 @@ OnTalkSet
 			talksetting = "%(minutetalk) minutes"
 			aitalkinterval = (minutetalk * 60)
 			
-			" every %(minutetalk) minutes."
+			"%(minutetalk) minutes."
 		}
 		when "stay"
 		{
-			"I will do as I was before, then.."
+			"No change."
+		}
+		when "changecommu"
+		{
+			"\n[200]Talk... others?\n %(Narrator) * Select a value from 0 to 100"
+			
+			"??? \n%(Narrator) * What percentage of the time would you like %(callHim) to try to communicate with other ghosts? \nSelect a value from 0 to 100."
+			--
+			"\C\![open,sliderinput,OnCommuSet,,%(communicateratio),0,100]"
 		}
 		others
 		{
-			minutetalk = reference0
+			minutetalk = reference[0]
 			if minutetalk != 0
 			{
 				talksetting = "%(minutetalk) minutes"
 				aitalkinterval = (minutetalk * 60)
 				
-				" every %(minutetalk) minutes."
+				"%(minutetalk) minutes."
 			}
 			else
 			{
 				talksetting = "never"
 				aitalkinterval = 0
 				
-				"... Never, actually. Strange..."
+				"... \_w[500]\s[18]... \_w[500]\s[21]...\_w[500]"
 			}
 		}
 	}
-	--
-	"\n[200]Would you like me to try to talk to other ghosts, and if so what percentage of my speech?\n"
-	--
-	"\f[align,center]\q[No,OnCommuSet,0] ------ "
-	--
-	'\q[Yes,"script:\![open,sliderinput,OnCommuSet,,%(communicateratio),0,100]"]'
 }
 
 OnCommuSet
 {
-	communicateratio = reference0
-	"I will talk to other ghosts %(communicateratio)% of the time."
-}
-
-OnFunctionMenu
-{
-
-	"\b2Listing Functions: \n[200]"
-	
+	communicateratio = reference[0]
 	--
-	'\![*] \q[Open Calendar,"script:Opening Calendar.\![open,calendar]"]\n'
-	--
-	'\![*] \q[Check Email,"script:\![biff]"]\n'
-	--
-	'\![*] \q[Open SSP Preferences,"script:Opening the SSP preferences menu.\![open,configurationdialog]"]\n'
-	--
-	"\![*] \q[Empty Recycle Bin,OnRecycleStart]\n"
-	--
-	"\![*] \q[System Information,OnRunCPUID]\n"
-	--
-	"\![*] \q[View Ghost Changelog,OnChangeLog,menu]\n"
-	--	
-	"\![*] \q[Main Menu,OnMainMenu,return]\n"
-	--
-	if devDebug == "ON"
+	if communicateratio == 0
 	{
-		"\f[align,center]\![*] \q[Test variable,OnTestVariable] \![*]"
+		if ghostexcount > 0
+		{"\![set,otherghosttalk,false]%(Narrator) * He'll never know he isn't alone."}
+		else
+		{"\![set,otherghosttalk,false]%(Narrator) * He'll never know how alone he is."}
+		
 	}
 	else
 	{
-		"\e"
+		"\![set,otherghosttalk,true]%(Narrator) * He will try to talk to other ghosts %(communicateratio)% of the time."
 	}
+	--
+	"\![timerraise,1000,1,OnMenu,talkrate]"
+}
+
+
+/* ############# OnHelpMenu ############# */
+// A special Menu listing commands, keyboard shortcutsc and special information for the user.
+
+OnHelpMenu
+{
+	"\0\b[2]\![set,autoscroll,disable]\f[align,center]Welcome to the HELP menu.\n\_q"
+
 }

@@ -16,7 +16,7 @@
 	// _talk = REPLACE(_talk, "bugreport(at)outworlderaffairs.com", "\_a[bugmail]bugreport@outworlderaffairs.com\_a")		
 	// if silentMode == "ON"
 	// {
-		// _talk = REPLACE(_talk, "\_v[", "\![sound,stop,")
+		// _talk = REPLACE(_talk, "\![sound,play,", "\![sound,stop,")
 		// --
 		// "%(_talk)"
 	// }
@@ -31,7 +31,7 @@ OnTranslate
     _talk = REPLACE(_talk, "bugreport(at)outworlderaffairs.com","\_a[bugmail]bugreport@outworlderaffairs.com\_a")        
     if silentMode == "ON"
     {
-        _talk = REPLACE(_talk, "\_v[", "\![sound,stop,")
+        _talk = REPLACE(_talk, "\![sound,play,", "\![sound,stop,")
 		--
 		"%(_talk)"
     }

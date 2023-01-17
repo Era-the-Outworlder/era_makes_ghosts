@@ -14,9 +14,12 @@
 OnFirstBoot
 {
 	hourlyArray = IARRAY
+	onetimeArray = IARRAY
 	offscreenflag = IARRAY
 	runhour = 0
 	runmin = 0
+	
+	volume = 100
 	"\0\s[0]\1\s[10]\p[2]\s[30]\![set,otherghosttalk,true]"
 	--
 	"\0This is my first time booting.\_w[500]"
@@ -86,6 +89,7 @@ OnClose
 	}
  	--
 	ERASEVAR("hourlyArray")
+	ERASEVAR("lastChoice")
 	ERASEVAR("runsec")
 	ERASEVAR("runmin")
 	ERASEVAR("runhour")
@@ -142,6 +146,7 @@ OnCloseAll
 	}
 	--
 	ERASEVAR("hourlyArray")
+	ERASEVAR("lastChoice")
 	ERASEVAR("runsec")
 	ERASEVAR("runmin")
 	ERASEVAR("runhour")
@@ -171,13 +176,13 @@ OnCloseAll
 OnGhostChanged
 {
 	hourlyArray = IARRAY
-	runhour = 0
-	runmin = 0
 	"\![set,otherghosttalk,true]\0\s[0]"
 	--
 	_selfname = TOSTR(sakuraname)
 	if reference0 == _selfname
 	{
+		runhour = 0
+		runmin = 0
 		"\0\s[0]\1\s[10]\p[2]\s[30]\0Reloaded\_w[500]"
 	}
 	else
@@ -211,6 +216,7 @@ OnGhostChanging
 	_selfname = TOSTR(sakuraname)
 	if reference0 == _selfname
 	{
+		ERASEVAR("lastChoice")
 		"Reloading."
 	}
 	else
@@ -220,6 +226,8 @@ OnGhostChanging
 			cumuhour = (cumuhour + runhour)
 		}
 		--
+		ERASEVAR("hourlyArray")
+		ERASEVAR("lastChoice")
 		ERASEVAR("runsec")
 		ERASEVAR("runmin")
 		ERASEVAR("runhour")
@@ -252,6 +260,8 @@ OnGhostChanging
 
 OnGhostCalled
 {
+	runhour = 0
+	runmin = 0
 	hourlyArray = IARRAY
 	"\![set,otherghosttalk,true]\0\s[0]"
 	--
