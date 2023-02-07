@@ -66,7 +66,6 @@ RandomTalk : nonoverlap_pool
 	
 	if ASEARCH('choicechain',onetimeArray) == -1
 	{
-	 // :eval=onetimeArray ,= 'choicechain 
 		"\0This is a chain that changes depending on how the user responds to a question. Yes or No?\n[200]"
 		--
 		"\![*] \q[Yes,ChainChoice,choicechainYES]\n[150]"
@@ -83,7 +82,7 @@ testchain0
 	"\0This is the second part of the first test chain. \e:chain=testchain1"
 }}CHAIN
 
-
+// ----- forkchain -----
 forkchain0
 {{CHAIN
 	_test = RAND(100)
@@ -109,6 +108,8 @@ forkchainB
 	"\0\This is fork B of the forked test chain. \e:chain=end"
 }}CHAIN
 
+
+// ----- choicechain -----
 choicechainA
 {{CHAIN
 	"\0This is Chain that plays if you chose YES. \e:chain=choicechainA1"
@@ -121,12 +122,12 @@ choicechainA1
 
 choicechainB
 {{CHAIN
-	"\0This is Chain that plays if you chose NO. \e:chain=choicechainB1"
+	"\0This is Chain that plays if you chose NO. \e:chain=choicechainB1 :eval=onetimeArray ,= 'choicechain' "
 }}CHAIN
 
 choicechainB1
 {{CHAIN
-	"\0This ends the chain that plays if you chose NO. \e:chain=end"
+	"\0This ends the chain that plays if you chose NO. \e:chain=end :eval=onetimeArray ,= 'choicechain' "
 }}CHAIN
 
 
