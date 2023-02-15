@@ -23,7 +23,19 @@ OnFirstBoot
 	"\0\s[0]\1\s[10]\p[2]\s[30]\![set,otherghosttalk,true]"
 	--
 	"\0This is my first time booting.\_w[500]"
+	--
+	if reference0 == 0
+	{
+		firstBoot = 1
+	}
+	elseif reference0 >= 1
+	{
+		firstBoot = 2
+	}
+	--
+	OnTeachName
 }
+// \![raise,OnFirstBoot,1]
 
 
 // ----- OnBoot -----
