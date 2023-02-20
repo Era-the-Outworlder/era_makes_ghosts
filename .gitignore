@@ -1,13 +1,19 @@
+# exclude logs
+**/*.log
 
+**/ssp_shiori_log.txt
+**/yaya_variable.cfg
 
-*/profile
-*.bak
-*.psd
-*.mdp
-*.log
-*log.txt
-backup-weekly/f_lowe_y/ghost/master/ssp_shiori_log.txt
-backup-weekly/statusBOT/ghost/master/ssp_shiori_log.txt
-backup-weekly/statusBOT/ghost/master/ssp_shiori_log.txt
-Updates/aya-f_lowe_y/ghost/master/profile/var.txt
-Updates/aya-f_lowe_y/ghost/master/aya5_variable.cfg
+# exclude .bak files EXCEPT in backups
+**/*.bak
+!backup/**/*.bak
+
+# exclude raw art files. not included in /backup/ because they are usually too large to commit anyway
+**/*.psd
+**/*.mdp
+
+# exclude user-specific information outside of backup
+update/**/profile/**
+update/**/yaya_variable.cfg
+release/**/profile/**
+release/**/yaya_variable.cfg
