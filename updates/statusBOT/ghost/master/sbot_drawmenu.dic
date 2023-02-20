@@ -103,7 +103,7 @@ On_updatebutton.caption
 //----  Network Update URL  ------
 On_homeurl
 {
-	"https://raw.githubusercontent.com/Era-The-Outworlder/era_makes_ghosts/main/updates/statusBOT/"
+	"https://raw.githubusercontent.com/Era-The-Outworlder/statusBOT/main/update/statusBOT/"
 }
 
 

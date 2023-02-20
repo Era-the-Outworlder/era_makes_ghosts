@@ -7,8 +7,8 @@ charset,UTF-8
 // -----Creator Info-----
 craftman, Era the Outworlder
 craftmanw, Era the Outworlder
-craftmanurl, https://era-the-outworlder.github.io/era_makes_ghosts/index.html
-homeurl,https://raw.githubusercontent.com/Era-The-Outworlder/era_makes_ghosts/main/updates/statusBOT/
+craftmanurl, https://era-the-outworlder.github.io/
+homeurl,https://raw.githubusercontent.com/Era-The-Outworlder/statusBOT/main/update/statusBOT/
 readme, readme.txt
 readme.charset,UTF-8
 

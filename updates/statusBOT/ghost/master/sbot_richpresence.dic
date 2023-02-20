@@ -54,7 +54,7 @@ OnDRPSelect
 OnDRPSet
 {
 	drpstatus = SANITISE(reference0)
-	OnDiscordPluginCustom
+	DiscordCustom.UserDetail
 }
 
 DiscordCustom.UserDetail
@@ -135,7 +135,7 @@ OnDevSet
 		smallImageCaption = _cleanRef
 	}
 	--
-	OnDiscordPluginCustom
+	DiscordCustom.DeveloperSet
 }
 
 // Plugin does the work
@@ -232,7 +232,7 @@ OnDRPMoodSet
 	else
 	{moodImageText = "Feeling: %(reference1)"}
 	--
-	OnDiscordPluginCustom
+	DiscordCustom.MoodSet
 	--
 	OnDRPMoodMenu
 }
