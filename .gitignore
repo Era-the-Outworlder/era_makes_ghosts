@@ -13,8 +13,3 @@
 **/*.mdp
 **/*.xcf
 
-# exclude user-specific information outside of backup
-update/**/profile/**
-update/**/yaya_variable.cfg
-release/**/profile/**
-release/**/yaya_variable.cfg
